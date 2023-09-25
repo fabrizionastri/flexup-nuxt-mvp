@@ -1,0 +1,102 @@
+--- Folder Structure ---
+app.vue
+[components]
+    └── NavBar.vue
+nuxt.config.ts
+package.json
+[plugins]
+    └── vuetify.js
+[server]
+    └── tsconfig.json
+tsconfig.json
+
+--- File Contents ---
+
+--- File: app.vue ---
+<template>
+  <NavBar />
+  <h1>Hello Fabi</h1>
+</template>
+
+
+--- File: components\NavBar.vue ---
+<!-- see https://vuetifyjs.com/en/components/app-bars/ -->
+
+<template>
+  <v-app-bar :elevation="3" scroll-behavior="hide">
+    <template v-slot:append>
+      <v-btn icon="mdi-heart"></v-btn>
+      <v-btn icon="mdi-magnify"></v-btn>
+      <v-btn icon="mdi-dots-vertical"></v-btn>
+    </template>
+  </v-app-bar>
+</template>
+
+<script setup></script>
+
+
+--- File: nuxt.config.ts ---
+// https://nuxt.com/docs/api/configuration/nuxt-config
+export default defineNuxtConfig({
+  devtools: { enabled: false },
+  css: ['vuetify/lib/styles/main.sass'],
+    build: {
+        transpile: ['vuetify'],
+   },
+  vite: {
+    define: {
+        'process.env.DEBUG': false,
+    },
+  },
+})
+
+
+--- File: package.json ---
+{
+  "name": "nuxt-app",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "nuxt build",
+    "dev": "nuxt dev",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare"
+  },
+  "devDependencies": {
+    "@nuxt/devtools": "latest",
+    "nuxt": "^3.7.3"
+  },
+  "dependencies": {
+    "sass": "^1.68.0",
+    "vuetify": "3.4.0-alpha.1"
+  }
+}
+
+
+--- File: plugins\vuetify.js ---
+// plugins/vuetify.js
+import { createVuetify } from 'vuetify'
+import * as components from 'vuetify/components'
+import * as directives from 'vuetify/directives'
+export default defineNuxtPlugin(nuxtApp => {
+  const vuetify = createVuetify({
+    components,
+    directives
+  })
+  nuxtApp.vueApp.use(vuetify)
+})
+
+
+--- File: server\tsconfig.json ---
+{
+  "extends": "../.nuxt/tsconfig.server.json"
+}
+
+
+--- File: tsconfig.json ---
+{
+  // https://nuxt.com/docs/guide/concepts/typescript
+  "extends": "./.nuxt/tsconfig.json"
+}
+

@@ -1,0 +1,14 @@
+--- Folder Structure ---
+.browserslistrc
+.editorconfig
+.eslintrc.js
+.git
+.project_structure_ignore
+.project_structure_filter
+project_structure_filter.py
+pnpm-lock.yaml
+project_structure.txt
+README.md
+public
+.nuxt
+npmrc
