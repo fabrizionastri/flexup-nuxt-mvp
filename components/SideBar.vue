@@ -11,16 +11,21 @@
     <v-divider></v-divider>
 
     <v-list density="compact" nav>
-      <v-list-item
-        prepend-icon="mdi-image"
-        title="Coloured Gallery"
-        value="couloured"
-        @click="selectOption(true)"></v-list-item>
-      <v-list-item
-        prepend-icon="mdi-dialpad"
-        title="Gray Gallery"
-        value="gray"
-        @click="selectOption(false)"></v-list-item>
+      <nuxt-link to="/">
+        <v-list-item prepend-icon="mdi-home" title="Home" value="home" exact></v-list-item>
+      </nuxt-link>
+      <nuxt-link to="/user">
+        <v-list-item prepend-icon="mdi-account" title="User account" value="user" exact></v-list-item>
+      </nuxt-link>
+      <nuxt-link to="/subaccount">
+        <v-list-item prepend-icon="mdi-account-multiple" title="Sub account" value="subaccount" exact></v-list-item>
+      </nuxt-link>
+      <nuxt-link to="/settings">
+        <v-list-item prepend-icon="mdi-cog" title="Settings" value="settings" exact></v-list-item>
+      </nuxt-link>
+      <nuxt-link to="/projects">
+        <v-list-item prepend-icon="mdi-folder" title="Projects" value="projects" exact></v-list-item>
+      </nuxt-link>
     </v-list>
   </v-navigation-drawer>
 </template>
