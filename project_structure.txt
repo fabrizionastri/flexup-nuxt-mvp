@@ -1,9 +1,22 @@
 --- Folder Structure ---
 app.vue
 [components]
-    └── NavBar.vue
+    ├── Breadcrumbs.vue
+    ├── IconCarousel.vue
+    ├── ImageGallery.vue
+    ├── Lorem.vue
+    ├── NavBar.vue
+    └── SideBar.vue
+error.vue
+[layouts]
+    └── default.vue
 nuxt.config.ts
 package.json
+[pages]
+    ├── index.vue
+    └── [lorem]
+        ├── index.vue
+        └── plop.vue
 [plugins]
     └── vuetify.js
 [server]
@@ -14,8 +27,277 @@ tsconfig.json
 
 --- File: app.vue ---
 <template>
-  <NavBar />
-  <h1>Hello Fabi</h1>
+  <!-- <div class="fabRed" style="margin: 65px">
+    ./app.vue -->
+  <NuxtLayout>
+    <!-- <div class="fabBlue">
+        ./app.vue/nuxt-layout -->
+    <NuxtPage />
+    <!-- </div> -->
+  </NuxtLayout>
+  <!-- </div> -->
+</template>
+
+
+--- File: components\Breadcrumbs.vue ---
+<template>
+  <v-breadcrumbs :items="items">
+    <template v-slot:prepend>
+      <v-icon size="small" icon="mdi-home"></v-icon>
+    </template>
+    <template v-slot:divider>
+      <v-icon icon="mdi-chevron-right"> </v-icon>
+    </template>
+
+    <template v-slot:item="{ item }">
+      <v-breadcrumbs-item :href="item.href" :disabled="item.disabled">
+        {{ item.text }}
+      </v-breadcrumbs-item>
+    </template>
+  </v-breadcrumbs>
+</template>
+
+<script setup>
+  import { ref, watch } from 'vue'
+  import { useRoute } from 'vue-router'
+
+  const route = useRoute()
+  const breadcrumbItems = ref([])
+
+  watch(
+    route,
+    () => {
+      const pathSegments = route.path.split('/').filter(segment => segment)
+
+      breadcrumbItems.value = pathSegments.map((segment, index, array) => {
+        return {
+          text: segment.charAt(0).toUpperCase() + segment.slice(1),
+          disabled: index === array.length - 1,
+          href: '/' + array.slice(0, index + 1).join('/')
+        }
+      })
+
+      // Prepend the home item
+      breadcrumbItems.value.unshift({
+        text: 'Home',
+        disabled: false,
+        href: '/'
+      })
+    },
+    { immediate: true }
+  )
+</script>
+
+
+--- File: components\IconCarousel.vue ---
+<template>
+  <v-carousel
+    class="boxBlue"
+    style="
+      height: 10cm;
+      width: 80%;
+      align-self: center;
+      justify-content: center;
+      margin: auto;
+      margin-top: 30px;
+      padding: 0px;
+    ">
+    <v-carousel-item
+      v-for="(item, i) in items"
+      :key="i"
+      :src="item.src"
+      reverse-transition="fade-transition"
+      transition="fade-transition"
+      class="boxYellow">
+      <div
+        class="boxRed"
+        style="
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          margin-inline: 80px;
+          padding: 20px;
+        ">
+        <div class="boxGreen">
+          <v-icon :size="item.size" :color="item.color" :icon="item.icon"> </v-icon>
+        </div>
+        <em> {{ item.icon }} </em> <br />
+        <p class="boxGreen">
+          <code>
+            {{ item }}
+          </code>
+        </p>
+      </div>
+    </v-carousel-item>
+  </v-carousel>
+</template>
+
+<script setup>
+  const items = [
+    {
+      size: 'small',
+      color: 'green-darken-2',
+      icon: 'mdi-domain'
+    },
+    {
+      size: 'medium',
+      color: 'blue-darken-2',
+      icon: 'mdi-message-text'
+    },
+    {
+      size: 'large',
+      color: 'purple-darken-2',
+      icon: 'mdi-dialpad'
+    },
+    {
+      size: 'x-large',
+      color: 'teal-darken-2',
+      icon: 'mdi-email'
+    },
+    {
+      size: 'large',
+      color: 'blue-grey-darken-2',
+      icon: 'mdi-call-split'
+    },
+    {
+      size: 'large',
+      color: 'orange-darken-2',
+      icon: 'mdi-arrow-up-bold-box-outline'
+    },
+    {
+      size: 'small',
+      color: 'green-darken-2',
+      icon: 'mdi-domain'
+    },
+    {
+      size: 'medium',
+      color: 'blue-darken-2',
+      icon: 'mdi-message-text'
+    },
+    {
+      size: 'large',
+      color: 'purple-darken-2',
+      icon: 'mdi-dialpad'
+    },
+    {
+      size: 'x-large',
+      color: 'teal-darken-2',
+      icon: 'mdi-email'
+    },
+    {
+      size: 'large',
+      color: 'blue-grey-darken-2',
+      icon: 'mdi-call-split'
+    },
+    {
+      size: 'large',
+      color: 'orange-darken-2',
+      icon: 'mdi-arrow-up-bold-box-outline'
+    }
+  ]
+</script>
+
+
+--- File: components\ImageGallery.vue ---
+<template>
+  <v-container class="boxGreen w-screen mt-2">
+    <v-row no-gutters>
+      <v-col v-for="n in 200" :key="n" lg="1" md="2" sm="3">
+        <v-card class="ma-2 card-hover">
+          <v-hover>
+            <template v-slot:default>
+              <v-img
+                :src="getImageUrl(n)"
+                :lazy-src="getLazyImageUrl(n)"
+                @mouseover="() => startHover(n)"
+                @mouseleave="() => stopHover(n)"
+                @click="openImageInNewTab(n)"
+                aspect-ratio="1"
+                cover
+              >
+                <template v-slot:placeholder>
+                  <div class="d-flex align-center justify-center fill-height">
+                    <v-progress-circular color="grey-lighten-4" indeterminate></v-progress-circular>
+                  </div>
+                </template>
+              </v-img>
+            </template>
+          </v-hover>
+        </v-card>
+      </v-col>
+    </v-row>
+    <v-snackbar v-model="snackbarVisible" top right color="light-salmon" timeout="10000">
+      {{ snackbarMessage }}
+    </v-snackbar>
+  </v-container>
+</template>
+
+<script setup>
+  import { ref } from 'vue'
+
+  const snackbarVisible = ref(false)
+  const snackbarMessage = ref('')
+  const currentImageUrl = ref('') // For storing the hovered image URL
+
+  const props = defineProps(['isWithColor'])
+
+  let hoverTimeout // To handle the 1 second hover delay
+
+  const getImageUrl = (n) => `https://picsum.photos/500/300?image=${n + 10}${props.isWithColor ? '' : '&grayscale'}`
+  const getLazyImageUrl = (n) => `https://picsum.photos/100/60?image=${n + 10}${props.isWithColor ? '' : '&grayscale'}`
+
+  const startHover = (n) => {
+    console.log('Hovering over image:', n, 'Snackbar state:', snackbarVisible.value) // Debug log
+    hoverTimeout = setTimeout(async () => {
+      currentImageUrl.value = getImageUrl(n)
+      try {
+        // Focus the document before copying the text to the clipboard.
+        document.querySelector('html').focus()
+
+        // Copy the text to the clipboard.
+        await navigator.clipboard.writeText(currentImageUrl.value)
+
+        snackbarVisible.value = true
+        snackbarMessage.value = 'Image URL copied to clipboard!'
+        console.log('URL copied successfully!') // Debug log
+      } catch (error) {
+        console.error('Failed to copy!', error)
+
+        snackbarVisible.value = true
+        snackbarMessage.value =
+          'Click on image to open it. Hover on the image to copy the image URL to the clipboard (you first need to click on the page to make it active).'
+      }
+    }, 1000) // 1 second delay
+  }
+
+  const stopHover = (n) => {
+    snackbarVisible.value = false
+    console.log('Mouse left the image:', n, 'Snackbar state:', snackbarVisible.value) // Debug log
+    clearTimeout(hoverTimeout)
+  }
+
+  const openImageInNewTab = (n) => {
+    window.open(getImageUrl(n), '_blank')
+  }
+</script>
+
+
+--- File: components\Lorem.vue ---
+<template>
+  <v-app class="bg-blue-darken-2">
+    <NavBar />
+    <h1>Hello Fabi</h1>
+    <v-list>
+      <!-- for 1 to 100, an <i> element with lorem x 50 -->
+      <v-list-item v-for="i in 100" :key="i" prepend-icon="mdi-image">
+        <v-icon size="large" color="green-darken-2" icon="mdi-domain"></v-icon>
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Officia, architecto temporibus! Ab, fuga dolorem nihil
+        soluta, dolor veritatis ipsum, vel reiciendis tempore voluptate fugiat debitis maiores error perspiciatis?
+        Assumenda, reiciendis.
+      </v-list-item>
+    </v-list>
+  </v-app>
 </template>
 
 
@@ -23,8 +305,17 @@ tsconfig.json
 <!-- see https://vuetifyjs.com/en/components/app-bars/ -->
 
 <template>
-  <v-app-bar :elevation="3" scroll-behavior="hide">
+  <v-app-bar :elevation="3" scroll-behavior="hide" density="compact">
+    <template v-slot:image>
+      <img
+        src="https://koxtxvuakmlypmliqunx.supabase.co/storage/v1/object/public/images/public/Logo%20FlexUp%20colored%20-%2020pc%20border.svg?t=2023-09-25T21%3A19%3A07.711Z"
+        alt="FlexUp Logo" />
+    </template>
     <template v-slot:append>
+      <v-btn prepend-icon="mdi-heart" variant="tonal" color="error" stacked>1</v-btn>
+      <v-btn prepend-icon="mdi-heart" color="red" stacked>2</v-btn>
+      <v-btn prepend-icon="mdi-magnify" stacked>3</v-btn>
+      <v-btn prepend-icon="mdi-dots-vertical" stacked>4</v-btn>
       <v-btn icon="mdi-heart"></v-btn>
       <v-btn icon="mdi-magnify"></v-btn>
       <v-btn icon="mdi-dots-vertical"></v-btn>
@@ -35,11 +326,105 @@ tsconfig.json
 <script setup></script>
 
 
+--- File: components\SideBar.vue ---
+<template>
+  <v-navigation-drawer :rail="expandOnHover" :expand-on-hover="expandOnHover" style="padding-left: 0px" app>
+    <!-- first button toggles whether the  side bar expands on hover or remains open -->
+    <!-- tooltip="Toggle sidebar" -->
+
+    <!-- :title="expandOnHover ? 'Auto-hide sidebar' : 'Fixed sidebar'" -->
+    <v-list-item
+      :prepend-icon="expandOnHover ? 'mdi-chevron-triple-left' : 'mdi-chevron-triple-right'"
+      value=""
+      @click="expandOnHover = !expandOnHover"
+      exact></v-list-item>
+
+    <!-- <v-divider></v-divider> -->
+
+    <v-list density="compact" nav>
+      <nuxt-link to="/">
+        <v-list-item prepend-icon="mdi-home" title="Home" value="home" exact></v-list-item>
+      </nuxt-link>
+      <nuxt-link to="/lorem">
+        <v-list-item prepend-icon="mdi-account" title="Lorem" value="user" exact></v-list-item>
+      </nuxt-link>
+      <nuxt-link to="/lorem/plop">
+        <v-list-item prepend-icon="mdi-account-multiple" title="Lorem plop" value="subaccount" exact></v-list-item>
+      </nuxt-link>
+      <nuxt-link to="/">
+        <v-list-item prepend-icon="mdi-cog" title="Settings" value="settings" exact></v-list-item>
+      </nuxt-link>
+      <nuxt-link to="/">
+        <v-list-item prepend-icon="mdi-folder" title="Projects" value="projects" exact></v-list-item>
+      </nuxt-link>
+    </v-list>
+  </v-navigation-drawer>
+</template>
+
+<script setup>
+  const emits = defineEmits(['emitExpandOnHover'])
+  const expandOnHover = ref(false)
+</script>
+
+
+--- File: error.vue ---
+<script setup>
+  const error = useError()
+  const handleError = () => {
+    clearError({
+      redirect: '/'
+    })
+  }
+</script>
+
+<template>
+  <div class="flex h-screen justify-center items-center flex-col leading-loose gap-7">
+    <h1 class="text-8xl font-bold">Fabri Error</h1>
+    <h2 class="px-20 p-5 font-bold text-6xl">
+      {{ error?.statusCode }}
+    </h2>
+    <p >{{ error?.message }}</p>
+    <v-btn color="primary" @click="handleError"> Go back </v-btn>
+  </div>
+</template>
+
+
+--- File: layouts\default.vue ---
+<template>
+  <!-- <div class="fabGreen">
+    ./layouts/default.vue -->
+  <VApp>
+    <VMain>
+      <!-- <div class="fabYellow">
+        ./layouts/default.vue/v-app -->
+      <NavBar />
+      <SideBar />
+      <Breadcrumbs />
+      <!-- <div class="fabRed">
+            ./layouts/default.vue/v-main -->
+      <div style="margin: 20px">
+        <slot />
+      </div>
+      <!-- </div> -->
+    </VMain>
+    <!-- </div> -->
+  </VApp>
+  <!-- </div> -->
+</template>
+
+<script setup>
+  // if sidebar emits
+</script>
+
+
 --- File: nuxt.config.ts ---
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   devtools: { enabled: false },
-  css: ['vuetify/lib/styles/main.sass'],
+  plugins: [
+  './plugins/vuetify.js'
+  ],
+  css: ['@/assets/main.scss'],
     build: {
         transpile: ['vuetify'],
    },
@@ -68,19 +453,59 @@ export default defineNuxtConfig({
     "nuxt": "^3.7.3"
   },
   "dependencies": {
+    "@mdi/font": "^7.2.96",
     "sass": "^1.68.0",
     "vuetify": "3.4.0-alpha.1"
   }
 }
 
 
+--- File: pages\index.vue ---
+<template>
+  <!-- <div class="fabRed">
+    Fab index.vue -->
+  <h1>Hello World !</h1>
+  <!-- </div> -->
+</template>
+
+
+--- File: pages\lorem\index.vue ---
+<template>
+  <h1>Lorem</h1>
+  <v-list>
+    <!-- for 1 to 100, an <i> element with lorem x 50 -->
+    <v-list-item v-for="i in 100" :key="i" prepend-icon="mdi-chevron-right">
+      Lorem, ipsum dolor sit amet consectetur adipisicing elit. Officia, architecto temporibus! Ab, fuga dolorem nihil
+      soluta, dolor veritatis ipsum, vel reiciendis tempore voluptate fugiat debitis maiores error perspiciatis?
+      Assumenda, reiciendis.
+    </v-list-item>
+  </v-list>
+</template>
+
+
+--- File: pages\lorem\plop.vue ---
+<template>
+  <h1>Lorem / Plop</h1>
+</template>
+
+<script setup>
+  // Your script here
+</script>
+
+
 --- File: plugins\vuetify.js ---
+// Styles
+import '@mdi/font/css/materialdesignicons.css'
+import 'vuetify/styles'
+
 // plugins/vuetify.js
 import { createVuetify } from 'vuetify'
 import * as components from 'vuetify/components'
 import * as directives from 'vuetify/directives'
+
 export default defineNuxtPlugin(nuxtApp => {
   const vuetify = createVuetify({
+    ssr: true,
     components,
     directives
   })
