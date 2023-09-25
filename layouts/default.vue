@@ -19,3 +19,7 @@
   </VApp>
   <!-- </div> -->
 </template>
+
+<script setup>
+  // if sidebar emits
+</script>
