@@ -13,7 +13,7 @@
     <h2 class="px-20 p-5 font-bold text-6xl">
       {{ error?.statusCode }}
     </h2>
-    <p >{{ error?.message }}</p>
+    <p>{{ error?.message }}</p>
     <v-btn color="primary" @click="handleError"> Go back </v-btn>
   </div>
 </template>

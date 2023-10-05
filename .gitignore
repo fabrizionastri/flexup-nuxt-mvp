@@ -5,6 +5,9 @@
 .nitro
 .cache
 dist
+.git
+.vscode
+pnpm-lock.yaml
 
 # Node dependencies
 node_modules
@@ -22,3 +25,10 @@ logs
 .env
 .env.*
 !.env.example
+
+# Project structure
+_docs
+_archives
+_playground
+
+# Temparily ignored for project_structure only.

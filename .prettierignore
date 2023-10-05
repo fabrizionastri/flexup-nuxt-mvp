@@ -1,0 +1,9 @@
+# Ignore artifacts:
+_docs
+.nuxt
+build
+coverage
+node_modules
+
+# Ignore all HTML files:
+**/*.html

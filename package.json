@@ -5,16 +5,33 @@
   "scripts": {
     "build": "nuxt build",
     "dev": "nuxt dev",
+    "format": "prettier --write .",
     "generate": "nuxt generate",
+    "lint": "eslint --ext .js,.vue --ignore-path .gitignore .",
+    "postinstall": "nuxt prepare",
     "preview": "nuxt preview",
-    "postinstall": "nuxt prepare"
+    "test:cov": "vitest --reporter verbose --coverage",
+    "test": "vitest --reporter verbose"
   },
   "devDependencies": {
     "@nuxt/devtools": "latest",
-    "nuxt": "^3.7.3"
+    "@nuxtjs/eslint-module": "^4.1.0",
+    "@vue/eslint-config-prettier": "^8.0.0",
+    "@vue/eslint-config-typescript": "^12.0.0",
+    "eslint": "^8.50.0",
+    "eslint-config-prettier": "^9.0.0",
+    "eslint-plugin-prettier": "^5.0.0",
+    "happy-dom": "11.0.0",
+    "nuxt": "^3.7.4",
+    "nuxt-vitest": "^0.11.0",
+    "prettier": "^3.0.3",
+    "vitest": "^0.33.0"
   },
   "dependencies": {
     "@mdi/font": "^7.2.96",
+    "@typescript-eslint/eslint-plugin": "^6.7.4",
+    "@typescript-eslint/parser": "^6.7.4",
+    "eslint-plugin-vue": "^9.17.0",
     "sass": "^1.68.0",
     "vuetify": "3.4.0-alpha.1"
   }

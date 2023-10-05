@@ -8,7 +8,8 @@
       :prepend-icon="expandOnHover ? 'mdi-chevron-triple-left' : 'mdi-chevron-triple-right'"
       value=""
       @click="expandOnHover = !expandOnHover"
-      exact></v-list-item>
+      exact
+    ></v-list-item>
 
     <!-- <v-divider></v-divider> -->
 
@@ -33,6 +34,7 @@
 </template>
 
 <script setup>
-  const emits = defineEmits(['emitExpandOnHover'])
-  const expandOnHover = ref(false)
+import { ref } from 'vue'
+// const emits = defineEmits(['emitExpandOnHover'])
+const expandOnHover = ref(false)
 </script>
