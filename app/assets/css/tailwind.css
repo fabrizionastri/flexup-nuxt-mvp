@@ -1,0 +1,24 @@
+/* explain what each line does */
+@import 'tailwindcss/base'; /* imports the base styles */
+@import 'tailwindcss/components'; /* imports the component styles */
+@import 'tailwindcss/utilities'; /* imports the utility styles */
+
+body {
+  font-family: 'Open Sans', sans-serif;
+}
+
+h1 {
+  @apply text-6xl;
+}
+
+h2 {
+  @apply text-4xl brand-blue-1;
+}
+
+h3 {
+  @apply text-2xl;
+}
+
+body {
+  @apply m-3;
+}

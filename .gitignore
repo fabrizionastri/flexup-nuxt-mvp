@@ -1,12 +1,12 @@
 # Nuxt dev/build outputs
-.output
-.data
-.nuxt
-.nitro
 .cache
-dist
+.data
 .git
+.nitro
+.nuxt
+.output
 .vscode
+dist
 pnpm-lock.yaml
 
 # Node dependencies

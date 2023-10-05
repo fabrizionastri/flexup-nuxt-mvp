@@ -2,6 +2,17 @@
   // https://nuxt.com/docs/guide/concepts/typescript
   "extends": "./.nuxt/tsconfig.json",
   "compilerOptions": {
+    "composite": true,
+    "baseUrl": ".",
+    "paths": {
+      "~/*": ["./*"],
+      "@/*": ["./app/*"],
+      "api/*": ["./api/*"],
+      "app/*": ["./app/*"]
+    },
     "types": ["vitest/globals"] // to avoid linting error
   }
+  // "vueCompilerOptions": {
+  //   "plugins": ["@vue/language-plugin-pug"] // PUG does not work
+  // }
 }

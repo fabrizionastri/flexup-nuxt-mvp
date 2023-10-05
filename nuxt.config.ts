@@ -6,17 +6,26 @@ export default defineNuxtConfig({
   // },
   srcDir: 'app',
   devtools: { enabled: false },
-  modules: ['@nuxtjs/eslint-module', '@nuxtjs/tailwindcss', 'nuxt-vitest'],
+  modules: ['@nuxtjs/tailwindcss', '@nuxtjs/eslint-module', '@nuxtjs/tailwindcss', 'nuxt-vitest'],
   plugins: [
     //
   ],
   // imports: {
   //   dirs: ['composables/**', '../utils/**']
   // },
-  css: ['@/assets/main.css'],
+  // css: ['@/assets/main.css'], // removed, use tailwind instead
   vite: {
     define: {
       'process.env.DEBUG': false
     }
+  },
+  tailwindcss: {
+    cssPath: '~/assets/css/tailwind.css',
+    configPath: 'tailwind.config'
+    // exposeConfig: false,
+    // exposeLevel: 2,
+    // config: {},
+    // injectPosition: 'first',
+    // viewer: true,
   }
 })
