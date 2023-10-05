@@ -1,7 +1,8 @@
 module.exports = {
   env: {
     browser: true,
-    es2021: true
+    es2021: true,
+    'vitest-globals/env': true
   },
   extends: [
     'eslint:recommended',
@@ -31,8 +32,5 @@ module.exports = {
   plugins: ['@typescript-eslint', 'prettier', 'vue'],
   rules: {
     'vue/multi-word-component-names': 'off'
-  },
-  env: {
-    'vitest-globals/env': true
   }
 }

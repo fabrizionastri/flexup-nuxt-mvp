@@ -1,9 +1,8 @@
 import { defineVitestConfig } from 'nuxt-vitest/config'
 import path from 'path'
+
 export default defineVitestConfig({
-  plugins: [
-    // vue()
-  ],
+  // plugins: [ vue()  ],
   test: {
     environment: 'nuxt',
     globals: true
