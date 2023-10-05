@@ -8,15 +8,15 @@ body {
 }
 
 h1 {
-  @apply text-6xl;
+  @apply text-6xl font-bold mt-3;
 }
 
 h2 {
-  @apply text-4xl brand-blue-1;
+  @apply text-4xl font-semibold mt-3;
 }
 
 h3 {
-  @apply text-2xl;
+  @apply text-2xl font-semibold mt-3;
 }
 
 body {
