@@ -14,8 +14,11 @@
     "test": "vitest --reporter verbose"
   },
   "devDependencies": {
+    "@headlessui/vue": "^1.7.16",
+    "@heroicons/vue": "^2.0.18",
     "@nuxt/devtools": "latest",
     "@nuxtjs/eslint-module": "^4.1.0",
+    "@nuxtjs/tailwindcss": "^6.8.0",
     "@vue/eslint-config-prettier": "^8.0.0",
     "@vue/eslint-config-typescript": "^12.0.0",
     "eslint": "^8.50.0",
@@ -32,8 +35,6 @@
     "@mdi/font": "^7.2.96",
     "@typescript-eslint/eslint-plugin": "^6.7.4",
     "@typescript-eslint/parser": "^6.7.4",
-    "eslint-plugin-vue": "^9.17.0",
-    "sass": "^1.68.0",
-    "vuetify": "3.4.0-alpha.1"
+    "eslint-plugin-vue": "^9.17.0"
   }
 }

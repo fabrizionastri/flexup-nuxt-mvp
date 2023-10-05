@@ -6,5 +6,8 @@
   "printWidth": 120,
   "trailingComma": "none",
   "endOfLine": "lf",
-  "vueIndentScriptAndStyle": true
+  "vueIndentScriptAndStyle": true,
+  "plugins": [
+    "tailwindcss"
+  ]
 }
