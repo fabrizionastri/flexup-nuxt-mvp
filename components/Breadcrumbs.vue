@@ -24,10 +24,7 @@
   watch(
     route,
     () => {
-      console.log('route:', route)
       const pathSegments = route.path.split('/').filter(segment => segment)
-      console.log('pathSegments:', pathSegments)
-
       items.value = pathSegments.map((segment, index, array) => {
         return {
           text: segment.charAt(0).toUpperCase() + segment.slice(1),
@@ -36,7 +33,6 @@
         }
       })
 
-      // Prepend the home item
       items.value.unshift({
         text: 'Home',
         disabled: false,
