@@ -3,4 +3,5 @@
     Fab index.vue -->
   <h1>Hello World !</h1>
   <!-- </div> -->
+  <AccountsMenu />
 </template>

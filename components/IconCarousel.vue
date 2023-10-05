@@ -45,66 +45,66 @@
 </template>
 
 <script setup>
-const items = [
-  {
-    size: 'small',
-    color: 'green-darken-2',
-    icon: 'mdi-domain'
-  },
-  {
-    size: 'medium',
-    color: 'blue-darken-2',
-    icon: 'mdi-message-text'
-  },
-  {
-    size: 'large',
-    color: 'purple-darken-2',
-    icon: 'mdi-dialpad'
-  },
-  {
-    size: 'x-large',
-    color: 'teal-darken-2',
-    icon: 'mdi-email'
-  },
-  {
-    size: 'large',
-    color: 'blue-grey-darken-2',
-    icon: 'mdi-call-split'
-  },
-  {
-    size: 'large',
-    color: 'orange-darken-2',
-    icon: 'mdi-arrow-up-bold-box-outline'
-  },
-  {
-    size: 'small',
-    color: 'green-darken-2',
-    icon: 'mdi-domain'
-  },
-  {
-    size: 'medium',
-    color: 'blue-darken-2',
-    icon: 'mdi-message-text'
-  },
-  {
-    size: 'large',
-    color: 'purple-darken-2',
-    icon: 'mdi-dialpad'
-  },
-  {
-    size: 'x-large',
-    color: 'teal-darken-2',
-    icon: 'mdi-email'
-  },
-  {
-    size: 'large',
-    color: 'blue-grey-darken-2',
-    icon: 'mdi-call-split'
-  },
-  {
-    size: 'large',
-    color: 'orange-darken-2',
-    icon: 'mdi-arrow-up-bold-box-outline'
-  }
-]
+  const items = [
+    {
+      size: 'small',
+      color: 'green-darken-2',
+      icon: 'mdi-domain'
+    },
+    {
+      size: 'medium',
+      color: 'blue-darken-2',
+      icon: 'mdi-message-text'
+    },
+    {
+      size: 'large',
+      color: 'purple-darken-2',
+      icon: 'mdi-dialpad'
+    },
+    {
+      size: 'x-large',
+      color: 'teal-darken-2',
+      icon: 'mdi-email'
+    },
+    {
+      size: 'large',
+      color: 'blue-grey-darken-2',
+      icon: 'mdi-call-split'
+    },
+    {
+      size: 'large',
+      color: 'orange-darken-2',
+      icon: 'mdi-arrow-up-bold-box-outline'
+    },
+    {
+      size: 'small',
+      color: 'green-darken-2',
+      icon: 'mdi-domain'
+    },
+    {
+      size: 'medium',
+      color: 'blue-darken-2',
+      icon: 'mdi-message-text'
+    },
+    {
+      size: 'large',
+      color: 'purple-darken-2',
+      icon: 'mdi-dialpad'
+    },
+    {
+      size: 'x-large',
+      color: 'teal-darken-2',
+      icon: 'mdi-email'
+    },
+    {
+      size: 'large',
+      color: 'blue-grey-darken-2',
+      icon: 'mdi-call-split'
+    },
+    {
+      size: 'large',
+      color: 'orange-darken-2',
+      icon: 'mdi-arrow-up-bold-box-outline'
+    }
+  ]
 </script>

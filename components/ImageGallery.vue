@@ -32,50 +32,50 @@
 </template>
 
 <script setup>
-import { ref } from 'vue'
+  import { ref } from 'vue'
 
-const snackbarVisible = ref(false)
-const snackbarMessage = ref('')
-const currentImageUrl = ref('') // For storing the hovered image URL
+  const snackbarVisible = ref(false)
+  const snackbarMessage = ref('')
+  const currentImageUrl = ref('') // For storing the hovered image URL
 
-const props = defineProps(['isWithColor'])
+  const props = defineProps(['isWithColor'])
 
-let hoverTimeout // To handle the 1 second hover delay
+  let hoverTimeout // To handle the 1 second hover delay
 
-const getImageUrl = (n) => `https://picsum.photos/500/300?image=${n + 10}${props.isWithColor ? '' : '&grayscale'}`
-const getLazyImageUrl = (n) => `https://picsum.photos/100/60?image=${n + 10}${props.isWithColor ? '' : '&grayscale'}`
+  const getImageUrl = (n) => `https://picsum.photos/500/300?image=${n + 10}${props.isWithColor ? '' : '&grayscale'}`
+  const getLazyImageUrl = (n) => `https://picsum.photos/100/60?image=${n + 10}${props.isWithColor ? '' : '&grayscale'}`
 
-const startHover = (n) => {
-  console.log('Hovering over image:', n, 'Snackbar state:', snackbarVisible.value) // Debug log
-  hoverTimeout = setTimeout(async () => {
-    currentImageUrl.value = getImageUrl(n)
-    try {
-      // Focus the document before copying the text to the clipboard.
-      document.querySelector('html').focus()
+  const startHover = (n) => {
+    console.log('Hovering over image:', n, 'Snackbar state:', snackbarVisible.value) // Debug log
+    hoverTimeout = setTimeout(async () => {
+      currentImageUrl.value = getImageUrl(n)
+      try {
+        // Focus the document before copying the text to the clipboard.
+        document.querySelector('html').focus()
 
-      // Copy the text to the clipboard.
-      await navigator.clipboard.writeText(currentImageUrl.value)
+        // Copy the text to the clipboard.
+        await navigator.clipboard.writeText(currentImageUrl.value)
 
-      snackbarVisible.value = true
-      snackbarMessage.value = 'Image URL copied to clipboard!'
-      console.log('URL copied successfully!') // Debug log
-    } catch (error) {
-      console.error('Failed to copy!', error)
+        snackbarVisible.value = true
+        snackbarMessage.value = 'Image URL copied to clipboard!'
+        console.log('URL copied successfully!') // Debug log
+      } catch (error) {
+        console.error('Failed to copy!', error)
 
-      snackbarVisible.value = true
-      snackbarMessage.value =
-        'Click on image to open it. Hover on the image to copy the image URL to the clipboard (you first need to click on the page to make it active).'
-    }
-  }, 1000) // 1 second delay
-}
+        snackbarVisible.value = true
+        snackbarMessage.value =
+          'Click on image to open it. Hover on the image to copy the image URL to the clipboard (you first need to click on the page to make it active).'
+      }
+    }, 1000) // 1 second delay
+  }
 
-const stopHover = (n) => {
-  snackbarVisible.value = false
-  console.log('Mouse left the image:', n, 'Snackbar state:', snackbarVisible.value) // Debug log
-  clearTimeout(hoverTimeout)
-}
+  const stopHover = (n) => {
+    snackbarVisible.value = false
+    console.log('Mouse left the image:', n, 'Snackbar state:', snackbarVisible.value) // Debug log
+    clearTimeout(hoverTimeout)
+  }
 
-const openImageInNewTab = (n) => {
-  window.open(getImageUrl(n), '_blank')
-}
+  const openImageInNewTab = (n) => {
+    window.open(getImageUrl(n), '_blank')
+  }
 </script>

@@ -4,12 +4,8 @@
   <NuxtLayout>
     <!-- <div class="fabBlue">
         ./app.vue/nuxt-layout -->
-    <v-app>
-      <!-- <div class="fabYellow">
-        ./layouts/default.vue/v-app -->
-      <NuxtPage />
-      <!-- </div> -->
-    </v-app>
+
+    <NuxtPage />
     <!-- </div> -->
   </NuxtLayout>
   <!-- </div> -->

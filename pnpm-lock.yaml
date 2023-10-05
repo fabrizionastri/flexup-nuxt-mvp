@@ -46,6 +46,9 @@ devDependencies:
   eslint-plugin-prettier:
     specifier: ^5.0.0
     version: 5.0.0(eslint-config-prettier@9.0.0)(eslint@8.50.0)(prettier@3.0.3)
+  eslint-plugin-vitest-globals:
+    specifier: ^1.4.0
+    version: 1.4.0
   happy-dom:
     specifier: 11.0.0
     version: 11.0.0
@@ -3517,6 +3520,10 @@ packages:
       prettier: 3.0.3
       prettier-linter-helpers: 1.0.0
       synckit: 0.8.5
+    dev: true
+
+  /eslint-plugin-vitest-globals@1.4.0:
+    resolution: {integrity: sha512-WE+YlK9X9s4vf5EaYRU0Scw7WItDZStm+PapFSYlg2ABNtaQ4zIG7wEqpoUB3SlfM+SgkhgmzR0TeJOO5k3/Nw==}
     dev: true
 
   /eslint-plugin-vue@9.17.0(eslint@8.50.0):
