@@ -1,4 +1,5 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
+
 export default defineNuxtConfig({
   // devServer: {
   //   host: '0.0.0.0', // Listen to all network interfaces
@@ -6,7 +7,7 @@ export default defineNuxtConfig({
   // },
   srcDir: 'app',
   devtools: { enabled: false },
-  modules: ['@nuxtjs/tailwindcss', '@nuxtjs/eslint-module', '@nuxtjs/tailwindcss', 'nuxt-vitest'],
+  modules: ['@nuxtjs/tailwindcss', '@nuxtjs/eslint-module', 'nuxt-vitest'],
   plugins: [
     //
   ],

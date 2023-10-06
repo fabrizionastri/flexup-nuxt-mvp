@@ -29,6 +29,7 @@ logs
 # Project structure
 _docs
 _archives
+_issues
 _playground
 
 # Temparily ignored for project_structure only.
