@@ -26,3 +26,7 @@ html {
 body {
   @apply h-full;
 }
+
+main {
+  @apply m-5 h-full;
+}

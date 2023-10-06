@@ -6,7 +6,7 @@ export default defineNuxtConfig({
   //   port: 3000 // Default port is 3000
   // },
   srcDir: 'app',
-  devtools: { enabled: false },
+  devtools: { enabled: true },
   modules: ['@nuxtjs/tailwindcss', '@nuxtjs/eslint-module', 'nuxt-vitest'],
   plugins: [
     //
