@@ -8,17 +8,13 @@ body {
 }
 
 h1 {
-  @apply text-6xl font-bold mt-3;
+  @apply mt-3 text-6xl font-bold;
 }
 
 h2 {
-  @apply text-4xl font-semibold mt-3;
+  @apply mt-3 text-4xl font-semibold;
 }
 
 h3 {
-  @apply text-2xl font-semibold mt-3;
-}
-
-body {
-  @apply m-3;
+  @apply mt-3 text-2xl font-semibold;
 }

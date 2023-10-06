@@ -5,15 +5,16 @@ import defaultTheme from 'tailwindcss/defaultTheme' // import the default theme 
 // or here: https://github.com/tailwindlabs/tailwindcss/blob/master/stubs/config.full.js#L301
 
 export default {
-  content: [],
+  content: ['./index.html', './src/**/*.{js,vue}'],
   theme: {
     extend: {
       fontFamily: {
         // we don't want to only offer Open Sans, but add it to the default fonts as the first option
         // if the font is not available, the browser will use the next font in the list
-        sans: ['Open Sans', ...defaultTheme.fontFamily.sans] // this is how we can add a new font to our project
+        sans: ['Inter var', 'Open Sans', ...defaultTheme.fontFamily.sans] // this is how we can add a new font to our project
       },
       colors: {
+        primary: '#328de7'
         // this is how we can add a new color to our project
         // 'brand-gray-1': '#dadce0', // were using "" because the color name has a dash in it, and JavaScript doesn't support dashes in property names
         // 'brand-gray-2': '#f8f9fa',
