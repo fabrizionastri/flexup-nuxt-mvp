@@ -94,21 +94,30 @@
                   <MenuItem v-slot="{ active }">
                     <a
                       href="#"
-                      :class="[active ? 'bg-gray-100' : '', 'block px-4 py-2 text-sm text-gray-700']"
+                      :class="[
+                        active ? 'bg-gray-100' : '',
+                        'block px-4 py-2 text-sm text-gray-700'
+                      ]"
                       >Your Profile</a
                     >
                   </MenuItem>
                   <MenuItem v-slot="{ active }">
                     <a
                       href="#"
-                      :class="[active ? 'bg-gray-100' : '', 'block px-4 py-2 text-sm text-gray-700']"
+                      :class="[
+                        active ? 'bg-gray-100' : '',
+                        'block px-4 py-2 text-sm text-gray-700'
+                      ]"
                       >Settings</a
                     >
                   </MenuItem>
                   <MenuItem v-slot="{ active }">
                     <a
                       href="#"
-                      :class="[active ? 'bg-gray-100' : '', 'block px-4 py-2 text-sm text-gray-700']"
+                      :class="[
+                        active ? 'bg-gray-100' : '',
+                        'block px-4 py-2 text-sm text-gray-700'
+                      ]"
                       >Sign out</a
                     >
                   </MenuItem>

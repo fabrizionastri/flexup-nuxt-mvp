@@ -1,4 +1,5 @@
 <template>
+  <h1>Teams</h1>
   <TeamList :teams="teams" />
 </template>
 

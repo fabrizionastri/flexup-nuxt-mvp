@@ -18,3 +18,11 @@ h2 {
 h3 {
   @apply mt-3 text-2xl font-semibold;
 }
+
+html {
+  @apply h-full bg-white;
+}
+
+body {
+  @apply h-full;
+}
