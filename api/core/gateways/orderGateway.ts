@@ -13,9 +13,7 @@ export const createOrderGateway = (
   const addItemsAndCalculate = async (order: OrderData): Promise<Order> => {
     const items = (await itemGateway.getByOrderId(order.id)) ?? []
 
-    const amountExclTax = round6(
-      items.reduce((sum, item) => sum + item.amountExclTax, 0)
-    )
+    const amountExclTax = round6(items.reduce((sum, item) => sum + item.amountExclTax, 0))
     const taxAmount = round6(
       items.reduce((sum, item) => sum + item.amountExclTax * item.taxRate, 0)
     )
@@ -30,11 +28,10 @@ export const createOrderGateway = (
       amountInclTax,
       taxAmount,
       averageTaxRate,
-      principal: amountInclTax,
+      principal: amountInclTax
     }
   }
-  const getAllData = async (): Promise<OrderData[]> =>
-    await orderAdapter.getAll()
+  const getAllData = async (): Promise<OrderData[]> => await orderAdapter.getAll()
   const getByIdData = async (orderId: string): Promise<OrderData | undefined> =>
     await orderAdapter.getById(orderId)
   const getAll = async (): Promise<Order[]> => {
@@ -54,6 +51,6 @@ export const createOrderGateway = (
     getAllData,
     getByIdData,
     getAll,
-    getById,
+    getById
   }
 }

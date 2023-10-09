@@ -35,7 +35,7 @@ describe('createItemAdapterJsonServer (real Axios)', () => {
         inMemory.item[2],
         inMemory.item[3],
         inMemory.item[4],
-        inMemory.item[5],
+        inMemory.item[5]
       ])
     })
     it('should return [] for unknown order ids', async () => {
