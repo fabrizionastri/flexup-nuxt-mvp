@@ -144,7 +144,7 @@
     type: 'Activity',
     icon: '/images/profiles/flexup.svg'
   }))
-  console.log('AccountMenu -> activeAccount =', activeAccount)
+  console.log('AccountMenu -> activeAccount =', activeAccount.value)
   import { Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/vue'
   import {
     ArchiveBoxIcon,

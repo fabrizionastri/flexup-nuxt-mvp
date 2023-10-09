@@ -14,7 +14,7 @@
     "test": "vitest --reporter verbose",
     "server": "nodemon",
     "db": " json-server --port 3057 --watch ./db/db.json",
-    "mock": " json-server --port 3057 --watch ./api/mock/jsonServer.json"
+    "mock": " json-server --port 3057 --watch ./mock/jsonServer.json"
   },
   "dependencies": {
     "@hono/node-server": "^1.2.0",

@@ -22,7 +22,7 @@ export default defineVitestConfig({
       adapters: path.resolve(__dirname, './api/adapters'),
       entities: path.resolve(__dirname, './api/core/entities'),
       gateways: path.resolve(__dirname, './api/core/gateways'),
-      mock: path.resolve(__dirname, './api/mock'),
+      mock: path.resolve(__dirname, './mock'),
       utils: path.resolve(__dirname, './api/utils')
       // '~': path.resolve(__dirname, './'),
       // '~/*': path.resolve(__dirname, './*'),
@@ -37,7 +37,7 @@ export default defineVitestConfig({
       // 'gateways/*': path.resolve(__dirname, './api/core/gateways/*', './api/core/gateways'),
       // 'adapters/*': path.resolve(__dirname, './api/adapters/*', './api/adapters'),
       // 'utils/*': path.resolve(__dirname, './api/utils/*', './api/utils'),
-      // 'mock/*': path.resolve(__dirname, './api/mock/*', './api/mock')
+      // 'mock/*': path.resolve(__dirname, './mock/*', './mock')
     }
   }
 })

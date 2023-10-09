@@ -16,7 +16,7 @@
       "gateways/*": ["./api/core/gateways/*", "./api/core/gateways"],
       "adapters/*": ["./api/adapters/*", "./api/adapters"],
       "utils/*": ["./api/utils/*", "./api/utils"],
-      "mock/*": ["./api/mock/*", "./api/mock"]
+      "mock/*": ["./mock/*", "./mock"]
     },
     "include": ["api/**/*"],
     "ts-node": {

@@ -53,6 +53,7 @@ app.get('/order/:accountId', async (c) => {
 
 app.get('/fab', (c) => c.text('Hello Fabrizio!'))
 app.get('/', (c) => c.text('Hello Hono Fabrizio!'))
+app.get('/favicon.ico', (c) => c.text(`Sorry, we don't send favicon in this app for now`))
 
 // TEMPORARY - I'm cheating here and bypassing the adatpters and core
 app.get('/:resource', async (c) => {

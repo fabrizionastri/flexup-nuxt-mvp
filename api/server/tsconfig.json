@@ -24,7 +24,7 @@
       "gateways/*": ["../core/gateways/*", "../core/gateways"],
       "adapters/*": ["../adapters/*", "../adapters"],
       "utils/*": ["../utils/*", "../utils"],
-      "mock/*": ["../mock/*", "../mock"]
+      "mock/*": ["../../mock/*", "../../mock"]
     }
   },
   "include": ["src/**/*", "mock/**/*"],
