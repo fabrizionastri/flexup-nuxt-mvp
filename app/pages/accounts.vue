@@ -1,9 +1,12 @@
 <template lang="pug">
-h1 Active Account
+h2 Active Account
+AccountMiniCard(:account="activeAccount")
 div.m-5(v-for="(value, key) in activeAccount" :key="key")
   strong {{ key }}: &nbsp;
   span {{ value }}
 
+h2 Other accounts
+AccountSelector
 
 </template>
 

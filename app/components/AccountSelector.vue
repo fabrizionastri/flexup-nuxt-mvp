@@ -13,7 +13,7 @@
 </template>
 
 <script setup>
-  const accounts = getAccounts()
+  const accounts = await getAccounts()
   const activeAccount = useState('activeAccount', () => ({
     id: 1,
     name: 'FlexUp',
