@@ -1,10 +1,4 @@
 <template lang="pug">
 div
-  h1.mt-10 FlexUp MVP
-  People
-  SelectAccount
-
-
+  h1 FlexUp MVP
 </template>
-
-<script setup></script>

@@ -6,12 +6,13 @@ module.exports = {
   },
   extends: [
     'eslint:recommended',
-    'plugin:@typescript-eslint/recommended',
-    'plugin:vue/vue3-essential',
-    '@vue/eslint-config-typescript',
     '@vue/eslint-config-prettier',
-    'plugin:prettier/recommended',
-    'plugin:vitest-globals/recommended'
+    '@vue/eslint-config-typescript',
+    'plugin:@typescript-eslint/recommended',
+    'plugin:vitest-globals/recommended',
+    'plugin:vue-pug/vue3-recommended',
+    'plugin:vue/vue3-essential',
+    'plugin:prettier/recommended'
   ],
   overrides: [
     {
@@ -27,10 +28,12 @@ module.exports = {
   parserOptions: {
     ecmaVersion: 'latest',
     parser: '@typescript-eslint/parser',
-    sourceType: 'module'
+    sourceType: 'module',
+    extraFileExtensions: ['.js']
   },
   plugins: ['@typescript-eslint', 'prettier', 'vue'],
   rules: {
-    'vue/multi-word-component-names': 'off'
+    'vue/multi-word-component-names': 'off',
+    'vue/no-unused-vars': 'warn'
   }
 }

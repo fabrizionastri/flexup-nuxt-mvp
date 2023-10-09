@@ -11,7 +11,19 @@
     "postinstall": "nuxt prepare",
     "preview": "nuxt preview",
     "test:cov": "vitest --reporter verbose --coverage",
-    "test": "vitest --reporter verbose"
+    "test": "vitest --reporter verbose",
+    "server": "nodemon",
+    "db": " json-server --port 3057 --watch ./db/db.json",
+    "mock": " json-server --port 3057 --watch ./api/mock/jsonServer.json"
+  },
+  "dependencies": {
+    "@hono/node-server": "^1.2.0",
+    "@mdi/font": "^7.2.96",
+    "@tailwindcss/forms": "^0.5.6",
+    "@typescript-eslint/eslint-plugin": "^6.7.4",
+    "@typescript-eslint/parser": "^6.7.4",
+    "axios": "^1.5.1",
+    "hono": "^3.7.5"
   },
   "devDependencies": {
     "@headlessui/vue": "^1.7.16",
@@ -27,21 +39,18 @@
     "eslint-config-prettier": "^9.0.0",
     "eslint-plugin-prettier": "^5.0.0",
     "eslint-plugin-vitest-globals": "^1.4.0",
+    "eslint-plugin-vue": "^9.17.0",
+    "eslint-plugin-vue-pug": "^0.6.0",
     "happy-dom": "11.0.0",
+    "nodemon": "^3.0.1",
     "nuxt": "^3.7.4",
     "nuxt-vitest": "^0.11.0",
     "prettier": "^3.0.3",
     "prettier-plugin-tailwindcss": "^0.5.5",
     "pug": "^3.0.2",
     "ts-node": "^10.9.1",
+    "tsx": "^3.13.0",
     "typescript": "^5.2.2",
     "vitest": "^0.33.0"
-  },
-  "dependencies": {
-    "@mdi/font": "^7.2.96",
-    "@tailwindcss/forms": "^0.5.6",
-    "@typescript-eslint/eslint-plugin": "^6.7.4",
-    "@typescript-eslint/parser": "^6.7.4",
-    "eslint-plugin-vue": "^9.17.0"
   }
 }

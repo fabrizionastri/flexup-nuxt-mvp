@@ -1,1 +1,16 @@
-server
+# always ignore
+db
+README.md
+mock
+public
+TwUI
+images
+logos
+components
+# temporary ignore
+components
+adapters
+core
+assets
+pages
+layouts

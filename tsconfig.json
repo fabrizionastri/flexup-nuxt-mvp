@@ -7,8 +7,21 @@
     "paths": {
       "~/*": ["./*"],
       "@/*": ["./app/*"],
-      "api/*": ["./api/*"],
-      "app/*": ["./app/*"]
+      "app/*": ["./app/*"],
+      "api/*": ["./api/*", "./api"],
+      "src/*": ["./api/*", "./api"],
+      "core/*": ["./api/core/*", "./api/core"],
+      "entities/*": ["./api/core/entities/*", "./api/core/entities"],
+      "usecases/*": ["./api/core/usecases/*", "./api/core/usecases"],
+      "gateways/*": ["./api/core/gateways/*", "./api/core/gateways"],
+      "adapters/*": ["./api/adapters/*", "./api/adapters"],
+      "utils/*": ["./api/utils/*", "./api/utils"],
+      "mock/*": ["./api/mock/*", "./api/mock"]
+    },
+    "include": ["api/**/*"],
+    "ts-node": {
+      "esm": true,
+      "experimentalSpecifierResolution": "node"
     },
     "types": ["vitest/globals"] // to avoid linting error
   }
