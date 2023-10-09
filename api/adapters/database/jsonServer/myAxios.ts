@@ -13,7 +13,7 @@ export const myAxios = axios.create({
 export const handleRequest =
   (httpMethod: Method) =>
   async <Item>(url: string, data?: any): Promise<Item | undefined> => {
-    console.log('MyAxios DB_URL:', DB_URL)
+    // console.log('MyAxios DB_URL:', DB_URL)
     try {
       const response: AxiosResponse = await myAxios.request({
         url,

@@ -11,7 +11,7 @@
     { text: 'In Memory', value: 'inMemory' },
     { text: 'JSON Server', value: 'jsonServer' }
   ])
-  const selectedDb = ref < options.value[0].value
+  const selectedDb = ref(options.value[0].value)
 
   const onChange = async () => {
     const response = await selectDb(selectedDb.value)
