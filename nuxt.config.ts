@@ -6,13 +6,13 @@ export default defineNuxtConfig({
   //   port: 3000 // Default port is 3000
   // },
   srcDir: 'app',
-  devtools: { enabled: true },
+  devtools: { enabled: false },
   modules: ['@nuxtjs/tailwindcss', '@nuxtjs/eslint-module', 'nuxt-vitest'],
   plugins: [
     //
   ],
   imports: {
-    dirs: ['composables/**', '../utils/**']
+    dirs: ['composables/**', '../api/utils/**', '../mock/**']
   },
   // css: ['@/assets/main.css'], // removed, use tailwind instead
   vite: {
