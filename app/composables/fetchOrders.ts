@@ -3,8 +3,8 @@ import axios from 'axios'
 // const API_URL = process.env.API_URL
 // import { config } from 'dotenv'
 // config() // load variables from .env into process.env
-const API_URL = process.env.API_URL || 'http://127.0.0.1:8787'
-// const API_URL = 'http://127.0.0.1:8787'
+// const API_URL = process.env.API_URL || 'http://127.0.0.1:8787' // ceci ne fonctionne pas
+const API_URL = 'http://127.0.0.1:8787'
 
 export const fetchOrders = async (accountId: string) => {
   const url = `${API_URL}/order/${accountId}`

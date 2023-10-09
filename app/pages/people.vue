@@ -8,5 +8,10 @@ div.m-5(v-for="(value, key) in activeAccount" :key="key")
 </template>
 
 <script setup>
-  const activeAccount = useState('activeAccount', () => getAccounts('name', 'FlexUp')[0])
+  const activeAccount = useState('activeAccount', () => ({
+    id: 1,
+    name: 'FlexUp',
+    type: 'Activity',
+    icon: '/images/profiles/flexup.svg'
+  }))
 </script>

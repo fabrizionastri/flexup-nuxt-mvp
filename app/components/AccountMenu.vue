@@ -138,7 +138,13 @@
 </template>
 
 <script setup>
-  const activeAccount = useState('activeAccount', () => getAccounts('name', 'FlexUp')[0])
+  const activeAccount = useState('activeAccount', () => ({
+    id: 1,
+    name: 'FlexUp',
+    type: 'Activity',
+    icon: '/images/profiles/flexup.svg'
+  }))
+  console.log('AccountMenu -> activeAccount =', activeAccount)
   import { Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/vue'
   import {
     ArchiveBoxIcon,
