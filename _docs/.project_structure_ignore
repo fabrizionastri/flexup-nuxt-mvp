@@ -2,7 +2,8 @@
 .prettierignore
 .prettierrc
 adapters
-api
+# api
+components
 assets
 core
 db
@@ -15,6 +16,6 @@ pages
 prettier.config.js
 public
 README.md
-server
+# server
 tailwind.config.js
 TwUI

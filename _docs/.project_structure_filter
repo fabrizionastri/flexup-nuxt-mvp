@@ -4,4 +4,7 @@
 # tsconfig.json
 # package.json
 # useActiveAccount
-Account
+# Account
+getAccounts
+# vitest.config.ts
+# nuxt.config.ts

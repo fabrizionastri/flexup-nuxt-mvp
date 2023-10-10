@@ -1,9 +1,19 @@
-import { getAccounts } from './getAccounts.js'
+import { getAccounts } from './getRessource.js'
 
-import { accounts } from '../../mock/inMemory'
+// Option 1 -  import the default export, and then extract accounts from it 👌✔️  works
+// import inMemory from '../../mock/inMemory'
+// const accounts = inMemory.accounts
 
-describe('getAccounts', () => {
-  // console.log('accountDatas:', accountDatas2)
+// Option 2 - import accountDatas directly 👌✔️ works
+// import { accountDatas as accounts } from '../../mock/inMemory'
+
+// Option 2 - import cars from '../../mock/cars' 👌✔️ works
+import jsonServer from '../../mock/jsonServer'
+const accounts = jsonServer.account
+
+describe('getAccounts -> real access to server', () => {
+  // console.log('accounts:', accounts)
+
   it('should return full accounts list when no arguments are provided', async () => {
     const assertion = await getAccounts()
     const result = accounts
@@ -22,7 +32,8 @@ describe('getAccounts', () => {
     const result = accounts.slice(0, 1)
     expect(assertion).toEqual(result)
   })
-  // it('should be true', () => {
-  //   expect(true).toBe(true)
-  // })
+
+  it('should be true', () => {
+    expect(true).toBe(true)
+  })
 })
