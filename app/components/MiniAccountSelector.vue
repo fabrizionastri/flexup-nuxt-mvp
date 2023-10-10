@@ -14,9 +14,7 @@
   </div>
 </template>
 
-<script lang="ts" setup>
-  // import { ref } from 'vue'
-
+<script setup>
   const accountIds = [
     { name: 'Account 0', id: 'account0' },
     { name: 'Account 1', id: 'account1' },

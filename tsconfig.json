@@ -18,14 +18,11 @@
       "utils/*": ["./api/utils/*", "./api/utils"],
       "mock/*": ["./mock/*", "./mock"]
     },
-    "include": ["api/**/*"],
     "ts-node": {
       "esm": true,
       "experimentalSpecifierResolution": "node"
     },
     "types": ["vitest/globals"] // to avoid linting error
-  }
-  // "vueCompilerOptions": {
-  //   "plugins": ["@vue/language-plugin-pug"] // PUG does not work
-  // }
+  },
+  "include": ["api/**/*", "app/**/*", "mock/**/*"]
 }

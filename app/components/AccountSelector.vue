@@ -14,12 +14,7 @@
 
 <script setup>
   const accounts = await getAccounts()
-  const activeAccount = useState('activeAccount', () => ({
-    id: 1,
-    name: 'FlexUp',
-    type: 'Activity',
-    icon: '/images/profiles/flexup.svg'
-  }))
+  const activeAccount = useActiveAccount()
   const emit = defineEmits(['closeAccountSelector'])
   const selectAccount = (account) => {
     console.log('activeAccountId =', account.name, ', #', account.id)

@@ -7,7 +7,8 @@ export default defineNuxtConfig({
   // },
   srcDir: 'app',
   devtools: { enabled: false },
-  modules: ['@nuxtjs/tailwindcss', '@nuxtjs/eslint-module', 'nuxt-vitest'],
+  modules: ['@nuxtjs/tailwindcss', '@nuxtjs/eslint-module', 'nuxt-vitest', '@nuxt/image'],
+  buildModules: ['@vueuse/nuxt'],
   plugins: [
     //
   ],

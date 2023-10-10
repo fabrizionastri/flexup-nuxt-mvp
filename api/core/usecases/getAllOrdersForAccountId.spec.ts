@@ -1,9 +1,9 @@
-import { orders } from 'mock/inMemory'
+// import { orders } from 'mock/inMemory'
 
-import { getAllOrdersForAccountId } from './getAllOrdersForAccountId'
+// import { getAllOrdersForAccountId } from './getAllOrdersForAccountId'
 
 describe('getAllOrdersForAccountId', () => {
-  console.log('orderDatas', orders)
+  // console.log('orderDatas', orders)
   it('should return true', () => {
     expect(true).toEqual(true)
   })

@@ -1,74 +1,37 @@
 --- Folder Structure ---
 .eslintignore
 .eslintrc.cjs
-.npmrc
-.prettierignore
-.prettierrc
-[api]
-    ├── [adapters]
-        └── [database]
-            ├── adapterInterfaces.ts
-            ├── index.ts
-            ├── [inMemory]
-                ├── createItemAdapterInMemory.spec.ts
-                ├── createItemAdapterInMemory.ts
-                ├── createOrderAdapterInMemoryForAccountId.spec.ts
-                └── createOrderAdapterInMemoryForAccountId.ts
-            └── [jsonServer]
-                ├── createItemAdapterJsonServer.spec.ts
-                ├── createItemAdapterJsonServer.ts
-                ├── createOrderAdapterJsonServer.spec.ts
-                ├── createOrderAdapterJsonServer.ts
-                └── myAxios.ts
-    ├── [core]
-        ├── [entities]
-            ├── item.ts
-            └── order.ts
-        ├── [gateways]
-            ├── gatewayInterfaces.ts
-            ├── itemGateway.spec.ts
-            ├── itemGateway.ts
-            ├── orderGateway.spec.ts
-            └── orderGateway.ts
-        └── [usecases]
-            ├── getAllAccounts.js
-            ├── getAllOrdersForAccountId.spec.ts
-            └── getAllOrdersForAccountId.ts
-    ├── [server]
-        ├── package.json
-        ├── [src]
-            └── index.ts
-        └── tsconfig.json
-    └── [utils]
-        ├── add.test.ts
-        ├── add.ts
-        └── round.ts
 [app]
     ├── app.vue
-    ├── [assets]
-        ├── [css]
-            └── tailwind.css
+    ├── [components]
+        ├── AccountMenu.vue
+        ├── AccountMiniCard.client.vue
+        ├── AccountSelector.vue
+        ├── MiniAccountSelector.vue
+        ├── MiniNavBar.vue
+        ├── MiniOrderDetails.vue
+        ├── MiniOrderList.vue
+        ├── NavBar.vue
+        ├── NotificationBell.vue
+        └── SelectDb.vue
     ├── [composables]
+        ├── cars.json
         ├── fetchOrders.spec.ts
         ├── fetchOrders.ts
         ├── getAccounts.js
         ├── getAccounts.test.js
+        ├── getDb.tests.ts
+        ├── getDb.ts
         ├── selectDb.ts
-        └── sharedState.ts
+        ├── sharedState.js
+        └── useActiveAccount.js
     ├── error.vue
     ├── index.html
-    ├── [layouts]
-        └── default.vue
     ├── [mvp]
-    ├── [pages]
-        ├── index.vue
-        ├── Mini.vue
-        └── teams.vue
-nodemon.json
+[front]
+    ├── [mini_demo]
 nuxt.config.ts
 package.json
-prettier.config.js
-tailwind.config.js
 tsconfig.json
 vitest.config.ts
 
@@ -86,12 +49,13 @@ module.exports = {
   },
   extends: [
     'eslint:recommended',
-    'plugin:@typescript-eslint/recommended',
-    'plugin:vue/vue3-essential',
-    '@vue/eslint-config-typescript',
     '@vue/eslint-config-prettier',
-    'plugin:prettier/recommended',
-    'plugin:vitest-globals/recommended'
+    '@vue/eslint-config-typescript',
+    'plugin:@typescript-eslint/recommended',
+    'plugin:vitest-globals/recommended',
+    'plugin:vue-pug/vue3-recommended',
+    'plugin:vue/vue3-essential',
+    'plugin:prettier/recommended'
   ],
   overrides: [
     {
@@ -112,909 +76,9 @@ module.exports = {
   },
   plugins: ['@typescript-eslint', 'prettier', 'vue'],
   rules: {
-    'vue/multi-word-component-names': 'off'
+    'vue/multi-word-component-names': 'off',
+    'vue/no-unused-vars': 'warn'
   }
-}
-
-
---- File: .npmrc ---
-shamefully-hoist=true
-
---- File: .prettierignore ---
-# Ignore artifacts:
-_docs
-.nuxt
-build
-coverage
-node_modules
-
-# Ignore all HTML files:
-**/*.html
-
---- File: .prettierrc ---
-{
-  "semi": false,
-  "tabWidth": 2,
-  "useTabs": false,
-  "singleQuote": true,
-  "printWidth": 100,
-  "trailingComma": "none",
-  "endOfLine": "lf",
-  "vueIndentScriptAndStyle": true,
-  "plugins": ["tailwindcss", "prettier-plugin-tailwindcss"]
-}
-
-
---- File: api\adapters\database\adapterInterfaces.ts ---
-import { ItemData } from 'entities/item'
-import { OrderData } from 'entities/order'
-
-export interface ItemAdapter {
-  getById: (id: string) => Promise<ItemData | undefined>
-  getByOrderId: (orderId: string) => Promise<ItemData[]>
-  getByOrderIds: (orderIds: string[]) => Promise<ItemData[]>
-}
-
-export interface OrderAdapter {
-  getAll: () => Promise<OrderData[]>
-  getById: (orderId: string) => Promise<OrderData | undefined>
-}
-
-
---- File: api\adapters\database\index.ts ---
-import { config } from 'dotenv'
-
-import { createItemAdapterInMemory } from './inMemory/createItemAdapterInMemory'
-import { createOrderAdapterInMemoryForAccountId } from './inMemory/createOrderAdapterInMemoryForAccountId'
-import { createItemAdapterJsonServer } from './jsonServer/createItemAdapterJsonServer'
-import { createOrderAdapterJsonServer } from './jsonServer/createOrderAdapterJsonServer'
-
-config() // load variables from .env into process.env
-
-console.log(
-  'Adapter Index: process.env.STORAGE_TYPE before',
-  process.env.STORAGE_TYPE
-)
-if (!process.env.STORAGE_TYPE) {
-  process.env.STORAGE_TYPE = 'InMemory'
-}
-console.log(
-  'Adapter Index: process.env.STORAGE_TYPE after',
-  process.env.STORAGE_TYPE
-)
-
-let createItemAdapter: any
-let createOrderAdapter: any
-
-switch (process.env.STORAGE_TYPE) {
-  case 'inMemory':
-    createItemAdapter = createItemAdapterInMemory
-    createOrderAdapter = createOrderAdapterInMemoryForAccountId
-    break
-  case 'jsonServer':
-    createItemAdapter = createItemAdapterJsonServer
-    createOrderAdapter = createOrderAdapterJsonServer
-    break
-  default:
-    throw new Error('Core → getAllOrdersForAccountId : Invalid storage type')
-}
-
-export { createItemAdapter, createOrderAdapter }
-
-
---- File: api\adapters\database\inMemory\createItemAdapterInMemory.spec.ts ---
-import { itemDatas } from 'mock/inMemory'
-
-import { createItemAdapterInMemory } from './createItemAdapterInMemory'
-
-describe('createItemAdapterInMemory', () => {
-  const adapter = createItemAdapterInMemory()
-  describe('getById', () => {
-    it('should return undefined when item id not found', async () => {
-      const item = await adapter.getById('nonexistentId')
-      expect(item).toBeUndefined()
-    })
-
-    it('should  return one item for existing item id', async () => {
-      const item = await adapter.getById('item0')
-      expect(item).toEqual(itemDatas[0])
-    })
-  })
-  describe('getByOrderId', () => {
-    it('should return an array of items for existing order id', async () => {
-      const items = await adapter.getByOrderId('order0')
-      expect(items).toEqual([itemDatas[0], itemDatas[1]])
-    })
-
-    it('should return an empty array for existing empty order', async () => {
-      const items = await adapter.getByOrderId('order3')
-      expect(items).toEqual([])
-    })
-
-    it('should return an empty array for non existing  order', async () => {
-      const items = await adapter.getByOrderId('order99')
-      expect(items).toEqual([])
-    })
-  })
-
-  describe('getByOrderIds', () => {
-    it('should return an array for array of existing orders', async () => {
-      const items = await adapter.getByOrderIds(['order0', 'order1'])
-      expect(items).toEqual(items.slice(0, 4))
-    })
-
-    it('should return an empty array for non existing orders', async () => {
-      const items = await adapter.getByOrderId('order99')
-      expect(items).toEqual([])
-    })
-  })
-})
-
-
---- File: api\adapters\database\inMemory\createItemAdapterInMemory.ts ---
-import { ItemData } from 'entities/item'
-import { itemDatas } from 'mock/inMemory'
-
-import { ItemAdapter } from '../adapterInterfaces'
-
-export const createItemAdapterInMemory = (): ItemAdapter => {
-  const items: ItemData[] = [...itemDatas]
-  const getById = (itemId: string) =>
-    Promise.resolve(items.find((item) => item.id === itemId))
-  const getByOrderId = (orderId: string) =>
-    Promise.resolve(items.filter((item) => item.orderId === orderId))
-  const getByOrderIds = (orderIds: string[]) =>
-    Promise.resolve(items.filter((item) => orderIds.includes(item.orderId)))
-  return {
-    getById,
-    getByOrderId,
-    getByOrderIds,
-  }
-}
-
-
---- File: api\adapters\database\inMemory\createOrderAdapterInMemoryForAccountId.spec.ts ---
-import { orderDatas } from 'mock/inMemory'
-
-import { createOrderAdapterInMemoryForAccountId } from './createOrderAdapterInMemoryForAccountId'
-
-let adapter: any
-
-describe('createOrderAdapterInMemoryForAccountId', () => {
-  describe('for existing account', () => {
-    beforeAll(() => {
-      adapter = createOrderAdapterInMemoryForAccountId('account0')
-    })
-    describe('getById', () => {
-      it('should return an order for exiting order id', async () => {
-        const result = await adapter.getById('order0')
-        expect(result).toEqual(orderDatas[0])
-      })
-      it('should return undefined for inexistant id', async () => {
-        const result = await adapter.getById('inexistant')
-        expect(result).toEqual(undefined)
-      })
-      it('should return undefined for order id from unrelated account', async () => {
-        const result = await adapter.getById('order3')
-        expect(result).toEqual(undefined)
-      })
-    })
-    describe('getAll', () => {
-      it('return all orders for this account', async () => {
-        const result = await adapter.getAll()
-        expect(result).toEqual(orderDatas.slice(0, 2))
-      })
-    })
-  })
-  describe('for a non existing account', () => {
-    beforeAll(() => {
-      adapter = createOrderAdapterInMemoryForAccountId('account99')
-    })
-    describe('getById', () => {
-      it('should return undefined for exsiting order id', async () => {
-        const result = await adapter.getById('order0')
-        expect(result).toEqual(undefined)
-      })
-    })
-    describe('getAll', () => {
-      it('return empty array', async () => {
-        const result = await adapter.getAll()
-        expect(result).toEqual([])
-      })
-    })
-  })
-})
-
-
---- File: api\adapters\database\inMemory\createOrderAdapterInMemoryForAccountId.ts ---
-import { OrderData } from 'entities/order'
-
-import { inMemory } from '../../../../mock/inMemory'
-import { OrderAdapter } from '../adapterInterfaces'
-
-export const createOrderAdapterInMemoryForAccountId = (
-  accountId: string
-): OrderAdapter => {
-  const orders: OrderData[] = [...inMemory.order]
-  const getAll = (): Promise<OrderData[]> =>
-    Promise.resolve(
-      orders.filter(
-        (order) =>
-          order.clientId === accountId || order.supplierId === accountId
-      )
-    )
-  const getById = async (orderId: string): Promise<OrderData | undefined> =>
-    Promise.resolve((await getAll()).find((order) => order.id === orderId))
-  return {
-    getAll,
-    getById,
-  }
-}
-
-
---- File: api\adapters\database\jsonServer\createItemAdapterJsonServer.spec.ts ---
-import { inMemory } from 'mock/inMemory'
-
-import { createItemAdapterJsonServer } from './createItemAdapterJsonServer'
-
-describe('createItemAdapterJsonServer (real Axios)', () => {
-  describe('getById', () => {
-    it('should return itemData for item id', async () => {
-      const itemAdapter = createItemAdapterJsonServer()
-      const itemData = await itemAdapter.getById('item2')
-      expect(itemData).toEqual(inMemory.item[2])
-    })
-    it('should return undefined for unknown item id', async () => {
-      const itemAdapter = createItemAdapterJsonServer()
-      const itemData = await itemAdapter.getById('unknown')
-      expect(itemData).toBeUndefined()
-    })
-  })
-  describe('getByOrderId', () => {
-    it('should return itemDatas for order id', async () => {
-      const itemAdapter = createItemAdapterJsonServer()
-      const itemDatas = await itemAdapter.getByOrderId('order1')
-      expect(itemDatas).toEqual([inMemory.item[2], inMemory.item[3]])
-    })
-    it('should return [] for unknown order id', async () => {
-      const itemAdapter = createItemAdapterJsonServer()
-      const itemDatas = await itemAdapter.getByOrderId('unknown')
-      expect(itemDatas).toEqual([])
-    })
-  })
-  describe('getByOrderIds', () => {
-    it('should return itemDatas for order ids', async () => {
-      const itemAdapter = createItemAdapterJsonServer()
-      const itemDatas = await itemAdapter.getByOrderIds(['order1', 'order2'])
-      expect(itemDatas).toEqual([
-        inMemory.item[2],
-        inMemory.item[3],
-        inMemory.item[4],
-        inMemory.item[5],
-      ])
-    })
-    it('should return [] for unknown order ids', async () => {
-      const itemAdapter = createItemAdapterJsonServer()
-      const itemDatas = await itemAdapter.getByOrderIds(['unknown'])
-      expect(itemDatas).toEqual([])
-    })
-  })
-})
-
-
---- File: api\adapters\database\jsonServer\createItemAdapterJsonServer.ts ---
-// src/adapters/database/Adapters/jsonServer/item.jsonServer.Adapter.ts
-import { ItemData } from 'entities/item'
-
-import { ItemAdapter } from '../adapterInterfaces'
-import axios from './myAxios'
-
-export const createItemAdapterJsonServer1 = (): ItemAdapter => {
-  const getById = async (id: string): Promise<ItemData | undefined> => {
-    const result = await axios.get<ItemData>(`/item/${id}`)
-    return result
-  }
-  const getByOrderId = async (orderId: string): Promise<ItemData[]> => {
-    const result =
-      (await axios.get<ItemData[]>(`/item?orderId=${orderId}`)) ?? []
-    return result
-  }
-  const getByOrderIds = async (orderIds: string[]): Promise<ItemData[]> => {
-    const result =
-      (await axios.get<ItemData[]>(
-        `/item?orderId=${orderIds.join('&orderId=')}`
-      )) ?? []
-    return result
-  }
-  return {
-    getById,
-    getByOrderId,
-    getByOrderIds,
-  }
-}
-
-export const createItemAdapterJsonServer2 = (): ItemAdapter => {
-  const getById = (id: string): Promise<ItemData | undefined> =>
-    axios.get<ItemData>(`/item/${id}`)
-
-  const getByOrderId = async (orderId: string): Promise<ItemData[]> =>
-    axios
-      .get<ItemData[]>(`/item?orderId=${orderId}`)
-      .then((response) => response ?? [])
-
-  const getByOrderIds = async (orderIds: string[]): Promise<ItemData[]> =>
-    axios
-      .get<ItemData[]>(`/item?orderId=${orderIds.join('&orderId=')}`)
-      .then((response) => response ?? [])
-
-  return {
-    getById,
-    getByOrderId,
-    getByOrderIds,
-  }
-}
-
-export { createItemAdapterJsonServer2 as createItemAdapterJsonServer }
-
-
---- File: api\adapters\database\jsonServer\createOrderAdapterJsonServer.spec.ts ---
-import { inMemory } from 'mock/inMemory'
-
-import { createOrderAdapterJsonServer } from './createOrderAdapterJsonServer'
-
-let accountId: string
-
-describe('createOrderAdapterJsonServer (real Axios)', () => {
-  describe('for existing accountId', () => {
-    beforeAll(() => {
-      accountId = 'account0'
-    })
-    describe('getById', () => {
-      it('should return order for order id for current account', async () => {
-        const orderAdapter = createOrderAdapterJsonServer(accountId)
-        const orderData = await orderAdapter.getById('order1')
-        expect(orderData).toEqual(inMemory.order[1])
-      })
-      it('should return undefined for order id from other account', async () => {
-        const orderAdapter = createOrderAdapterJsonServer(accountId)
-        const orderData = await orderAdapter.getById('order2')
-        expect(orderData).toEqual(undefined)
-      })
-      it('should return undefined for unknown order id', async () => {
-        const orderAdapter = createOrderAdapterJsonServer(accountId)
-        const orderData = await orderAdapter.getById('unknown')
-        expect(orderData).toBeUndefined()
-      })
-    })
-    describe('getAll', () => {
-      it('should return all orderData for accountId', async () => {
-        console.log('accountId', `/order?supplierId=${accountId}`)
-        const orderAdapter = createOrderAdapterJsonServer(accountId)
-        const orderData = await orderAdapter.getAll()
-        expect(orderData).toEqual(inMemory.order.slice(0, 2))
-      })
-    })
-  })
-  describe('for inexistant accountId', () => {
-    beforeAll(() => {
-      accountId = 'account99'
-    })
-    describe('getById', () => {
-      it('should return orderData for order id', async () => {
-        const orderAdapter = createOrderAdapterJsonServer(accountId)
-        const orderData = await orderAdapter.getById('order2')
-        expect(orderData).toBeUndefined()
-      })
-    })
-  })
-})
-
-
---- File: api\adapters\database\jsonServer\createOrderAdapterJsonServer.ts ---
-import { OrderData } from 'entities/order'
-
-import { OrderAdapter } from '../adapterInterfaces'
-import axios from './myAxios'
-
-export const createOrderAdapterJsonServer = (
-  accountId: string
-): OrderAdapter => {
-  const getAll = async (): Promise<OrderData[]> => {
-    const clientOrders =
-      (await axios.get<OrderData[]>(`/order?clientId=${accountId}`)) ?? []
-    const supplierOrders =
-      (await axios.get<OrderData[]>(`/order?supplierId=${accountId}`)) ?? []
-    // console.log('clientOrders', clientOrders)
-    // console.log('supplierOrders', supplierOrders)
-    return [...clientOrders, ...supplierOrders]
-  }
-  const getById = async (orderId: string): Promise<OrderData | undefined> => {
-    const result = (await getAll()) ?? []
-    return result.find((order) => order.id === orderId)
-  }
-  return {
-    getAll,
-    getById,
-  }
-}
-
-
---- File: api\adapters\database\jsonServer\myAxios.ts ---
-// src/adapters/database/Adapters/jsonServer/item.jsonServer.Adapter.ts
-import axios, { AxiosResponse, Method } from 'axios'
-export const myAxios = axios.create({
-  baseURL: 'http://localhost:3057/',
-  timeout: 1000,
-})
-
-export const handleRequest =
-  (httpMethod: Method) =>
-  async <Item>(url: string, data?: any): Promise<Item | undefined> => {
-    try {
-      const response: AxiosResponse = await myAxios.request({
-        url,
-        method: httpMethod,
-        data,
-      })
-      return response.data
-    } catch (error) {
-      // console.error(error)
-      return undefined
-    }
-  }
-
-export default {
-  get: handleRequest('get'),
-  post: handleRequest('post'),
-  delete: handleRequest('delete'),
-  put: handleRequest('put'),
-}
-
-
---- File: api\core\entities\item.ts ---
-export interface ItemData {
-  id: string
-  orderId: string
-  name: string
-  quantity: number
-  unit: string
-  unitPriceExclTax: number
-  taxRate: number
-}
-
-export interface Item extends ItemData {
-  unitPriceInclTax: number
-  amountExclTax: number
-  amountInclTax: number
-  taxAmount: number
-}
-
-
---- File: api\core\entities\order.ts ---
-import { Item } from './item'
-
-// src / core / entities / order.ts
-export interface OrderData {
-  id: string
-  clientId: string
-  supplierId: string
-  name?: string
-  // Questions: Should we store it in the database ?
-  principal?: number // principal is the amount including tax.
-}
-
-export interface Order extends OrderData {
-  items: Item[]
-  amountExclTax: number
-  amountInclTax: number
-  taxAmount: number
-  averageTaxRate: number
-}
-
-
---- File: api\core\gateways\gatewayInterfaces.ts ---
-import { Item, ItemData } from 'entities/item'
-import { Order, OrderData } from 'entities/order'
-
-export interface ItemGateway {
-  getAllData: () => ItemData[]
-  getByIdData: (itemId: string) => ItemData | undefined
-  getByOrderIdData: (orderId: string) => ItemData[]
-  getAll: () => Item[]
-  getById: (itemId: string) => Item | undefined
-  getByOrderId: (orderId: string) => Item[]
-}
-
-export interface OrderGateway {
-  getAllData: () => OrderData[]
-  getByIdData: (orderId: string) => OrderData | undefined
-  getAll: () => Order[]
-  getById: (orderId: string) => Order | undefined
-}
-
-
---- File: api\core\gateways\itemGateway.spec.ts ---
-import { createItemGateway } from 'gateways/itemGateway'
-import { itemDatas, items } from 'mock/inMemory'
-
-import { createItemAdapterInMemory } from 'src/adapters/database/inMemory/createItemAdapterInMemory'
-
-let itemAdapter: any
-let itemGateway: any
-describe('itemGateway', () => {
-  beforeAll(() => {
-    itemAdapter = createItemAdapterInMemory()
-    itemGateway = createItemGateway(itemAdapter)
-  })
-
-  describe('getByIdData', () => {
-    it('should return the item with raw data only', async () => {
-      const result = await itemGateway.getByIdData('item0')
-      expect(result).toEqual(itemDatas[0])
-    })
-  })
-
-  describe('getByOrderIdData', () => {
-    it('should return the items with raw data for the given order id', async () => {
-      const result = await itemGateway.getByOrderIdData('order0')
-      expect(result).toEqual(itemDatas.slice(0, 2))
-    })
-  })
-
-  describe('getById', () => {
-    it('should return the item with calculations', async () => {
-      const result = await itemGateway.getById('item0')
-      expect(result).toEqual(items[0])
-    })
-  })
-
-  describe('getByOrderId', () => {
-    it('should return the items with calculations for the given order id', async () => {
-      const result = await itemGateway.getByOrderId('order0')
-      expect(result).toEqual(items.slice(0, 2))
-    })
-  })
-})
-
-
---- File: api\core\gateways\itemGateway.ts ---
-import { Item, ItemData } from 'entities/item'
-import { ItemAdapter } from 'src/adapters/database/adapterInterfaces'
-import { round6 } from 'utils/round'
-
-export const createItemGateway = (adapter: ItemAdapter) => {
-  const getByIdData = async (itemId: string): Promise<ItemData | undefined> =>
-    await adapter.getById(itemId)
-  const getByOrderIdData = async (
-    orderId: string
-  ): Promise<ItemData[] | undefined> => await adapter.getByOrderId(orderId)
-  const getById = async (itemId: string): Promise<Item | undefined> => {
-    const item = await adapter.getById(itemId)
-    return item !== undefined ? calculateItem(item) : undefined
-  }
-  const getByOrderId = async (orderId: string): Promise<Item[] | undefined> =>
-    ((await adapter.getByOrderId(orderId)) ?? []).map(calculateItem)
-
-  return {
-    getByIdData,
-    getByOrderIdData,
-    getById,
-    getByOrderId,
-  }
-}
-
-function calculateItem(item: ItemData): Item {
-  return {
-    ...item,
-    unitPriceInclTax: round6(item.unitPriceExclTax * (1 + item.taxRate)),
-    amountExclTax: round6(item.quantity * item.unitPriceExclTax),
-    taxAmount: round6(item.quantity * item.unitPriceExclTax * item.taxRate),
-    amountInclTax: round6(
-      item.quantity * item.unitPriceExclTax * (1 + item.taxRate)
-    ),
-  }
-}
-
-
---- File: api\core\gateways\orderGateway.spec.ts ---
-import { createOrderGateway } from 'gateways/orderGateway'
-import { orderDatas, orders } from 'mock/inMemory'
-
-import {
-  ItemAdapter,
-  OrderAdapter,
-} from 'src/adapters/database/adapterInterfaces'
-import { createItemAdapter } from 'src/adapters/database/index'
-import { createOrderAdapter } from 'src/adapters/database/index'
-
-import { OrderGateway } from './gatewayInterfaces'
-
-let orderAdapter: OrderAdapter
-let itemAdapter: ItemAdapter
-let orderGateway: OrderGateway
-
-describe('orderGateway', () => {
-  describe('for existing account', () => {
-    beforeEach(() => {
-      orderAdapter = createOrderAdapter('account0')
-      itemAdapter = createItemAdapter()
-      orderGateway = createOrderGateway(orderAdapter, itemAdapter)
-    })
-    it('getByIdData should return the order with raw data only', async () => {
-      const result = await orderGateway.getByIdData('order0')
-      expect(result).toEqual(orderDatas[0])
-    })
-    it('getAllData should return all orders with items and calculations', async () => {
-      const result = await orderGateway.getAllData()
-      expect(result).toEqual(orderDatas.slice(0, 2))
-    })
-    it('getById should return the order with items and calculations', async () => {
-      const result = await orderGateway.getById('order0')
-      expect(result).toEqual(orders[0])
-    })
-    it('getAll should return all orders for this account', async () => {
-      const result = await orderGateway.getAll()
-      expect(result).toEqual(orders.slice(0, 2))
-    })
-  })
-
-  describe('for inexisting account', () => {
-    beforeEach(() => {
-      orderAdapter = createOrderAdapter('account99')
-      itemAdapter = createItemAdapter()
-      orderGateway = createOrderGateway(orderAdapter, itemAdapter)
-    })
-    it('getByIdData should return undefined', async () => {
-      const result = await orderGateway.getByIdData('order0')
-      expect(result).toBeUndefined()
-    })
-    it('getAllData should return []', async () => {
-      const result = await orderGateway.getAllData()
-      expect(result).toEqual([])
-    })
-    it('getById should return undefined', async () => {
-      const result = await orderGateway.getById('order0')
-      expect(result).toBeUndefined()
-    })
-    it('getAll should return all []', async () => {
-      const result = await orderGateway.getAll()
-      expect(result).toEqual([])
-    })
-  })
-})
-
-
---- File: api\core\gateways\orderGateway.ts ---
-import { ItemAdapter, OrderAdapter } from 'adapters/database/adapterInterfaces'
-import { Order, OrderData } from 'entities/order'
-import { createItemGateway } from 'gateways/itemGateway'
-import { round6 } from 'utils/round'
-
-import { OrderGateway } from './gatewayInterfaces'
-
-export const createOrderGateway = (
-  orderAdapter: OrderAdapter,
-  itemAdapter: ItemAdapter
-): OrderGateway => {
-  const itemGateway = createItemGateway(itemAdapter)
-  const addItemsAndCalculate = async (order: OrderData): Promise<Order> => {
-    const items = (await itemGateway.getByOrderId(order.id)) ?? []
-
-    const amountExclTax = round6(
-      items.reduce((sum, item) => sum + item.amountExclTax, 0)
-    )
-    const taxAmount = round6(
-      items.reduce((sum, item) => sum + item.amountExclTax * item.taxRate, 0)
-    )
-    const amountInclTax = round6(amountExclTax + taxAmount)
-    const averageTaxRate = amountExclTax ? round6(taxAmount / amountExclTax) : 0
-
-    return {
-      name: order.name ? order.name : '',
-      ...order,
-      items: items,
-      amountExclTax,
-      amountInclTax,
-      taxAmount,
-      averageTaxRate,
-      principal: amountInclTax,
-    }
-  }
-  const getAllData = async (): Promise<OrderData[]> =>
-    await orderAdapter.getAll()
-  const getByIdData = async (orderId: string): Promise<OrderData | undefined> =>
-    await orderAdapter.getById(orderId)
-  const getAll = async (): Promise<Order[]> => {
-    const orderDatas = await orderAdapter.getAll()
-    const orders = await Promise.all(orderDatas.map(addItemsAndCalculate))
-    return orders
-  }
-
-  const getById = async (orderId: string): Promise<Order | undefined> => {
-    const order = await orderAdapter.getById(orderId)
-    if (order) {
-      return addItemsAndCalculate(order)
-    }
-    return undefined
-  }
-  return {
-    getAllData,
-    getByIdData,
-    getAll,
-    getById,
-  }
-}
-
-
---- File: api\core\usecases\getAllAccounts.js ---
-import axios from 'axios'
-
-const DB_URL = 'http://localhost:3057/'
-export default async () => {
-  const accounts = await axios()
-}
-
-
---- File: api\core\usecases\getAllOrdersForAccountId.spec.ts ---
-import { orders } from 'mock/inMemory'
-
-import { getAllOrdersForAccountId } from './getAllOrdersForAccountId'
-
-describe('getAllOrdersForAccountId', () => {
-  it.only('should return all orders for an existing account ID', async () => {
-    const result = await getAllOrdersForAccountId('account0')
-    expect(result).toEqual(orders.slice(0, 2))
-  })
-
-  it.only('should return empty array for inexistant id', async () => {
-    const result = await getAllOrdersForAccountId('account99')
-    expect(result).toEqual([])
-  })
-})
-
-
---- File: api\core\usecases\getAllOrdersForAccountId.ts ---
-import { createItemAdapter, createOrderAdapter } from 'adapters/database/index'
-import { config } from 'dotenv'
-import { Order } from 'entities/order'
-import { createOrderGateway } from 'gateways/orderGateway'
-config() // load variables from .env into process.env
-
-export const getAllOrdersForAccountId = async (
-  accountId: string
-): Promise<Order[]> => {
-  console.log(
-    'Core : getAllOrdersForAccountId → process.env.STORAGE_TYPE',
-    process.env.STORAGE_TYPE
-  )
-  const orderGateway = createOrderGateway(
-    createOrderAdapter(accountId),
-    createItemAdapter()
-  )
-  const orders = await orderGateway.getAll()
-  return orders
-}
-
-
---- File: api\server\package.json ---
-{
-  "type": "module",
-  "scripts": {
-    "start": "tsx src/index.ts",
-  },
-  "dependencies": {
-    "@hono/node-server": "^1.2.0",
-    "hono": "^3.7.2"
-  },
-  "devDependencies": {
-    "tsx": "^3.12.2"
-  }
-}
-
---- File: api\server\src\index.ts ---
-import { serve } from '@hono/node-server'
-// import { getAllOrdersForAccountId } from 'core/usecases/getAllOrdersForAccountId'
-import { config } from 'dotenv'
-import { Hono } from 'hono'
-import { cors } from 'hono/cors'
-config() // load variables from .env into process.env
-
-const app = new Hono()
-app.use('/order/:accountId', cors())
-app.use('/db/:selectedDb', cors())
-app.use(
-  '/order/:accountId',
-  cors({
-    origin: '*',
-    allowHeaders: ['Content-Type', 'Authorization', 'X-Custom-Header', 'Upgrade-Insecure-Requests'],
-    allowMethods: ['POST', 'GET', 'OPTIONS'],
-    exposeHeaders: ['Content-Length'],
-    maxAge: 600,
-    credentials: true
-  })
-)
-
-// ROUTES
-// app.post('/db/:selectedDb', async (c) => {
-//   const selectedDb: string = c.req.param('selectedDb')
-//   console.log('req path', c.req.path)
-//   console.log('Hono: POST Request → selectedDb', selectedDb)
-//   process.env.STORAGE_TYPE = selectedDb
-//   console.log('Hono: process.env.STORAGE_TYPE', process.env.STORAGE_TYPE)
-//   return c.text(selectedDb)
-// })
-//
-// app.get('/order/:accountId', async (c) => {
-//   const accountId = c.req.param('accountId')
-//   console.log('req path', c.req.path)
-//   console.log('Hono: process.env.STORAGE_TYPE', process.env.STORAGE_TYPE)
-//   const orders = await getAllOrdersForAccountId(accountId)
-//   // console.log('orders', JSON.stringify(orders, null, 2))
-//   return c.json(orders)
-// })
-
-app.get('/fab', (c) => c.text('Hello Fabrizio!'))
-app.get('/', (c) => c.text('Hello Hono Fab!'))
-serve(app)
-
-
---- File: api\server\tsconfig.json ---
-{
-  "compilerOptions": {
-    "target": "ESNext",
-    "useDefineForClassFields": true,
-    "module": "ESNext",
-    "lib": ["ESNext", "DOM"],
-    "moduleResolution": "node",
-    "strict": true,
-    "resolveJsonModule": true,
-    "isolatedModules": true,
-    "esModuleInterop": true,
-    "noEmit": true,
-    "noUnusedLocals": true,
-    "noUnusedParameters": true,
-    "noImplicitReturns": true,
-    "skipLibCheck": true,
-    "types": ["vitest/importMeta", "vitest/globals"],
-    "baseUrl": ".",
-    "paths": {
-      "src/*": ["./src/*", "./src"],
-      "core/*": ["./src/core/*", "./src/core"],
-      "entities/*": ["./src/core/entities/*", "./src/core/entities"],
-      "usecases/*": ["./src/core/usecases/*", "./src/core/usecases"],
-      "gateways/*": ["./src/core/gateways/*", "./src/core/gateways"],
-      "adapters/*": ["./src/adapters/*", "./src/adapters"],
-      "utils/*": ["./src/utils/*", "./src/utils"],
-      "mock/*": ["./mock/*", "./mock"]
-    }
-  },
-  "include": ["src/**/*", "mock/**/*"],
-  "ts-node": {
-    "esm": true,
-    "experimentalSpecifierResolution": "node"
-  }
-}
-
-
---- File: api\utils\add.test.ts ---
-import add from './add'
-
-describe('sample add test suite', () => {
-  it('should add two numbers', () => {
-    const assertion = add(1, 2)
-    const result = 3
-    expect(assertion).toEqual(result)
-  })
-})
-
-
---- File: api\utils\add.ts ---
-export default (x: number, y: number): number => x + y
-
-
---- File: api\utils\round.ts ---
-export const round6 = (value: number): number => {
-  return value ? Math.round(value * 1000000) / 1000000 : 0
 }
 
 
@@ -1026,39 +90,635 @@ export const round6 = (value: number): number => {
 </template>
 
 
---- File: app\assets\css\tailwind.css ---
-/* explain what each line does */
-@import 'tailwindcss/base'; /* imports the base styles */
-@import 'tailwindcss/components'; /* imports the component styles */
-@import 'tailwindcss/utilities'; /* imports the utility styles */
+--- File: app\components\AccountMenu.vue ---
+<template>
+  <Menu as="div" class="relative ml-4 inline-block w-56">
+    <div>
+      <MenuButton class="w-full rounded-md ring-1 ring-inset ring-white hover:bg-gray-100">
+        <AccountMiniCard :account="activeAccount" />
+        <!-- <ChevronDownIcon class="-mr-1 h-5 w-5 text-gray-400" aria-hidden="true" /> -->
+      </MenuButton>
+    </div>
 
-body {
-  font-family: 'Open Sans', sans-serif;
-}
+    <transition
+      enter-active-class="transition ease-out duration-100"
+      enter-from-class="transform opacity-0 scale-95"
+      enter-to-class="transform opacity-100 scale-100"
+      leave-active-class="transition ease-in duration-75"
+      leave-from-class="transform opacity-100 scale-100"
+      leave-to-class="transform opacity-0 scale-95"
+    >
+      <MenuItems
+        class="absolute right-0 z-10 mt-2 w-56 origin-top-right divide-y divide-gray-100 rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none"
+      >
+        <AccountSelector />
+        <div class="py-1">
+          <MenuItem v-slot="{ active }">
+            <a
+              href="#"
+              :class="[
+                active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
+                'group flex items-center px-4 py-2 text-sm'
+              ]"
+            >
+              <PencilSquareIcon
+                class="mr-3 h-5 w-5 text-gray-400 group-hover:text-gray-500"
+                aria-hidden="true"
+              />
+              Edit
+            </a>
+          </MenuItem>
+          <MenuItem v-slot="{ active }">
+            <a
+              href="#"
+              :class="[
+                active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
+                'group flex items-center px-4 py-2 text-sm'
+              ]"
+            >
+              <DocumentDuplicateIcon
+                class="mr-3 h-5 w-5 text-gray-400 group-hover:text-gray-500"
+                aria-hidden="true"
+              />
+              Duplicate
+            </a>
+          </MenuItem>
+        </div>
+        <div class="py-1">
+          <MenuItem v-slot="{ active }">
+            <a
+              href="#"
+              :class="[
+                active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
+                'group flex items-center px-4 py-2 text-sm'
+              ]"
+            >
+              <ArchiveBoxIcon
+                class="mr-3 h-5 w-5 text-gray-400 group-hover:text-gray-500"
+                aria-hidden="true"
+              />
+              Archive
+            </a>
+          </MenuItem>
+          <MenuItem v-slot="{ active }">
+            <a
+              href="#"
+              :class="[
+                active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
+                'group flex items-center px-4 py-2 text-sm'
+              ]"
+            >
+              <ArrowRightCircleIcon
+                class="mr-3 h-5 w-5 text-gray-400 group-hover:text-gray-500"
+                aria-hidden="true"
+              />
+              Move
+            </a>
+          </MenuItem>
+        </div>
+        <div class="py-1">
+          <MenuItem v-slot="{ active }">
+            <a
+              href="#"
+              :class="[
+                active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
+                'group flex items-center px-4 py-2 text-sm'
+              ]"
+            >
+              <UserPlusIcon
+                class="mr-3 h-5 w-5 text-gray-400 group-hover:text-gray-500"
+                aria-hidden="true"
+              />
+              Share
+            </a>
+          </MenuItem>
+          <MenuItem v-slot="{ active }">
+            <a
+              href="#"
+              :class="[
+                active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
+                'group flex items-center px-4 py-2 text-sm'
+              ]"
+            >
+              <HeartIcon
+                class="mr-3 h-5 w-5 text-gray-400 group-hover:text-gray-500"
+                aria-hidden="true"
+              />
+              Add to favorites
+            </a>
+          </MenuItem>
+        </div>
+        <div class="py-1">
+          <MenuItem v-slot="{ active }">
+            <a
+              href="#"
+              :class="[
+                active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
+                'group flex items-center px-4 py-2 text-sm'
+              ]"
+            >
+              <TrashIcon
+                class="mr-3 h-5 w-5 text-gray-400 group-hover:text-gray-500"
+                aria-hidden="true"
+              />
+              Delete
+            </a>
+          </MenuItem>
+        </div>
+      </MenuItems>
+    </transition>
+  </Menu>
+</template>
 
-h1 {
-  @apply mt-3 text-6xl font-bold;
-}
+<script setup>
+  import { Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/vue'
+  import {
+    ArchiveBoxIcon,
+    ArrowRightCircleIcon,
+    // ChevronDownIcon,
+    DocumentDuplicateIcon,
+    HeartIcon,
+    PencilSquareIcon,
+    TrashIcon,
+    UserPlusIcon
+  } from '@heroicons/vue/20/solid'
 
-h2 {
-  @apply mt-3 text-4xl font-semibold;
-}
+  const activeAccount = useActiveAccount()
+  console.log('AccountMenu -> activeAccount =', activeAccount.value)
+</script>
 
-h3 {
-  @apply mt-3 text-2xl font-semibold;
-}
+<style>
+  button {
+    @apply text-left;
+  }
+</style>
 
-html {
-  @apply h-full bg-white;
-}
 
-body {
-  @apply h-full;
-}
+--- File: app\components\AccountMiniCard.client.vue ---
+<template>
+  <div class="flex py-2">
+    <img id="img1" class="ml-2 h-10 w-10 rounded-full" :src="account.icon" alt="" />
+    <div class="ml-3">
+      <p class="text font-medium text-gray-900">{{ account.name }}</p>
+      <p class="text-sm text-gray-500">{{ account.type }}</p>
+    </div>
+  </div>
+</template>
 
-main {
-  @apply m-5 h-full;
-}
+<script setup>
+  defineProps(['account'])
+</script>
+
+
+--- File: app\components\AccountSelector.vue ---
+<template>
+  <!-- <ul class="m-2 w-60 divide-y divide-gray-200 rounded border"> -->
+  <ul class="divide-y divide-gray-200">
+    <li
+      v-for="account in accounts"
+      :key="account.id"
+      @click="selectAccount(account)"
+      class="cursor-pointer hover:bg-gray-100"
+    >
+      <AccountMiniCard :account="account" />
+    </li>
+  </ul>
+</template>
+
+<script setup>
+  const accounts = await getAccounts()
+  const activeAccount = useActiveAccount()
+  const emit = defineEmits(['closeAccountSelector'])
+  const selectAccount = (account) => {
+    console.log('activeAccountId =', account.name, ', #', account.id)
+    activeAccount.value = account
+    emit('closeAccountSelector')
+  }
+</script>
+
+
+--- File: app\components\MiniAccountSelector.vue ---
+<template>
+  <div style="display: inline-block; margin-right: 30px">
+    Select account:
+    <select v-model="selectedAccountId">
+      <option
+        v-for="accountId in accountIds"
+        :key="accountId.id"
+        :value="accountId.id"
+        :name="accountId.name"
+      >
+        {{ accountId.name }}
+      </option>
+    </select>
+  </div>
+</template>
+
+<script setup>
+  let selectedAccountId = ref('account0')
+  const accountIds = [
+    { name: 'Account 0', id: 'account0' },
+    { name: 'Account 1', id: 'account1' },
+    { name: 'Account 2', id: 'account2' },
+    { name: 'Account 3', id: 'account3' },
+    { name: 'Account 4', id: 'account4' },
+    { name: 'Account 5', id: 'account5' }
+  ]
+</script>
+
+
+--- File: app\components\MiniNavBar.vue ---
+<template lang="pug">
+nav.pb-1.border-b.border-gray-400
+  h2.inline-block.mr-12.mb-2 Clean Architecture Mini Demo - Nuxt app
+  MiniAccountSelector
+  a(href="/" class="mr-1 ml-1 p-1 no-underline text-blue-500 cursor-pointer") Vue App
+  a(href="/order" class="mr-1 ml-1 p-1 no-underline text-blue-500 cursor-pointer") Orders
+  a(href="/order-data" class="mr-1 ml-1 p-1 no-underline text-blue-500 cursor-pointer") Order datas
+  a(href="/" class="mr-1 ml-1 p-1 no-underline text-blue-500 cursor-pointer") Items
+  a(href="/" class="mr-1 ml-1 p-1 no-underline text-blue-500 cursor-pointer") ItemDatas
+</template>
+
+
+--- File: app\components\MiniOrderDetails.vue ---
+<template>
+  <h3>Order: {{ order.name }}</h3>
+  <ul>
+    <li>Order ID: {{ order.id }}</li>
+    <li>Client ID: {{ order.clientId }}</li>
+    <li>Supplier ID: {{ order.supplierId }}</li>
+    <li>Amount excluding tax: {{ order.amountExclTax }}</li>
+    <li>Tax amount: {{ order.taxAmount }}</li>
+    <li>Amount including tax: {{ order.amountInclTax }}</li>
+    <li>Average tax rate: {{ order.averageTaxRate }}</li>
+    <li>Principal: {{ order.principal }}</li>
+  </ul>
+  <h4 style="text-decoration: underline">Items:</h4>
+  <ul>
+    <li v-for="item in order.items" :key="item.id">
+      <h5>Item: {{ item.name }}</h5>
+      <ul>
+        <li>Item ID: {{ item.id }}</li>
+        <li>Order ID: {{ item.orderId }}</li>
+        <li>Quantity: {{ item.quantity }}</li>
+        <li>Unit: {{ item.unit }}</li>
+        <li>Unit price: {{ item.unitPriceExclTax }}</li>
+        <li>Tax rate: {{ item.taxRate * 100 }}%</li>
+        <li>Unit price including tax: {{ item.unitPriceInclTax }}</li>
+        <li>Amount excluding tax: {{ item.amountExclTax }}</li>
+        <li>Tax amount: {{ item.taxAmount }}</li>
+        <li>Amount including tax: {{ item.amountInclTax }}</li>
+      </ul>
+    </li>
+  </ul>
+</template>
+
+<script setup lang="ts">
+  defineProps({
+    order: {
+      type: Object,
+      required: true
+    }
+  })
+</script>
+
+
+--- File: app\components\MiniOrderList.vue ---
+<template>
+  <h2>Order Datas</h2>
+  <ul>
+    <li v-for="order in orders" :key="order.id">
+      <MiniOrderDetails :order="order" />
+      <pre>
+        {{ JSON.stringify(order, null, 2) }}
+      </pre>
+    </li>
+  </ul>
+</template>
+
+<script setup>
+  const orders = ref(null)
+  const bobo = async () => {
+    const plop = await fetchOrders(sharedState.selectedAccountId)
+    // const plop = await fetchOrders('account0')
+    console.log('orders  from bobo', plop)
+    console.log('plop type', typeof plop)
+    console.log('sharedState in bobo', sharedState.selectedAccountId)
+    orders.value = plop
+  }
+  onMounted(async () => {
+    await bobo()
+  })
+
+  // Watch for changes in selectedAccountId
+  watch(() => sharedState.selectedAccountId, bobo)
+</script>
+
+
+--- File: app\components\NavBar.vue ---
+<template>
+  <Disclosure as="nav" class="bg-white shadow" v-slot="{ open }">
+    <!-- <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">    -->
+    <div class="mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex h-16 justify-between">
+        <div id="LeftSection" class="flex">
+          <div class="-ml-2 mr-2 flex items-center md:hidden">
+            <!-- Mobile menu button -->
+            <DisclosureButton
+              class="relative inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-100 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500"
+            >
+              <span class="absolute -inset-0.5" />
+              <span class="sr-only">Open main menu</span>
+              <Bars3Icon v-if="!open" class="block h-6 w-6" aria-hidden="true" />
+              <XMarkIcon v-else class="block h-6 w-6" aria-hidden="true" />
+            </DisclosureButton>
+          </div>
+          <div class="flex flex-shrink-0 items-center">
+            <nuxt-link to="/">
+              <img class="h-8 w-auto" src="/images/logos/flexup-logo.svg" alt="Your Company" />
+            </nuxt-link>
+          </div>
+          <div class="hidden md:ml-6 md:flex md:space-x-8">
+            <!-- Current: "border-indigo-500 text-gray-900", Default: "border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700" -->
+            <a
+              href="/mini"
+              class="inline-flex items-center border-b-2 border-indigo-500 px-1 pt-1 text-sm font-medium text-gray-900"
+              >Mini Demo</a
+            >
+            <a
+              href="/accounts"
+              class="inline-flex items-center border-b-2 border-indigo-500 px-1 pt-1 text-sm font-medium text-gray-900"
+              >Accounts</a
+            >
+            <NuxtLink
+              to="/playground"
+              class="inline-flex items-center border-b-2 border-transparent px-1 pt-1 text-sm font-medium text-gray-500 hover:border-gray-300 hover:text-gray-700"
+              >Playground</NuxtLink
+            >
+            <!-- <a
+              href="#"
+              class="inline-flex items-center border-b-2 border-indigo-500 px-1 pt-1 text-sm font-medium text-gray-900"
+              >Dashboard</a
+            >
+            <a
+              href="#"
+              class="inline-flex items-center border-b-2 border-transparent px-1 pt-1 text-sm font-medium text-gray-500 hover:border-gray-300 hover:text-gray-700"
+              >Team</a
+            >
+            <a
+              href="#"
+              class="inline-flex items-center border-b-2 border-transparent px-1 pt-1 text-sm font-medium text-gray-500 hover:border-gray-300 hover:text-gray-700"
+              >Projects</a
+            >
+            <a
+              href="#"
+              class="inline-flex items-center border-b-2 border-transparent px-1 pt-1 text-sm font-medium text-gray-500 hover:border-gray-300 hover:text-gray-700"
+              >Calendar</a
+            > -->
+          </div>
+        </div>
+        <div id="RightSection" class="flex items-center">
+          <!-- <Dropdown /> -->
+          <!-- <AddNew /> -->
+          <div class="hidden md:ml-4 md:flex md:flex-shrink-0 md:items-center">
+            <!-- <NotificationBell /> -->
+            <AccountMenu />
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <DisclosurePanel class="md:hidden">
+      <div class="space-y-1 pb-3 pt-2">
+        <!-- Current: "bg-indigo-50 border-indigo-500 text-indigo-700", Default: "border-transparent text-gray-500 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700" -->
+        <DisclosureButton
+          as="a"
+          href="#"
+          class="block border-l-4 border-indigo-500 bg-indigo-50 py-2 pl-3 pr-4 text-base font-medium text-indigo-700 sm:pl-5 sm:pr-6"
+          >Dashboard</DisclosureButton
+        >
+        <DisclosureButton
+          as="a"
+          href="#"
+          class="block border-l-4 border-transparent py-2 pl-3 pr-4 text-base font-medium text-gray-500 hover:border-gray-300 hover:bg-gray-50 hover:text-gray-700 sm:pl-5 sm:pr-6"
+          >Team</DisclosureButton
+        >
+        <DisclosureButton
+          as="a"
+          href="#"
+          class="block border-l-4 border-transparent py-2 pl-3 pr-4 text-base font-medium text-gray-500 hover:border-gray-300 hover:bg-gray-50 hover:text-gray-700 sm:pl-5 sm:pr-6"
+          >Projects</DisclosureButton
+        >
+        <DisclosureButton
+          as="a"
+          href="#"
+          class="block border-l-4 border-transparent py-2 pl-3 pr-4 text-base font-medium text-gray-500 hover:border-gray-300 hover:bg-gray-50 hover:text-gray-700 sm:pl-5 sm:pr-6"
+          >Calendar</DisclosureButton
+        >
+      </div>
+      <div class="border-t border-gray-200 pb-3 pt-4">
+        <div class="flex items-center px-4 sm:px-6">
+          <div class="flex-shrink-0">
+            <img
+              class="h-10 w-10 rounded-full"
+              src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
+              alt=""
+            />
+          </div>
+          <div class="ml-3">
+            <div class="text-base font-medium text-gray-800">Tom Cook</div>
+            <div class="text-sm font-medium text-gray-500">tom@example.com</div>
+          </div>
+          <button
+            type="button"
+            class="relative ml-auto flex-shrink-0 rounded-full bg-white p-1 text-gray-400 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
+          >
+            <span class="absolute -inset-1.5" />
+            <span class="sr-only">View notifications</span>
+            <BellIcon class="h-6 w-6" aria-hidden="true" />
+          </button>
+        </div>
+        <div class="mt-3 space-y-1">
+          <DisclosureButton
+            as="a"
+            href="#"
+            class="block px-4 py-2 text-base font-medium text-gray-500 hover:bg-gray-100 hover:text-gray-800 sm:px-6"
+            >Your Profile</DisclosureButton
+          >
+          <DisclosureButton
+            as="a"
+            href="#"
+            class="block px-4 py-2 text-base font-medium text-gray-500 hover:bg-gray-100 hover:text-gray-800 sm:px-6"
+            >Settings</DisclosureButton
+          >
+          <DisclosureButton
+            as="a"
+            href="#"
+            class="block px-4 py-2 text-base font-medium text-gray-500 hover:bg-gray-100 hover:text-gray-800 sm:px-6"
+            >Sign out</DisclosureButton
+          >
+        </div>
+      </div>
+    </DisclosurePanel>
+  </Disclosure>
+</template>
+
+<script setup>
+  import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/vue'
+  import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/vue/24/outline'
+</script>
+
+
+--- File: app\components\NotificationBell.vue ---
+<template>
+  <button
+    id="Bell"
+    type="button"
+    class="relative rounded-full bg-white p-1 text-gray-400 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
+  >
+    <span class="absolute -inset-1.5" />
+    <span class="sr-only">View notifications</span>
+    <BellIcon class="h-6 w-6" aria-hidden="true" />
+  </button>
+</template>
+
+<script setup>
+  import { BellIcon } from '@heroicons/vue/24/outline'
+</script>
+
+
+--- File: app\components\SelectDb.vue ---
+<template>
+  <select v-model="selectedDb" @change="onChange">
+    <option v-for="option in options" :value="option.value" :key="option.value">
+      {{ option.text }}
+    </option>
+  </select>
+</template>
+
+<script setup>
+  const options = ref([
+    { text: 'In Memory', value: 'inMemory' },
+    { text: 'JSON Server', value: 'jsonServer' }
+  ])
+  const selectedDb = ref(options.value[0].value)
+
+  const onChange = async () => {
+    const response = await selectDb(selectedDb.value)
+    console.log('response from onChange:', response)
+    console.log(
+      `IMPORTANT NOTE: changing the selectedDb in Vue will have no effect, because the Db source is in the process.env, and this cannot be changed from vue, in spite of all the console.logs .... You need to change the .env file and restart the server.`
+    )
+  }
+</script>
+
+
+--- File: app\composables\cars.json ---
+[
+  {
+    "id": 1,
+    "year": 2018,
+    "name": "Range Rover Sport",
+    "price": 84777,
+    "city": "Toronto",
+    "make": "Land Rover",
+    "image": "https://www.carhelpcanada.com/wp-content/uploads/2019/12/2020-Range-Rover-Evoque-2.jpg",
+    "seats": 5,
+    "miles": "14,666",
+    "features": ["No Accidents", "Low KM", "Vehicle Detailed", "Leather Interior"],
+    "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis odio et laboriosam!"
+  },
+  {
+    "id": 2,
+    "year": 2021,
+    "name": "Rolls Royce Ghost",
+    "price": 455000,
+    "image": "https://robbreport.com/wp-content/uploads/2021/03/1-5.jpg?w=1000",
+    "seats": 5,
+    "city": "Miami",
+    "make": "Rolls-Royce",
+    "miles": "53,666",
+    "features": ["No Accidents", "Low KM", "Vehicle Detailed", "Leather Interior"],
+    "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis odio et laboriosam! Numquam ut rem, blanditiis est rerum tenetur maxime delectus"
+  },
+  {
+    "id": 4,
+    "year": 2020,
+    "name": "Porsche Taycan",
+    "price": 180434,
+    "image": "https://www.topgear.com/sites/default/files/cars-car/carousel/2021/02/pcgb20_1441_fine.jpg",
+    "seats": 5,
+    "make": "Porsche",
+    "city": "Toronto",
+    "miles": "0",
+    "features": ["No Accidents", "Low KM", "Vehicle Detailed", "Leather Interior"],
+    "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis odio et"
+  },
+  {
+    "id": 5,
+    "name": "Land Rover Luxury",
+    "price": 200434,
+    "image": "https://www.motortrend.com/uploads/2022/04/2022-Range-Rover-First-Edition-P530-SWB-on-road-1.jpg?fit=around%7C875:492",
+    "seats": 5,
+    "make": "Land Rover",
+    "city": "Toronto",
+    "miles": "0",
+    "features": ["No Accidents", "Low KM", "Vehicle Detailed", "Leather Interior"],
+    "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis odio et"
+  },
+  {
+    "id": 6,
+    "name": "Toyota Corolla",
+    "year": 2015,
+    "price": 23000,
+    "image": "https://crdms.images.consumerreports.org/c_lfill,w_470,q_auto,f_auto/prod/cars/chrome/white/2022TOC040001_1280_01",
+    "seats": 5,
+    "make": "Toyota",
+    "city": "Toronto",
+    "miles": "0",
+    "features": ["No Accidents", "Low KM", "Vehicle Detailed", "Leather Interior"],
+    "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis odio et"
+  },
+  {
+    "id": 7,
+    "name": "Toyota Sienna",
+    "year": 2019,
+    "price": 34000,
+    "image": "https://upload.wikimedia.org/wikipedia/commons/2/22/2021_Toyota_Sienna_XLE_Hybrid%2C_front_12.21.21.jpg",
+    "seats": 5,
+    "make": "Toyota",
+    "city": "Toronto",
+    "miles": "0",
+    "features": ["No Accidents", "Low KM", "Vehicle Detailed", "Leather Interior"],
+    "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis odio et"
+  },
+  {
+    "id": 8,
+    "name": "Porsche Targa",
+    "year": 2014,
+    "price": 250000,
+    "image": "https://hips.hearstapps.com/hmg-prod/images/2021-porsche-911-targa-4-4s-108-1597085217.jpg?crop=0.521xw:0.389xh;0.274xw,0.413xh&resize=1200:*",
+    "seats": 5,
+    "make": "Porsche",
+    "city": "Toronto",
+    "miles": "0",
+    "features": ["No Accidents", "Low KM", "Vehicle Detailed", "Leather Interior"],
+    "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis odio et"
+  },
+  {
+    "id": 9,
+    "name": "Kia Seltos",
+    "year": 2012,
+    "price": 39000,
+    "image": "https://i.gaw.to/content/photos/53/04/530444-kia-seltos-2024-une-bonne-mise-a-jour-s-en-vient.jpg?1024x640",
+    "seats": 5,
+    "make": "Kia",
+    "city": "Miami",
+    "miles": "0",
+    "features": ["No Accidents", "Low KM", "Vehicle Detailed", "Leather Interior"],
+    "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis odio et"
+  }
+]
 
 
 --- File: app\composables\fetchOrders.spec.ts ---
@@ -1068,90 +728,201 @@ describe('fetchOrders', () => {
   it('should return an array of orders for existing account ID', async () => {
     // const accountId = 'account0'
     // const orders = await fetchOrders(accountId)
+    // console.log('fetchOrders.spec.ts → orders from test:', orders)
     // expect(orders).toEqual([])
     expect(true).toBe(true)
   })
+
+  // it('should return an empty array for non-existing account ID', async () => {
+  //   const accountId = 'account0'
+  //   const orders = await fetchOrders(accountId)
+  //   expect(orders).toEqual([])
+  //   // expect(true).toBe(true)
+  // })
 })
 
 
 --- File: app\composables\fetchOrders.ts ---
 import axios from 'axios'
 
+// const API_URL = process.env.API_URL
+// import { config } from 'dotenv'
+// config() // load variables from .env into process.env
+// const API_URL = process.env.API_URL || 'http://127.0.0.1:8787' // ceci ne fonctionne pas
+const API_URL = 'http://127.0.0.1:8787'
+
 export const fetchOrders = async (accountId: string) => {
+  const url = `${API_URL}/order/${accountId}`
+  // console.log('process.env:', process.env.API_URL)
+  // console.log('Vue → fetchOrders → url', url)
   try {
-    const response = await axios.get(`http://localhost:3000/order/${accountId}`)
-    console.log('Vue → fetchOrders:', response.data)
+    const response = await axios.get(url)
+    // console.log('OK')
+    // console.log('Vue → fetchOrders:', response.data)
     return response.data
   } catch (error) {
+    console.log('Vue → fetchOrders: Not OK')
     console.error(error)
   }
 }
 
 
 --- File: app\composables\getAccounts.js ---
-export const accountList = [
-  {
-    id: 1,
-    name: 'FlexUp',
-    type: 'Activity',
-    icon: '@/assets/images/profiles/flexup-icon.svg'
-  },
-  {
-    id: 2,
-    name: "Pizza d'Oro",
-    type: 'Business',
-    icon: '@/assets/images/profiles/pizza_d_oro.png'
-  },
-  {
-    id: 3,
-    name: 'Fabrizio Nastri',
-    type: 'Personal',
-    icon: '@/assets/images/profiles/fabrizio_nastri.jpeg'
-  },
-  {
-    id: 4,
-    name: 'Frédéric Lasnier',
-    type: 'Personal',
-    icon: '@/assets/images/profiles/fred.png'
-  }
-]
+import axios from 'axios'
+// const API_URL = process.env.API_URL || 'http://127.0.0.1:8787' // ceci ne fonctionne pas
+const API_URL = 'http://127.0.0.1:8787'
 
-export const getAccounts = () => accountList
+export const getAccounts = async (prop = '', value = '') => {
+  const url = `${API_URL}/account`
+  // console.log('process.env:', process.env.API_URL)
+  // console.log('Vue → fetchOrders → url', url)
+  // try {
+  const { data } = await axios.get(url)
+  // console.log('OK')
+  // console.log('Vue → getAccounts : data =', data)
+  if (!prop) return data
+  return data.filter((account) => account[prop] === value)
+  // } catch (error) {
+  //   console.log('Not OK')
+  //   console.error(error)
+  // }
+}
+
+//
+// export const accountList = [
+//   {
+//     id: 1,
+//     name: 'FlexUp',
+//     type: 'Activity',
+//     icon: '/images/profiles/flexup.svg'
+//   },
+//   {
+//     id: 2,
+//     name: "Pizza d'Oro",
+//     type: 'Business',
+//     icon: '/images/profiles/pizza_d_oro.png'
+//   },
+//   {
+//     id: 3,
+//     name: 'Fabrizio Nastri',
+//     type: 'Personal',
+//     icon: '/images/profiles/fabrizio_nastri.jpeg'
+//   },
+//   {
+//     id: 4,
+//     name: 'Frédéric Lasnier',
+//     type: 'Personal',
+//     icon: '/images/profiles/fred.png'
+//   }
+// ]
+//
+// export const getAccounts = (prop = '', value = '') => {
+//   if (!prop) return accountList
+//   // returns an array of accounts that match the prop and value
+//   return accountList.filter((account) => account[prop] === value)
+// }
 
 export default getAccounts
 
 
 --- File: app\composables\getAccounts.test.js ---
-import { getAccounts, accountList } from './getAccounts.js'
+import { getAccounts } from './getAccounts.js'
+
+import { accounts } from '../../mock/inMemory'
 
 describe('getAccounts', () => {
-  it('should return accounts list', () => {
-    const assertion = getAccounts()
-    const result = accountList
+  // console.log('accountDatas:', accountDatas2)
+  it('should return full accounts list when no arguments are provided', async () => {
+    const assertion = await getAccounts()
+    const result = accounts
     expect(assertion).toEqual(result)
   })
+
+  it('should return an account when the id is provided', async () => {
+    const assertion = await getAccounts('id', 'account1')
+    const result = accounts.slice(0, 1)
+    expect(assertion).toEqual(result)
+  })
+
+  it('should return an account when the name is provided', async () => {
+    const assertion = await getAccounts('name', 'FlexUp')
+    // console.log('assertion:', assertion)
+    const result = accounts.slice(0, 1)
+    expect(assertion).toEqual(result)
+  })
+  // it('should be true', () => {
+  //   expect(true).toBe(true)
+  // })
 })
+
+
+--- File: app\composables\getDb.tests.ts ---
+// import getDb from './getDb'
+// import { accountDatas } from './inMemory'
+
+describe('getDb', () => {
+  it('should return the mock database', () => {
+    // const data = getDb()
+    // console.log('accountDatas: ', data[0])
+
+    // expect(data).toEqual(accountDatas)
+
+    expect(1).toEqual(1)
+  })
+})
+
+
+--- File: app\composables\getDb.ts ---
+// import db from 'mock/cars.json'
+// import db from 'mock/jsonServer.json'
+// import cars from './cars.json'
+
+// import { accountDatas } from '../../mock/inMemory'
+// import { accountDatas } from './inMemory'
+
+export const getDb = () => {
+  // console.log('mock db: ', cars)
+  // return accountDatas
+  return 'getDb'
+}
+
+export default getDb
 
 
 --- File: app\composables\selectDb.ts ---
 import axios from 'axios'
 
+import dotenv from 'dotenv'
+dotenv.config()
+const API_URL = process.env.API_URL
+
 export const selectDb = async (selectedDb: string) => {
   try {
-    const response = await axios.post(`http://localhost:3000/db/${selectedDb}`)
-    console.log('Vue → selectedDb function:', response)
-    return response.data
+    const { data } = await axios.post(`${API_URL}/db/${selectedDb}`)
+    // console.log('Vue → selectedDb function:', data)
+    return data
   } catch (error) {
     console.error(error)
   }
 }
 
 
---- File: app\composables\sharedState.ts ---
+--- File: app\composables\sharedState.js ---
 import { reactive } from 'vue'
 
 export const sharedState = reactive({
-  selectedAccountId: 'account0', // Default value
+  selectedAccountId: 'account0' // Default value
+})
+
+
+--- File: app\composables\useActiveAccount.js ---
+import { useLocalStorage } from '@vueuse/core'
+
+export const useActiveAccount = useLocalStorage('activeAccount', {
+  id: 1,
+  name: 'FlexUp',
+  type: 'Activity',
+  icon: '/images/profiles/flexup.svg'
 })
 
 
@@ -1172,7 +943,7 @@ export const sharedState = reactive({
       {{ error?.statusCode }}
     </h2>
     <p>{{ error?.message }}</p>
-    <v-btn color="primary" @click="handleError"> Go back </v-btn>
+    <button @click="handleError">Go back</button>
   </div>
 </template>
 
@@ -1187,89 +958,10 @@ export const sharedState = reactive({
 </head>
 <body>
   <h1>Hello</h1>
-  <img src="./app/assets/images/profiles/fabrizio_nastri.jpeg"/>
+  <img src="./app/public/images/profiles/fabrizio_nastri.jpeg"/>
 
 </body>
 </html>
-
---- File: app\layouts\default.vue ---
-<template lang="pug">
-div
-  NavBar
-  main
-    slot
-</template>
-
-<script setup></script>
-
-
---- File: app\pages\index.vue ---
-<template lang="pug">
-div
-  h1.mt-10 FlexUp MVP
-  //- People
-  //- SelectAccount
-  img(src="../app/assets/images/profiles/fabrizio_nastri.jpeg")
-
-</template>
-
-<script setup></script>
-
-
---- File: app\pages\Mini.vue ---
-<script setup lang="ts">
-import NavBar from './components/NavBar.vue'
-import OrderList from './components/OrderList.vue'
-</script>
-
-<template>
-  <main>
-    <NavBar />
-    <OrderList />
-  </main>
-</template>
-
-<style>
-body {
-  font-family: 'Open Sans', sans-serif;
-}
-select {
-  font-size: large;
-  padding: 3px 6px;
-  line-height: 2em;
-}
-</style>
-
-
---- File: app\pages\teams.vue ---
-<template>
-  <h1>Teams</h1>
-  <TeamList :teams="teams" />
-</template>
-
-<script setup>
-  const teams = [
-    {
-      id: 1,
-      name: 'Toronto Maple Leafs',
-      city: 'Toronto',
-      logo: 'https://upload.wikimedia.org/wikipedia/en/thumb/b/b6/Toronto_Maple_Leafs_2016_logo.svg/1200px-Toronto_Maple_Leafs_2016_logo.svg.png'
-    }
-  ]
-</script>
-
-
---- File: nodemon.json ---
-{
-  "watch": [
-    "src/adapters/backend/hono/src/*"
-  ],
-  "ext": "ts, json",
-  "ignore": [
-    "src/**/*.spec.ts"
-  ],
-  "exec": "tsx api/server/src/index.ts"
-}
 
 --- File: nuxt.config.ts ---
 // https://nuxt.com/docs/api/configuration/nuxt-config
@@ -1280,13 +972,14 @@ export default defineNuxtConfig({
   //   port: 3000 // Default port is 3000
   // },
   srcDir: 'app',
-  devtools: { enabled: true },
-  modules: ['@nuxtjs/tailwindcss', '@nuxtjs/eslint-module', 'nuxt-vitest'],
+  devtools: { enabled: false },
+  modules: ['@nuxtjs/tailwindcss', '@nuxtjs/eslint-module', 'nuxt-vitest', '@nuxt/image'],
+  buildModules: ['@vueuse/nuxt'],
   plugins: [
     //
   ],
   imports: {
-    dirs: ['composables/**', '../utils/**']
+    dirs: ['composables/**', '../api/utils/**', '../mock/**']
   },
   // css: ['@/assets/main.css'], // removed, use tailwind instead
   vite: {
@@ -1313,23 +1006,41 @@ export default defineNuxtConfig({
     "test:cov": "vitest --reporter verbose --coverage",
     "test": "vitest --reporter verbose",
     "server": "nodemon",
-    "db": " json-server --port 3057 --watch ./db/db.json"
+    "db": " json-server --port 3057 --watch ./db/db.json",
+    "mock": "json-server --port 3057 --watch ./mock/jsonServer.json",
+    "start": "concurrently \"npm run mock\" \"npm run nodemon\"  \"npm run dev\" \"npm run test\" "
+  },
+  "dependencies": {
+    "@hono/node-server": "^1.2.0",
+    "@mdi/font": "^7.2.96",
+    "@tailwindcss/forms": "^0.5.6",
+    "@typescript-eslint/eslint-plugin": "^6.7.4",
+    "@typescript-eslint/parser": "^6.7.4",
+    "axios": "^1.5.1",
+    "hono": "^3.7.5"
   },
   "devDependencies": {
     "@headlessui/vue": "^1.7.16",
     "@heroicons/vue": "^2.0.18",
     "@nuxt/devtools": "latest",
+    "@nuxt/image": "1.0.0-rc.3",
     "@nuxtjs/eslint-module": "^4.1.0",
     "@nuxtjs/tailwindcss": "^6.8.0",
     "@types/node": "^20.8.2",
     "@vue/eslint-config-prettier": "^8.0.0",
     "@vue/eslint-config-typescript": "^12.0.0",
     "@vue/language-plugin-pug": "^1.8.15",
+    "@vueuse/core": "^10.5.0",
+    "@vueuse/nuxt": "^10.5.0",
+    "concurrently": "^8.2.1",
     "eslint": "^8.50.0",
     "eslint-config-prettier": "^9.0.0",
     "eslint-plugin-prettier": "^5.0.0",
     "eslint-plugin-vitest-globals": "^1.4.0",
+    "eslint-plugin-vue": "^9.17.0",
+    "eslint-plugin-vue-pug": "^0.6.0",
     "happy-dom": "11.0.0",
+    "nodemon": "^3.0.1",
     "nuxt": "^3.7.4",
     "nuxt-vitest": "^0.11.0",
     "prettier": "^3.0.3",
@@ -1339,61 +1050,8 @@ export default defineNuxtConfig({
     "tsx": "^3.13.0",
     "typescript": "^5.2.2",
     "vitest": "^0.33.0"
-  },
-  "dependencies": {
-    "@hono/node-server": "^1.2.0",
-    "@mdi/font": "^7.2.96",
-    "@tailwindcss/forms": "^0.5.6",
-    "@typescript-eslint/eslint-plugin": "^6.7.4",
-    "@typescript-eslint/parser": "^6.7.4",
-    "axios": "^1.5.1",
-    "eslint-plugin-vue": "^9.17.0",
-    "hono": "^3.7.5"
   }
 }
-
---- File: prettier.config.js ---
-// prettier.config.js
-module.exports = {
-  plugins: ['prettier-plugin-tailwindcss']
-}
-
-
---- File: tailwind.config.js ---
-/** @type {import('tailwindcss').Config} */
-
-import defaultTheme from 'tailwindcss/defaultTheme' // import the default theme from the tailwind library
-// checkout the list found here: .\node_modules\tailwindcss\stubs\config.full.js
-// or here: https://github.com/tailwindlabs/tailwindcss/blob/master/stubs/config.full.js#L301
-
-export default {
-  content: ['./index.html', './src/**/*.{js,vue}'],
-  theme: {
-    extend: {
-      fontFamily: {
-        // we don't want to only offer Open Sans, but add it to the default fonts as the first option
-        // if the font is not available, the browser will use the next font in the list
-        sans: ['Inter var', 'Open Sans', ...defaultTheme.fontFamily.sans] // this is how we can add a new font to our project
-      },
-      colors: {
-        primary: '#328de7'
-        // this is how we can add a new color to our project
-        // 'brand-gray-1': '#dadce0', // were using "" because the color name has a dash in it, and JavaScript doesn't support dashes in property names
-        // 'brand-gray-2': '#f8f9fa',
-        // 'brand-gray-3': '#80868b',
-        // 'brand-blue-1': '#1967d2',
-        // 'brand-blue-2': '#4285f4',
-        // 'brand-green-1': '#137333'
-      },
-      boxShadow: {
-        // blue: '0 0 3px 3px #4285f4', // use this with shadow-blue
-        // gray: '0 1px 3px 0 rgba(60, 64, 67, 0.3)' // use this with shadow-gray
-      }
-    }
-  },
-  plugins: [require('@tailwindcss/forms')]
-}
-
 
 --- File: tsconfig.json ---
 {
@@ -1405,8 +1063,8 @@ export default {
     "paths": {
       "~/*": ["./*"],
       "@/*": ["./app/*"],
-      "api/*": ["./api/*"],
       "app/*": ["./app/*"],
+      "api/*": ["./api/*", "./api"],
       "src/*": ["./api/*", "./api"],
       "core/*": ["./api/core/*", "./api/core"],
       "entities/*": ["./api/core/entities/*", "./api/core/entities"],
@@ -1416,55 +1074,57 @@ export default {
       "utils/*": ["./api/utils/*", "./api/utils"],
       "mock/*": ["./mock/*", "./mock"]
     },
-    "include": ["api/**/*", "mock/**/*"],
     "ts-node": {
       "esm": true,
       "experimentalSpecifierResolution": "node"
     },
     "types": ["vitest/globals"] // to avoid linting error
-  }
-  // "vueCompilerOptions": {
-  //   "plugins": ["@vue/language-plugin-pug"] // PUG does not work
-  // }
+  },
+  "include": ["api/**/*", "app/**/*", "mock/**/*"]
 }
 
 
 --- File: vitest.config.ts ---
 import { defineVitestConfig } from 'nuxt-vitest/config'
 import path from 'path'
-
+import { fileURLToPath } from 'node:url'
 export default defineVitestConfig({
   // plugins: path.resolve(__dirname,  vue()  ],
   test: {
     environment: 'nuxt',
     globals: true,
-    includeSource: ['api/**/*.{js,ts}', 'app/**/*.{js,ts,vue}']
+    includeSource: ['api/**/*.{js,ts}', 'app/**/*.{js,ts,vue}'],
+    root: fileURLToPath(new URL('./', import.meta.url))
   },
   resolve: {
     alias: {
-      '~': path.resolve(__dirname, './'),
-      '@': path.resolve(__dirname, './app'),
-      mocks: path.resolve(__dirname, './__mocks__'),
-      utils: path.resolve(__dirname, './utils'),
       app: path.resolve(__dirname, './app'),
-      api: path.resolve(__dirname, './api'),
-      server: path.resolve(__dirname, './app/server'),
       components: path.resolve(__dirname, './app/components'),
+      composables: path.resolve(__dirname, './app/composables'),
       layouts: path.resolve(__dirname, './app/layouts'),
       pages: path.resolve(__dirname, './app/pages'),
-      composables: path.resolve(__dirname, './app/composables'),
-      '~/*': path.resolve(__dirname, './*'),
-      '@/*': path.resolve(__dirname, './app/*'),
-      'api/*': path.resolve(__dirname, './api/*'),
-      'app/*': path.resolve(__dirname, './app/*'),
-      'src/*': path.resolve(__dirname, './api/*', './api'),
-      'core/*': path.resolve(__dirname, './api/core/*', './api/core'),
-      'entities/*': path.resolve(__dirname, './api/core/entities/*', './api/core/entities'),
-      'usecases/*': path.resolve(__dirname, './api/core/usecases/*', './api/core/usecases'),
-      'gateways/*': path.resolve(__dirname, './api/core/gateways/*', './api/core/gateways'),
-      'adapters/*': path.resolve(__dirname, './api/adapters/*', './api/adapters'),
-      'utils/*': path.resolve(__dirname, './api/utils/*', './api/utils'),
-      'mock/*': path.resolve(__dirname, './mock/*', './mock')
+      server: path.resolve(__dirname, './app/server'),
+      usecases: path.resolve(__dirname, './app/core/usecases'),
+      api: path.resolve(__dirname, './api'),
+      adapters: path.resolve(__dirname, './api/adapters'),
+      entities: path.resolve(__dirname, './api/core/entities'),
+      gateways: path.resolve(__dirname, './api/core/gateways'),
+      mock: path.resolve(__dirname, './mock'),
+      utils: path.resolve(__dirname, './api/utils')
+      // '~': path.resolve(__dirname, './'),
+      // '~/*': path.resolve(__dirname, './*'),
+      // '@': path.resolve(__dirname, './app'),
+      // '@/*': path.resolve(__dirname, './app/*'),
+      // 'api/*': path.resolve(__dirname, './api/*'),
+      // 'app/*': path.resolve(__dirname, './app/*'),
+      // 'src/*': path.resolve(__dirname, './api/*', './api'),
+      // 'core/*': path.resolve(__dirname, './api/core/*', './api/core'),
+      // 'entities/*': path.resolve(__dirname, './api/core/entities/*', './api/core/entities'),
+      // 'usecases/*': path.resolve(__dirname, './api/core/usecases/*', './api/core/usecases'),
+      // 'gateways/*': path.resolve(__dirname, './api/core/gateways/*', './api/core/gateways'),
+      // 'adapters/*': path.resolve(__dirname, './api/adapters/*', './api/adapters'),
+      // 'utils/*': path.resolve(__dirname, './api/utils/*', './api/utils'),
+      // 'mock/*': path.resolve(__dirname, './mock/*', './mock')
     }
   }
 })

@@ -1,16 +1,20 @@
-# always ignore
-db
-README.md
-mock
-public
-TwUI
-images
-logos
-components
-# temporary ignore
-components
+.npmrc
+.prettierignore
+.prettierrc
 adapters
-core
+api
 assets
-pages
+core
+db
+images
 layouts
+logos
+mock
+nodemon.json
+pages
+prettier.config.js
+public
+README.md
+server
+tailwind.config.js
+TwUI

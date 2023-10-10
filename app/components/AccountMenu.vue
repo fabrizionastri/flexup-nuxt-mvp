@@ -138,13 +138,6 @@
 </template>
 
 <script setup>
-  const activeAccount = useState('activeAccount', () => ({
-    id: 1,
-    name: 'FlexUp',
-    type: 'Activity',
-    icon: '/images/profiles/flexup.svg'
-  }))
-  // console.log('AccountMenu -> activeAccount =', activeAccount.value)
   import { Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/vue'
   import {
     ArchiveBoxIcon,
@@ -156,6 +149,9 @@
     TrashIcon,
     UserPlusIcon
   } from '@heroicons/vue/20/solid'
+
+  const activeAccount = useActiveAccount()
+  // console.log('AccountMenu -> activeAccount =', activeAccount.value)
 </script>
 
 <style>

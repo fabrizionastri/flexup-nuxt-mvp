@@ -10,14 +10,14 @@
   </ul>
 </template>
 
-<script setup lang="ts">
+<script setup>
   const orders = ref(null)
   const bobo = async () => {
     const plop = await fetchOrders(sharedState.selectedAccountId)
     // const plop = await fetchOrders('account0')
-    console.log('orders  from bobo', plop)
-    console.log('plop type', typeof plop)
-    console.log('sharedState in bobo', sharedState.selectedAccountId)
+    // console.log('orders  from bobo', plop)
+    // console.log('plop type', typeof plop)
+    // console.log('sharedState in bobo', sharedState.selectedAccountId)
     orders.value = plop
   }
   onMounted(async () => {

@@ -14,6 +14,6 @@
       {{ error?.statusCode }}
     </h2>
     <p>{{ error?.message }}</p>
-    <v-btn color="primary" @click="handleError"> Go back </v-btn>
+    <button @click="handleError">Go back</button>
   </div>
 </template>

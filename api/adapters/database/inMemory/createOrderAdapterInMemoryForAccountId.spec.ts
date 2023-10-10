@@ -1,13 +1,13 @@
 import { orderDatas } from 'mock/inMemory'
 // import { orderDatas } from '../../../mock/inMemory'
-// import { orderDatas } from 'api/mock/inMemory'
+// import { orderDatas } from 'mock/inMemory'
 
 // import { createOrderAdapterInMemoryForAccountId } from './createOrderAdapterInMemoryForAccountId'
 //
 // let adapter: any
 
 describe('createOrderAdapterInMemoryForAccountId', () => {
-  console.log('orderDatas', orderDatas)
+  // console.log('orderDaatas', orderDatas)
   it('should return true', () => {
     expect(true).toEqual(true)
   })
