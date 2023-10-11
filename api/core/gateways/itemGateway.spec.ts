@@ -1,5 +1,5 @@
 import { createItemGateway } from 'gateways/itemGateway'
-import { itemDatas, items } from '~/db/inMemory/item'
+import { itemDatas, items } from 'mock/inMemory/item'
 
 import { createItemAdapterInMemory } from 'src/adapters/database/inMemory/createItemAdapterInMemory'
 

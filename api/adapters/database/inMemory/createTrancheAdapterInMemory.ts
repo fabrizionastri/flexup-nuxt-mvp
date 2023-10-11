@@ -1,5 +1,5 @@
 import { TrancheAdapter } from 'adapters/database/interfaces'
-import { trancheDatas } from 'db/inMemory'
+import { trancheDatas } from 'mock/inMemory'
 import { TrancheData } from 'entities/tranche'
 
 export const createTrancheAdapterInMemory = (): TrancheAdapter => {

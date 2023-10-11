@@ -1,6 +1,6 @@
 import { useOrderGateway } from './orderGateway'
 import { OrderGateway } from 'gateways/orderGateway'
-import { orders, orderDatas } from 'db/inMemory'
+import { orders, orderDatas } from 'mock/inMemory'
 
 let orderGateway: OrderGateway
 

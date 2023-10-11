@@ -7,13 +7,14 @@ export const myAxios = axios.create({
 
 export const handleRequest =
   (httpMethod: Method) =>
-  async <Item>(url: string, data?: any): Promise<Item | undefined> => {
+  async <T>(url: string, data?: any): Promise<T | undefined> => {
     try {
       const response: AxiosResponse = await myAxios.request({
         url,
         method: httpMethod,
         data
       })
+      console.log(`handleRequest ${httpMethod} at url:`, url)
       return response.data
     } catch (error) {
       // console.error(error)

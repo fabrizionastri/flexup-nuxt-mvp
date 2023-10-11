@@ -197,9 +197,27 @@ export const accountDatas = [
   }
 ]
 
+export const trancheDatas = [
+  {
+    id: 'tranche1',
+    orderId: 'order1',
+    portion: 0.5,
+    name: 'base 60%',
+    paymentTerms: ''
+  },
+  {
+    id: 'tranche2',
+    orderId: 'order1',
+    portion: 0.5,
+    name: 'flex 40%',
+    paymentTerms: ''
+  }
+]
+
 export const inMemory = {
   orders: orderDatas,
   items: itemDatas,
+  tranches: trancheDatas,
   accounts: accountDatas
 }
 

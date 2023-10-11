@@ -1,5 +1,5 @@
 import { createItemAdapterInMemory } from 'adapters/database/inMemory/createItemAdapterInMemory'
-import { itemDatas } from '~/db/inMemory/item'
+import { itemDatas } from 'mock/inMemory'
 
 describe('createItemAdapterInMemory', () => {
   const adapter = createItemAdapterInMemory()

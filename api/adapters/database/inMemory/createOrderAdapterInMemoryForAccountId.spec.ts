@@ -1,4 +1,4 @@
-import { orderDatas } from 'db/inMemory'
+import { orderDatas } from 'mock/inMemory'
 
 import { createOrderAdapterInMemoryForAccountId } from './createOrderAdapterInMemoryForAccountId'
 

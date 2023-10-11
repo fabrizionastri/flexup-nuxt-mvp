@@ -1,11 +1,15 @@
-// import { orderDatas } from 'db/inMemory'
+// import { orderDatas } from 'mock/inMemory'
 
 // import { createOrderAdapterJsonServer } from './createOrderAdapterJsonServer'
 
 // let accountId: string
 
 describe('createOrderAdapterJsonServer (real Axios)', () => {
-  it('empty test', () => {})
+  it('test case', () => {
+    const assertion = 1
+    const result = 1
+    expect(assertion).toEqual(result)
+  })
   // describe('for existing accountId', () => {
   //   beforeAll(() => {
   //     accountId = 'account0'

@@ -17,13 +17,14 @@ export default defineVitestConfig({
       layouts: path.resolve(__dirname, './app/layouts'),
       pages: path.resolve(__dirname, './app/pages'),
       server: path.resolve(__dirname, './app/server'),
-      usecases: path.resolve(__dirname, './app/core/usecases'),
       api: path.resolve(__dirname, './api'),
       adapters: path.resolve(__dirname, './api/adapters'),
       entities: path.resolve(__dirname, './api/core/entities'),
       gateways: path.resolve(__dirname, './api/core/gateways'),
+      usecases: path.resolve(__dirname, './api/core/usecases'),
       mock: path.resolve(__dirname, './mock'),
-      utils: path.resolve(__dirname, './api/utils')
+      lib: path.resolve(__dirname, './lib'),
+      utils: path.resolve(__dirname, './lib/utils')
       // '~': path.resolve(__dirname, './'),
       // '~/*': path.resolve(__dirname, './*'),
       // '@': path.resolve(__dirname, './app'),

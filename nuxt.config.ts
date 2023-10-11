@@ -13,7 +13,7 @@ export default defineNuxtConfig({
     //
   ],
   imports: {
-    dirs: ['composables/**', '../api/utils/**', '../mock/**']
+    dirs: ['composables/**', '../lib/**', '../mock/**']
   },
   // css: ['@/assets/main.css'], // removed, use tailwind instead
   vite: {

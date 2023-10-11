@@ -1,7 +1,7 @@
-import axios from 'axios'
 import { getResource } from './getRessource.js'
-import { vi } from 'vitest'
 
+import axios from 'axios'
+import { vi } from 'vitest'
 // Mocking the axios library
 vi.mock('axios')
 
