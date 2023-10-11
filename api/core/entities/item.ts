@@ -1,9 +1,11 @@
+import { Unit } from './product'
+
 export interface ItemData {
   id: string
   orderId: string
   name: string
+  unit: Unit
   quantity: number
-  unit: string
   unitPriceExclTax: number
   taxRate: number
 }

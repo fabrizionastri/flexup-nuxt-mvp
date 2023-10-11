@@ -1,32 +1,23 @@
-import { createOrderGateway } from 'gateways/orderGateway'
-import { orderDatas, orders } from 'mock/inMemory'
+import { useOrderGateway } from './orderGateway'
+import { OrderGateway } from 'gateways/orderGateway'
+import { orders, orderDatas } from 'db/inMemory'
 
-import { ItemAdapter, OrderAdapter } from 'adapters/database/adapterInterfaces'
-import { createItemAdapter } from 'adapters/database/index'
-import { createOrderAdapter } from 'adapters/database/index'
-
-import { OrderGateway } from './gatewayInterfaces'
-
-let orderAdapter: OrderAdapter
-let itemAdapter: ItemAdapter
 let orderGateway: OrderGateway
 
 describe('orderGateway', () => {
   describe('for existing account', () => {
-    beforeEach(() => {
-      orderAdapter = createOrderAdapter('account0')
-      itemAdapter = createItemAdapter()
-      orderGateway = createOrderGateway(orderAdapter, itemAdapter)
+    beforeEach(async () => {
+      orderGateway = useOrderGateway('account0')
     })
     it('getByIdData should return the order with raw data only', async () => {
       const result = await orderGateway.getByIdData('order0')
       expect(result).toEqual(orderDatas[0])
     })
-    it('getAllData should return all orders with items and calculations', async () => {
+    it('getAllData should return all orders of corresponding account ID with raw data only', async () => {
       const result = await orderGateway.getAllData()
       expect(result).toEqual(orderDatas.slice(0, 2))
     })
-    it('getById should return the order with items and calculations', async () => {
+    it('getById should return the order with items, tranches and calculations', async () => {
       const result = await orderGateway.getById('order0')
       expect(result).toEqual(orders[0])
     })
@@ -37,10 +28,8 @@ describe('orderGateway', () => {
   })
 
   describe('for inexisting account', () => {
-    beforeEach(() => {
-      orderAdapter = createOrderAdapter('account99')
-      itemAdapter = createItemAdapter()
-      orderGateway = createOrderGateway(orderAdapter, itemAdapter)
+    beforeEach(async () => {
+      orderGateway = useOrderGateway('account99')
     })
     it('getByIdData should return undefined', async () => {
       const result = await orderGateway.getByIdData('order0')
