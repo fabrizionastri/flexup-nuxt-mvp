@@ -35,14 +35,14 @@ describe('createItemAdapterJsonServer - mock Axios', () => {
     })
 
     it('should have been called with the right url', async () => {
-      const item = await adapter.getById('item1')
+      await adapter.getById('item1')
       expect(axiosGetMock).toHaveBeenCalledWith('/item/item1')
     })
   })
 
   describe('getByOrderId', () => {
     it('should return empty array if getByOrderId has no result', async () => {
-      const item = await adapter.getByOrderId('order1')
+      await adapter.getByOrderId('order1')
       expect(axiosGetMock).toHaveBeenCalledWith('/item?orderId=order1')
     })
   })
