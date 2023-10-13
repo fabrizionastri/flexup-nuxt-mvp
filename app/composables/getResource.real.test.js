@@ -1,4 +1,4 @@
-import { getAccounts } from './getRessource.js'
+import { getAccounts } from './getResource.js'
 
 // Option 1 -  import the default export, and then extract accounts from it 👌✔️  works
 // import inMemory from '../../mock/inMemory'
@@ -7,9 +7,13 @@ import { getAccounts } from './getRessource.js'
 // Option 2 - import accountDatas directly 👌✔️ works
 // import { accountDatas as accounts } from '../../mock/inMemory'
 
-// Option 2 - import cars from '../../mock/cars' 👌✔️ works
-import jsonServer from '../../mock/jsonServer'
-const accounts = jsonServer.account
+// Option 3 - import accounts directly from json file in '../../mock/index.json' 👌✔️ works
+// import db from '../../mock/index.json' // 👌✔️ works
+// import db from '../../mock/index' // 👌✔️ works
+// import db from '../../mock/' // 👌✔️ works
+// import db from '../../mock' // 👌✔️ works
+import db from 'mock' // 👌✔️ works -> use this as it's the shortest 😊🎉😎
+const accounts = db.account
 
 describe('getAccounts -> real access to server', () => {
   // console.log('accounts:', accounts)

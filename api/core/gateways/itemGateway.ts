@@ -1,5 +1,5 @@
 import { Item, ItemData } from 'entities/item'
-import { ItemAdapter } from '~/src/adapters/database/interfaces'
+import { ItemAdapter } from 'adapters/database/interfaces'
 import { computeItem } from '../usecases/computeItem'
 
 export interface ItemGateway {

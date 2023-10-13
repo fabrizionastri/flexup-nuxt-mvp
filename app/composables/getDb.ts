@@ -1,4 +1,4 @@
-// import db from 'mock/cars.json'
+import db from 'mock/cars'
 // import db from 'mock/jsonServer.json'
 // import cars from './cars.json'
 
@@ -6,7 +6,7 @@
 // import { accountDatas } from './inMemory'
 
 export const getDb = () => {
-  // console.log('mock db: ', cars)
+  console.log('mock db: ', db)
   // return accountDatas
   return 'getDb'
 }

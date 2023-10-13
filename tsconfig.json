@@ -3,6 +3,11 @@
   "extends": "./.nuxt/tsconfig.json",
   "compilerOptions": {
     "composite": true,
+    "target": "ESNext",
+    "module": "ESNext",
+    "moduleResolution": "node",
+    "esModuleInterop": true,
+    "resolveJsonModule": true,
     "baseUrl": ".",
     "paths": {
       "~/*": ["./*"],
@@ -15,14 +20,17 @@
       "usecases/*": ["./api/core/usecases/*", "./api/core/usecases"],
       "gateways/*": ["./api/core/gateways/*", "./api/core/gateways"],
       "adapters/*": ["./api/adapters/*", "./api/adapters"],
-      "utils/*": ["./api/utils/*", "./api/utils"],
+      "lib/*": ["./lib/*", "./lib"],
+      "utils/*": ["./lib/utils/*", "./lib/utils"],
       "mock/*": ["./mock/*", "./mock"]
-    },
-    "ts-node": {
-      "esm": true,
-      "experimentalSpecifierResolution": "node"
     },
     "types": ["vitest/globals"] // to avoid linting error
   },
-  "include": ["api/**/*", "app/**/*", "mock/**/*"]
+  "ts-node": {
+    "esm": true,
+    "experimentalSpecifierResolution": "node",
+    "require": ["tsconfig-paths/register"]
+  },
+  "include": ["api/**/*", "app/**/*", "mock/**/*", "lib/**/*"],
+  "files": ["mock/index.json"]
 }

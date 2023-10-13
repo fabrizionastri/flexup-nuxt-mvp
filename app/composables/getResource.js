@@ -7,7 +7,7 @@ export const getResource = async (resource, prop = null, value = '') => {
     throw new Error('Resource must be provided')
   }
 
-  let url = `${API_URL}/${resource}`
+  let url = `${API_URL}/resources/${resource}`
   if (prop !== null) {
     url += `?${prop}=${encodeURIComponent(value)}`
   }
@@ -17,11 +17,12 @@ export const getResource = async (resource, prop = null, value = '') => {
     const { data } = await axios.get(url)
     return data
   } catch (error) {
-    console.error(`Error fetching resource "${resource}":`, error)
+    console.error(`Error fetching resource "${resource}"`)
+    console.log('error:', error)
     throw error
   }
 }
 
 export default getResource
 
-export const getAccounts = (prop = null, value = '') => getResource('accounts', prop, value)
+export const getAccounts = (prop = null, value = '') => getResource('account', prop, value)

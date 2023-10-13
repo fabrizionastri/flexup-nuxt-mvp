@@ -6,7 +6,12 @@ export default defineVitestConfig({
   test: {
     environment: 'nuxt',
     globals: true,
-    includeSource: ['api/**/*.{js,ts}', 'app/**/*.{js,ts,vue}'],
+    includeSource: [
+      'api/**/*.{js,ts}',
+      'app/**/*.{js,ts,vue}',
+      'lib/**/*.{js,ts,vue}',
+      'mock/**/*.{js,ts,vue,json}'
+    ],
     root: fileURLToPath(new URL('./', import.meta.url))
   },
   resolve: {

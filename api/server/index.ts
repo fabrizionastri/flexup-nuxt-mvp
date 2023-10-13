@@ -56,10 +56,17 @@ app.get('/', (c) => c.text('Hello Hono Fabrizio!'))
 app.get('/favicon.ico', (c) => c.text(`Sorry, we don't send favicon in this app for now`))
 
 // TEMPORARY - I'm cheating here and bypassing the adatpters and core
-app.get('/:resource', async (c) => {
+app.get('/resources/:resource', async (c) => {
   const resource = c.req.param('resource')
-  console.log('resource', resource)
-  const url = `${DB_URL}/${resource}`
+  const query = c.req.query()
+  // console.log('query', Object.entries(query)[0])
+  const property = Object.keys(query)[0]
+  const value = Object.values(query)[0]
+  console.log('Hono resources requested for:', resource, property, value)
+  let url = `${DB_URL}/${resource}`
+  if (property && value) {
+    url = `${url}?${property}=${value}`
+  }
   console.log('url', url)
   return c.json((await axios.get(url)).data)
   // return c.text(`url = ${url}`)
