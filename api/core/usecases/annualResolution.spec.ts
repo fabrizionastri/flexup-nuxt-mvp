@@ -1,4 +1,4 @@
-import { annualResolutionTestCases } from '~/mock/inMemory/annualResolution'
+import { annualResolutionTestCases } from 'mock/inMemory/annualResolution'
 import { runResolutionSteps } from './resolution'
 
 describe('annual resolution', () => {

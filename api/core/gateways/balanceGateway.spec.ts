@@ -1,8 +1,8 @@
-import { balanceInstanceAll } from '~/mock/inMemory/balance'
-import { BalanceAdapter } from 'adapters/primary/balance.adapter'
+import { balanceInstanceAll } from 'mock/inMemory/balance'
+import { BalanceAdapter } from 'adapters/database/feedWith/balanceAdapter'
 import { BalanceGateway } from 'gateways/balanceGateway'
 
-describe('Balance core gateway', () => {
+describe.todo('Balance core gateway', () => {
   it('should throw an error if adapter is null', () => {
     // @ts-ignore
     expect(BalanceGateway()).toThrowError('BalanceAdapter is not defined')

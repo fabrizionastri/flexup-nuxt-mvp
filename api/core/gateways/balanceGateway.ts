@@ -1,4 +1,4 @@
-import { BalanceAdapter } from 'adapters/primary/balance.adapter'
+import { BalanceAdapter } from 'adapters/database/feedWith/balanceAdapter'
 import { Balances } from 'entities/balance'
 
 export const BalanceGateway =

@@ -2,7 +2,7 @@ import {
   createNextInterestIterationTestCases,
   createNextMainIterationTestCases,
   createNextTokenIterationTestCases
-} from '~/mock/inMemory/createNextIteration'
+} from 'mock/inMemory/createNextIteration'
 import {
   createNextInterestIteration,
   createNextMainIteration,

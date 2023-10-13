@@ -1,4 +1,4 @@
-import { allocateTestCases } from '~/mock/inMemory/allocate'
+import { allocateTestCases } from 'mock/inMemory/allocate'
 import { allocate } from 'usecases/allocate'
 
 describe('allocate function', () => {

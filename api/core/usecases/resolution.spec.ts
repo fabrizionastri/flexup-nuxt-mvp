@@ -3,7 +3,7 @@ import {
   forSurplusTestCases,
   forOutflowTestCases,
   forReserveTargetTestCases
-} from '~/mock/inMemory/resolution'
+} from 'mock/inMemory/resolution'
 
 import {
   forOutflow,

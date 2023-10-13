@@ -5,7 +5,7 @@ import {
   createFirstMainIterationTestCases,
   createFirstInterestIterationTestCases,
   offsetDateTestCases
-} from '~/mock/inMemory/createFirstIteration'
+} from 'mock/inMemory/createFirstIteration'
 import {
   calculateDueDate,
   offsetDate,

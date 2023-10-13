@@ -5,7 +5,7 @@ import {
   riskFactorTestCases,
   recencyWeightedAverageTestCases,
   basicRiskFactorTestCases
-} from '~/mock/inMemory/riskFactor'
+} from 'mock/inMemory/riskFactor'
 
 import {
   delayRiskFactor,

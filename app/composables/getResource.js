@@ -11,14 +11,14 @@ export const getResource = async (resource, prop = null, value = '') => {
   if (prop !== null) {
     url += `?${prop}=${encodeURIComponent(value)}`
   }
-  console.log(`app/composables/getResource.js → url for resource "${resource}"`, url)
+  // conasole.log(`app/composables/getResource.js → url for resource "${resource}"`, url)
 
   try {
     const { data } = await axios.get(url)
     return data
   } catch (error) {
-    console.error(`Error fetching resource "${resource}"`)
-    console.log('error:', error)
+    console.error(`Error fetching resource "${resource}" on: `, url)
+    // console.log('error:', error)
     throw error
   }
 }

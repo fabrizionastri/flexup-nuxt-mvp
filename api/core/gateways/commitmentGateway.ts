@@ -1,4 +1,4 @@
-import { CommitmentAdapter } from 'adapters/primary/commitment.adapter'
+import { CommitmentAdapter } from 'adapters/database/feedWith/commitmentAdapter'
 import { Commitment } from 'entities/commitment'
 
 export const commitmentGateway =

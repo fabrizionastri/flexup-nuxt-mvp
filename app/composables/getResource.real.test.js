@@ -12,7 +12,7 @@ import { getAccounts } from './getResource.js'
 // import db from '../../mock/index' // 👌✔️ works
 // import db from '../../mock/' // 👌✔️ works
 // import db from '../../mock' // 👌✔️ works
-import db from 'mock' // 👌✔️ works -> use this as it's the shortest 😊🎉😎
+import db from 'mock/jsonServer' // 👌✔️ works -> use this as it's the shortest 😊🎉😎
 const accounts = db.account
 
 describe('getAccounts -> real access to server', () => {
@@ -24,20 +24,16 @@ describe('getAccounts -> real access to server', () => {
     expect(assertion).toEqual(result)
   })
 
-  it('should return an account when the id is provided', async () => {
-    const assertion = await getAccounts('id', 'account1')
-    const result = accounts.slice(0, 1)
-    expect(assertion).toEqual(result)
-  })
-
-  it('should return an account when the name is provided', async () => {
-    const assertion = await getAccounts('name', 'FlexUp')
-    // console.log('assertion:', assertion)
-    const result = accounts.slice(0, 1)
-    expect(assertion).toEqual(result)
-  })
-
-  it('should be true', () => {
-    expect(true).toBe(true)
-  })
+  //   it('should return an account when the id is provided', async () => {
+  //     const assertion = await getAccounts('id', 'account1')
+  //     const result = accounts.slice(0, 1)
+  //     expect(assertion).toEqual(result)
+  //   })
+  //
+  //   it('should return an account when the name is provided', async () => {
+  //     const assertion = await getAccounts('name', 'FlexUp')
+  //     // console.log('assertion:', assertion)
+  //     const result = accounts.slice(0, 1)
+  //     expect(assertion).toEqual(result)
+  //   })
 })

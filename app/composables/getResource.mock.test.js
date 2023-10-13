@@ -39,7 +39,11 @@ describe('getResource Composable', () => {
   })
 
   it('handles errors gracefully', async () => {
-    axios.get.mockRejectedValueOnce(new Error('API Error'))
+    axios.get.mockRejectedValueOnce(
+      new Error(
+        'API Error generated intentionally by tests in app/composables/getResource.mock.test.js'
+      )
+    )
 
     await expect(getResource('account')).rejects.toThrow('API Error')
   })

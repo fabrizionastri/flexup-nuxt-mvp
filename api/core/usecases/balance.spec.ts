@@ -1,4 +1,4 @@
-import { balanceTestCases } from '~/mock/inMemory/balance'
+import { balanceTestCases } from 'mock/inMemory/balance'
 import { Balances } from 'entities/balance'
 import {
   selectBalances,

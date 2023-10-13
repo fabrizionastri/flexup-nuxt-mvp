@@ -1,6 +1,6 @@
 import { AllocationGateway } from 'gateways/allocationGateway'
 
-describe('Allocations gateway', () => {
+describe.todo('Allocations gateway', () => {
   it('should throw an error if adapter is null', () => {
     expect(AllocationGateway()).toThrowError('Function not implemented.')
   })

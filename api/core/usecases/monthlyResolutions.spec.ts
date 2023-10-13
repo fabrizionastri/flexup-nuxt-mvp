@@ -1,4 +1,4 @@
-import { monthlyResolutionTestCases } from '~/mock/inMemory/monthlyResolution'
+import { monthlyResolutionTestCases } from 'mock/inMemory/monthlyResolution'
 import { runMonthlyResolutionSteps } from 'usecases/monthlyResolution'
 import { runResolutionSteps } from 'usecases/resolution'
 

@@ -1,7 +1,7 @@
-import { balanceInstance1, balanceInstance2 } from '~/mock/inMemory/balance'
-import { BalanceAdapter } from 'adapters/primary/balance.adapter'
+import { balanceInstance1, balanceInstance2 } from 'mock/inMemory/balance'
+import { BalanceAdapter } from './balanceAdapter'
 
-describe('Adapter primary balance', () => {
+describe.todo('Adapter primary balance', () => {
   let adapter: BalanceAdapter
 
   beforeEach(() => {

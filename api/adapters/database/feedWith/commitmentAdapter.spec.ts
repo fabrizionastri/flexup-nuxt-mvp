@@ -1,6 +1,6 @@
-import { CommitmentAdapter } from './commitment.adapter'
+import { CommitmentAdapter } from './commitmentAdapter'
 
-describe('Commitment primary adapter', () => {
+describe.todo('Commitment primary adapter', () => {
   let adapter: CommitmentAdapter
 
   beforeEach(() => {

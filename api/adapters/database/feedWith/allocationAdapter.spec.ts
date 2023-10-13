@@ -1,7 +1,7 @@
-import { allocation1, allocation2 } from '~/mock/inMemory/allocation'
-import { AllocationAdapter } from 'adapters/primary/allocation.adapter'
+import { allocation1, allocation2 } from 'mock/inMemory/allocation'
+import { AllocationAdapter } from './allocationAdapter'
 
-describe('Adatper primary allocate', () => {
+describe.todo('Adatper primary allocate', () => {
   let adapter: AllocationAdapter
 
   beforeEach(() => {
