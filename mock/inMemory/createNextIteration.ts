@@ -1,9 +1,6 @@
 import { Commitment, Interest, Token } from 'entities/commitment'
 
-import {
-  ResiduePaymentTerms,
-  InterestPaymentTerms
-} from 'entities/paymentTerms'
+import { ResiduePaymentTerms, InterestPaymentTerms } from 'entities/paymentTerms'
 
 export const createNextMainIterationTestCases: Array<{
   summary: string

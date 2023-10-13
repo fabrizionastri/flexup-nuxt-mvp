@@ -14,7 +14,6 @@
       "@/*": ["./app/*"],
       "app/*": ["./app/*"],
       "api/*": ["./api/*", "./api"],
-      "src/*": ["./api/*", "./api"],
       "core/*": ["./api/core/*", "./api/core"],
       "entities/*": ["./api/core/entities/*", "./api/core/entities"],
       "usecases/*": ["./api/core/usecases/*", "./api/core/usecases"],

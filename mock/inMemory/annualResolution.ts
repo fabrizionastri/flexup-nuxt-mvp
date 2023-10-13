@@ -48,9 +48,7 @@ export const annualResolutionTestCases: Array<{
           distribution: 0,
           payable: 100
         },
-        allocations: [
-          { source: 'distribution', destination: 'payable', allocation: 100 }
-        ]
+        allocations: [{ source: 'distribution', destination: 'payable', allocation: 100 }]
       }
     ]
   },
@@ -77,9 +75,7 @@ export const annualResolutionTestCases: Array<{
           distribution: 30,
           payable: 35
         },
-        allocations: [
-          { source: 'creditBuyback', destination: 'payable', allocation: 25 }
-        ]
+        allocations: [{ source: 'creditBuyback', destination: 'payable', allocation: 25 }]
       },
       {
         availableCash: 10,
@@ -90,9 +86,7 @@ export const annualResolutionTestCases: Array<{
           distribution: 30,
           payable: 45
         },
-        allocations: [
-          { source: 'tokenBuyback', destination: 'payable', allocation: 10 }
-        ]
+        allocations: [{ source: 'tokenBuyback', destination: 'payable', allocation: 10 }]
       },
       {
         availableCash: 30,
@@ -103,15 +97,12 @@ export const annualResolutionTestCases: Array<{
           distribution: 0,
           payable: 75
         },
-        allocations: [
-          { source: 'distribution', destination: 'payable', allocation: 30 }
-        ]
+        allocations: [{ source: 'distribution', destination: 'payable', allocation: 30 }]
       }
     ]
   },
   {
-    summary:
-      '110/20/40/2000 with 100 (30+70) surplus in creditRerserve -> 0/0/0/370',
+    summary: '110/20/40/2000 with 100 (30+70) surplus in creditRerserve -> 0/0/0/370',
     initialBalances: {
       creditBuyback: 110,
       tokenBuyback: 20,
@@ -169,9 +160,7 @@ export const annualResolutionTestCases: Array<{
           distribution: 110,
           payable: 210
         },
-        allocations: [
-          { source: 'creditBuyback', destination: 'payable', allocation: 10 }
-        ]
+        allocations: [{ source: 'creditBuyback', destination: 'payable', allocation: 10 }]
       },
 
       {
@@ -184,9 +173,7 @@ export const annualResolutionTestCases: Array<{
           distribution: 110,
           payable: 260
         },
-        allocations: [
-          { source: 'tokenBuyback', destination: 'payable', allocation: 50 }
-        ]
+        allocations: [{ source: 'tokenBuyback', destination: 'payable', allocation: 50 }]
       },
       {
         availableCash: 110,
@@ -197,9 +184,7 @@ export const annualResolutionTestCases: Array<{
           distribution: 0,
           payable: 370
         },
-        allocations: [
-          { source: 'distribution', destination: 'payable', allocation: 110 }
-        ]
+        allocations: [{ source: 'distribution', destination: 'payable', allocation: 110 }]
       }
     ]
   },
@@ -244,9 +229,7 @@ export const annualResolutionTestCases: Array<{
           distribution: 40,
           payable: 35
         },
-        allocations: [
-          { source: 'creditBuyback', destination: 'payable', allocation: 25 }
-        ]
+        allocations: [{ source: 'creditBuyback', destination: 'payable', allocation: 25 }]
       },
       {
         availableCash: 10,
@@ -258,9 +241,7 @@ export const annualResolutionTestCases: Array<{
           distribution: 40,
           payable: 45
         },
-        allocations: [
-          { source: 'tokenBuyback', destination: 'payable', allocation: 10 }
-        ]
+        allocations: [{ source: 'tokenBuyback', destination: 'payable', allocation: 10 }]
       },
 
       {
@@ -273,9 +254,7 @@ export const annualResolutionTestCases: Array<{
           distribution: 0,
           payable: 85
         },
-        allocations: [
-          { source: 'distribution', destination: 'payable', allocation: 40 }
-        ]
+        allocations: [{ source: 'distribution', destination: 'payable', allocation: 40 }]
       }
     ]
   }

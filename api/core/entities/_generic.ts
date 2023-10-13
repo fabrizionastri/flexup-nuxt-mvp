@@ -11,8 +11,6 @@ export interface EntityGateway<T extends Entity> {
   getAllEntities: () => Promise<T[]>
 }
 
-export function getEntities<T extends Entity>(
-  gateway: EntityGateway<T>
-): Promise<T[]> {
+export function getEntities<T extends Entity>(gateway: EntityGateway<T>): Promise<T[]> {
   return gateway.getAllEntities()
 }

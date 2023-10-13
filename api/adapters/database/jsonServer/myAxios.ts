@@ -1,4 +1,3 @@
-// src/adapters/database/Adapters/jsonServer/item.jsonServer.Adapter.ts
 import axios, { AxiosResponse, Method } from 'axios'
 export const myAxios = axios.create({
   baseURL: 'http://localhost:3057/',

@@ -24,8 +24,4 @@ export const allocation3: AllocationInstance = {
   allocation: 10
 }
 
-export const allocations: AllocationInstance[] = [
-  allocation1,
-  allocation2,
-  allocation3
-]
+export const allocations: AllocationInstance[] = [allocation1, allocation2, allocation3]

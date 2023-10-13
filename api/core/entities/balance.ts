@@ -21,5 +21,5 @@ export const ZeroBalances: Balances = {
   creditBuyback: 0,
   tokenBuyback: 0,
   distribution: 0,
-  endowment: 0,
+  endowment: 0
 } as const

@@ -6,7 +6,7 @@ import { Priority } from './paymentTerms'
 export const ResolutionMechanisms = {
   cap: 'cap',
   ratio: 'ratio',
-  manual: 'manual',
+  manual: 'manual'
 } as const
 
 export type ResolutionMechanism = keyof typeof ResolutionMechanisms
@@ -17,7 +17,7 @@ export const ResolutionNatures = [
   'surplus',
   'topup',
   'buyback',
-  'distribution',
+  'distribution'
 ] as const
 
 export type ResolutionNature = (typeof ResolutionNatures)[number]
@@ -31,7 +31,7 @@ export const ResolutionNames = [
   'superflexOutflow',
   'creditBuyback',
   'tokenBuyback',
-  'distribution',
+  'distribution'
 ] as const
 
 export type ResolutionName = (typeof ResolutionNames)[number]

@@ -9,7 +9,7 @@ import { Tranche } from './tranche'
 export const OrderNaturePortionsTotal = {
   commercial: 1,
   financial: 0,
-  donation: -1,
+  donation: -1
 } as const
 
 export type OrderNature = keyof typeof OrderNaturePortionsTotal

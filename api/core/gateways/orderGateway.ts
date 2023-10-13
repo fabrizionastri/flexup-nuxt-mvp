@@ -10,8 +10,8 @@ import { round6 } from 'utils/round'
 export interface OrderGateway {
   getAllData: () => Promise<OrderData[]>
   getByIdData: (orderId: string) => Promise<OrderData | undefined>
-  getAll: () => Promise<OrderData[]>
-  getById: (orderId: string) => Promise<OrderData | undefined>
+  getAll: () => Promise<Order[]>
+  getById: (orderId: string) => Promise<Order | undefined>
 }
 
 export const createOrderGateway = (
@@ -26,13 +26,13 @@ export const createOrderGateway = (
   const getByIdData = async (orderId: string): Promise<OrderData | undefined> =>
     await orderAdapter.getById(orderId)
 
-  const getAll = async (): Promise<OrderData[]> => {
+  const getAll = async (): Promise<Order[]> => {
     const orderDatas = await orderAdapter.getAll()
     const orders = await Promise.all(orderDatas.map(computeOrder))
     return orders
   }
 
-  const getById = async (orderId: string): Promise<OrderData | undefined> => {
+  const getById = async (orderId: string): Promise<Order | undefined> => {
     const order = await orderAdapter.getById(orderId)
     if (order) {
       return computeOrder(order)
@@ -74,7 +74,8 @@ const computeOrderWithItems = async (
     amountExclTax,
     amountInclTax,
     taxAmount,
-    averageTaxRate
+    averageTaxRate,
+    tranches: []
   }
 }
 

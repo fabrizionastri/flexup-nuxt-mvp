@@ -1,6 +1,6 @@
 import { Item, ItemData } from 'entities/item'
 import { ItemAdapter } from 'adapters/database/interfaces'
-import { computeItem } from '../usecases/computeItem'
+import { computeItem } from 'usecases/computeItem'
 
 export interface ItemGateway {
   getByIdData: (itemId: string) => Promise<ItemData | undefined>

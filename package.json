@@ -1,9 +1,9 @@
 {
-  "name": "nuxt-app",
+  "name": "flexup-nuxt-mvp",
   "private": true,
   "type": "module",
   "version": "0.0.1",
-  "description": "My nuxt.js project",
+  "description": "MVP for the FlexUp app using Nuxt",
   "author": "Fabrizio Nastri",
   "scripts": {
     "build": "nuxt build",
@@ -13,11 +13,11 @@
     "lint": "eslint --ext .js,.vue --ignore-path .gitignore .",
     "postinstall": "nuxt prepare",
     "preview": "nuxt preview",
-    "test:cov": "vitest --reporter verbose --coverage",
+    "test:cov": "vitest --coverage",
     "test": "vitest --reporter verbose",
     "server": "nodemon",
     "db": " json-server --port 3057 --watch ./db/db.json",
-    "mock": "json-server --port 3057 --watch ./mock/index.json",
+     "mock": " json-server --port 3057 --watch ./mock/jsonServer/index.json",
     "start": "concurrently \"npm run mock\" \"npm run nodemon\"  \"npm run dev\" \"npm run test\" "
   },
   "dependencies": {
@@ -61,5 +61,8 @@
     "tsx": "^3.13.0",
     "typescript": "^5.2.2",
     "vitest": "^0.33.0"
+  },
+  "volta": {
+    "node": "18.18.0"
   }
 }

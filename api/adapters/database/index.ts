@@ -10,11 +10,11 @@ import { createOrderAdapterJsonServer } from './jsonServer/createOrderAdapterJso
 
 config()
 
-console.log('Adapter Index: process.env.STORAGE_TYPE before', process.env.STORAGE_TYPE)
+// console.log('Adapter Index: process.env.STORAGE_TYPE before', process.env.STORAGE_TYPE)
 if (!process.env.STORAGE_TYPE) {
   process.env.STORAGE_TYPE = 'InMemory'
 }
-console.log('Adapter Index: process.env.STORAGE_TYPE after', process.env.STORAGE_TYPE)
+// console.log('Adapter Index: process.env.STORAGE_TYPE after', process.env.STORAGE_TYPE)
 
 let createItemAdapter: any
 let createOrderAdapter: any

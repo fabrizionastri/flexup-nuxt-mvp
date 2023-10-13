@@ -1,7 +1,7 @@
 import { createItemGateway } from 'gateways/itemGateway'
 import { itemDatas, items } from 'mock/inMemory/item'
 
-import { createItemAdapterInMemory } from 'src/adapters/database/inMemory/createItemAdapterInMemory'
+import { createItemAdapterInMemory } from 'api/adapters/database/inMemory/createItemAdapterInMemory'
 
 let itemAdapter: any
 let itemGateway: any

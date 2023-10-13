@@ -7,8 +7,6 @@ export const computeItem = (item: ItemData): Item => {
     unitPriceInclTax: round6(item.unitPriceExclTax * (1 + item.taxRate)),
     amountExclTax: round6(item.quantity * item.unitPriceExclTax),
     taxAmount: round6(item.quantity * item.unitPriceExclTax * item.taxRate),
-    amountInclTax: round6(
-      item.quantity * item.unitPriceExclTax * (1 + item.taxRate)
-    )
+    amountInclTax: round6(item.quantity * item.unitPriceExclTax * (1 + item.taxRate))
   }
 }

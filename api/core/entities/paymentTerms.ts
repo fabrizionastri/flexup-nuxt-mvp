@@ -1,11 +1,4 @@
-export const Priorities = [
-  'firm',
-  'preferred',
-  'flex',
-  'superflex',
-  'credit',
-  'token',
-] as const
+export const Priorities = ['firm', 'preferred', 'flex', 'superflex', 'credit', 'token'] as const
 
 export type Priority = (typeof Priorities)[number]
 
@@ -19,7 +12,7 @@ export const MainPriorityRiskFactors = {
   flex: 0.4,
   superflex: 0.6,
   credit: 0.8,
-  token: 1,
+  token: 1
 } as const
 
 export const MainStartRiskFactors = {
@@ -27,7 +20,7 @@ export const MainStartRiskFactors = {
   deliveryFinish: 1,
   deliveryMiddle: 0.9,
   deliveryStart: 0.8,
-  confirmation: 0.7,
+  confirmation: 0.7
 } as const
 
 export type MainStart = keyof typeof MainStartRiskFactors
@@ -36,7 +29,7 @@ export const ResiduePriorityRiskFactors = {
   credit: 1,
   superflex: 0.9,
   flex: 0.8,
-  preferred: 0.7,
+  preferred: 0.7
 } as const
 
 export type ResiduePriority = keyof typeof ResiduePriorityRiskFactors
@@ -44,7 +37,7 @@ export type ResiduePriority = keyof typeof ResiduePriorityRiskFactors
 export const ResiduePeriodRiskFactors = {
   year: 1,
   quarter: 0.9,
-  month: 0.8,
+  month: 0.8
 } as const
 
 export type ResiduePeriod = keyof typeof ResiduePeriodRiskFactors
@@ -54,14 +47,14 @@ export const InterestStartRiskFactors = {
   deliveryFinish: 1,
   deliveryMiddle: 0.95,
   deliveryStart: 0.9,
-  confirmation: 0.85,
+  confirmation: 0.85
 } as const
 
 export const PeriodLengths = {
   day: 1,
   month: 30.4375,
   quarter: 91.3125,
-  year: 365.25,
+  year: 365.25
 } as const
 
 export type Period = keyof typeof PeriodLengths
@@ -69,7 +62,7 @@ export type Period = keyof typeof PeriodLengths
 export const AdjustmentLengths = {
   BOP: -0.5,
   EOP: 0.5,
-  none: 0,
+  none: 0
 } as const
 
 export type Adjustment = keyof typeof AdjustmentLengths
@@ -93,7 +86,7 @@ export type InterestStart = keyof typeof InterestStartRiskFactors
 
 export const InterestPeriodRiskFactors = {
   sameAsMain: 1,
-  ...ResiduePeriodRiskFactors,
+  ...ResiduePeriodRiskFactors
 } as const
 
 export type InterestPeriod = keyof typeof InterestPeriodRiskFactors

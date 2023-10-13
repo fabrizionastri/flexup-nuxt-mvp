@@ -4,18 +4,18 @@ export const ContractNatures = {
   commercial: {
     sumOfPortions: 1,
     clientLabel: 'Client',
-    supplierLabel: 'Supplier',
+    supplierLabel: 'Supplier'
   },
   funding: {
     sumOfPortions: 0,
     clientLabel: 'Investor',
-    supplierLabel: 'Recipient',
+    supplierLabel: 'Recipient'
   },
   donation: {
     sumOfPortions: -1,
     clientLabel: 'Donor',
-    supplierLabel: 'Beneficiary',
-  },
+    supplierLabel: 'Beneficiary'
+  }
 } as const
 
 export type ContractNature = keyof typeof ContractNatures

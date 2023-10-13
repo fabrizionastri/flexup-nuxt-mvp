@@ -10,7 +10,7 @@ export const ReserveNames = [
   'creditBuyback',
   'tokenBuyback',
   'distribution',
-  'endowment',
+  'endowment'
 ] as const
 
 export type ReserveName = (typeof ReserveNames)[number]

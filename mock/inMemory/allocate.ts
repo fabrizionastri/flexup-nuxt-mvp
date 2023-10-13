@@ -75,9 +75,7 @@ export const allocateTestCases: Array<{
         flex: 10,
         payable: 20
       },
-      allocations: [
-        { source: 'liquidity', destination: 'payable', allocation: 10 }
-      ]
+      allocations: [{ source: 'liquidity', destination: 'payable', allocation: 10 }]
     }
   },
   {
