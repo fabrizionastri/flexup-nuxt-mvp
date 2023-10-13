@@ -1,31 +1,19 @@
-# Nuxt dev/build outputs
+_docs
+!.env.example
 .cache
 .data
+.DS_Store
+.env
+.env.*
+.fleet
 .git
+.idea
 .nitro
 .nuxt
 .output
 .vscode
-dist
-pnpm-lock.yaml
-
-# Node dependencies
-node_modules
-
-# Logs
-logs
 *.log
-
-# Misc
-.DS_Store
-.fleet
-.idea
-
-# Local env files
-.env
-.env.*
-!.env.example
-
-# Project structure
-_docs
-_playground
+dist
+logs
+node_modules
+pnpm-lock.yaml

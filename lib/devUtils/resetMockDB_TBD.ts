@@ -1,7 +1,7 @@
 import fs from 'fs'
 import path from 'path'
 
-/* // Path to the mock in-memory directory
+// Path to the mock in-memory directory
 const directory = new URL('.', import.meta.url).pathname
 const __dirname = process.platform === 'win32' ? directory.slice(1) : directory
 console.log('__dirname: ' + __dirname)
@@ -12,9 +12,9 @@ console.log('mockDir: ' + mockDir)
 const files = fs.readdirSync(mockDir)
 
 // Object to store the final data
-const db = {} */
+const db = {}
 
-/* // Process each file
+// Process each file
 // for (const file of files) {
 const file = files[0]
 // Only process TypeScript files
@@ -26,7 +26,7 @@ if (path.extname(file) === '.ts') {
   // Extract the entity name from the file name
   const entity = path.basename(file, '.ts')
   console.log('entity: ' + entity)
-  const myObject = await loadObject(filePath, entity)
+  const myObject = await loadObjectTS(filePath, entity)
   console.log('myObject: ' + myObject)
   // import(filePath).then((module) => console.log('module: ' + module))
   // Extract the raw data array
@@ -49,20 +49,18 @@ if (path.extname(file) === '.ts') {
   // }
 }
 
-function print(obj) {
-  for (const [key, value] of Object.entries(obj)) {
-    console.log(`${key}: Value: ${value}`)
-  }
-}
+// function print(obj) {
+//   for (const [key, value] of Object.entries(obj)) {
+//     console.log(`${key}: Value: ${value}`)
+//   }
+// }
 
- */
-
-export async function loadObject(fileName: string, objectName: string) {
+export async function loadObjectTS(fileName: string, objectName: string) {
   const module = await import(fileName)
   const myObject = module[objectName] // use the dynamic name here
   return myObject
 }
 
-const accountDatas = await loadObject('../../mock/inMemory/account.ts', 'accountDatas')
+const accountDatas = await loadObjectTS('../../mock/inMemory/account.ts', 'accountDatas')
 
 console.log('accountDatas:', accountDatas) // Logs the object to the console
