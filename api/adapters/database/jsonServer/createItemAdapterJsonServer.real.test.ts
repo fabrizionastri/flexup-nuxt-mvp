@@ -1,4 +1,3 @@
-// import { itemDatas } from 'mock/inMemory'
 import { itemDatas } from 'mock/inMemory'
 import { createItemAdapterJsonServer } from './createItemAdapterJsonServer'
 

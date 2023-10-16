@@ -5,18 +5,12 @@ import type { Mock } from 'vitest'
 import { createItemAdapterJsonServer } from './createItemAdapterJsonServer'
 
 // Mocking the axios library
-
-// Option 1 - mock axios
-// import axios from 'axios'
-// vi.mock('axios')
-
-// Optio 2 - mock myAxios
-import axios from './myAxios' // je n'arrive pas à faire fonctionner myAxios, donc j'utilise axios tout simplement
+import axios from './myAxios'
 vi.mock('./myAxios')
 
 const axiosGetMock = axios.get as Mock
 const mockItem = { id: 'item1', orderId: 'order1', name: 'Test Item' }
-// let adapter: ReturnType<typeof createItemAdapterJsonServer>
+
 const adapter = createItemAdapterJsonServer()
 
 describe('createItemAdapterJsonServer - mock Axios', () => {

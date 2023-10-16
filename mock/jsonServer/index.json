@@ -1,9 +1,15 @@
 {
   "account": [
     {
-      "id": "account1",
+      "id": "flexup",
       "name": "FlexUp",
-      "type": "Activity",
+      "type": "project",
+      "status": "active",
+      "ownerType": "organization",
+      "ownerId": "cosys",
+      "currencyId": "EUR",
+      "countryId": "FRA",
+      "creationDate": "2020-01-01T00:00:00.000Z",
       "avatar": "/images/profiles/flexup.svg"
     },
     {

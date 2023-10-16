@@ -4,7 +4,7 @@ import { fileURLToPath } from 'node:url'
 export default defineVitestConfig({
   // plugins: path.resolve(__dirname,  vue()  ],
   test: {
-    environment: 'nuxt',
+    // environment: 'nuxt',
     globals: true,
     includeSource: [
       'api/**/*.{js,ts}',
