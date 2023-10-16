@@ -17,12 +17,14 @@
     "test": "vitest --reporter verbose",
     "server": "nodemon",
     "db": " json-server --port 3057 --watch ./db/db.json",
-     "mock": " json-server --port 3057 --watch ./mock/jsonServer/index.json",
-    "start": "concurrently \"npm run mock\" \"npm run nodemon\"  \"npm run dev\" \"npm run test\" "
+    "mock": " json-server --port 3057 --watch ./mock/jsonServer/index.json",
+    "start": "concurrently \"npm run mock\" \"npm run nodemon\"  \"npm run dev\" \"npm run test\" ",
+    "hono": "nodemon"
   },
   "dependencies": {
     "@hono/node-server": "^1.2.0",
     "@mdi/font": "^7.2.96",
+    "@paralleldrive/cuid2": "^2.2.2",
     "@tailwindcss/forms": "^0.5.6",
     "@typescript-eslint/eslint-plugin": "^6.7.4",
     "@typescript-eslint/parser": "^6.7.4",

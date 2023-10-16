@@ -1,4 +1,4 @@
-export type Currency = 'EUR' | 'USD' | 'GBP' | 'CHF' | 'JPY'
+import { Currency } from './_general'
 
 export const ContractNatures = {
   commercial: {

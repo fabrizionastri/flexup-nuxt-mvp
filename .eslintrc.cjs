@@ -34,6 +34,7 @@ module.exports = {
   plugins: ['@typescript-eslint', 'prettier', 'vue'],
   rules: {
     'vue/multi-word-component-names': 'off',
-    'vue/no-unused-vars': 'warn'
+    'vue/no-unused-vars': 'warn',
+    '@typescript-eslint/no-explicit-any': 'off' // this is only required if you use 'eslint:recommended' but not if you use 'eslint:essential',
   }
 }

@@ -1,10 +1,9 @@
 export interface Entity {
   id: string
+  [key: string]: unknown
 }
 
-export interface Entity {
-  id: string
-}
+export type EntityKey = 'account' | 'item' | 'order' | 'user'
 
 export interface EntityGateway<T extends Entity> {
   getEntityById: (id: string) => Promise<T | undefined>

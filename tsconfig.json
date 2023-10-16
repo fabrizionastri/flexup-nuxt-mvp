@@ -1,5 +1,4 @@
 {
-  // https://nuxt.com/docs/guide/concepts/typescript
   "extends": "./.nuxt/tsconfig.json",
   "compilerOptions": {
     "composite": true,
@@ -11,7 +10,7 @@
     "baseUrl": ".",
     "paths": {
       "~/*": ["./*"],
-      "@/*": ["./app/*"],
+      "@/*": ["./*"],
       "app/*": ["./app/*"],
       "api/*": ["./api/*", "./api"],
       "core/*": ["./api/core/*", "./api/core"],
@@ -23,13 +22,13 @@
       "utils/*": ["./lib/utils/*", "./lib/utils"],
       "mock/*": ["./mock/*", "./mock"]
     },
-    "types": ["vitest/globals"] // to avoid linting error
+    "types": ["vitest/globals"]
   },
   "ts-node": {
     "esm": true,
     "experimentalSpecifierResolution": "node",
     "require": ["tsconfig-paths/register"]
   },
-  "include": ["api/**/*", "app/**/*", "mock/**/*", "lib/**/*"],
-  "files": ["mock/index.json"]
+  "include": ["api/**/*", "app/**/*", "mock/**/*", "lib/**/*", "utils/**/*", "./*"],
+  "files": ["mock/index.json", "tsconfig.json"]
 }
