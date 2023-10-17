@@ -1,10 +1,10 @@
-import { TrancheGateway, createTrancheGateway } from './trancheGateway'
+import { createTrancheGateway } from './trancheGateway'
 import { computeItem } from '../usecases/computeItem'
 import { createItemAdapter, createOrderAdapter, createTrancheAdapter } from 'adapters/database'
-import { ItemAdapter, OrderAdapter, TrancheAdapter } from 'adapters/database/interfaces'
+import { ItemAdapter, TrancheAdapter } from 'adapters/database/interfaces'
 
 import { OrderData, Order } from 'entities/order'
-import { ItemGateway, createItemGateway } from 'gateways/itemGateway'
+import { createItemGateway } from 'gateways/itemGateway'
 import { round6 } from 'utils/round'
 
 export interface OrderGateway {
@@ -14,51 +14,11 @@ export interface OrderGateway {
   getById: (orderId: string) => Promise<Order | undefined>
 }
 
-export const createOrderGateway = (
-  orderAdapter: OrderAdapter,
-  itemAdapter: ItemAdapter,
-  trancheAdapter: TrancheAdapter
-): OrderGateway => {
-  const computeOrder = createComputeOrderFunc(itemAdapter, trancheAdapter)
-
-  const getAllData = async (): Promise<OrderData[]> => (await orderAdapter.getAll()) ?? []
-
-  const getByIdData = async (orderId: string): Promise<OrderData | undefined> =>
-    await orderAdapter.getById(orderId)
-
-  const getAll = async (): Promise<Order[]> => {
-    const orderDatas = await orderAdapter.getAll()
-    const orders = await Promise.all(orderDatas.map(computeOrder))
-    return orders
-  }
-
-  const getById = async (orderId: string): Promise<Order | undefined> => {
-    const order = await orderAdapter.getById(orderId)
-    if (order) {
-      return computeOrder(order)
-    }
-    return undefined
-  }
-  return {
-    getAllData,
-    getByIdData,
-    getAll,
-    getById
-  }
-}
-
-export const useOrderGateway = (accountId: string): OrderGateway => {
-  const orderAdapter = createOrderAdapter(accountId)
-  const itemAdapter = createItemAdapter()
-  const trancheAdapter = createTrancheAdapter()
-  const orderGateway = createOrderGateway(orderAdapter, itemAdapter, trancheAdapter)
-  return orderGateway
-}
-
 const computeOrderWithItems = async (
   order: OrderData,
-  itemGateway: ItemGateway
+  itemAdapter: ItemAdapter
 ): Promise<Order> => {
+  const itemGateway = createItemGateway(itemAdapter)
   const itemDatas = await itemGateway.getByOrderId(order.id)
   const items = itemDatas.map(computeItem)
 
@@ -79,18 +39,47 @@ const computeOrderWithItems = async (
   }
 }
 
-const createComputeOrderFunc = (
+const computeOrder = async (
+  order: OrderData,
   itemAdapter: ItemAdapter,
   trancheAdapter: TrancheAdapter
-): ((order: OrderData) => Promise<Order>) => {
-  return async (order: OrderData): Promise<Order> => {
-    const itemGateway: ItemGateway = createItemGateway(itemAdapter)
-    const trancheGateway: TrancheGateway = createTrancheGateway(trancheAdapter)
-    const orderWithItems: Order = await computeOrderWithItems(order, itemGateway)
-    const tranches = await trancheGateway.getByOrder(orderWithItems)
-    return {
-      ...orderWithItems,
-      tranches
+): Promise<Order> => {
+  const orderWithItems = await computeOrderWithItems(order, itemAdapter)
+  const trancheGateway = createTrancheGateway(trancheAdapter)
+  const tranches = await trancheGateway.getByOrder(orderWithItems)
+
+  return {
+    ...orderWithItems,
+    tranches
+  }
+}
+export const createOrderGateway = (accountId: string): OrderGateway => {
+  const orderAdapter = createOrderAdapter(accountId)
+  const itemAdapter = createItemAdapter()
+  const trancheAdapter = createTrancheAdapter()
+
+  const getAllData = async (): Promise<OrderData[]> => (await orderAdapter.getAll()) ?? []
+
+  const getByIdData = async (orderId: string): Promise<OrderData | undefined> =>
+    await orderAdapter.getById(orderId)
+
+  const getAll = async (): Promise<Order[]> => {
+    const orderDatas = await orderAdapter.getAll()
+    const orders = await Promise.all(orderDatas.map(computeOrder))
+    return orders
+  }
+
+  const getById = async (orderId: string): Promise<Order | undefined> => {
+    const order = await orderAdapter.getById(orderId)
+    if (order) {
+      return computeOrder(order, itemAdapter, trancheAdapter)
     }
+    return undefined
+  }
+  return {
+    getAllData,
+    getByIdData,
+    getAll,
+    getById
   }
 }

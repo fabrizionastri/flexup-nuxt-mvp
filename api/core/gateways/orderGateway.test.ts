@@ -1,4 +1,4 @@
-import { useOrderGateway } from './orderGateway'
+import { createOrderGateway } from './orderGateway'
 import { OrderGateway } from 'gateways/orderGateway'
 import { orders, orderDatas } from 'mock/inMemory'
 
@@ -7,7 +7,7 @@ let orderGateway: OrderGateway
 describe('orderGateway', () => {
   describe('for existing account', () => {
     beforeEach(async () => {
-      orderGateway = useOrderGateway('account0')
+      orderGateway = createOrderGateway('account0')
     })
     it('getByIdData should return the order with raw data only', async () => {
       const result = await orderGateway.getByIdData('order0')
@@ -29,7 +29,7 @@ describe('orderGateway', () => {
 
   describe('for inexisting account', () => {
     beforeEach(async () => {
-      orderGateway = useOrderGateway('account99')
+      orderGateway = createOrderGateway('account99')
     })
     it('getByIdData should return undefined', async () => {
       const result = await orderGateway.getByIdData('order0')

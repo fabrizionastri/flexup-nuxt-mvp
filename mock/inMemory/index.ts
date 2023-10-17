@@ -7,6 +7,7 @@ export * from './order'
 export * from './resolution'
 export * from './riskFactor'
 export * from './tranche'
+export * from './user'
 
 // import { commitmentDatas } from './commitment'
 // import { allocationDatas } from './allocation'
