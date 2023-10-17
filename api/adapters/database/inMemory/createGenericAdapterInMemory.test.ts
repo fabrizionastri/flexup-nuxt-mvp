@@ -1,14 +1,14 @@
 import { createGenericAdapterInMemory } from './createGenericAdapterInMemory'
-import { fabrizioNastriAccountData } from 'mock/inMemory/account'
-import { totoLaRifletteData } from 'mock/inMemory/user'
+import { fabrizioAccountData } from 'mock/inMemory/account'
+import { totoData } from 'mock/inMemory/user'
 
 describe('createGenericAdapterInMemory', () => {
   describe('-> account', () => {
     const accountAdapter = createGenericAdapterInMemory('account')
     describe('getById', () => {
       it('should retrieve an entity by its ID', async () => {
-        const result = await accountAdapter.getById('fabrizioNastriAccount')
-        expect(result).toEqual(fabrizioNastriAccountData)
+        const result = await accountAdapter.getById('fabrizioAccount')
+        expect(result).toEqual(fabrizioAccountData)
       })
 
       it('should return undefined for a non-existent ID', async () => {
@@ -21,7 +21,7 @@ describe('createGenericAdapterInMemory', () => {
       it('should retrieve entities based on a property and its value', async () => {
         const results = await accountAdapter.getByProperty('ownerType', 'person')
 
-        expect(results).toContain(fabrizioNastriAccountData)
+        expect(results).toContain(fabrizioAccountData)
       })
 
       it('should return an empty array if no entities match the criteria', async () => {
@@ -42,15 +42,15 @@ describe('createGenericAdapterInMemory', () => {
     const accountAdapter = createGenericAdapterInMemory('user')
     describe('getById', () => {
       it('should retrieve an entity by its ID', async () => {
-        const result = await accountAdapter.getById('totoLaRiflette')
-        expect(result).toEqual(totoLaRifletteData)
+        const result = await accountAdapter.getById('toto')
+        expect(result).toEqual(totoData)
       })
     })
 
     describe('getByProperty', () => {
       it('should retrieve entities based on a property and its value', async () => {
         const results = await accountAdapter.getByProperty('status', 'pending')
-        expect(results).toContain(totoLaRifletteData)
+        expect(results).toContain(totoData)
       })
     })
   })

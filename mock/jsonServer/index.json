@@ -1,12 +1,12 @@
 {
   "account": [
     {
-      "id": "fabrizioNastriAccount",
+      "id": "fabrizioAccount",
       "name": "Fabrizio Nastri",
       "type": "Main",
       "status": "Active",
       "ownerType": "Individual",
-      "ownerId": "fabrizioNastriAccount",
+      "ownerId": "fabrizioAccount",
       "currencyId": "EUR",
       "countryId": "FRA",
       "creationDate": "2020-01-01T00:00:00.000Z",
@@ -192,14 +192,14 @@
   ],
   "user": [
     {
-      "id": "fabrizioNastriUser",
+      "id": "fabrizioUser",
       "password": "plop",
       "creationDate": "2019-01-01T00:00:00.000Z",
       "status": "active",
       "lastLoginDate": "2019-01-01T00:00:00.000Z"
     },
     {
-      "id": "totoLaRiflette",
+      "id": "toto",
       "password": "plop",
       "creationDate": "2019-01-01T00:00:00.000Z",
       "status": "pending"

@@ -1,12 +1,12 @@
 import { AccountData, Account } from 'entities/account'
 
-export const fabrizioNastriAccountData: AccountData = {
-  id: 'fabrizioNastriAccount',
+export const fabrizioAccountData: AccountData = {
+  id: 'fabrizioAccount',
   name: 'Fabrizio Nastri',
   type: 'Main',
   status: 'Active',
   ownerType: 'Individual',
-  ownerId: 'fabrizioNastriAccount',
+  ownerId: 'fabrizioAccount',
   currencyId: 'EUR',
   countryId: 'FRA',
   creationDate: new Date('2020-01-01'),
@@ -92,7 +92,7 @@ export const poulaillerMobileData: AccountData = {
 }
 
 export const accountDatas = [
-  fabrizioNastriAccountData,
+  fabrizioAccountData,
   cosysData,
   flexupData,
   pizzaDOroData,
@@ -103,8 +103,8 @@ export const accountDatas = [
 
 // ----------- Computed objects -------------------
 
-export const fabrizioNastriAccount: Account = {
-  ...fabrizioNastriAccountData,
+export const fabrizioAccount: Account = {
+  ...fabrizioAccountData,
   label: 'Fabrizio Nastri 👤',
   ownerName: 'Fabrizio Nastri',
   ownerLabel: 'Fabrizio Nastri 👤',
@@ -169,7 +169,7 @@ export const poulaillerMobile: Account = {
 }
 
 export const accounts = [
-  fabrizioNastriAccount,
+  fabrizioAccount,
   cosys,
   flexup,
   pizzaDOro,

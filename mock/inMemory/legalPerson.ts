@@ -9,7 +9,7 @@ export interface LegalPerson {
 
 export const legalPersons: LegalPerson[] = [
   {
-    id: 'fabrizioNastriPerson',
+    id: 'fabrizioPerson',
     type: 'Individual',
     name: 'Fabrizio Nastri',
     label: 'Fabrizio Nastri 👤'
