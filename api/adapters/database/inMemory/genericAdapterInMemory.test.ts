@@ -1,4 +1,4 @@
-import { createGenericAdapterInMemory } from './createGenericAdapterInMemory'
+import { createGenericAdapterInMemory } from './genericAdapterInMemory'
 import { fabrizioAccountData } from 'mock/inMemory/account'
 import { totoData } from 'mock/inMemory/user'
 

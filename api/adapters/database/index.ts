@@ -5,8 +5,8 @@ import {
   createOrderAdapterInMemoryForAccountId,
   createTrancheAdapterInMemory
 } from './inMemory'
-import { createItemAdapterJsonServer } from './jsonServer/createItemAdapterJsonServer'
-import { createOrderAdapterJsonServer } from './jsonServer/createOrderAdapterJsonServer'
+import { createItemAdapterJsonServer } from './jsonServer/itemAdapterJsonServer'
+import { createOrderAdapterJsonServer } from './jsonServer/orderAdapterJsonServer'
 
 config()
 

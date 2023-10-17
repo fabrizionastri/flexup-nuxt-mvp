@@ -1,6 +1,6 @@
 import { orderDatas } from 'mock/inMemory'
 
-import { createOrderAdapterInMemoryForAccountId } from './createOrderAdapterInMemoryForAccountId'
+import { createOrderAdapterInMemoryForAccountId } from './orderAdapterInMemoryForAccountId'
 
 let adapter: any
 

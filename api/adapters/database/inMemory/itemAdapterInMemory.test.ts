@@ -1,4 +1,4 @@
-import { createItemAdapterInMemory } from 'adapters/database/inMemory/createItemAdapterInMemory'
+import { createItemAdapterInMemory } from 'adapters/database/inMemory/itemAdapterInMemory'
 import { itemDatas } from 'mock/inMemory'
 
 describe('createItemAdapterInMemory', () => {
