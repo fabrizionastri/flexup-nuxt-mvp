@@ -1,10 +1,10 @@
-import { CustomAdapter } from '../interfaces'
+import { GenericAdapter } from '../interfaces'
 import { Entity, EntityKey } from 'entities/_generic'
 import { inMemory } from 'mock/inMemory'
 
-export const createCustomAdapterInMemory = <T extends Entity>(
+export const createGenericAdapterInMemory = <T extends Entity>(
   entity: EntityKey
-): CustomAdapter<T> => {
+): GenericAdapter<T> => {
   const entities: T[] = [...(inMemory[entity] as unknown as T[])]
 
   const getById = (entityId: string): Promise<T | undefined> =>

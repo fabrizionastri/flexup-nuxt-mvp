@@ -1,10 +1,10 @@
-import { createCustomAdapterInMemory } from './createCustomAdapterInMemory'
+import { createGenericAdapterInMemory } from './createGenericAdapterInMemory'
 import { fabrizioNastriAccountData } from 'mock/inMemory/account'
 import { totoLaRifletteData } from 'mock/inMemory/user'
 
-describe('createCustomAdapterInMemory', () => {
+describe('createGenericAdapterInMemory', () => {
   describe('-> account', () => {
-    const accountAdapter = createCustomAdapterInMemory('account')
+    const accountAdapter = createGenericAdapterInMemory('account')
     describe('getById', () => {
       it('should retrieve an entity by its ID', async () => {
         const result = await accountAdapter.getById('fabrizioNastriAccount')
@@ -39,7 +39,7 @@ describe('createCustomAdapterInMemory', () => {
     })
   })
   describe('-> user', () => {
-    const accountAdapter = createCustomAdapterInMemory('user')
+    const accountAdapter = createGenericAdapterInMemory('user')
     describe('getById', () => {
       it('should retrieve an entity by its ID', async () => {
         const result = await accountAdapter.getById('totoLaRiflette')

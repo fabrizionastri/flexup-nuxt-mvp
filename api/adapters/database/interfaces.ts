@@ -1,7 +1,7 @@
 import { ItemData, OrderData, TrancheData } from 'entities/'
 import { Entity } from 'entities/_generic'
 
-export interface CustomAdapter<T extends Entity> {
+export interface GenericAdapter<T extends Entity> {
   getById: (id: string) => Promise<T | undefined>
   getByProperty: (property: string, value: unknown) => Promise<T[]>
 }
