@@ -35,7 +35,7 @@ export const forReserveTargetTestCases: Array<{
     initialBalances: { liquidity: 50, flex: 25, base: 20 },
     amountsRequested: { flexReserveTarget: 75 },
     resolutionName: 'flexReserveTarget',
-    destination: 'Flex',
+    destination: 'flex',
     expected: 50
   },
   {

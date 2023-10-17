@@ -1,4 +1,4 @@
-export type LegalPersonType = 'Organization' | 'Individual'
+export type LegalPersonType = 'organization' | 'individual'
 
 export interface LegalPerson {
   id: string
@@ -10,13 +10,13 @@ export interface LegalPerson {
 export const legalPersons: LegalPerson[] = [
   {
     id: 'fabrizioPerson',
-    type: 'Individual',
+    type: 'individual',
     name: 'Fabrizio Nastri',
     label: 'Fabrizio Nastri 👤'
   },
   {
-    id: 'cosysOrganization',
-    type: 'Organization',
+    id: 'cosysorganization',
+    type: 'organization',
     name: 'Cosys',
     label: 'Cosys 🏢'
   }
