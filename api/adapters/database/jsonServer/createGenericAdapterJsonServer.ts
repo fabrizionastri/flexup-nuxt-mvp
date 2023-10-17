@@ -7,11 +7,11 @@ export const createGenericAdapterJsonServer = <T extends Entity>(
 ): GenericAdapter<T> => {
   return {
     getById: async (entityId: string): Promise<T | undefined> => {
-      console.log('createGenericAdapterJsonServer.ts - entity:', entity)
-      console.log(
-        'createGenericAdapterJsonServer.ts - encodeURIComponent(entityId):',
-        encodeURIComponent(entityId)
-      )
+      // console.log('createGenericAdapterJsonServer.ts - entity:', entity)
+      // console.log(
+      //   'createGenericAdapterJsonServer.ts - encodeURIComponent(entityId):',
+      //   encodeURIComponent(entityId)
+      // )
       const result = await axios.get<T>(
         `/${encodeURIComponent(entity)}/${encodeURIComponent(entityId)}`
       )

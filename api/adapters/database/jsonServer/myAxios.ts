@@ -13,7 +13,7 @@ export const handleRequest =
         method: httpMethod,
         data
       })
-      console.log(`handleRequest ${httpMethod} at url:`, url)
+      // console.log(`handleRequest ${httpMethod} at url:`, url)
       return response.data
     } catch (error) {
       // console.error(error)

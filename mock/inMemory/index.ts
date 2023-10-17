@@ -29,3 +29,5 @@ export const inMemory = {
   order: orderDatas,
   user: userDatas
 }
+
+export default inMemory

@@ -1,8 +1,8 @@
 import { Currency, Country } from './_general'
 
-export type AccountType = 'main' | 'project'
-export type OwnerType = 'person' | 'organization' | 'account' | 'grouping'
-export type AccountStatus = 'active' | 'pending' | 'suspended' | 'closed'
+export type AccountType = 'Main' | 'Project'
+export type OwnerType = 'Individual' | 'Organization' | 'Account' | 'Grouping'
+export type AccountStatus = 'Active' | 'Pending' | 'Suspended' | 'Closed'
 
 export interface AccountData {
   id: string

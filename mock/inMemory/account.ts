@@ -3,9 +3,9 @@ import { AccountData, Account } from 'entities/account'
 export const fabrizioNastriAccountData: AccountData = {
   id: 'fabrizioNastriAccount',
   name: 'Fabrizio Nastri',
-  type: 'main',
-  status: 'active',
-  ownerType: 'person',
+  type: 'Main',
+  status: 'Active',
+  ownerType: 'Individual',
   ownerId: 'fabrizioNastriAccount',
   currencyId: 'EUR',
   countryId: 'FRA',
@@ -14,11 +14,11 @@ export const fabrizioNastriAccountData: AccountData = {
 }
 
 export const cosysData: AccountData = {
-  id: 'cosys',
+  id: 'cosysAccount',
   name: 'Cosys',
-  type: 'main',
-  status: 'active',
-  ownerType: 'organization',
+  type: 'Main',
+  status: 'Active',
+  ownerType: 'Organization',
   ownerId: 'cosys',
   currencyId: 'EUR',
   countryId: 'FRA',
@@ -29,9 +29,9 @@ export const cosysData: AccountData = {
 export const flexupData: AccountData = {
   id: 'flexup',
   name: 'FlexUp',
-  type: 'project',
-  status: 'active',
-  ownerType: 'organization',
+  type: 'Project',
+  status: 'Active',
+  ownerType: 'Organization',
   ownerId: 'cosys',
   currencyId: 'EUR',
   countryId: 'FRA',
@@ -42,9 +42,9 @@ export const flexupData: AccountData = {
 export const pizzaDOroData: AccountData = {
   id: 'pizzaDOro',
   name: "Pizza d'Oro",
-  type: 'project',
-  status: 'active',
-  ownerType: 'person',
+  type: 'Project',
+  status: 'Active',
+  ownerType: 'Individual',
   ownerId: 'tontonPognon',
   currencyId: 'EUR',
   countryId: 'FRA',
@@ -55,9 +55,9 @@ export const pizzaDOroData: AccountData = {
 export const pizzaDOroTakeAwayData: AccountData = {
   id: 'pizzaDOroTakeAway',
   name: "Pizza d'Oro TakeAway",
-  type: 'project',
-  status: 'pending',
-  ownerType: 'account',
+  type: 'Project',
+  status: 'Pending',
+  ownerType: 'Account',
   ownerId: 'pizzaDOro',
   currencyId: 'EUR',
   countryId: 'FRA',
@@ -67,10 +67,10 @@ export const pizzaDOroTakeAwayData: AccountData = {
 
 export const domMazyData: AccountData = {
   id: 'domMazy',
-  name: 'Domaine de Mazy',
-  type: 'main',
-  status: 'active',
-  ownerType: 'grouping',
+  name: 'DoMaine de Mazy',
+  type: 'Main',
+  status: 'Active',
+  ownerType: 'Grouping',
   ownerId: 'groupementDomMazy',
   currencyId: 'EUR',
   countryId: 'FRA',
@@ -81,9 +81,9 @@ export const domMazyData: AccountData = {
 export const poulaillerMobileData: AccountData = {
   id: 'poulaillerMobile',
   name: 'Poulailler MobiMazy',
-  type: 'project',
-  status: 'suspended',
-  ownerType: 'grouping',
+  type: 'Project',
+  status: 'Suspended',
+  ownerType: 'Grouping',
   ownerId: 'domMazy',
   currencyId: 'EUR',
   countryId: 'FRA',
@@ -150,9 +150,9 @@ export const pizzaDOroTakeAway: Account = {
 
 export const domMazy: Account = {
   ...domMazyData,
-  label: 'Domaine de Mazy 🚀',
-  ownerName: 'Groupement du Domaine de Mazy',
-  ownerLabel: 'Groupement du Domaine de Mazy 👥',
+  label: 'DoMaine de Mazy 🚀',
+  ownerName: 'Groupement du DoMaine de Mazy',
+  ownerLabel: 'Groupement du DoMaine de Mazy 👥',
   currencyName: 'Euro',
   currencySymbol: '€'
 }
@@ -160,12 +160,12 @@ export const domMazy: Account = {
 export const poulaillerMobile: Account = {
   ...poulaillerMobileData,
   label: 'Poulailler Mobile 🚀',
-  ownerName: 'Domaine de Mazy',
-  ownerLabel: 'Domaine de Mazy 🚀',
+  ownerName: 'DoMaine de Mazy',
+  ownerLabel: 'DoMaine de Mazy 🚀',
   currencyName: 'Euro',
   currencySymbol: '€'
-  // finalOwnerName: 'Groupement du Domaine de Mazy',
-  // finalOwnerLabel: 'Groupement du Domaine de Mazy 👥'
+  // finalOwnerName: 'Groupement du DoMaine de Mazy',
+  // finalOwnerLabel: 'Groupement du DoMaine de Mazy 👥'
 }
 
 export const accounts = [
