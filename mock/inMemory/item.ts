@@ -11,7 +11,7 @@ export const commercialOrderItem1Data: ItemData = {
   taxRate: 0.2
 }
 export const commercialOrderItem2Data: ItemData = {
-  id: 'commercialOrderItem2Data',
+  id: 'commercialOrderItem2',
   orderId: 'commercialOrder',
   name: 'T-shirt rouge',
   quantity: 11,
@@ -20,7 +20,7 @@ export const commercialOrderItem2Data: ItemData = {
   taxRate: 0.1
 }
 export const orderWithRebateItemData: ItemData = {
-  id: 'orderWithRebateItemData',
+  id: 'orderWithRebateItem',
   orderId: 'orderWithRebate',
   name: 'Prestation de service',
   quantity: 100,

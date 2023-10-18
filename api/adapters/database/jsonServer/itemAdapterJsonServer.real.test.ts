@@ -1,13 +1,13 @@
-import { itemDatas } from 'mock/inMemory'
+import * as items from 'mock/inMemory/item'
 import { createItemAdapterJsonServer } from './itemAdapterJsonServer'
 
 const adapter = createItemAdapterJsonServer()
 
 describe('createItemAdapterJsonServer - real Axios', () => {
   describe('getById', () => {
-    it('should return itemData for item id', async () => {
-      const result = await adapter.getById('orderWithRebateItemDataItem2')
-      expect(result).toEqual(itemDatas[2])
+    it('should return item data for item id', async () => {
+      const result = await adapter.getById('commercialOrderItem2')
+      expect(result).toEqual(items.commercialOrderItem2Data)
     })
     it('should return undefined for unknown item id', async () => {
       const result = await adapter.getById('unknown')
@@ -16,8 +16,8 @@ describe('createItemAdapterJsonServer - real Axios', () => {
   })
   describe('getByOrderId', () => {
     it('should return itemDatas for order id', async () => {
-      const result = await adapter.getByOrderId('orderWithRebate')
-      expect(result).toEqual([itemDatas[2], itemDatas[3]])
+      const result = await adapter.getByOrderId('commercialOrder')
+      expect(result).toEqual([items.commercialOrderItem1Data, items.commercialOrderItem2Data])
     })
     it('should return [] for unknown order id', async () => {
       const result = await adapter.getByOrderId('unknown')

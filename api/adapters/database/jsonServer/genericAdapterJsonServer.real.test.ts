@@ -12,7 +12,7 @@ const expected = {
 describe('createGenericAdapterJsonServer - real Axios', () => {
   describe('getById', () => {
     it('should return an entity when called with id', async () => {
-      const result = await adapter.getById('flexup')
+      const result = await adapter.getById('flexupAccount')
       expect(JSON.stringify(result)).toEqual(JSON.stringify(expected))
     })
 

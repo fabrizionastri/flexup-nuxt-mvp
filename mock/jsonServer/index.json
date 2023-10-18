@@ -93,7 +93,7 @@
       "taxRate": 0.2
     },
     {
-      "id": "commercialOrderItem2Data",
+      "id": "commercialOrderItem2",
       "orderId": "commercialOrder",
       "name": "T-shirt rouge",
       "quantity": 11,
@@ -102,7 +102,7 @@
       "taxRate": 0.1
     },
     {
-      "id": "orderWithRebateItemData",
+      "id": "orderWithRebateItem",
       "orderId": "orderWithRebate",
       "name": "Prestation de service",
       "quantity": 100,
