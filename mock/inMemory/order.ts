@@ -9,7 +9,7 @@ export const commercialOrderData: OrderData = {
   clientAccountId: 'pizzaDOroAccount',
   name: 'T blues & rouges',
   nature: 'commercial',
-  principal: 265.2
+  principal: 253.1
 }
 export const orderWithNoItemsData: OrderData = {
   id: 'orderWithNoItems',
@@ -72,11 +72,23 @@ export const commercialOrder: Order = {
   items: items.itemsForCommercialOrder,
   tranches: tranches.tranchesForcommercialOrder,
   amountExclTax: 221,
-  taxAmount: 44.2,
-  amountInclTax: 265.2,
-  averageTaxRate: 0.2,
-  principal: 265.2
+  taxAmount: 32.1,
+  amountInclTax: 253.1,
+  averageTaxRate: 0.145249,
+  principal: 253.1
 }
+
+export const commercialOrderWithItemsOnly: Order = {
+  ...commercialOrderData,
+  items: items.itemsForCommercialOrder,
+  tranches: [],
+  amountExclTax: 221,
+  taxAmount: 32.1,
+  amountInclTax: 253.1,
+  averageTaxRate: 0.145249,
+  principal: 253.1
+}
+
 export const orderWithNoItems: Order = {
   ...orderWithNoItemsData,
   items: [],

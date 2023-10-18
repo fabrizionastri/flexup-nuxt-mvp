@@ -10,17 +10,16 @@ import { createOrderAdapterJsonServer } from './jsonServer/orderAdapterJsonServe
 
 config()
 
-// console.log('Adapter Index: process.env.STORAGE_TYPE before', process.env.STORAGE_TYPE)
-if (!process.env.STORAGE_TYPE) {
-  process.env.STORAGE_TYPE = 'InMemory'
-}
-// console.log('Adapter Index: process.env.STORAGE_TYPE after', process.env.STORAGE_TYPE)
+const dataSource: string = process.env.STORAGE_TYPE || 'InMemory'
+// const dataSource: string = 'jsonServer'
+
+console.log('Adapters data source:', dataSource)
 
 let createItemAdapter: any
 let createOrderAdapter: any
 let createTrancheAdapter: any
 
-switch (process.env.STORAGE_TYPE) {
+switch (dataSource) {
   case 'inMemory':
     createItemAdapter = createItemAdapterInMemory
     createOrderAdapter = createOrderAdapterInMemory

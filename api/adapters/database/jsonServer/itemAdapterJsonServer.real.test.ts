@@ -24,4 +24,14 @@ describe('createItemAdapterJsonServer - real Axios', () => {
       expect(result).toEqual([])
     })
   })
+  describe('getByProperty', () => {
+    it('should return itemDatas for order id', async () => {
+      const result = await adapter.getByProperty('orderId', 'commercialOrder')
+      expect(result).toEqual([items.commercialOrderItem1Data, items.commercialOrderItem2Data])
+    })
+    it('should return [] for unknown order id', async () => {
+      const result = await adapter.getByProperty('orderId', 'unknown')
+      expect(result).toEqual([])
+    })
+  })
 })

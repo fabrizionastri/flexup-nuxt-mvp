@@ -65,10 +65,10 @@ export const commercialOrderItem1: Item = {
 }
 export const commercialOrderItem2: Item = {
   ...commercialOrderItem2Data,
-  unitPriceInclTax: 13.2,
+  unitPriceInclTax: 12.1,
   amountExclTax: 121,
-  taxAmount: 24.2,
-  amountInclTax: 145.2
+  taxAmount: 12.1,
+  amountInclTax: 133.1
 }
 export const orderWithRebateItem: Item = {
   ...orderWithRebateItemData,

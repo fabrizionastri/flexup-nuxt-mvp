@@ -44,22 +44,22 @@ export const orderWithRebateFlexRebate50Data: TrancheData = {
   portion: -0.5,
   paymentTerms: { main: { priority: 'flex', period: 'year' } }
 }
-export const fundingUpfront100Data: TrancheData = {
-  id: 'fundingUpfront100',
+export const fundingOrderUpfront100Data: TrancheData = {
+  id: 'fundingOrderUpfront100',
   name: 'Funding',
   orderId: 'fundingOrder',
   portion: 1,
   paymentTerms: { main: { priority: 'firm' } }
 }
-export const fundingCredit100Data: TrancheData = {
-  id: 'fundingCredit100',
+export const fundingOrderCredit100Data: TrancheData = {
+  id: 'fundingOrderCredit100',
   name: 'Credit',
   orderId: 'fundingOrder',
   portion: -1,
   paymentTerms: { main: { priority: 'credit' } }
 }
-export const donation100Data: TrancheData = {
-  id: 'donation100',
+export const donationOrder100Data: TrancheData = {
+  id: 'donationOrder100',
   name: 'Donation',
   orderId: 'donationOrder',
   portion: 1,
@@ -72,33 +72,33 @@ export const trancheDatas: TrancheData[] = [
   commercialOrderCredit30interestData,
   orderWithRebateUpfront150Data,
   orderWithRebateFlexRebate50Data,
-  fundingUpfront100Data,
-  fundingCredit100Data,
-  donation100Data
+  fundingOrderUpfront100Data,
+  fundingOrderCredit100Data,
+  donationOrder100Data
 ]
 
 // Computed tranches
 
-export const commercialPreferred50: Tranche = {
+export const commercialOrderPreferred50: Tranche = {
   ...commercialOrderPreferred50Data,
   sign: 1,
-  principal: 132.6,
-  payorId: 'flexup',
-  payeeId: 'cosysAccount'
+  principal: 126.55,
+  payorId: 'pizzaDOroAccount',
+  payeeId: 'flexupAccount'
 }
-export const orderWithRebateFlex30: Tranche = {
+export const commercialOrderWithRebateFlex30: Tranche = {
   ...commercialOrderFlex30Data,
   sign: 1,
-  principal: 79.56,
-  payorId: 'flexup',
-  payeeId: 'cosysAccount'
+  principal: 75.93,
+  payorId: 'pizzaDOroAccount',
+  payeeId: 'flexupAccount'
 }
-export const commercialCredit30interest5: Tranche = {
+export const commercialOrderCredit30interest5: Tranche = {
   ...commercialOrderCredit30interestData,
   sign: 1,
-  principal: 53.04,
-  payorId: 'flexup',
-  payeeId: 'cosysAccount'
+  principal: 50.62,
+  payorId: 'pizzaDOroAccount',
+  payeeId: 'flexupAccount'
 }
 export const orderWithRebateUpfront150: Tranche = {
   ...orderWithRebateUpfront150Data,
@@ -114,22 +114,22 @@ export const orderWithRebateFlexRebate50: Tranche = {
   payorId: 'flexup',
   payeeId: 'pizzaDOro'
 }
-export const fundingUpfront100: Tranche = {
-  ...fundingUpfront100Data,
+export const fundingOrderUpfront100: Tranche = {
+  ...fundingOrderUpfront100Data,
   sign: 1,
   principal: 1000,
   payorId: 'fabrizioAccount',
   payeeId: 'domMazy'
 }
-export const fundingCredit100: Tranche = {
-  ...fundingCredit100Data,
+export const fundingOrderCredit100: Tranche = {
+  ...fundingOrderCredit100Data,
   sign: -1,
   principal: 1000,
   payorId: 'domMazy',
   payeeId: 'fabrizioAccount'
 }
-export const donation100: Tranche = {
-  ...donation100Data,
+export const donationOrder100: Tranche = {
+  ...donationOrder100Data,
   sign: 1,
   principal: 100,
   payorId: 'poulaillerMobile',
@@ -137,14 +137,14 @@ export const donation100: Tranche = {
 }
 
 export const tranches: Tranche[] = [
-  commercialPreferred50,
-  orderWithRebateFlex30,
-  commercialCredit30interest5,
+  commercialOrderPreferred50,
+  commercialOrderWithRebateFlex30,
+  commercialOrderCredit30interest5,
   orderWithRebateUpfront150,
   orderWithRebateFlexRebate50,
-  fundingUpfront100,
-  fundingCredit100,
-  donation100
+  fundingOrderUpfront100,
+  fundingOrderCredit100,
+  donationOrder100
 ]
 
 export const trancheDatasForcommercialOrder: TrancheData[] = [
@@ -154,9 +154,9 @@ export const trancheDatasForcommercialOrder: TrancheData[] = [
 ]
 
 export const tranchesForcommercialOrder: Tranche[] = [
-  commercialPreferred50,
-  orderWithRebateFlex30,
-  commercialCredit30interest5
+  commercialOrderPreferred50,
+  commercialOrderWithRebateFlex30,
+  commercialOrderCredit30interest5
 ]
 
 export const tranchesForOrderWithRebate: Tranche[] = [

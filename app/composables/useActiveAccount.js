@@ -5,6 +5,6 @@ export const useActiveAccount = () => {
     id: 1,
     name: 'FlexUp',
     type: 'Activity',
-    avatar '/images/profiles/flexup.svg'
+    avatar: '/images/profiles/flexup.svg'
   })
 }

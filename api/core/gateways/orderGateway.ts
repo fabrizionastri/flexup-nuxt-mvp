@@ -1,9 +1,9 @@
-import { createTrancheGateway } from './trancheGateway'
 import { computeItem } from '../usecases/computeItem'
 import { createItemAdapter, createOrderAdapter, createTrancheAdapter } from 'adapters/database'
-import { ItemAdapter, TrancheAdapter } from 'adapters/database/interfaces'
+import { TrancheAdapter } from 'adapters/database/interfaces'
 
 import { OrderData, Order } from 'entities/order'
+import { createTrancheGateway } from './trancheGateway'
 import { createItemGateway } from 'gateways/itemGateway'
 import { round6 } from 'utils/round'
 
@@ -13,13 +13,12 @@ export interface OrderGateway {
   // getByIdData: (orderId: string) => Promise<OrderData | undefined>
   getAll: () => Promise<Order[]>
   getById: (orderId: string) => Promise<Order | undefined>
-  getByProperty: (property: string, value: string) => Promise<Order[]>
+  getByProperty: (property: keyof OrderData, value: unknown) => Promise<Order[]>
 }
 
-const computeOrderWithItems = async (
-  order: OrderData,
-  itemAdapter: ItemAdapter
-): Promise<Order> => {
+export const computeOrderWithItems = async (order: OrderData): Promise<Order> => {
+  const itemAdapter = createItemAdapter()
+  // console.log('orderGateway.ts - itemAdapter:', itemAdapter)
   const itemGateway = createItemGateway(itemAdapter)
   const itemDatas = await itemGateway.getByOrderId(order.id)
   const items = itemDatas.map(computeItem)
@@ -41,12 +40,11 @@ const computeOrderWithItems = async (
   }
 }
 
-const computeOrder = async (
+export const computeOrder = async (
   order: OrderData,
-  itemAdapter: ItemAdapter,
   trancheAdapter: TrancheAdapter
 ): Promise<Order> => {
-  const orderWithItems = await computeOrderWithItems(order, itemAdapter)
+  const orderWithItems = await computeOrderWithItems(order)
   const trancheGateway = createTrancheGateway(trancheAdapter)
   const tranches = await trancheGateway.getByOrder(orderWithItems)
 
@@ -55,10 +53,14 @@ const computeOrder = async (
     tranches
   }
 }
+
 export const createOrderGateway = (accountId: string): OrderGateway => {
-  const orderAdapter = createOrderAdapter(accountId)
-  const itemAdapter = createItemAdapter()
   const trancheAdapter = createTrancheAdapter()
+  const orderAdapter = createOrderAdapter(accountId)
+
+  // const itemAdapter = createItemAdapterInMemory()
+  // console.log('orderGateway.ts - itemAdapter:', itemAdapter)
+  // console.log('orderGateway.ts - orderAdapter:', orderAdapter)
 
   //   const getAllData = async (): Promise<OrderData[]> => (await orderAdapter.getAll()) ?? []
   //
@@ -74,10 +76,17 @@ export const createOrderGateway = (accountId: string): OrderGateway => {
   const getById = async (orderId: string): Promise<Order | undefined> => {
     const order = await orderAdapter.getById(orderId)
     if (order) {
-      return computeOrder(order, itemAdapter, trancheAdapter)
+      return computeOrder(order, trancheAdapter)
     }
     return undefined
   }
+
+  const getByProperty = async (property: keyof OrderData, value: unknown): Promise<Order[]> => {
+    const orderDatas = await orderAdapter.getByProperty(property, value)
+    const orders = await Promise.all(orderDatas.map(computeOrder))
+    return orders
+  }
+
   return {
     getAll,
     getById,

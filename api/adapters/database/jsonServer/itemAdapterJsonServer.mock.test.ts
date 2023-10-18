@@ -44,4 +44,11 @@ describe('createItemAdapterJsonServer - mock Axios', () => {
       expect(axiosGetMock).toHaveBeenCalledWith('/item?orderId=orderWithRebate')
     })
   })
+
+  describe('getByProperty', () => {
+    it('should have been called with the right url', async () => {
+      await adapter.getByProperty('orderId', 'commercialOrder')
+      expect(axiosGetMock).toHaveBeenCalledWith('/item?orderId=commercialOrder')
+    })
+  })
 })
