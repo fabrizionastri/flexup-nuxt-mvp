@@ -19,16 +19,16 @@ export * from './user'
 // import { reserveDatas } from './reserve'
 // import { trancheDatas } from './tranche'
 
-import { accountDatas } from './account'
-import { itemDatas } from './item'
-import { orderDatas } from './order'
-import { userDatas } from './user'
+import { allAccountDatas } from './account'
+import { allItemDatas } from './item'
+import { allOrderDatas } from './order'
+import { allUserDatas } from './user'
 
 export const inMemory = {
-  account: accountDatas,
-  item: itemDatas,
-  order: orderDatas,
-  user: userDatas
+  account: allAccountDatas,
+  item: allItemDatas,
+  order: allOrderDatas,
+  user: allUserDatas
 }
 
 export default inMemory

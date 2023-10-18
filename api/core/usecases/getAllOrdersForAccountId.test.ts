@@ -15,7 +15,7 @@ describe('getAllOrdersForAccountId', () => {
   //   expect(true).toEqual(true)
   // })
   it('should return all orders for an existing account ID', async () => {
-    const result = await getAllOrdersForAccountId('account0')
+    const result = await getAllOrdersForAccountId('flexup')
     expect(result).toEqual(orders.slice(0, 2))
   })
 

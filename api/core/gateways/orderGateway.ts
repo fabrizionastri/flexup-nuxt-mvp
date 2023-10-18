@@ -8,10 +8,12 @@ import { createItemGateway } from 'gateways/itemGateway'
 import { round6 } from 'utils/round'
 
 export interface OrderGateway {
-  getAllData: () => Promise<OrderData[]>
-  getByIdData: (orderId: string) => Promise<OrderData | undefined>
+  // // The "Data" functions should probably only be used internally, and not made public
+  // getAllData: () => Promise<OrderData[]>
+  // getByIdData: (orderId: string) => Promise<OrderData | undefined>
   getAll: () => Promise<Order[]>
   getById: (orderId: string) => Promise<Order | undefined>
+  getByProperty: (property: string, value: string) => Promise<Order[]>
 }
 
 const computeOrderWithItems = async (
@@ -58,10 +60,10 @@ export const createOrderGateway = (accountId: string): OrderGateway => {
   const itemAdapter = createItemAdapter()
   const trancheAdapter = createTrancheAdapter()
 
-  const getAllData = async (): Promise<OrderData[]> => (await orderAdapter.getAll()) ?? []
-
-  const getByIdData = async (orderId: string): Promise<OrderData | undefined> =>
-    await orderAdapter.getById(orderId)
+  //   const getAllData = async (): Promise<OrderData[]> => (await orderAdapter.getAll()) ?? []
+  //
+  //   const getByIdData = async (orderId: string): Promise<OrderData | undefined> =>
+  //     await orderAdapter.getById(orderId)
 
   const getAll = async (): Promise<Order[]> => {
     const orderDatas = await orderAdapter.getAll()
@@ -77,9 +79,8 @@ export const createOrderGateway = (accountId: string): OrderGateway => {
     return undefined
   }
   return {
-    getAllData,
-    getByIdData,
     getAll,
-    getById
+    getById,
+    getByProperty
   }
 }

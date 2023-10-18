@@ -12,6 +12,7 @@ export interface User extends UserData {
   firstName: string
   lastName: string
   fullName: string
+  mainEmail: string
 }
 
 export interface Useridentifier {

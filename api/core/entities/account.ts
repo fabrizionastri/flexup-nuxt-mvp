@@ -1,16 +1,17 @@
 import { Currency, Country } from './_general'
 
-export type AccountType = 'main' | 'project'
+/* Account Type is redundant with OwnerType*/
+// export type AccountType = 'personal' | 'organization' | 'project' | 'grouping'
 export type OwnerType = 'individual' | 'organization' | 'account' | 'grouping'
 export type AccountStatus = 'active' | 'pending' | 'suspended' | 'closed'
 
 export interface AccountData {
   id: string
   name: string
-  type: AccountType
+  // type: AccountType // I think this is redundant with ownerType
   status: AccountStatus
   ownerType: OwnerType
-  ownerId: string
+  ownerId?: string // TODO: Check only required if ownerType is 'account', other wise, ownerId is the same as id ???
   currencyId: Currency
   countryId: Country
   creationDate: Date

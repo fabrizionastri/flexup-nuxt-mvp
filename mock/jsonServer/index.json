@@ -3,10 +3,9 @@
     {
       "id": "fabrizioAccount",
       "name": "Fabrizio Nastri",
-      "type": "main",
       "status": "active",
       "ownerType": "individual",
-      "ownerId": "fabrizioAccount",
+      "ownerId": "fabrizioIndividual",
       "currencyId": "EUR",
       "countryId": "FRA",
       "creationDate": "2020-01-01T00:00:00.000Z",
@@ -15,22 +14,21 @@
     {
       "id": "cosysAccount",
       "name": "Cosys",
-      "type": "main",
       "status": "active",
       "ownerType": "organization",
-      "ownerId": "cosys",
+      "ownerId": "cosysOrganization",
       "currencyId": "EUR",
       "countryId": "FRA",
       "creationDate": "2020-01-01T00:00:00.000Z",
+      "description": "Société d'investissement et de conseil en stratégie",
       "avatar": "/images/profiles/cosys.png"
     },
     {
-      "id": "flexup",
+      "id": "flexupAccount",
       "name": "FlexUp",
-      "type": "project",
       "status": "active",
-      "ownerType": "organization",
-      "ownerId": "cosys",
+      "ownerType": "account",
+      "ownerId": "cosysAccount",
       "currencyId": "EUR",
       "countryId": "FRA",
       "creationDate": "2020-01-01T00:00:00.000Z",
@@ -39,43 +37,42 @@
     {
       "id": "pizzaDOro",
       "name": "Pizza d'Oro",
-      "type": "project",
       "status": "active",
-      "ownerType": "individual",
-      "ownerId": "tontonPognon",
+      "ownerType": "account",
+      "ownerId": "tontonPognonAccount",
       "currencyId": "EUR",
       "countryId": "FRA",
       "creationDate": "2020-01-01T00:00:00.000Z",
+      "description": "Pizzeria traditionnelle napolitaine, au coeur du Marais.",
       "avatar": "/images/profiles/pizza_d_oro.png"
     },
     {
       "id": "pizzaDOroTakeAway",
       "name": "Pizza d'Oro TakeAway",
-      "type": "project",
       "status": "pending",
       "ownerType": "account",
       "ownerId": "pizzaDOro",
       "currencyId": "EUR",
       "countryId": "FRA",
       "creationDate": "2020-01-01T00:00:00.000Z",
+      "description": "Pizzas à emporter et livraison à domicile.",
       "avatar": "/images/profiles/pizza_d_oro.png"
     },
     {
-      "id": "domMazy",
-      "name": "DoMaine de Mazy",
-      "type": "main",
+      "id": "domMazyAccount",
+      "name": "Domaine de Mazy",
       "status": "active",
       "ownerType": "grouping",
-      "ownerId": "groupementDomMazy",
+      "ownerId": "domMazyGrouping",
       "currencyId": "EUR",
       "countryId": "FRA",
       "creationDate": "2020-01-01T00:00:00.000Z",
+      "description": "Groupement de producteurs agroécologiques du Domaine de Mazy",
       "avatar": "/images/profiles/fred.png"
     },
     {
       "id": "poulaillerMobile",
       "name": "Poulailler MobiMazy",
-      "type": "project",
       "status": "suspended",
       "ownerType": "grouping",
       "ownerId": "domMazy",
@@ -87,8 +84,8 @@
   ],
   "item": [
     {
-      "id": "item0",
-      "orderId": "order0",
+      "id": "commercialOrderItem1",
+      "orderId": "commercialOrder",
       "name": "T-shirt bleu",
       "quantity": 10,
       "unit": "unit",
@@ -96,98 +93,80 @@
       "taxRate": 0.2
     },
     {
-      "id": "item1",
-      "orderId": "order0",
+      "id": "commercialOrderItem2Data",
+      "orderId": "commercialOrder",
       "name": "T-shirt rouge",
       "quantity": 11,
       "unit": "unit",
       "unitPriceExclTax": 11,
-      "taxRate": 0.2
+      "taxRate": 0.1
     },
     {
-      "id": "item2",
-      "orderId": "order1",
-      "name": "Chaussettes à petits pois",
-      "quantity": 12,
-      "unit": "pair",
-      "unitPriceExclTax": 5,
-      "taxRate": 0.2
+      "id": "orderWithRebateItemData",
+      "orderId": "orderWithRebate",
+      "name": "Prestation de service",
+      "quantity": 100,
+      "unit": "hr",
+      "unitPriceExclTax": 200,
+      "taxRate": 0
     },
     {
-      "id": "item3",
-      "orderId": "order1",
-      "name": "Chaussettes à rayures",
-      "quantity": 13,
-      "unit": "pair",
-      "unitPriceExclTax": 6,
-      "taxRate": 0.2
-    },
-    {
-      "id": "item4",
-      "orderId": "order2",
+      "id": "orderWithNoTranchesItem",
+      "orderId": "orderWithNoItems",
       "name": "Chaussures de ville",
       "quantity": 14,
       "unit": "pair",
       "unitPriceExclTax": 100,
       "taxRate": 0.1
-    },
-    {
-      "id": "item5",
-      "orderId": "order2",
-      "name": "Chaussures de sport",
-      "quantity": 15,
-      "unit": "pair",
-      "unitPriceExclTax": 120,
-      "taxRate": 0.2
     }
   ],
   "order": [
     {
-      "id": "order0",
-      "clientId": "account0",
-      "supplierId": "account1",
+      "id": "commercialOrderData",
+      "supplierAccountId": "flexupAccount",
+      "clientAccountId": "pizzaDOroAccount",
       "name": "T blues & rouges",
       "nature": "commercial",
       "principal": 265.2
     },
     {
-      "id": "order1",
-      "clientId": "account2",
-      "supplierId": "account0",
-      "name": "21 T-shirts (bleus + rouges)",
-      "nature": "financial",
-      "principal": 165.6
-    },
-    {
-      "id": "order2",
-      "clientId": "account3",
-      "supplierId": "accountD",
+      "id": "orderWithNoItemsData",
+      "supplierAccountId": "pizzaDOroAccount",
+      "clientAccountId": "fabrizioAccount",
       "name": "Chaussettes",
       "nature": "commercial"
     },
     {
-      "id": "order3",
-      "clientId": "account1",
-      "supplierId": "account3",
+      "id": "orderWithRebateData",
+      "supplierAccountId": "cosysAccount",
+      "clientAccountId": "domMazyAccount",
+      "name": "Prestation de service",
+      "nature": "commercial",
+      "principal": 20000
+    },
+    {
+      "id": "orderWithNoTranchesData",
+      "supplierAccountId": "fabrizioAccount",
+      "clientAccountId": "cosysAccount",
       "name": "Chaussures",
       "nature": "commercial",
       "principal": null
     },
     {
-      "id": "order4",
-      "clientId": "account3",
-      "supplierId": "account4",
+      "id": "fundingOrderData",
+      "supplierAccountId": "domMazyAccount",
+      "clientAccountId": "fabrizioAccount",
       "name": "Funding",
-      "principal": 1000,
-      "nature": "financial"
+      "nature": "financial",
+      "principal": 1000
     },
     {
-      "id": "order5",
-      "clientId": "account5",
-      "supplierId": "account6",
+      "id": "donationOrderData",
+      "supplierAccountId": "pizzaDOroTakeAwayAccount",
+      "clientAccountId": "poulaillerMobileAccount",
+      "name": "Donation",
       "nature": "donation",
-      "principal": 100,
-      "name": "Donation"
+      "principal": 100
     }
   ],
   "user": [

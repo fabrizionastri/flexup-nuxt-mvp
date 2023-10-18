@@ -25,7 +25,7 @@ describe('getAccounts -> real access to server', () => {
   })
 
   //   it('should return an account when the id is provided', async () => {
-  //     const assertion = await getAccounts('id', 'account1')
+  //     const assertion = await getAccounts('id', 'cosysAccount')
   //     const result = accounts.slice(0, 1)
   //     expect(assertion).toEqual(result)
   //   })

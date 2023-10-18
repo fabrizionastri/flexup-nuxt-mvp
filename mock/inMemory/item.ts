@@ -1,103 +1,110 @@
 import { Item, ItemData } from 'entities/item'
 
-export const itemDatas: ItemData[] = [
-  {
-    id: 'item0',
-    orderId: 'order0',
-    name: 'T-shirt bleu',
-    quantity: 10,
-    unit: 'unit',
-    unitPriceExclTax: 10,
-    taxRate: 0.2
-  },
-  {
-    id: 'item1',
-    orderId: 'order0',
-    name: 'T-shirt rouge',
-    quantity: 11,
-    unit: 'unit',
-    unitPriceExclTax: 11,
-    taxRate: 0.2
-  },
-  {
-    id: 'item2',
-    orderId: 'order1',
-    name: 'Chaussettes à petits pois',
-    quantity: 12,
-    unit: 'pair',
-    unitPriceExclTax: 5,
-    taxRate: 0.2
-  },
-  {
-    id: 'item3',
-    orderId: 'order1',
-    name: 'Chaussettes à rayures',
-    quantity: 13,
-    unit: 'pair',
-    unitPriceExclTax: 6,
-    taxRate: 0.2
-  },
-  {
-    id: 'item4',
-    orderId: 'order2',
-    name: 'Chaussures de ville',
-    quantity: 14,
-    unit: 'pair',
-    unitPriceExclTax: 100,
-    taxRate: 0.1
-  },
-  {
-    id: 'item5',
-    orderId: 'order2',
-    name: 'Chaussures de sport',
-    quantity: 15,
-    unit: 'pair',
-    unitPriceExclTax: 120,
-    taxRate: 0.2
-  }
+// Items with raw data only
+export const commercialOrderItem1Data: ItemData = {
+  id: 'commercialOrderItem1',
+  orderId: 'commercialOrder',
+  name: 'T-shirt bleu',
+  quantity: 10,
+  unit: 'unit',
+  unitPriceExclTax: 10,
+  taxRate: 0.2
+}
+export const commercialOrderItem2Data: ItemData = {
+  id: 'commercialOrderItem2Data',
+  orderId: 'commercialOrder',
+  name: 'T-shirt rouge',
+  quantity: 11,
+  unit: 'unit',
+  unitPriceExclTax: 11,
+  taxRate: 0.1
+}
+export const orderWithRebateItemData: ItemData = {
+  id: 'orderWithRebateItemData',
+  orderId: 'orderWithRebate',
+  name: 'Prestation de service',
+  quantity: 100,
+  unit: 'hr',
+  unitPriceExclTax: 200,
+  taxRate: 0
+}
+export const orderWithNoTranchesItemData: ItemData = {
+  id: 'orderWithNoTranchesItem',
+  orderId: 'orderWithNoItems',
+  name: 'Chaussures de ville',
+  quantity: 14,
+  unit: 'pair',
+  unitPriceExclTax: 100,
+  taxRate: 0.1
+}
+
+// export const orderWithNoItems: ItemData = {
+//   id: 'item5',
+//   orderId: 'orderWithNoItems',
+//   name: 'Chaussures de sport',
+//   quantity: 15,
+//   unit: 'pair',
+//   unitPriceExclTax: 120,
+//   taxRate: 0.2
+// }
+
+export const allItemDatas: ItemData[] = [
+  commercialOrderItem1Data,
+  commercialOrderItem2Data,
+  orderWithRebateItemData,
+  orderWithNoTranchesItemData
 ]
 
-export const items: Item[] = [
-  {
-    ...itemDatas[0],
-    unitPriceInclTax: 12,
-    amountExclTax: 100,
-    taxAmount: 20,
-    amountInclTax: 120
-  },
-  {
-    ...itemDatas[1],
-    unitPriceInclTax: 13.2,
-    amountExclTax: 121,
-    taxAmount: 24.2,
-    amountInclTax: 145.2
-  },
-  {
-    ...itemDatas[2],
-    unitPriceInclTax: 6,
-    amountExclTax: 60,
-    taxAmount: 12,
-    amountInclTax: 72
-  },
-  {
-    ...itemDatas[3],
-    unitPriceInclTax: 7.2,
-    amountExclTax: 78,
-    taxAmount: 15.6,
-    amountInclTax: 93.6
-  },
-  {
-    ...itemDatas[4],
-    unitPriceInclTax: 110,
-    amountExclTax: 1400,
-    taxAmount: 140,
-    amountInclTax: 1540
-  },
-  {
-    ...itemDatas[5],
-    unitPriceInclTax: 144,
-    amountExclTax: 1800,
-    taxAmount: 360,
-    amountInclTax: 2160
-  }
+// Computed items
+export const commercialOrderItem1: Item = {
+  ...commercialOrderItem1Data,
+  unitPriceInclTax: 12,
+  amountExclTax: 100,
+  taxAmount: 20,
+  amountInclTax: 120
+}
+export const commercialOrderItem2: Item = {
+  ...commercialOrderItem2Data,
+  unitPriceInclTax: 13.2,
+  amountExclTax: 121,
+  taxAmount: 24.2,
+  amountInclTax: 145.2
+}
+export const orderWithRebateItem: Item = {
+  ...orderWithRebateItemData,
+  unitPriceInclTax: 6,
+  amountExclTax: 60,
+  taxAmount: 12,
+  amountInclTax: 72
+}
+export const orderWithNoTranchesItem: Item = {
+  ...orderWithNoTranchesItemData,
+  unitPriceInclTax: 7.2,
+  amountExclTax: 78,
+  taxAmount: 15.6,
+  amountInclTax: 93.6
+}
+// export const commercialOrderItem1: Item = {
+//   ...itemDatas[4],
+//   unitPriceInclTax: 110,
+//   amountExclTax: 1400,
+//   taxAmount: 140,
+//   amountInclTax: 1540
+// }
+//
+// export const commercialOrderItem1: Item = {
+//   ...itemDatas[5],
+//   unitPriceInclTax: 144,
+//   amountExclTax: 1800,
+//   taxAmount: 360,
+//   amountInclTax: 2160
+// }
+
+export const allItems: Item[] = [
+  commercialOrderItem1,
+  commercialOrderItem2,
+  orderWithRebateItem,
+  orderWithNoTranchesItem
 ]
+
+export const itemsForCommercialOrder: Item[] = [commercialOrderItem1, commercialOrderItem2]

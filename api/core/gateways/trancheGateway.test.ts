@@ -1,4 +1,8 @@
-import { trancheDatasForOrder0, tranchesForOrder0, orderDatas } from 'mock/inMemory'
+import {
+  trancheDatasForcommercialOrder,
+  tranchesForcommercialOrder,
+  allOrderDatas
+} from 'mock/inMemory'
 import { createTrancheGateway } from './trancheGateway'
 import { createTrancheAdapter } from 'adapters/database'
 
@@ -16,18 +20,18 @@ describe('createTrancheGateway', () => {
       expect(await trancheGateway.getByOrderIdData(orderId)).toEqual([])
     })
     it('should return the tranches data for an existing orderId', async () => {
-      const orderId = 'order0'
-      expect(await trancheGateway.getByOrderIdData(orderId)).toEqual(trancheDatasForOrder0)
+      const orderId = 'commercialOrder'
+      expect(await trancheGateway.getByOrderIdData(orderId)).toEqual(trancheDatasForcommercialOrder)
     })
   })
   describe('getByOrder', () => {
     it('should return [] for an order with no tranches', async () => {
-      const order = orderDatas[3]
+      const order = allOrderDatas[3]
       expect(await trancheGateway.getByOrder(order)).toEqual([])
     })
     it('should return the tranches (computed) for an existing order', async () => {
-      const order = orderDatas[0]
-      expect(await trancheGateway.getByOrder(order)).toEqual(tranchesForOrder0)
+      const order = allOrderDatas[0]
+      expect(await trancheGateway.getByOrder(order)).toEqual(tranchesForcommercialOrder)
     })
   })
 })

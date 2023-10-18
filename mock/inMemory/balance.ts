@@ -196,7 +196,7 @@ export const balanceInstance17: BalanceInstance = {
   accountId: '2345'
 }
 
-export const balanceInstanceAccount1234: BalanceInstances = [
+export const balanceInstancecosysAccount234: BalanceInstances = [
   balanceInstance1,
   balanceInstance2,
   balanceInstance3,
@@ -227,7 +227,7 @@ export const balanceInstanceAccount2345_March: BalanceInstances = [
 ]
 
 export const balanceInstanceAll: BalanceInstances = [
-  ...balanceInstanceAccount1234,
+  ...balanceInstancecosysAccount234,
   ...balanceInstanceAccount2345_Jan,
   ...balanceInstanceAccount2345_Feb,
   ...balanceInstanceAccount2345_March

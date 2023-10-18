@@ -2,8 +2,8 @@
   <h3>Order: {{ order.name }}</h3>
   <ul>
     <li>Order ID: {{ order.id }}</li>
-    <li>Client ID: {{ order.clientId }}</li>
-    <li>Supplier ID: {{ order.supplierId }}</li>
+    <li>Client ID: {{ order.clientAccountId }}</li>
+    <li>Supplier ID: {{ order.supplierAccountId }}</li>
     <li>Amount excluding tax: {{ order.amountExclTax }}</li>
     <li>Tax amount: {{ order.taxAmount }}</li>
     <li>Amount including tax: {{ order.amountInclTax }}</li>

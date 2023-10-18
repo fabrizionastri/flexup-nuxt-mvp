@@ -22,8 +22,8 @@ export type ContractNature = keyof typeof ContractNatures
 
 export interface Contract {
   id: string
-  clientId: string
-  supplierId: string
+  clientAccountId: string
+  supplierAccountId: string
   nature: ContractNature
   currency: Currency
   name?: string

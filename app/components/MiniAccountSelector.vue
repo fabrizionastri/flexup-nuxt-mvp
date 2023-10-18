@@ -16,11 +16,11 @@
 
 <script setup>
   const accountIds = [
-    { name: 'Account 0', id: 'account0' },
-    { name: 'Account 1', id: 'account1' },
-    { name: 'Account 2', id: 'account2' },
-    { name: 'Account 3', id: 'account3' },
-    { name: 'Account 4', id: 'account4' },
-    { name: 'Account 5', id: 'account5' }
+    { name: 'Account 0', id: 'flexup' },
+    { name: 'Account 1', id: 'cosysAccount' },
+    { name: 'Account 2', id: 'pizzaDOro' },
+    { name: 'Account 3', id: 'fabrizioAccount' },
+    { name: 'Account 4', id: 'domMazy' },
+    { name: 'Account 5', id: 'poulaillerMobile' }
   ]
 </script>

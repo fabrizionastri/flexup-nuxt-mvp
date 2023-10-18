@@ -1,3 +1,3 @@
 export * from './itemAdapterInMemory'
-export * from './orderAdapterInMemoryForAccountId'
+export * from './orderAdapterInMemory'
 export * from './trancheAdapterInMemory'

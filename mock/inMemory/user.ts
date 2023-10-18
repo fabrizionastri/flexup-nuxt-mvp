@@ -15,20 +15,22 @@ export const totoUserData: UserData = {
   status: 'pending'
 }
 
-export const userDatas: UserData[] = [fabrizioUserData, totoUserData]
+export const allUserDatas: UserData[] = [fabrizioUserData, totoUserData]
 
 export const fabrizioUser: User = {
   ...fabrizioUserData,
   firstName: 'Fabrizio',
   lastName: 'Nastri',
-  fullName: 'Fabrizio Nastri'
+  fullName: 'Fabrizio Nastri',
+  mainEmail: 'fabrizio.nastri@gmail.com'
 }
 
 export const totoUser: User = {
   ...totoUserData,
   firstName: 'Toto',
   lastName: 'LaRiflette',
-  fullName: 'Toto La Riflette'
+  fullName: 'Toto La Riflette',
+  mainEmail: 'totoLaRiflette@gmail.com'
 }
 
-export const users: User[] = [fabrizioUser, totoUser]
+export const allUsers: User[] = [fabrizioUser, totoUser]

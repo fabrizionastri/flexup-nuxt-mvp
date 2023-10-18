@@ -5,8 +5,9 @@ import axios from './myAxios'
 
 export const createOrderAdapterJsonServer = (accountId: string): OrderAdapter => {
   const getAll = async (): Promise<OrderData[]> => {
-    const clientOrders = (await axios.get<OrderData[]>(`/order?clientId=${accountId}`)) ?? []
-    const supplierOrders = (await axios.get<OrderData[]>(`/order?supplierId=${accountId}`)) ?? []
+    const clientOrders = (await axios.get<OrderData[]>(`/order?clientAccountId=${accountId}`)) ?? []
+    const supplierOrders =
+      (await axios.get<OrderData[]>(`/order?supplierAccountId=${accountId}`)) ?? []
     // console.log('clientOrders', clientOrders)
     // console.log('supplierOrders', supplierOrders)
     return [...clientOrders, ...supplierOrders]

@@ -1,33 +1,33 @@
 import { createItemAdapterInMemory } from 'adapters/database/inMemory/itemAdapterInMemory'
-import { itemDatas } from 'mock/inMemory'
+import * as items from 'mock/inMemory'
 
 describe('createItemAdapterInMemory', () => {
   const adapter = createItemAdapterInMemory()
   describe('getById', () => {
     it('should return undefined when item id not found', async () => {
-      const item = await adapter.getById('nonexistentId')
-      expect(item).toBeUndefined()
+      const result = await adapter.getById('nonexistentId')
+      expect(result).toBeUndefined()
     })
 
     it('should return one item for existing item id', async () => {
-      const item = await adapter.getById('item0')
-      expect(item).toEqual(itemDatas[0])
+      const result = await adapter.getById('commercialOrderItem1')
+      expect(result).toEqual(items.commercialOrderItem1Data)
     })
   })
   describe('getByOrderId', () => {
     it('should return an array of items for existing order id', async () => {
-      const items = await adapter.getByOrderId('order0')
-      expect(items).toEqual([itemDatas[0], itemDatas[1]])
+      const result = await adapter.getByOrderId('commercialOrder')
+      expect(result).toEqual([items.commercialOrderItem1Data, items.commercialOrderItem2Data])
     })
 
     it('should return an empty array for existing empty order', async () => {
-      const items = await adapter.getByOrderId('order3')
-      expect(items).toEqual([])
+      const result = await adapter.getByOrderId('orderWithNoTranches')
+      expect(result).toEqual([])
     })
 
     it('should return an empty array for non existing  order', async () => {
-      const items = await adapter.getByOrderId('order99')
-      expect(items).toEqual([])
+      const result = await adapter.getByOrderId('order99')
+      expect(result).toEqual([])
     })
   })
 })

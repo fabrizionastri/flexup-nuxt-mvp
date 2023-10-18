@@ -1,5 +1,5 @@
 import { computeTranche } from './computeTranche'
-import { orderDatas, trancheDatas, tranches } from 'mock/inMemory'
+import { allOrderDatas, trancheDatas, tranches } from 'mock/inMemory'
 
 describe('computeTranche', () => {
   it('should return a computed tranche if matching order and trancheData are provided', () => {

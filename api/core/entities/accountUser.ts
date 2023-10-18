@@ -1,6 +1,6 @@
 export type AccountRole = 'Owner' | 'Admin' | 'Editor' | 'Guest'
 
-export interface AccountMemberData {
+export interface AccountUserData {
   id: string // this is: accountId_userId, only used for json-server.
   accountId: string
   userId: string
@@ -11,7 +11,7 @@ export interface AccountMemberData {
   // status?: string
 }
 
-export interface AccountMember extends AccountMemberData {
+export interface AccountUser extends AccountUserData {
   accountName: string
   accountLabel: string
   userName: string

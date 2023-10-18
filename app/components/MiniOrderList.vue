@@ -14,7 +14,7 @@
   const orders = ref(null)
   const bobo = async () => {
     const plop = await fetchOrders(sharedState.selectedAccountId)
-    // const plop = await fetchOrders('account0')
+    // const plop = await fetchOrders('flexup')
     // console.log('orders  from bobo', plop)
     // console.log('plop type', typeof plop)
     // console.log('sharedState in bobo', sharedState.selectedAccountId)

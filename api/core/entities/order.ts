@@ -19,8 +19,8 @@ export type OrderDate = { orderDateType: OrderDateType; date: Date }
 
 export interface OrderData {
   id: string
-  clientId: string
-  supplierId: string
+  clientAccountId: string
+  supplierAccountId: string
   name: string
   principal: number | undefined | null // null if NULL in DB. undefined if not provided so far in the app
   nature: OrderNature | undefined

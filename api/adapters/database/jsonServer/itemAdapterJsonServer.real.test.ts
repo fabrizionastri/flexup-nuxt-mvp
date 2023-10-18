@@ -6,7 +6,7 @@ const adapter = createItemAdapterJsonServer()
 describe('createItemAdapterJsonServer - real Axios', () => {
   describe('getById', () => {
     it('should return itemData for item id', async () => {
-      const result = await adapter.getById('item2')
+      const result = await adapter.getById('orderWithRebateItemDataItem2')
       expect(result).toEqual(itemDatas[2])
     })
     it('should return undefined for unknown item id', async () => {
@@ -16,7 +16,7 @@ describe('createItemAdapterJsonServer - real Axios', () => {
   })
   describe('getByOrderId', () => {
     it('should return itemDatas for order id', async () => {
-      const result = await adapter.getByOrderId('order1')
+      const result = await adapter.getByOrderId('orderWithRebate')
       expect(result).toEqual([itemDatas[2], itemDatas[3]])
     })
     it('should return [] for unknown order id', async () => {

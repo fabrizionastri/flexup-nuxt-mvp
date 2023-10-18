@@ -2,7 +2,7 @@ import { config } from 'dotenv'
 
 import {
   createItemAdapterInMemory,
-  createOrderAdapterInMemoryForAccountId,
+  createOrderAdapterInMemory,
   createTrancheAdapterInMemory
 } from './inMemory'
 import { createItemAdapterJsonServer } from './jsonServer/itemAdapterJsonServer'
@@ -23,7 +23,7 @@ let createTrancheAdapter: any
 switch (process.env.STORAGE_TYPE) {
   case 'inMemory':
     createItemAdapter = createItemAdapterInMemory
-    createOrderAdapter = createOrderAdapterInMemoryForAccountId
+    createOrderAdapter = createOrderAdapterInMemory
     createTrancheAdapter = createTrancheAdapterInMemory
     break
   case 'jsonServer':
