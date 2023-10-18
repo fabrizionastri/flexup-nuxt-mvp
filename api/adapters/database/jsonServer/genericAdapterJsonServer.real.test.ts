@@ -1,11 +1,11 @@
-import { flexupData } from 'mock/inMemory/account'
+import { flexupAccountData } from 'mock/inMemory/account'
 import { createGenericAdapterJsonServer } from './genericAdapterJsonServer'
 
 const adapter = createGenericAdapterJsonServer('account')
 
 // dates in JSON are stringified, but not in memory, so we need to stringify the date for the test to pass
 const expected = {
-  ...flexupData
+  ...flexupAccountData
   // creationDate: new Date(flexupData.creationDate).toISOString()
 }
 
