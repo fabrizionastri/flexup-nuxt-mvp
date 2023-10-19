@@ -1,57 +1,60 @@
-import { OrderData, Order } from 'entities/order'
+import { Order } from 'entities/order'
 import * as items from './item'
 import * as tranches from './tranche'
 
 // Orders with raw data only
-export const commercialOrderData: OrderData = {
+export const commercialOrderData: Order = {
   id: 'commercialOrder',
   supplierAccountId: 'flexupAccount',
   clientAccountId: 'pizzaDOroAccount',
   name: 'T blues & rouges',
   nature: 'commercial',
-  principal: 253.1
+  amountInclTax: 253.1
 }
-export const orderWithRebateData: OrderData = {
+export const orderWithRebateData: Order = {
   id: 'orderWithRebate',
   supplierAccountId: 'cosysAccount',
   clientAccountId: 'domMazyAccount',
   name: 'Prestation de service',
   nature: 'commercial',
-  principal: 20000
+  amountInclTax: 20000
 }
-export const orderWithNoItemsData: OrderData = {
+export const orderWithNoItemsData: Order = {
   id: 'orderWithNoItems',
   supplierAccountId: 'pizzaDOroAccount',
   clientAccountId: 'fabrizioAccount',
   name: 'Chaussettes',
   nature: 'commercial',
-  principal: undefined // new order
+  amountExclTax: 1000,
+  taxAmount: 200,
+  amountInclTax: 1200,
+  averageTaxRate: 0.2
 }
-export const orderWithNoTranchesData: OrderData = {
+export const orderWithNoTranchesData: Order = {
   id: 'orderWithNoTranches',
   supplierAccountId: 'fabrizioAccount',
   clientAccountId: 'cosysAccount',
   name: 'Chaussures',
   nature: 'commercial',
-  principal: 1540
+  amountInclTax: 1540
 }
-export const fundingOrderData: OrderData = {
+export const fundingOrderData: Order = {
   id: 'fundingOrder',
   supplierAccountId: 'domMazyAccount',
   clientAccountId: 'fabrizioAccount',
   name: 'Funding',
   nature: 'financial',
-  principal: 1000
+  amountInclTax: 1000
 }
-export const donationOrderData: OrderData = {
+export const donationOrderData: Order = {
   id: 'donationOrder',
   supplierAccountId: 'pizzaDOroTakeAwayAccount',
   clientAccountId: 'pizzaDOroAccount',
   name: 'Donation',
   nature: 'donation',
-  principal: 100
+  amountInclTax: 100
 }
-export const allOrderDatas: OrderData[] = [
+export const allOrderDatas: Order[] = [
   commercialOrderData,
   orderWithNoItemsData,
   orderWithRebateData,
@@ -60,7 +63,7 @@ export const allOrderDatas: OrderData[] = [
   donationOrderData
 ]
 
-export const pizzaDOroAccountOrderDatas: OrderData[] = [
+export const pizzaDOroAccountOrderDatas: Order[] = [
   commercialOrderData,
   orderWithNoItemsData,
   donationOrderData
@@ -74,8 +77,7 @@ export const commercialOrder: Order = {
   amountExclTax: 221,
   taxAmount: 32.1,
   amountInclTax: 253.1,
-  averageTaxRate: 0.145249,
-  principal: 253.1
+  averageTaxRate: 0.145249
 }
 
 export const commercialOrderWithItemsOnly: Order = {
@@ -85,8 +87,7 @@ export const commercialOrderWithItemsOnly: Order = {
   amountExclTax: 221,
   taxAmount: 32.1,
   amountInclTax: 253.1,
-  averageTaxRate: 0.145249,
-  principal: 253.1
+  averageTaxRate: 0.145249
 }
 
 export const orderWithNoItems: Order = {
@@ -96,7 +97,6 @@ export const orderWithNoItems: Order = {
   taxAmount: 200,
   amountInclTax: 1200,
   averageTaxRate: 0.2,
-  principal: 1200,
   tranches: [tranches.orderWithNoItemsFirm100]
 }
 export const orderWithRebate: Order = {
@@ -106,8 +106,7 @@ export const orderWithRebate: Order = {
   amountExclTax: 138,
   taxAmount: 27.6,
   amountInclTax: 165.6,
-  averageTaxRate: 0.2,
-  principal: 165.6
+  averageTaxRate: 0.2
 }
 export const orderWithNoTranches: Order = {
   ...orderWithNoTranchesData,
@@ -116,7 +115,6 @@ export const orderWithNoTranches: Order = {
   taxAmount: 140,
   amountInclTax: 1540,
   averageTaxRate: 0.1,
-  principal: 1540,
   tranches: []
 }
 
@@ -127,18 +125,16 @@ export const fundingOrder: Order = {
   taxAmount: 0,
   amountInclTax: 0,
   averageTaxRate: 0.0,
-  principal: 1000,
   tranches: []
 }
 
 export const donationOrder: Order = {
   ...donationOrderData,
   items: [],
-  amountExclTax: 0,
-  taxAmount: 0,
-  amountInclTax: 0,
-  averageTaxRate: 0.0,
-  principal: 100,
+  // amountExclTax: 100,
+  // taxAmount: 0,
+  // averageTaxRate: 0.0,
+  amountInclTax: 100,
   tranches: [tranches.donationOrder100]
 }
 

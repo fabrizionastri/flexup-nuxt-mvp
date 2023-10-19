@@ -127,7 +127,7 @@
       "clientAccountId": "pizzaDOroAccount",
       "name": "T blues & rouges",
       "nature": "commercial",
-      "principal": 253.1
+      "amountInclTax": 253.1
     },
     {
       "id": "orderWithNoItems",
@@ -142,7 +142,7 @@
       "clientAccountId": "domMazyAccount",
       "name": "Prestation de service",
       "nature": "commercial",
-      "principal": 20000
+      "amountInclTax": 20000
     },
     {
       "id": "orderWithNoTranches",
@@ -150,7 +150,7 @@
       "clientAccountId": "cosysAccount",
       "name": "Chaussures",
       "nature": "commercial",
-      "principal": 1540
+      "amountInclTax": 1540
     },
     {
       "id": "fundingOrder",
@@ -158,7 +158,7 @@
       "clientAccountId": "fabrizioAccount",
       "name": "Funding",
       "nature": "financial",
-      "principal": 1000
+      "amountInclTax": 1000
     },
     {
       "id": "donationOrder",
@@ -166,7 +166,7 @@
       "clientAccountId": "pizzaDOroAccount",
       "name": "Donation",
       "nature": "donation",
-      "principal": 100
+      "amountInclTax": 100
     }
   ],
   "user": [

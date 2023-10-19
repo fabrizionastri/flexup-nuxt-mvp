@@ -37,9 +37,11 @@ export interface Order {
   // status: OrderStatus
 }
 
-// export interface Order extends OrderData {
-// amountExclTax?: number | undefined | null
-// amountInclTax?: number | undefined | null
-// taxAmount?: number | undefined | null
-// averageTaxRate?: number | undefined | null
+// export interface OrderNew extends OrderNew {
+//   amountExclTax?: number | undefined | null
+//   amountInclTax?: number | undefined | null
+//   taxAmount?: number | undefined | null
+//   averageTaxRate?: number | undefined | null
+// items: Item[]
+// tranches: Tranche[]
 // }

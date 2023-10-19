@@ -1,119 +1,137 @@
-import { Item } from 'entities/item'
-import {
-  createOrderGateway,
-  OrderGateway,
-  sumAmountExclTax,
-  addItemsToOrder,
-  computeOrder
-} from './orderGateway'
-
+import { round6 } from './../../../lib/utils/round'
 import * as orders from 'mock/inMemory/order'
+import * as items from 'mock/inMemory/item'
+import { OrderGateway, computeOrder, computeItemTotals, createOrderGateway } from './orderGateway'
 
-// describe('orderGateway', () => {
-//   let orderGateway: OrderGateway
+describe('orderGateway', () => {
+  let orderGateway: OrderGateway
 
-describe.only('sumAmountExclTax', () => {
-  it('should return sum for array of items', () => {
-    const items = orders.commercialOrder.items
-    const expected = 221
-    const result = sumAmountExclTax(items)
-    expect(result).toEqual(expected)
-  })
-  it('should return undefined for empty array', () => {
-    const items = [] as Item[]
-    const expected = undefined
-    const result = sumAmountExclTax(items)
-    expect(result).toEqual(expected)
-  })
-  it('should return undefined if any amount is undefined', () => {
-    const items = [{ amountExclTax: 1 }, { amountExclTax: undefined }] as Item[]
-    const expected = undefined
-    const result = sumAmountExclTax(items)
-    expect(result).toEqual(expected)
-  })
-  it('should return undefined if any amount is null', () => {
-    const items = [{ amountExclTax: 1 }, { amountExclTax: null }] as Item[]
-    const expected = undefined
-    const result = sumAmountExclTax(items)
-    expect(result).toEqual(expected)
-  })
-  it('should return undefined if any amount is missing', () => {
-    const items = [{ amountExclTax: 1 }, { plop: 3 }] as Item[]
-    const expected = undefined
-    const result = sumAmountExclTax(items)
-    expect(result).toEqual(expected)
-  })
-  it('should return undefined if sum is 0', () => {
-    const items = [{ amountExclTax: 0 }, { amountExclTax: 0 }] as Item[]
-    const expected = undefined
-    const result = sumAmountExclTax(items)
+  describe('computeItemTotals', () => {
+    it('should compute the correct amounts for items of commercial order', () => {
+      const result = computeItemTotals(items.itemsForCommercialOrder)
+      expect(result).toBeDefined()
+      expect(result!.amountExclTax).toBe(
+        items.commercialOrderItem1.amountExclTax + items.commercialOrderItem2.amountExclTax
+      )
+      expect(result!.amountInclTax).toBe(
+        items.commercialOrderItem1.amountInclTax + items.commercialOrderItem2.amountInclTax
+      )
+      expect(result!.taxAmount).toBe(
+        items.commercialOrderItem1.taxAmount + items.commercialOrderItem2.taxAmount
+      )
+      expect(result!.averageTaxRate).toBe(
+        round6(
+          (items.commercialOrderItem1.taxAmount + items.commercialOrderItem2.taxAmount) /
+            (items.commercialOrderItem1.amountExclTax + items.commercialOrderItem2.amountExclTax)
+        )
+      )
+    })
+    it('should return undefined for order with no items', () => {
+      const result = computeItemTotals([])
+      expect(result).toBeUndefined()
+    })
+    it('should return undefined if any amount is null or undefined', () => {
+      const testItems = [
+        {
+          ...items.commercialOrderItem1,
+          amountExclTax: null
+        },
+        items.commercialOrderItem2
+      ]
+      const result = computeItemTotals(testItems)
+      expect(result).toBeUndefined()
+    })
+    it('should return undefined if the sum of any amount is 0', () => {
+      const testItems = [
+        {
+          ...items.commercialOrderItem1,
+          amountExclTax: 0
+        },
+        {
+          ...items.commercialOrderItem2,
+          amountExclTax: 0
+        }
+      ]
+      const result = computeItemTotals(testItems)
 
-    expect(result).toEqual(expected)
+      expect(result).toBeUndefined()
+    })
+
+    // Add more test scenarios as needed.
+  })
+  describe('computeOrder', () => {
+    it('orderWithNoTranches - should compute order with items only', async () => {
+      const result = await computeOrder(orders.orderWithNoTranchesData)
+      expect(result).toEqual(orders.orderWithNoTranches)
+    })
+    it('orderWithNoItems - should compute order with tranches only', async () => {
+      const result = await computeOrder(orders.orderWithNoItemsData)
+      // console.log('orderGateway.test.ts - result:', result)
+      expect(result).toEqual(orders.orderWithNoItems)
+    })
+    it('commercialOrdershould compute order with items and tranches', async () => {
+      const result = await computeOrder(orders.commercialOrderData)
+      expect(result).toEqual(orders.commercialOrder)
+    })
+  })
+  describe('createOrderGateway', () => {
+    describe('pizzaDOroTakeAwayAccount - for existing account with single donation order', () => {
+      beforeEach(async () => {
+        orderGateway = createOrderGateway('pizzaDOroTakeAwayAccount')
+      })
+      it('getById should return the fully computed order', async () => {
+        const result = await orderGateway.getById('donationOrder')
+        expect(result).toEqual(orders.donationOrder)
+      })
+      it('getAll should return all fully computed order for this account', async () => {
+        const result = await orderGateway.getAll()
+        expect(result).toEqual([orders.donationOrder])
+      })
+    })
+
+    describe('for inexisting account', () => {
+      beforeEach(async () => {
+        orderGateway = createOrderGateway('account99')
+      })
+      it('getById should return undefined', async () => {
+        const result = await orderGateway.getById('commercialOrder')
+        expect(result).toBeUndefined()
+      })
+      it('getAll should return all []', async () => {
+        const result = await orderGateway.getAll()
+        expect(result).toEqual([])
+      })
+    })
+
+    describe('pizzaDOroAccount - for existing account with multiple orders', () => {
+      beforeEach(async () => {
+        orderGateway = createOrderGateway('pizzaDOroAccount')
+      })
+      it('getById(commercialOrder) should return the fully computed order', async () => {
+        const result = await orderGateway.getById('commercialOrder')
+        expect(result).toEqual(orders.commercialOrder)
+      })
+      it('getById(orderWithNoItems) should return the computed order with tranches but no items', async () => {
+        const result = await orderGateway.getById('orderWithNoItems')
+        expect(result).toEqual(orders.orderWithNoItems)
+        it('getAll should return all fully computed order for this account', async () => {
+          const result = await orderGateway.getAll()
+          expect(result).toEqual([
+            orders.commercialOrder,
+            orders.donationOrder,
+            orders.orderWithNoItems
+          ])
+        })
+      })
+      describe('fabrizioAccount - for existing account with multiple orders', () => {
+        beforeEach(async () => {
+          orderGateway = createOrderGateway('fabrizioAccount')
+        })
+        it('getById(orderWithNoTranches) should return the computed order with tranches but no items', async () => {
+          const result = await orderGateway.getById('orderWithNoTranches')
+          expect(result).toEqual(orders.orderWithNoTranches)
+        })
+      })
+    })
   })
 })
-//   describe('computeOrderWithItems', () => {
-//     it('should compute order with items only', async () => {
-//       const result = await computeOrderWithItems(orders.commercialOrderData)
-//       expect(result).toEqual(orders.commercialOrderWithItemsOnly)
-//     })
-//   })
-//   describe('computeOrder', () => {
-//     it('should compute order with items and tranches', async () => {
-//       const result = await computeOrder(orders.commercialOrderData, trancheAdapter)
-//       expect(result).toEqual(orders.commercialOrder)
-//     })
-//   })
-//   describe('pizzaDOroTakeAwayAccount - for existing account with single donation order', () => {
-//     beforeEach(async () => {
-//       orderGateway = createOrderGateway('pizzaDOroTakeAwayAccount')
-//     })
-//     it('getById should return the fully computed order', async () => {
-//       const result = await orderGateway.getById('donationOrder')
-//       expect(result).toEqual(orders.donationOrder)
-//     })
-//     it('getAll should return all fully computed order for this account', async () => {
-//       const result = await orderGateway.getAll()
-//       expect(result).toEqual([orders.donationOrder])
-//     })
-//   })
-//
-//   describe('for inexisting account', () => {
-//     beforeEach(async () => {
-//       orderGateway = createOrderGateway('account99')
-//     })
-//     it('getById should return undefined', async () => {
-//       const result = await orderGateway.getById('commercialOrder')
-//       expect(result).toBeUndefined()
-//     })
-//     it('getAll should return all []', async () => {
-//       const result = await orderGateway.getAll()
-//       expect(result).toEqual([])
-//     })
-//   })
-//
-//   describe('fabrizioAccount - for existing account with multiple orders', () => {
-//     beforeEach(async () => {
-//       orderGateway = createOrderGateway('fabrizioAccount')
-//     })
-//     it('getById(commercialOrder) should return the fully computed order', async () => {
-//       const result = await orderGateway.getById('commercialOrder')
-//       expect(result).toEqual(orders.commercialOrder)
-//     })
-//     it('getById(orderWithNoItems) should return the computed order with tranches but no items', async () => {
-//       const result = await orderGateway.getById('orderWithNoItems')
-//       expect(result).toEqual(orders.orderWithNoItems)
-//     })
-//     it('getById(orderWithNoTranches) should return the computed order with tranches but no items', async () => {
-//       const result = await orderGateway.getById('orderWithNoTranches')
-//       expect(result).toEqual(orders.orderWithNoTranches)
-//     })
-//     // it('getAll should return all fully computed order for this account', async () => {
-//     //   const result = await orderGateway.getAll()
-//     //   expect(result).toEqual([
-//     //     orders.commercialOrder,
-//     //     orders.donationOrder,
-//     //     orders.orderWithNoItems
-//     //   ])
-//     // })
-//   })
-// })

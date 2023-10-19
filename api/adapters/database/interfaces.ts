@@ -1,4 +1,4 @@
-import { ItemData, OrderData, TrancheData } from 'entities/'
+import { ItemData, Order, TrancheData } from 'entities/'
 import { Entity } from 'entities/_generic'
 
 export interface GenericAdapter<T extends Entity> {
@@ -13,9 +13,9 @@ export interface ItemAdapter {
 }
 
 export interface OrderAdapter {
-  getAll: () => Promise<OrderData[]> // results will always be filtered by accountId (client or supplier), but this accountId is provided in the factory function which creates the adapter, not as a parameter of the getAll method
-  getById: (orderId: string) => Promise<OrderData | undefined>
-  getByProperty: (property: keyof OrderData, value: unknown) => Promise<OrderData[]>
+  getAll: () => Promise<Order[]> // results will always be filtered by accountId (client or supplier), but this accountId is provided in the factory function which creates the adapter, not as a parameter of the getAll method
+  getById: (orderId: string) => Promise<Order | undefined>
+  getByProperty: (property: keyof Order, value: unknown) => Promise<Order[]>
 }
 
 export interface TrancheAdapter {

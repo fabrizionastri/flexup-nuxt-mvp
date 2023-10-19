@@ -1,73 +1,67 @@
-import { items } from './../../../_docs/_archives/devUtils/computeEntities'
 import { Item } from 'entities/item'
-import { computeItem } from '../usecases/computeItem'
-import { createItemAdapter, createOrderAdapter, createTrancheAdapter } from 'adapters/database'
-import { ItemAdapter, OrderAdapter, TrancheAdapter } from 'adapters/database/interfaces'
+import { createOrderAdapter } from 'adapters/database'
 import { itemGateway } from 'gateways/itemGateway'
 import { trancheGateway } from './trancheGateway'
-import { OrderData, Order } from 'entities/order'
-import { createTrancheGateway } from './trancheGateway'
-import { createItemGateway } from 'gateways/itemGateway'
+import { Order } from 'entities/order'
 import { round6 } from 'utils/round'
+import { sumPropertyStrict } from '../../../lib/utils/sumPropertyStrict'
 
 export interface OrderGateway {
   getAll: () => Promise<Order[]>
   getById: (orderId: string) => Promise<Order | undefined>
-  getByProperty: (property: keyof OrderData, value: unknown) => Promise<Order[]>
+  getByProperty: (property: keyof Order, value: unknown) => Promise<Order[]>
 }
 
-export const sumPropertyStrict = (property: string, items: any): number | undefined => {
-  if (items.length === 0) return undefined
-  // if any item has no amountExclTax (ie: missing property, or value is null or undefined), then return undefined
-  // if (items.some(item => item.amountExclTax === undefined)) return undefined
-  if (items.some((item: any) => item.amountExclTax === undefined || item.amountExclTax === null))
-    return undefined
-
-  const sum = round6(items.reduce((sum: number, item: any) => sum + item.amountExclTax, 0))
-  if (sum === 0) return undefined
-  return sum
-}
-
-export const sumAmountExclTax = (items: Item[]) => sumPropertyStrict('amountExclTax', items)
-
-// export const sumTaxAmount = (items: Item[]): number =>
-//   round6(items.reduce((sum, item) => sum + item.amountExclTax * item.taxRate, 0))
-
-export const computeOrderAmounts = (
+export const computeItemTotals = (
   items: Item[]
-): {
-  amountExclTax: number | undefined | null
-  amountInclTax: number | undefined | null
-  taxAmount: number | undefined | null
-  averageTaxRate: number | undefined | null
-} => {
-  const amountExclTax = sumPropertyStrict('amountExclTax', items)
-  if (amountExclTax === undefined)
-    throw new Error('Order total amount excluding tax is undefined. Please check your order items.')
-  const amountInclTax = sumPropertyStrict('amountInclTax', items)
-  if (amountInclTax === undefined)
-    throw new Error('Order total amount including tax is undefined. Please check your order items.')
-  const taxAmount = amountInclTax - amountExclTax
+):
+  | {
+      amountExclTax: number
+      amountInclTax: number
+      taxAmount: number
+      averageTaxRate: number
+    }
+  | undefined => {
+  if (items.length === 0) return undefined
+  const amountExclTax = sumPropertyStrict<Item>('amountExclTax', items, true)
+  const amountInclTax = sumPropertyStrict<Item>('amountInclTax', items, true)
+  if (!amountExclTax || !amountInclTax) {
+    // TODO : this should throw an error or log something
+    // console.log(
+    //   `Item total amount for order ${items[0].orderId} is 0 or undefined. Order total has NOT been updated`
+    // )
+    return undefined
+  }
+  const taxAmount = round6(amountInclTax - amountExclTax)
   const averageTaxRate = amountExclTax ? round6(taxAmount / amountExclTax) : 0
-  if (!amountExclTax || !amountInclTax)
-    throw new Error('Order total amount is 0 or undefined. Please check your order items.')
-  return {
+
+  const result = {
     amountExclTax,
     amountInclTax,
     taxAmount,
     averageTaxRate
   }
+  // console.log(`Item total amount for order ${items[0].orderId} is: `, result)
+  return result
 }
 
-export const computeOrder = async (orderData: OrderData): Promise<Order> => {
-  const items = await itemGateway.getByOrderId(orderData.id)
-  const orderAmounts = computeOrderAmounts(items)
-  const computedOrder = await addItemsToOrder(order)
-  // const trancheGateway = await createTrancheGateway(trancheAdapter)
-  const tranches = await trancheGateway.getByOrder(orderWithItems)
+export const computeOrder = async (order: Order): Promise<Order> => {
+  let interimOrder: Order
+  // Fetch computed items and add them to the order total amounts
+  const items = await itemGateway.getByOrderId(order.id)
+  interimOrder = { ...order, items }
+
+  const orderAmounts = computeItemTotals(items)
+  // if order amounts are defined, update the order with them, else keep the original values
+  if (orderAmounts) interimOrder = { ...interimOrder, ...orderAmounts }
+
+  // Create an intermediary order with computed amounts to pass to computeTranche
+
+  // Fetch and compute tranches using the interim order
+  const tranches = await trancheGateway.getByOrder(interimOrder)
 
   return {
-    ...orderWithItems,
+    ...interimOrder,
     tranches
   }
 }
@@ -85,14 +79,11 @@ export const createOrderGateway = (accountId: string): OrderGateway => {
 
   const getById = async (orderId: string): Promise<Order | undefined> => {
     const order = await orderAdapter.getById(orderId)
-
-    if (order) {
-      return computeOrder(order)
-    }
-    return undefined
+    if (!order) return undefined
+    return computeOrder(order)
   }
 
-  const getByProperty = async (property: keyof OrderData, value: unknown): Promise<Order[]> => {
+  const getByProperty = async (property: keyof Order, value: unknown): Promise<Order[]> => {
     const orderDatas = await orderAdapter.getByProperty(property, value)
     const orders = await Promise.all(orderDatas.map(computeOrder))
     return orders
