@@ -17,24 +17,29 @@ export type OrderNature = keyof typeof OrderNaturePortionsTotal
 export type OrderDateType = 'confirmation' | 'deliveryStart' | 'deliveryFinish'
 export type OrderDate = { orderDateType: OrderDateType; date: Date }
 
-export interface OrderData {
+// export interface OrderData {
+export interface Order {
   id: string
   clientAccountId: string
   supplierAccountId: string
-  name: string
-  principal: number | undefined | null // null if NULL in DB. undefined if not provided so far in the app
   nature: OrderNature | undefined
+  name?: string
+  amountInclTax?: number | undefined | null // this is also referred to as the "principal"
+  amountExclTax?: number | undefined | null
+  taxAmount?: number | undefined | null
+  averageTaxRate?: number | undefined | null
+  items?: Item[]
+  tranches?: Tranche[]
+  // principal: number | undefined | null // null if NULL in DB. undefined if not provided so far in the app
   // ...
   // contractId: string
   // dates: OrderDate[]
   // status: OrderStatus
 }
 
-export interface Order extends OrderData {
-  items: Item[]
-  tranches: Tranche[]
-  amountExclTax: number | undefined | null
-  amountInclTax: number | undefined | null
-  taxAmount: number | undefined | null
-  averageTaxRate: number | undefined | null
-}
+// export interface Order extends OrderData {
+// amountExclTax?: number | undefined | null
+// amountInclTax?: number | undefined | null
+// taxAmount?: number | undefined | null
+// averageTaxRate?: number | undefined | null
+// }

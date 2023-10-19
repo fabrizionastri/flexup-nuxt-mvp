@@ -8,6 +8,7 @@ export const commercialOrderPreferred50Data: TrancheData = {
   portion: 0.5,
   paymentTerms: { main: { priority: 'preferred' } }
 }
+
 export const commercialOrderFlex30Data: TrancheData = {
   id: 'commercialOrderFlex30Data',
   name: '30% flex',
@@ -44,6 +45,13 @@ export const orderWithRebateFlexRebate50Data: TrancheData = {
   portion: -0.5,
   paymentTerms: { main: { priority: 'flex', period: 'year' } }
 }
+export const orderWithNoItemsFirm100Data: TrancheData = {
+  id: 'orderWithNoItemsFirm100',
+  name: '100% firm',
+  orderId: 'orderWithNoItems',
+  portion: 1,
+  paymentTerms: { main: { priority: 'firm' } }
+}
 export const fundingOrderUpfront100Data: TrancheData = {
   id: 'fundingOrderUpfront100',
   name: 'Funding',
@@ -66,15 +74,22 @@ export const donationOrder100Data: TrancheData = {
   paymentTerms: { main: { priority: 'firm' } }
 }
 
-export const trancheDatas: TrancheData[] = [
+export const allTrancheDatas: TrancheData[] = [
   commercialOrderPreferred50Data,
   commercialOrderFlex30Data,
   commercialOrderCredit30interestData,
   orderWithRebateUpfront150Data,
   orderWithRebateFlexRebate50Data,
+  orderWithNoItemsFirm100Data,
   fundingOrderUpfront100Data,
   fundingOrderCredit100Data,
   donationOrder100Data
+]
+
+export const trancheDatasForcommercialOrder: TrancheData[] = [
+  commercialOrderPreferred50Data,
+  commercialOrderFlex30Data,
+  commercialOrderCredit30interestData
 ]
 
 // Computed tranches
@@ -114,6 +129,13 @@ export const orderWithRebateFlexRebate50: Tranche = {
   payorId: 'flexup',
   payeeId: 'pizzaDOro'
 }
+export const orderWithNoItemsFirm100: Tranche = {
+  ...orderWithNoItemsFirm100Data,
+  sign: 1,
+  principal: 1200,
+  payorId: 'fabrizioAccount',
+  payeeId: 'pizzaDOroAccount'
+}
 export const fundingOrderUpfront100: Tranche = {
   ...fundingOrderUpfront100Data,
   sign: 1,
@@ -132,25 +154,20 @@ export const donationOrder100: Tranche = {
   ...donationOrder100Data,
   sign: 1,
   principal: 100,
-  payorId: 'poulaillerMobile',
-  payeeId: 'pizzaDOroTakeAway'
+  payorId: 'pizzaDOroAccount',
+  payeeId: 'pizzaDOroTakeAwayAccount'
 }
 
-export const tranches: Tranche[] = [
+export const allTranches: Tranche[] = [
   commercialOrderPreferred50,
   commercialOrderWithRebateFlex30,
   commercialOrderCredit30interest5,
   orderWithRebateUpfront150,
   orderWithRebateFlexRebate50,
+  orderWithNoItemsFirm100,
   fundingOrderUpfront100,
   fundingOrderCredit100,
   donationOrder100
-]
-
-export const trancheDatasForcommercialOrder: TrancheData[] = [
-  commercialOrderPreferred50Data,
-  commercialOrderFlex30Data,
-  commercialOrderCredit30interestData
 ]
 
 export const tranchesForcommercialOrder: Tranche[] = [

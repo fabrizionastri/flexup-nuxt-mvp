@@ -1,3 +1,4 @@
+import { ItemAdapter } from 'adapters/database/interfaces'
 import { vi } from 'vitest'
 import type { Mock } from 'vitest'
 
@@ -15,15 +16,16 @@ const mockItem = {
   name: 'Test Item'
 }
 
-const adapter = createItemAdapterJsonServer()
-
 describe('createItemAdapterJsonServer - mock Axios', () => {
+  let adapter: ItemAdapter
+
   beforeEach(() => {
+    // Instantiate the adapter before each test
+    adapter = createItemAdapterJsonServer()
+
     // Reset the mock before each test
     axiosGetMock.mockReset()
     axiosGetMock.mockResolvedValueOnce(mockItem)
-
-    // Instantiate the adapter before each test
   })
 
   describe('getById', () => {

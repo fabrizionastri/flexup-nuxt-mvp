@@ -1,9 +1,8 @@
 import { createOrderAdapterInMemory } from './orderAdapterInMemory'
 import * as orderMocks from 'mock/inMemory/order'
 
-let adapter: any
-
 describe('createOrderAdapterInMemory', () => {
+  let adapter: any
   describe('for existing account', () => {
     beforeAll(() => {
       adapter = createOrderAdapterInMemory('pizzaDOroAccount')

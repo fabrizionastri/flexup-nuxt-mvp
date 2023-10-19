@@ -16,8 +16,14 @@ export const createOrderAdapterJsonServer = (accountId: string): OrderAdapter =>
     const result = (await getAll()) ?? []
     return result.find((order) => order.id === orderId)
   }
+  const getByProperty = async (property: keyof OrderData, value: unknown): Promise<OrderData[]> => {
+    const result = (await getAll()) ?? []
+    return result.filter((order) => order[property] === value)
+  }
+
   return {
     getAll,
-    getById
+    getById,
+    getByProperty
   }
 }

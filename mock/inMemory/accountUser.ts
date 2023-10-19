@@ -1,7 +1,7 @@
 import { AccountUserData, AccountUser } from 'entities/accountUser'
 
 export const fabrizioAccountFabrizioUserData: AccountUserData = {
-  id: 'fabrizioAccountFabrizioUser',
+  id: 'fabrizioAccount:FabrizioUser', // temp for Json-Server
   accountId: 'fabrizioAccount',
   userId: 'fabrizioUser',
   role: 'Owner'

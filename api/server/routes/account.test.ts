@@ -1,4 +1,4 @@
-describe('test suite', () => {
+describe.todo('test suite', () => {
   it('test case', () => {
     const result = 1
     const expected = 1

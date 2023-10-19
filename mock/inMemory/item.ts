@@ -30,23 +30,13 @@ export const orderWithRebateItemData: ItemData = {
 }
 export const orderWithNoTranchesItemData: ItemData = {
   id: 'orderWithNoTranchesItem',
-  orderId: 'orderWithNoItems',
+  orderId: 'orderWithNoTranches',
   name: 'Chaussures de ville',
   quantity: 14,
   unit: 'pair',
   unitPriceExclTax: 100,
   taxRate: 0.1
 }
-
-// export const orderWithNoItems: ItemData = {
-//   id: 'item5',
-//   orderId: 'orderWithNoItems',
-//   name: 'Chaussures de sport',
-//   quantity: 15,
-//   unit: 'pair',
-//   unitPriceExclTax: 120,
-//   taxRate: 0.2
-// }
 
 export const allItemDatas: ItemData[] = [
   commercialOrderItem1Data,
@@ -79,26 +69,11 @@ export const orderWithRebateItem: Item = {
 }
 export const orderWithNoTranchesItem: Item = {
   ...orderWithNoTranchesItemData,
-  unitPriceInclTax: 7.2,
-  amountExclTax: 78,
-  taxAmount: 15.6,
-  amountInclTax: 93.6
+  unitPriceInclTax: 110,
+  amountExclTax: 1400,
+  taxAmount: 140,
+  amountInclTax: 1540
 }
-// export const commercialOrderItem1: Item = {
-//   ...itemDatas[4],
-//   unitPriceInclTax: 110,
-//   amountExclTax: 1400,
-//   taxAmount: 140,
-//   amountInclTax: 1540
-// }
-//
-// export const commercialOrderItem1: Item = {
-//   ...itemDatas[5],
-//   unitPriceInclTax: 144,
-//   amountExclTax: 1800,
-//   taxAmount: 360,
-//   amountInclTax: 2160
-// }
 
 export const allItems: Item[] = [
   commercialOrderItem1,

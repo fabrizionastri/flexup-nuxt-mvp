@@ -14,16 +14,6 @@ describe('createTrancheGateway', () => {
     trancheGateway = createTrancheGateway(trancheAdapter)
   })
 
-  describe('getByOrderIdData', () => {
-    it('should return the tranches data for an existing orderId', async () => {
-      const result = await trancheGateway.getByOrderIdData('commercialOrder')
-      expect(result).toEqual(trancheDatasForcommercialOrder)
-    })
-    it('should return [] for an unknown orderId', async () => {
-      const orderId = 'unknown'
-      expect(await trancheGateway.getByOrderIdData(orderId)).toEqual([])
-    })
-  })
   describe('getByOrder', () => {
     it('should return [] for an order with no tranches', async () => {
       const order = allOrderDatas[3]

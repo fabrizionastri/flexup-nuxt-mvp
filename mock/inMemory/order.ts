@@ -11,14 +11,6 @@ export const commercialOrderData: OrderData = {
   nature: 'commercial',
   principal: 253.1
 }
-export const orderWithNoItemsData: OrderData = {
-  id: 'orderWithNoItems',
-  supplierAccountId: 'pizzaDOroAccount',
-  clientAccountId: 'fabrizioAccount',
-  name: 'Chaussettes',
-  nature: 'commercial',
-  principal: undefined // new order
-}
 export const orderWithRebateData: OrderData = {
   id: 'orderWithRebate',
   supplierAccountId: 'cosysAccount',
@@ -27,13 +19,21 @@ export const orderWithRebateData: OrderData = {
   nature: 'commercial',
   principal: 20000
 }
+export const orderWithNoItemsData: OrderData = {
+  id: 'orderWithNoItems',
+  supplierAccountId: 'pizzaDOroAccount',
+  clientAccountId: 'fabrizioAccount',
+  name: 'Chaussettes',
+  nature: 'commercial',
+  principal: undefined // new order
+}
 export const orderWithNoTranchesData: OrderData = {
   id: 'orderWithNoTranches',
   supplierAccountId: 'fabrizioAccount',
   clientAccountId: 'cosysAccount',
   name: 'Chaussures',
   nature: 'commercial',
-  principal: null // from DB
+  principal: 1540
 }
 export const fundingOrderData: OrderData = {
   id: 'fundingOrder',
@@ -97,7 +97,7 @@ export const orderWithNoItems: Order = {
   amountInclTax: 1200,
   averageTaxRate: 0.2,
   principal: 1200,
-  tranches: []
+  tranches: [tranches.orderWithNoItemsFirm100]
 }
 export const orderWithRebate: Order = {
   ...orderWithRebateData,
@@ -112,11 +112,11 @@ export const orderWithRebate: Order = {
 export const orderWithNoTranches: Order = {
   ...orderWithNoTranchesData,
   items: [items.orderWithNoTranchesItem],
-  amountExclTax: 78,
-  taxAmount: 15.6,
-  amountInclTax: 93.6,
-  averageTaxRate: 0.0,
-  principal: 93.6,
+  amountExclTax: 1400,
+  taxAmount: 140,
+  amountInclTax: 1540,
+  averageTaxRate: 0.1,
+  principal: 1540,
   tranches: []
 }
 
@@ -139,7 +139,7 @@ export const donationOrder: Order = {
   amountInclTax: 0,
   averageTaxRate: 0.0,
   principal: 100,
-  tranches: []
+  tranches: [tranches.donationOrder100]
 }
 
 export const allOrders: Order[] = [

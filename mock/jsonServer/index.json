@@ -112,7 +112,7 @@
     },
     {
       "id": "orderWithNoTranchesItem",
-      "orderId": "orderWithNoItems",
+      "orderId": "orderWithNoTranches",
       "name": "Chaussures de ville",
       "quantity": 14,
       "unit": "pair",
@@ -150,7 +150,7 @@
       "clientAccountId": "cosysAccount",
       "name": "Chaussures",
       "nature": "commercial",
-      "principal": null
+      "principal": 1540
     },
     {
       "id": "fundingOrder",
