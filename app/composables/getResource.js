@@ -17,7 +17,8 @@ export const getResource = async (resource, prop = null, value = '') => {
     const { data } = await axios.get(url)
     return data
   } catch (error) {
-    console.error(`Error fetching resource "${resource}" on: `, url)
+    // ToDo: reactivate this log during dev ??
+    // console.error(`Error fetching resource "${resource}" on: `, url)
     // console.log('error:', error)
     throw error
   }
