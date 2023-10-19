@@ -17,7 +17,7 @@ export const orderWithRebateData: Order = {
   clientAccountId: 'domMazyAccount',
   name: 'Prestation de service',
   nature: 'commercial',
-  amountInclTax: 20000
+  amountInclTax: 20000 // Note that this value is overriden by the items total calculation
 }
 export const orderWithNoItemsData: Order = {
   id: 'orderWithNoItems',
@@ -147,4 +147,4 @@ export const allOrders: Order[] = [
   donationOrder
 ]
 
-export const pizzaDOroAccountOrders: Order[] = [commercialOrder, orderWithRebate, donationOrder]
+export const pizzaDOroAccountOrders: Order[] = [commercialOrder, orderWithNoItems, donationOrder]

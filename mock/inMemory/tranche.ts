@@ -8,7 +8,6 @@ export const commercialOrderPreferred50Data: TrancheData = {
   portion: 0.5,
   paymentTerms: { main: { priority: 'preferred' } }
 }
-
 export const commercialOrderFlex30Data: TrancheData = {
   id: 'commercialOrderFlex30Data',
   name: '30% flex',
@@ -85,7 +84,6 @@ export const allTrancheDatas: TrancheData[] = [
   fundingOrderCredit100Data,
   donationOrder100Data
 ]
-
 export const trancheDatasForcommercialOrder: TrancheData[] = [
   commercialOrderPreferred50Data,
   commercialOrderFlex30Data,
@@ -101,7 +99,7 @@ export const commercialOrderPreferred50: Tranche = {
   payorId: 'pizzaDOroAccount',
   payeeId: 'flexupAccount'
 }
-export const commercialOrderWithRebateFlex30: Tranche = {
+export const commercialOrderFlex30: Tranche = {
   ...commercialOrderFlex30Data,
   sign: 1,
   principal: 75.93,
@@ -119,15 +117,15 @@ export const orderWithRebateUpfront150: Tranche = {
   ...orderWithRebateUpfront150Data,
   sign: 1,
   principal: 248.4,
-  payorId: 'pizzaDOro',
-  payeeId: 'flexup'
+  payorId: 'domMazyAccount',
+  payeeId: 'cosysAccount'
 }
 export const orderWithRebateFlexRebate50: Tranche = {
   ...orderWithRebateFlexRebate50Data,
   sign: -1,
   principal: 82.8,
-  payorId: 'flexup',
-  payeeId: 'pizzaDOro'
+  payorId: 'cosysAccount',
+  payeeId: 'domMazyAccount'
 }
 export const orderWithNoItemsFirm100: Tranche = {
   ...orderWithNoItemsFirm100Data,
@@ -160,7 +158,7 @@ export const donationOrder100: Tranche = {
 
 export const allTranches: Tranche[] = [
   commercialOrderPreferred50,
-  commercialOrderWithRebateFlex30,
+  commercialOrderFlex30,
   commercialOrderCredit30interest5,
   orderWithRebateUpfront150,
   orderWithRebateFlexRebate50,
@@ -169,13 +167,11 @@ export const allTranches: Tranche[] = [
   fundingOrderCredit100,
   donationOrder100
 ]
-
 export const tranchesForcommercialOrder: Tranche[] = [
   commercialOrderPreferred50,
-  commercialOrderWithRebateFlex30,
+  commercialOrderFlex30,
   commercialOrderCredit30interest5
 ]
-
 export const tranchesForOrderWithRebate: Tranche[] = [
   orderWithRebateUpfront150,
   orderWithRebateFlexRebate50

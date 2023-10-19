@@ -134,7 +134,11 @@
       "supplierAccountId": "pizzaDOroAccount",
       "clientAccountId": "fabrizioAccount",
       "name": "Chaussettes",
-      "nature": "commercial"
+      "nature": "commercial",
+      "amountExclTax": 1000,
+      "taxAmount": 200,
+      "amountInclTax": 1200,
+      "averageTaxRate": 0.2
     },
     {
       "id": "orderWithRebate",

@@ -4,7 +4,7 @@ import { sumPropertyStrict } from './sumPropertyStrict'
 
 // describe('orderGateway', () => {
 //   let orderGateway: OrderGateway
-describe.only('sumPropertyStrict', () => {
+describe('sumPropertyStrict', () => {
   it('should return sum for array of items', () => {
     const items = orders.commercialOrder.items
     const expected = 221
