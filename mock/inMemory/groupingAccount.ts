@@ -1,29 +1,29 @@
-export const domMazyGroupingCooperativeTartempionAccount: any[] = [
+export const doMazyGroupingCooperativeTartempionAccount: any[] = [
   {
-    id: 'domMazyGroupingCooperativeTartempionAccount', // this is only there for json-server
-    groupingId: 'domMazyGrouping',
+    id: 'doMazyGroupingCooperativeTartempionAccount', // this is only there for json-server
+    groupingId: 'doMazyGrouping',
     accountId: 'cooperativeTartempionAccount'
   }
 ]
 
-export const domMazyGroupingFlexupAccount: any[] = [
+export const doMazyGroupingFlexupAccount: any[] = [
   {
-    id: 'domMazyGroupingFlexupAccount', // this is only there for json-server
-    groupingId: 'domMazyGrouping',
+    id: 'doMazyGroupingFlexupAccount', // this is only there for json-server
+    groupingId: 'doMazyGrouping',
     accountId: 'flexupAccount'
   }
 ]
 
-export const domMazyGroupingTotoLaRifletteAccount: any[] = [
+export const doMazyGroupingtotoAccount: any[] = [
   {
-    id: 'domMazyGroupingTotoLaRifletteAccount', // this is only there for json-server
-    groupingId: 'domMazyGrouping',
-    accountId: 'totoLaRifletteAccount'
+    id: 'doMazyGroupingtotoAccount', // this is only there for json-server
+    groupingId: 'doMazyGrouping',
+    accountId: 'totoAccount'
   }
 ]
 
 export const grouping_accountDatas = [
-  domMazyGroupingCooperativeTartempionAccount,
-  domMazyGroupingFlexupAccount,
-  domMazyGroupingTotoLaRifletteAccount
+  doMazyGroupingCooperativeTartempionAccount,
+  doMazyGroupingFlexupAccount,
+  doMazyGroupingtotoAccount
 ]

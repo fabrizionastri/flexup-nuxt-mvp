@@ -1,4 +1,5 @@
 import { Currency, Country } from './_general'
+import { AccountUserRole } from './accountUser'
 
 /* Account Type is redundant with OwnerType*/
 // export type AccountType = 'personal' | 'organization' | 'project' | 'grouping'
@@ -11,7 +12,7 @@ export interface AccountData {
   // type: AccountType // I think this is redundant with ownerType
   status: AccountStatus
   ownerType: OwnerType
-  ownerId?: string // TODO: Check only required if ownerType is 'account', other wise, ownerId is the same as id ???
+  ownerId: string
   currencyId: Currency
   countryId: Country
   creationDate: Date
@@ -25,4 +26,5 @@ export interface Account extends AccountData {
   ownerLabel: string
   currencyName: string
   currencySymbol: string
+  myRole: AccountUserRole // TODO: this depends on the active user, so I put 'guest' in the mock, but will modify it in each test.
 }

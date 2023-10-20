@@ -14,7 +14,7 @@ export const commercialOrderData: Order = {
 export const orderWithRebateData: Order = {
   id: 'orderWithRebate',
   supplierAccountId: 'cosysAccount',
-  clientAccountId: 'domMazyAccount',
+  clientAccountId: 'doMazyAccount',
   name: 'Prestation de service',
   nature: 'commercial',
   amountInclTax: 20000 // Note that this value is overriden by the items total calculation
@@ -40,7 +40,7 @@ export const orderWithNoTranchesData: Order = {
 }
 export const fundingOrderData: Order = {
   id: 'fundingOrder',
-  supplierAccountId: 'domMazyAccount',
+  supplierAccountId: 'doMazyAccount',
   clientAccountId: 'fabrizioAccount',
   name: 'Funding',
   nature: 'financial',

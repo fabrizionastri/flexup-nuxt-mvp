@@ -46,7 +46,7 @@ export const pizzaDOroAccountData: AccountData = {
   // type: 'project',
   status: 'active',
   ownerType: 'account', // since the owner is an account, this is a project account
-  ownerId: 'tontonPognonAccount',
+  ownerId: 'totoAccount',
   currencyId: 'EUR',
   countryId: 'FRA',
   creationDate: new Date('2020-01-01'),
@@ -68,13 +68,13 @@ export const pizzaDOroTakeAwayAccountData: AccountData = {
   avatar: '/images/profiles/pizza_d_oro.png'
 }
 
-export const domMazyAccountData: AccountData = {
-  id: 'domMazyAccount',
-  name: 'Domaine de Mazy',
+export const doMazyAccountData: AccountData = {
+  id: 'doMazyAccount',
+  name: 'Groupement du Domaine de Mazy',
   // type: 'main',
   status: 'active',
   ownerType: 'grouping', // since the owner is an grouping, this is a projet account, but with several owners
-  ownerId: 'domMazyGrouping', // this points to a grouping, which is a cross table.
+  ownerId: 'doMazyGrouping', // this points to a grouping, which is a cross table.
   currencyId: 'EUR',
   countryId: 'FRA',
   creationDate: new Date('2020-01-01'),
@@ -88,7 +88,7 @@ export const poulaillerMobileAccountData: AccountData = {
   // type: 'project',
   status: 'suspended',
   ownerType: 'grouping',
-  ownerId: 'domMazy',
+  ownerId: 'doMazy',
   currencyId: 'EUR',
   countryId: 'FRA',
   creationDate: new Date('2020-01-01'),
@@ -101,7 +101,7 @@ export const allAccountDatas = [
   flexupAccountData,
   pizzaDOroAccountData,
   pizzaDOroTakeAwayAccountData,
-  domMazyAccountData,
+  doMazyAccountData,
   poulaillerMobileAccountData
 ]
 
@@ -113,7 +113,8 @@ export const fabrizioAccount: Account = {
   ownerName: 'Fabrizio Nastri',
   ownerLabel: 'Fabrizio Nastri 👤',
   currencyName: 'Euro',
-  currencySymbol: '€'
+  currencySymbol: '€',
+  myRole: 'guest'
 }
 
 export const cosysAccount: Account = {
@@ -122,7 +123,8 @@ export const cosysAccount: Account = {
   ownerName: 'Cosys',
   ownerLabel: 'Cosys 🏢',
   currencyName: 'Euro',
-  currencySymbol: '€'
+  currencySymbol: '€',
+  myRole: 'guest'
 }
 
 export const flexupAccount: Account = {
@@ -131,16 +133,18 @@ export const flexupAccount: Account = {
   ownerName: 'Cosys',
   ownerLabel: 'Cosys 🏢',
   currencyName: 'Euro',
-  currencySymbol: '€'
+  currencySymbol: '€',
+  myRole: 'guest'
 }
 
 export const pizzaDOroAccount: Account = {
   ...pizzaDOroAccountData,
   label: "Pizza d'Oro 🚀",
-  ownerName: 'Tonton Pognon',
-  ownerLabel: 'Tonton Pognon 👤',
+  ownerName: 'Toto La Riflette',
+  ownerLabel: 'Toto La Riflette 👤',
   currencyName: 'Euro',
-  currencySymbol: '€'
+  currencySymbol: '€',
+  myRole: 'guest'
 }
 
 export const pizzaDOroTakeAwayAccount: Account = {
@@ -149,25 +153,28 @@ export const pizzaDOroTakeAwayAccount: Account = {
   ownerName: "Pizza d'Oro",
   ownerLabel: "Pizza d'Oro 🚀",
   currencyName: 'Euro',
-  currencySymbol: '€'
+  currencySymbol: '€',
+  myRole: 'guest'
 }
 
-export const domMazyAccount: Account = {
-  ...domMazyAccountData,
+export const doMazyAccount: Account = {
+  ...doMazyAccountData,
   label: 'Domaine de Mazy 🚀',
   ownerName: 'Groupement du Domaine de Mazy',
   ownerLabel: 'Groupement du Domaine de Mazy 👥',
   currencyName: 'Euro',
-  currencySymbol: '€'
+  currencySymbol: '€',
+  myRole: 'guest'
 }
 
 export const poulaillerMobileAccount: Account = {
   ...poulaillerMobileAccountData,
   label: 'Poulailler Mobile 🚀',
-  ownerName: 'Domaine de Mazy',
+  ownerName: 'Groupement du Domaine de Mazy',
   ownerLabel: 'Domaine de Mazy 🚀',
   currencyName: 'Euro',
-  currencySymbol: '€'
+  currencySymbol: '€',
+  myRole: 'guest'
   // finalOwnerName: 'Groupement du Domaine de Mazy',
   // finalOwnerLabel: 'Groupement du Domaine de Mazy 👥'
 }
@@ -178,6 +185,6 @@ export const allAccounts = [
   flexupAccount,
   pizzaDOroAccount,
   pizzaDOroTakeAwayAccount,
-  domMazyAccount,
+  doMazyAccount,
   poulaillerMobileAccount
 ]

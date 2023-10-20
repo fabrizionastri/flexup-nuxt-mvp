@@ -1,8 +1,10 @@
 export interface GroupingData {
   id: string
   name: string
+  representativeAccountId: string
+  groupingContractId: string
   creationDate: Date
-  description?: string
+  countryId: string
 }
 
 export interface Grouping extends GroupingData {

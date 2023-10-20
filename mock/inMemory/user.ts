@@ -12,10 +12,18 @@ export const totoUserData: UserData = {
   id: 'totoUser',
   password: 'plop',
   creationDate: new Date('2019-01-01'),
+  status: 'active',
+  lastLoginDate: new Date('2019-01-01')
+}
+
+export const pendingUserData: UserData = {
+  id: 'pendingUser',
+  password: 'plop',
+  creationDate: new Date('2019-01-01'),
   status: 'pending'
 }
 
-export const allUserDatas: UserData[] = [fabrizioUserData, totoUserData]
+export const allUserDatas: UserData[] = [fabrizioUserData, totoUserData, pendingUserData]
 
 export const fabrizioUser: User = {
   ...fabrizioUserData,
@@ -28,9 +36,17 @@ export const fabrizioUser: User = {
 export const totoUser: User = {
   ...totoUserData,
   firstName: 'Toto',
-  lastName: 'LaRiflette',
+  lastName: 'La Riflette',
   fullName: 'Toto La Riflette',
-  mainEmail: 'totoLaRiflette@gmail.com'
+  mainEmail: 'toto.lariflette@gmail.com'
 }
 
-export const allUsers: User[] = [fabrizioUser, totoUser]
+export const pendingUser: User = {
+  ...pendingUserData,
+  firstName: '',
+  lastName: '',
+  fullName: '',
+  mainEmail: ''
+}
+
+export const allUsers: User[] = [fabrizioUser, totoUser, pendingUser]

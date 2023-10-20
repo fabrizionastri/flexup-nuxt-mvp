@@ -1,9 +1,9 @@
 import { GenericAdapter } from '../interfaces'
-import { Entity, EntityKey } from 'entities/_generic'
+import { Entity, EntityName } from 'entities/_generic'
 import { inMemory } from 'mock/inMemory'
 
 export const createGenericAdapterInMemory = <T extends Entity>(
-  entity: EntityKey
+  entity: EntityName
 ): GenericAdapter<T> => {
   const entities: T[] = inMemory[entity] as unknown as T[]
 

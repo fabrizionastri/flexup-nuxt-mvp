@@ -1,10 +1,10 @@
-export type AccountRole = 'Owner' | 'Admin' | 'Editor' | 'Guest'
+export type AccountUserRole = 'owner' | 'admin' | 'editor' | 'guest'
 
 export interface AccountUserData {
   id: string // this is: accountId_userId, only used for json-server.
   accountId: string
   userId: string
-  role: AccountRole
+  role: AccountUserRole
   // creationDate: Date
   // arrivalDate?: Date
   // departureDate?: Date

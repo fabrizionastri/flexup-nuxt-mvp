@@ -117,7 +117,7 @@ export const orderWithRebateUpfront150: Tranche = {
   ...orderWithRebateUpfront150Data,
   sign: 1,
   principal: 248.4,
-  payorId: 'domMazyAccount',
+  payorId: 'doMazyAccount',
   payeeId: 'cosysAccount'
 }
 export const orderWithRebateFlexRebate50: Tranche = {
@@ -125,7 +125,7 @@ export const orderWithRebateFlexRebate50: Tranche = {
   sign: -1,
   principal: 82.8,
   payorId: 'cosysAccount',
-  payeeId: 'domMazyAccount'
+  payeeId: 'doMazyAccount'
 }
 export const orderWithNoItemsFirm100: Tranche = {
   ...orderWithNoItemsFirm100Data,
@@ -139,13 +139,13 @@ export const fundingOrderUpfront100: Tranche = {
   sign: 1,
   principal: 1000,
   payorId: 'fabrizioAccount',
-  payeeId: 'domMazy'
+  payeeId: 'doMazy'
 }
 export const fundingOrderCredit100: Tranche = {
   ...fundingOrderCredit100Data,
   sign: -1,
   principal: 1000,
-  payorId: 'domMazy',
+  payorId: 'doMazy',
   payeeId: 'fabrizioAccount'
 }
 export const donationOrder100: Tranche = {

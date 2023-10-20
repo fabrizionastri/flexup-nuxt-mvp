@@ -18,7 +18,7 @@ export const getResource = async (resource, prop = null, value = '') => {
     return data
   } catch (error) {
     // ToDo: reactivate this log during dev ??
-    // console.error(`Error fetching resource "${resource}" on: `, url)
+    console.error(`Error fetching resource "${resource}" on: `, url)
     // console.log('error:', error)
     throw error
   }

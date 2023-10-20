@@ -3,7 +3,14 @@ export interface Entity {
   [key: string]: unknown
 }
 
-export type EntityKey = 'account' | 'item' | 'order' | 'user'
+export type EntityName =
+  | 'account'
+  | 'accountUser'
+  | 'currency'
+  | 'item'
+  | 'order'
+  | 'tranche'
+  | 'user'
 
 export interface EntityGateway<T extends Entity> {
   getEntityById: (id: string) => Promise<T | undefined>

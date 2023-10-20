@@ -1,9 +1,9 @@
 import { GenericAdapter } from '../interfaces'
-import { Entity, EntityKey } from 'entities/_generic'
+import { Entity, EntityName } from 'entities/_generic'
 import axios from './myAxios'
 
 export const createGenericAdapterJsonServer = <T extends Entity>(
-  entity: EntityKey
+  entity: EntityName
 ): GenericAdapter<T> => {
   return {
     getById: async (entityId: string): Promise<T | undefined> => {

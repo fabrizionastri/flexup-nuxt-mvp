@@ -20,7 +20,7 @@
     { name: 'Account 1', id: 'cosysAccount' },
     { name: 'Account 2', id: 'pizzaDOro' },
     { name: 'Account 3', id: 'fabrizioAccount' },
-    { name: 'Account 4', id: 'domMazy' },
+    { name: 'Account 4', id: 'doMazy' },
     { name: 'Account 5', id: 'poulaillerMobile' }
   ]
 </script>
