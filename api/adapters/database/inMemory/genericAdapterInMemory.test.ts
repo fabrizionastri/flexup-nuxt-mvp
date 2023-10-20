@@ -1,6 +1,7 @@
 import { createGenericAdapterInMemory } from './genericAdapterInMemory'
 import { fabrizioAccountData } from 'mock/inMemory/account'
 import { totoUserData, pendingUserData } from 'mock/inMemory/user'
+import * as accountUser from 'mock/inMemory/accountUser'
 
 describe('createGenericAdapterInMemory', () => {
   describe('-> account', () => {
@@ -53,18 +54,26 @@ describe('createGenericAdapterInMemory', () => {
     })
   })
   describe('-> accountUser', () => {
-    const userAdapter = createGenericAdapterInMemory('accountUser')
-    describe('getByUserId', () => {
-      it('should retrieve an entity by its ID', async () => {
-        const result = await userAdapter.getById('totoUser')
-        expect(result).toEqual(totoUserData)
+    const accountUserAdapter = createGenericAdapterInMemory('accountUser')
+    describe('getById', () => {
+      it('should retrieve account-user by its user Id', async () => {
+        const result = await accountUserAdapter.getById('totoAccountTotoUser')
+        expect(result).toEqual(accountUser.totoAccountTotoUserData)
       })
     })
 
     describe('getByProperty', () => {
+      it('should retrieve account-user by its user Id', async () => {
+        const result = await accountUserAdapter.getByProperty('userId', 'totoUser')
+        expect(result).toEqual(accountUser.accountUserDatasForTotoUser)
+      })
+      it('should retrieve account-user by its account Id', async () => {
+        const result = await accountUserAdapter.getByProperty('accountId', 'flexupAccount')
+        expect(result).toEqual(accountUser.accountUserDatasForFlexupAccount)
+      })
       it('should retrieve entities based on a property and its value', async () => {
-        const results = await userAdapter.getByProperty('status', 'pending')
-        expect(results).toContain(pendingUserData)
+        const results = await accountUserAdapter.getByProperty('role', 'guest')
+        expect(results).toEqual([accountUser.doMazyAccountFabrizioUserData])
       })
     })
   })

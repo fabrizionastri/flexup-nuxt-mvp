@@ -42,6 +42,17 @@ export const allAccountUserDatas: AccountUserData[] = [
   flexupAccountFabrizioUserData,
   cosysAccountFabrizioUserData,
   flexupAccountTotoUserData,
+  totoAccountTotoUserData,
+  doMazyAccountFabrizioUserData
+]
+
+export const accountUserDatasForFlexupAccount: AccountUserData[] = [
+  flexupAccountFabrizioUserData,
+  flexupAccountTotoUserData
+]
+
+export const accountUserDatasForTotoUser: AccountUserData[] = [
+  flexupAccountTotoUserData,
   totoAccountTotoUserData
 ]
 
