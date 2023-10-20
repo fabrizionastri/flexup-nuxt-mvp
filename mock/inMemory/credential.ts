@@ -1,15 +1,4 @@
-export type UserCredentialType = 'username' | 'email' | 'phone'
-
-export interface UserCredentialData {
-  id: string
-  userId: string
-  identifier: string
-  type: UserCredentialType
-  password: string
-  // creationDate: Date
-  // status: string
-  // lastLoginDate: Date
-}
+import { UserCredentialData } from '../../api/core/entities/credential'
 
 export const fabrizioUsernameCredentialData: UserCredentialData = {
   id: 'fabrizioUsernameCredential',
