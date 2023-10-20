@@ -23,7 +23,7 @@ export const pendingUserData: UserData = {
   status: 'pending'
 }
 
-export const allUserDatas: UserData[] = [fabrizioUserData, totoUserData, pendingUserData]
+export const userDatas: UserData[] = [fabrizioUserData, totoUserData, pendingUserData]
 
 export const fabrizioUser: User = {
   ...fabrizioUserData,
@@ -49,4 +49,4 @@ export const pendingUser: User = {
   mainEmail: ''
 }
 
-export const allUsers: User[] = [fabrizioUser, totoUser, pendingUser]
+export const users: User[] = [fabrizioUser, totoUser, pendingUser]

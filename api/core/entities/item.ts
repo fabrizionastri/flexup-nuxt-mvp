@@ -1,4 +1,4 @@
-import { Unit } from './product'
+import { Unit } from './unit'
 
 export interface ItemData {
   id: string

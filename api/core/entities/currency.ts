@@ -1,4 +1,4 @@
-export interface Currency {
+export interface CurrencyData {
   id: string
   name: string
   symbol: string

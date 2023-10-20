@@ -1,8 +1,4 @@
-import {
-  createItemAdapterInMemory,
-  createOrderAdapterInMemory,
-  createTrancheAdapterInMemory
-} from './inMemory'
+import { itemAdapter, createOrderAdapter, trancheAdapter } from './inMemory'
 import { createItemAdapterJsonServer } from './jsonServer/itemAdapterJsonServer'
 import { createOrderAdapterJsonServer } from './jsonServer/orderAdapterJsonServer'
 
@@ -14,20 +10,20 @@ const dataSource: string = process.env.STORAGE_TYPE || 'InMemory'
 
 console.log('Adapters data source:', dataSource)
 
-let createItemAdapter: any
+let itemAdapter: any
 let createOrderAdapter: any
-let createTrancheAdapter: any
+let trancheAdapter: any
 
 if (dataSource === 'inMemory') {
-  createItemAdapter = createItemAdapterInMemory
-  createOrderAdapter = createOrderAdapterInMemory
-  createTrancheAdapter = createTrancheAdapterInMemory
+  itemAdapter = itemAdapter
+  createOrderAdapter = createOrderAdapter
+  trancheAdapter = trancheAdapter
 } else if (dataSource === 'jsonServer') {
-  createItemAdapter = createItemAdapterJsonServer
+  itemAdapter = itemAdapterJsonServer
   createOrderAdapter = createOrderAdapterJsonServer
-  createTrancheAdapter = createTrancheAdapterInMemory // to be replaced by createTrancheAdapterJsonServer
+  trancheAdapter = irancheAdapterJsonServer // to be replaced by createTrancheAdapterJsonServer
 } else {
   throw new Error('Adapters Database index : Invalid storage type')
 }
 
-export { createItemAdapter, createOrderAdapter, createTrancheAdapter }
+export { itemAdapter, createOrderAdapter, trancheAdapter }

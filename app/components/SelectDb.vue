@@ -8,7 +8,7 @@
 
 <script setup>
   const options = ref([
-    { text: 'In Memory', value: 'inMemory' },
+    { text: 'In Memory', value: 'im' },
     { text: 'JSON Server', value: 'jsonServer' }
   ])
   const selectedDb = ref(options.value[0].value)

@@ -3,8 +3,8 @@ import { Hono } from 'hono'
 
 const app = new Hono()
 
-app.get('/:accountd', async (c) => {
-  const accountId = c.req.param('accountd')
+app.get('/:accountId', async (c) => {
+  const accountId = c.req.param('accountId')
   console.log('req path', c.req.path)
   console.log('Hono: process.env.STORAGE_TYPE', process.env.STORAGE_TYPE)
   const orders = await getAllOrders(accountId)

@@ -1,10 +1,9 @@
 import { ItemAdapter } from '../interfaces'
 import { ItemData } from 'entities/item'
+import { itemDatas } from 'mock/inMemory/item'
 
-import { allItemDatas } from 'mock/inMemory/item'
-
-export const createItemAdapterInMemory = (): ItemAdapter => {
-  const items: ItemData[] = allItemDatas
+export const createItemAdapter = (): ItemAdapter => {
+  const items: ItemData[] = itemDatas
 
   const getById = (itemId: string): Promise<ItemData | undefined> =>
     Promise.resolve(items.find((item) => item.id === itemId))
@@ -25,3 +24,5 @@ export const createItemAdapterInMemory = (): ItemAdapter => {
     getByProperty
   }
 }
+
+export const itemAdapter = createItemAdapter()

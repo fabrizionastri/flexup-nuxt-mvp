@@ -1,16 +1,12 @@
+import inMemory from '~/mock/inMemory'
+
 export interface Entity {
   id: string
   [key: string]: unknown
 }
 
-export type EntityName =
-  | 'account'
-  | 'accountUser'
-  | 'currency'
-  | 'item'
-  | 'order'
-  | 'tranche'
-  | 'user'
+// entity names are the keys of the inMemory object
+export type EntityName = keyof typeof inMemory
 
 export interface EntityGateway<T extends Entity> {
   getEntityById: (id: string) => Promise<T | undefined>

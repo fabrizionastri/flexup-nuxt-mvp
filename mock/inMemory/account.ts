@@ -95,7 +95,19 @@ export const poulaillerMobileAccountData: AccountData = {
   avatar: '/images/profiles/poulaillerMobMazy.png'
 }
 
-export const allAccountDatas = [
+export const agroCoopAccountData: AccountData = {
+  id: 'agroCoopAccount',
+  name: 'Agro Coop',
+  status: 'active',
+  ownerType: 'organization',
+  ownerId: 'agroCoopOrganization',
+  currencyId: 'CFH',
+  countryId: 'CHE',
+  creationDate: new Date('2020-01-01'),
+  avatar: '/images/profiles/agro_coop.png'
+}
+
+export const accountDatas = [
   fabrizioAccountData,
   cosysAccountData,
   flexupAccountData,
@@ -179,7 +191,7 @@ export const poulaillerMobileAccount: Account = {
   // finalOwnerLabel: 'Groupement du Domaine de Mazy 👥'
 }
 
-export const allAccounts = [
+export const accounts = [
   fabrizioAccount,
   cosysAccount,
   flexupAccount,

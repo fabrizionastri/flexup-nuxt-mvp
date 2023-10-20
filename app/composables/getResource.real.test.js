@@ -2,7 +2,7 @@ import { getAccounts } from './getResource.js'
 
 // Option 1 -  import the default export, and then extract accounts from it 👌✔️  works
 // import inMemory from '../../mock/inMemory'
-// const accounts = inMemory.accounts
+// const accounts = im.accounts
 
 // Option 2 - import accountDatas directly 👌✔️ works
 // import { accountDatas as accounts } from '../../mock/inMemory'

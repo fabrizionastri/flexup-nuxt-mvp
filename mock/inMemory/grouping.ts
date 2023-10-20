@@ -3,7 +3,7 @@ import { Grouping, GroupingData } from '~/api/core/entities/grouping'
 export const doMazyGroupingData: GroupingData = {
   id: 'doMazyGrouping',
   name: 'Groupement du Domaine de Mazy',
-  representativeAccountId: 'cooperativeTartempionAccount',
+  representativeAccountId: 'agroCoopAccount',
   groupingContractId: 'doMazyGroupingContract',
   creationDate: new Date('2020-01-01'),
   countryId: 'FRA'
@@ -14,4 +14,4 @@ export const doMazyGrouping: Grouping = {
   label: 'Groupement du Domaine de Mazy 👥'
 }
 
-export const allGroupingDatas: GroupingData[] = [doMazyGroupingData]
+export const groupingDatas: GroupingData[] = [doMazyGroupingData]

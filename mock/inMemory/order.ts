@@ -54,7 +54,7 @@ export const donationOrderData: Order = {
   nature: 'donation',
   amountInclTax: 100
 }
-export const allOrderDatas: Order[] = [
+export const orderDatas: Order[] = [
   commercialOrderData,
   orderWithNoItemsData,
   orderWithRebateData,
@@ -138,7 +138,7 @@ export const donationOrder: Order = {
   tranches: [tranches.donationOrder100]
 }
 
-export const allOrders: Order[] = [
+export const orders: Order[] = [
   commercialOrder,
   orderWithNoItems,
   orderWithRebate,

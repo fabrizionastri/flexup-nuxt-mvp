@@ -1,4 +1,4 @@
-export type Unit = 'unit' | 'hr' | 'day' | 'month' | 'year' | 'kg' | 'pair'
+import { Unit } from './unit'
 
 export interface Product {
   id: string

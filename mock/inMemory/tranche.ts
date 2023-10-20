@@ -73,7 +73,7 @@ export const donationOrder100Data: TrancheData = {
   paymentTerms: { main: { priority: 'firm' } }
 }
 
-export const allTrancheDatas: TrancheData[] = [
+export const trancheDatas: TrancheData[] = [
   commercialOrderPreferred50Data,
   commercialOrderFlex30Data,
   commercialOrderCredit30interestData,
@@ -156,7 +156,7 @@ export const donationOrder100: Tranche = {
   payeeId: 'pizzaDOroTakeAwayAccount'
 }
 
-export const allTranches: Tranche[] = [
+export const tranches: Tranche[] = [
   commercialOrderPreferred50,
   commercialOrderFlex30,
   commercialOrderCredit30interest5,

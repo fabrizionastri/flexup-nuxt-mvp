@@ -1,6 +1,6 @@
 export type UserCredentialType = 'username' | 'email' | 'phone'
 
-export interface UserCredential {
+export interface UserCredentialData {
   id: string
   userId: string
   identifier: string
@@ -11,7 +11,7 @@ export interface UserCredential {
   // lastLoginDate: Date
 }
 
-export const fabrizioUsernameCredential: UserCredential = {
+export const fabrizioUsernameCredentialData: UserCredentialData = {
   id: 'fabrizioUsernameCredential',
   userId: 'fabrizioUser',
   identifier: 'fabrizio',
@@ -19,7 +19,7 @@ export const fabrizioUsernameCredential: UserCredential = {
   password: 'plop'
 }
 
-export const fabrizioEmailCredential: UserCredential = {
+export const fabrizioEmailCredentialData: UserCredentialData = {
   id: 'fabrizioEmailCredential',
   userId: 'fabrizioUser',
   identifier: 'fabrizio@plop.com',
@@ -27,7 +27,7 @@ export const fabrizioEmailCredential: UserCredential = {
   password: 'plop'
 }
 
-export const fabrizioPhoneCredential: UserCredential = {
+export const fabrizioPhoneCredentialData: UserCredentialData = {
   id: 'fabrizioPhoneCredential',
   userId: 'fabrizioUser',
   identifier: '06 12 34 56 78',
@@ -35,7 +35,7 @@ export const fabrizioPhoneCredential: UserCredential = {
   password: 'plop'
 }
 
-export const totoUsernameCredential: UserCredential = {
+export const totoUsernameCredentialData: UserCredentialData = {
   id: 'totoUsernameCredential',
   userId: 'totoUser',
   identifier: 'toto',
@@ -43,14 +43,15 @@ export const totoUsernameCredential: UserCredential = {
   password: 'plop'
 }
 
-export const fabrizioCredentials: UserCredential[] = [
-  fabrizioUsernameCredential,
-  fabrizioEmailCredential,
-  fabrizioPhoneCredential
+export const fabrizioCredentialDatas: UserCredentialData[] = [
+  fabrizioUsernameCredentialData,
+  fabrizioEmailCredentialData,
+  fabrizioPhoneCredentialData
 ]
 
-export const totoCredentials: UserCredential[] = [totoUsernameCredential]
+export const totoCredentialDatas: UserCredentialData[] = [totoUsernameCredentialData]
 
-export const allCredentials: UserCredential[] = [...fabrizioCredentials, ...totoCredentials]
-
-export const allCredentialDatas = allCredentials
+export const credentialDatas: UserCredentialData[] = [
+  ...fabrizioCredentialDatas,
+  ...totoCredentialDatas
+]

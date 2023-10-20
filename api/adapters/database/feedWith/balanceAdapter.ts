@@ -12,7 +12,7 @@ export class BalanceAdapter {
     return this._balance
   }
   getForAccountAndDate(accountId: string, referenceDate: Date): Array<BalanceInstance> {
-    const allPreviousBalances = this._balance.filter((balance) => {
+    const previousBalances = this._balance.filter((balance) => {
       return balance.accountId === accountId && balance.referenceDate <= referenceDate
     })
 

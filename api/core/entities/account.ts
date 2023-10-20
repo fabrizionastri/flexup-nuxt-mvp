@@ -11,8 +11,8 @@ export interface AccountData {
   name: string
   // type: AccountType // I think this is redundant with ownerType
   status: AccountStatus
-  ownerType: OwnerType
   ownerId: string
+  ownerType: OwnerType
   currencyId: Currency
   countryId: Country
   creationDate: Date

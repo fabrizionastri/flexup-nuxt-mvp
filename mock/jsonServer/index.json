@@ -112,6 +112,12 @@
       "accountId": "totoAccount",
       "userId": "totoUser",
       "role": "owner"
+    },
+    {
+      "id": "doMazyAccountFabrizioUser",
+      "accountId": "doMazyAccount",
+      "userId": "fabrizioUser",
+      "role": "guest"
     }
   ],
   "credential": [
@@ -142,6 +148,85 @@
       "identifier": "toto",
       "type": "username",
       "password": "plop"
+    }
+  ],
+  "country": [
+    {
+      "id": "FRA",
+      "name": "France",
+      "iso2": "FR"
+    },
+    {
+      "id": "BEL",
+      "name": "Belgium",
+      "iso2": "BE"
+    },
+    {
+      "id": "USA",
+      "name": "United States",
+      "iso2": "US"
+    }
+  ],
+  "currency": [
+    {
+      "id": "EUR",
+      "name": "Euro",
+      "symbol": "€",
+      "precision": 2
+    },
+    {
+      "id": "USD",
+      "name": "Dollar",
+      "symbol": "$",
+      "precision": 2
+    },
+    {
+      "id": "GBP",
+      "name": "Pound",
+      "symbol": "£",
+      "precision": 2
+    },
+    {
+      "id": "JPY",
+      "name": "Yen",
+      "symbol": "¥",
+      "precision": 0
+    },
+    {
+      "id": "CFF",
+      "name": "Swiss Franc",
+      "symbol": "CHF",
+      "precision": 2
+    }
+  ],
+  "grouping": [
+    {
+      "id": "doMazyGrouping",
+      "name": "Groupement du Domaine de Mazy",
+      "representativeAccountId": "agroCoopAccount",
+      "groupingContractId": "doMazyGroupingContract",
+      "creationDate": "2020-01-01T00:00:00.000Z",
+      "countryId": "FRA"
+    }
+  ],
+  "groupingAccount": [
+    {
+      "id": "doMazyGroupingAgroCoopAccount",
+      "groupingId": "doMazyGrouping",
+      "accountId": "agroCoopAccount",
+      "role": "admin"
+    },
+    {
+      "id": "doMazyGroupingTotoAccount",
+      "groupingId": "doMazyGrouping",
+      "accountId": "agroCoopAccount",
+      "role": "member"
+    },
+    {
+      "id": "doMazyGroupingFlexUpAccount",
+      "groupingId": "doMazyGrouping",
+      "accountId": "flexUpAccount",
+      "role": "member"
     }
   ],
   "item": [

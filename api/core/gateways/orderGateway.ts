@@ -4,7 +4,7 @@ import { itemGateway } from 'gateways/itemGateway'
 import { trancheGateway } from './trancheGateway'
 import { Order } from 'entities/order'
 import { round6 } from 'utils/round'
-import { sumPropertyStrict } from '../../../lib/utils/sumPropertyStrict'
+import { sumPropertyStrict } from 'lib/utils/sumPropertyStrict'
 
 export interface OrderGateway {
   getAll: () => Promise<Order[]>

@@ -2,9 +2,7 @@ import { GenericAdapter } from '../interfaces'
 import { Entity, EntityName } from 'entities/_generic'
 import { inMemory } from 'mock/inMemory'
 
-export const createGenericAdapterInMemory = <T extends Entity>(
-  entity: EntityName
-): GenericAdapter<T> => {
+export const createGenericAdapter = <T extends Entity>(entity: EntityName): GenericAdapter<T> => {
   const entities: T[] = inMemory[entity] as unknown as T[]
 
   const getById = (entityId: string): Promise<T | undefined> =>

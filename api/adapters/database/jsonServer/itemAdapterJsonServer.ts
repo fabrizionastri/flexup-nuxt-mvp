@@ -22,3 +22,6 @@ export const createItemAdapterJsonServer = (): ItemAdapter => {
     getByProperty
   }
 }
+
+export const itemAdapterJsonServer = createItemAdapterJsonServer()
+export const itemAdapter = createItemAdapterJsonServer()

@@ -1,9 +1,9 @@
-import { OrderAdapter } from '../interfaces'
-import { allOrderDatas } from 'mock/inMemory'
 import { Order } from 'entities/order'
+import { OrderAdapter } from '../interfaces'
+import { orderDatas } from 'mock/inMemory'
 
-export const createOrderAdapterInMemory = (accountId: string): OrderAdapter => {
-  const orders: Order[] = allOrderDatas
+export const createOrderAdapter = (accountId: string): OrderAdapter => {
+  const orders: Order[] = orderDatas
 
   const getAll = (): Promise<Order[]> =>
     Promise.resolve(

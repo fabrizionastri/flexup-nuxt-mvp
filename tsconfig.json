@@ -30,9 +30,5 @@
     "require": ["tsconfig-paths/register"]
   },
   "include": ["api/**/*", "app/**/*", "mock/**/*", "lib/**/*", "utils/**/*", "./*"],
-  "files": [
-    "mock/index.json",
-    "tsconfig.json",
-    "api/adapters/database/inMemory/userAdapterIM.test.ts"
-  ]
+  "files": ["mock/index.json", "tsconfig.json"]
 }

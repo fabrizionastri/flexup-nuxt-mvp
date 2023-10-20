@@ -37,7 +37,7 @@ export const doMazyAccountFabrizioUserData: AccountUserData = {
   role: 'guest'
 }
 
-export const allAccountUserDatas: AccountUserData[] = [
+export const accountUserDatas: AccountUserData[] = [
   fabrizioAccountFabrizioUserData,
   flexupAccountFabrizioUserData,
   cosysAccountFabrizioUserData,
@@ -104,7 +104,7 @@ export const doMazyAccountFabrizioUser: AccountUser = {
   userLabel: 'Fabrizio Nastri (Guest)'
 }
 
-export const allAccountUsers: AccountUser[] = [
+export const accountUsers: AccountUser[] = [
   fabrizioAccountFabrizioUser,
   flexupAccountFabrizioUser,
   cosysAccountFabrizioUser,

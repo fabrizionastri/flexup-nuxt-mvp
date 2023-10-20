@@ -38,7 +38,7 @@ export const orderWithNoTranchesItemData: ItemData = {
   taxRate: 0.1
 }
 
-export const allItemDatas: ItemData[] = [
+export const itemDatas: ItemData[] = [
   commercialOrderItem1Data,
   commercialOrderItem2Data,
   orderWithRebateItemData,
@@ -75,7 +75,7 @@ export const orderWithNoTranchesItem: Item = {
   amountInclTax: 1540
 }
 
-export const allItems: Item[] = [
+export const items: Item[] = [
   commercialOrderItem1,
   commercialOrderItem2,
   orderWithRebateItem,
