@@ -1,5 +1,7 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 
+// I had to add a nuxt.d.ts file to fix it.
+// TODO: eslint-disable-next-line // this does not work
 export default defineNuxtConfig({
   // devServer: {
   //   host: '0.0.0.0', // Listen to all network interfaces

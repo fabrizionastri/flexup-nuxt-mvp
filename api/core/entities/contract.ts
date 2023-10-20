@@ -1,4 +1,4 @@
-import { Currency } from './_general'
+import { CurrencyId } from './currency'
 
 export const ContractNatures = {
   commercial: {
@@ -25,6 +25,6 @@ export interface Contract {
   clientAccountId: string
   supplierAccountId: string
   nature: ContractNature
-  currency: Currency
+  currencyId: CurrencyId
   name?: string
 }

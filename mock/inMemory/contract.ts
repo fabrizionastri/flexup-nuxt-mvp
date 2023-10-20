@@ -6,34 +6,34 @@ export const contractsDB: Contract[] = [
     clientAccountId: 'Fabrizio',
     supplierAccountId: 'Fred',
     nature: 'commercial',
-    currency: 'EUR'
+    currencyId: 'EUR'
   },
   {
     id: 'contract2',
     clientAccountId: 'Fabrizio',
     supplierAccountId: 'Toto',
     nature: 'commercial',
-    currency: 'USD'
+    currencyId: 'USD'
   },
   {
     id: 'contract3',
     clientAccountId: 'Fabrizio',
     supplierAccountId: 'Fred',
     nature: 'funding',
-    currency: 'GBP'
+    currencyId: 'GBP'
   },
   {
     id: 'contract4',
     clientAccountId: 'Fabrizio',
     supplierAccountId: 'Toto',
     nature: 'commercial',
-    currency: 'EUR'
+    currencyId: 'EUR'
   },
   {
     id: 'contract5',
     clientAccountId: 'Plop',
     supplierAccountId: 'Fred',
     nature: 'donation',
-    currency: 'EUR'
+    currencyId: 'EUR'
   }
 ]
