@@ -1,6 +1,6 @@
 import { itemAdapter, createOrderAdapter, trancheAdapter } from './inMemory'
-import { createItemAdapterJsonServer } from './jsonServer/item'
-import { createOrderAdapterJsonServer } from './jsonServer/order'
+import { createItemAdapter } from './jsonServer/item'
+import { createOrderAdapter } from './jsonServer/order'
 
 import { config } from 'dotenv'
 config()
@@ -19,9 +19,9 @@ if (dataSource === 'inMemory') {
   createOrderAdapter = createOrderAdapter
   trancheAdapter = trancheAdapter
 } else if (dataSource === 'jsonServer') {
-  itemAdapter = itemAdapterJsonServer
-  createOrderAdapter = createOrderAdapterJsonServer
-  trancheAdapter = irancheAdapterJsonServer // to be replaced by createTrancheAdapterJsonServer
+  itemAdapter = itemAdapter
+  createOrderAdapter = createOrderAdapter
+  trancheAdapter = irancheAdapter // to be replaced by createTrancheAdapter
 } else {
   throw new Error('Adapters Database index : Invalid storage type')
 }

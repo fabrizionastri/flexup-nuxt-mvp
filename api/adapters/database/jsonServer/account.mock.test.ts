@@ -2,7 +2,7 @@ import { vi } from 'vitest'
 import type { Mock } from 'vitest'
 
 // Make sure you import this before mocking !!!
-import { createGenericAdapterJsonServer } from './_generic'
+import { createGenericAdapter } from './_generic'
 
 // Mocking the myAxios library
 import axios from './myAxios'
@@ -11,9 +11,9 @@ const axiosGetMock = axios.get as Mock
 const mockEntity = { id: 'entity1', name: 'Test Entity' }
 
 // Create custom adapter
-const customAdapter = createGenericAdapterJsonServer('account')
+const customAdapter = createGenericAdapter('account')
 
-describe('createGenericAdapterJsonServer - mock Axios', () => {
+describe('createGenericAdapter - mock Axios', () => {
   beforeEach(() => {
     // Reset the mock before each test
     axiosGetMock.mockReset()

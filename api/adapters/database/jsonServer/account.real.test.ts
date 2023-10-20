@@ -1,7 +1,7 @@
 import { flexupAccountData } from 'mock/inMemory/account'
-import { createGenericAdapterJsonServer } from './_generic'
+import { createGenericAdapter } from './_generic'
 
-const adapter = createGenericAdapterJsonServer('account')
+const adapter = createGenericAdapter('account')
 
 // dates in JSON are stringified, but not in memory, so we need to stringify the date for the test to pass
 const expected = {
@@ -9,7 +9,7 @@ const expected = {
   // creationDate: new Date(flexupData.creationDate).toISOString()
 }
 
-describe('createGenericAdapterJsonServer - real Axios', () => {
+describe('createGenericAdapter - real Axios', () => {
   describe('getById', () => {
     it('should return an entity when called with id', async () => {
       const result = await adapter.getById('flexupAccount')

@@ -3,7 +3,7 @@ import { vi } from 'vitest'
 import type { Mock } from 'vitest'
 
 // Make sure you import this before mocking !!!
-import { createItemAdapterJsonServer } from './item'
+import { createItemAdapter } from './item'
 
 // Mocking the axios library
 import axios from './myAxios'
@@ -16,12 +16,12 @@ const mockItem = {
   name: 'Test Item'
 }
 
-describe('createItemAdapterJsonServer - mock Axios', () => {
+describe('createItemAdapter - mock Axios', () => {
   let adapter: ItemAdapter
 
   beforeEach(() => {
     // Instantiate the adapter before each test
-    adapter = createItemAdapterJsonServer()
+    adapter = createItemAdapter()
 
     // Reset the mock before each test
     axiosGetMock.mockReset()

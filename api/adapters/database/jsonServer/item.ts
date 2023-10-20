@@ -2,10 +2,10 @@ import { ItemData } from 'entities/item'
 import { ItemAdapter } from '../interfaces'
 import axios from './myAxios'
 
-export const createItemAdapterJsonServer = (): ItemAdapter => {
+export const createItemAdapter = (): ItemAdapter => {
   const getById = async (id: string): Promise<ItemData | undefined> => {
     const result = await axios.get<ItemData>(`/item/${id}`)
-    // console.log('createItemAdapterJsonServer.ts / result', result)
+    // console.log('createItemAdapter.ts / result', result)
     return result
   }
   const getByOrderId = async (orderId: string): Promise<ItemData[]> => {
@@ -23,5 +23,4 @@ export const createItemAdapterJsonServer = (): ItemAdapter => {
   }
 }
 
-export const itemAdapterJsonServer = createItemAdapterJsonServer()
-export const itemAdapter = createItemAdapterJsonServer()
+export const itemAdapter = createItemAdapter()

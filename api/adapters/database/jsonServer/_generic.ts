@@ -2,20 +2,18 @@ import { GenericAdapter } from '../interfaces'
 import { Entity, EntityName } from 'entities/_generic'
 import axios from './myAxios'
 
-export const createGenericAdapterJsonServer = <T extends Entity>(
-  entity: EntityName
-): GenericAdapter<T> => {
+export const createGenericAdapter = <T extends Entity>(entity: EntityName): GenericAdapter<T> => {
   return {
     getById: async (entityId: string): Promise<T | undefined> => {
-      // console.log('createGenericAdapterJsonServer.ts - entity:', entity)
+      // console.log('createGenericAdapter.ts - entity:', entity)
       // console.log(
-      //   'createGenericAdapterJsonServer.ts - encodeURIComponent(entityId):',
+      //   'createGenericAdapter.ts - encodeURIComponent(entityId):',
       //   encodeURIComponent(entityId)
       // )
       const result = await axios.get<T>(
         `/${encodeURIComponent(entity)}/${encodeURIComponent(entityId)}`
       )
-      // console.log('createGenericAdapterJsonServer.ts / result', result)
+      // console.log('createGenericAdapter.ts / result', result)
       return result
     },
     getByProperty: async (property: string, value: unknown): Promise<T[]> => {
