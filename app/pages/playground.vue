@@ -7,5 +7,5 @@ div
 </template>
 
 <script setup lang="ts">
-  const db = getDb()
+  const db = `getDb()`
 </script>

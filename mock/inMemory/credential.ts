@@ -1,6 +1,6 @@
-import { UserCredentialData } from '../../api/core/entities/credential'
+import { CredentialData } from '../../api/core/entities/credential'
 
-export const fabrizioUsernameCredentialData: UserCredentialData = {
+export const fabrizioUsernameCredentialData: CredentialData = {
   id: 'fabrizioUsernameCredential',
   userId: 'fabrizioUser',
   identifier: 'fabrizio',
@@ -8,7 +8,7 @@ export const fabrizioUsernameCredentialData: UserCredentialData = {
   password: 'plop'
 }
 
-export const fabrizioEmailCredentialData: UserCredentialData = {
+export const fabrizioEmailCredentialData: CredentialData = {
   id: 'fabrizioEmailCredential',
   userId: 'fabrizioUser',
   identifier: 'fabrizio@plop.com',
@@ -16,7 +16,7 @@ export const fabrizioEmailCredentialData: UserCredentialData = {
   password: 'plop'
 }
 
-export const fabrizioPhoneCredentialData: UserCredentialData = {
+export const fabrizioPhoneCredentialData: CredentialData = {
   id: 'fabrizioPhoneCredential',
   userId: 'fabrizioUser',
   identifier: '06 12 34 56 78',
@@ -24,7 +24,7 @@ export const fabrizioPhoneCredentialData: UserCredentialData = {
   password: 'plop'
 }
 
-export const totoUsernameCredentialData: UserCredentialData = {
+export const totoUsernameCredentialData: CredentialData = {
   id: 'totoUsernameCredential',
   userId: 'totoUser',
   identifier: 'toto',
@@ -32,15 +32,15 @@ export const totoUsernameCredentialData: UserCredentialData = {
   password: 'plop'
 }
 
-export const fabrizioCredentialDatas: UserCredentialData[] = [
+export const fabrizioCredentialDatas: CredentialData[] = [
   fabrizioUsernameCredentialData,
   fabrizioEmailCredentialData,
   fabrizioPhoneCredentialData
 ]
 
-export const totoCredentialDatas: UserCredentialData[] = [totoUsernameCredentialData]
+export const totoCredentialDatas: CredentialData[] = [totoUsernameCredentialData]
 
-export const credentialDatas: UserCredentialData[] = [
+export const credentialDatas: CredentialData[] = [
   ...fabrizioCredentialDatas,
   ...totoCredentialDatas
 ]

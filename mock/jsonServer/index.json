@@ -3,8 +3,8 @@
     {
       "id": "fabrizioAccount",
       "name": "Fabrizio Nastri",
+      "type": "personal",
       "status": "active",
-      "ownerType": "individual",
       "ownerId": "fabrizioIndividual",
       "currencyId": "EUR",
       "countryId": "FRA",
@@ -14,8 +14,8 @@
     {
       "id": "cosysAccount",
       "name": "Cosys",
+      "type": "business",
       "status": "active",
-      "ownerType": "organization",
       "ownerId": "cosysOrganization",
       "currencyId": "EUR",
       "countryId": "FRA",
@@ -26,8 +26,8 @@
     {
       "id": "flexupAccount",
       "name": "FlexUp",
+      "type": "project",
       "status": "active",
-      "ownerType": "account",
       "ownerId": "cosysAccount",
       "currencyId": "EUR",
       "countryId": "FRA",
@@ -37,8 +37,8 @@
     {
       "id": "pizzaDOro",
       "name": "Pizza d'Oro",
+      "type": "project",
       "status": "active",
-      "ownerType": "account",
       "ownerId": "totoAccount",
       "currencyId": "EUR",
       "countryId": "FRA",
@@ -49,8 +49,8 @@
     {
       "id": "pizzaDOroTakeAway",
       "name": "Pizza d'Oro TakeAway",
+      "type": "project",
       "status": "pending",
-      "ownerType": "account",
       "ownerId": "pizzaDOro",
       "currencyId": "EUR",
       "countryId": "FRA",
@@ -61,8 +61,8 @@
     {
       "id": "doMazyAccount",
       "name": "Groupement du Domaine de Mazy",
+      "type": "shared",
       "status": "active",
-      "ownerType": "grouping",
       "ownerId": "doMazyGrouping",
       "currencyId": "EUR",
       "countryId": "FRA",
@@ -73,8 +73,8 @@
     {
       "id": "poulaillerMobile",
       "name": "Poulailler MobiMazy",
+      "type": "project",
       "status": "suspended",
-      "ownerType": "grouping",
       "ownerId": "doMazy",
       "currencyId": "EUR",
       "countryId": "FRA",

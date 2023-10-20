@@ -16,12 +16,12 @@ describe('accountAdapter (based on generic adapter)', () => {
 
   describe('getByProperty', () => {
     it('should retrieve entities based on a property and its value', async () => {
-      const results = await accountAdapter.getByProperty('ownerType', 'individual')
+      const results = await accountAdapter.getByProperty('type', 'personal')
       expect(results).toContain(fabrizioAccountData)
     })
 
     it('should return an empty array if no entities match the criteria', async () => {
-      const results = await accountAdapter.getByProperty('ownerType', 'nonExistentOwnerType')
+      const results = await accountAdapter.getByProperty('ownerId', 'nonExistentOwner')
       expect(results).toEqual([])
     })
 

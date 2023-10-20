@@ -1,9 +1,6 @@
 import { Item, ItemData } from 'entities/item'
-import { ItemAdapter } from 'adapters/database/interfaces'
-import { computeItem } from 'usecases/computeItem'
+import { round6 } from 'utils/round'
 import adapters from 'adapters/database'
-
-const itemAdapter = adapters.itemAdapter
 
 export interface ItemGateway {
   getById: (itemId: string) => Promise<Item | undefined>
@@ -11,7 +8,19 @@ export interface ItemGateway {
   getByProperty: (property: keyof ItemData, value: unknown) => Promise<Item[]>
 }
 
-export const createItemGateway = (itemAdapter: ItemAdapter): ItemGateway => {
+export const computeItem = (item: ItemData): Item => {
+  return {
+    ...item,
+    unitPriceInclTax: round6(item.unitPriceExclTax * (1 + item.taxRate)),
+    amountExclTax: round6(item.quantity * item.unitPriceExclTax),
+    taxAmount: round6(item.quantity * item.unitPriceExclTax * item.taxRate),
+    amountInclTax: round6(item.quantity * item.unitPriceExclTax * (1 + item.taxRate))
+  }
+}
+
+export const createItemGateway = (): ItemGateway => {
+  const itemAdapter = adapters.itemAdapter
+
   const getById = async (itemId: string): Promise<Item | undefined> => {
     const item = await itemAdapter.getById(itemId)
     return !item ? undefined : computeItem(item)
@@ -30,4 +39,4 @@ export const createItemGateway = (itemAdapter: ItemAdapter): ItemGateway => {
   }
 }
 
-export const itemGateway = createItemGateway(itemAdapter)
+export const itemGateway = createItemGateway()
