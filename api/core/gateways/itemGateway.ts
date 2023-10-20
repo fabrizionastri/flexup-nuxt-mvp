@@ -1,7 +1,9 @@
 import { Item, ItemData } from 'entities/item'
 import { ItemAdapter } from 'adapters/database/interfaces'
 import { computeItem } from 'usecases/computeItem'
-import { createItemAdapter } from 'adapters/database'
+import adapters from 'adapters/database'
+
+const itemAdapter = adapters.itemAdapter
 
 export interface ItemGateway {
   getById: (itemId: string) => Promise<Item | undefined>
@@ -28,4 +30,4 @@ export const createItemGateway = (itemAdapter: ItemAdapter): ItemGateway => {
   }
 }
 
-export const itemGateway = createItemGateway(createItemAdapter())
+export const itemGateway = createItemGateway(itemAdapter)

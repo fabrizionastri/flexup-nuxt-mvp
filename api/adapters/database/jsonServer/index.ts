@@ -1,6 +1,6 @@
-import { createGenericAdapter } from './_generic'
+import { createGenericAdapter } from './generic'
 
-export * from './_generic'
+export * from './generic'
 export * from './item'
 export * from './order'
 

@@ -1,5 +1,6 @@
 import { Item } from 'entities/item'
-import { createOrderAdapter } from 'adapters/database'
+import adapters from 'adapters/database'
+// import { createOrderAdapter } from 'adapters/database'
 import { itemGateway } from 'gateways/itemGateway'
 import { trancheGateway } from './trancheGateway'
 import { Order } from 'entities/order'
@@ -67,9 +68,9 @@ export const computeOrder = async (order: Order): Promise<Order> => {
 }
 
 export const createOrderGateway = (accountId: string): OrderGateway => {
-  const orderAdapter = createOrderAdapter(accountId)
-  // const itemGateway = createItemGateway(createItemAdapter())
-  // const trancheAdapter = createTrancheAdapter()
+  const orderAdapter = adapters.createOrderAdapter(accountId)
+  // const itemGateway = adapters.createItemGateway(createItemAdapter())
+  // const trancheAdapter = adapters.createTrancheAdapter()
 
   const getAll = async (): Promise<Order[]> => {
     const orderDatas = await orderAdapter.getAll()

@@ -1,5 +1,5 @@
 import { flexupAccountData } from 'mock/inMemory/account'
-import { createGenericAdapter } from './_generic'
+import { createGenericAdapter } from './generic'
 
 const adapter = createGenericAdapter('account')
 
