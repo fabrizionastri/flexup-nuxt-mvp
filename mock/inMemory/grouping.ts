@@ -14,4 +14,4 @@ export const doMazyGrouping: Grouping = {
   label: 'Groupement du Domaine de Mazy 👥'
 }
 
-export const groupingDatas: any[] = []
+export const allGroupingDatas: GroupingData[] = [doMazyGroupingData]

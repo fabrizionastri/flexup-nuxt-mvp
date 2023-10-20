@@ -1,11 +1,4 @@
-export interface Currency {
-  id: string
-  name: string
-  symbol: string
-  precision: number
-  // status: string
-  // creationDate: Date
-}
+import { Currency } from '../../api/core/entities/currency'
 
 export const euroCurrency: Currency = {
   id: 'EUR',
