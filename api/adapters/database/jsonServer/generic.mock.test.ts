@@ -2,7 +2,7 @@ import { vi } from 'vitest'
 import type { Mock } from 'vitest'
 
 // Make sure you import this before mocking !!!
-import { createGenericAdapterJsonServer } from './genericAdapterJsonServer'
+import { createGenericAdapterJsonServer } from './_generic'
 
 // Mocking the myAxios library
 import axios from './myAxios'

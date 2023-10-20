@@ -1,5 +1,5 @@
 import * as items from 'mock/inMemory/item'
-import { createItemAdapterJsonServer } from './itemAdapterJsonServer'
+import { createItemAdapterJsonServer } from './item'
 
 const adapter = createItemAdapterJsonServer()
 

@@ -1,2 +1,2 @@
-export * from './itemAdapterJsonServer'
-export * from './orderAdapterJsonServer'
+export * from './item'
+export * from './order'

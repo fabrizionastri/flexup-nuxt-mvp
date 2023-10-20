@@ -1,6 +1,6 @@
 import { itemAdapter, createOrderAdapter, trancheAdapter } from './inMemory'
-import { createItemAdapterJsonServer } from './jsonServer/itemAdapterJsonServer'
-import { createOrderAdapterJsonServer } from './jsonServer/orderAdapterJsonServer'
+import { createItemAdapterJsonServer } from './jsonServer/item'
+import { createOrderAdapterJsonServer } from './jsonServer/order'
 
 import { config } from 'dotenv'
 config()

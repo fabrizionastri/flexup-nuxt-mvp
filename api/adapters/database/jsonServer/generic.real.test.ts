@@ -1,5 +1,5 @@
 import { flexupAccountData } from 'mock/inMemory/account'
-import { createGenericAdapterJsonServer } from './genericAdapterJsonServer'
+import { createGenericAdapterJsonServer } from './_generic'
 
 const adapter = createGenericAdapterJsonServer('account')
 
