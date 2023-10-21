@@ -27,7 +27,7 @@ export const fabrizioPhoneCredentialData: CredentialData = {
 export const totoUsernameCredentialData: CredentialData = {
   id: 'totoUsernameCredential',
   userId: 'totoUser',
-  identifier: 'totoUserName',
+  identifier: 'totoUsername',
   type: 'username',
   password: 'plop'
 }

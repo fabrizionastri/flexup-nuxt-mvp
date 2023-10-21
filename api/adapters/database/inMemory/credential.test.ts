@@ -2,25 +2,16 @@ import { credentialAdapter } from './credential'
 import * as credentials from 'mock/inMemory/credential'
 
 describe('credentialAdapter', () => {
-  describe('getById', () => {
-    it('should return credential for valid crentialId', async () => {
-      const result = await credentialAdapter.getById('totoUsernameCredential')
-      const expecte = credentials.totoUsernameCredentialData
-      expect(result).toEqual(expecte)
-    })
-  })
-  describe('getByProperty', () => {
-    it('should return entities that match both properties when using "and"', async () => {
-      const result = await credentialAdapter.getByProperty('userId', 'totoUser')
-      const expecte = credentials.totoCredentialDatas
-      expect(result).toEqual(expecte)
-    })
-  })
-  describe('getByUserId', () => {
-    it('should return entities that match both properties when using "and"', async () => {
-      const result = await credentialAdapter.getByUserId('totoUser')
-      const expected = credentials.totoCredentialDatas
+  describe('checkCredentials', () => {
+    it('should return userId for valid credentials ', async () => {
+      const result = await credentialAdapter.checkCredentials('totoUsername', 'plop')
+      const expected = credentials.totoUsernameCredentialData.userId
       expect(result).toEqual(expected)
+    })
+    it('should throw an error for invalid credentials', async () => {
+      await expect(
+        credentialAdapter.checkCredentials('totoUsername', 'wrong password')
+      ).rejects.toThrowError('Invalid credentials')
     })
   })
 })

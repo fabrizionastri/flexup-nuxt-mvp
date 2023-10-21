@@ -1,19 +1,21 @@
-import * as g from './_generic'
-import inMemory from 'mock/inMemory'
+import { credentialDatas } from 'mock/inMemory/credential'
 import { CredentialData } from 'entities/credential'
 
-// interface CredentialData extends Entity
+export const createCredentialAdapter = () => {
+  const credentials: CredentialData[] = credentialDatas
 
-const credentials: CredentialData[] = inMemory.credential
+  const checkCredentials = (identifier: string, password: string): Promise<string | undefined> => {
+    const credential = credentials.find(
+      (credential) => credential.identifier === identifier && credential.password === password
+    )
+    return credential?.userId
+      ? Promise.resolve(credential.userId)
+      : Promise.reject(new Error('Invalid credentials'))
+  }
 
-// export interface CredentialAdapter {
-//   getById: (id: string) => Promise<CredentialData | undefined>
-//   getByProperty: (property: keyof CredentialData, value: unknown) => Promise<CredentialData[]>
-// }
-
-export const credentialAdapter /* : CredentialAdapter */ = {
-  getById: g.createGetById(credentials),
-  getByProperty: g.createGetByProperty(credentials),
-  getByProperties: g.createGetByProperties(credentials),
-  getByUserId: g.createGetBySelectedProperty(credentials, 'userId')
+  return {
+    checkCredentials
+  }
 }
+
+export const credentialAdapter = createCredentialAdapter()
