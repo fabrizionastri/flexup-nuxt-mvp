@@ -1,4 +1,5 @@
 import axios from 'axios'
+import { convertStringsToDates } from 'lib/utils/convertStringsToDates'
 // const API_URL = process.env.API_URL || 'http://127.0.0.1:8787' // ceci ne fonctionne pas
 const API_URL = 'http://127.0.0.1:8787'
 
@@ -15,7 +16,7 @@ export const getResource = async (resource: string, prop = null, value = '') => 
 
   try {
     const { data } = await axios.get(url)
-    return data
+    return convertStringsToDates(data)
   } catch (error) {
     // ToDo: reactivate this log during dev ??
     console.error(`Error fetching resource "${resource}" on: `, url)

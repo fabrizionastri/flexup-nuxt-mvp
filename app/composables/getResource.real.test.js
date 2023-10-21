@@ -1,4 +1,4 @@
-import { getAccounts } from './getResource.js'
+import { getAccounts } from './getResource'
 
 // Option 1 -  import the default export, and then extract accounts from it 👌✔️  works
 // import inMemory from '../../mock/inMemory'
@@ -12,16 +12,16 @@ import { getAccounts } from './getResource.js'
 // import db from '../../mock/index' // 👌✔️ works
 // import db from '../../mock/' // 👌✔️ works
 // import db from '../../mock' // 👌✔️ works
-import db from 'mock/jsonServer' // 👌✔️ works -> use this as it's the shortest 😊🎉😎
-const accounts = db.account
+
+// import db from 'mock/jsonServer' // 👌✔️ works -> use this as it's the shortest 😊🎉😎
+import db from 'mock/inMemory'
 
 describe('getAccounts -> real access to server', () => {
-  // console.log('accounts:', accounts)
-
   it('should return full accounts list when no arguments are provided', async () => {
-    const assertion = await getAccounts()
-    const result = accounts
-    expect(assertion).toEqual(result)
+    const accounts = db.account
+    const result = await getAccounts()
+    const expected = accounts
+    expect(result).toEqual(expected)
   })
 
   //   it('should return an account when the id is provided', async () => {
