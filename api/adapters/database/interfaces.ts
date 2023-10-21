@@ -4,6 +4,13 @@ import { Entity } from 'entities/_generic'
 export interface GenericAdapter<T extends Entity> {
   getById: (id: string) => Promise<T | undefined>
   getByProperty: (property: string, value: unknown) => Promise<T[]>
+  getByProperties: (
+    property1: string,
+    value1: unknown,
+    property2: string,
+    value2: unknown,
+    andOr: 'and' | 'or'
+  ) => Promise<T[]>
 }
 
 export interface ItemAdapter {

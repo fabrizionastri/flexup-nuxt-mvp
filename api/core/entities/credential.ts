@@ -1,6 +1,7 @@
+import { Entity } from 'entities/_generic'
 export type CredentialType = 'username' | 'email' | 'phone'
 
-export interface CredentialData {
+export interface CredentialData extends Entity {
   id: string
   userId: string
   identifier: string

@@ -1,7 +1,7 @@
 import inMemory from 'mock/inMemory'
 
 export interface Entity {
-  id: string
+  // id: string
   [key: string]: unknown
 }
 

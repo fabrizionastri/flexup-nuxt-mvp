@@ -3,7 +3,7 @@ import { CredentialData } from '../../api/core/entities/credential'
 export const fabrizioUsernameCredentialData: CredentialData = {
   id: 'fabrizioUsernameCredential',
   userId: 'fabrizioUser',
-  identifier: 'fabrizio',
+  identifier: 'fabrizioUserName',
   type: 'username',
   password: 'plop'
 }
@@ -27,7 +27,7 @@ export const fabrizioPhoneCredentialData: CredentialData = {
 export const totoUsernameCredentialData: CredentialData = {
   id: 'totoUsernameCredential',
   userId: 'totoUser',
-  identifier: 'toto',
+  identifier: 'totoUserName',
   type: 'username',
   password: 'plop'
 }
