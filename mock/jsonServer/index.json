@@ -120,36 +120,7 @@
       "role": "guest"
     }
   ],
-  "identifier": [
-    {
-      "id": "fabrizioUsernameIdentifier",
-      "userId": "fabrizioUser",
-      "identifier": "fabrizio",
-      "type": "username",
-      "password": "plop"
-    },
-    {
-      "id": "fabrizioEmailIdentifier",
-      "userId": "fabrizioUser",
-      "identifier": "fabrizio@plop.com",
-      "type": "email",
-      "password": "plop"
-    },
-    {
-      "id": "fabrizioPhoneIdentifier",
-      "userId": "fabrizioUser",
-      "identifier": "06 12 34 56 78",
-      "type": "phone",
-      "password": "plop"
-    },
-    {
-      "id": "totoUsernameIdentifier",
-      "userId": "totoUser",
-      "identifier": "toto",
-      "type": "username",
-      "password": "plop"
-    }
-  ],
+  "allocation": [],
   "country": [
     {
       "id": "FRA",
@@ -229,6 +200,38 @@
       "role": "member"
     }
   ],
+  "identifier": [
+    {
+      "id": "u:fabrizioUsername",
+      "userId": "fabrizioUser"
+    },
+    {
+      "id": "e:fabrizio@gmail.com",
+      "userId": "fabrizioUser"
+    },
+    {
+      "id": "p:+33612345678",
+      "userId": "fabrizioUser"
+    },
+    {
+      "id": "u:totoUsername",
+      "userId": "totoUser"
+    }
+  ],
+  "individual": [
+    {
+      "id": "fabrizioIndividual",
+      "firstName": "Fabrizio",
+      "lastName": "Nastri",
+      "dateOfBirth": "1975-01-01T00:00:00.000Z"
+    },
+    {
+      "id": "totoIndividual",
+      "firstName": "Toto",
+      "lastName": "La Riflette",
+      "dateOfBirth": "1985-01-01T00:00:00.000Z"
+    }
+  ],
   "item": [
     {
       "id": "commercialOrderItem1",
@@ -265,6 +268,14 @@
       "unit": "pair",
       "unitPriceExclTax": 100,
       "taxRate": 0.1
+    }
+  ],
+  "legalPerson": [
+    {
+      "id": "i:fabrizioIndividual"
+    },
+    {
+      "id": "o:cosysOrganization"
     }
   ],
   "order": [
@@ -318,6 +329,27 @@
       "name": "Donation",
       "nature": "donation",
       "amountInclTax": 100
+    }
+  ],
+  "organization": [
+    {
+      "id": "cosysOrganization",
+      "name": "Cosys",
+      "legalName": "Cosys S.C.",
+      "legalForm": "Société Civile",
+      "currency": "EUR",
+      "country": "FRA",
+      "language": "FRA",
+      "capital": 100005,
+      "legalFormAbbreviation": "S.C.",
+      "registrationAuthority": "Chambre de Commerce et d'Industrie de Paris",
+      "registrationCity": "Paris",
+      "registrationNumber": "123456789",
+      "registrationDate": "2008-01-01T00:00:00.000Z",
+      "registrationAddressId": "cosysOrganization",
+      "registrationStatus": "active",
+      "fiscalYearEnd": "12-31",
+      "terminationDate": "2108-12-23T00:00:00.000Z"
     }
   ],
   "tranche": [
@@ -448,6 +480,14 @@
       "password": "plop",
       "creationDate": "2019-01-01T00:00:00.000Z",
       "status": "pending"
+    }
+  ],
+  "userPassword": [
+    {
+      "id": "fabrizioUser:plop"
+    },
+    {
+      "id": "totoUser:toto"
     }
   ]
 }
