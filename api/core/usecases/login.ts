@@ -1,12 +1,12 @@
 import { totoUser } from 'mock/inMemory/user'
 import { User } from '../entities/user'
-// import { CredentialData } from '../entities/credential'
+// import { IdentifierData } from '../entities/identifier'
 
-export const login = async (/* credentials: CredentialData */): Promise<User> => {
-  // const user = await userGateway.getByCredential(credentials)
+export const login = async (/* identifiers: IdentifierData */): Promise<User> => {
+  // const user = await userGateway.getByIdentifier(identifiers)
   const user = totoUser
   if (!user) {
-    throw new Error('Invalid credentials')
+    throw new Error('Invalid identifiers')
   }
   return user
 }

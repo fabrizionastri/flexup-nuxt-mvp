@@ -2,13 +2,13 @@ export * from './account'
 export * from './accountUser'
 export * from './allocation'
 export * from './balance'
-export * from './credential'
 export * from './commitment'
 export * from './contract'
 export * from './country'
 export * from './currency'
 export * from './grouping'
 export * from './groupingAccount'
+export * from './identifier'
 export * from './individual'
 export * from './item'
 export * from './legalPerson'
@@ -23,10 +23,10 @@ export * from './userPassword'
 import { accountDatas } from './account'
 import { accountUserDatas } from './accountUser'
 import { countryDatas } from './country'
-import { credentialDatas } from './credential'
 import { currencyDatas } from './currency'
-import { groupingDatas } from './grouping'
 import { groupingAccountDatas } from './groupingAccount'
+import { groupingDatas } from './grouping'
+import { identifierDatas } from './identifier'
 import { individualDatas } from './individual'
 import { itemDatas } from './item'
 import { legalPersons } from './legalPerson'
@@ -40,11 +40,11 @@ import { userPasswordDatas } from './userPassword'
 export const inMemory = {
   account: accountDatas,
   accountUser: accountUserDatas,
-  credential: credentialDatas,
   country: countryDatas,
   currency: currencyDatas,
   grouping: groupingDatas,
   groupingAccount: groupingAccountDatas,
+  identifier: identifierDatas,
   individual: individualDatas,
   item: itemDatas,
   legalPerson: legalPersons,

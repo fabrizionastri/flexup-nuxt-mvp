@@ -1,23 +1,23 @@
-// import { credentialAdapter } from 'adapters/database'
-// import { fabrizioCredentialDatas } from 'mock/inMemory'
+// import { identifierAdapter } from 'adapters/database'
+// import { fabrizioIdentifierDatas } from 'mock/inMemory'
 // import db from 'mock/inMemory'
 
 describe.todo('userGateway', () => {
-  //   const fabrizioCredentials = {
+  //   const fabrizioIdentifiers = {
   //     identifier: 'fabrizio',
   //     type: 'username',
   //     password: 'plop'
   //   }
   //
   //   describe('login', () => {
-  //     describe('credentialAdapter', () => {
+  //     describe('identifierAdapter', () => {
   //
-  // credentialAdapter
+  // identifierAdapter
   //       ')
-  //     it('should return a user when valid credentials are provided', () => {
-  //         db.fabrizioUsernameCredentialData
+  //     it('should return a user when valid identifiers are provided', () => {
+  //         db.fabrizioUsernameIdentifierData
   //       const result = await userGateway.login({
-  //         db.fabrizioCredentialDatas)
+  //         db.fabrizioIdentifierDatas)
   //       const expected = 1
   //       expect(result).toEqual(expected)
   //     })

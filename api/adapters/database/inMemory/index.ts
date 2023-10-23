@@ -9,7 +9,7 @@ export * from './tranche'
 
 export const accountAdapter = createGenericAdapter('account')
 export const accountUserAdapter = createGenericAdapter('accountUser')
-export const credentialAdapter = createGenericAdapter('credential')
+export const identifierAdapter = createGenericAdapter('identifier')
 export const groupingAccountAdapter = createGenericAdapter('groupingAccount')
 export const groupingAdapter = createGenericAdapter('grouping')
 export const userAdapter = createGenericAdapter('user')
