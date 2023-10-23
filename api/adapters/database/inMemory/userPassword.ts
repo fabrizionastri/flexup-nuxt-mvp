@@ -3,7 +3,7 @@
 
 // --- inMemory/lib/checkPassword.ts
 import { userPasswordDatas } from 'mock/inMemory/userPassword'
-import { Entity } from 'core/entities'
+import { Entity } from 'entities'
 
 export const createCheckPassword =
 <T extends Entity>(entities: T[]) =>

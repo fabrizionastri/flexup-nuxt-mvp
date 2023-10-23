@@ -1,5 +1,7 @@
 import { AccountData, Account } from 'entities/account'
 
+// --- Raw data
+
 export const fabrizioAccountData: AccountData = {
   id: 'fabrizioAccount',
   name: 'Fabrizio Nastri',
@@ -110,7 +112,7 @@ export const accountDatas = [
   poulaillerMobileAccountData
 ]
 
-// ----------- Computed objects -------------------
+// --- Computed objects
 
 export const fabrizioAccount: Account = {
   ...fabrizioAccountData,

@@ -1,4 +1,4 @@
-import { Grouping, GroupingData } from '~/api/core/entities/grouping'
+import { Grouping, GroupingData } from 'entities/grouping'
 
 export const doMazyGroupingData: GroupingData = {
   id: 'doMazyGrouping',

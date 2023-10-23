@@ -1,4 +1,4 @@
-import { OrganizationData } from '~/api/core/entities/organization'
+import { OrganizationData } from 'entities/organization'
 
 export const cosysOrganizationData: OrganizationData = {
   id: 'cosysOrganization',

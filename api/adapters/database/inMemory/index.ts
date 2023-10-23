@@ -6,8 +6,8 @@ export * from './individual'
 export * from './item'
 export * from './order'
 export * from './tranche'
+export * from './account'
 
-export const accountAdapter = createGenericAdapter('account')
 export const accountUserAdapter = createGenericAdapter('accountUser')
 export const identifierAdapter = createGenericAdapter('identifier')
 export const groupingAccountAdapter = createGenericAdapter('groupingAccount')

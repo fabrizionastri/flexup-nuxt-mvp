@@ -1,4 +1,4 @@
-import { adapters } from 'adapters/database';
+import { adapters } from 'adapters/database'
 import { Account, AccountData } from '../entities'
 
 export interface AccountGateway {
@@ -7,7 +7,8 @@ export interface AccountGateway {
   getByProperty: (property: keyof AccountData, value: unknown) => Promise<Account[]>
 }
 
-export const computeAccount = (): Account => {
+export const computeAccount = () => {}
+
 export const createAccountGateway = (): AccountGateway => {
   const accountAdapter = adapters.accountAdapter
 
