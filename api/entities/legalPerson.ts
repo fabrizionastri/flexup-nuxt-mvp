@@ -1,11 +1,11 @@
 import { Entity } from '.'
 
-export const accountTypeIcons = {
+export const personTypeIcons = {
   individual: '👤',
   organization: '🏢'
 }
 
-export type LegalPersonType = keyof typeof accountTypeIcons
+export type LegalPersonType = keyof typeof personTypeIcons
 
 export interface LegalPersonData extends Entity {
   id: string // "i:individualId" or "o:organizationId"

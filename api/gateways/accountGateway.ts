@@ -1,4 +1,4 @@
-import { adapters } from 'adapters/database'
+import adapters from 'adapters/database'
 import { Account, AccountData } from '../entities'
 
 export interface AccountGateway {

@@ -1,5 +1,5 @@
 import { accountAdapter } from '.'
-import { fabrizioAccountData } from 'mock/inMemory/account'
+import { fabrizioAccountData } from 'mock/inMemory'
 
 describe('accountAdapter (based on generic adapter)', () => {
   describe('getById', () => {

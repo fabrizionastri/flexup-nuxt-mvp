@@ -1,5 +1,5 @@
 import { cosysOrganizationData } from 'mock/inMemory'
-import { organizationAdapter } from './organization'
+import { organizationAdapter } from '.'
 
 describe('organization adapter', () => {
   describe('getById', () => {

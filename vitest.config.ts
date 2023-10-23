@@ -24,9 +24,9 @@ export default defineVitestConfig({
       server: path.resolve(__dirname, './app/server'),
       api: path.resolve(__dirname, './api'),
       adapters: path.resolve(__dirname, './api/adapters'),
-      entities: path.resolve(__dirname, 'entities'),
-      gateways: path.resolve(__dirname, 'gateways'),
-      usecases: path.resolve(__dirname, 'usecases'),
+      entities: path.resolve(__dirname, './api/entities'),
+      gateways: path.resolve(__dirname, './api/gateways'),
+      usecases: path.resolve(__dirname, './api/usecases'),
       mock: path.resolve(__dirname, './mock'),
       lib: path.resolve(__dirname, './lib'),
       utils: path.resolve(__dirname, './lib/utils')

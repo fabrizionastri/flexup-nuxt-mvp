@@ -1,5 +1,5 @@
-import { fabrizioIndividualData } from 'mock/inMemory'
 import { individualAdapter } from './individual'
+import { fabrizioIndividualData } from 'mock/inMemory'
 
 describe('individual adapter', () => {
   describe('getById', () => {

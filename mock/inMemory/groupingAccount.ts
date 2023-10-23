@@ -10,7 +10,7 @@ export const doMazyGroupingAgroCoopAccountData: GroupingAccountData = {
 export const doMazyGroupingTotoAccountData: GroupingAccountData = {
   id: 'doMazyGroupingTotoAccount',
   groupingId: 'doMazyGrouping',
-  accountId: 'agroCoopAccount',
+  accountId: 'totoAccount',
   role: 'member'
 }
 
@@ -21,13 +21,23 @@ export const doMazyGroupingFlexUpAccountData: GroupingAccountData = {
   role: 'member'
 }
 
-export const doMazyGroupingFlexUpAccountDatas: GroupingAccountData[] = [
+export const plopGroupingTotoAccountData: GroupingAccountData = {
+  id: 'plopGroupingFlexUpAccount',
+  groupingId: 'plopGrouping',
+  accountId: 'totoAccount',
+  role: 'admin'
+}
+
+export const doMazyGroupingAccountDatas: GroupingAccountData[] = [
   doMazyGroupingAgroCoopAccountData,
   doMazyGroupingTotoAccountData,
   doMazyGroupingFlexUpAccountData
 ]
 
-export const groupingAccountDatas: GroupingAccountData[] = [...doMazyGroupingFlexUpAccountDatas]
+export const groupingAccountDatas: GroupingAccountData[] = [
+  ...doMazyGroupingAccountDatas,
+  plopGroupingTotoAccountData
+]
 
 export const doMazyGroupingAgroCoopAccount: GroupingAccount = {
   ...doMazyGroupingAgroCoopAccountData,

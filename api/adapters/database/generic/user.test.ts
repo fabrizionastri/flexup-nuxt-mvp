@@ -1,4 +1,4 @@
-import { userAdapter as userAdapter } from '.'
+import { userAdapter } from './user'
 import { totoUserData, pendingUserData } from 'mock/inMemory/user'
 
 describe('userAdapter', () => {

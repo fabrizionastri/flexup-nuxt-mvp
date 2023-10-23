@@ -1,4 +1,4 @@
-import { accountUserAdapter } from '.'
+import { accountUserAdapter } from './accountUser'
 import * as accountUser from 'mock/inMemory/accountUser'
 
 describe('-> accountUser', () => {

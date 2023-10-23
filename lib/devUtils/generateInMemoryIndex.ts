@@ -17,7 +17,7 @@ files.forEach((file) => {
   // check if the file contains an export object named ${moduleName}Datas
   const fileContent = fs.readFileSync(path.join(targetDir, file), 'utf8')
   if (!fileContent.includes(`export const ${moduleName}Datas`)) {
-    console.error(`File ${file} does not contain an export object named ${moduleName}Datas`)
+    console.error(`Not entity data to export from: ${file}`)
     // skip this file
     return // equivalent to continue
   }
@@ -40,3 +40,5 @@ export default inMemory;
 `
 
 fs.writeFileSync(path.join(targetDir, indexFile), output)
+
+console.log(`\nSuccessfully generated inMemory index file !`)
