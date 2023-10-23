@@ -1,5 +1,6 @@
 import { createGenericAdapter } from './generic'
 
+export * from './_generic'
 export * from './generic'
 export * from './individual'
 export * from './item'

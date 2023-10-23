@@ -2,7 +2,7 @@ import {
   // Address,
   // Amount,
   // CountryId,
-  CurrencyId
+  CurrencyId, Entity
   // LanguageId,
   // LegalPerson
 } from './index'
@@ -37,7 +37,7 @@ export type OrganizationStatusCategory = (typeof organizationStatusMapping)[Orga
 
 
 
-export interface OrganizationData {
+export interface OrganizationData extends Entity{
   id: string
   name: string
   legalName: string
