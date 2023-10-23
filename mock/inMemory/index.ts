@@ -11,7 +11,9 @@ export * from './grouping'
 export * from './groupingAccount'
 export * from './individual'
 export * from './item'
+export * from './legalPerson'
 export * from './order'
+export * from './organization'
 export * from './resolution'
 export * from './riskFactor'
 export * from './tranche'
@@ -26,10 +28,13 @@ import { groupingDatas } from './grouping'
 import { groupingAccountDatas } from './groupingAccount'
 import { individualDatas } from './individual'
 import { itemDatas } from './item'
+import { legalPersons } from './legalPerson'
 import { orderDatas } from './order'
+import { organizationDatas } from './organization'
 import { trancheDatas } from './tranche'
 import { userDatas } from './user'
 
+// Important : the keys of inMemory is used to generate the EntityName type
 export const inMemory = {
   account: accountDatas,
   accountUser: accountUserDatas,
@@ -40,7 +45,9 @@ export const inMemory = {
   groupingAccount: groupingAccountDatas,
   individual: individualDatas,
   item: itemDatas,
+  legalPerson: legalPersons,
   order: orderDatas,
+  organization: organizationDatas,
   tranche: trancheDatas,
   user: userDatas
 }

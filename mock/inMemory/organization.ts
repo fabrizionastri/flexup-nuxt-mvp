@@ -1,42 +1,24 @@
-import { CurrencyId } from './../../api/core/entities/currency'
-export interface OrganizationData {
-  id: string
-  name: string
-  legalName: string
-  legalForm: string
-  legalFormAbbreviation: string
-  registrationAuthority: string
-  registrationCity: string
-  registrationNumber: string
-  registrationDate: Date
-  registrationAddress: Address
-  currency: CurrencyId
-  language: LanguageId
+import { OrganizationData } from '~/api/core/entities/organization'
+
+export const cosysOrganizationData: OrganizationData = {
+  id: 'cosysOrganization',
+  name: 'Cosys',
+  legalName: 'Cosys S.C.',
+  legalForm: 'Société Civile',
+  currency: 'EUR',
+  country: 'FRA',
+  language: 'FRA',
+  capital: 100005,
+  legalFormAbbreviation: 'S.C.',
+  registrationAuthority: "Chambre de Commerce et d'Industrie de Paris",
+  registrationCity: 'Paris',
+  registrationNumber: '123456789',
+  registrationDate: new Date('2008-01-01'),
+  registrationAddressId: 'cosysOrganization',
+  registrationStatus: 'active',
+  fiscalYearEnd: '12-31',
+  terminationDate: new Date('2108-12-23')
 }
 
-import { Address, Amount, CountryIso3, CurrencyIso3, LanguageIso3, Person } from './index'
-
-interface Entity {
-  country: CountryIso3
-
-  addresses: [{ [key: string]: Address }]
-  capital: Amount
-  legalRepresentatives: [
-    {
-      title: string
-      legalPerson: LegalPerson
-      startDate: Date
-      endDate?: Date
-      statuts: 'active' | 'suspended' | 'incapacitated'
-      terminationReason?:
-        | 'resigned'
-        | 'dismissed'
-        | 'deceased'
-        | 'bankrupt'
-        | 'liquidated'
-        | 'other'
-    }
-  ]
-}
-
-type LegalPerson = Person | Entity
+export const organizationDatas = [cosysOrganizationData]
+export const organizations = [cosysOrganizationData]

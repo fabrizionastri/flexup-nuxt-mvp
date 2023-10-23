@@ -1,3 +1,5 @@
+import { LegalPerson } from 'entities/legalPerson'
+
 export const fabrizioLegalPerson: LegalPerson = {
   id: 'i:fabrizioIndividual',
   name: 'Fabrizio Nastri',
