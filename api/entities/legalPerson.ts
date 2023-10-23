@@ -7,8 +7,10 @@ export const accountTypeIcons = {
 
 export type LegalPersonType = keyof typeof accountTypeIcons
 
-export interface LegalPerson extends Entity {
-  id: string // "o:organizationId" or "i:individualId"
+export interface LegalPersonData extends Entity {
+  id: string // "i:individualId" or "o:organizationId"
+}
+export interface LegalPerson extends LegalPersonData {
   name: string
   type: LegalPersonType
   personId: string
