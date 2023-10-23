@@ -8,7 +8,6 @@ describe('-> accountUser', () => {
       expect(result).toEqual(accountUser.totoAccountTotoUserData)
     })
   })
-
   describe('getByProperty', () => {
     it('should retrieve account-user by its user Id', async () => {
       const result = await accountUserAdapter.getByProperty('userId', 'totoUser')

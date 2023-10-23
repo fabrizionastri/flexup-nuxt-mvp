@@ -1,5 +1,5 @@
-describe('generic.test.ts', () => {
-  it('should be true', () => {
+describe('legalPerson gateway', () => {
+  it('computeLegalPerson', () => {
     const result = 1
     const expected = 1
     expect(result).toEqual(expected)

@@ -10,7 +10,7 @@ export const accountOwnerMapping = {
 export type AccountType = keyof typeof accountOwnerMapping
 export type OwnerType = (typeof accountOwnerMapping)[AccountType]
 
-export const typeIcons = {
+export const accountTypeIcons = {
   personal: '👤',
   business: '🏢',
   project: '🚀',

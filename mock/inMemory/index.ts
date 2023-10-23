@@ -8,6 +8,8 @@ export * from './contract'
 export * from './country'
 export * from './currency'
 export * from './grouping'
+export * from './groupingAccount'
+export * from './individual'
 export * from './item'
 export * from './order'
 export * from './resolution'
@@ -22,6 +24,7 @@ import { credentialDatas } from './credential'
 import { currencyDatas } from './currency'
 import { groupingDatas } from './grouping'
 import { groupingAccountDatas } from './groupingAccount'
+import { individualDatas } from './individual'
 import { itemDatas } from './item'
 import { orderDatas } from './order'
 import { trancheDatas } from './tranche'
@@ -35,6 +38,7 @@ export const inMemory = {
   currency: currencyDatas,
   grouping: groupingDatas,
   groupingAccount: groupingAccountDatas,
+  individual: individualDatas,
   item: itemDatas,
   order: orderDatas,
   tranche: trancheDatas,
