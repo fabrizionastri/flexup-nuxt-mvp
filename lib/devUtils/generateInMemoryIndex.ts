@@ -22,21 +22,17 @@ files.forEach((file) => {
     return // equivalent to continue
   }
 
-  exportStatements += `export * from './${moduleName}';\n`
-  importStatements += `import { ${moduleName}Datas } from './${moduleName}';\n`
+  exportStatements += `export * from './${moduleName}'\n`
+  importStatements += `import { ${moduleName}Datas } from './${moduleName}'\n`
   inMemoryObjectEntries += `  ${moduleName}: ${moduleName}Datas,\n`
 })
 
-const output = `
-${importStatements}
-
+const output = `${importStatements}
 ${exportStatements}
-
 export const inMemory = {
-${inMemoryObjectEntries}
-};
+${inMemoryObjectEntries}}
 
-export default inMemory;
+export default inMemory
 `
 
 fs.writeFileSync(path.join(targetDir, indexFile), output)

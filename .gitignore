@@ -11,9 +11,7 @@ _docs
 .nitro
 .nuxt
 .output
-.vscode
 *.log
 dist
 logs
 node_modules
-pnpm-lock.yaml
