@@ -1,23 +1,27 @@
-import { IdentifierData, Identifier } from 'entities/identifier'
+import { IdentifierData /* Identifier */ } from 'entities/identifier'
 
 // Raw data
 export const fabrizioUsernameIdentifierData: IdentifierData = {
-  id: 'u:fabrizioUsername',
+  id: 'fabrizioUsername',
+  type: 'username',
   userId: 'fabrizioUser'
 }
 
 export const fabrizioEmailIdentifierData: IdentifierData = {
-  id: 'e:fabrizio@gmail.com',
+  id: 'fabrizio@gmail.com',
+  type: 'email',
   userId: 'fabrizioUser'
 }
 
 export const fabrizioPhoneIdentifierData: IdentifierData = {
-  id: 'p:+33612345678',
+  id: '+33612345678',
+  type: 'phone',
   userId: 'fabrizioUser'
 }
 
 export const totoUsernameIdentifierData: IdentifierData = {
-  id: 'u:totoUsername',
+  id: 'totoUsername',
+  type: 'username',
   userId: 'totoUser'
 }
 
@@ -34,38 +38,33 @@ export const identifierDatas: IdentifierData[] = [
   ...totoIdentifierDatas
 ]
 
-// Computed
+// Computed - NOT RELEVELANT FOR NOW
+//
+// export const fabrizioUsernameIdentifier: Identifier = {
+//   ...fabrizioUsernameIdentifierData,
 
-export const fabrizioUsernameIdentifier: Identifier = {
-  ...fabrizioUsernameIdentifierData,
-  identifier: 'fabrizioUserName',
-  type: 'username'
-}
+// }
+//
+// export const fabrizioEmailIdentifier: Identifier = {
+//   ...fabrizioEmailIdentifierData,
 
-export const fabrizioEmailIdentifier: Identifier = {
-  ...fabrizioEmailIdentifierData,
-  identifier: 'fabrizio@plop.com',
-  type: 'email'
-}
+// }
+//
+// export const fabrizioPhoneIdentifier: Identifier = {
+//   ...fabrizioPhoneIdentifierData,
 
-export const fabrizioPhoneIdentifier: Identifier = {
-  ...fabrizioPhoneIdentifierData,
-  identifier: '+33612345678',
-  type: 'phone'
-}
-
-export const totoUsernameIdentifier: Identifier = {
-  ...totoUsernameIdentifierData,
-  identifier: 'totoUsername',
-  type: 'username'
-}
-
-export const fabrizioIdentifiers: Identifier[] = [
-  fabrizioUsernameIdentifier,
-  fabrizioEmailIdentifier,
-  fabrizioPhoneIdentifier
-]
-
-export const totoIdentifiers: Identifier[] = [totoUsernameIdentifier]
-
-export const identifiers: Identifier[] = [...fabrizioIdentifiers, ...totoIdentifiers]
+// }
+//
+// export const totoUsernameIdentifier: Identifier = {
+//   ...totoUsernameIdentifierData,
+// }
+//
+// export const fabrizioIdentifiers: Identifier[] = [
+//   fabrizioUsernameIdentifier,
+//   fabrizioEmailIdentifier,
+//   fabrizioPhoneIdentifier
+// ]
+//
+// export const totoIdentifiers: Identifier[] = [totoUsernameIdentifier]
+//
+// export const identifiers: Identifier[] = [...fabrizioIdentifiers, ...totoIdentifiers]

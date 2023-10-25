@@ -482,7 +482,7 @@
       "status": "pending"
     }
   ],
-  "userPassword": [
+  "password": [
     {
       "id": "fabrizioUser:plop"
     },

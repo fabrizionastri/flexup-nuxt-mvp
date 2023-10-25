@@ -1,12 +1,10 @@
-import { totoUser } from 'mock/inMemory/user'
+import { identifierAdapter } from '../adapters/database/inMemory'
 import { User } from '../entities/user'
-// import { IdentifierData } from '../entities/identifier'
 
-export const login = async (/* identifiers: IdentifierData */): Promise<User> => {
-  // const user = await userGateway.getByIdentifier(identifiers)
-  const user = totoUser
-  if (!user) {
-    throw new Error('Invalid identifiers')
-  }
+export const login = async (identifier: string, password: string): Promise<User> => {
+  const userId = await identifierAdapter.getUserId(identifier)
+  if (!userId) throw new Error('Invalid user identifier (username, email or phone)')
+  const isValidPassword = await identifierAdapter.isValidPassword(userId, password)
+
   return user
 }
