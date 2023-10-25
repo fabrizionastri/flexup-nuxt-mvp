@@ -18,12 +18,12 @@ describe('password adapter', () => {
     })
     it('should throw an error for falsy userID', async () => {
       await expect(passwordAdapter.checkPassword('', 'plop')).rejects.toThrowError(
-        'Missing user id or password'
+        'Missing user id'
       )
     })
     it('should throw an error for falsy password', async () => {
       await expect(passwordAdapter.checkPassword('plop', '')).rejects.toThrowError(
-        'Missing user id or password'
+        'Missing password'
       )
     })
   })

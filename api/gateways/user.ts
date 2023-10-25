@@ -32,3 +32,5 @@ export const createUserGateway = () => {
     getById
   }
 }
+
+export const userGateway = createUserGateway()
