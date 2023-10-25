@@ -1,4 +1,4 @@
-import { individualAdapter } from 'adapters/database/inMemory/individual'
+import { individualAdapter } from 'adapters/database/generic/individual'
 import { Individual, IndividualData } from '../entities/individual'
 
 export const individualGateway = {
