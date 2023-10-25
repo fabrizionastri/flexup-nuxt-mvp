@@ -26,16 +26,16 @@ export const fabrizioUser: User = {
   ...fabrizioUserData,
   firstName: 'Fabrizio',
   lastName: 'Nastri',
-  fullName: 'Fabrizio Nastri',
-  mainEmail: 'fabrizio.nastri@gmail.com'
+  fullName: 'Fabrizio Nastri'
+  // mainEmail: 'fabrizio.nastri@gmail.com'
 }
 
 export const totoUser: User = {
   ...totoUserData,
   firstName: 'Toto',
   lastName: 'La Riflette',
-  fullName: 'Toto La Riflette',
-  mainEmail: 'toto.lariflette@gmail.com'
+  fullName: 'Toto La Riflette'
+  // mainEmail: 'toto.lariflette@gmail.com'
 }
 
 export const pendingUser: User = {

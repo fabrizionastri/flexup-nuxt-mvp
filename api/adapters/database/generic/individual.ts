@@ -5,5 +5,6 @@ const individuals = inMemory.individual
 
 export const individualAdapter = {
   getById: adapterMethods.createGetById(individuals),
-  getByProperty: adapterMethods.createGetByProperty(individuals)
+  getByUserId: adapterMethods.createGetOneBySelectedProperty(individuals, 'userId')
+  // getByProperty: adapterMethods.createGetByProperty(individuals),
 }

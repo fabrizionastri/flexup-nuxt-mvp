@@ -1,25 +1,17 @@
-// import { identifierAdapter } from 'adapters/database'
-// import { fabrizioIdentifierDatas } from 'mock/inMemory'
-// import db from 'mock/inMemory'
+import * as users from 'mock/inMemory/user'
+import { computeUser } from './user'
 
-describe.todo('userGateway', () => {
-  //   const fabrizioIdentifiers = {
-  //     identifier: 'fabrizio',
-  //     type: 'username',
-  //     password: 'plop'
-  //   }
-  //
-  //   describe('login', () => {
-  //     describe('identifierAdapter', () => {
-  //
-  // identifierAdapter
-  //       ')
-  //     it('should return a user when valid identifiers are provided', () => {
-  //         db.fabrizioUsernameIdentifierData
-  //       const result = await userGateway.login({
-  //         db.fabrizioIdentifierDatas)
-  //       const expected = 1
-  //       expect(result).toEqual(expected)
-  //     })
-  //   })
+describe('userGateway', () => {
+  describe('compute user', () => {
+    it('should compute a user when valid userData is provided', async () => {
+      const result = await computeUser(users.fabrizioUserData)
+      const expected = users.fabrizioUser
+      expect(result).toEqual(expected)
+    })
+    it('should return undefined it no valid userID is provided', async () => {
+      const user = { ...users.fabrizioUserData, id: 'plop' }
+      const result = await computeUser(user)
+      expect(result).toBeUndefined()
+    })
+  })
 })

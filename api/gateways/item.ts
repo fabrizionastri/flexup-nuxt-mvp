@@ -2,11 +2,12 @@ import { Item, ItemData } from 'entities/item'
 import { round6 } from 'utils/round'
 import adapters from 'adapters/database'
 
-export interface ItemGateway {
-  getById: (itemId: string) => Promise<Item | undefined>
-  getByOrderId: (orderId: string) => Promise<Item[]>
-  getByProperty: (property: keyof ItemData, value: unknown) => Promise<Item[]>
-}
+/* TOCHECK : defining gateway interfaces it useless when there is only one */
+// export interface ItemGateway {
+//   getById: (itemId: string) => Promise<Item | undefined>
+//   getByOrderId: (orderId: string) => Promise<Item[]>
+//   getByProperty: (property: keyof ItemData, value: unknown) => Promise<Item[]>
+// }
 
 export const computeItem = (item: ItemData): Item => {
   return {
@@ -18,7 +19,7 @@ export const computeItem = (item: ItemData): Item => {
   }
 }
 
-export const createItemGateway = (): ItemGateway => {
+export const createItemGateway = () /* : ItemGateway */ => {
   const itemAdapter = adapters.itemAdapter
 
   const getById = async (itemId: string): Promise<Item | undefined> => {
