@@ -5,7 +5,7 @@ import { config } from 'dotenv'
 
 // IMPORT ROUTES
 import account from './routes/account'
-// import user from './routes/user'
+import user from './routes/user'
 
 // Load environment variables from .env file, where API keys and passwords are configured
 config() // load variables from .env into process.env
@@ -18,7 +18,7 @@ app.use('*', cors())
 
 // ROUTES
 app.route('/account', account)
-// app.route('/user', user)
+app.route('/user', user)
 
 // ROUTES
 app.post('/db/:selectedDb', async (c) => {
