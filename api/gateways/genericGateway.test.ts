@@ -1,4 +1,4 @@
-describe('genericGateway.test.ts', () => {
+describe.todo('genericGateway.test.ts', () => {
   it('should be true', () => {
     const result = 1
     const expected = 1

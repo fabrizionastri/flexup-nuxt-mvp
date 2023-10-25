@@ -3,7 +3,7 @@ import { totoUserData, pendingUserData } from 'mock/inMemory/user'
 
 describe('userAdapter', () => {
   describe('getById', () => {
-    it('should retrieve an entity by its ID', async () => {
+    it('should retrieve an entity by its Id', async () => {
       const result = await userAdapter.getById('totoUser')
       expect(result).toEqual(totoUserData)
     })

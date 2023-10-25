@@ -1,4 +1,4 @@
-describe('legalPerson gateway', () => {
+describe.todo('legalPerson gateway', () => {
   it('computeLegalPerson', () => {
     const result = 1
     const expected = 1
