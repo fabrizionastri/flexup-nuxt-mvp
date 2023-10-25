@@ -9,5 +9,5 @@ export const createGetByProperty =
         new Error(`Property "${String(property)}" does not exist on this entity`)
       )
     }
-    return Promise.resolve(entities.filter((entity: Entity) => entity[String(property)] === value))
+    return Promise.resolve(entities.filter((entity: Entity) => entity[String(property)] == value))
   }

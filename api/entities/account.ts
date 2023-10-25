@@ -1,3 +1,4 @@
+import { CurrencyId, CountryId } from '.'
 import { AccountUserRole } from '.'
 
 export const accountOwnerMapping = {
@@ -21,12 +22,12 @@ export type AccountStatus = 'active' | 'pending' | 'suspended' | 'closed'
 
 export interface AccountData {
   id: string
-  name: string
+  name: string // TOCHECK: this is a computed value, should we store it or not?
   type: AccountType // I think this is redundant with ownerType
   status: AccountStatus
   ownerId: string
-  currencyId: string
-  countryId: string
+  currencyId: CurrencyId
+  countryId: CountryId
   creationDate: Date
   avatar?: string
   description?: string

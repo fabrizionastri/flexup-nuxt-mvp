@@ -2,15 +2,13 @@ import { UserData, User } from 'entities/user'
 
 export const fabrizioUserData: UserData = {
   id: 'fabrizioUser',
-  password: 'plop',
   creationDate: new Date('2019-01-01'),
   status: 'active',
-  lastLoginDate: new Date('2019-01-01')
+  lastLoginDate: new Date('2023-10-23')
 }
 
 export const totoUserData: UserData = {
   id: 'totoUser',
-  password: 'plop',
   creationDate: new Date('2019-01-01'),
   status: 'active',
   lastLoginDate: new Date('2019-01-01')
@@ -18,7 +16,6 @@ export const totoUserData: UserData = {
 
 export const pendingUserData: UserData = {
   id: 'pendingUser',
-  password: 'plop',
   creationDate: new Date('2019-01-01'),
   status: 'pending'
 }
