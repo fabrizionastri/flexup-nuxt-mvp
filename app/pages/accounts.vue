@@ -6,6 +6,7 @@ div.m-5(v-for="(value, key) in activeAccount" :key="key")
   span {{ value }}
 
 h2 Other accounts
+p Plop
 //- AccountSelector
 
 </template>
