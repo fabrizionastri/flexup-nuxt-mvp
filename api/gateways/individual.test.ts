@@ -1,5 +1,5 @@
 import { fabrizioIndividual } from 'mock/inMemory/individual'
-import { individualGateway } from './individualGateway'
+import { individualGateway } from '.'
 
 describe('individual gateway', () => {
   describe('getById', () => {

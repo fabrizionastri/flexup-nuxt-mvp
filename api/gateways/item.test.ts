@@ -1,4 +1,4 @@
-import { itemGateway } from 'gateways/itemGateway'
+import { itemGateway } from '.'
 
 import * as items from 'mock/inMemory/item'
 

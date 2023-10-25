@@ -1,7 +1,7 @@
 import { round6 } from 'lib/utils/round'
 import * as orders from 'mock/inMemory/order'
 import * as items from 'mock/inMemory/item'
-import { OrderGateway, computeOrder, computeItemTotals, createOrderGateway } from './orderGateway'
+import { OrderGateway, computeOrder, computeItemTotals, createOrderGateway } from '.'
 
 describe('orderGateway', () => {
   let orderGateway: OrderGateway

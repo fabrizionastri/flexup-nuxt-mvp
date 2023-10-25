@@ -1,4 +1,4 @@
-import { accountGateway } from './accountGateway'
+import { accountGateway } from '.'
 
 describe.todo('accountGateway.test.ts', () => {
   // it('should return a gateway for a given userId', () => {

@@ -29,3 +29,5 @@ export const createAccountGateway = (): AccountGateway => {
     getByProperty
   }
 }
+
+export const accountGateway = createAccountGateway()

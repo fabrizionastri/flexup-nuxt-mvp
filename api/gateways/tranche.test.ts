@@ -1,4 +1,4 @@
-import { computeTranche, trancheGateway } from './trancheGateway'
+import { computeTranche, trancheGateway } from '.'
 import * as orders from 'mock/inMemory/order'
 import * as tranches from 'mock/inMemory/tranche'
 
