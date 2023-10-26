@@ -1,4 +1,4 @@
-import { CountryData } from 'entities/country'
+import type { CountryData } from 'entities/country'
 
 export const countryDatas: CountryData[] = [
   {

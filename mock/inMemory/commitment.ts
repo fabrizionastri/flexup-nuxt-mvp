@@ -1,4 +1,4 @@
-import { Commitment } from 'entities/commitment'
+import type { Commitment } from 'entities/commitment'
 
 export const commitment1: Commitment = {
   id: '1',

@@ -1,4 +1,4 @@
-import { Item } from 'entities/item'
+import type { Item } from 'entities/item'
 import * as orders from 'mock/inMemory/order'
 import { sumPropertyStrict } from './sumPropertyStrict'
 

@@ -1,9 +1,9 @@
-import { Item } from 'entities/item'
+import type { Item } from 'entities/item'
 import adapters from 'adapters/database'
 // import { createOrderAdapter } from 'adapters/database'
 import { itemGateway } from '.'
 import { trancheGateway } from '.'
-import { Order } from 'entities/order'
+import type { Order } from 'entities/order'
 import { round6 } from 'utils/round'
 import { sumPropertyStrict } from 'lib/utils/sumPropertyStrict'
 

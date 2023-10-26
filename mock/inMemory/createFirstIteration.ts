@@ -1,4 +1,4 @@
-import { Commitment, Interest, CommitmentLevel, Token } from 'entities/commitment'
+import type { Commitment, Interest, CommitmentLevel, Token } from 'entities/commitment'
 import {
   Priority,
   Period,

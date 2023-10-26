@@ -1,5 +1,5 @@
 import { identifierDatas } from 'mock/inMemory/identifier'
-import { IdentifierData } from 'entities/identifier'
+import type { IdentifierData } from 'entities/identifier'
 
 export const createIdentifierAdapter = () => {
   const identifiers: IdentifierData[] = identifierDatas

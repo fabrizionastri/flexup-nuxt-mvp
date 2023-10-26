@@ -1,4 +1,4 @@
-import { Entity } from '.'
+import type { Entity } from '.'
 
 export type UserStatus = 'active' | 'pending' | 'suspended' | 'closed'
 

@@ -1,5 +1,5 @@
-import { ReserveName } from 'entities/reserve'
-import { BalanceInstance, BalanceInstances, Balances } from 'entities/balance'
+import type { ReserveName } from 'entities/reserve'
+import type { BalanceInstance, BalanceInstances, Balances } from 'entities/balance'
 
 export const balanceTestCases: Array<{
   reserveBalance: Balances

@@ -1,4 +1,4 @@
-import { AccountUserData, AccountUser } from 'entities/accountUser'
+import type { AccountUserData, AccountUser } from 'entities/accountUser'
 
 export const fabrizioAccountFabrizioUserData: AccountUserData = {
   id: 'fabrizioAccountFabrizioUser', // temp for Json-Server

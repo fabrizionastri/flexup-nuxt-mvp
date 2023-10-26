@@ -1,4 +1,4 @@
-import { Allocation } from 'entities/allocation'
+import type { Allocation } from 'entities/allocation'
 
 export const ReserveNames = [
   'liquidity',

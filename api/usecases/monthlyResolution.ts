@@ -1,7 +1,7 @@
-import { ResolutionStep } from 'entities/resolution'
+import type { ResolutionStep } from 'entities/resolution'
 import { resolutionGeneric } from 'usecases/resolution'
 
-export const MonthlyResolutionSteps: ResolutionStep[] = [
+export const monthlyResolutionSteps: ResolutionStep[] = [
   {
     resolutionName: 'firmOutflow',
     priority: 'firm',
@@ -55,4 +55,4 @@ export const MonthlyResolutionSteps: ResolutionStep[] = [
 //   )
 // }
 
-export const runMonthlyResolutionSteps = resolutionGeneric(MonthlyResolutionSteps)
+export const runMonthlyResolutionSteps = resolutionGeneric(monthlyResolutionSteps)

@@ -1,4 +1,4 @@
-import { UserPasswordData } from 'entities/password'
+import type { UserPasswordData } from 'entities/password'
 
 export const fabrizioUserPasswordData: UserPasswordData = {
   id: 'fabrizioUser',

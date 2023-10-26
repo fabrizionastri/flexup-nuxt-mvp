@@ -1,5 +1,5 @@
-import { Commitment, Interest, Token } from 'entities/commitment'
-import { InterestPaymentTerms, ResiduePaymentTerms } from 'entities/paymentTerms'
+import type { Commitment, Interest, Token } from 'entities/commitment'
+import type { InterestPaymentTerms, ResiduePaymentTerms } from 'entities/paymentTerms'
 import { offsetDate } from 'usecases/createFirstIterations'
 
 // TODO : refactorer ces 3 fonctions en une seule

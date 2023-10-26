@@ -1,7 +1,7 @@
-import { ResolutionStep } from 'entities/resolution'
+import type { ResolutionStep } from 'entities/resolution'
 import { resolutionGeneric } from 'usecases/resolution'
 
-export const AnnualResolutionSteps: ResolutionStep[] = [
+export const annualResolutionSteps: ResolutionStep[] = [
   {
     resolutionName: 'creditBuyback',
     nature: 'topup',
@@ -57,4 +57,4 @@ export const AnnualResolutionSteps: ResolutionStep[] = [
 //   )
 // }
 
-export const runAnnualResolutionSteps = resolutionGeneric(AnnualResolutionSteps)
+export const runAnnualResolutionSteps = resolutionGeneric(annualResolutionSteps)

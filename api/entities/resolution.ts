@@ -1,7 +1,7 @@
-import { Commitment } from 'entities/commitment'
-import { ReserveName } from 'entities/reserve'
-import { AllocationReport } from 'entities/allocation'
-import { Priority } from './paymentTerms'
+import type { Commitment } from 'entities/commitment'
+import type { ReserveName } from 'entities/reserve'
+import type { AllocationReport } from 'entities/allocation'
+import type { Priority } from './paymentTerms'
 
 export const ResolutionMechanisms = {
   cap: 'cap',

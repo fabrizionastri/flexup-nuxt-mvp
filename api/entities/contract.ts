@@ -1,4 +1,4 @@
-import { CurrencyId } from './currency'
+import type { CurrencyId } from './currency'
 
 export const ContractNatures = {
   commercial: {

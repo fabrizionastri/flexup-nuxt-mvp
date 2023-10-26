@@ -1,4 +1,4 @@
-import { Priority } from 'entities/paymentTerms'
+import type { Priority } from 'entities/paymentTerms'
 
 export type CommitmentLevel = 'primary' | 'secondary'
 

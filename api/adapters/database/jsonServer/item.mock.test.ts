@@ -1,4 +1,4 @@
-import { ItemAdapter } from 'adapters/database/interfaces'
+import type { ItemAdapter } from 'adapters/database/interfaces'
 import { vi } from 'vitest'
 import type { Mock } from 'vitest'
 

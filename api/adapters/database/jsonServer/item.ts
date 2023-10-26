@@ -1,5 +1,5 @@
-import { ItemData } from 'entities/item'
-import { ItemAdapter } from '../interfaces'
+import type { ItemData } from 'entities/item'
+import type { ItemAdapter } from '../interfaces'
 import axios from './myAxios'
 
 export const createItemAdapter = (): ItemAdapter => {

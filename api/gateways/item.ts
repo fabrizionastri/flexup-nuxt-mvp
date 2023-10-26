@@ -1,4 +1,4 @@
-import { Item, ItemData } from 'entities/item'
+import type { Item, ItemData } from 'entities/item'
 import { round6 } from 'utils/round'
 import adapters from 'adapters/database'
 

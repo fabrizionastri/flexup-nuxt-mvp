@@ -1,5 +1,5 @@
 import adapters from 'adapters/database'
-import { Account, AccountData } from '../entities'
+import type { Account, AccountData } from '../entities'
 
 export interface AccountGateway {
   getById: (accountId: string) => Promise<Account | undefined>
@@ -9,6 +9,7 @@ export interface AccountGateway {
 
 export const computeAccount = () => {}
 
+// TODO : complete this function
 export const createAccountGateway = (): AccountGateway => {
   const accountAdapter = adapters.accountAdapter
 

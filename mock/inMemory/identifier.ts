@@ -1,4 +1,4 @@
-import { IdentifierData /* Identifier */ } from 'entities/identifier'
+import type { IdentifierData /* Identifier */ } from 'entities/identifier'
 
 // Raw data
 export const fabrizioUsernameIdentifierData: IdentifierData = {

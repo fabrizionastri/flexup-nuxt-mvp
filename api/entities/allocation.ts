@@ -1,5 +1,5 @@
-import { Balances } from 'entities/balance'
-import { ReserveName } from 'entities/reserve'
+import type { Balances } from 'entities/balance'
+import type { ReserveName } from 'entities/reserve'
 
 export interface Allocation {
   source: ReserveName

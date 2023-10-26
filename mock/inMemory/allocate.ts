@@ -1,6 +1,6 @@
-import { Balances } from 'entities/balance'
-import { ReserveName } from 'entities/reserve'
-import { AllocationReport } from 'entities/allocation'
+import type { Balances } from 'entities/balance'
+import type { ReserveName } from 'entities/reserve'
+import type { AllocationReport } from 'entities/allocation'
 
 export const allocateTestCases: Array<{
   summary: string

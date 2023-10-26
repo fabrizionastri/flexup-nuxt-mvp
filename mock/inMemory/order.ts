@@ -1,4 +1,4 @@
-import { Order } from 'entities/order'
+import type { Order } from 'entities/order'
 import * as items from './item'
 import * as tranches from './tranche'
 

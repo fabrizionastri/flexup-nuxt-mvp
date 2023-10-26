@@ -1,4 +1,4 @@
-import { AllocationInstance } from 'entities/allocation'
+import type { AllocationInstance } from 'entities/allocation'
 
 export const allocation1: AllocationInstance = {
   accountId: '1234',

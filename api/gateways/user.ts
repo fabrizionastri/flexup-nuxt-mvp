@@ -1,6 +1,6 @@
 import { individualAdapter } from 'adapters/database/generic/individual'
 import { userAdapter } from 'adapters/database/generic/user'
-import { UserData, User } from 'entities/user'
+import type { UserData, User } from 'entities/user'
 
 export const computeUser = async (userData: UserData): Promise<User | undefined> => {
   const individualData = await individualAdapter.getByUserId(userData.id)

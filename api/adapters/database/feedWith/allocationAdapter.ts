@@ -1,4 +1,4 @@
-import { AllocationInstance } from 'entities/allocation'
+import type { AllocationInstance } from 'entities/allocation'
 
 export class AllocationAdapter {
   private _allocations: AllocationInstance[]

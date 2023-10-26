@@ -1,4 +1,4 @@
-import { IndividualData, Individual } from 'entities/individual'
+import type { IndividualData, Individual } from 'entities/individual'
 
 export const fabrizioIndividualData: IndividualData = {
   id: 'fabrizioIndividual',

@@ -1,4 +1,4 @@
-import { Tranche, TrancheData } from 'entities/tranche'
+import type { Tranche, TrancheData } from 'entities/tranche'
 
 // Tranche raw data
 export const commercialOrderPreferred50Data: TrancheData = {

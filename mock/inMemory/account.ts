@@ -1,4 +1,4 @@
-import { AccountData, Account } from 'entities/account'
+import type { AccountData, Account } from 'entities/account'
 
 // --- Raw data
 

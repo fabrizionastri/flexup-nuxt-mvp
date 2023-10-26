@@ -32,7 +32,7 @@ import {
   calculateDuration
 } from 'usecases/utils'
 
-import { ZeroBalances } from '../entities/balance'
+import type { ZeroBalances } from '../entities/balance'
 
 describe('Utils functions', () => {
   describe('getEndOfMonth', () => {

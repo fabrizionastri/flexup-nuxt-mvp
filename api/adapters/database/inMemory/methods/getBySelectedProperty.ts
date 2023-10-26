@@ -1,4 +1,4 @@
-import { Entity } from 'entities/_generic'
+import type { Entity } from 'entities/_generic'
 
 export const createGetBySelectedProperty =
   <T extends Entity>(entities: T[], property: keyof T) =>

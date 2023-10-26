@@ -1,4 +1,4 @@
-import { Contract } from 'entities/contract'
+import type { Contract } from 'entities/contract'
 
 export const contractsDB: Contract[] = [
   {

@@ -1,6 +1,6 @@
 import { getCutoffDate } from 'usecases/resolution'
-import { Commitment } from 'entities/commitment'
-import { MonthlyPriorities, AnnualPriorities } from 'entities/paymentTerms'
+import type { Commitment } from 'entities/commitment'
+import type { MonthlyPriorities, AnnualPriorities } from 'entities/paymentTerms'
 
 export class CommitmentAdapter {
   private _commitments: Commitment[]

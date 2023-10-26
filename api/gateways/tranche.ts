@@ -1,5 +1,5 @@
-import { TrancheAdapter } from 'adapters/database/interfaces'
-import { Order, Tranche, TrancheData } from 'entities/'
+import type { TrancheAdapter } from 'adapters/database/interfaces'
+import type { Order, Tranche, TrancheData } from 'entities/'
 
 import adapters from 'adapters/database'
 

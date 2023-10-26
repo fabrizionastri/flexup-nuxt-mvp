@@ -1,5 +1,5 @@
-import { Order } from 'entities/order'
-import { OrderAdapter } from '../interfaces'
+import type { Order } from 'entities/order'
+import type { OrderAdapter } from '../interfaces'
 
 import axios from './myAxios'
 

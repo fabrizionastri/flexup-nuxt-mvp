@@ -1,4 +1,4 @@
-import { CommitmentAdapter } from './commitmentAdapter'
+import type { CommitmentAdapter } from './commitmentAdapter'
 
 describe.todo('Commitment primary adapter', () => {
   let adapter: CommitmentAdapter

@@ -1,4 +1,4 @@
-import { Entity } from './generic'
+import type { Entity } from './generic'
 
 export type Gender = 'male' | 'female' | 'other' | 'undisclosed'
 export interface IndividualData extends Entity {

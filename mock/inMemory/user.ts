@@ -1,4 +1,4 @@
-import { UserData, User } from 'entities/user'
+import type { UserData, User } from 'entities/user'
 
 export const fabrizioUserData: UserData = {
   id: 'fabrizioUser',

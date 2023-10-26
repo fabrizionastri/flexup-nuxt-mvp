@@ -1,6 +1,6 @@
-import { Balances } from 'entities/balance'
-import { ReserveName } from 'entities/reserve'
-import { AmountsRequested, ResolutionName } from 'entities/resolution'
+import type { Balances } from 'entities/balance'
+import type { ReserveName } from 'entities/reserve'
+import type { AmountsRequested, ResolutionName } from 'entities/resolution'
 
 export const forReserveTargetTestCases: Array<{
   summary: string

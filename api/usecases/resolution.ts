@@ -1,10 +1,10 @@
 import { allocate } from 'usecases/allocate'
-import { Balances } from 'entities/balance'
+import type { Balances } from 'entities/balance'
 import { sumSelectedBalances } from 'usecases/balance'
 import { clone, getNumberForKey } from 'usecases/utils'
-import { ReserveName } from 'entities/reserve'
-import { AmountsRequested, ResolutionName, ResolutionStep } from '../entities/resolution'
-import { AllocationReport } from 'entities/allocation'
+import type { ReserveName } from 'entities/reserve'
+import type { AmountsRequested, ResolutionName, ResolutionStep } from '../entities/resolution'
+import type { AllocationReport } from 'entities/allocation'
 
 export const forOutflow = (
   availableCash = 0,

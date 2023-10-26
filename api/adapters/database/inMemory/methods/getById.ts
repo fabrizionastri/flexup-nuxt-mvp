@@ -1,4 +1,4 @@
-import { Entity } from 'entities/_generic'
+import type { Entity } from 'entities/_generic'
 
 export const createGetById =
   <T extends Entity>(entities: T[]) =>

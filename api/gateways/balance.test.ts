@@ -1,11 +1,11 @@
 import { balanceInstanceAll } from 'mock/inMemory/balance'
 import { BalanceAdapter } from 'adapters/database/feedWith/balanceAdapter'
-import { BalanceGateway } from '.'
+import { balanceGateway } from '.'
 
 describe.todo('Balance core gateway', () => {
   it('should throw an error if adapter is null', () => {
     // @ts-ignore
-    expect(BalanceGateway()).toThrowError('BalanceAdapter is not defined')
+    expect(balanceGateway()).toThrowError('BalanceAdapter is not defined')
   })
 
   describe('when adapter is defined', () => {
@@ -13,7 +13,7 @@ describe.todo('Balance core gateway', () => {
     beforeEach(() => {
       const balanceAdapter = new BalanceAdapter()
       balanceAdapter.feedWith(balanceInstanceAll)
-      gateway = BalanceGateway(balanceAdapter)
+      gateway = balanceGateway(balanceAdapter)
     })
     it('should return all 100 for account 1234 and Jan', () => {
       const accountId = '1234'

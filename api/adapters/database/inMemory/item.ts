@@ -1,5 +1,5 @@
-import { ItemAdapter } from '../interfaces'
-import { ItemData } from 'entities/item'
+import type { ItemAdapter } from '../interfaces'
+import type { ItemData } from 'entities/item'
 import { itemDatas } from 'mock/inMemory/item'
 
 export const createItemAdapter = (): ItemAdapter => {

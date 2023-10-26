@@ -1,4 +1,4 @@
-import { CurrencyData } from 'entities/currency'
+import type { CurrencyData } from 'entities/currency'
 
 export const euroCurrencyData: CurrencyData = {
   id: 'EUR',

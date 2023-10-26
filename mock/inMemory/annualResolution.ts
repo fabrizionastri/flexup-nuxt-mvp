@@ -1,7 +1,7 @@
-import { AllocationReport } from 'entities/allocation'
-import { Balances } from 'entities/balance'
-import { AmountsRequested, ResolutionStep } from 'entities/resolution'
-import { AnnualResolutionSteps } from 'usecases/annualResolution'
+import type { AllocationReport } from 'entities/allocation'
+import type { Balances } from 'entities/balance'
+import type { AmountsRequested, ResolutionStep } from 'entities/resolution'
+import { annualResolutionSteps } from 'usecases/annualResolution'
 
 export const annualResolutionTestCases: Array<{
   summary: string
@@ -14,14 +14,14 @@ export const annualResolutionTestCases: Array<{
     summary: '{}',
     initialBalances: {},
     amountsRequested: {},
-    resolutionSteps: AnnualResolutionSteps,
+    resolutionSteps: annualResolutionSteps,
     expected: []
   },
   {
     summary: '100 in creditBuyback -> 100 distribution only, then payable',
     initialBalances: { creditBuyback: 100 },
     amountsRequested: {},
-    resolutionSteps: AnnualResolutionSteps,
+    resolutionSteps: annualResolutionSteps,
     expected: [
       {
         availableCash: 100,
@@ -64,7 +64,7 @@ export const annualResolutionTestCases: Array<{
       creditBuyback: 25,
       tokenBuyback: 10
     },
-    resolutionSteps: AnnualResolutionSteps,
+    resolutionSteps: annualResolutionSteps,
     expected: [
       {
         availableCash: 25,
@@ -113,7 +113,7 @@ export const annualResolutionTestCases: Array<{
       creditBuyback: 10,
       tokenBuyback: 50
     },
-    resolutionSteps: AnnualResolutionSteps,
+    resolutionSteps: annualResolutionSteps,
     expected: [
       {
         availableCash: 110,
@@ -200,7 +200,7 @@ export const annualResolutionTestCases: Array<{
       creditBuyback: 25,
       tokenBuyback: 10
     },
-    resolutionSteps: AnnualResolutionSteps,
+    resolutionSteps: annualResolutionSteps,
     expected: [
       {
         availableCash: 35,

@@ -1,4 +1,5 @@
-import axios, { AxiosResponse, Method } from 'axios'
+import axios from 'axios'
+import type { AxiosResponse, Method } from 'axios'
 export const myAxios = axios.create({
   baseURL: 'http://localhost:3057/',
   timeout: 1000

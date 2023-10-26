@@ -1,5 +1,5 @@
 import { allocation1, allocation2 } from 'mock/inMemory/allocation'
-import { AllocationAdapter } from './allocationAdapter'
+import type { AllocationAdapter } from './allocationAdapter'
 
 describe.todo('Adatper primary allocate', () => {
   let adapter: AllocationAdapter

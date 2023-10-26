@@ -1,4 +1,4 @@
-import { Item, ItemData } from 'entities/item'
+import type { Item, ItemData } from 'entities/item'
 
 // Items with raw data only
 export const commercialOrderItem1Data: ItemData = {

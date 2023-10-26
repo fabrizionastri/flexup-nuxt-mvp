@@ -1,9 +1,20 @@
-export const computeLegalPerson = (legalPerson: string): LegalPerson => {
+import { individualGateway } from '.'
+import { organizationAdapter } from '../adapters/database/generic'
+import type { LegalPerson } from '../entities'
+
+export const computeLegalPerson = async (id: string): LegalPerson => {
   if (id[1] !== ':' || (id[0] !== 'o' && id[0] !== 'i'))
     throw new Error(`Invalid legalPerson id: ${id}`)
-  type = id[0] === 'o' ? 'organization' : 'individual'
+  const type = id[0] === 'o' ? 'organization' : 'individual'
+  const personId = id.slice(1)
+  let name: string
+  if (type === 'organization') {
+    name = (await organizationAdapter.getById(personId)).name
+  } else {
+    name = (await individualGateway.getById(personId)).fullName ?? ''
+  }
   return {
-    ...legalPerson,
+    id,
     type,
     personId: id.slice(1),
     typeSymbol: accountTypeIcons[type],

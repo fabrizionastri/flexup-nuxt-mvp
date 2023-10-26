@@ -1,5 +1,5 @@
-import { CurrencyId, CountryId } from '.'
-import { AccountUserRole } from '.'
+import type { CurrencyId, CountryId } from '.'
+import type { AccountUserRole } from '.'
 
 export const accountOwnerMapping = {
   personal: 'individual',

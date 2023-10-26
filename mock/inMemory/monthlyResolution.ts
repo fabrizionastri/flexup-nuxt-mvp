@@ -1,7 +1,7 @@
-import { AllocationReport } from 'entities/allocation'
-import { Balances } from 'entities/balance'
-import { AmountsRequested, ResolutionStep } from 'entities/resolution'
-import { MonthlyResolutionSteps } from 'usecases/monthlyResolution'
+import type { AllocationReport } from 'entities/allocation'
+import type { Balances } from 'entities/balance'
+import type { AmountsRequested, ResolutionStep } from 'entities/resolution'
+import { monthlyResolutionSteps } from 'usecases/monthlyResolution'
 
 export const monthlyResolutionTestCases: Array<{
   summary: string
@@ -14,7 +14,7 @@ export const monthlyResolutionTestCases: Array<{
     summary: 'all values set to zero',
     initialBalances: {},
     amountsRequested: {},
-    resolutionSteps: MonthlyResolutionSteps,
+    resolutionSteps: monthlyResolutionSteps,
     expected: []
   },
   {
@@ -28,7 +28,7 @@ export const monthlyResolutionTestCases: Array<{
       baseReserveTarget: 200,
       flexReserveTarget: 125
     },
-    resolutionSteps: MonthlyResolutionSteps,
+    resolutionSteps: monthlyResolutionSteps,
     expected: [
       {
         availableCash: 1000,
@@ -165,7 +165,7 @@ export const monthlyResolutionTestCases: Array<{
       baseReserveTarget: 75,
       flexReserveTarget: 45
     },
-    resolutionSteps: MonthlyResolutionSteps,
+    resolutionSteps: monthlyResolutionSteps,
     expected: [
       {
         availableCash: 450,
@@ -324,7 +324,7 @@ export const monthlyResolutionTestCases: Array<{
       baseReserveTarget: 75,
       flexReserveTarget: 25
     },
-    resolutionSteps: MonthlyResolutionSteps,
+    resolutionSteps: monthlyResolutionSteps,
     expected: [
       {
         availableCash: 450,

@@ -1,4 +1,4 @@
-import { BalanceInstances, BalanceInstance } from 'entities/balance'
+import type { BalanceInstances, BalanceInstance } from 'entities/balance'
 
 export class BalanceAdapter {
   private _balance: BalanceInstances

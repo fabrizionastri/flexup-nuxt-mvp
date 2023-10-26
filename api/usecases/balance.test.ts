@@ -1,5 +1,5 @@
 import { balanceTestCases } from 'mock/inMemory/balance'
-import { Balances } from 'entities/balance'
+import type { Balances } from 'entities/balance'
 import {
   selectBalances,
   setMissingBalancesToZero,

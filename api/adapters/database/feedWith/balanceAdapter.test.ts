@@ -1,5 +1,5 @@
 import { balanceInstance1, balanceInstance2 } from 'mock/inMemory/balance'
-import { BalanceAdapter } from './balanceAdapter'
+import type { BalanceAdapter } from './balanceAdapter'
 
 describe.todo('Adapter primary balance', () => {
   let adapter: BalanceAdapter

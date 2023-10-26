@@ -1,4 +1,4 @@
-import { GroupingAccountData, GroupingAccount } from 'entities/groupingAccount'
+import type { GroupingAccountData, GroupingAccount } from 'entities/groupingAccount'
 
 export const doMazyGroupingAgroCoopAccountData: GroupingAccountData = {
   id: 'doMazyGroupingAgroCoopAccount',

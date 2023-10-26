@@ -1,4 +1,4 @@
-import { Order } from 'entities/order'
+import type { Order } from 'entities/order'
 import { createOrderGateway } from '../gateways'
 
 export const getAllOrders = async (accountId: string): Promise<Order[]> => {

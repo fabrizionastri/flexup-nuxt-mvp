@@ -1,4 +1,4 @@
-import { PaymentTerms } from './paymentTerms'
+import type { PaymentTerms } from './paymentTerms'
 
 export interface TrancheData {
   id: string // 0, 1, 2, 3 ...

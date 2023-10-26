@@ -1,6 +1,6 @@
-import { ReserveName } from 'entities/reserve'
+import type { ReserveName } from 'entities/reserve'
 import { getNumberForKey, isValidNumber } from 'usecases/utils'
-import { Balances, ZeroBalances } from 'entities/balance'
+import type { Balances, ZeroBalances } from 'entities/balance'
 
 export const sumBalances = (reserveBalance: Balances): number => {
   // eslint-disable-next-line @typescript-eslint/no-unused-vars

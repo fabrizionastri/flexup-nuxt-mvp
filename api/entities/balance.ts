@@ -1,4 +1,4 @@
-import { ReserveName } from 'entities/reserve'
+import type { ReserveName } from 'entities/reserve'
 
 export type BalanceInstance = {
   reserveName: ReserveName

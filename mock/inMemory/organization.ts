@@ -1,4 +1,4 @@
-import { OrganizationData } from 'entities/organization'
+import type { OrganizationData } from 'entities/organization'
 
 export const cosysOrganizationData: OrganizationData = {
   id: 'cosysOrganization',

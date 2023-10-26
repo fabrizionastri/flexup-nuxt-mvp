@@ -1,11 +1,11 @@
-import {
+import type {
   Period,
   PaymentTerms,
   MainPaymentTerms,
   InterestPaymentTerms,
   Priority
 } from 'entities/paymentTerms'
-import { Commitment, Token, Interest, CommitmentLevel } from 'entities/commitment'
+import type { Commitment, Token, Interest, CommitmentLevel } from 'entities/commitment'
 import { calculateDuration, getDateForKey, isValidDate, today } from 'usecases/utils'
 
 export const offsetDate = (

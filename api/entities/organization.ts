@@ -1,4 +1,4 @@
-import {
+import type {
   // Address,
   // Amount,
   // CountryId,
@@ -7,7 +7,7 @@ import {
   // LanguageId,
   // LegalPerson
 } from './index'
-import { LegalPerson } from './legalPerson'
+import type { LegalPerson } from './legalPerson'
 
 export const organizationStatusMapping = {
   creationNotStarted: 'pending',

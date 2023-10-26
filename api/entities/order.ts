@@ -1,5 +1,5 @@
-import { Item } from 'entities/item'
-import { Tranche } from './tranche'
+import type { Item } from 'entities/item'
+import type { Tranche } from './tranche'
 
 /* Questions:
 - should we store the compute functions in the gateway, entity, use case or utils ?
