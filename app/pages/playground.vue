@@ -1,32 +1,42 @@
-<template lang="pug">
-div
-  h1 Playground
-  p This is a temp page to try out new things
+<template>
+  <div>
+    <h1>Playground</h1>
+    <p>This is a temp page to try out new things</p>
 
-  p DB : {{ db }}
-  form
-    //- identifier and password inputs, with labels and nice formatting
-    label(for="identifier") Identifier:
-    input(type="text" v-model="identifier")
-    br
-    label(for="password") Password:
-    input(type="password" v-model="password")
-    br
-    button(type="submit" @click="handleLogin") Submit
-    //- p User : {{ user }}
+    <p>DB : {{ db }}</p>
+    <form @submit.prevent="handleLogin">
+      <!-- identifier and password inputs, with labels and nice formatting -->
+      <label for="identifier">Identifier:</label>
+      <input type="text" v-model="identifier" />
+      <br />
+      <label for="password">Password:</label>
+      <input type="password" v-model="password" />
+      <br />
+      <button type="submit">Submit</button>
+    </form>
 
+    <br />
+    <hr />
+    <br />
+    <p>User : {{ user }}</p>
+    <p>Error : {{ errorMsg }}</p>
+  </div>
 </template>
 
 <script setup>
-  import { login } from '~/api/usecases'
-
   const db = `getDb()`
-  const identifier = ref('')
-  const password = ref('')
+  const identifier = ref('totoUsername')
+  const password = ref('plop')
   // const user = useActiveUser()
   const user = ref('')
+  const errorMsg = ref('')
 
-  const handleLogin = () =>
+  const handleLogin = () => {
+    console.log(
+      'app/pages/playground copy.vue - identifier & password:',
+      identifier.value,
+      password.value
+    )
     login(identifier.value, password.value)
       .then((res) => {
         console.log(res)
@@ -35,4 +45,5 @@ div
       .catch((err) => {
         console.log(err)
       })
+  }
 </script>

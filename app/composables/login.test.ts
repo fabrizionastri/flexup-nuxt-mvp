@@ -1,6 +1,6 @@
-import * as identifiers from 'mock/inMemory/identifier'
-import * as passwords from 'mock/inMemory/password'
-import { totoUser } from 'mock/inMemory/user'
+import * as identifiers from '../../mock/inMemory/identifier'
+import * as passwords from '../../mock/inMemory/password'
+import { totoUser } from '../../mock/inMemory/user'
 import { login } from './login'
 
 describe('app/composable/login', () => {

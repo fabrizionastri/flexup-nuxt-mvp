@@ -9,7 +9,9 @@ describe('identifierAdapter', () => {
       expect(result).toEqual(expected)
     })
     it('should throw an error for invalid identifier', async () => {
-      await expect(identifierAdapter.getUserId('plop')).rejects.toThrowError('Invalid identifier')
+      await expect(identifierAdapter.getUserId('plop')).rejects.toThrowError(
+        'createIdentifierAdapter -> Invalid identifier'
+      )
     })
   })
 })

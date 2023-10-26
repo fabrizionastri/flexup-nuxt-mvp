@@ -1,4 +1,4 @@
-export function convertStringsToDates(obj) {
+export const convertStringsToDates = (obj) => {
   if (obj instanceof Date) {
     return obj
   } else if (Array.isArray(obj)) {

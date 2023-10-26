@@ -1,5 +1,7 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 
+import { fileURLToPath } from 'url'
+
 // I had to add a nuxt.d.ts file to fix it.
 // TODO: eslint-disable-next-line // this does not work
 export default defineNuxtConfig({
@@ -14,8 +16,14 @@ export default defineNuxtConfig({
   plugins: [
     //
   ],
-  imports: {
-    dirs: ['composables/**', '../lib/**', '../mock/**']
+  // imports: {
+  //   dirs: ['composables/**', '../lib/**', '../mock/**']
+  // },
+  alias: {
+    'lib/': fileURLToPath(new URL('./lib', import.meta.url)),
+    'utils/': fileURLToPath(new URL('./lib/utils', import.meta.url)),
+    'entities/': fileURLToPath(new URL('./lib/entities', import.meta.url)),
+    'mock/': fileURLToPath(new URL('./mock', import.meta.url))
   },
   // css: ['@/assets/main.css'], // removed, use tailwind instead
   vite: {

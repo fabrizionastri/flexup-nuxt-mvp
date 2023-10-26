@@ -1,6 +1,6 @@
 <template lang="pug">
 div
-  //- NavBar
+  NavBar
   main
     slot
 </template>

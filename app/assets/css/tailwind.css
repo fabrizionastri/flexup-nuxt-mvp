@@ -1,9 +1,8 @@
 /* explain what each line does */
 @import 'tailwindcss/base'; /* imports the base styles */
 @import 'tailwindcss/components'; /* imports the component styles */
-@import 'tailwindcss/utilities'; /* imports the utility styles */
-
-body {
+@import 'tailwindcss/utilities';
+imports the utility styles body {
   font-family: 'Open Sans', sans-serif;
 }
 
@@ -29,4 +28,8 @@ body {
 
 main {
   @apply m-5 h-full;
+}
+
+label {
+  @apply mr-3 font-bold;
 }

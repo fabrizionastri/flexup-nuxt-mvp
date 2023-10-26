@@ -13,8 +13,8 @@ import { getAccounts } from './getResource'
 // import db from '../../mock/' // 👌✔️ works
 // import db from '../../mock' // 👌✔️ works
 
-// import db from 'mock/jsonServer' // 👌✔️ works -> use this as it's the shortest 😊🎉😎
-import db from 'mock/inMemory'
+// import db from '../../mock/jsonServer' // 👌✔️ works -> use this as it's the shortest 😊🎉😎
+import db from '../../mock/inMemory'
 
 describe('getAccounts -> real access to server', () => {
   it('should return full accounts list when no arguments are provided', async () => {

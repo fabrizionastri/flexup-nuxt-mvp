@@ -10,7 +10,7 @@ export const createIdentifierAdapter = () => {
     const result = identifiers.find((item) => item.id === identifier)
     return result?.userId
       ? Promise.resolve(result.userId)
-      : Promise.reject(new Error('Invalid identifier'))
+      : Promise.reject(new Error('createIdentifierAdapter -> Invalid identifier'))
   }
 
   return {
