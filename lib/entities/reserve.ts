@@ -1,4 +1,5 @@
 import type { Allocation } from 'entities/allocation'
+import type { Entity } from '.'
 
 export const ReserveNames = [
   'liquidity',
@@ -15,7 +16,7 @@ export const ReserveNames = [
 
 export type ReserveName = (typeof ReserveNames)[number]
 
-export interface Reserve {
+export interface Reserve extends Entity {
   id: string
   accountId: string
   name: ReserveName

@@ -1,6 +1,7 @@
+import type { Entity } from '.'
 import type { Unit } from './unit'
 
-export interface Product {
+export interface Product extends Entity {
   id: string
   name: string
   unit: Unit

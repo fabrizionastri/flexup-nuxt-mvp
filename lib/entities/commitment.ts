@@ -1,4 +1,5 @@
 import type { Priority } from 'entities/paymentTerms'
+import type { Entity } from '.'
 
 export type CommitmentLevel = 'primary' | 'secondary'
 
@@ -14,7 +15,7 @@ export type CommitmentStatus =
   | 'cancelled'
   | 'converted'
 
-export interface Commitment {
+export interface Commitment extends Entity {
   id: string
   payorId?: string // TODO: check avec Frend
   payeeId?: string // payorId et payeeId sont obtenus via la tranche, donc pas besoin de les mettre ici

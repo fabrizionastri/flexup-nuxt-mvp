@@ -1,3 +1,4 @@
+import type { Entity } from '.'
 import type { CurrencyId } from './currency'
 
 export const ContractNatures = {
@@ -20,7 +21,7 @@ export const ContractNatures = {
 
 export type ContractNature = keyof typeof ContractNatures
 
-export interface Contract {
+export interface Contract extends Entity {
   id: string
   clientAccountId: string
   supplierAccountId: string

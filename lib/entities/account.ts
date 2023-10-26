@@ -1,4 +1,4 @@
-import type { CurrencyId, CountryId } from '.'
+import type { CurrencyId, CountryId, Entity } from '.'
 import type { AccountUserRole } from '.'
 
 export const accountOwnerMapping = {
@@ -20,7 +20,7 @@ export const accountTypeIcons = {
 
 export type AccountStatus = 'active' | 'pending' | 'suspended' | 'closed'
 
-export interface AccountData {
+export interface AccountData extends Entity {
   id: string
   name: string // TOCHECK: this is a computed value, should we store it or not?
   type: AccountType // I think this is redundant with ownerType

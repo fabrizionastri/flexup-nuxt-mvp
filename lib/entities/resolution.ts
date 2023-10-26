@@ -2,6 +2,7 @@ import type { Commitment } from 'entities/commitment'
 import type { ReserveName } from 'entities/reserve'
 import type { AllocationReport } from 'entities/allocation'
 import type { Priority } from './paymentTerms'
+import type { Entity } from '.'
 
 export const ResolutionMechanisms = {
   cap: 'cap',
@@ -48,7 +49,7 @@ export type ResolutionStep = {
   destination: ReserveName
 }
 
-export interface Resolution {
+export interface Resolution extends Entity {
   id: string
   accountId: string
   frequency: 'monthly' | 'annual'

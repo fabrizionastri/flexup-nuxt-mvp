@@ -1,21 +1,28 @@
 import adapters from 'adapters/database'
-import type { Account, AccountData } from 'entities'
+import type { Account, AccountData } from 'lib/entities' // CHECK / TODOS : this used to work with out lib/, with just 'entities', but now it doesn't. Why?
+import { poulaillerMobileAccount } from 'mock/inMemory'
 
-export interface AccountGateway {
-  getById: (accountId: string) => Promise<Account | undefined>
-  getByUserId: (userId: string) => Promise<Account[]>
-  getByProperty: (property: keyof AccountData, value: unknown) => Promise<Account[]>
+// export interface AccountGateway {
+//   getById: (accountId: string) => Promise<Account | undefined>
+//   getByUserId: (userId: string) => Promise<Account[]>
+//   getByProperty: (property: keyof AccountData, value: unknown) => Promise<Account[]>
+// }
+
+export const computeAccount = (accountData): Account => {
+  console.log('computeAccount', accountData)
+  return poulaillerMobileAccount
 }
 
-export const computeAccount = () => {}
-
 // TODO : complete this function
-export const createAccountGateway = (): AccountGateway => {
+export const createAccountGateway = () /* : AccountGateway */ => {
   const accountAdapter = adapters.accountAdapter
 
   const getById = async (accountId: string): Promise<Account | undefined> => {
-    const account = await accountAdapter.getById(accountId)
-    return !account ? undefined : computeAccount(account)
+    const accountData /* : AccountData | undefined */ = await accountAdapter.getById(accountId)
+    const account /* : Account | undefined */ = accountData
+      ? computeAccount(accountData)
+      : undefined
+    return account
   }
   const getByUserId = async (userId: string): Promise<Account[]> =>
     ((await accountAdapter.getByUserId(userId)) ?? []).map(computeAccount)

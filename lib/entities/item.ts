@@ -1,6 +1,7 @@
+import type { Entity } from '.'
 import type { Unit } from './unit'
 
-export interface ItemData {
+export interface ItemData extends Entity {
   id: string
   orderId: string
   name: string

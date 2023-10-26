@@ -1,4 +1,6 @@
-export interface GroupingAccountData {
+import type { Entity } from '.'
+
+export interface GroupingAccountData extends Entity {
   id: string // this is: groupingIdMemberId, only used for json-server.
   groupingId: string
   accountId: string

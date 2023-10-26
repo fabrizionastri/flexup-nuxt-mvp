@@ -1,4 +1,6 @@
-export interface GroupingData {
+import type { Entity } from '.'
+
+export interface GroupingData extends Entity {
   id: string
   name: string
   representativeAccountId: string

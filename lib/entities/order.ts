@@ -1,5 +1,6 @@
 import type { Item } from 'entities/item'
 import type { Tranche } from './tranche'
+import type { Entity } from '.'
 
 /* Questions:
 - should we store the compute functions in the gateway, entity, use case or utils ?
@@ -18,7 +19,7 @@ export type OrderDateType = 'confirmation' | 'deliveryStart' | 'deliveryFinish'
 export type OrderDate = { orderDateType: OrderDateType; date: Date }
 
 // export interface OrderData {
-export interface Order {
+export interface Order extends Entity {
   id: string
   clientAccountId: string
   supplierAccountId: string

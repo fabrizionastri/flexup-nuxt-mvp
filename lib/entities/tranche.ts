@@ -1,6 +1,7 @@
+import type { Entity } from '.'
 import type { PaymentTerms } from './paymentTerms'
 
-export interface TrancheData {
+export interface TrancheData extends Entity {
   id: string // 0, 1, 2, 3 ...
   orderId: string // uuid
   portion: number // -1 <= portion <= 1
