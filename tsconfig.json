@@ -14,12 +14,12 @@
       "@/*": ["./*"],
       "app/*": ["./app/*"],
       "api/*": ["./api/*", "./api"],
-      "entities/*": ["./api/entities/*", "./api/entities"],
       "usecases/*": ["./api/usecases/*", "./api/usecases"],
       "gateways/*": ["./api/gateways/*", "./api/gateways"],
       "adapters/*": ["./api/adapters/*", "./api/adapters"],
       "lib/*": ["./lib/*", "./lib"],
       "utils/*": ["./lib/utils/*", "./lib/utils"],
+      "entities/*": ["./lib/entities/*", "./lib/entities"],
       "mock/*": ["./mock/*", "./mock"]
     },
     "types": ["vitest/globals"]

@@ -1,5 +1,5 @@
 import { individualAdapter } from 'adapters/database/generic/individual'
-import type { Individual, IndividualData } from '../entities/individual'
+import type { Individual, IndividualData } from 'entities/individual'
 
 export const individualGateway = {
   getById: async (id) => {

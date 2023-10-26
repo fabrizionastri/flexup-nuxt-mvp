@@ -1,5 +1,5 @@
 import adapters from 'adapters/database'
-import type { Account, AccountData } from '../entities'
+import type { Account, AccountData } from 'entities'
 
 export interface AccountGateway {
   getById: (accountId: string) => Promise<Account | undefined>
