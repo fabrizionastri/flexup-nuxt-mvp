@@ -1,12 +1,12 @@
-export const Priorities = ['firm', 'preferred', 'flex', 'superflex', 'credit', 'token'] as const
+export const priorities = ['firm', 'preferred', 'flex', 'superflex', 'credit', 'token'] as const
 
-export type Priority = (typeof Priorities)[number]
+export type Priority = (typeof priorities)[number]
 
-export const MonthlyPriorities = ['firm', 'preferred', 'flex', 'superflex']
+export const monthlyPriorities = ['firm', 'preferred', 'flex', 'superflex']
 
-export const AnnualPriorities = ['credit', 'token']
+export const annualPriorities = ['credit', 'token']
 
-export const MainPriorityRiskFactors = {
+export const mainPriorityRiskFactors = {
   firm: 0,
   preferred: 0.2,
   flex: 0.4,
@@ -15,7 +15,7 @@ export const MainPriorityRiskFactors = {
   token: 1
 } as const
 
-export const MainStartRiskFactors = {
+export const mainStartRiskFactors = {
   notApplicable: 1,
   deliveryFinish: 1,
   deliveryMiddle: 0.9,
@@ -23,26 +23,26 @@ export const MainStartRiskFactors = {
   confirmation: 0.7
 } as const
 
-export type MainStart = keyof typeof MainStartRiskFactors
+export type MainStart = keyof typeof mainStartRiskFactors
 
-export const ResiduePriorityRiskFactors = {
+export const residuePriorityRiskFactors = {
   credit: 1,
   superflex: 0.9,
   flex: 0.8,
   preferred: 0.7
 } as const
 
-export type ResiduePriority = keyof typeof ResiduePriorityRiskFactors
+export type ResiduePriority = keyof typeof residuePriorityRiskFactors
 
-export const ResiduePeriodRiskFactors = {
+export const residuePeriodRiskFactors = {
   year: 1,
   quarter: 0.9,
   month: 0.8
 } as const
 
-export type ResiduePeriod = keyof typeof ResiduePeriodRiskFactors
+export type ResiduePeriod = keyof typeof residuePeriodRiskFactors
 
-export const InterestStartRiskFactors = {
+export const interestStartRiskFactors = {
   deferral: 1,
   deliveryFinish: 1,
   deliveryMiddle: 0.95,
@@ -50,22 +50,22 @@ export const InterestStartRiskFactors = {
   confirmation: 0.85
 } as const
 
-export const PeriodLengths = {
+export const periodLengths = {
   day: 1,
   month: 30.4375,
   quarter: 91.3125,
   year: 365.25
 } as const
 
-export type Period = keyof typeof PeriodLengths
+export type Period = keyof typeof periodLengths
 
-export const AdjustmentLengths = {
+export const adjustmentLengths = {
   BOP: -0.5,
   EOP: 0.5,
   none: 0
 } as const
 
-export type Adjustment = keyof typeof AdjustmentLengths
+export type Adjustment = keyof typeof adjustmentLengths
 
 export type MainPaymentTerms = {
   priority: Priority
@@ -80,29 +80,29 @@ export type ResiduePaymentTerms = {
   period?: ResiduePeriod
 }
 
-export type RelativePriority = Priority | 'sameAsMain' | undefined
+export type relativePriority = Priority | 'sameAsMain' | undefined
 
-export type InterestStart = keyof typeof InterestStartRiskFactors
+export type InterestStart = keyof typeof interestStartRiskFactors
 
-export const InterestPeriodRiskFactors = {
+export const interestPeriodRiskFactors = {
   sameAsMain: 1,
-  ...ResiduePeriodRiskFactors
+  ...residuePeriodRiskFactors
 } as const
 
-export type InterestPeriod = keyof typeof InterestPeriodRiskFactors
+export type InterestPeriod = keyof typeof interestPeriodRiskFactors
 
 export type InterestPaymentTerms = {
   rate: number
-  priority: RelativePriority
+  priority: relativePriority
   start: InterestStart
   period?: InterestPeriod
 }
 
-export const RateRiskHurdle = 0.15
+export const rateRiskHurdle = 0.15
 
-export const NoProjectRequestBuybackRiskFactor = 0.75
+export const noProjectRequestBuybackRiskFactor = 0.75
 
-export const InterestRateRiskHurdle = 0.15
+export const interestRateRiskHurdle = 0.15
 
 export type PaymentTerms = {
   main: MainPaymentTerms

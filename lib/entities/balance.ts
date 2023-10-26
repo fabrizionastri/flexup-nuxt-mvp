@@ -11,7 +11,7 @@ export type BalanceInstances = Array<BalanceInstance>
 
 export type Balances = { [key in ReserveName]?: number }
 
-export const ZeroBalances: Balances = {
+export const zeroBalances: Balances = {
   liquidity: 0,
   flex: 0,
   base: 0,

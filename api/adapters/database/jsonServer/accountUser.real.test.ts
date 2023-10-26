@@ -1,5 +1,19 @@
-import { accountUserAdapter } from './accountUser'
+/* NOTE : we have created a generic accountUserAdapter, so no need to create one
+specifically for jsonServer. This here is just a test to check that the generic
+methods work as expected.
+*/
+
 import * as accountUser from 'mock/inMemory/accountUser'
+
+import type { AccountUserData } from 'lib/entities'
+import type { AccountUserAdapter } from '../interfaces'
+import * as adapterMethods from './methods'
+
+export const accountUserAdapter: AccountUserAdapter = {
+  getById: adapterMethods.createGetById<AccountUserData>('accountUser'),
+  getByUserId: adapterMethods.createGetBySelectedProperty('accountUser', 'userId'),
+  getByProperty: adapterMethods.createGetByProperty('accountUser')
+}
 
 describe('-> accountUser', () => {
   describe('getById', () => {

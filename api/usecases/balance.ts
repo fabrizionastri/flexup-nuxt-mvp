@@ -1,6 +1,7 @@
 import type { ReserveName } from 'entities/reserve'
 import { getNumberForKey, isValidNumber } from 'usecases/utils'
-import type { Balances, ZeroBalances } from 'entities/balance'
+import type { Balances } from 'entities/balance'
+import { zeroBalances } from 'entities/balance'
 
 export const sumBalances = (reserveBalance: Balances): number => {
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
@@ -32,5 +33,5 @@ export const sumSelectedBalances = (
 }
 
 export const setMissingBalancesToZero = (someBalances: Balances): Balances => {
-  return Object.assign({ ...ZeroBalances }, someBalances)
+  return Object.assign({ ...zeroBalances }, someBalances)
 }

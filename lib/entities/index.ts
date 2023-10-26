@@ -1,4 +1,5 @@
 export * from './account'
+export * from './AccountData'
 export * from './accountUser'
 export * from './allocation'
 export * from './balance'

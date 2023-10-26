@@ -1,3 +1,4 @@
+export * from './accountUser'
 export * from './generic'
 export * from './item'
 export * from './myAxios'

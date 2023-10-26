@@ -14,28 +14,22 @@ export const computeAccount = (accountData): Account => {
 }
 
 // TODO : complete this function
-export const createAccountGateway = () /* : AccountGateway */ => {
-  const accountAdapter = adapters.accountAdapter
-
-  const getById = async (accountId: string): Promise<Account | undefined> => {
-    const accountData /* : AccountData | undefined */ = await accountAdapter.getById(accountId)
-    const account /* : Account | undefined */ = accountData
-      ? computeAccount(accountData)
-      : undefined
-    return account
-  }
-  const getByUserId = async (userId: string): Promise<Account[]> =>
-    ((await accountAdapter.getByUserId(userId)) ?? []).map(computeAccount)
+export const createAccountGateway = (userId: string) /* : AccountGateway */ => ({
+  getById: async (accountId: string): Promise<Account | undefined> => {
+    /* Algorithm
+    - check if there is userId-accountId pair in accountUser table (with accountUser adapter)
+    - if not, return undefined, else continue
+    - get accountData from account table (with account adapter)
+    - compute account from accountData (with computeAccount function)
+    */
+    if (!(await adapters.accountUserAdapter.isUserMemberOfAccount(userId, accountId)))
+      return undefined
+    return await adapters.accountAdapter.getById(accountId).then(computeAccount)
+  },
+  getAll: async (): Promise<Account[]> =>
+    ((await adapters.accountAdapter.getByUserId(userId)) ?? []).map(computeAccount),
 
   // ToDo : peut-on faire une recherche sur des propriétés calculées ? Il faudrait calculer tous les accounts avant de faire la recherche ...
-  const getByProperty = async (property: keyof AccountData, value: unknown): Promise<Account[]> =>
-    ((await accountAdapter.getByProperty(property, value)) ?? []).map(computeAccount)
-
-  return {
-    getById,
-    getByUserId,
-    getByProperty
-  }
-}
-
-export const accountGateway = createAccountGateway()
+  getByProperty: async (property: keyof AccountData, value: unknown): Promise<Account[]> =>
+    ((await adapters.accountAdapter.getByProperty(property, value)) ?? []).map(computeAccount)
+})

@@ -1,10 +1,10 @@
-import { accountGateway } from '.'
+import { createAccountGateway } from './account'
 
-describe.todo('accountGateway.test.ts', () => {
-  // it('should return a gateway for a given userId', () => {
-  //   const gateway = accountGateway()
-  //   expect(gateway).toBeDefined()
-  // })
+describe.todo('accountGateway', () => {
+  it('should return a gateway for a given userId', () => {
+    const accountGateway = createAccountGateway('totoUser')
+    expect(accountGateway).toBeDefined()
+  })
   it('should be true', () => {
     const result = 1
     const expected = 1

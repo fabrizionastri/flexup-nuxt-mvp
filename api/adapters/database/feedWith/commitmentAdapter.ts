@@ -1,6 +1,6 @@
 import { getCutoffDate } from 'usecases/resolution'
 import type { Commitment } from 'entities/commitment'
-import type { MonthlyPriorities, AnnualPriorities } from 'entities/paymentTerms'
+import { monthlyPriorities, annualPriorities } from 'entities/paymentTerms'
 
 export class CommitmentAdapter {
   private _commitments: Commitment[]
@@ -21,7 +21,7 @@ export class CommitmentAdapter {
         commitment.dueDate &&
         commitment.dueDate <= cutoffDate &&
         commitment.priority &&
-        MonthlyPriorities.includes(commitment.priority) &&
+        monthlyPriorities.includes(commitment.priority) &&
         commitment.status === 'active' &&
         commitment.activeDate &&
         commitment.activeDate <= resolutionDate
@@ -34,7 +34,7 @@ export class CommitmentAdapter {
       return (
         commitment.payorId === accountId &&
         commitment.priority &&
-        AnnualPriorities.includes(commitment.priority) &&
+        annualPriorities.includes(commitment.priority) &&
         commitment.status === 'active' &&
         commitment.activeDate &&
         commitment.activeDate <= resolutionDate

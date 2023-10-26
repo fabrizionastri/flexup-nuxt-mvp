@@ -24,11 +24,6 @@ export interface OrderAdapter {
   getById: (orderId: string) => Promise<Order | undefined>
   getByProperty: (property: keyof Order, value: unknown) => Promise<Order[]>
 }
-export interface AccountUserAdapter {
-  getById: (id: string) => Promise<AccountUserData[]> // results will always be filtered by accountId (client or supplier), but this accountId is provided in the factory function which creates the adapter, not as a parameter of the getAll method
-  getByUserId: (userId: string) => Promise<AccountUserData[]>
-  getByProperty: (property: keyof AccountUserData, value: unknown) => Promise<AccountUserData[]>
-}
 
 export interface TrancheAdapter {
   // getById: (id: string, orderId: string) => Promise<TrancheData | undefined>

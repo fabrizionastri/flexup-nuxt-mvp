@@ -1,9 +1,11 @@
 import type { AccountUserData } from 'lib/entities'
-import type { AccountUserAdapter } from '../interfaces'
-import * as adapterMethods from './methods'
+import axios from './myAxios'
 
-export const accountUserAdapter: AccountUserAdapter = {
-  getById: adapterMethods.createGetById<AccountUserData>('accountUser'),
-  getByUserId: adapterMethods.createGetBySelectedProperty('accountUser', 'userId'),
-  getByProperty: adapterMethods.createGetByProperty('accountUser')
+export const isUserMemberOfAccount = async (accountId, userId): Promise<boolean> => {
+  const entity = 'accountUser'
+  accountId = encodeURIComponent(accountId)
+  userId = encodeURIComponent(userId as string)
+  const result =
+    (await axios.get<AccountUserData[]>(`/${entity}?accountId=${accountId}&userId=${userId}`)) ?? []
+  return result ? true : false
 }
