@@ -45,7 +45,7 @@ export const inMemory = {
   organization: organizationDatas,
   password: passwordDatas,
   tranche: trancheDatas,
-  user: userDatas,
+  user: userDatas
 }
 
 export default inMemory
