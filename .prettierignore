@@ -4,6 +4,8 @@ _docs
 build
 coverage
 node_modules
+pnpm-lock.yaml
+db
 
 # Ignore all HTML files:
 **/*.html

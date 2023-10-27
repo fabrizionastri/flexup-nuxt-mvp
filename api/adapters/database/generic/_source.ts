@@ -7,7 +7,7 @@ config()
 const dataSource: string = process.env.STORAGE_TYPE || 'inMemory'
 // const dataSource: string = 'jsonServer'
 
-console.log('Adapter method source:', dataSource)
+// console.log('Adapter method source:', dataSource)
 
 let adapterMethods: { [key: string]: any }
 if (dataSource === 'inMemory') adapterMethods = inMemoryMethods

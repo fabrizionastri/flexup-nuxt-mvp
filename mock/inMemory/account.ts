@@ -40,7 +40,7 @@ export const flexupAccountData: AccountData = {
 }
 
 export const pizzaDOroAccountData: AccountData = {
-  id: 'pizzaDOro',
+  id: 'pizzaDOroAccount',
   name: "Pizza d'Oro",
   type: 'project',
   status: 'active',
@@ -57,7 +57,7 @@ export const pizzaDOroTakeAwayAccountData: AccountData = {
   name: "Pizza d'Oro TakeAway",
   type: 'project',
   status: 'pending',
-  ownerId: 'pizzaDOro',
+  ownerId: 'pizzaDOroAccount',
   currencyId: 'EUR',
   countryId: 'FRA',
   creationDate: new Date('2020-01-01'),
@@ -127,7 +127,6 @@ export const fabrizioAccount: Account = {
 
 export const cosysAccount: Account = {
   ...cosysAccountData,
-  type: 'business',
   symbol: '🏢',
   ownerName: 'Cosys',
   ownerType: 'organization',
@@ -150,7 +149,6 @@ export const flexupAccount: Account = {
 
 export const pizzaDOroAccount: Account = {
   ...pizzaDOroAccountData,
-  type: 'project',
   symbol: '🚀',
   ownerName: 'Toto La Riflette',
   ownerType: 'individual',
@@ -162,7 +160,6 @@ export const pizzaDOroAccount: Account = {
 
 export const pizzaDOroTakeAwayAccount: Account = {
   ...pizzaDOroTakeAwayAccountData,
-  type: 'project',
   symbol: '🚀',
   ownerName: "Pizza d'Oro",
   ownerType: 'project',
@@ -174,7 +171,6 @@ export const pizzaDOroTakeAwayAccount: Account = {
 
 export const doMazyAccount: Account = {
   ...doMazyAccountData,
-  type: 'shared',
   symbol: '👥',
   ownerName: 'Groupement du Domaine de Mazy',
   ownerType: 'grouping',
@@ -186,13 +182,25 @@ export const doMazyAccount: Account = {
 
 export const poulaillerMobileAccount: Account = {
   ...poulaillerMobileAccountData,
-  type: 'project',
   symbol: '🚀',
   ownerName: 'Groupement du Domaine de Mazy',
   ownerType: 'grouping',
   ownerSymbol: '👥',
   currencyName: 'Euro',
   currencySymbol: '€',
+  myRole: 'guest'
+  // finalOwnerName: 'Groupement du Domaine de Mazy',
+  // finalOwnerLabel: 'Groupement du Domaine de Mazy 👥'
+}
+
+export const agroCoopAccount: Account = {
+  ...agroCoopAccountData,
+  symbol: '🏢',
+  ownerName: 'Coopérative Agricole de la Broye',
+  ownerType: 'organization',
+  ownerSymbol: '🏢',
+  currencyName: 'Swiss Franc',
+  currencySymbol: 'CFH',
   myRole: 'guest'
   // finalOwnerName: 'Groupement du Domaine de Mazy',
   // finalOwnerLabel: 'Groupement du Domaine de Mazy 👥'

@@ -35,7 +35,7 @@
       "avatar": "/images/profiles/flexup.svg"
     },
     {
-      "id": "pizzaDOro",
+      "id": "pizzaDOroAccount",
       "name": "Pizza d'Oro",
       "type": "project",
       "status": "active",
@@ -51,7 +51,7 @@
       "name": "Pizza d'Oro TakeAway",
       "type": "project",
       "status": "pending",
-      "ownerId": "pizzaDOro",
+      "ownerId": "pizzaDOroAccount",
       "currencyId": "EUR",
       "countryId": "FRA",
       "creationDate": "2020-01-01T00:00:00.000Z",

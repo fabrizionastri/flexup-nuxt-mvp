@@ -1,6 +1,6 @@
 import inMemory from 'mock/inMemory'
 import adapterMethods from './_source'
-import type { AccountData } from 'lib/entities'
+// import type { AccountData } from 'lib/entities'
 
 const accounts = inMemory.account
 

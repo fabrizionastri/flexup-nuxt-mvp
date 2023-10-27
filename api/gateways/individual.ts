@@ -2,7 +2,7 @@ import { individualAdapter } from 'adapters/database/generic/individual'
 import type { Individual, IndividualData } from 'entities/individual'
 
 export const individualGateway = {
-  getById: async (id) => {
+  getById: async (id: string): Promise<Individual | undefined> => {
     const data = await individualAdapter.getById(id)
     if (!data) return undefined
     return computeIndividual(data)
