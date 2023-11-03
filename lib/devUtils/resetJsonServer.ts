@@ -1,5 +1,5 @@
 import fs from 'fs'
-import inMemory from './inMemory'
+import inMemory from '../../mock/inMemory'
 
 export const resetJsonServer = () => {
   const json = JSON.stringify(inMemory, null, 2)
@@ -9,7 +9,7 @@ export const resetJsonServer = () => {
       console.error(err)
       return
     }
-    console.log('File created successfully')
+    console.log('mock/json-server/index.json file created successfully from inMemory data')
   })
 }
 

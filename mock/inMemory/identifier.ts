@@ -37,35 +37,3 @@ export const identifierDatas: IdentifierData[] = [
   ...fabrizioIdentifierDatas,
   ...totoIdentifierDatas
 ]
-
-// console.log('identifierDatas', identifierDatas)
-// Computed - NOT RELEVELANT FOR NOW
-//
-// export const fabrizioUsernameIdentifier: Identifier = {
-//   ...fabrizioUsernameIdentifierData,
-
-// }
-//
-// export const fabrizioEmailIdentifier: Identifier = {
-//   ...fabrizioEmailIdentifierData,
-
-// }
-//
-// export const fabrizioPhoneIdentifier: Identifier = {
-//   ...fabrizioPhoneIdentifierData,
-
-// }
-//
-// export const totoUsernameIdentifier: Identifier = {
-//   ...totoUsernameIdentifierData,
-// }
-//
-// export const fabrizioIdentifiers: Identifier[] = [
-//   fabrizioUsernameIdentifier,
-//   fabrizioEmailIdentifier,
-//   fabrizioPhoneIdentifier
-// ]
-//
-// export const totoIdentifiers: Identifier[] = [totoUsernameIdentifier]
-//
-// export const identifiers: Identifier[] = [...fabrizioIdentifiers, ...totoIdentifiers]

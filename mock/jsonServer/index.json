@@ -120,7 +120,6 @@
       "role": "guest"
     }
   ],
-  "allocation": [],
   "country": [
     {
       "id": "FRA",
@@ -190,7 +189,7 @@
     {
       "id": "doMazyGroupingTotoAccount",
       "groupingId": "doMazyGrouping",
-      "accountId": "agroCoopAccount",
+      "accountId": "totoAccount",
       "role": "member"
     },
     {
@@ -198,35 +197,47 @@
       "groupingId": "doMazyGrouping",
       "accountId": "flexUpAccount",
       "role": "member"
+    },
+    {
+      "id": "plopGroupingFlexUpAccount",
+      "groupingId": "plopGrouping",
+      "accountId": "totoAccount",
+      "role": "admin"
     }
   ],
   "identifier": [
     {
-      "id": "u:fabrizioUsername",
+      "id": "fabriziousername",
+      "type": "username",
       "userId": "fabrizioUser"
     },
     {
-      "id": "e:fabrizio@gmail.com",
+      "id": "fabrizio@gmail.com",
+      "type": "email",
       "userId": "fabrizioUser"
     },
     {
-      "id": "p:+33612345678",
+      "id": "+33612345678",
+      "type": "phone",
       "userId": "fabrizioUser"
     },
     {
-      "id": "u:totoUsername",
+      "id": "totousername",
+      "type": "username",
       "userId": "totoUser"
     }
   ],
   "individual": [
     {
       "id": "fabrizioIndividual",
+      "userId": "fabrizioUser",
       "firstName": "Fabrizio",
       "lastName": "Nastri",
       "dateOfBirth": "1975-01-01T00:00:00.000Z"
     },
     {
       "id": "totoIndividual",
+      "userId": "totoUser",
       "firstName": "Toto",
       "lastName": "La Riflette",
       "dateOfBirth": "1985-01-01T00:00:00.000Z"
@@ -352,6 +363,16 @@
       "terminationDate": "2108-12-23T00:00:00.000Z"
     }
   ],
+  "password": [
+    {
+      "id": "fabrizioUser",
+      "password": "plop"
+    },
+    {
+      "id": "totoUser",
+      "password": "plop"
+    }
+  ],
   "tranche": [
     {
       "id": "commercialOrderPreferred50Data",
@@ -463,31 +484,20 @@
   "user": [
     {
       "id": "fabrizioUser",
-      "password": "plop",
       "creationDate": "2019-01-01T00:00:00.000Z",
       "status": "active",
-      "lastLoginDate": "2019-01-01T00:00:00.000Z"
+      "lastLoginDate": "2023-10-23T00:00:00.000Z"
     },
     {
       "id": "totoUser",
-      "password": "plop",
       "creationDate": "2019-01-01T00:00:00.000Z",
       "status": "active",
       "lastLoginDate": "2019-01-01T00:00:00.000Z"
     },
     {
       "id": "pendingUser",
-      "password": "plop",
       "creationDate": "2019-01-01T00:00:00.000Z",
       "status": "pending"
-    }
-  ],
-  "password": [
-    {
-      "id": "fabrizioUser:plop"
-    },
-    {
-      "id": "totoUser:toto"
     }
   ]
 }

@@ -17,11 +17,11 @@ files.forEach((file) => {
   // check if the file contains an export object named ${moduleName}Datas
   const fileContent = fs.readFileSync(path.join(targetDir, file), 'utf8')
   if (!fileContent.includes(`export const ${moduleName}Datas`)) {
-    console.error(`Not entity data to export from: ${file}`)
+    console.error(`Not valid entry found for:  ${file}`)
     // skip this file
     return // equivalent to continue
   }
-
+  console.error(`Created new data entry for: ${file}`)
   exportStatements += `export * from './${moduleName}'\n`
   importStatements += `import { ${moduleName}Datas } from './${moduleName}'\n`
   inMemoryObjectEntries += `  ${moduleName}: ${moduleName}Datas,\n`

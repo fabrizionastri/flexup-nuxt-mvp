@@ -20,8 +20,8 @@
     "mock": "json-server --port 3057 --watch ./mock/jsonServer/index.json",
     "generate-index": "ts-node lib/devUtils/generateIndex.ts",
     "generate-inMemory-index": "ts-node lib/devUtils/generateInMemoryIndex.ts",
-    "reset-json-server": "ts-node mock/resetJsonServer.ts",
-    "rmock": "pnpm generate-index && pnpm generate-inMemory-index && pnpm mock",
+    "reset-json-server": "ts-node lib/devUtils/resetJsonServer.ts",
+    "rmock": "pnpm generate-index && pnpm generate-inMemory-index && pnpm reset-json-server && pnpm mock",
     "start": "concurrently \"npm run mock\" \"npm run nodemon\"  \"npm run dev\" \"npm run test\" ",
     "hono": "nodemon"
   },
