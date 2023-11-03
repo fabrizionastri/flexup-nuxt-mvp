@@ -6,6 +6,6 @@ import type { User } from 'entities/user'
 import { userGateway } from '../gateways'
 
 export const login = async (identifier: string, password: string): Promise<User> =>
-  userGateway.login(identifier.toLowerCase(), password)
+  userGateway.login(identifier, password)
 
 // export const login = userGateway.login
