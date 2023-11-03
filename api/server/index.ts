@@ -13,8 +13,25 @@ const API_PORT = process.env.API_PORT || '8787'
 const DB_URL = process.env.DB_URL || 'http://127.0.0.1:3057'
 
 import axios from 'axios'
+import { CustomError } from '../error'
 const app = new Hono()
 app.use('*', cors())
+
+// Error handling middleware
+app.use('*', async (c, next) => {
+  try {
+    await next()
+  } catch (err) {
+    if (err instanceof CustomError) {
+      console.error(`Error ${err.statusCode}: ${err.message}`)
+      return c.json({ error: err.message }, err.statusCode)
+    } else {
+      // Handle other types of errors or pass them to some other error handler
+      console.error('Unhandled error:', err)
+      return c.json({ error: 'Internal Server Error' }, 500)
+    }
+  }
+})
 
 // ROUTES
 app.route('/account', account)

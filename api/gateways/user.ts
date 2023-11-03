@@ -2,6 +2,7 @@ import { individualAdapter } from 'adapters/database/generic/individual'
 import { userAdapter } from 'adapters/database/generic/user'
 import type { UserData, User } from 'entities/user'
 import { identifierAdapter, passwordAdapter } from '../adapters/database/inMemory'
+import { CustomError } from '../error'
 
 export const computeUser = async (userData: UserData): Promise<User> => {
   const individualData = await individualAdapter.getByUserId(userData.id)
@@ -29,7 +30,7 @@ export const createUserGateway = () => {
       await passwordAdapter.checkPassword(userId, password)
       user = await getById(userId)
     } catch (error: any) {
-      throw new Error(error.message)
+      throw new CustomError(error.message, 402)
     }
     return user
   }

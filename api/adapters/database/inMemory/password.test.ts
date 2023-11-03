@@ -15,7 +15,7 @@ describe('password adapter', () => {
     })
     it('should throw an error for invalid userID', () => {
       expect(() => passwordAdapter.checkPassword('invalidUserId', 'plop')).toThrowError(
-        'No password has been defined for this user'
+        'Invalid user'
       )
     })
   })

@@ -4,7 +4,7 @@ import { passwordDatas } from 'mock/inMemory'
 export const passwordAdapter = {
   checkPassword: (userId: string, password: string): boolean => {
     const pwd = passwordDatas.find((pwd) => pwd.id === userId)
-    if (!pwd) throw new Error('No password has been defined for this user')
+    if (!pwd) throw new Error('Invalid user')
     if (pwd.password !== password) throw new Error('Invalid password')
     return true
   }
