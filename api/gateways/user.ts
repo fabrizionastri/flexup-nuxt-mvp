@@ -30,7 +30,24 @@ export const createUserGateway = () => {
       await passwordAdapter.checkPassword(userId, password)
       user = await getById(userId)
     } catch (error: any) {
-      throw new CustomError(error.message, 402)
+      if (error instanceof Error) {
+        console.error(
+          'CustomError created in userGateway for:',
+          error.message,
+          ' with statusCode:',
+          402
+        )
+        throw new CustomError(error.message, 402)
+      } else {
+        console.error(
+          'Unknown created in userGateway from:',
+          error.message,
+          ' with statusCode:',
+          505
+        )
+        // Handle non-Error thrown values if necessary
+        throw new CustomError('Unknown error', 505)
+      }
     }
     return user
   }

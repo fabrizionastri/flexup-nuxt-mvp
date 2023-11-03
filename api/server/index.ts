@@ -18,18 +18,14 @@ const app = new Hono()
 app.use('*', cors())
 
 // Error handling middleware
-app.use('*', async (c, next) => {
-  try {
-    await next()
-  } catch (err) {
-    if (err instanceof CustomError) {
-      console.error(`Error ${err.statusCode}: ${err.message}`)
-      return c.json({ error: err.message }, err.statusCode)
-    } else {
-      // Handle other types of errors or pass them to some other error handler
-      console.error('Unhandled error:', err)
-      return c.json({ error: 'Internal Server Error' }, 500)
-    }
+app.onError((err, c) => {
+  if (err instanceof CustomError) {
+    console.error(`► api/server/index.ts → Error ${err.statusCode}: ${err.message}`)
+    return c.json({ error: err.message }, err.statusCode)
+  } else {
+    // Handle other types of errors or pass them to some other error handler
+    console.error('► api/server/index.ts → Unhandled error:', err)
+    return c.json({ error: 'Internal Server Error' }, 500)
   }
 })
 
@@ -63,7 +59,7 @@ app.get('/resources/:resource', async (c) => {
   if (property && value) {
     url = `${url}?${property}=${value}`
   }
-  console.log('url', url)
+  // console.log('url', url)
   return c.json((await axios.get(url)).data)
   // return c.text(`url = ${url}`)
 })
