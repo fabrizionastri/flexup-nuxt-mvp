@@ -1,12 +1,11 @@
 import { passwordDatas } from 'mock/inMemory'
 
+// TODO - TOCHECK : we may convert this back to a Promise function, and adjust the tests accordingly
 export const passwordAdapter = {
-  checkPassword: (userId: string, password: string): Promise<boolean> => {
-    if (!userId) return Promise.reject(new Error('Missing user id'))
-    if (!userId || !password) return Promise.reject(new Error('Missing password'))
+  checkPassword: (userId: string, password: string): boolean => {
     const pwd = passwordDatas.find((pwd) => pwd.id === userId)
-    if (!pwd) return Promise.reject(new Error('Invalid user id'))
-    if (pwd.password !== password) return Promise.reject(new Error('Invalid password'))
-    return Promise.resolve(true)
+    if (!pwd) throw new Error('No password has been defined for this user')
+    if (pwd.password !== password) throw new Error('Invalid password')
+    return true
   }
 }

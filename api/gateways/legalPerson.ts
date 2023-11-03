@@ -1,6 +1,6 @@
 import { individualGateway } from '.'
 import { organizationAdapter } from '../adapters/database/generic'
-import type { LegalPerson } from 'entities'
+import type { LegalPerson } from 'lib/entities'
 
 export const computeLegalPerson = async (id: string): LegalPerson => {
   if (id[1] !== ':' || (id[0] !== 'o' && id[0] !== 'i'))

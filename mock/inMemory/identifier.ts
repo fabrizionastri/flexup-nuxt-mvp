@@ -2,7 +2,7 @@ import type { IdentifierData /* Identifier */ } from 'entities/identifier'
 
 // Raw data
 export const fabrizioUsernameIdentifierData: IdentifierData = {
-  id: 'fabrizioUsername',
+  id: 'fabriziousername',
   type: 'username',
   userId: 'fabrizioUser'
 }
@@ -20,7 +20,7 @@ export const fabrizioPhoneIdentifierData: IdentifierData = {
 }
 
 export const totoUsernameIdentifierData: IdentifierData = {
-  id: 'totoUsername',
+  id: 'totousername',
   type: 'username',
   userId: 'totoUser'
 }
@@ -38,6 +38,7 @@ export const identifierDatas: IdentifierData[] = [
   ...totoIdentifierDatas
 ]
 
+// console.log('identifierDatas', identifierDatas)
 // Computed - NOT RELEVELANT FOR NOW
 //
 // export const fabrizioUsernameIdentifier: Identifier = {

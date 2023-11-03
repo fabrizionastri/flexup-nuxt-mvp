@@ -1,13 +1,11 @@
 import { individualAdapter } from 'adapters/database/generic/individual'
 import { userAdapter } from 'adapters/database/generic/user'
 import type { UserData, User } from 'entities/user'
+import { identifierAdapter, passwordAdapter } from '../adapters/database/inMemory'
 
-export const computeUser = async (userData: UserData): Promise<User | undefined> => {
+export const computeUser = async (userData: UserData): Promise<User> => {
   const individualData = await individualAdapter.getByUserId(userData.id)
-  if (individualData === undefined) {
-    // console.log('no individual data found for user with Id:', userData.id) // // TEMPORARY - commented out for tests
-    return undefined
-  }
+  if (!individualData) throw new Error('Individual not found')
   const user = {
     ...userData,
     firstName: individualData.firstName,
@@ -18,18 +16,27 @@ export const computeUser = async (userData: UserData): Promise<User | undefined>
 }
 
 export const createUserGateway = () => {
-  const getById = async (id: string): Promise<User | undefined> => {
-    const userData = await userAdapter.getById(id)
-    if (userData === undefined) {
-      console.log('no user data found for user with Id:', id)
-      return undefined
+  const getById = async (userId: string): Promise<User> => {
+    const userData = await userAdapter.getById(userId)
+    if (!userData) throw new Error('User not found')
+    return computeUser(userData)
+  }
+
+  const login = async (identifier: string, password: string): Promise<User> => {
+    let user: User
+    try {
+      const userId = await identifierAdapter.getUserId(identifier.toLowerCase())
+      await passwordAdapter.checkPassword(userId, password)
+      user = await getById(userId)
+    } catch (error: any) {
+      throw new Error(error.message)
     }
-    const user = await computeUser(userData)
     return user
   }
 
   return {
-    getById
+    getById,
+    login
   }
 }
 
