@@ -10,8 +10,7 @@ describe('userGateway', () => {
     })
     it('should return undefined it no valid userID is provided', async () => {
       const user = { ...users.fabrizioUserData, id: 'plop' }
-      const result = await computeUser(user)
-      expect(result).toBeUndefined()
+      await expect(computeUser(user)).rejects.toThrowError('Individual not found')
     })
   })
 })
