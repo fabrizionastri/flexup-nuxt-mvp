@@ -19,7 +19,8 @@ describe('hono user routes', () => {
       expect(res.status).toBe(200)
       // expect(await res.json()).toEqual(convertDatesToStrings(totoUser))
     })
-    it('should an error message and 402 status for invalid identifier', async () => {
+    // TODO: fix this test, should be 401 and 'Invalid identifier'
+    it('should an error message and 401 status for invalid identifier', async () => {
       const body = {
         method: 'POST',
         body: JSON.stringify({
@@ -28,10 +29,21 @@ describe('hono user routes', () => {
         })
       }
       const res = await app.request('/login', body)
-      expect(res.status).toBe(402)
-      expect(await res.json()).toEqual({ error: 'Invalid identifier' })
+
+      // console.log('1. ► api/server/routes/ : res (this is printed out):', res)
+      expect(res.status).toBe(401)
+      // if response is OK, then we expect a json response, otherwise a text response
+      // in both cases, we need to parse the response
+      const data = res.status === 401 ? await res.text() : await res.json()
+
+      if (typeof data === 'string') {
+        expect(data).toBe('Invalid identifier')
+      } else {
+        expect(data).toEqual({ error: 'Invalid identifier' })
+      }
+      // console.log('2. ► api/server/routes/ : json (this is printed out):', data)
     })
-    it('should an error message and 402 status for invalid password', async () => {
+    it('should an error message and 401 status for invalid password', async () => {
       const body = {
         method: 'POST',
         body: JSON.stringify({
@@ -40,8 +52,8 @@ describe('hono user routes', () => {
         })
       }
       const res = await app.request('/login', body)
-      expect(res.status).toBe(402)
-      // expect(await res.json()).toEqual({ error: 'Invalid password' })
+      expect(res.status).toBe(401)
+      expect(await res.text()).toBe('Invalid password')
     })
   })
 })

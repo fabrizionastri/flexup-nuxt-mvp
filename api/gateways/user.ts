@@ -3,6 +3,7 @@ import { userAdapter } from 'adapters/database/generic/user'
 import type { UserData, User } from 'entities/user'
 import { identifierAdapter, passwordAdapter } from '../adapters/database/inMemory'
 import { CustomError } from '../error'
+import { HTTPException } from 'hono/http-exception'
 
 export const computeUser = async (userData: UserData): Promise<User> => {
   const individualData = await individualAdapter.getByUserId(userData.id)
@@ -35,9 +36,9 @@ export const createUserGateway = () => {
           'CustomError created in userGateway for:',
           error.message,
           ' with statusCode:',
-          402
+          401
         )
-        throw new CustomError(error.message, 402)
+        throw new HTTPException(401, { message: error.message })
       } else {
         console.error(
           'Unknown created in userGateway from:',

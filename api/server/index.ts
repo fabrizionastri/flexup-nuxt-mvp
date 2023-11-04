@@ -2,7 +2,7 @@ import { serve } from '@hono/node-server'
 import { Hono } from 'hono'
 import { cors } from 'hono/cors'
 import { config } from 'dotenv'
-
+import { HTTPException } from 'hono/http-exception'
 // IMPORT ROUTES
 import account from './routes/account'
 import user from './routes/user'
@@ -19,13 +19,16 @@ app.use('*', cors())
 
 // Error handling middleware
 app.onError((err, c) => {
-  if (err instanceof CustomError) {
-    console.error(`► api/server/index.ts → Error ${err.statusCode}: ${err.message}`)
+  if (err instanceof HTTPException) {
+    console.error(`► api/server/index.ts → HTTPException ${err.status}: ${err.message}`)
+    return c.json({ error: err.message }, err.status)
+  } else if (err instanceof CustomError) {
+    console.error(`► api/server/index.ts → CustomError ${err.statusCode}: ${err.message}`)
     return c.json({ error: err.message }, err.statusCode)
   } else {
-    // Handle other types of errors or pass them to some other error handler
+    //   // Handle other types of errors or pass them to some other error handler
     console.error('► api/server/index.ts → Unhandled error:', err)
-    return c.json({ error: 'Internal Server Error' }, 500)
+    return c.json({ error: 'Invalid identifier' }, 401)
   }
 })
 

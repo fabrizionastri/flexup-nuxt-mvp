@@ -1,5 +1,5 @@
 import { Hono } from 'hono'
-import { login } from 'api/usecases'
+// import { login } from 'api/usecases'
 import { userGateway } from 'api/gateways/user'
 
 const app = new Hono()

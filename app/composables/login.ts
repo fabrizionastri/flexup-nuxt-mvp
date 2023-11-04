@@ -13,21 +13,11 @@ export const login = async (identifier, password) => {
     })
     // console.log('login.ts - :data', data)
     return convertStringsToDates(data)
-  } catch (error) {
-    // ToDo: reactivate this log during dev ??
-    // TODO: how to I get the errors from the api use case ?
-    console.error('app/composables/login → Login error: Invalid identifier or password')
-    // console.log('app/composables/login → Login error:', error)
-    // throw error
+  } catch (error: any) {
+    // console.error(
+    //   `► app/composables/login → Login error (${error.response.status}): ${error.response.data.error}`
+    // )
+    return error.response.data
+    // throw new Error(error.response.data)
   }
 }
-
-// const res = await fetch(`${process.env.API_URL}/login`, {
-//   method: 'POST',
-//   body: JSON.stringify({
-//     identifier,
-//     password
-//   })
-// })
-// const user = await res.json()
-// return user

@@ -19,9 +19,17 @@
           v-model="password"
         />
         <br />
-        <button type="submit" class="w-24 rounded bg-blue-200 p-2 text-center">Submit</button>
+        <!-- put the button and the error message on the same line -->
+        <div class="flex">
+          <button
+            class="rounded bg-blue-500 px-4 py-2 font-bold text-white hover:bg-blue-700"
+            type="submit"
+          >
+            Login
+          </button>
+          <p class="ml-5 mt-3 text-red-500">{{ errorMsg }}</p>
+        </div>
         <p class="mt-10 text-xs">User : {{ user }}</p>
-        <p class="mt-5 text-xs">Error : {{ errorMsg }}</p>
       </form>
     </div>
   </div>
@@ -34,19 +42,35 @@
   // const user = ref('')
   const errorMsg = ref('')
 
-  const handleLogin = () => {
-    console.log(
-      'app/pages/playground copy.vue - identifier & password:',
-      identifier.value,
-      password.value
-    )
-    login(identifier.value, password.value)
-      .then((res) => {
-        console.log(res)
-        user.value = res
-      })
-      .catch((err) => {
-        console.log(err)
-      })
+  const handleLogin = async () => {
+    const response = await login(identifier.value, password.value)
+    if (response.error) {
+      // Login failed
+      errorMsg.value = response.error
+      user.value = ''
+    } else {
+      // Login succeeded
+      user.value = response
+      errorMsg.value = ''
+    }
+    //     try {
+    //       const response = await login(identifier.value, password.value)
+    //
+    //       // Login succeeded
+    //       user.value = response
+    //       errorMsg.value = ''
+    //     } catch (error) {
+    // Login failed
+    // user.value = ''
+    // if (error.response && error.response.data) {
+    // API error with response data
+    // console.log('app/pages/login.vue - error:', error)
+    // console.log(error)
+    // errorMsg.value = error.response.data
+    // } else {
+    //   // Network error or generic error
+    //   errorMsg.value = 'An error occurred'
+    // }
+    // }
   }
 </script>

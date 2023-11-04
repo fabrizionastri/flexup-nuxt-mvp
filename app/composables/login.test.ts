@@ -11,4 +11,14 @@ describe('app/composable/login', () => {
     const expected = totoUser
     expect(result).toEqual(expected)
   })
+  it('should return an error message user when invalid credentials are provided', async () => {
+    const identifier = identifiers.totoUsernameIdentifierData.id
+    const password = 'invalidPassword'
+    const result = await login(identifier, password)
+    // console.log('app/composables/login.test.ts - result:', result)
+    const expected = {
+      error: 'Invalid password'
+    }
+    expect(result).toEqual(expected)
+  })
 })
