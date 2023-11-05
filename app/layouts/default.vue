@@ -1,8 +1,10 @@
 <template lang="pug">
-div
-  NavBar
-  main
-    slot
+html.h-full.bg-white
+  body.h-full
+    div
+      NavBar
+      main
+        slot
 </template>
 
 <script setup></script>
