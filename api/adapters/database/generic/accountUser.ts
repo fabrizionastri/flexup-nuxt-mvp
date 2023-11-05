@@ -14,7 +14,7 @@ const accountusers = inMemory.accountUser
 // }
 
 export const accountUserAdapter /* : AccountUserAdapter */ = {
-  getById: adapterMethods.createGetById(accountusers),
+  // getById: adapterMethods.createGetById(accountusers),
   getByUserId: adapterMethods.createGetBySelectedProperty(accountusers, 'userId'),
   getByProperty: adapterMethods.createGetByProperty(accountusers),
   isUserMemberOfAccount: adapterMethods.isUserMemberOfAccount

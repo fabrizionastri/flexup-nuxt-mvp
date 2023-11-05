@@ -2,12 +2,6 @@ import { accountUserAdapter } from './accountUser'
 import * as accountUser from 'mock/inMemory/accountUser'
 
 describe('-> accountUser', () => {
-  describe('getById', () => {
-    it('should retrieve account-user by its user Id', async () => {
-      const result = await accountUserAdapter.getById('totoAccountTotoUser')
-      expect(result).toEqual(accountUser.totoAccountTotoUserData)
-    })
-  })
   describe('getByUserId', () => {
     it('should return list of accounts for valid user Id', async () => {
       const result = await accountUserAdapter.getByUserId('totoUser')

@@ -1,11 +1,6 @@
 import { isUserMemberOfAccount } from './accountUser'
 
-describe('accountUser adapter - isUserMemberOfAccount', () => {
-  it('should be true', () => {
-    const result = 1
-    const expected = 1
-    expect(result).toEqual(expected)
-  })
+describe('accountUser in Memory adapter - isUserMemberOfAccount', () => {
   it('should return true for valid userId/accountId pair', async () => {
     const result = await isUserMemberOfAccount('totoUser', 'totoAccount')
     expect(result).toEqual(true)

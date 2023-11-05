@@ -40,5 +40,4 @@ export interface Account extends AccountData {
   ownerSymbol: string
   currencyName: string
   currencySymbol: string
-  myRole: AccountUserRole // TODO: this depends on the active user, so I put 'guest' in the mock, but will modify it in each test.
 }

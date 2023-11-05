@@ -48,7 +48,6 @@ export const computeAccount = async (accountData: AccountData): Promise<Account 
   if (!currency) throw new Error('Invalid currency')
   const country = await adapters.countryAdapter.getById(accountData.countryId)
   if (!country) throw new Error('Invalid country')
-  const myRole = 'guest'
 
   const account: Account = {
     ...accountData,
@@ -57,8 +56,7 @@ export const computeAccount = async (accountData: AccountData): Promise<Account 
     ownerType,
     ownerSymbol,
     currencyName: currency.name,
-    currencySymbol: currency.symbol,
-    myRole
+    currencySymbol: currency.symbol
   }
   // console.log('api/gateways/account - computeAccount - computed data', account)
   return account

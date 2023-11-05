@@ -1,4 +1,4 @@
-import type { Entity } from '.'
+import type { Account, Entity } from '.'
 
 export type AccountUserRole = 'owner' | 'admin' | 'editor' | 'guest'
 
@@ -13,9 +13,4 @@ export interface AccountUserData extends Entity {
   // status?: string
 }
 
-export interface AccountUser extends AccountUserData {
-  accountName: string
-  accountLabel: string
-  userName: string
-  userLabel: string
-}
+export interface AccountUser extends AccountUserData, Account {}

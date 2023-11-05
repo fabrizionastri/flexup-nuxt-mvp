@@ -84,37 +84,37 @@
   ],
   "accountUser": [
     {
-      "id": "fabrizioAccountFabrizioUser",
+      "id": "fabrizioAccount:fabrizioUser",
       "accountId": "fabrizioAccount",
       "userId": "fabrizioUser",
       "role": "owner"
     },
     {
-      "id": "flexupAccountFabrizioUser",
+      "id": "flexupAccount:fabrizioUser",
       "accountId": "flexupAccount",
       "userId": "fabrizioUser",
       "role": "owner"
     },
     {
-      "id": "cosysAccountFabrizioUser",
+      "id": "cosysAccount:fabrizioUser",
       "accountId": "cosysAccount",
       "userId": "fabrizioUser",
       "role": "owner"
     },
     {
-      "id": "flexupAccountTotoUser",
+      "id": "flexupAccount:totoUser",
       "accountId": "flexupAccount",
       "userId": "totoUser",
       "role": "editor"
     },
     {
-      "id": "totoAccountTotoUser",
+      "id": "totoAccount:totoUser",
       "accountId": "totoAccount",
       "userId": "totoUser",
       "role": "owner"
     },
     {
-      "id": "doMazyAccountFabrizioUser",
+      "id": "doMazyAccount:FabrizioUser",
       "accountId": "doMazyAccount",
       "userId": "fabrizioUser",
       "role": "guest"
