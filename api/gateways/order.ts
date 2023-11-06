@@ -1,11 +1,12 @@
 import type { Item } from 'entities/item'
-import adapters from 'adapters/database'
+
 // import { createOrderAdapter } from 'adapters/database'
 import { itemGateway } from '.'
 import { trancheGateway } from '.'
 import type { Order } from 'entities/order'
 import { round6 } from 'utils/round'
 import { sumPropertyStrict } from 'lib/utils/sumPropertyStrict'
+import { createOrderAdapter } from '../adapters/database'
 
 export interface OrderGateway {
   getAll: () => Promise<Order[]>
@@ -68,7 +69,7 @@ export const computeOrder = async (order: Order): Promise<Order> => {
 }
 
 export const createOrderGateway = (accountId: string): OrderGateway => {
-  const orderAdapter = adapters.createOrderAdapter(accountId)
+  const orderAdapter = createOrderAdapter(accountId)
   // const itemGateway = adapters.createItemGateway(createItemAdapter())
   // const trancheAdapter = adapters.createTrancheAdapter()
 

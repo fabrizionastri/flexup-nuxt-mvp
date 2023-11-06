@@ -1,8 +1,7 @@
-import { BalanceAdapter } from 'adapters/database/feedWith/balanceAdapter'
 import type { Balances } from 'entities/balance'
 
 export const balanceGateway =
-  (balanceAdapter: BalanceAdapter) =>
+  (balanceAdapter) =>
   (accountId: string, referenceDate: Date): Balances => {
     if (!balanceAdapter) throw new Error('BalanceAdapter is not defined')
     const res = balanceAdapter.getForAccountAndDate(accountId, referenceDate)

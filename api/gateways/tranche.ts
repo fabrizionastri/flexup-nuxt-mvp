@@ -1,8 +1,5 @@
-import type { TrancheAdapter } from 'adapters/database/interfaces'
 import type { Order, Tranche, TrancheData } from 'entities/'
-
-import adapters from 'adapters/database'
-
+import { trancheAdapter } from 'adapters/database'
 export interface TrancheGateway {
   getByOrder: (order: Order) => Promise<Tranche[]>
 }
@@ -20,7 +17,6 @@ export const computeTranche = (trancheData: TrancheData, orderData: Order): Tran
 })
 
 export const createTrancheGateway = (): TrancheGateway => {
-  const trancheAdapter: TrancheAdapter = adapters.trancheAdapter
   const getByOrder = async (order: Order): Promise<Tranche[]> =>
     (await trancheAdapter.getByOrderId(order.id)).map((tranche: TrancheData) =>
       computeTranche(tranche, order)

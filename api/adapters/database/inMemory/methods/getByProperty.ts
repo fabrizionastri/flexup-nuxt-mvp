@@ -1,13 +1,14 @@
-import type { Entity } from 'entities/_generic'
+import type { Entity, EntityName } from 'entities/entity'
+import inMemory from 'mock/inMemory'
+import type { CreateGetByProperty } from '../../generic/methods/interfaces'
 
-export const createGetByProperty =
-  <T extends Entity>(entities: T[]) =>
-  (property: keyof T, value: unknown): Promise<T[]> => {
+export const createGetByProperty: CreateGetByProperty =
+  <T extends Entity>(entityName: EntityName) =>
+  async (property: keyof T, value: unknown): Promise<T[]> => {
+    const entities = inMemory[entityName] as unknown as T[]
     // Check if the property exists on the first entity in the list
     if (entities.length > 0 && !(property in entities[0])) {
-      return Promise.reject(
-        new Error(`Property "${String(property)}" does not exist on this entity`)
-      )
+      throw new Error(`Property "${String(property)}" does not exist on this entity`)
     }
-    return Promise.resolve(entities.filter((entity: Entity) => entity[String(property)] == value))
+    return Promise.resolve(entities.filter((entity) => entity[String(property)] == value))
   }

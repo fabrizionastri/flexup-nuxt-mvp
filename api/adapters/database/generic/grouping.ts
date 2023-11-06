@@ -1,9 +1,9 @@
 import inMemory from 'mock/inMemory'
-import adapterMethods from './_source'
+import { createGetById } from './methods'
 
 const groupings = inMemory.grouping
 
 export const groupingAdapter = {
-  getById: adapterMethods.createGetById(groupings),
-  getByProperty: adapterMethods.createGetByProperty(groupings)
+  getById: createGetById('grouping')
+  // getByProperty: adapterMethods.createGetByProperty(groupings)
 }

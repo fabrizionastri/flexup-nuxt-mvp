@@ -1,9 +1,7 @@
-import inMemory from 'mock/inMemory'
-import adapterMethods from './_source'
-
-const users = inMemory.user
+import type { UserData } from 'lib/entities'
+import { createGetById, createGetByProperty } from './methods'
 
 export const userAdapter = {
-  getById: adapterMethods.createGetById(users),
-  getByProperty: adapterMethods.createGetByProperty(users)
+  getById: createGetById<UserData>('user'),
+  getByProperty: createGetByProperty<UserData>('user')
 }

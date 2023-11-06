@@ -7,13 +7,15 @@ import {
 
 describe('groupingAccount adapter', () => {
   describe('getById', () => {
-    it('should return an groupingAccount Data for existing Id', async () => {
+    it('should return a groupingAccount Data for existing Id', async () => {
       const result = await groupingAccountAdapter.getById('doMazyGroupingAgroCoopAccount')
+      // console.log('result - existing Id', result)
       const expected = doMazyGroupingAgroCoopAccountData
       expect(result).toEqual(expected)
     })
     it('should return undefined for inexistant Id', async () => {
       const result = await groupingAccountAdapter.getById('inexistantId')
+      // console.log('result - inexistant Id', result)
       expect(result).toBeUndefined()
     })
   })

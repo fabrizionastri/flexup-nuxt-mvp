@@ -1,5 +1,7 @@
-import { accountIdsForFabrizioUser } from 'mock/inMemory/accountUser'
+import type { AccountUserData } from '~/lib/entities'
+import { accountUserDatasForFabrizioUser } from './../../mock/inMemory/accountUser'
+// import { accountIdsForFabrizioUser } from 'mock/inMemory/accountUser'
 
-export const getAllAccountIds = (userId: string): string[] => {
-  return accountIdsForFabrizioUser
+export const getAllAccountIds = (): AccountUserData[] => {
+  return accountUserDatasForFabrizioUser
 }

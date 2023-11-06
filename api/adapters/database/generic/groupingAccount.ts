@@ -1,9 +1,8 @@
-import inMemory from 'mock/inMemory'
-import adapterMethods from './_source'
-
-const groupingAccounts = inMemory.groupingAccount
+import { createGetById, createGetBySelectedProperty } from './methods'
 
 export const groupingAccountAdapter = {
-  getById: adapterMethods.createGetById(groupingAccounts),
-  getByAccountId: adapterMethods.createGetBySelectedProperty(groupingAccounts, 'accountId')
+  getById: createGetById('groupingAccount'),
+  getByAccountId: createGetBySelectedProperty('groupingAccount', 'accountId')
+  // getById: adapterMethods.createGetById(groupingAccounts),
+  // getByAccountId: adapterMethods.createGetBySelectedProperty(groupingAccounts, 'accountId')
 }

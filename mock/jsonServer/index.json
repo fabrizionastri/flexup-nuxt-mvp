@@ -12,6 +12,17 @@
       "avatar": "/images/profiles/fabrizio_nastri.jpeg"
     },
     {
+      "id": "totoAccount",
+      "name": "Toto La Riflette",
+      "status": "active",
+      "type": "personal",
+      "ownerId": "totoIndividual",
+      "currencyId": "EUR",
+      "countryId": "FRA",
+      "creationDate": "2018-01-01T00:00:00.000Z",
+      "avatar": "/images/profiles/toto.png"
+    },
+    {
       "id": "cosysAccount",
       "name": "Cosys",
       "type": "business",
@@ -80,6 +91,17 @@
       "countryId": "FRA",
       "creationDate": "2020-01-01T00:00:00.000Z",
       "avatar": "/images/profiles/poulaillerMobMazy.png"
+    },
+    {
+      "id": "agroCoopAccount",
+      "name": "Agro Coop",
+      "status": "active",
+      "type": "business",
+      "ownerId": "agroCoopOrganization",
+      "currencyId": "CFH",
+      "countryId": "CHE",
+      "creationDate": "2020-01-01T00:00:00.000Z",
+      "avatar": "/images/profiles/agro_coop.png"
     }
   ],
   "accountUser": [
@@ -283,10 +305,14 @@
   ],
   "legalPerson": [
     {
-      "id": "i:fabrizioIndividual"
+      "id": "individual:fabrizioIndividual",
+      "type": "individual",
+      "personId": "fabrizioIndividual"
     },
     {
-      "id": "o:cosysOrganization"
+      "id": "organization:cosysOrganization",
+      "type": "organization",
+      "personId": "cosysOrganization"
     }
   ],
   "order": [

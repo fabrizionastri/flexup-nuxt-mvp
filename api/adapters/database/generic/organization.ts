@@ -1,8 +1,7 @@
-import inMemory from 'mock/inMemory'
-import adapterMethods from './_source'
+import type { OrganizationData } from 'lib/entities'
 
-const organizations = inMemory.organization
+import { createGetById } from './methods'
 
 export const organizationAdapter = {
-  getById: adapterMethods.createGetById(organizations)
+  getById: createGetById<OrganizationData>('organization')
 }

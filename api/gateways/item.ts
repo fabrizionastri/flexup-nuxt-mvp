@@ -1,6 +1,6 @@
 import type { Item, ItemData } from 'entities/item'
 import { round6 } from 'utils/round'
-import adapters from 'adapters/database'
+import { itemAdapter } from '../adapters/database'
 
 /* TOCHECK : defining gateway interfaces it useless when there is only one */
 // export interface ItemGateway {
@@ -20,8 +20,6 @@ export const computeItem = (item: ItemData): Item => {
 }
 
 export const createItemGateway = () /* : ItemGateway */ => {
-  const itemAdapter = adapters.itemAdapter
-
   const getById = async (itemId: string): Promise<Item | undefined> => {
     const item = await itemAdapter.getById(itemId)
     return !item ? undefined : computeItem(item)

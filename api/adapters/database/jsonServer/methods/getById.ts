@@ -1,11 +1,10 @@
-import type { Entity, EntityName } from 'entities/_generic'
+import type { Entity, EntityName } from 'entities/entity'
 import axios from '../myAxios'
 
 export const createGetById =
   <T extends Entity>(entity: EntityName) =>
-  async (id: string): Promise<T[]> => {
+  async (id: string): Promise<T | undefined> => {
     const encodedEntity = encodeURIComponent(entity)
     const encodedId = encodeURIComponent(id as string) // Assuming value can be safely casted to string
-    const result = (await axios.get<T[]>(`/${encodedEntity}/${encodedId}`)) ?? []
-    return result
+    return await axios.get<T | undefined>(`/${encodedEntity}/${encodedId}`)
   }

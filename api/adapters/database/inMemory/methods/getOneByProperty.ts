@@ -1,9 +1,10 @@
-import type { Entity } from 'entities/_generic'
+import type { Entity, EntityName } from 'entities/entity'
 import { createGetByProperty } from '.'
+import type { CreateGetOneByProperty } from '../../generic/methods/interfaces'
 
-export const createGetOneByProperty =
-  <T extends Entity>(entities: T[]) =>
+export const createGetOneByProperty: CreateGetOneByProperty =
+  <T extends Entity>(entityName: EntityName) =>
   async (property: keyof T, value: unknown): Promise<T | undefined> => {
-    const results = await createGetByProperty(entities)(property, value)
-    return results[0]
+    const results = (await createGetByProperty(entityName)(property as string, value)) as T[]
+    return !results || results.length === 0 ? undefined : results[0]
   }

@@ -1,15 +1,30 @@
 import fs from 'fs'
 import path from 'path'
+import { config } from 'dotenv'
+import { normalizePath } from './normalizePath'
+config()
 
-export const generateIndex = (folderPath: string): void => {
+const dataSource: string = process.env.STORAGE_TYPE || 'inMemory'
+// const dataSource: string = 'jsonServer'
+
+console.log('lib/devUtils/generateIndex.ts - dataSource:', dataSource)
+
+export const generateIndex = (
+  sourceFolderPath: string,
+  destinationFolderPath: string = '',
+  purge: boolean = true,
+  extra: string = ''
+): void => {
   // Read all files in the directory
-  fs.readdir(folderPath, (err, files) => {
+  const exports: string[] = []
+  fs.readdir(sourceFolderPath, (err, files) => {
     if (err) {
       console.error('Error reading directory:', err)
       return
     }
-
-    const exports: string[] = []
+    if (!destinationFolderPath) destinationFolderPath = sourceFolderPath
+    const indexFilePath = path.join(destinationFolderPath, 'index.ts')
+    // console.log('libdevUtilsgenerateIndex.ts - indexFilePath : ', indexFilePath)
 
     files.forEach((file) => {
       // Skip the index.ts file, non-TS files, and all .spec.ts or .test.ts files
@@ -23,28 +38,43 @@ export const generateIndex = (folderPath: string): void => {
         return
       }
 
-      const basePath = path.basename(file, '.ts')
-      // const baseName = basePath.toString()
-      exports.push(`export * from './${basePath}'`)
+      const filePath = path.join(sourceFolderPath, file)
+      const relativePath = path.relative(destinationFolderPath, filePath)
+      const importPath = `./${normalizePath(relativePath)}`
+        .replace(/\.ts$/, '')
+        .replace('./../', '../')
+      exports.push(`export * from '${importPath}'`)
     })
-    exports.push(``) // add a blank line at the end of the file
+
+    if (extra) exports.push(`export * from '${extra}'`)
+    exports.push(`\n`) // add a blank line at the end of the file
 
     const content = exports.join('\n')
-    fs.writeFile(path.join(folderPath, 'index.ts'), content, (err) => {
-      if (err) {
-        console.error('Error writing ${folderPath} index:', err)
+
+    const writeFunction = purge ? fs.writeFile : fs.appendFile
+
+    writeFunction(indexFilePath, content, (writeErr) => {
+      if (writeErr) {
+        console.error('Error writing file:', writeErr)
         return
       }
-      console.log(`Successfully generated index for: ${folderPath}`)
+      console.log(`lib/devUtils/generateIndex.ts - ${indexFilePath} updated`)
     })
   })
 }
 
-generateIndex('api/adapters/database/inMemory/methods')
-generateIndex('api/adapters/database/inMemory')
-generateIndex('api/adapters/database/jsonServer/methods')
-generateIndex('api/adapters/database/jsonServer')
 generateIndex('api/adapters/database/generic')
+generateIndex(`api/adapters/database/${dataSource}`)
+generateIndex(`api/adapters/database/${dataSource}`, 'api/adapters/database/generic', false)
+
+generateIndex(`api/adapters/database/${dataSource}/methods`)
+generateIndex(
+  `api/adapters/database/${dataSource}/methods`,
+  'api/adapters/database/generic/methods',
+  false
+)
+generateIndex(`api/adapters/database/${dataSource}`, 'api/adapters/database/generic/methods', false)
+
 generateIndex('api/gateways')
 generateIndex('api/useCases')
 generateIndex('lib/entities')

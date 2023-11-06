@@ -1,5 +1,5 @@
 export * from './accountUser'
-export * from './generic'
 export * from './item'
 export * from './myAxios'
 export * from './order'
+export * from './plop'

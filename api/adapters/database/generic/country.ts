@@ -1,9 +1,5 @@
-import inMemory from 'mock/inMemory'
-import adapterMethods from './_source'
-
-const countires = inMemory.country
+import { createGetById } from './methods'
 
 export const countryAdapter = {
-  getById: adapterMethods.createGetById(countires),
-  getByProperty: adapterMethods.createGetByProperty(countires)
+  getById: createGetById('country')
 }

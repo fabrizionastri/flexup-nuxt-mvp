@@ -1,32 +1,37 @@
-import type { Entity } from 'entities/_generic'
+import type { Entity, EntityName } from 'entities/entity'
+import inMemory from 'mock/inMemory'
+import type { CreateGetBySelectedProperties } from '../../generic/methods/interfaces'
 
-export const createGetBySelectedProperties =
+export const createGetBySelectedProperties: CreateGetBySelectedProperties =
   <T extends Entity>(
-    entities: T[],
-    property1: string,
-    property2: string,
+    entityName: EntityName,
+    property1: keyof T,
+    property2: keyof T,
     andOr: 'and' | 'or' = 'and'
   ) =>
-  (value1: unknown, value2: unknown): Promise<T[]> => {
+  async (value1: unknown, value2: unknown): Promise<T[]> => {
+    const entities = inMemory[entityName] as unknown as T[]
     // Check if the property exists on the first entity in the list
-    if (entities.length === 0)
-      return Promise.reject(new Error(`No data found in database for this entity`))
+    if (entities.length === 0) throw new Error(`No data found in database for this entity`)
     if (!(property1 in entities[0])) {
-      return Promise.reject(new Error(`Property "${property1}" does not exist on this entity"`))
+      throw new Error(`Property "${property1 as string}" does not exist on this entity"`)
     }
     if (!(property2 in entities[0])) {
-      return Promise.reject(new Error(`Property "${property2}" does not exist on this entity`))
+      throw new Error(`Property "${property2 as string}" does not exist on this entity`)
     }
     if (andOr === 'and') {
       return Promise.resolve(
         entities.filter(
-          (entity: Entity) => entity[property1] === value1 && entity[property2] === value2
+          (entity: Entity) =>
+            entity[property1 as string] === value1 && entity[property2 as string] === value2
         )
       )
     } else {
       return Promise.resolve(
         entities.filter(
-          (entity: Entity) => entity[property1] === value1 || entity[property2] === value2
+          (entity: Entity) =>
+            entity[property1 as string] === value1 ||
+            (entity[property2 as string] as string) === value2
         )
       )
     }

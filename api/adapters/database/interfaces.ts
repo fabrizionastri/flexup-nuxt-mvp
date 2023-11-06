@@ -1,5 +1,5 @@
-import type { AccountUserData, ItemData, Order, TrancheData } from 'entities/'
-import type { Entity } from 'entities/_generic'
+import type { ItemData, Order, TrancheData } from 'entities/'
+import type { Entity } from 'entities/entity'
 
 export interface GenericAdapter<T extends Entity> {
   getById: (id: string) => Promise<T | undefined>

@@ -1,28 +1,26 @@
 import type { LegalPersonData, LegalPerson } from 'entities/legalPerson'
 
 export const fabrizioLegalPersonData: LegalPersonData = {
-  id: 'i:fabrizioIndividual'
+  id: 'individual:fabrizioIndividual',
+  type: 'individual',
+  personId: 'fabrizioIndividual'
 }
-export const cosyslegalPersonData: LegalPersonData = {
-  id: 'o:cosysOrganization'
-}
-export const legalPersonDatas: LegalPersonData[] = [fabrizioLegalPersonData, cosyslegalPersonData]
-
 export const fabrizioLegalPerson: LegalPerson = {
   ...fabrizioLegalPersonData,
   name: 'Fabrizio Nastri',
-  type: 'individual',
-  personId: 'fabrizioIndividual',
-  typeSymbol: '👤',
-  label: 'Fabrizio Nastri 👤'
+  typeSymbol: '👤'
+}
+
+export const cosyslegalPersonData: LegalPersonData = {
+  id: 'organization:cosysOrganization',
+  type: 'organization',
+  personId: 'cosysOrganization'
 }
 export const cosyslegalPerson: LegalPerson = {
   ...cosyslegalPersonData,
-  id: 'o:cosysOrganization',
   name: 'Cosys',
-  type: 'organization',
-  personId: 'cosysOrganization',
-  typeSymbol: '🏢',
-  label: 'Cosys 🏢'
+  typeSymbol: '🏢'
 }
+
+export const legalPersonDatas: LegalPersonData[] = [fabrizioLegalPersonData, cosyslegalPersonData]
 export const legalPersons: LegalPerson[] = [fabrizioLegalPerson, cosyslegalPerson]

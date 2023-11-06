@@ -32,12 +32,12 @@ export const createUserGateway = () => {
       user = await getById(userId)
     } catch (error: any) {
       if (error instanceof Error) {
-        console.error(
-          'CustomError created in userGateway for:',
-          error.message,
-          ' with statusCode:',
-          401
-        )
+        // console.error(
+        //   'CustomError created in userGateway for:',
+        //   error.message,
+        //   ' with statusCode:',
+        //   401
+        // )
         throw new HTTPException(401, { message: error.message })
       } else {
         console.error(

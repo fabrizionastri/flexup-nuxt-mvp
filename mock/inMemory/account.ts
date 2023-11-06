@@ -17,7 +17,7 @@ export const fabrizioAccount: Account = {
   ...fabrizioAccountData,
   symbol: '👤',
   ownerName: 'Fabrizio Nastri',
-  ownerType: 'individual', // since the owner is an individual, this is a personal main account
+  ownerType: 'individual',
   ownerSymbol: '👤',
   currencyName: 'Euro',
   currencySymbol: '€'
@@ -202,19 +202,23 @@ export const totoAccount: Account = {
 
 export const accountDatas = [
   fabrizioAccountData,
+  totoAccountData,
   cosysAccountData,
   flexupAccountData,
   pizzaDOroAccountData,
   pizzaDOroTakeAwayAccountData,
   doMazyAccountData,
-  poulaillerMobileAccountData
+  poulaillerMobileAccountData,
+  agroCoopAccountData
 ]
 export const accounts = [
   fabrizioAccount,
+  totoAccount,
   cosysAccount,
   flexupAccount,
   pizzaDOroAccount,
   pizzaDOroTakeAwayAccount,
   doMazyAccount,
-  poulaillerMobileAccount
+  poulaillerMobileAccount,
+  agroCoopAccount
 ]

@@ -1,6 +1,11 @@
-import type { Entity } from 'entities/_generic'
+import type { Entity, EntityName } from 'entities/entity'
+import inMemory from 'mock/inMemory'
+import type { CreateGetById } from '../../generic/methods/interfaces'
 
-export const createGetById =
-  <T extends Entity>(entities: T[]) =>
-  (id: string): Promise<T | undefined> =>
-    Promise.resolve(entities.find((entity) => entity.id === id))
+export const createGetById: CreateGetById =
+  <T extends Entity>(entityName: EntityName) =>
+  // TOCHECK: is the async necessary?
+  async (id: string): Promise<T | undefined> => {
+    const entities = inMemory[entityName] as unknown as T[]
+    return Promise.resolve(entities.find((entity) => entity.id === id))
+  }

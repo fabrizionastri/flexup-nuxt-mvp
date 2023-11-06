@@ -1,7 +1,7 @@
-import { accountAdapter } from '.'
+import { accountAdapter } from './account'
 import { fabrizioAccountData } from 'mock/inMemory'
 
-describe('accountAdapter (based on generic adapter)', () => {
+describe('accountAdapter', () => {
   describe('getById', () => {
     it('should retrieve an entity by its ID', async () => {
       const result = await accountAdapter.getById('fabrizioAccount')

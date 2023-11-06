@@ -1,5 +1,4 @@
 import type { CurrencyId, CountryId, Entity } from '.'
-import type { AccountUserRole } from '.'
 
 export const accountOwnerMapping = {
   personal: 'individual',

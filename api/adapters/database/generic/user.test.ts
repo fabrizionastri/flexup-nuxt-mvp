@@ -19,8 +19,6 @@ describe('user adapter', () => {
       expect(results).toContain(users.pendingUserData)
     })
     it.todo('should return list of account by login date', async () => {
-      // this test does not work because date format seems to be a problem
-      // there is no revelant use case for this feature, so I will not spend more time on it
       const results = await userAdapter.getByProperty('lastLoginDate', new Date('2023-10-23'))
       console.log('user.test.ts - new Date("2023-10-23")):', new Date('2023-10-23'))
       console.log('user.test.ts - users.userDatas:', users.userDatas)

@@ -1,4 +1,4 @@
-import type { Entity } from 'entities/_generic'
+import type { Entity } from 'entities/entity'
 export type IdentifierType = 'username' | 'email' | 'phone'
 
 export interface IdentifierData extends Entity {

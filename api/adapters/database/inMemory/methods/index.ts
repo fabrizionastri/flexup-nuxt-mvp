@@ -6,3 +6,4 @@ export * from './getBySelectedProperty'
 export * from './getOneByProperty'
 export * from './getOneBySelectedProperties'
 export * from './getOneBySelectedProperty'
+
