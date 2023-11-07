@@ -1,6 +1,6 @@
 import type { Entity, EntityName } from 'entities/entity'
 import inMemory from 'mock/inMemory'
-import type { CreateGetBySelectedProperty } from '../../generic/methods/interfaces'
+import type { CreateGetBySelectedProperty } from '../../generic/interfaces'
 
 export const createGetBySelectedProperty: CreateGetBySelectedProperty =
   <T extends Entity>(entityName: EntityName, property: keyof T) =>

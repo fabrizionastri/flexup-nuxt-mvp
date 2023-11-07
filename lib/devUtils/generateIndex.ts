@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 import fs from 'fs'
 import path from 'path'
 import { config } from 'dotenv'
@@ -7,22 +8,22 @@ config()
 const dataSource: string = process.env.STORAGE_TYPE || 'inMemory'
 // const dataSource: string = 'jsonServer'
 
-console.log('lib/devUtils/generateIndex.ts - dataSource:', dataSource)
+console.log('lib/devUtils/generateIndex.ts - dataSource:', dataSource, ':')
 
 export const generateIndex = (
-  sourceFolderPath: string,
-  destinationFolderPath: string = '',
+  destinationFolderPath: string,
+  sourceFolderPath: string = '',
   purge: boolean = true,
   extra: string = ''
 ): void => {
   // Read all files in the directory
   const exports: string[] = []
+  if (!sourceFolderPath) sourceFolderPath = destinationFolderPath
   fs.readdir(sourceFolderPath, (err, files) => {
     if (err) {
       console.error('Error reading directory:', err)
       return
     }
-    if (!destinationFolderPath) destinationFolderPath = sourceFolderPath
     const indexFilePath = path.join(destinationFolderPath, 'index.ts')
     // console.log('libdevUtilsgenerateIndex.ts - indexFilePath : ', indexFilePath)
 
@@ -44,36 +45,40 @@ export const generateIndex = (
         .replace(/\.ts$/, '')
         .replace('./../', '../')
       exports.push(`export * from '${importPath}'`)
+      exports.push(`\n`) // add a blank line at the end of the file
     })
 
     if (extra) exports.push(`export * from '${extra}'`)
-    exports.push(`\n`) // add a blank line at the end of the file
-
-    const content = exports.join('\n')
+    const content = exports.join('')
 
     const writeFunction = purge ? fs.writeFile : fs.appendFile
+    const actionType = purge ? ' → updated' : '→ appended'
 
     writeFunction(indexFilePath, content, (writeErr) => {
       if (writeErr) {
         console.error('Error writing file:', writeErr)
         return
       }
-      console.log(`lib/devUtils/generateIndex.ts - ${indexFilePath} updated`)
+      console.log(`   ${normalizePath(indexFilePath)} ${actionType}`)
     })
   })
 }
 
 generateIndex('api/adapters/database/generic')
-generateIndex(`api/adapters/database/${dataSource}`)
-generateIndex(`api/adapters/database/${dataSource}`, 'api/adapters/database/generic', false)
+generateIndex('api/adapters/database/generic/methods')
+generateIndex(`api/adapters/database/inMemory`)
+generateIndex(`api/adapters/database/inMemory/methods`)
+generateIndex(`api/adapters/database/jsonServer`)
+generateIndex(`api/adapters/database/jsonServer/methods`)
+generateIndex(`api/adapters/database/generic/interfaces`)
 
-generateIndex(`api/adapters/database/${dataSource}/methods`)
+generateIndex('api/adapters/database/generic', `api/adapters/database/${dataSource}`, false)
+generateIndex('api/adapters/database/generic/methods', `api/adapters/database/${dataSource}`, false)
 generateIndex(
-  `api/adapters/database/${dataSource}/methods`,
   'api/adapters/database/generic/methods',
+  `api/adapters/database/${dataSource}/methods`,
   false
 )
-generateIndex(`api/adapters/database/${dataSource}`, 'api/adapters/database/generic/methods', false)
 
 generateIndex('api/gateways')
 generateIndex('api/useCases')

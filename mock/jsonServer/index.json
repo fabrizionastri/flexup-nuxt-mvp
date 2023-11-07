@@ -98,7 +98,7 @@
       "status": "active",
       "type": "business",
       "ownerId": "agroCoopOrganization",
-      "currencyId": "CFH",
+      "currencyId": "CHF",
       "countryId": "CHE",
       "creationDate": "2020-01-01T00:00:00.000Z",
       "avatar": "/images/profiles/agro_coop.png"
@@ -157,6 +157,11 @@
       "id": "USA",
       "name": "United States",
       "iso2": "US"
+    },
+    {
+      "id": "CHE",
+      "name": "Swizerland",
+      "iso2": "CH"
     }
   ],
   "currency": [
@@ -185,7 +190,7 @@
       "precision": 0
     },
     {
-      "id": "CFF",
+      "id": "CHF",
       "name": "Swiss Franc",
       "symbol": "CHF",
       "precision": 2
@@ -374,9 +379,9 @@
       "name": "Cosys",
       "legalName": "Cosys S.C.",
       "legalForm": "Société Civile",
-      "currency": "EUR",
-      "country": "FRA",
-      "language": "FRA",
+      "currencyId": "EUR",
+      "countryId": "FRA",
+      "languageId": "FRA",
       "capital": 100005,
       "legalFormAbbreviation": "S.C.",
       "registrationAuthority": "Chambre de Commerce et d'Industrie de Paris",
@@ -387,6 +392,25 @@
       "registrationStatus": "active",
       "fiscalYearEnd": "12-31",
       "terminationDate": "2108-12-23T00:00:00.000Z"
+    },
+    {
+      "id": "agroCoopOrganization",
+      "name": "Agro Coopérative du Canton de Vaud",
+      "legalName": "Coopérative Agricole du Canton de Vaud SCOP",
+      "legalForm": "Société Coopérative de Production",
+      "currencyId": "CHF",
+      "countryId": "CHE",
+      "languageId": "FRA",
+      "capital": 10000,
+      "legalFormAbbreviation": "S.C.O.P.",
+      "registrationAuthority": "Chambre vaudoise du commerce et de l'industrie (CVCI)",
+      "registrationCity": "Lausanne",
+      "registrationNumber": "6549866452",
+      "registrationDate": "2018-01-01T00:00:00.000Z",
+      "registrationAddressId": "agroCoopOrganization",
+      "registrationStatus": "active",
+      "fiscalYearEnd": "12-31",
+      "terminationDate": "2118-12-23T00:00:00.000Z"
     }
   ],
   "password": [

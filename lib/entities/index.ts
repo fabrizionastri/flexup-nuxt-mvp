@@ -23,4 +23,3 @@ export * from './resolution'
 export * from './tranche'
 export * from './unit'
 export * from './user'
-

@@ -1,7 +1,7 @@
 import { convertStringsToDates } from './../../../../../lib/utils/convertStringsToDates'
 import type { Entity, EntityName } from 'entities/entity'
 import axios from '../myAxios'
-import type { CreateGetBySelectedProperties } from '../../generic/methods/interfaces'
+import type { CreateGetBySelectedProperties } from '../../generic/interfaces'
 
 export const createGetBySelectedProperties: CreateGetBySelectedProperties =
   <T extends Entity>(

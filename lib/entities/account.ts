@@ -1,4 +1,4 @@
-import type { CurrencyId, CountryId, Entity } from '.'
+import type { CurrencyId, CountryId, Entity, AccountUserRole } from '.'
 
 export const accountOwnerMapping = {
   personal: 'individual',
@@ -39,4 +39,6 @@ export interface Account extends AccountData {
   ownerSymbol: string
   currencyName: string
   currencySymbol: string
+  countryName: string
+  role?: AccountUserRole
 }

@@ -1,13 +1,6 @@
-import type { AccountUserData, AccountUser } from 'lib/entities'
+import type { AccountUserData, Account } from 'lib/entities'
 
-import {
-  cosysAccount,
-  doMazyAccount,
-  fabrizioAccount,
-  fabrizioUser,
-  flexupAccount,
-  totoUser
-} from '.'
+import { cosysAccount, doMazyAccount, fabrizioAccount, flexupAccount } from './account'
 
 export const fabrizioAccountFabrizioUserData: AccountUserData = {
   id: 'fabrizioAccount:fabrizioUser', // temp for Json-Server
@@ -15,9 +8,9 @@ export const fabrizioAccountFabrizioUserData: AccountUserData = {
   userId: 'fabrizioUser',
   role: 'owner'
 }
-export const fabrizioAccountFabrizioUser: AccountUser = {
+export const fabrizioAccountFabrizioUser: Account = {
   ...fabrizioAccount,
-  ...fabrizioAccountFabrizioUserData
+  role: 'owner'
 }
 
 export const flexupAccountFabrizioUserData: AccountUserData = {
@@ -26,9 +19,9 @@ export const flexupAccountFabrizioUserData: AccountUserData = {
   userId: 'fabrizioUser',
   role: 'owner'
 }
-export const flexupAccountFabrizioUser: AccountUser = {
+export const flexupAccountFabrizioUser: Account = {
   ...flexupAccount,
-  ...flexupAccountFabrizioUserData
+  role: 'owner'
 }
 
 export const cosysAccountFabrizioUserData: AccountUserData = {
@@ -37,31 +30,9 @@ export const cosysAccountFabrizioUserData: AccountUserData = {
   userId: 'fabrizioUser',
   role: 'owner'
 }
-export const cosysAccountFabrizioUser: AccountUser = {
+export const cosysAccountFabrizioUser: Account = {
   ...cosysAccount,
-  ...cosysAccountFabrizioUserData
-}
-
-export const flexupAccountTotoUserData: AccountUserData = {
-  id: 'flexupAccount:totoUser',
-  accountId: 'flexupAccount',
-  userId: 'totoUser',
-  role: 'editor'
-}
-export const flexupAccountTotoUser: AccountUser = {
-  ...flexupAccount,
-  ...flexupAccountTotoUserData
-}
-
-export const totoAccountTotoUserData: AccountUserData = {
-  id: 'totoAccount:totoUser',
-  accountId: 'totoAccount',
-  userId: 'totoUser',
   role: 'owner'
-}
-export const totoAccountTotoUser: AccountUser = {
-  ...flexupAccount,
-  ...totoAccountTotoUserData
 }
 
 export const doMazyAccountFabrizioUserData: AccountUserData = {
@@ -70,10 +41,51 @@ export const doMazyAccountFabrizioUserData: AccountUserData = {
   userId: 'fabrizioUser',
   role: 'guest'
 }
-export const doMazyAccountFabrizioUser: AccountUser = {
+export const doMazyAccountFabrizioUser: Account = {
   ...doMazyAccount,
-  ...doMazyAccountFabrizioUserData
+  role: 'guest'
 }
+
+export const accountDatasForFabrizioUser: AccountUserData[] = [
+  fabrizioAccountFabrizioUserData,
+  flexupAccountFabrizioUserData,
+  cosysAccountFabrizioUserData,
+  doMazyAccountFabrizioUserData
+]
+export const accountsForFabrizioUser: Account[] = [
+  fabrizioAccountFabrizioUser,
+  flexupAccountFabrizioUser,
+  cosysAccountFabrizioUser,
+  doMazyAccountFabrizioUser
+]
+
+export const totoAccountTotoUserData: AccountUserData = {
+  id: 'totoAccount:totoUser',
+  accountId: 'totoAccount',
+  userId: 'totoUser',
+  role: 'owner'
+}
+export const totoAccountTotoUser: Account = {
+  ...flexupAccount,
+  role: totoAccountTotoUserData.role
+}
+
+export const flexupAccountTotoUserData: AccountUserData = {
+  id: 'flexupAccount:totoUser',
+  accountId: 'flexupAccount',
+  userId: 'totoUser',
+  role: 'editor'
+}
+export const flexupAccountTotoUser: Account = {
+  ...flexupAccount,
+  role: flexupAccountTotoUserData.role
+}
+
+export const accountDatasForTotoUser: AccountUserData[] = [
+  flexupAccountTotoUserData,
+  totoAccountTotoUserData
+]
+export const accountsForTotoUser: Account[] = [flexupAccountTotoUser, totoAccountTotoUser]
 
 export const accountUserDatas: AccountUserData[] = [
   fabrizioAccountFabrizioUserData,
@@ -83,7 +95,7 @@ export const accountUserDatas: AccountUserData[] = [
   totoAccountTotoUserData,
   doMazyAccountFabrizioUserData
 ]
-export const accountUsers: AccountUser[] = [
+export const accountUsers: Account[] = [
   fabrizioAccountFabrizioUser,
   flexupAccountFabrizioUser,
   cosysAccountFabrizioUser,
@@ -96,7 +108,7 @@ export const accountUserDatasForFlexupAccount: AccountUserData[] = [
   flexupAccountFabrizioUserData,
   flexupAccountTotoUserData
 ]
-export const accountUsersForFlexupAccount: AccountUser[] = [
+export const accountUsersForFlexupAccount: Account[] = [
   flexupAccountFabrizioUser,
   flexupAccountTotoUser
 ]
@@ -107,7 +119,7 @@ export const accountUserDatasForFabrizioUser: AccountUserData[] = [
   cosysAccountFabrizioUserData,
   doMazyAccountFabrizioUserData
 ]
-export const accountUsersForFabrizioUser: AccountUser[] = [
+export const accountUsersForFabrizioUser: Account[] = [
   fabrizioAccountFabrizioUser,
   flexupAccountFabrizioUser,
   cosysAccountFabrizioUser,
@@ -118,4 +130,4 @@ export const accountUserDatasForTotoUser: AccountUserData[] = [
   flexupAccountTotoUserData,
   totoAccountTotoUserData
 ]
-export const accountUsersForTotoUser: AccountUser[] = [flexupAccountTotoUser, totoAccountTotoUser]
+export const accountUsersForTotoUser: Account[] = [flexupAccountTotoUser, totoAccountTotoUser]

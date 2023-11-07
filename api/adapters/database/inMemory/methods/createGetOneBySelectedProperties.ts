@@ -1,6 +1,6 @@
 import type { Entity, EntityName } from 'entities/entity'
 import { createGetBySelectedProperties } from '.'
-import type { CreateGetOneBySelectedProperties } from '../../generic/methods/interfaces'
+import type { CreateGetOneBySelectedProperties } from '../../generic/interfaces'
 
 export const createGetOneBySelectedProperties: CreateGetOneBySelectedProperties =
   <T extends Entity>(

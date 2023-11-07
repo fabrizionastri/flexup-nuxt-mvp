@@ -1,6 +1,6 @@
 import type { Entity, EntityName } from 'entities/entity'
 import { createGetByProperty } from '.'
-import type { CreateGetOneByProperty } from '../../generic/methods/interfaces'
+import type { CreateGetOneByProperty } from '../../generic/interfaces'
 
 export const createGetOneByProperty: CreateGetOneByProperty =
   <T extends Entity>(entityName: EntityName) =>

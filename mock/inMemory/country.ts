@@ -15,5 +15,10 @@ export const usaData: CountryData = {
   name: 'United States',
   iso2: 'US'
 }
+export const swissData: CountryData = {
+  id: 'CHE',
+  name: 'Switzerland',
+  iso2: 'CH'
+}
 
-export const countryDatas: CountryData[] = [franceData, belgiumData, usaData]
+export const countryDatas: CountryData[] = [franceData, belgiumData, usaData, swissData]

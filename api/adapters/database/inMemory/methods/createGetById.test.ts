@@ -1,5 +1,5 @@
 import type { AccountData } from 'lib/entities'
-import { createGetById } from '../methods'
+import { createGetById } from './createGetById'
 import { fabrizioAccountData } from 'mock/inMemory'
 
 describe('api/adapters/database/inMemory/methods/getById', () => {

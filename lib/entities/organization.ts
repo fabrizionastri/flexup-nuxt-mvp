@@ -1,7 +1,7 @@
 import type {
+  CountryId,
   // Address,
   // Amount,
-  // CountryId,
   CurrencyId,
   Entity
   // LanguageId,
@@ -40,9 +40,9 @@ export interface OrganizationData extends Entity {
   name: string
   legalName: string
   legalForm: string
-  currency: CurrencyId
-  country: string /* Country Code ISO3 */
-  language: string /* Language Code ISO3 */
+  currencyId: CurrencyId
+  countryId: CountryId /* Country Code ISO3 */
+  languageId: string /* Language Code ISO3 */
   capital: number /* Amount */
   legalFormAbbreviation: string
   registrationAuthority: string

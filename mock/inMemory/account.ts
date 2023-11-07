@@ -20,7 +20,8 @@ export const fabrizioAccount: Account = {
   ownerType: 'individual',
   ownerSymbol: '👤',
   currencyName: 'Euro',
-  currencySymbol: '€'
+  currencySymbol: '€',
+  countryName: 'France'
 }
 
 export const cosysAccountData: AccountData = {
@@ -42,7 +43,8 @@ export const cosysAccount: Account = {
   ownerType: 'organization',
   ownerSymbol: '🏢',
   currencyName: 'Euro',
-  currencySymbol: '€'
+  currencySymbol: '€',
+  countryName: 'France'
 }
 
 export const flexupAccountData: AccountData = {
@@ -63,7 +65,8 @@ export const flexupAccount: Account = {
   ownerType: 'organization',
   ownerSymbol: '🏢',
   currencyName: 'Euro',
-  currencySymbol: '€'
+  currencySymbol: '€',
+  countryName: 'France'
 }
 
 export const pizzaDOroAccountData: AccountData = {
@@ -85,7 +88,8 @@ export const pizzaDOroAccount: Account = {
   ownerType: 'individual',
   ownerSymbol: '👤',
   currencyName: 'Euro',
-  currencySymbol: '€'
+  currencySymbol: '€',
+  countryName: 'France'
 }
 
 export const pizzaDOroTakeAwayAccountData: AccountData = {
@@ -107,7 +111,8 @@ export const pizzaDOroTakeAwayAccount: Account = {
   ownerType: 'project',
   ownerSymbol: '🚀',
   currencyName: 'Euro',
-  currencySymbol: '€'
+  currencySymbol: '€',
+  countryName: 'France'
 }
 
 export const doMazyAccountData: AccountData = {
@@ -129,7 +134,8 @@ export const doMazyAccount: Account = {
   ownerType: 'grouping',
   ownerSymbol: '👥',
   currencyName: 'Euro',
-  currencySymbol: '€'
+  currencySymbol: '€',
+  countryName: 'France'
 }
 
 export const poulaillerMobileAccountData: AccountData = {
@@ -150,7 +156,8 @@ export const poulaillerMobileAccount: Account = {
   ownerType: 'grouping',
   ownerSymbol: '👥',
   currencyName: 'Euro',
-  currencySymbol: '€'
+  currencySymbol: '€',
+  countryName: 'France'
   // finalOwnerName: 'Groupement du Domaine de Mazy',
   // finalOwnerLabel: 'Groupement du Domaine de Mazy 👥'
 }
@@ -161,7 +168,7 @@ export const agroCoopAccountData: AccountData = {
   status: 'active',
   type: 'business',
   ownerId: 'agroCoopOrganization',
-  currencyId: 'CFH',
+  currencyId: 'CHF',
   countryId: 'CHE',
   creationDate: new Date('2020-01-01'),
   avatar: '/images/profiles/agro_coop.png'
@@ -169,11 +176,12 @@ export const agroCoopAccountData: AccountData = {
 export const agroCoopAccount: Account = {
   ...agroCoopAccountData,
   symbol: '🏢',
-  ownerName: 'Coopérative Agricole de la Broye',
+  ownerName: 'Agro Coopérative du Canton de Vaud',
   ownerType: 'organization',
   ownerSymbol: '🏢',
   currencyName: 'Swiss Franc',
-  currencySymbol: 'CFH'
+  currencySymbol: 'CHF',
+  countryName: 'Switzerland'
   // finalOwnerName: 'Groupement du Domaine de Mazy',
   // finalOwnerLabel: 'Groupement du Domaine de Mazy 👥'
 }
@@ -197,7 +205,8 @@ export const totoAccount: Account = {
   ownerType: 'individual',
   ownerSymbol: '👤',
   currencyName: 'Euro',
-  currencySymbol: '€'
+  currencySymbol: '€',
+  countryName: 'France'
 }
 
 export const accountDatas = [

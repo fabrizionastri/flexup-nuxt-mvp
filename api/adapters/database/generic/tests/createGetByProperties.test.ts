@@ -1,4 +1,3 @@
-import type { AccountData } from 'lib/entities'
 import { createGetByProperties } from '../methods'
 import {
   totoAccountData,
@@ -6,6 +5,7 @@ import {
   agroCoopAccountData,
   cosysAccountData
 } from 'mock/inMemory'
+import type { AccountData } from 'lib/entities'
 
 describe('api/adapters/database/inMemory/methods/createGetByProperties', () => {
   it('should return list of entities when provide with 2 valid key/value pairs, and no "and/or"', async () => {

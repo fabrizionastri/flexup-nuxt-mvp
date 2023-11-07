@@ -1,5 +1,6 @@
+import type { CountryData } from 'lib/entities'
 import { createGetById } from './methods'
 
 export const countryAdapter = {
-  getById: createGetById('country')
+  getById: createGetById<CountryData>('country')
 }

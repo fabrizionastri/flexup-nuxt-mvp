@@ -1,5 +1,3 @@
 export * from './accountUser'
-export * from './item'
 export * from './myAxios'
 export * from './order'
-export * from './plop'

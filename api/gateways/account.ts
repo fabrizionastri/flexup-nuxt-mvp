@@ -1,3 +1,5 @@
+import { CurrencyData } from './../../lib/entities/currency'
+import { CountryData } from './../../lib/entities/country'
 import { individualGateway } from './individual'
 import {
   accountAdapter,
@@ -7,15 +9,12 @@ import {
   groupingAdapter,
   organizationAdapter
 } from 'adapters/database'
-import type { Account, AccountData } from 'lib/entities' // CHECK / TODOS : this used to work with out lib/, with just 'entities', but now it doesn't. Why?
+import type { Account, AccountData, AccountUserData } from 'lib/entities' // CHECK / TODOS : this used to work with out lib/, with just 'entities', but now it doesn't. Why?
 
-// export interface AccountGateway {
-//   getById: (accountId: string) => Promise<Account | undefined>
-//   getByUserId: (userId: string) => Promise<Account[]>
-//   getByProperty: (property: keyof AccountData, value: unknown) => Promise<Account[]>
-// }
-
-export const computeAccount = async (accountData: AccountData): Promise<Account> => {
+export const computeAccount = async (
+  accountData: AccountData,
+  accountUserDatas: AccountUserData[] = []
+): Promise<Account> => {
   let symbol, ownerName, ownerType, ownerSymbol: string
 
   if (accountData.type === 'personal') {
@@ -40,8 +39,8 @@ export const computeAccount = async (accountData: AccountData): Promise<Account>
     ownerType = 'grouping'
     ownerSymbol = '👥'
   } else if (accountData.type === 'project') {
-    const accountGateway = createAccountGateway('')
-    const project = await accountGateway.getById(accountData.ownerId)
+    const projectData = await accountAdapter.getById(accountData.ownerId)
+    const project = projectData ? await computeAccount(projectData) : undefined
     if (!project) throw new Error('Account owner is an invalid  project')
     symbol = '🚀'
     ownerName = project.name
@@ -63,26 +62,41 @@ export const computeAccount = async (accountData: AccountData): Promise<Account>
     ownerType,
     ownerSymbol,
     currencyName: currency.name,
-    currencySymbol: currency.symbol
+    currencySymbol: currency.symbol,
+    countryName: country.name,
+    role: accountUserDatas.find((accountUserData) => accountUserData.accountId === accountData.id)
+      ?.role
   }
-  // console.log('api/gateways/account - computeAccount - computed data', account)
   return account
 }
 
-// TODO : complete this function
-export const createAccountGateway = (userId: string) /* : AccountGateway */ => ({
-  getById: async (accountId: string): Promise<Account | undefined> => {
-    if (userId !== '' && !(await accountUserAdapter.isUserMemberOfAccount(userId, accountId)))
-      return undefined
-    const accountData = await accountAdapter.getById(accountId)
-    return accountData ? computeAccount(accountData) : undefined
-  },
-  getAll: async (): Promise<Account[]> => {
-    const userAccounts = await accountUserAdapter.getByUserId(userId)
-    return userAccounts.map(computeAccount)
-  },
+export const createAccountGateway = async (userId: string) => {
+  // First get the list of accounts for this user (accountUser datas, and accountIds)
+  const allAccountUserDatas: AccountUserData[] = await accountUserAdapter.getByUserId(userId)
+  if (allAccountUserDatas.length === 0) throw new Error('No account for user', userId)
+  const allAccountIds: string[] = allAccountUserDatas.map(
+    (accountUserData) => accountUserData.accountId
+  )
 
-  // ToDo : peut-on faire une recherche sur des propriétés calculées ? Il faudrait calculer tous les accounts avant de faire la recherche ...
-  getByProperty: async (property: keyof AccountData, value: unknown): Promise<Account[]> =>
-    ((await accountAdapter.getByProperty(property, value)) ?? []).map(computeAccount)
-})
+  // Then make some helper functions
+  const getAllAccountDatas = async (): Promise<AccountData[]> =>
+    await accountAdapter.getByIds(allAccountIds)
+
+  // Finally, define the gateway functions
+  const getById = async (accountId: string): Promise<Account | undefined> => {
+    if (!allAccountIds.includes(accountId)) undefined
+    const accountData = await accountAdapter.getById(accountId)
+    return accountData ? await computeAccount(accountData, allAccountUserDatas) : undefined
+  }
+  const getAllAcounts = async (): Promise<Account[]> => {
+    const accountDatas = await getAllAccountDatas()
+    return Promise.all(
+      accountDatas.map((accountData) => computeAccount(accountData, allAccountUserDatas))
+    )
+  }
+
+  return {
+    getById,
+    getAllAcounts
+  }
+}

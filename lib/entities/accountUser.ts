@@ -12,5 +12,3 @@ export interface AccountUserData extends Entity {
   // departureDate?: Date
   // status?: string
 }
-
-export interface AccountUser extends AccountUserData, Account {}

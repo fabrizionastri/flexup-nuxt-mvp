@@ -1,7 +1,6 @@
-import type { AccountData } from 'lib/entities'
-
-import { agroCoopAccountData } from 'mock/inMemory'
 import { createGetBySelectedProperty } from '../methods'
+import { agroCoopAccountData } from 'mock/inMemory'
+import type { AccountData } from 'lib/entities'
 
 describe('api/adapters/database/inMemory/methods/createGetBySelectedProperty', () => {
   it('should return list of entities when provide with a valid key/value pair', async () => {

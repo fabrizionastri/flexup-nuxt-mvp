@@ -1,6 +1,6 @@
 import type { Entity, EntityName } from 'entities/entity'
 import inMemory from 'mock/inMemory'
-import type { CreateGetById } from '../../generic/methods/interfaces'
+import type { CreateGetById } from '../../generic/interfaces'
 
 export const createGetById: CreateGetById =
   <T extends Entity>(entityName: EntityName) =>

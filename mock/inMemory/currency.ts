@@ -29,7 +29,7 @@ export const yenCurrencyData: CurrencyData = {
 }
 
 export const swissFrancCurrencyData: CurrencyData = {
-  id: 'CFF',
+  id: 'CHF',
   name: 'Swiss Franc',
   symbol: 'CHF',
   precision: 2

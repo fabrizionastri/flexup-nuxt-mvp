@@ -1,6 +1,6 @@
 import type { Entity, EntityName } from 'entities/entity'
 import inMemory from 'mock/inMemory'
-import type { CreateGetByProperties } from '../../generic/methods/interfaces'
+import type { CreateGetByProperties } from '../../generic/interfaces'
 
 export const createGetByProperties: CreateGetByProperties =
   <T extends Entity>(entityName: EntityName) =>
@@ -12,14 +12,17 @@ export const createGetByProperties: CreateGetByProperties =
     andOr: 'and' | 'or' = 'and'
   ): Promise<T[]> => {
     const entities = inMemory[entityName] as unknown as T[]
-    // Check if the property exists on the first entity in the list
-    if (entities.length === 0) throw new Error(`No data found in database for this entity`)
+    // Check if the entity exists in the database
+    if (entities.length === 0) throw new Error(`No data found in database for "${entityName}"`)
+
+    // Check if the properties exists for this entity
     if (!(property1 in entities[0])) {
-      throw new Error(`Property "${property1 as string}" does not exist on this entity"`)
+      throw new Error(`Property "${property1 as string}" does not exist on "${entityName}"`)
     }
     if (!(property2 in entities[0])) {
-      throw new Error(`Property "${property2 as string}" does not exist on this entity`)
+      throw new Error(`Property "${property2 as string}" does not exist on "${entityName}"`)
     }
+
     if (andOr === 'and') {
       return Promise.resolve(
         entities.filter(

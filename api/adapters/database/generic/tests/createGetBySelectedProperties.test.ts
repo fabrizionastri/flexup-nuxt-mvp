@@ -1,11 +1,11 @@
-import type { AccountData } from 'lib/entities'
+import { createGetBySelectedProperties } from '../methods'
 import {
   totoAccountData,
   fabrizioAccountData,
   agroCoopAccountData,
   cosysAccountData
 } from 'mock/inMemory'
-import { createGetBySelectedProperties } from '../methods'
+import type { AccountData } from 'lib/entities'
 
 describe('api/adapters/database/inMemory/methods/createGetBySelectedProperties', () => {
   it('should return list of entities when provide with 2 valid key/value pairs, and no "and/or"', async () => {

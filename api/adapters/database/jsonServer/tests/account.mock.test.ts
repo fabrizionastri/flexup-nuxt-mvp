@@ -4,7 +4,7 @@ import type { Mock } from 'vitest'
 import { accountAdapter } from './account'
 
 // Mocking the myAxios library
-import axios from './myAxios'
+import axios from '../myAxios'
 vi.mock('./myAxios')
 const axiosGetMock = axios.get as Mock
 let result: any

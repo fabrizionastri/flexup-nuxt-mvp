@@ -10,4 +10,3 @@ export * from './monthlyResolution'
 export * from './resolution'
 export * from './risk-factor'
 export * from './utils'
-
