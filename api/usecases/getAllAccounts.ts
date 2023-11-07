@@ -1,7 +1,7 @@
-import type { AccountUserData } from '~/lib/entities'
-import { accountUserDatasForFabrizioUser } from './../../mock/inMemory/accountUser'
-// import { accountIdsForFabrizioUser } from 'mock/inMemory/accountUser'
+import type { Account } from 'lib/entities'
+import { createAccountGateway } from '../gateways'
 
-export const getAllAccountIds = (): AccountUserData[] => {
-  return accountUserDatasForFabrizioUser
+export const getAllAccounts = async (userId: string): Promise<Account[]> => {
+  const accountGateway = createAccountGateway(userId)
+  return (await accountGateway).getAllAcounts()
 }

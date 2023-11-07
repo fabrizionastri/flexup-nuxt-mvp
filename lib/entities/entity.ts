@@ -1,6 +1,6 @@
 import inMemory from 'mock/inMemory'
 
-export interface Entity {
+export type Entity = {
   id: string
   [key: string]: unknown
 }

@@ -1,7 +1,7 @@
 import { round6 } from 'utils/round'
 
 export const sumPropertyStrict = <T>(
-  property: keyof T,
+  property: keyof T & string,
   items: any,
   rejectZeroSum: boolean = false
 ): number | undefined => {

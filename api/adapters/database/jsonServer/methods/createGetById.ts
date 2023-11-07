@@ -1,10 +1,12 @@
+import { convertStringsToDates } from 'lib/utils/convertStringsToDates'
 import type { Entity, EntityName } from 'entities/entity'
 import axios from '../myAxios'
+import type { CreateGetById } from '../../generic/interfaces'
 
-export const createGetById =
-  <T extends Entity>(entity: EntityName) =>
+export const createGetById: CreateGetById =
+  <T extends Entity>(entityName: EntityName) =>
   async (id: string): Promise<T | undefined> => {
-    const encodedEntity = encodeURIComponent(entity)
     const encodedId = encodeURIComponent(id as string) // Assuming value can be safely casted to string
-    return await axios.get<T | undefined>(`/${encodedEntity}/${encodedId}`)
+    const result = await axios.get<T | undefined>(`/${entityName}/${encodedId}`)
+    return convertStringsToDates(result)
   }

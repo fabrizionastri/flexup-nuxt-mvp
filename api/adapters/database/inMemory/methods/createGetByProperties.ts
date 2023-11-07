@@ -5,9 +5,9 @@ import type { CreateGetByProperties } from '../../generic/interfaces'
 export const createGetByProperties: CreateGetByProperties =
   <T extends Entity>(entityName: EntityName) =>
   (
-    property1: keyof T,
+    property1: keyof T & string,
     value1: unknown,
-    property2: keyof T,
+    property2: keyof T & string,
     value2: unknown,
     andOr: 'and' | 'or' = 'and'
   ): Promise<T[]> => {
@@ -17,24 +17,22 @@ export const createGetByProperties: CreateGetByProperties =
 
     // Check if the properties exists for this entity
     if (!(property1 in entities[0])) {
-      throw new Error(`Property "${property1 as string}" does not exist on "${entityName}"`)
+      throw new Error(`Property "${property1}" does not exist on "${entityName}"`)
     }
     if (!(property2 in entities[0])) {
-      throw new Error(`Property "${property2 as string}" does not exist on "${entityName}"`)
+      throw new Error(`Property "${property2}" does not exist on "${entityName}"`)
     }
 
     if (andOr === 'and') {
       return Promise.resolve(
         entities.filter(
-          (entity: Entity) =>
-            entity[property1 as string] === value1 && entity[property2 as string] === value2
+          (entity: Entity) => entity[property1] === value1 && entity[property2] === value2
         )
       )
     } else {
       return Promise.resolve(
         entities.filter(
-          (entity: Entity) =>
-            entity[property1 as string] === value1 || entity[property2 as string] === value2
+          (entity: Entity) => entity[property1] === value1 || entity[property2] === value2
         )
       )
     }

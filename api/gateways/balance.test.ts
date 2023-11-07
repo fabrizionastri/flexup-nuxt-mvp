@@ -1,6 +1,4 @@
 import { balanceInstanceAll } from 'mock/inMemory/balance'
-import { BalanceAdapter } from 'adapters/database/feedWith/balanceAdapter'
-import { balanceGateway } from '.'
 
 describe.todo('Balance core gateway', () => {
   it('should throw an error if adapter is null', () => {

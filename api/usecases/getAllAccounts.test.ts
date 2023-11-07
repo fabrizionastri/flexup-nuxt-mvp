@@ -1,18 +1,10 @@
-import * as accountUsers from 'mock/inMemory/accountUser'
-import { getAllAccountIds } from './getAllAccounts'
+import { accountsForFabrizioUser } from 'mock/inMemory/accountUser'
+import { getAllAccounts } from './getAllAccounts'
 
-describe.todo('getAllAccounts', () => {
-  //   it('fabrizioUser - should return the list of accounts for a given user id', () => {
-  //     const userId = 'fabrizioUser'
-  //     const result = getAllAccountIds(userId)
-  //     const expected = accountUsers.accountUsersForFabrizioUser
-  //     expect(result).toEqual(expected)
-  //   })
-  //
-  //   it.todo('totoUser - should return the list of accounts for a given user id', () => {
-  //     const userId = 'totoUser'
-  //     const result = getAllAccountIds(userId)
-  //     const expected = accountUsers.accountIdsForTotoUser
-  //     expect(result).toEqual(expected)
-  //   })
+describe('getAllAccounts', () => {
+  it('fabrizioUser - should return the list of accounts for a given user id', async () => {
+    const result = await getAllAccounts('fabrizioUser')
+    const expected = accountsForFabrizioUser
+    expect(new Set(result)).toEqual(new Set(expected))
+  })
 })

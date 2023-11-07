@@ -5,8 +5,8 @@ import type { CreateGetOneBySelectedProperties } from '../../generic/interfaces'
 export const createGetOneBySelectedProperties: CreateGetOneBySelectedProperties =
   <T extends Entity>(
     entityName: EntityName,
-    property1: keyof T,
-    property2: keyof T,
+    property1: keyof T & string,
+    property2: keyof T & string,
     andOr: 'and' | 'or' = 'and'
   ) =>
   async (value1: unknown, value2: unknown): Promise<T | undefined> => {
