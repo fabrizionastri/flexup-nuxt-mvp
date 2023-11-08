@@ -85,23 +85,28 @@
 <script setup>
   const identifier = ref('fabrizioUsername')
   const password = ref('plop')
-  const user = useActiveUser()
-  // const user = ref('')
   const errorMsg = ref('')
 
-  const handleLogin = async () => {
-    console.log('app/pages/login.vue - credentials = ', identifier.value, password.value)
-    // const response = await login(identifier.value, password.value)
-    // if (response.error) {
-    //   // Login failed
-    //   console.log('app/pages/login.vue - login failed: loginResponse = ', response.error)
-    //   user.value = null
-    //   errorMsg.value = loginResponse.error
-    // } else {
-    // Login succeeded
-    // console.log('app/pages/login.vue - login succeeded: loginResponse = ', response.error)
-    // errorMsg.value = ''
-    // navigateTo('/')
+  const user = useActiveUser()
+  const accounts = useAllUserAccounts()
+  const activeAccount = useActiveAccount()
+
+  const updateState = (response) => {
+    user.value = response.user
+    accounts.value = response.accounts
+    activeAccount.value = response.accounts[0]
   }
-  // }
+
+  const handleLogin = async () => {
+    clearState()
+    const response = await useLogin(identifier.value, password.value)
+    updateState(response)
+    if (response.error) {
+      // Login failed
+      errorMsg.value = response.error
+    } else {
+      // Login success
+      accounts.navigateTo('/')
+    }
+  }
 </script>

@@ -15,7 +15,7 @@ describe('app/composable/getUser', () => {
   it('should return an error message user when an invalid token is provided', async () => {
     Cookies.get.mockReturnValue('invalid')
     const result = await getUser()
-    const expected = { message: 'Invalid token' }
+    const expected = { error: 'Invalid token' }
     expect(result).toEqual(expected)
   })
 })

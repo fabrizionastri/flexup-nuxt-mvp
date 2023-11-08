@@ -13,6 +13,7 @@ const API_PORT = process.env.API_PORT || '8787'
 const DB_URL = process.env.DB_URL || 'http://127.0.0.1:3057'
 
 import axios from 'axios'
+// TODO : I should eliminate CustomError and use HTTPException instead
 import { CustomError } from '../error'
 const app = new Hono()
 app.use('*', cors())

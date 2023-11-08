@@ -1,5 +1,5 @@
 import * as mock from '../../mock/inMemory'
-import { login } from './login'
+import { login } from './login_old'
 
 describe('app/composable/login', () => {
   it('should return a token when valid credentials are provided', async () => {
@@ -7,7 +7,7 @@ describe('app/composable/login', () => {
     const password = mock.totoUserPasswordData.password
     const result = await login(identifier, password)
     if (!result) {
-      // console.log('► app/composables/login/test - error:', result)
+      console.log('► app/composables/login/test - error:', result)
       return
     }
     const expected = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJ0b3RvVXNlciIsI'

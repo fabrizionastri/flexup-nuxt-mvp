@@ -1,4 +1,5 @@
-import { convertStringsToDates } from 'lib/utils/convertStringsToDates'
+import { sortById } from './../../../lib/utils/sortById'
+import { sortById, convertStringsToDates } from 'lib/utils'
 import * as mock from 'mock/inMemory'
 import app from './user'
 // import { convertDatesToStrings } from 'lib/utils/convertDatesToStrings'
@@ -75,7 +76,7 @@ describe('api/server/routes/user routes', () => {
         headers: { Authorization: `Bearer ${jwt}` }
       })
       const result = convertStringsToDates(await res.json())
-      const expected = { message: 'Invalid token' }
+      const expected = { error: 'Invalid token' }
       expect(res.status).toBe(401)
 
       expect(result).toEqual(expected)
@@ -87,12 +88,8 @@ describe('api/server/routes/user routes', () => {
       const res = await app.request('/accounts', {
         headers: { Authorization: `Bearer ${jwt}` }
       })
-      const result = convertStringsToDates(await res.json()).sort((a, b) =>
-        a.id.localeCompare(b.id)
-      )
-      const expected = convertStringsToDates(mock.accountsForTotoUser).sort((a, b) =>
-        a.id.localeCompare(b.id)
-      )
+      const result = sortById(convertStringsToDates(await res.json()))
+      const expected = sortById(mock.accountsForTotoUser)
       expect(res.status).toBe(200)
 
       expect(new Set(result)).toEqual(new Set(expected))
@@ -102,11 +99,9 @@ describe('api/server/routes/user routes', () => {
       const res = await app.request('/accounts', {
         headers: { Authorization: `Bearer ${jwt}` }
       })
-      const result = convertStringsToDates(await res.json()).sort((a, b) =>
-        a.id.localeCompare(b.id)
-      )
+      const result = sortById(convertStringsToDates(await res.json()))
       // console.log('api/server/routes/user.test.ts - result:', result)
-      const expected = mock.accountsForFabrizioUser.sort((a, b) => a.id.localeCompare(b.id))
+      const expected = sortById(mock.accountsForFabrizioUser)
       // console.log('api/server/routes/user.test.ts - expected:', expected)
       expect(res.status).toBe(200)
       expect(result).toEqual(expected)
@@ -117,7 +112,7 @@ describe('api/server/routes/user routes', () => {
         headers: { Authorization: `Bearer ${jwt}` }
       })
       const result = convertStringsToDates(await res.json())
-      const expected = { message: 'Invalid token' }
+      const expected = { error: 'Invalid token' }
       expect(res.status).toBe(401)
       expect(result).toEqual(expected)
     })

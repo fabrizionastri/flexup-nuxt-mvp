@@ -1,3 +1,4 @@
+// TODO : I should eliminate CustomError and use HTTPException instead
 export class CustomError extends Error {
   public statusCode: number
 
