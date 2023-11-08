@@ -13,8 +13,8 @@ export const jwtMiddleware = async (c, next) => {
     return c.json({ message: 'No token provided' }, 401)
   }
   try {
-    const decoded = jwt.verify(token, privateKey)
-    c['userId'] = decoded
+    const jwtPayload = jwt.verify(token, privateKey)
+    c['jwtPayload'] = jwtPayload
     await next()
   } catch (error) {
     return c.json({ message: 'Invalid token' }, 401)

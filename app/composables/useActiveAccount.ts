@@ -1,9 +1,9 @@
 import type { Ref } from 'vue'
 import { useLocalStorage } from '@vueuse/core'
+import { fabrizioAccount } from '../../mock/inMemory'
 
-import { flexupAccount } from '../../mock/inMemory/account'
 import type { Account } from '../../lib/entities/account'
 
 export const useActiveAccount = (): Ref<Account | null> => {
-  return useLocalStorage('activeAccount', flexupAccount)
+  return useLocalStorage('activeAccount', fabrizioAccount)
 }

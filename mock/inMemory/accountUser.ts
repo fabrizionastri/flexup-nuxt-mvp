@@ -1,6 +1,6 @@
 import type { AccountUserData, Account } from 'lib/entities'
 
-import { cosysAccount, doMazyAccount, fabrizioAccount, flexupAccount } from './account'
+import { cosysAccount, doMazyAccount, fabrizioAccount, totoAccount, flexupAccount } from './account'
 
 export const fabrizioAccountFabrizioUserData: AccountUserData = {
   id: 'fabrizioAccount:fabrizioUser', // temp for Json-Server
@@ -66,7 +66,7 @@ export const totoAccountTotoUserData: AccountUserData = {
   role: 'owner'
 }
 export const totoAccountTotoUser: Account = {
-  ...flexupAccount,
+  ...totoAccount,
   role: totoAccountTotoUserData.role
 }
 

@@ -41,24 +41,24 @@ export const groupingAccountDatas: GroupingAccountData[] = [
 
 export const doMazyGroupingAgroCoopAccount: GroupingAccount = {
   ...doMazyGroupingAgroCoopAccountData,
-  groupingName: 'Groupement du Domaine de Mazy',
-  groupingLabel: 'Groupement du Domaine de Mazy 👥',
+  groupingName: 'DoMazy',
+  groupingLabel: 'DoMazy 👥',
   memberName: 'Agro Coop',
   memberLabel: 'Agro Coop 🏢'
 }
 
 export const doMazyGroupingTotoAccount: GroupingAccount = {
   ...doMazyGroupingTotoAccountData,
-  groupingName: 'Groupement du Domaine de Mazy',
-  groupingLabel: 'Groupement du Domaine de Mazy 👥',
+  groupingName: 'DoMazy',
+  groupingLabel: 'DoMazy 👥',
   memberName: 'Toto',
   memberLabel: 'Toto 👤'
 }
 
 export const doMazyGroupingFlexUpAccount: GroupingAccount = {
   ...doMazyGroupingFlexUpAccountData,
-  groupingName: 'Groupement du Domaine de Mazy',
-  groupingLabel: 'Groupement du Domaine de Mazy 👥',
+  groupingName: 'DoMazy',
+  groupingLabel: 'DoMazy 👥',
   memberName: 'Flex Up',
   memberLabel: 'Flex Up 🚀'
 }

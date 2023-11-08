@@ -87,7 +87,7 @@ export const createAccountGateway = async (userId: string) => {
     const accountData = await accountAdapter.getById(accountId)
     return accountData ? await computeAccount(accountData, allAccountUserDatas) : undefined
   }
-  const getAllAcounts = async (): Promise<Account[]> => {
+  const getAllAccounts = async (): Promise<Account[]> => {
     const accountDatas = await getAllAccountDatas()
     return Promise.all(
       accountDatas.map((accountData) => computeAccount(accountData, allAccountUserDatas))
@@ -96,6 +96,6 @@ export const createAccountGateway = async (userId: string) => {
 
   return {
     getById,
-    getAllAcounts
+    getAllAccounts
   }
 }

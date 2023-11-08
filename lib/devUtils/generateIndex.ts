@@ -83,3 +83,4 @@ generateIndex(
 generateIndex('api/gateways')
 generateIndex('api/useCases')
 generateIndex('lib/entities')
+generateIndex('app/composables')

@@ -1,10 +1,12 @@
-import { useActiveAccount } from './useActiveAccount'
+import { useActiveAccount, useAllUserAccounts, useActiveUser } from './'
 import axios from 'axios'
 import Cookies from 'js-cookie'
-import { useActiveUser } from './useActiveUser'
 const API_URL = 'http://127.0.0.1:8787'
 
 const user = useActiveUser()
+const accounts = useAllUserAccounts()
+const activeAccount = useActiveAccount()
+
 export const login = async (identifier, password) => {
   const url = `${API_URL}/user/login`
   try {
@@ -14,7 +16,7 @@ export const login = async (identifier, password) => {
       password
     })
     const token = data.token
-    console.log(`► app/composables/login → token:`, token)
+    // console.log(`► app/composables/login → token:`, token)
     Cookies.set('token', token)
 
     // Fetch user data and store it in local storage
@@ -22,13 +24,19 @@ export const login = async (identifier, password) => {
       headers: { Authorization: `Bearer ${token}` }
     })
     user.value = userResponse.data
-    console.log(`► app/composables/login → user:`, userResponse.data)
+    // console.log(`► app/composables/login → user:`, userResponse.data)
 
-    // return { token, user: userResponse.data }
-    // // Note: Storing the token in the Authorization header like this will only affect the current instance of axios.
-    // // It is not a persistent change and will need to be set again after page reloads.
-    // axios.defaults.headers.common['Authorization'] = `Bearer ${token}`
-    // return token // You should return the token to be consistent with your test expectation
+    // Fetch user accounts and store them in local storage
+    const accountsResponse = await axios.get(`${API_URL}/user/accounts`, {
+      headers: { Authorization: `Bearer ${token}` }
+    })
+    accounts.value = accountsResponse.data
+    // console.log(`► app/composables/login → accounts:`, accounts)
+    if (!accounts.value || accounts.value.length === 0) {
+      console.log(`► app/composables/login → No accounts found`)
+      return
+    }
+    activeAccount.value = accounts.value[0]
   } catch (error: any) {
     console.error(
       `► app/composables/login → Login error (${error.response.status}): ${error.response.data.error}`

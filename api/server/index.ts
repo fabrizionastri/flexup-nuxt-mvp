@@ -57,7 +57,7 @@ app.get('/resources/:resource', async (c) => {
   // console.log('query', Object.entries(query)[0])
   const property = Object.keys(query)[0]
   const value = Object.values(query)[0]
-  console.log('Hono resources requested for:', resource, property, value)
+  // console.log('Hono resources requested for:', resource, property, value)
   let url = `${DB_URL}/${resource}`
   if (property && value) {
     url = `${url}?${property}=${value}`

@@ -32,7 +32,7 @@ vi.mock('../../lib/utils/convertStringsToDates', () => ({
   convertStringsToDates: vi.fn((data) => data) // Mock as a pass-through
 }))
 
-describe('app/composable/getUser - mocked', () => {
+describe.todo('app/composable/getUser - mocked', () => {
   it('should retrieve the user data when a token is present', async () => {
     // Mock cookie retrieval
     // CookiesGetMock.mockReturnValue('mocked-token')

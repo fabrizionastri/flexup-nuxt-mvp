@@ -11,6 +11,7 @@ import { legalPersonDatas } from './legalPerson'
 import { orderDatas } from './order'
 import { organizationDatas } from './organization'
 import { passwordDatas } from './password'
+import { tokenDatas } from './token'
 import { trancheDatas } from './tranche'
 import { userDatas } from './user'
 
@@ -27,6 +28,7 @@ export * from './legalPerson'
 export * from './order'
 export * from './organization'
 export * from './password'
+export * from './token'
 export * from './tranche'
 export * from './user'
 
@@ -44,6 +46,7 @@ export const inMemory = {
   order: orderDatas,
   organization: organizationDatas,
   password: passwordDatas,
+  token: tokenDatas,
   tranche: trancheDatas,
   user: userDatas,
 }

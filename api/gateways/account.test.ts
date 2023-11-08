@@ -92,9 +92,9 @@ describe('accountGateway', () => {
         await expect(createAccountGateway('invalid')).rejects.toThrowError()
       })
     })
-    describe('getAllAcounts', () => {
+    describe('getAllAccounts', () => {
       it('should return all accounts for valid user id', async () => {
-        const result = await accountGateway.getAllAcounts()
+        const result = await accountGateway.getAllAccounts()
         const expected = mock.accountsForFabrizioUser
         expect(new Set(result)).toEqual(new Set(expected))
       })

@@ -67,11 +67,11 @@
       "countryId": "FRA",
       "creationDate": "2020-01-01T00:00:00.000Z",
       "description": "Pizzas à emporter et livraison à domicile.",
-      "avatar": "/images/profiles/pizza_d_oro.png"
+      "avatar": "/images/profiles/pizza_d_oro_takeaway.png"
     },
     {
       "id": "doMazyAccount",
-      "name": "Groupement du Domaine de Mazy",
+      "name": "DoMazy",
       "type": "shared",
       "status": "active",
       "ownerId": "doMazyGrouping",
@@ -79,7 +79,7 @@
       "countryId": "FRA",
       "creationDate": "2020-01-01T00:00:00.000Z",
       "description": "Groupement de producteurs agroécologiques du Domaine de Mazy",
-      "avatar": "/images/profiles/fred.png"
+      "avatar": "/images/profiles/domazy.png"
     },
     {
       "id": "poulaillerMobile",
@@ -199,7 +199,7 @@
   "grouping": [
     {
       "id": "doMazyGrouping",
-      "name": "Groupement du Domaine de Mazy",
+      "name": "DoMazy",
       "representativeAccountId": "agroCoopAccount",
       "groupingContractId": "doMazyGroupingContract",
       "creationDate": "2020-01-01T00:00:00.000Z",

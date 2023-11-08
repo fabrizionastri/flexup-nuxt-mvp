@@ -3,5 +3,5 @@ import { createAccountGateway } from '../gateways'
 
 export const getAllAccounts = async (userId: string): Promise<Account[]> => {
   const accountGateway = createAccountGateway(userId)
-  return (await accountGateway).getAllAcounts()
+  return (await accountGateway).getAllAccounts()
 }

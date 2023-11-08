@@ -102,7 +102,7 @@ export const pizzaDOroTakeAwayAccountData: AccountData = {
   countryId: 'FRA',
   creationDate: new Date('2020-01-01'),
   description: 'Pizzas à emporter et livraison à domicile.',
-  avatar: '/images/profiles/pizza_d_oro.png'
+  avatar: '/images/profiles/pizza_d_oro_takeaway.png'
 }
 export const pizzaDOroTakeAwayAccount: Account = {
   ...pizzaDOroTakeAwayAccountData,
@@ -117,7 +117,7 @@ export const pizzaDOroTakeAwayAccount: Account = {
 
 export const doMazyAccountData: AccountData = {
   id: 'doMazyAccount',
-  name: 'Groupement du Domaine de Mazy',
+  name: 'DoMazy',
   type: 'shared',
   status: 'active',
   ownerId: 'doMazyGrouping', // this points to a grouping, which is a cross table.
@@ -125,12 +125,12 @@ export const doMazyAccountData: AccountData = {
   countryId: 'FRA',
   creationDate: new Date('2020-01-01'),
   description: 'Groupement de producteurs agroécologiques du Domaine de Mazy',
-  avatar: '/images/profiles/fred.png'
+  avatar: '/images/profiles/domazy.png'
 }
 export const doMazyAccount: Account = {
   ...doMazyAccountData,
   symbol: '👥',
-  ownerName: 'Groupement du Domaine de Mazy',
+  ownerName: 'DoMazy',
   ownerType: 'grouping',
   ownerSymbol: '👥',
   currencyName: 'Euro',
@@ -152,14 +152,14 @@ export const poulaillerMobileAccountData: AccountData = {
 export const poulaillerMobileAccount: Account = {
   ...poulaillerMobileAccountData,
   symbol: '🚀',
-  ownerName: 'Groupement du Domaine de Mazy',
+  ownerName: 'DoMazy',
   ownerType: 'grouping',
   ownerSymbol: '👥',
   currencyName: 'Euro',
   currencySymbol: '€',
   countryName: 'France'
-  // finalOwnerName: 'Groupement du Domaine de Mazy',
-  // finalOwnerLabel: 'Groupement du Domaine de Mazy 👥'
+  // finalOwnerName: 'DoMazy',
+  // finalOwnerLabel: 'DoMazy 👥'
 }
 
 export const agroCoopAccountData: AccountData = {
@@ -182,8 +182,8 @@ export const agroCoopAccount: Account = {
   currencyName: 'Swiss Franc',
   currencySymbol: 'CHF',
   countryName: 'Switzerland'
-  // finalOwnerName: 'Groupement du Domaine de Mazy',
-  // finalOwnerLabel: 'Groupement du Domaine de Mazy 👥'
+  // finalOwnerName: 'DoMazy',
+  // finalOwnerLabel: 'DoMazy 👥'
 }
 
 export const totoAccountData: AccountData = {

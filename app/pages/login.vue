@@ -83,24 +83,25 @@
 </template>
 
 <script setup>
-  const identifier = ref('totoUsername')
+  const identifier = ref('fabrizioUsername')
   const password = ref('plop')
   const user = useActiveUser()
   // const user = ref('')
   const errorMsg = ref('')
 
   const handleLogin = async () => {
-    const response = await login(identifier.value, password.value)
-    if (response.error) {
-      // Login failed
-      console.log('app/pages/login.vue - login failed: loginResponse = ', response.error)
-      user.value = null
-      errorMsg.value = loginResponse.error
-    } else {
-      // Login succeeded
-      console.log('app/pages/login.vue - login succeeded: loginResponse = ', response.error)
-      errorMsg.value = ''
-      // navigateTo('/')
-    }
+    console.log('app/pages/login.vue - credentials = ', identifier.value, password.value)
+    // const response = await login(identifier.value, password.value)
+    // if (response.error) {
+    //   // Login failed
+    //   console.log('app/pages/login.vue - login failed: loginResponse = ', response.error)
+    //   user.value = null
+    //   errorMsg.value = loginResponse.error
+    // } else {
+    // Login succeeded
+    // console.log('app/pages/login.vue - login succeeded: loginResponse = ', response.error)
+    // errorMsg.value = ''
+    // navigateTo('/')
   }
+  // }
 </script>
