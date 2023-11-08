@@ -4,6 +4,6 @@ import { useLocalStorage } from '@vueuse/core'
 import { fabrizioUser } from '../../mock/inMemory/user'
 import type { User } from '../../lib/entities/user'
 
-export const useActiveUser = (): Ref<User> => {
+export const useActiveUser = (): Ref<User | null> => {
   return useLocalStorage('activeUser', fabrizioUser)
 }

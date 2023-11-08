@@ -2,7 +2,7 @@
 import app from './user'
 // import { convertDatesToStrings } from 'lib/utils/convertDatesToStrings'
 
-describe('hono user routes', () => {
+describe('api/server/routes/user routes', () => {
   describe('POST /login', () => {
     beforeEach(() => {
       // clean up any error side effects

@@ -1,0 +1,4 @@
+export const totoUserTokenUndated =
+  'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJ0b3RvVXNlciJ9.2e5ajsZrVRdPafK2h0WiFYHRIrNTQdm4gLgPhNsXYoI'
+export const fabrizioUserTokenUndated =
+  'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJmYWJyaXppb1VzZXIifQ.e16qiQ8OWR57ELoWepyhnrJ0qblZYNOaLUMtA-jeVGY'

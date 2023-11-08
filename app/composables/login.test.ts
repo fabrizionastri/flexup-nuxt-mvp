@@ -1,21 +1,18 @@
-import * as identifiers from '../../mock/inMemory/identifier'
-import * as passwords from '../../mock/inMemory/password'
-import { totoUser } from '../../mock/inMemory/user'
+import * as mock from '../../mock/inMemory'
 import { login } from './login'
 
 describe('app/composable/login', () => {
-  it('should return a computed user when valid credentials are provided', async () => {
-    const identifier = identifiers.totoUsernameIdentifierData.id
-    const password = passwords.totoUserPasswordData.password
+  it('should return a token when valid credentials are provided', async () => {
+    const identifier = mock.totoUsernameIdentifierData.id
+    const password = mock.totoUserPasswordData.password
     const result = await login(identifier, password)
-    const expected = totoUser
-    expect(result).toEqual(expected)
+    const expected = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJ0b3RvVXNlciIsI'
+    expect(result.slice(0, 60)).toEqual(expected.slice(0, 60))
   })
   it('should return an error message user when invalid credentials are provided', async () => {
-    const identifier = identifiers.totoUsernameIdentifierData.id
+    const identifier = mock.totoUsernameIdentifierData.id
     const password = 'invalidPassword'
     const result = await login(identifier, password)
-    // console.log('app/composables/login.test.ts - result:', result)
     const expected = {
       error: 'Invalid password'
     }

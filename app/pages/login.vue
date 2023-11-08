@@ -93,13 +93,14 @@
     const response = await login(identifier.value, password.value)
     if (response.error) {
       // Login failed
-      errorMsg.value = response.error
-      user.value = ''
+      console.log('app/pages/login.vue - login failed: loginResponse = ', response.error)
+      user.value = null
+      errorMsg.value = loginResponse.error
     } else {
       // Login succeeded
-      user.value = response
+      console.log('app/pages/login.vue - login succeeded: loginResponse = ', response.error)
       errorMsg.value = ''
-      navigateTo('/')
+      // navigateTo('/')
     }
   }
 </script>

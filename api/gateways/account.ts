@@ -1,6 +1,5 @@
-import { CurrencyData } from './../../lib/entities/currency'
-import { CountryData } from './../../lib/entities/country'
-import { individualGateway } from './individual'
+import type { CurrencyData, CountryData } from 'lib/entities'
+import { individualGateway } from './'
 import {
   accountAdapter,
   accountUserAdapter,
@@ -50,9 +49,9 @@ export const computeAccount = async (
     throw new Error('Invalid account type')
   }
 
-  const currency = await currencyAdapter.getById(accountData.currencyId)
+  const currency: CurrencyData | undefined = await currencyAdapter.getById(accountData.currencyId)
   if (!currency) throw new Error('Invalid currency')
-  const country = await countryAdapter.getById(accountData.countryId)
+  const country: CountryData | undefined = await countryAdapter.getById(accountData.countryId)
   if (!country) throw new Error('Invalid country')
 
   const account: Account = {
