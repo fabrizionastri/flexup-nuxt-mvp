@@ -16,9 +16,9 @@ export default defineNuxtConfig({
   plugins: [
     //
   ],
-  // imports: {
-  //   dirs: ['composables/**', '../lib/**', '../mock/**']
-  // },
+  imports: {
+    dirs: ['composables/**', '../lib/**', '../mock/**']
+  },
   alias: {
     'lib/': fileURLToPath(new URL('./lib', import.meta.url)),
     'utils/': fileURLToPath(new URL('./lib/utils', import.meta.url)),

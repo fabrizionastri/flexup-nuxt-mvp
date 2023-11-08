@@ -10,17 +10,15 @@
     "noImplicitAny": false,
     "baseUrl": ".",
     "paths": {
-      "~/*": ["./*"],
-      "@/*": ["./*"],
       "app/*": ["./app/*"],
-      "api/*": ["./api/*", "./api"],
-      "usecases/*": ["./api/usecases/*", "./api/usecases"],
-      "gateways/*": ["./api/gateways/*", "./api/gateways"],
-      "adapters/*": ["./api/adapters/*", "./api/adapters"],
-      "lib/*": ["./lib/*", "./lib"],
-      "utils/*": ["./lib/utils/*", "./lib/utils"],
-      "entities/*": ["./lib/entities/*", "./lib/entities"],
-      "mock/*": ["./mock/*", "./mock"]
+      "api/*": ["./api/*"],
+      "usecases/*": ["./api/usecases/*"],
+      "gateways/*": ["./api/gateways/*"],
+      "adapters/*": ["./api/adapters/*"],
+      "lib/*": ["./lib/*"],
+      "utils/*": ["./lib/utils/*"],
+      "entities/*": ["./lib/entities/*"],
+      "mock/*": ["./mock/*"]
     },
     "types": ["vitest/globals"]
   },

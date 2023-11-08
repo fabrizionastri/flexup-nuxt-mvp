@@ -1,5 +1,5 @@
-import { sortById } from './../../lib/utils/sortById'
-import { convertStringsToDates } from 'lib/utils/convertStringsToDates'
+import { sortById } from '../../lib/utils/sortById'
+import { convertStringsToDates } from '../../lib/utils/convertStringsToDates'
 import * as mock from '../../mock/inMemory'
 import { fetchAccounts } from './'
 

@@ -1,4 +1,4 @@
-import { round6 } from 'utils/round'
+import { round6 } from '../../lib/utils'
 
 export const sumPropertyStrict = <T>(
   property: keyof T & string,

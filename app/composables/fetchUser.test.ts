@@ -1,4 +1,4 @@
-import { convertStringsToDates } from 'lib/utils/convertStringsToDates'
+import { convertStringsToDates } from '../../lib/utils/convertStringsToDates'
 import * as mock from '../../mock/inMemory'
 import { fetchUser } from './'
 

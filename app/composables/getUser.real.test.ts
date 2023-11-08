@@ -1,4 +1,4 @@
-import * as mock from 'mock/inMemory'
+import * as mock from '../../mock/inMemory'
 import { getUser } from './getUser'
 import Cookies from 'js-cookie'
 // import type { Mock } from 'vitest'
