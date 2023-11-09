@@ -1,7 +1,5 @@
 import { getResource } from './getResource'
 
-// const API_URL = process.env.API_URL || 'http://127.0.0.1:8787' // ne fonctionne pas ❌😖
-// const API_URL = process.env.API_URL || 'http://localhost:8787' // ne fonctionne pas ❌😖
 const API_URL = 'http://127.0.0.1:8787'
 
 import axios from 'axios'

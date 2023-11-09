@@ -1,10 +1,10 @@
-<template lang="pug">
-html.h-full.bg-white
-  body.h-full
-    div
-      NavBar
-      main
-        slot
+<template>
+  <div class=".h-full.bg-white">
+    <NavBar />
+    <div class="m-5">
+      <slot />
+    </div>
+  </div>
 </template>
 
 <script setup></script>

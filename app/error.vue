@@ -6,6 +6,7 @@
     </h2>
     <p>{{ error?.message }}</p>
     <button @click="handleError">Go back</button>
+    <p>{{ error }}</p>
   </div>
 </template>
 

@@ -233,15 +233,6 @@ export const getTotalAmountDue = (commitments: Array<any>): number => {
   return getTotalForKey(commitments, 'dueAmount')
 }
 
-export const clone = <T extends object | string | number | boolean>(source: T): T => {
-  if (typeof source === 'object' && source !== null) {
-    return JSON.parse(JSON.stringify(source))
-  } else {
-    // For primitive types like string and number, you can return them directly
-    return source
-  }
-}
-
 export const sumNumberProps = <T extends Record<string, any>>(obj: T): number => {
   return Object.keys(obj)
     .map((k) => {

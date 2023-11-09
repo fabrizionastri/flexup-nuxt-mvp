@@ -1,6 +1,7 @@
 import { fetchToken, fetchUser, fetchAccounts } from './'
 
 export const useLogin = async (identifier, password) => {
+  console.log('useLogin')
   // Login with credentials and fetch token
   const token = await fetchToken(identifier, password)
   if (!token) return

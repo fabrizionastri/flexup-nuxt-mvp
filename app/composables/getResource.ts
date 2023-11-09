@@ -1,6 +1,5 @@
 import axios from 'axios'
 import { convertStringsToDates } from '../../lib/utils/convertStringsToDates'
-// const API_URL = process.env.API_URL || 'http://127.0.0.1:8787' // ceci ne fonctionne pas
 const API_URL = 'http://127.0.0.1:8787'
 
 export const getResource = async (resource: string, prop = null, value = '') => {

@@ -2,7 +2,6 @@ import axios from 'axios'
 import Cookies from 'js-cookie'
 import { convertStringsToDates } from '../../lib/utils/convertStringsToDates'
 
-// const API_URL = process.env.API_URL || 'http://127.0.0.1:8787' // ceci ne fonctionne pas
 const API_URL = 'http://127.0.0.1:8787'
 
 export const getAllUserAccounts = async () => {

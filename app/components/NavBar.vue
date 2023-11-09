@@ -73,7 +73,7 @@
         <div id="RightSection" class="flex items-center">
           <!-- <Dropdown /> -->
           <!-- <AddNew /> -->
-          <span>User: {{ user.fullName }}</span>
+
           <div class="hidden md:ml-4 md:flex md:flex-shrink-0 md:items-center">
             <!-- <NotificationBell /> -->
             <AccountMenu />
@@ -160,5 +160,4 @@
 <script setup>
   import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/vue'
   import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/vue/24/outline'
-  const user = useActiveUser()
 </script>

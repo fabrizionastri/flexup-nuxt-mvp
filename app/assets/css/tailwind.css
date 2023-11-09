@@ -33,3 +33,7 @@ main {
 label {
   @apply mr-3 font-bold;
 }
+
+.active-account {
+  border-left: 4px solid purple !important;
+}

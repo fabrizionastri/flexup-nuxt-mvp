@@ -16,8 +16,8 @@
             >
             <div class="text-sm">
               <a href="#" class="font- text-indigo-400 hover:text-indigo-500"
-                >What is an identifier?</a
-              >
+                >Which identifier should I use?
+              </a>
             </div>
           </div>
           <div class="mt-2">
@@ -77,36 +77,42 @@
         >
       </p>
     </div>
-    <p class="ml-5 mt-3 text-red-500">{{ errorMsg }}</p>
-    <p class="mt-10 text-xs text-gray-300">User : {{ user }}</p>
+    <ClientOnly>
+      <p class="ml-5 mt-3 text-red-500">{{ errorMsg }}</p>
+      <p class="mt-10 text-xs text-gray-300">User : {{ user }}</p>
+      <p class="mt-10 text-xs text-gray-300">User stringified : {{ JSON.stringify(user) }}</p>
+    </ClientOnly>
   </div>
 </template>
 
 <script setup>
+  import { clone } from '../../lib/utils'
   const identifier = ref('fabrizioUsername')
   const password = ref('plop')
   const errorMsg = ref('')
 
   const user = useActiveUser()
-  const accounts = useAllUserAccounts()
+  const allAccounts = useAllUserAccounts()
   const activeAccount = useActiveAccount()
 
   const updateState = (response) => {
-    user.value = response.user
-    accounts.value = response.accounts
-    activeAccount.value = response.accounts[0]
+    console.log('app/pages/login.vue - updating user State (before):', user.value)
+    user.value = clone(response.user)
+    console.log('app/pages/login.vue - updating user State (after):', user.value)
+    allAccounts.value = clone(response.accounts)
+    activeAccount.value = clone(response.accounts[0])
   }
 
   const handleLogin = async () => {
-    clearState()
     const response = await useLogin(identifier.value, password.value)
-    updateState(response)
+    console.log('app/pages/login.vue - response:', response)
     if (response.error) {
       // Login failed
       errorMsg.value = response.error
     } else {
       // Login success
-      accounts.navigateTo('/')
+      updateState(response)
+      // navigateTo('/')
     }
   }
 </script>
