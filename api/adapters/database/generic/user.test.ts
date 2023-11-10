@@ -16,7 +16,7 @@ describe('user adapter', () => {
   describe('getByProperty', () => {
     it('should return list of accounts by status', async () => {
       const results = await userAdapter.getByProperty('status', 'pending')
-      expect(results).toContain(users.pendingUserData)
+      expect(results).toEqual([users.pendingUserData])
     })
     it.todo('should return list of account by login date', async () => {
       const results = await userAdapter.getByProperty('lastLoginDate', new Date('2023-10-23'))

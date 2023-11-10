@@ -1,15 +1,16 @@
-import { vi } from 'vitest'
-import type { Mock } from 'vitest'
-
-import { accountAdapter } from './account'
+import axios from '../myAxios'
 
 // Mocking the myAxios library
-import axios from '../myAxios'
+import { vi } from 'vitest'
+import type { Mock } from 'vitest'
 vi.mock('../myAxios')
+vi.mock('../methods/assertPropertyExists')
 const axiosGetMock = axios.get as Mock
+
 let result: any
 let mockEntity, mockEntity1, mockEntity2: any
 
+import { accountAdapter } from './account'
 describe('createGenericAdapter - mock Axios', () => {
   beforeEach(() => {
     // Reset the mock before each test
@@ -17,11 +18,11 @@ describe('createGenericAdapter - mock Axios', () => {
   })
   describe('getById', () => {
     it('should have been called with the right url', async () => {
-      await accountAdapter.getById('entity1')
-      expect(axiosGetMock).toHaveBeenCalledWith('/account/entity1')
+      await accountAdapter.getById('id1')
+      expect(axiosGetMock).toHaveBeenCalledWith('/account/id1')
     })
     it('should return an entity when called with id', async () => {
-      mockEntity = { id: 'entity1', name: 'Test Entity' }
+      mockEntity = { id: 'id1', name: 'Test Entity' }
       axiosGetMock.mockResolvedValue(mockEntity)
       result = await accountAdapter.getById('entity1')
       expect(result).toEqual(mockEntity)
@@ -29,8 +30,8 @@ describe('createGenericAdapter - mock Axios', () => {
   })
 
   describe('getByProperty', () => {
-    it('should retrieve entities based on a property and its value', async () => {
-      mockEntity = { id: 'entity1', name: 'Test Entity' }
+    it('should return accounts based on a property and its value', async () => {
+      mockEntity = { id: 'id1', name: 'Test Entity' }
       axiosGetMock.mockResolvedValue(mockEntity)
       result = await accountAdapter.getByProperty('name', 'Test Entity')
       expect(result).toContain(mockEntity)

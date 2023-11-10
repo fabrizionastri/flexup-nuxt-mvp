@@ -44,7 +44,8 @@ describe('accountAdapter', () => {
   describe('getByProperty', () => {
     it('should retrieve entities based on a property and its value', async () => {
       const results = await accountAdapter.getByProperty('type', 'personal')
-      expect(results).toContain(fabrizioAccountData)
+      expect(results).toEqual([fabrizioAccountData, totoAccountData])
+      // expect(results).toEqual(expect.arrayContaining([fabrizioAccountData]))
     })
 
     it('should return an empty array if no entities match the criteria', async () => {

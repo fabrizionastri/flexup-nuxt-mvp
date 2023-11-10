@@ -2,6 +2,7 @@ import { convertStringsToDates } from 'lib/utils/convertStringsToDates'
 import type { Entity, EntityName } from 'entities/entity'
 import axios from '../myAxios'
 import type { CreateGetByProperties } from '../../generic/interfaces'
+import { assertPropertyExists } from './assertPropertyExists'
 
 export const createGetByProperties: CreateGetByProperties =
   <T extends Entity>(entityName: EntityName) =>
@@ -14,6 +15,11 @@ export const createGetByProperties: CreateGetByProperties =
   ): Promise<T[]> => {
     const encodedValue1 = encodeURIComponent(value1 as string)
     const encodedValue2 = encodeURIComponent(value2 as string)
+
+    // Should not be necessary, only for tests & development
+    await assertPropertyExists(entityName, property1)
+    await assertPropertyExists(entityName, property2)
+
     let url = `/${entityName}?`
     let results,
       results1,

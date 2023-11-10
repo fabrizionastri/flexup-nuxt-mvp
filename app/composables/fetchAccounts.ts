@@ -16,6 +16,7 @@ export const fetchAccounts = async (token, accountStatuses: AccountStatus[] = []
         Authorization: `Bearer ${token}`
       }
     })
+    console.log('app/composables/fetchAccounts.ts - accounts data:', data)
     return data
   } catch (error: any) {
     return error.response.data

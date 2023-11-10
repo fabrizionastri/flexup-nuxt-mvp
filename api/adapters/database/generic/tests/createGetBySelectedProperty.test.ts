@@ -15,6 +15,6 @@ describe('api/adapters/database/inMemory/methods/createGetBySelectedProperty', (
   })
   it('should throw error if invalid key', async () => {
     const getBySelectedProperty = createGetBySelectedProperty<AccountData>('account', 'invalidKey')
-    await expect(() => getBySelectedProperty('CHE')).rejects.toThrowError()
+    await expect(getBySelectedProperty('CHE')).rejects.toThrow()
   })
 })
