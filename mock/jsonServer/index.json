@@ -58,7 +58,7 @@
       "avatar": "/images/profiles/pizza_d_oro.png"
     },
     {
-      "id": "pizzaDOroTakeAway",
+      "id": "pizzaDOroTakeAwayAccount",
       "name": "Pizza d'Oro TakeAway",
       "type": "project",
       "status": "pending",
@@ -138,6 +138,12 @@
     {
       "id": "doMazyAccount:FabrizioUser",
       "accountId": "doMazyAccount",
+      "userId": "fabrizioUser",
+      "role": "guest"
+    },
+    {
+      "id": "pizzaDOroTakeAwayAccount:FabrizioUser",
+      "accountId": "pizzaDOroTakeAwayAccount",
       "userId": "fabrizioUser",
       "role": "guest"
     }

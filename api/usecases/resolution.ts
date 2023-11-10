@@ -1,7 +1,7 @@
 import { allocate } from 'usecases/allocate'
 import type { Balances } from 'entities/balance'
 import { sumSelectedBalances } from 'usecases/balance'
-import { clone, getNumberForKey } from 'usecases/utils'
+import { clone, getNumberForKey } from 'lib/utils'
 import type { ReserveName } from 'entities/reserve'
 import type { AmountsRequested, ResolutionName, ResolutionStep } from 'entities/resolution'
 import type { AllocationReport } from 'entities/allocation'

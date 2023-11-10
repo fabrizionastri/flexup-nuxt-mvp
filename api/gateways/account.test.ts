@@ -1,16 +1,18 @@
+import { sortById } from './../../lib/utils/sortById'
 import { agroCoopAccount } from './../../mock/inMemory/account'
 import * as mock from 'mock/inMemory'
-import { computeAccount, createAccountGateway } from './account'
+import { accountsForFabrizioUser } from 'mock/inMemory/accountUser'
+import { computeAccount, createAccountGateway, getAccountDatas } from './account'
 import type { AccountData } from 'lib/entities'
 
 let accountGateway: any
 
-describe('accountGateway', () => {
+describe.only('accountGateway', () => {
   describe('computeAccount', () => {
     it('individual account - should compute account for valid account Id', async () => {
       const result = await computeAccount(
         mock.fabrizioAccountData,
-        mock.accountDatasForFabrizioUser
+        mock.accountUserDatasForFabrizioUser
       )
       const expected = { ...mock.fabrizioAccount, role: 'owner' }
       expect(result).toEqual(expected)
@@ -21,30 +23,39 @@ describe('accountGateway', () => {
       expect(result).toEqual(expected)
     })
     it('business account - should compute account for valid account Id', async () => {
-      const result = await computeAccount(mock.cosysAccountData, mock.accountDatasForFabrizioUser)
+      const result = await computeAccount(
+        mock.cosysAccountData,
+        mock.accountUserDatasForFabrizioUser
+      )
       const expected = { ...mock.cosysAccount, role: 'owner' }
       expect(result).toEqual(expected)
     })
     it('shared account - should compute account for valid account Id', async () => {
-      const result = await computeAccount(mock.doMazyAccountData, mock.accountDatasForFabrizioUser)
+      const result = await computeAccount(
+        mock.doMazyAccountData,
+        mock.accountUserDatasForFabrizioUser
+      )
       const expected = { ...mock.doMazyAccount, role: 'guest' }
       expect(result).toEqual(expected)
     })
-    it('project account - should compute account for valid account Id', async () => {
-      const result = await computeAccount(mock.flexupAccountData, mock.accountDatasForFabrizioUser)
+    it.only('project account - should compute account for valid account Id', async () => {
+      const result = await computeAccount(
+        mock.flexupAccountData,
+        mock.accountUserDatasForFabrizioUser
+      )
       const expected = { ...mock.flexupAccount, role: 'owner' }
       expect(result).toEqual(expected)
     })
     it('invalid account - should throw error for an invalid account', async () => {
       const invalidAccountData = { ...mock.flexupAccountData, ownerId: 'inexistantAccount' }
       await expect(
-        computeAccount(invalidAccountData, mock.accountDatasForFabrizioUser)
+        computeAccount(invalidAccountData, mock.accountUserDatasForFabrizioUser)
       ).rejects.toThrowError()
     })
     it('should return computed account but with no role if user is not a member of this account', async () => {
       const result = await computeAccount(
         mock.agroCoopAccountData,
-        mock.accountDatasForFabrizioUser
+        mock.accountUserDatasForFabrizioUser
       )
       const expected = mock.agroCoopAccount
       expect(result).toEqual(expected)
@@ -55,7 +66,7 @@ describe('accountGateway', () => {
       expect(result).toEqual(expected)
       //   console.log('api/gateways/account - computeAccount.test - result:', result)
       //   await expect(
-      //     computeAccount(mock.agroCoopAccountData, accountDatasForFabrizioUser)
+      //     computeAccount(mock.agroCoopAccountData, accountUserDatasForFabrizioUser)
       //   ).rejects.toThrowError()
     })
     it('invalid owner - should throw error if ownerId is invalid', async () => {
@@ -75,6 +86,39 @@ describe('accountGateway', () => {
       await expect(computeAccount(accountData)).rejects.toThrowError()
     })
   })
+  describe('getAccountDatas', () => {
+    it('should return account datas for valid account ids', async () => {
+      const result = await getAccountDatas(['fabrizioAccount', 'cosysAccount', 'totoAccount'])
+      const expected = [mock.fabrizioAccountData, mock.cosysAccountData, mock.totoAccountData]
+      expect(sortById(result)).toEqual(sortById(expected))
+    })
+    it('should return active account datas for valid account ids and status filter', async () => {
+      const result = await getAccountDatas(
+        ['fabrizioAccount', 'cosysAccount', 'pizzaDOroTakeAwayAccount'],
+        ['active']
+      )
+      const expected = [mock.fabrizioAccountData, mock.cosysAccountData]
+      expect(sortById(result)).toEqual(sortById(expected))
+    })
+    it('should return all account datas for valid account ids and status filter', async () => {
+      const result = await getAccountDatas(
+        ['plop', 'fabrizioAccount', 'pizzaDOroTakeAwayAccount'],
+        ['pending']
+      )
+      const expected = [mock.pizzaDOroTakeAwayAccountData]
+      expect(sortById(result)).toEqual(sortById(expected))
+    })
+    it('should return [] for invalid account ids', async () => {
+      const result = await getAccountDatas(['invalid'])
+      const expected: AccountData[] = []
+      expect(result).toEqual(expected)
+    })
+    it('should return [] for invalid account ids and status filter', async () => {
+      const result = await getAccountDatas(['invalid'], ['active'])
+      const expected: AccountData[] = []
+      expect(result).toEqual(expected)
+    })
+  })
   describe('gateway methods', () => {
     beforeAll(async () => {
       accountGateway = await createAccountGateway('fabrizioUser')
@@ -92,11 +136,25 @@ describe('accountGateway', () => {
         await expect(createAccountGateway('invalid')).rejects.toThrowError()
       })
     })
-    describe('getAllAccounts', () => {
-      it('should return all accounts for valid user id', async () => {
-        const result = await accountGateway.getAllAccounts()
-        const expected = mock.accountsForFabrizioUser
-        expect(new Set(result)).toEqual(new Set(expected))
+    describe('getAccounts', () => {
+      describe('no status filter', () => {
+        it('should return all accounts for valid user id', async () => {
+          const result = await accountGateway.getAccounts()
+          const expected = accountsForFabrizioUser
+          expect(sortById(result)).toEqual(sortById(expected))
+        })
+      })
+      describe('with status filter', () => {
+        it('should return active accounts for valid user id', async () => {
+          const result = await accountGateway.getAccounts(['active'])
+          const expected = mock.activeAccountsForFabrizioUser
+          expect(sortById(result)).toEqual(sortById(expected))
+        })
+        it('should return pending accounts for valid user id', async () => {
+          const result = await accountGateway.getAccounts(['pending'])
+          const expected = [mock.pizzaDOroTakeAwayAccountFabrizioUser]
+          expect(sortById(result)).toEqual(sortById(expected))
+        })
       })
     })
   })

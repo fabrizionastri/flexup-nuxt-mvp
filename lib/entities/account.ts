@@ -8,7 +8,9 @@ export const accountOwnerMapping = {
 } as const // "as const" ensures that TypeScript sees these as literal types rather than general string types.
 
 export type AccountType = keyof typeof accountOwnerMapping
-export type OwnerType = (typeof accountOwnerMapping)[AccountType]
+
+// OwnerType includes both the account type and the owner type
+export type OwnerType = (typeof accountOwnerMapping)[AccountType] | AccountType
 
 export const accountTypeIcons = {
   personal: '👤',

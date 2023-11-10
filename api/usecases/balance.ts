@@ -1,5 +1,5 @@
 import type { ReserveName } from 'entities/reserve'
-import { getNumberForKey, isValidNumber } from 'usecases/utils'
+import { getNumberForKey, isValidNumber } from 'lib/utils'
 import type { Balances } from 'entities/balance'
 import { zeroBalances } from 'entities/balance'
 

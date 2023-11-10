@@ -5,10 +5,18 @@
   "version": "0.2.0",
   "configurations": [
     {
+      "name": "Test account gateway",
+      "request": "launch",
+      "runtimeExecutable": "pnpm",
+      "runtimeArgs": ["run-script", "test"],
+      "skipFiles": ["<node_internals>/**"],
+      "type": "node"
+    },
+    {
       "name": "Launch via NPM",
       "request": "launch",
-      "runtimeArgs": ["run-script", "hono"],
       "runtimeExecutable": "pnpm",
+      "runtimeArgs": ["run-script", "hono"],
       "skipFiles": ["<node_internals>/**"],
       "type": "node"
     }

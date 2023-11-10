@@ -1,16 +1,15 @@
-import { getAllAccounts } from 'usecases/getAllAccounts'
+import { getAccounts } from 'usecases/getAccounts'
 import { Hono } from 'hono'
 import { jwtMiddleware } from '../middleware/jwtMiddleware'
+import type { AccountStatus } from 'lib/entities'
 
 const app = new Hono()
 
-app.get('/account/all', jwtMiddleware, async (c) => {
-  // const accountId = c.req.param('accountId')
-  // console.log('req path', c.req.path)
-  // console.log('Hono: process.env.STORAGE_TYPE', process.env.STORAGE_TYPE)
+app.get('/', jwtMiddleware, async (c) => {
   const userId = c['jwtPayload'].userId
-  const accounts = await getAllAccounts(userId)
-  // console.log('orders', JSON.stringify(orders, null, 2))
+  const queryStatuses = c.req.query('status')
+  const statuses = queryStatuses ? (queryStatuses.split(',') as AccountStatus[]) : []
+  const accounts = await getAccounts(userId, statuses)
   return c.json(accounts)
 })
 

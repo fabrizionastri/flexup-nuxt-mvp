@@ -62,7 +62,7 @@ export const flexupAccount: Account = {
   ...flexupAccountData,
   symbol: '🚀',
   ownerName: 'Cosys',
-  ownerType: 'organization',
+  ownerType: 'business',
   ownerSymbol: '🏢',
   currencyName: 'Euro',
   currencySymbol: '€',
@@ -93,7 +93,7 @@ export const pizzaDOroAccount: Account = {
 }
 
 export const pizzaDOroTakeAwayAccountData: AccountData = {
-  id: 'pizzaDOroTakeAway',
+  id: 'pizzaDOroTakeAwayAccount',
   name: "Pizza d'Oro TakeAway",
   type: 'project',
   status: 'pending',

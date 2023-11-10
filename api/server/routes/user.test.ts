@@ -1,10 +1,8 @@
-import { sortById } from './../../../lib/utils/sortById'
 import { sortById, convertStringsToDates } from 'lib/utils'
 import * as mock from 'mock/inMemory'
 import app from './user'
-// import { convertDatesToStrings } from 'lib/utils/convertDatesToStrings'
 
-describe('api/server/routes/user routes', () => {
+describe('api/server/routes/user', () => {
   describe('POST /login', () => {
     beforeEach(() => {
       // clean up any error side effects
@@ -79,41 +77,6 @@ describe('api/server/routes/user routes', () => {
       const expected = { error: 'Invalid token' }
       expect(res.status).toBe(401)
 
-      expect(result).toEqual(expected)
-    })
-  })
-  describe('GET /accounts', () => {
-    it('should return the list all user accounts and status 200 for valid jwt - toto', async () => {
-      const jwt = mock.totoUserToken
-      const res = await app.request('/accounts', {
-        headers: { Authorization: `Bearer ${jwt}` }
-      })
-      const result = sortById(convertStringsToDates(await res.json()))
-      const expected = sortById(mock.accountsForTotoUser)
-      expect(res.status).toBe(200)
-
-      expect(new Set(result)).toEqual(new Set(expected))
-    })
-    it('should return the list all user accounts and status 200 for valid jwt - fabrizio', async () => {
-      const jwt = mock.fabrizioUserToken
-      const res = await app.request('/accounts', {
-        headers: { Authorization: `Bearer ${jwt}` }
-      })
-      const result = sortById(convertStringsToDates(await res.json()))
-      // console.log('api/server/routes/user.test.ts - result:', result)
-      const expected = sortById(mock.accountsForFabrizioUser)
-      // console.log('api/server/routes/user.test.ts - expected:', expected)
-      expect(res.status).toBe(200)
-      expect(result).toEqual(expected)
-    })
-    it('should return an error and status 404 for invalid jwt', async () => {
-      const jwt = 'invalid'
-      const res = await app.request('/accounts', {
-        headers: { Authorization: `Bearer ${jwt}` }
-      })
-      const result = convertStringsToDates(await res.json())
-      const expected = { error: 'Invalid token' }
-      expect(res.status).toBe(401)
       expect(result).toEqual(expected)
     })
   })

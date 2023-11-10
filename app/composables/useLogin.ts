@@ -1,7 +1,7 @@
 import { fetchToken, fetchUser, fetchAccounts } from './'
 
 export const useLogin = async (identifier, password) => {
-  console.log('useLogin')
+  // console.log('useLogin')
   // Login with credentials and fetch token
   const token = await fetchToken(identifier, password)
   if (!token) return
@@ -10,7 +10,7 @@ export const useLogin = async (identifier, password) => {
   const user = await fetchUser(token)
   if (!user) return
 
-  const accounts = await fetchAccounts(token)
+  const accounts = await fetchAccounts(token, ['active'])
   if (!accounts || accounts.length === 0) return
 
   return { token, user, accounts }

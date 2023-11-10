@@ -1,4 +1,4 @@
-import { getAllAccounts } from 'usecases/getAllAccounts'
+import { getAccounts } from 'usecases/getAccounts'
 import { userGateway } from 'gateways/user'
 import { Hono } from 'hono'
 import jwt from 'jsonwebtoken'
@@ -29,36 +29,9 @@ app.post('/login', async (c) => {
 
 // route to get the user information
 app.get('/', jwtMiddleware, async (c) => {
-  // const authHeader = c.req.headers.get('Authorization')
-  // if (!authHeader) {
-  //   return c.json({ message: 'No authorization header provided' }, 401)
-  // }
-  // const token = authHeader.split(' ')[1] // Bearer <token>
-  // try {
-  //   const decoded = jwt.verify(token, privateKey) as jwt.JwtPayload
-  //   console.log('api/server/routes/user - decoded:', decoded)
-  //   if (decoded && decoded.userId) {
   const userId = c['jwtPayload'].userId
-  // console.log('api/server/routes/user - userId:', userId)
   const user = await userGateway.getById(userId)
-  // console.log('api/server/routes/user - user:', user)
   return c.json(user)
-  //   } else {
-  //     return c.json({ message: 'Token verification failed' }, 401)
-  //   }
-  // } catch (error) {
-  //   return c.json({ message: 'Invalid token' }, 401)
-  // }
-})
-
-app.get('/accounts', jwtMiddleware, async (c) => {
-  // const accountId = c.req.param('accountId')
-  // console.log('req path', c.req.path)
-  // console.log('Hono: process.env.STORAGE_TYPE', process.env.STORAGE_TYPE)
-  const userId = c['jwtPayload'].userId
-  const accounts = await getAllAccounts(userId)
-  // console.log('orders', JSON.stringify(orders, null, 2))
-  return c.json(accounts)
 })
 
 export default app

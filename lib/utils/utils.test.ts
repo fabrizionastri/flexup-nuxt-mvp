@@ -30,7 +30,7 @@ import {
   isSameDay,
   calculateInterest,
   calculateDuration
-} from 'usecases/utils'
+} from 'lib/utils'
 
 import { zeroBalances } from 'lib/entities/balance' // CHECK / TODOS : this used to work with out lib/, with just 'entities', but now it doesn't. Why?
 

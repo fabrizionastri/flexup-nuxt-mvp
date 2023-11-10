@@ -1,4 +1,4 @@
-import type { Account, Entity } from '.'
+import type { Entity } from '.'
 
 export type AccountUserRole = 'owner' | 'admin' | 'editor' | 'guest'
 

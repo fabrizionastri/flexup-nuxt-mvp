@@ -25,6 +25,10 @@ describe('-> accountUser', () => {
       const result = await accountUserAdapter.getByUserId('totoUser')
       expect(result).toEqual(accountUser.accountUserDatasForTotoUser)
     })
+    it('should return list of accounts for valid user Id', async () => {
+      const result = await accountUserAdapter.getByUserId('fabrizioUser')
+      expect(result).toEqual(accountUser.accountUserDatasForFabrizioUser)
+    })
     it('should return [] for inexistant user Id', async () => {
       const result = await accountUserAdapter.getByUserId('inexistantUser')
       expect(result).toEqual([])
@@ -45,7 +49,10 @@ describe('-> accountUser', () => {
     })
     it('should retrieve entities based on a property and its value', async () => {
       const results = await accountUserAdapter.getByProperty('role', 'guest')
-      expect(results).toEqual([accountUser.doMazyAccountFabrizioUserData])
+      expect(results).toEqual([
+        accountUser.doMazyAccountFabrizioUserData,
+        accountUser.pizzaDOroTakeAwayAccountFabrizioUserData
+      ])
     })
   })
 })

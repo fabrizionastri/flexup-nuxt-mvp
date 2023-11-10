@@ -10,5 +10,8 @@ div.m-1(v-for="(value, key) in activeAccount" :key="key")
 
 <script setup>
   const activeAccount = useActiveAccount()
-  console.log('😊 app/pages/accounts.vue - activeAccount:', JSON.stringify(activeAccount.value))
+  console.log(
+    '😊 app/pages/activeAccounts.vue - activeAccount:',
+    JSON.stringify(activeAccount.value)
+  )
 </script>

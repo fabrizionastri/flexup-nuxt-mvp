@@ -77,11 +77,11 @@
         >
       </p>
     </div>
-    <ClientOnly>
+    <!-- <ClientOnly>
       <p class="ml-5 mt-3 text-red-500">{{ errorMsg }}</p>
       <p class="mt-10 text-xs text-gray-300">User : {{ user }}</p>
       <p class="mt-10 text-xs text-gray-300">User stringified : {{ JSON.stringify(user) }}</p>
-    </ClientOnly>
+    </ClientOnly> -->
   </div>
 </template>
 
@@ -92,14 +92,14 @@
   const errorMsg = ref('')
 
   const user = useActiveUser()
-  const allAccounts = useAllUserAccounts()
+  const activeAccounts = useAllUserAccounts()
   const activeAccount = useActiveAccount()
 
   const updateState = (response) => {
     console.log('app/pages/login.vue - updating user State (before):', user.value)
     user.value = clone(response.user)
     console.log('app/pages/login.vue - updating user State (after):', user.value)
-    allAccounts.value = clone(response.accounts)
+    activeAccounts.value = clone(response.accounts)
     activeAccount.value = clone(response.accounts[0])
   }
 

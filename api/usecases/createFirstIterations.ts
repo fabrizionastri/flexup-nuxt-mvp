@@ -6,7 +6,7 @@ import type {
   Priority
 } from 'entities/paymentTerms'
 import type { Commitment, Token, Interest, CommitmentLevel } from 'entities/commitment'
-import { calculateDuration, getDateForKey, isValidDate, today } from 'usecases/utils'
+import { calculateDuration, getDateForKey, isValidDate, today } from 'lib/utils'
 
 export const offsetDate = (
   initialDate: Date | '' = '',

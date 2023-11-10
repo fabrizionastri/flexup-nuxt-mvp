@@ -1,9 +1,10 @@
 import type { Ref } from 'vue'
 import { useLocalStorage } from '@vueuse/core'
-import { accountsForFabrizioUser } from '../../mock/inMemory'
-
 import type { Account } from '../../lib/entities'
+import { anonymousAccount } from './useActiveAccount'
 
 export const useAllUserAccounts = (): Ref<Account[] | null> => {
-  return useLocalStorage('allUserAccounts', accountsForFabrizioUser)
+  return useLocalStorage('allUserAccounts', accountsForAnonymousUser)
 }
+
+export const accountsForAnonymousUser: Account[] = [anonymousAccount]

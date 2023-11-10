@@ -6,7 +6,7 @@ import {
   InterestPaymentTerms,
   PaymentTerms
 } from 'entities/paymentTerms'
-import { today } from 'usecases/utils'
+import { today } from 'lib/utils'
 
 export const offsetDateTestCases: Array<{
   summary: string
