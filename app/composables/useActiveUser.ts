@@ -1,3 +1,5 @@
+// app/composables/useActiveUser.ts
+
 import type { Ref } from 'vue'
 import { useLocalStorage } from '@vueuse/core'
 
@@ -8,11 +10,11 @@ export const useActiveUser = (): Ref<User | null> => {
 }
 
 export const anonymousUser: User = {
-  id: 'totoUser',
-  firstName: 'Toto',
-  fullName: 'Toto La Riflette',
-  lastName: 'La Riflette',
+  id: 'anonymousUser',
+  firstName: 'Anonymous',
+  fullName: 'Anonymous User',
+  lastName: 'User',
   creationDate: new Date('2019-01-01'),
   lastLoginDate: new Date('2019-01-01'),
-  status: 'active'
+  status: 'anonymous'
 }

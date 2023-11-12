@@ -1,6 +1,6 @@
 import type { Entity } from '.'
 
-export type UserStatus = 'active' | 'pending' | 'suspended' | 'closed'
+export type UserStatus = 'active' | 'pending' | 'suspended' | 'closed' | 'anonymous'
 
 export interface UserData extends Entity {
   id: string

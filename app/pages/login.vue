@@ -86,18 +86,20 @@
 </template>
 
 <script setup>
-  // import { clone } from '../../lib/utils'
+  import { useUserStore } from '../store/useUserStore'
+
+  import { clone } from '../../lib/utils'
   const identifier = ref('fabrizioUsername')
   const password = ref('plop')
   const errorMsg = ref('')
 
-  const user = useActiveUser()
+  const { user, updateUser } = useUserStore()
   const activeAccounts = useAllUserAccounts()
   const activeAccount = useActiveAccount()
 
-  const updateState = (response) => {
+  const updateState = async (response) => {
     console.log('app/pages/login.vue - updating user State (before):', user.value)
-    user.value = clone(response.user)
+    await updateUser(response.token)
     console.log('app/pages/login.vue - updating user State (after):', user.value)
     activeAccounts.value = clone(response.accounts)
     activeAccount.value = clone(response.accounts[0])
@@ -109,6 +111,7 @@
     if (response.error) {
       // Login failed
       errorMsg.value = response.error
+      updateUser('') // Reset user to anonymous
     } else {
       // Login success
       updateState(response)

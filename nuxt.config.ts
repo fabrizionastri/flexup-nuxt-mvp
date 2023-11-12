@@ -11,7 +11,16 @@ export default defineNuxtConfig({
   // },
   srcDir: 'app',
   devtools: { enabled: false },
-  modules: ['@nuxtjs/tailwindcss', '@nuxtjs/eslint-module', 'nuxt-vitest', '@nuxt/image'],
+  modules: [
+    '@nuxtjs/tailwindcss',
+    '@nuxtjs/eslint-module',
+    'nuxt-vitest',
+    '@nuxt/image',
+    '@pinia/nuxt'
+  ],
+  pinia: {
+    storesDirs: ['./stores/**']
+  },
   buildModules: ['@vueuse/nuxt'],
   plugins: [
     //
