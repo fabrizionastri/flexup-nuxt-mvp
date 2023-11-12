@@ -16,6 +16,9 @@ export default defineNuxtConfig({
   plugins: [
     //
   ],
+  router: {
+    middleware: ['errorHandler']
+  },
   imports: {
     dirs: ['composables/**', '../lib/**', '../mock/**']
   },

@@ -1,7 +1,7 @@
 // app/composables/myAxios.ts
 
 import axios from 'axios'
-import type { AxiosResponse, Method } from 'axios'
+import type { AxiosResponse, AxiosError, Method } from 'axios'
 
 import dotenv from 'dotenv'
 dotenv.config()
@@ -17,17 +17,26 @@ const myAxios = axios.create({
 const handleRequest =
   (method: Method) =>
   async <T>(url: string, data?: any): Promise<T | undefined> => {
-    const response: AxiosResponse = await myAxios
-      .request({
+    try {
+      const response: AxiosResponse = await myAxios.request({
         url,
         method,
         data
       })
-      .catch((error) => {
-        // Throw an error with a specific message or object
-        throw error.response ? error.response.data : new Error('Nuxt myAxios Module Error')
-      })
-    return response.data
+      // Check if the status code is not in the 200 range
+      if (response.status >= 300) {
+        // Throw an error with the error message from the response
+        throw new Error(response.data.error || 'Unknown error')
+      }
+      return response.data
+    } catch (error) {
+      const axiosError = error as AxiosError
+      if (axiosError.response) {
+        // Throw an error with the error message from the response
+        throw new Error(axiosError.response.data.error || axiosError.message)
+      }
+      throw error // Throw the original error if it's not an AxiosError
+    }
   }
 
 export default {
