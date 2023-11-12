@@ -13,13 +13,7 @@ export const fetchAccounts = async (
     url += `?${queryString}`
   }
 
-  const config = {
-    headers: {
-      Authorization: `Bearer ${token}`
-    }
-  }
-
-  const data = await axios.get<Account[]>(url, config)
+  const data = await axios.get<Account[]>(url, token)
 
   // console.log('app/composables/fetchAccounts.ts - accounts data:', data)
   return data

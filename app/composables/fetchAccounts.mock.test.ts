@@ -14,11 +14,7 @@ describe('fetchAccounts', () => {
     axios.get = vi.fn().mockResolvedValue(mockData)
     const token = 'mockToken'
     const result = await fetchAccounts(token)
-    expect(axios.get).toHaveBeenCalledWith('/account', {
-      headers: {
-        Authorization: 'Bearer mockToken'
-      }
-    })
+    expect(axios.get).toHaveBeenCalledWith('/account', 'mockToken')
     expect(result).toEqual(mockData)
   })
 
@@ -28,11 +24,7 @@ describe('fetchAccounts', () => {
     const token = 'mockToken'
     const accountStatuses: AccountStatus[] = ['active', 'pending']
     const result = await fetchAccounts(token, accountStatuses)
-    expect(axios.get).toHaveBeenCalledWith('/account?status=active,pending', {
-      headers: {
-        Authorization: 'Bearer mockToken'
-      }
-    })
+    expect(axios.get).toHaveBeenCalledWith('/account?status=active,pending', 'mockToken')
     expect(result).toEqual(mockData)
   })
 
@@ -42,11 +34,7 @@ describe('fetchAccounts', () => {
     const token = 'mockToken'
     const accountStatuses: AccountStatus[] = ['active']
     const result = await fetchAccounts(token, accountStatuses)
-    expect(axios.get).toHaveBeenCalledWith('/account?status=active', {
-      headers: {
-        Authorization: 'Bearer mockToken'
-      }
-    })
+    expect(axios.get).toHaveBeenCalledWith('/account?status=active', 'mockToken')
     expect(result).toEqual(mockData)
   })
   it('should return an error message user when invalid credentials are provided', async () => {

@@ -16,7 +16,15 @@ const myAxios = axios.create({
 
 const handleRequest =
   (method: Method) =>
-  async <T>(url: string, data?: any, config?: any): Promise<T | undefined> => {
+  async <T>(url: string, data?: any, token: string = ''): Promise<T | undefined> => {
+    let config = {}
+    if (token)
+      config = {
+        headers: {
+          Authorization: `Bearer ${token}`
+        }
+      }
+
     try {
       const response: AxiosResponse = await myAxios.request({
         url,
@@ -42,8 +50,8 @@ const handleRequest =
   }
 
 export default {
-  get: (url, config) => handleRequest('get')(url, undefined, config),
-  post: (url, data, config) => handleRequest('post')(url, data, config),
+  get: (url, token) => handleRequest('get')(url, undefined, token),
+  post: (url, data, token) => handleRequest('post')(url, data, token),
   delete: handleRequest('delete'),
   put: handleRequest('put')
 }
