@@ -1,18 +1,14 @@
-// fetchToken.js
-import axios from 'axios'
-
-import dotenv from 'dotenv'
-dotenv.config()
-const baseUrl = process.env.API_Base_URL || 'http://127.0.0.1:8787'
+// fetchToken.ts
+import axios from './myAxios'
 
 export const fetchToken = async (identifier, password) => {
   try {
-    const { data } = await axios.post(`${baseUrl}/user/login`, {
-      identifier,
-      password
-    })
+    const data = await axios.post('/user/login', { identifier, password })
+    // console.log('►app/composables/fetchToken.ts - accounts data:', data)
     return data.token
-  } catch (error: any) {
-    return error.response.data
+  } catch (error) {
+    // Handle the error here
+    // This can be just returning the error or further processing based on your application's needs
+    return error
   }
 }
