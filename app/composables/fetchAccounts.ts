@@ -1,26 +1,26 @@
-import axios from 'axios'
-import type { AccountStatus } from 'lib/entities'
+// app/composables/fetchAccounts.ts
 
-import dotenv from 'dotenv'
-dotenv.config()
-const baseUrl = process.env.API_Base_URL || 'http://127.0.0.1:8787'
+import axios from './myAxios'
+import type { Account, AccountStatus } from 'lib/entities'
 
-export const fetchAccounts = async (token, accountStatuses: AccountStatus[] = []) => {
-  try {
-    let url = `${baseUrl}/account`
-    if (accountStatuses.length > 0) {
-      const queryString = `status=${accountStatuses.join(',')}`
-      url += `?${queryString}`
-    }
-
-    const { data } = await axios.get(url, {
-      headers: {
-        Authorization: `Bearer ${token}`
-      }
-    })
-    // console.log('app/composables/fetchAccounts.ts - accounts data:', data)
-    return data
-  } catch (error: any) {
-    return error.response.data
+export const fetchAccounts = async (
+  token: string,
+  accountStatuses: AccountStatus[] = []
+): Promise<Account[]> => {
+  let url = `/account`
+  if (accountStatuses.length > 0) {
+    const queryString = `status=${accountStatuses.join(',')}`
+    url += `?${queryString}`
   }
+
+  const config = {
+    headers: {
+      Authorization: `Bearer ${token}`
+    }
+  }
+
+  const data = await axios.get<Account[]>(url, config)
+
+  // console.log('app/composables/fetchAccounts.ts - accounts data:', data)
+  return data
 }

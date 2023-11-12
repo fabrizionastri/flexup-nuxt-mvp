@@ -16,18 +16,20 @@ const myAxios = axios.create({
 
 const handleRequest =
   (method: Method) =>
-  async <T>(url: string, data?: any): Promise<T | undefined> => {
+  async <T>(url: string, data?: any, config?: any): Promise<T | undefined> => {
     try {
       const response: AxiosResponse = await myAxios.request({
         url,
         method,
-        data
+        data,
+        ...config
       })
       // Check if the status code is not in the 200 range
       if (response.status >= 300) {
         // Throw an error with the error message from the response
         throw new Error(response.data.error || 'Unknown error')
       }
+      // console.log('app/composables/myAxios.ts - response.data:', response.data)
       return response.data
     } catch (error) {
       const axiosError = error as AxiosError
@@ -40,8 +42,8 @@ const handleRequest =
   }
 
 export default {
-  get: handleRequest('get'),
-  post: handleRequest('post'),
+  get: (url, config) => handleRequest('get')(url, undefined, config),
+  post: (url, data, config) => handleRequest('post')(url, data, config),
   delete: handleRequest('delete'),
   put: handleRequest('put')
 }
