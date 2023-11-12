@@ -1,13 +1,16 @@
 import axios from 'axios'
 import { convertStringsToDates } from '../../lib/utils/convertStringsToDates'
-const API_URL = 'http://127.0.0.1:8787'
+
+import dotenv from 'dotenv'
+dotenv.config()
+const baseUrl = process.env.API_Base_URL || 'http://127.0.0.1:8787'
 
 export const getResource = async (resource: string, prop = null, value = '') => {
   if (!resource) {
     throw new Error('Resource must be provided')
   }
 
-  let url = `${API_URL}/resources/${resource}`
+  let url = `${baseUrl}/resources/${resource}`
   if (prop !== null) {
     url += `?${prop}=${encodeURIComponent(value)}`
   }

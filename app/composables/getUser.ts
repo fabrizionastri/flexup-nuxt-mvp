@@ -2,10 +2,12 @@ import axios from 'axios'
 import Cookies from 'js-cookie'
 import { convertStringsToDates } from '../../lib/utils/convertStringsToDates'
 
-const API_URL = 'http://127.0.0.1:8787'
+import dotenv from 'dotenv'
+dotenv.config()
+const baseUrl = process.env.API_Base_URL || 'http://127.0.0.1:8787'
 
 export const getUser = async () => {
-  const url = `${API_URL}/user`
+  const url = `${baseUrl}/user`
   // console.log('app/composables/getUser.ts - url:', url)
   const token = Cookies.get('token')
   // console.log('app/composables/getUser.ts - token', token)

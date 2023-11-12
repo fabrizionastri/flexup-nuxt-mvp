@@ -6,10 +6,7 @@ describe('app/composable/fetchToken', () => {
     const identifier = mock.totoUsernameIdentifierData.id
     const password = mock.totoUserPasswordData.password
     const result = await fetchToken(identifier, password)
-    if (!result) {
-      console.log('► app/composables/login/fetchToken - error:', result)
-      return
-    }
+    // console.log('► app/composables/login/fetchToken - error:', result)
     const expected = mock.totoUserToken
     expect(result.slice(0, 60)).toEqual(expected.slice(0, 60))
   })

@@ -1,11 +1,13 @@
 import axios from 'axios'
 import type { AccountStatus } from 'lib/entities'
 
-const API_URL = 'http://127.0.0.1:8787'
+import dotenv from 'dotenv'
+dotenv.config()
+const baseUrl = process.env.API_Base_URL || 'http://127.0.0.1:8787'
 
 export const fetchAccounts = async (token, accountStatuses: AccountStatus[] = []) => {
   try {
-    let url = `${API_URL}/account`
+    let url = `${baseUrl}/account`
     if (accountStatuses.length > 0) {
       const queryString = `status=${accountStatuses.join(',')}`
       url += `?${queryString}`
@@ -16,7 +18,7 @@ export const fetchAccounts = async (token, accountStatuses: AccountStatus[] = []
         Authorization: `Bearer ${token}`
       }
     })
-    console.log('app/composables/fetchAccounts.ts - accounts data:', data)
+    // console.log('app/composables/fetchAccounts.ts - accounts data:', data)
     return data
   } catch (error: any) {
     return error.response.data

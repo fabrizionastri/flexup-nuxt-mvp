@@ -1,6 +1,8 @@
 import { getResource } from './getResource'
 
-const API_URL = 'http://127.0.0.1:8787'
+import dotenv from 'dotenv'
+dotenv.config()
+const baseUrl = process.env.API_Base_URL || 'http://127.0.0.1:8787'
 
 import axios from 'axios'
 import { vi } from 'vitest'
@@ -20,7 +22,7 @@ describe('getResource Composable', () => {
     const result = await getResource('account')
 
     expect(result).toEqual(mockData)
-    expect(axios.get).toHaveBeenCalledWith(`${API_URL}/resources/account`)
+    expect(axios.get).toHaveBeenCalledWith(`${baseUrl}/resources/account`)
   })
 
   it('fetches the specified resource with a filter', async () => {
@@ -33,7 +35,7 @@ describe('getResource Composable', () => {
     const result = await getResource('account', 'name', 'Plop')
 
     expect(result).toEqual(mockData)
-    expect(axios.get).toHaveBeenCalledWith(`${API_URL}/resources/account?name=Plop`)
+    expect(axios.get).toHaveBeenCalledWith(`${baseUrl}/resources/account?name=Plop`)
   })
 
   it('handles errors gracefully', async () => {
