@@ -1,18 +1,15 @@
-import axios from 'axios'
+import { config } from 'dotenv'
+// app\composables\fetchUser.ts
 
-import dotenv from 'dotenv'
-dotenv.config()
-const baseUrl = process.env.API_Base_URL || 'http://127.0.0.1:8787'
+import type { User } from 'lib/entities'
+import axios from './myAxios'
 
-export const fetchUser = async (token) => {
-  try {
-    const { data } = await axios.get(`${baseUrl}/user`, {
-      headers: {
-        Authorization: `Bearer ${token}`
-      }
-    })
-    return data
-  } catch (error: any) {
-    return error.response.data
+export const fetchUser = async (token: string): Promise<User> => {
+  const config = {
+    headers: {
+      Authorization: `Bearer ${token}`
+    }
   }
+  const data = await axios.get<User>(`/user`, config)
+  return data
 }

@@ -11,10 +11,6 @@ describe('app/composable/fetchUser', () => {
   })
   it('should return an error when invalid token is provided', async () => {
     const token = 'invalid'
-    const result = await fetchUser(token)
-    const expected = {
-      error: 'Invalid token'
-    }
-    expect(result).toEqual(expected)
+    await expect(fetchUser(token)).rejects.toThrowError('Invalid token')
   })
 })
