@@ -189,11 +189,11 @@
 
   const activeAccount = useActiveAccount()
   const user = useActiveUser()
-  console.log('app/components/NavBar.vue - process.client')
-  console.log(
-    'app/components/NavBar.vue - user:',
-    user.value ? JSON.stringify(user.value) : 'no user'
-  )
+  // console.log('app/components/NavBar.vue - process.client')
+  // console.log(
+  //   'app/components/NavBar.vue - user:',
+  //   user.value ? JSON.stringify(user.value) : 'no user'
+  // )
   // watch user
   watch(user, (newValue, oldValue) => {
     console.log('app/components/NavBar.vue - user changed:', newValue, oldValue)

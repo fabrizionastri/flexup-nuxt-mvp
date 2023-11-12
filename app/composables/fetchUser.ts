@@ -1,4 +1,3 @@
-import { config } from 'dotenv'
 // app\composables\fetchUser.ts
 
 import type { User } from 'lib/entities'

@@ -3,8 +3,8 @@
 import axios from 'axios'
 import type { AxiosResponse, AxiosError, Method } from 'axios'
 
-import dotenv from 'dotenv'
-dotenv.config()
+// import dotenv from 'dotenv'
+// dotenv.config()
 const apiBaseUrl = process.env.API_Base_URL || 'http://127.0.0.1:8787'
 
 console.log('apiBaseUrl:', apiBaseUrl)
@@ -50,8 +50,8 @@ const handleRequest =
   }
 
 export default {
-  get: (url, token) => handleRequest('get')(url, undefined, token),
-  post: (url, data, token) => handleRequest('post')(url, data, token),
+  get: (url, token = '') => handleRequest('get')(url, undefined, token),
+  post: (url, data, token = '') => handleRequest('post')(url, data, token),
   delete: handleRequest('delete'),
   put: handleRequest('put')
 }

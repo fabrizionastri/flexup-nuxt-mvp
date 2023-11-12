@@ -86,7 +86,7 @@
 </template>
 
 <script setup>
-  import { clone } from '../../lib/utils'
+  // import { clone } from '../../lib/utils'
   const identifier = ref('fabrizioUsername')
   const password = ref('plop')
   const errorMsg = ref('')
@@ -105,7 +105,7 @@
 
   const handleLogin = async () => {
     const response = await useLogin(identifier.value, password.value)
-    console.log('app/pages/login.vue - response:', response)
+    console.log('►app/pages/login.vue - response:', response)
     if (response.error) {
       // Login failed
       errorMsg.value = response.error
