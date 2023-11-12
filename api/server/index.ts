@@ -10,7 +10,7 @@ import user from './routes/user'
 // Load environment variables from .env file, where API keys and passwords are configured
 config() // load variables from .env into process.env
 const API_PORT = process.env.API_PORT || '8787'
-const DB_URL = process.env.DB_URL || 'http://127.0.0.1:3057'
+const jsonServerUrl = process.env.JSON_SERVER_URL || 'http://localhost:3057/'
 
 import axios from 'axios'
 // TODO : I should eliminate CustomError and use HTTPException instead
@@ -59,7 +59,7 @@ app.get('/resources/:resource', async (c) => {
   const property = Object.keys(query)[0]
   const value = Object.values(query)[0]
   // console.log('Hono resources requested for:', resource, property, value)
-  let url = `${DB_URL}/${resource}`
+  let url = `${jsonServerUrl}/${resource}`
   if (property && value) {
     url = `${url}?${property}=${value}`
   }

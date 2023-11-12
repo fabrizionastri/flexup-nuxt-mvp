@@ -1,7 +1,14 @@
 import axios from 'axios'
 import type { AxiosResponse, Method } from 'axios'
+
+import dotenv from 'dotenv'
+dotenv.config()
+
+const jsonServerUrl = process.env.JSON_SERVER_URL || 'http://localhost:3057/'
+console.log('jsonServerUrl:', jsonServerUrl)
+
 export const myAxios = axios.create({
-  baseURL: 'http://localhost:3057/',
+  baseURL: jsonServerUrl,
   timeout: 1000
 })
 
