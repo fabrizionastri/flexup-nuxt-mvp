@@ -15,7 +15,7 @@ const myAxios = axios.create({
 })
 
 const handleRequest =
-  <T>(method: Method) =>
+  (method: Method) =>
   async <T>(url: string, data?: any, token: string = ''): Promise<T | undefined> => {
     let config = {}
     if (token)
@@ -50,8 +50,8 @@ const handleRequest =
   }
 
 export default {
-  get: <T>(url, token = ''): Promise<T> => handleRequest<T>('get')(url, undefined, token),
-  post: <T>(url, data, token = '') => handleRequest<T>('post')(url, data, token),
+  get: <T>(url, token = ''): Promise<T> => handleRequest('get')<T>(url, undefined, token),
+  post: <T>(url, data, token = '') => handleRequest('post')<T>(url, data, token),
   delete: handleRequest('delete'),
   put: handleRequest('put')
 }

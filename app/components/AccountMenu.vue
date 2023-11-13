@@ -2,18 +2,18 @@
   <Menu as="div" class="relative ml-4 inline-block w-56">
     <div>
       <MenuButton class="w-full rounded-md ring-1 ring-inset ring-white hover:bg-gray-100">
-        <AccountListCard :account="activeAccount" />
-        <!-- <ChevronDownIcon class="-mr-1 h-5 w-5 text-gray-400" aria-hidden="true" /> -->
+        <AccountListCard :account="account" />
+        <!-- <ChevronDownIcon class="w-5 h-5 -mr-1 text-gray-400" aria-hidden="true" /> -->
       </MenuButton>
     </div>
 
     <transition
-      enter-active-class="transition ease-out duration-100"
-      enter-from-class="transform opacity-0 scale-95"
-      enter-to-class="transform opacity-100 scale-100"
-      leave-active-class="transition ease-in duration-75"
-      leave-from-class="transform opacity-100 scale-100"
-      leave-to-class="transform opacity-0 scale-95"
+      enter-active-class="transition duration-100 ease-out"
+      enter-from-class="transform scale-95 opacity-0"
+      enter-to-class="transform scale-100 opacity-100"
+      leave-active-class="transition duration-75 ease-in"
+      leave-from-class="transform scale-100 opacity-100"
+      leave-to-class="transform scale-95 opacity-0"
     >
       <!--  -->
       <MenuItems
@@ -133,7 +133,7 @@
             </a>
           </MenuItem>
         </div>
-        <div class="py-1" v-if="user.id">
+        <div class="py-1" v-if="isLoggedIn">
           <MenuItem v-slot="{ active }">
             <a
               href="#"
@@ -150,7 +150,7 @@
             </a>
           </MenuItem>
         </div>
-        <div class="py-1" v-if="!user.id">
+        <div class="py-1" v-if="!isLoggedIn">
           <MenuItem v-slot="{ active }">
             <NuxtLink
               to="/login"
@@ -186,15 +186,16 @@
     UserIcon,
     ArrowRightOnRectangleIcon
   } from '@heroicons/vue/20/solid'
+  import { useAccountStore } from '../stores/useAccountStore'
+  import { useUserStore } from '../stores/useUserStore'
 
-  const activeAccount = useActiveAccount()
-  const user = useActiveUser()
-  // console.log('app/components/NavBar.vue - process.client')
-  // console.log(
-  //   'app/components/NavBar.vue - user:',
-  //   user.value ? JSON.stringify(user.value) : 'no user'
-  // )
-  // watch user
+  const accountStore = useAccountStore()
+  const userStore = useUserStore()
+
+  const user = userStore.user
+  const isLoggedIn = userStore.isLoggedIn
+  const account = accountStore.account
+
   watch(user, (newValue, oldValue) => {
     console.log('app/components/NavBar.vue - user changed:', newValue, oldValue)
   })

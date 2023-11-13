@@ -1,6 +1,6 @@
 import { convertStringsToDates } from '../../lib/utils'
 import * as mock from '../../mock/inMemory'
-import { anonymousUser, useUserStore } from '../store/useUserStore'
+import { anonymousUser, useUserStore } from '../stores/useUserStore'
 import { createPinia, setActivePinia } from 'pinia'
 
 describe('app/composables/login.test', () => {

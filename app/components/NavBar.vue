@@ -1,6 +1,6 @@
 <template>
   <Disclosure as="nav" class="bg-white shadow" v-slot="{ open }">
-    <!-- <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">    -->
+    <!-- <div class="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">    -->
     <div class="mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex h-16 justify-between">
         <div id="LeftSection" class="flex">
@@ -22,15 +22,11 @@
           </div>
           <div class="hidden md:ml-6 md:flex md:space-x-8">
             <!-- Current: "border-indigo-500 text-gray-900", Default: "border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700" -->
-            <a
-              href="/miniDemo"
+
+            <NuxtLink
+              href="/account"
               class="inline-flex items-center border-b-2 border-indigo-500 px-1 pt-1 text-sm font-medium text-gray-900"
-              >Mini Demo</a
-            >
-            <a
-              href="/activeAccounts"
-              class="inline-flex items-center border-b-2 border-indigo-500 px-1 pt-1 text-sm font-medium text-gray-900"
-              >Accounts</a
+              >Account</NuxtLink
             >
             <NuxtLink
               to="/playground"
@@ -50,22 +46,22 @@
 
             <!-- <a
               href="#"
-              class="inline-flex items-center border-b-2 border-indigo-500 px-1 pt-1 text-sm font-medium text-gray-900"
+              class="inline-flex items-center px-1 pt-1 text-sm font-medium text-gray-900 border-b-2 border-indigo-500"
               >Dashboard</a
             >
             <a
               href="#"
-              class="inline-flex items-center border-b-2 border-transparent px-1 pt-1 text-sm font-medium text-gray-500 hover:border-gray-300 hover:text-gray-700"
+              class="inline-flex items-center px-1 pt-1 text-sm font-medium text-gray-500 border-b-2 border-transparent hover:border-gray-300 hover:text-gray-700"
               >Team</a
             >
             <a
               href="#"
-              class="inline-flex items-center border-b-2 border-transparent px-1 pt-1 text-sm font-medium text-gray-500 hover:border-gray-300 hover:text-gray-700"
+              class="inline-flex items-center px-1 pt-1 text-sm font-medium text-gray-500 border-b-2 border-transparent hover:border-gray-300 hover:text-gray-700"
               >Projects</a
             >
             <a
               href="#"
-              class="inline-flex items-center border-b-2 border-transparent px-1 pt-1 text-sm font-medium text-gray-500 hover:border-gray-300 hover:text-gray-700"
+              class="inline-flex items-center px-1 pt-1 text-sm font-medium text-gray-500 border-b-2 border-transparent hover:border-gray-300 hover:text-gray-700"
               >Calendar</a
             > -->
           </div>

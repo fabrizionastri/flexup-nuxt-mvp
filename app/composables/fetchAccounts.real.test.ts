@@ -4,7 +4,7 @@ import { createPinia, setActivePinia } from 'pinia'
 import { sortById } from '../../lib/utils'
 import { convertStringsToDates } from '../../lib/utils/convertStringsToDates'
 import * as mock from '../../mock/inMemory'
-import { useAccountStore } from '../store/useAccountStore'
+import { useAccountStore } from '../stores/useAccountStore'
 
 describe('app/composable/fetchAccounts', () => {
   let accountStore

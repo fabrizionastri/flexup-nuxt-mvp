@@ -1,7 +1,7 @@
 import { createPinia, setActivePinia } from 'pinia'
 import { convertStringsToDates } from '../../lib/utils/convertStringsToDates'
 import * as mock from '../../mock/inMemory'
-import { useUserStore } from '../store/useUserStore'
+import { useUserStore } from '../stores/useUserStore'
 
 describe('app/composable/fetchUser', () => {
   let userStore

@@ -86,9 +86,8 @@
 </template>
 
 <script setup>
-  import { useUserStore } from '../store/useUserStore'
-  import { useAccountStore } from '../store/useAccountStore'
-  import { fetchToken } from '../composables/fetchToken'
+  import { useUserStore } from '@/stores/useUserStore'
+  import { useAccountStore } from '@/stores/useAccountStore'
 
   const userStore = useUserStore()
   const accountStore = useAccountStore()
@@ -99,8 +98,7 @@
 
   const login = async () => {
     try {
-      const token = await fetchToken(identifier.value, password.value)
-      await userStore.loginUser(token)
+      await userStore.loginUser(identifier.value, password.value)
       console.log('User: ', userStore.user)
       await accountStore.fetchAndUpdateAccounts(token)
       console.log('Accounts: ', accountStore.accounts)
@@ -111,4 +109,12 @@
       await accountStore.clearAccounts()
     }
   }
+  watchEffect(
+    () => userStore.user,
+    () => {
+      if (userStore.user) {
+        router.push('/')
+      }
+    }
+  )
 </script>

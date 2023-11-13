@@ -1,6 +1,6 @@
 <template>
   <div class=".h-full.bg-white">
-    <NavBar />
+    <!-- <NavBar /> -->
     <div class="m-5">
       <slot />
     </div>

@@ -1,5 +1,5 @@
-import { useUserStore } from '../store/useUserStore'
-import { useAccountStore } from '../store/useAccountStore'
+import { useUserStore } from '../stores/useUserStore'
+import { useAccountStore } from '../stores/useAccountStore'
 
 import { fetchToken } from './'
 

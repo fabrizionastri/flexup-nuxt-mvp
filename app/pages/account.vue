@@ -1,7 +1,7 @@
 <template lang="pug">
 h2 Active Account
-AccountListCard(:account="activeAccount")
-div.m-1(v-for="(value, key) in activeAccount" :key="key")
+AccountListCard(:account="account")
+div.m-1(v-for="(value, key) in account" :key="key")
   strong {{ key }}: &nbsp;
   span {{ value }}
 
@@ -9,9 +9,9 @@ div.m-1(v-for="(value, key) in activeAccount" :key="key")
 </template>
 
 <script setup>
-  const activeAccount = useActiveAccount()
+  const accountStore = useAccountStore()
   console.log(
     '😊 app/pages/activeAccounts.vue - activeAccount:',
-    JSON.stringify(activeAccount.value)
+    JSON.stringify(accountStore.account.value)
   )
 </script>
