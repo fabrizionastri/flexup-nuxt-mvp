@@ -1,12 +1,15 @@
-import { fetchToken, fetchUser, fetchAccounts } from './'
+import { useUserStore } from '../store/useUserStore'
+import { useAccountStore } from '../store/useAccountStore'
+
+import { fetchToken } from './'
+
+const { fetchUser } = useUserStore()
+const { fetchAccounts } = useAccountStore()
 
 export const useLogin = async (identifier, password) => {
-  // console.log('useLogin')
-  // Login with credentials and fetch token
   const token = await fetchToken(identifier, password)
   if (!token) return
 
-  // Fetch user and accounts
   const user = await fetchUser(token)
   if (!user) return
 

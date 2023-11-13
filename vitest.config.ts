@@ -3,7 +3,6 @@
 import { defineVitestConfig } from 'nuxt-vitest/config'
 import path from 'path'
 import { fileURLToPath } from 'node:url'
-// import { InlineConfig } from 'vite' // Import the InlineConfig type
 
 const config = {
   // plugins: path.resolve(__dirname,  vue()  ],
@@ -16,11 +15,9 @@ const config = {
       // 'lib/**/*.{js,ts,vue}',
       // 'mock/**/*.{js,ts,vue,json}'
     ],
-    root: fileURLToPath(new URL('./', import.meta.url))
+    root: fileURLToPath(new URL('./', import.meta.url)),
+    exclude: ['./_docs', './node_modules']
   },
-  exclude: [
-    '**/_docs/**' // Exclude the _docs folder
-  ],
   resolve: {
     alias: {
       app: path.resolve(__dirname, './app'),

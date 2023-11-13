@@ -8,7 +8,7 @@
     </div>
 
     <div class="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
-      <form class="space-y-6" @submit.prevent="handleLogin">
+      <form class="space-y-6" @submit.prevent="login">
         <div>
           <div class="flex items-center justify-between">
             <label for="identifier" class="block text-sm font-medium leading-6 text-gray-900"
@@ -78,7 +78,7 @@
       </p>
     </div>
     <!-- <ClientOnly>
-      <p class="ml-5 mt-3 text-red-500">{{ errorMsg }}</p>
+      <p class="mt-3 ml-5 text-red-500">{{ errorMsg }}</p>
       <p class="mt-10 text-xs text-gray-300">User : {{ user }}</p>
       <p class="mt-10 text-xs text-gray-300">User stringified : {{ JSON.stringify(user) }}</p>
     </ClientOnly> -->
@@ -87,35 +87,28 @@
 
 <script setup>
   import { useUserStore } from '../store/useUserStore'
+  import { useAccountStore } from '../store/useAccountStore'
+  import { fetchToken } from '../composables/fetchToken'
 
-  import { clone } from '../../lib/utils'
+  const userStore = useUserStore()
+  const accountStore = useAccountStore()
+
   const identifier = ref('fabrizioUsername')
   const password = ref('plop')
   const errorMsg = ref('')
 
-  const { user, updateUser } = useUserStore()
-  const activeAccounts = useAllUserAccounts()
-  const activeAccount = useActiveAccount()
-
-  const updateState = async (response) => {
-    console.log('app/pages/login.vue - updating user State (before):', user.value)
-    await updateUser(response.token)
-    console.log('app/pages/login.vue - updating user State (after):', user.value)
-    activeAccounts.value = clone(response.accounts)
-    activeAccount.value = clone(response.accounts[0])
-  }
-
-  const handleLogin = async () => {
-    const response = await useLogin(identifier.value, password.value)
-    console.log('►app/pages/login.vue - response:', response)
-    if (response.error) {
-      // Login failed
-      errorMsg.value = response.error
-      updateUser('') // Reset user to anonymous
-    } else {
-      // Login success
-      updateState(response)
-      // navigateTo('/')
+  const login = async () => {
+    try {
+      const token = await fetchToken(identifier.value, password.value)
+      await userStore.loginUser(token)
+      console.log('User: ', userStore.user)
+      await accountStore.fetchAndUpdateAccounts(token)
+      console.log('Accounts: ', accountStore.accounts)
+      errorMsg.value = ''
+    } catch (error) {
+      errorMsg.value = error.message
+      await userStore.logoutUser()
+      await accountStore.clearAccounts()
     }
   }
 </script>

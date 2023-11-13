@@ -1,11 +1,15 @@
+import { createPinia, setActivePinia } from 'pinia'
 import type { AccountStatus } from './../../lib/entities/account'
 import axios from './myAxios'
-import { fetchAccounts } from './fetchAccounts' // Adjust the import path as necessary
+import { useAccountStore } from '../store/useAccountStore'
 
 vi.mock('./myAxios')
 
 describe('fetchAccounts', () => {
+  let accountStore
   beforeEach(() => {
+    setActivePinia(createPinia())
+    accountStore = useAccountStore()
     vi.resetAllMocks()
   })
 
@@ -13,7 +17,7 @@ describe('fetchAccounts', () => {
     const mockData = [{ id: 1, name: 'Account 1' }]
     axios.get = vi.fn().mockResolvedValue(mockData)
     const token = 'mockToken'
-    const result = await fetchAccounts(token)
+    const result = await accountStore.fetchAccounts(token)
     expect(axios.get).toHaveBeenCalledWith('/account', 'mockToken')
     expect(result).toEqual(mockData)
   })
@@ -23,7 +27,7 @@ describe('fetchAccounts', () => {
     axios.get = vi.fn().mockResolvedValue(mockData)
     const token = 'mockToken'
     const accountStatuses: AccountStatus[] = ['active', 'pending']
-    const result = await fetchAccounts(token, accountStatuses)
+    const result = await accountStore.fetchAccounts(token, accountStatuses)
     expect(axios.get).toHaveBeenCalledWith('/account?status=active,pending', 'mockToken')
     expect(result).toEqual(mockData)
   })
@@ -33,13 +37,13 @@ describe('fetchAccounts', () => {
     axios.get = vi.fn().mockResolvedValue(mockData)
     const token = 'mockToken'
     const accountStatuses: AccountStatus[] = ['active']
-    const result = await fetchAccounts(token, accountStatuses)
+    const result = await accountStore.fetchAccounts(token, accountStatuses)
     expect(axios.get).toHaveBeenCalledWith('/account?status=active', 'mockToken')
     expect(result).toEqual(mockData)
   })
   it('should return an error message user when invalid credentials are provided', async () => {
     const token = 'invalid'
     axios.get = vi.fn().mockRejectedValue(new Error('Error fetching'))
-    await expect(fetchAccounts(token)).rejects.toThrowError('Error fetching')
+    await expect(accountStore.fetchAccounts(token)).rejects.toThrowError('Error fetching')
   })
 })

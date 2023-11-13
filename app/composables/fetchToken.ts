@@ -1,10 +1,10 @@
 // fetchToken.ts
 import axios from './myAxios'
 
-interface ResponseData {
+interface Token {
   token: string
 }
 export const fetchToken = async (identifier: string, password: string): Promise<string> => {
-  const data = await axios.post<ResponseData>('/user/login', { identifier, password })
+  const data = (await axios.post<Token>('/user/login', { identifier, password })) as Token
   return data.token
 }

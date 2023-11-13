@@ -1,3 +1,4 @@
+// lib/entities/user.ts
 import type { Entity } from '.'
 
 export type UserStatus = 'active' | 'pending' | 'suspended' | 'closed' | 'anonymous'
