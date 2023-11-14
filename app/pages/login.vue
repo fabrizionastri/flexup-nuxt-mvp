@@ -86,11 +86,10 @@
 </template>
 
 <script setup>
+  // app/pages/login.vue
   import { useUserStore } from '@/stores/useUserStore'
-  import { useAccountStore } from '@/stores/useAccountStore'
 
   const userStore = useUserStore()
-  const accountStore = useAccountStore()
 
   const identifier = ref('fabrizioUsername')
   const password = ref('plop')
@@ -99,22 +98,17 @@
   const login = async () => {
     try {
       await userStore.loginUser(identifier.value, password.value)
-      console.log('User: ', userStore.user)
-      await accountStore.fetchAndUpdateAccounts(token)
-      console.log('Accounts: ', accountStore.accounts)
-      errorMsg.value = ''
+      navigateTo('/')
     } catch (error) {
       errorMsg.value = error.message
-      await userStore.logoutUser()
-      await accountStore.clearAccounts()
     }
   }
-  watchEffect(
-    () => userStore.user,
-    () => {
-      if (userStore.user) {
-        router.push('/')
-      }
-    }
-  )
+  // watchEffect(
+  //   () => userStore.user,
+  //   () => {
+  //     if (userStore.user) {
+  //       router.push('/')
+  //     }
+  //   }
+  // )
 </script>

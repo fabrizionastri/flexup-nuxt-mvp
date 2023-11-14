@@ -1,10 +1,10 @@
 <template>
   <Menu as="div" class="relative ml-4 inline-block w-56">
     <div>
-      <MenuButton class="w-full rounded-md ring-1 ring-inset ring-white hover:bg-gray-100">
-        <AccountListCard :account="account" />
+      <AccountMenuButton class="w-full rounded-md ring-1 ring-inset ring-white hover:bg-gray-100">
+        <AccountListCard :account="accountStore.currentAccount" />
         <!-- <ChevronDownIcon class="w-5 h-5 -mr-1 text-gray-400" aria-hidden="true" /> -->
-      </MenuButton>
+      </AccountMenuButton>
     </div>
 
     <transition
@@ -19,7 +19,7 @@
       <MenuItems
         class="absolute right-0 z-10 mt-2 w-56 origin-top-right divide-y divide-gray-100 rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none"
       >
-        <AccountSelector />
+        <AccountSelector :accounts="accountStore.activeAccounts" />
         <div class="py-1">
           <MenuItem v-slot="{ active }">
             <a
@@ -133,7 +133,7 @@
             </a>
           </MenuItem>
         </div>
-        <div class="py-1" v-if="isLoggedIn">
+        <div class="py-1" v-if="userStore.isLoggedIn">
           <MenuItem v-slot="{ active }">
             <a
               href="#"
@@ -146,11 +146,11 @@
                 class="mr-3 h-5 w-5 text-gray-400 group-hover:text-gray-500"
                 aria-hidden="true"
               />
-              {{ user.fullName }}
+              {{ userStore.user.fullName }}
             </a>
           </MenuItem>
         </div>
-        <div class="py-1" v-if="!isLoggedIn">
+        <div class="py-1" v-if="!userStore.isLoggedIn">
           <MenuItem v-slot="{ active }">
             <NuxtLink
               to="/login"
@@ -173,7 +173,7 @@
 </template>
 
 <script setup>
-  import { Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/vue'
+  import { Menu, MenuButton as AccountMenuButton, MenuItem, MenuItems } from '@headlessui/vue'
   import {
     ArchiveBoxIcon,
     ArrowRightCircleIcon,
@@ -192,11 +192,7 @@
   const accountStore = useAccountStore()
   const userStore = useUserStore()
 
-  const user = userStore.user
-  const isLoggedIn = userStore.isLoggedIn
-  const account = accountStore.account
-
-  watch(user, (newValue, oldValue) => {
+  watch(userStore.user, (newValue, oldValue) => {
     console.log('app/components/NavBar.vue - user changed:', newValue, oldValue)
   })
 </script>

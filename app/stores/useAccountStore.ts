@@ -9,7 +9,7 @@ import axios from '../composables/myAxios'
 export const useAccountStore = defineStore('account', () => {
   // State
   const activeAccounts = ref<Account[]>([anonymousAccount])
-  const account = ref<Account>(anonymousAccount)
+  const currentAccount = ref<Account>(anonymousAccount)
 
   // Getters
   const fetchAccounts = async (
@@ -28,15 +28,42 @@ export const useAccountStore = defineStore('account', () => {
   // Setters
   const fetchAndUpdateAccounts = async (token: string) => {
     activeAccounts.value = await fetchAccounts(token, ['active'])
-    account.value = activeAccounts.value[0]
+    console.log(
+      '► app/stores/useAccountStore.ts → fetchAndUpdateAccounts - activeAccounts.value:',
+      activeAccounts.value
+    )
+    currentAccount.value = activeAccounts.value[0]
+    console.log(
+      '► app/stores/useAccountStore.ts → fetchAndUpdateAccounts - account.value:',
+      currentAccount.value
+    )
   }
 
-  const clearAccounts = () => {
-    account.value = anonymousAccount
+  const resetAccounts = () => {
     activeAccounts.value = [anonymousAccount]
+    console.log(
+      '► app/stores/useAccountStore.ts → fetchAndUpdateAccounts - account.value:',
+      currentAccount.value
+    )
+    currentAccount.value = anonymousAccount
+    console.log(
+      '► app/stores/useAccountStore.ts → fetchAndUpdateAccounts - activeAccounts.value:',
+      activeAccounts.value
+    )
   }
 
-  return { activeAccounts, account, fetchAccounts, fetchAndUpdateAccounts, clearAccounts }
+  const setCurrentAccount = (account) => {
+    currentAccount.value = account
+  }
+
+  return {
+    activeAccounts,
+    currentAccount,
+    fetchAccounts,
+    fetchAndUpdateAccounts,
+    resetAccounts,
+    setCurrentAccount
+  }
 })
 
 export const anonymousAccount: Account = {
