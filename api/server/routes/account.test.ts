@@ -56,4 +56,31 @@ describe('api/server/routes/account', () => {
       expect(result).toEqual(expected)
     })
   })
+  describe('GET /:accountId/order', () => {
+    it('should return the list all orders for given accountId', async () => {
+      const jwt = mock.totoUserToken
+      const accountId = 'pizzaDOroAccount'
+      const res = await app.request(`/${accountId}/order`, {
+        headers: { Authorization: `Bearer ${jwt}` }
+      })
+      console.log('►api/server/routes/account.test.ts  → - res:', res)
+
+      const result = await res.json()
+      expect(res.status).toBe(200)
+
+      const expected = mock.pizzaDOroAccountOrders
+      expect(convertStringsToDates(sortById(result))).toEqual(sortById(expected))
+    })
+    it('should return an error and status 404 for invalid jwt', async () => {
+      const jwt = 'invalid'
+      const accountId = 'pizzaDOroAccount'
+      const res = await app.request(`/${accountId}/order`, {
+        headers: { Authorization: `Bearer ${jwt}` }
+      })
+      const result = convertStringsToDates(await res.json())
+      const expected = { error: 'Invalid token' }
+      expect(res.status).toBe(401)
+      expect(result).toEqual(expected)
+    })
+  })
 })
