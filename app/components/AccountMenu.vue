@@ -1,10 +1,23 @@
+<!-- app/components/AccountMenu.vue -->
 <template>
-  <Menu as="div" class="relative ml-4 inline-block w-56">
+  <div v-if="!userStore.isLoggedIn">
+    <NuxtLink
+      href="/login"
+      :class="['text-l  group flex items-center rounded px-4 py-2 text-gray-900 hover:bg-gray-100']"
+    >
+      <ArrowLeftOnRectangleIcon
+        class="mr-3 h-8 text-gray-900 group-hover:text-gray-500"
+        aria-hidden="true"
+      />
+      Login
+    </NuxtLink>
+  </div>
+  <Menu as="div" v-if="userStore.isLoggedIn" class="relative ml-4 inline-block w-56">
     <div>
-      <AccountMenuButton class="w-full rounded-md ring-1 ring-inset ring-white hover:bg-gray-100">
+      <MenuButton class="w-full rounded-md ring-1 ring-inset ring-white hover:bg-gray-100">
         <AccountListCard :account="accountStore.currentAccount" />
         <!-- <ChevronDownIcon class="w-5 h-5 -mr-1 text-gray-400" aria-hidden="true" /> -->
-      </AccountMenuButton>
+      </MenuButton>
     </div>
 
     <transition
@@ -19,7 +32,10 @@
       <MenuItems
         class="absolute right-0 z-10 mt-2 w-56 origin-top-right divide-y divide-gray-100 rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none"
       >
-        <AccountSelector :accounts="accountStore.activeAccounts" />
+        <div class="bg-gray-100 p-1.5">
+          <div class="text-sm font-bold text-gray-500 underline">Select active account:</div>
+          <AccountSelector :accounts="accountStore.activeAccounts" class="my-1 rounded border" />
+        </div>
         <div class="py-1">
           <MenuItem v-slot="{ active }">
             <a
@@ -133,39 +149,42 @@
             </a>
           </MenuItem>
         </div>
-        <div class="py-1" v-if="userStore.isLoggedIn">
-          <MenuItem v-slot="{ active }">
-            <a
-              href="#"
-              :class="[
-                active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
-                'group flex items-center px-4 py-2 text-sm'
-              ]"
-            >
-              <UserIcon
-                class="mr-3 h-5 w-5 text-gray-400 group-hover:text-gray-500"
-                aria-hidden="true"
-              />
-              {{ userStore.user.fullName }}
-            </a>
-          </MenuItem>
-        </div>
-        <div class="py-1" v-if="!userStore.isLoggedIn">
-          <MenuItem v-slot="{ active }">
-            <NuxtLink
-              to="/login"
-              :class="[
-                active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
-                'group flex items-center px-4 py-2 text-sm'
-              ]"
-            >
-              <ArrowRightOnRectangleIcon
-                class="mr-3 h-5 w-5 text-gray-400 group-hover:text-gray-500"
-                aria-hidden="true"
-              />
-              Login
-            </NuxtLink>
-          </MenuItem>
+        <div class="p-0">
+          <div class="bg-gray-100 p-1.5">
+            <div class="text-sm font-bold text-gray-500 underline">User:</div>
+            <div class=": my-1 rounded border bg-white">
+              <MenuItem v-slot="{ active }">
+                <a
+                  href="#"
+                  :class="[
+                    active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
+                    'group flex items-center px-4 py-2 text-sm'
+                  ]"
+                >
+                  <UserIcon
+                    class="mr-3 h-5 w-5 text-gray-400 group-hover:text-gray-500"
+                    aria-hidden="true"
+                  />
+                  {{ userStore.user.fullName }}
+                </a>
+              </MenuItem>
+              <MenuItem v-slot="{ active }">
+                <div
+                  @click="logout"
+                  :class="[
+                    active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
+                    'group flex items-center px-4 py-2 text-sm'
+                  ]"
+                >
+                  <ArrowLeftOnRectangleIcon
+                    class="mr-3 h-5 w-5 text-gray-400 group-hover:text-gray-500"
+                    aria-hidden="true"
+                  />
+                  Logout
+                </div>
+              </MenuItem>
+            </div>
+          </div>
         </div>
       </MenuItems>
     </transition>
@@ -173,7 +192,7 @@
 </template>
 
 <script setup>
-  import { Menu, MenuButton as AccountMenuButton, MenuItem, MenuItems } from '@headlessui/vue'
+  import { Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/vue'
   import {
     ArchiveBoxIcon,
     ArrowRightCircleIcon,
@@ -184,6 +203,7 @@
     TrashIcon,
     UserPlusIcon,
     UserIcon,
+    ArrowLeftOnRectangleIcon,
     ArrowRightOnRectangleIcon
   } from '@heroicons/vue/20/solid'
   import { useAccountStore } from '../stores/useAccountStore'
@@ -192,6 +212,10 @@
   const accountStore = useAccountStore()
   const userStore = useUserStore()
 
+  const logout = () => {
+    userStore.logoutUser()
+    navigateTo('/login')
+  }
   watch(userStore.user, (newValue, oldValue) => {
     console.log('app/components/NavBar.vue - user changed:', newValue, oldValue)
   })

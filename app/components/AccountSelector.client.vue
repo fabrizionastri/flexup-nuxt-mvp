@@ -1,5 +1,6 @@
+<!-- app/components/AccountSelector.client.vue -->
 <template>
-  <ul class="divide-y divide-gray-200">
+  <ul class="divide-y divide-gray-200 bg-white">
     <li
       v-for="account in accountStore.activeAccounts"
       :key="account.id"
@@ -18,25 +19,26 @@
   import { useAccountStore } from '@/stores/useAccountStore'
   const accountStore = useAccountStore()
 
-  const emit = defineEmits(['closeAccountSelector'])
+  // const emit = defineEmits(['closeAccountSelector'])
 
   const selectAccount = (account) => {
-    // console.log(
-    //   'app/components/AccountSelector.client.vue =',
-    //   accountStore.currentAccount.value.name,
-    //   ', #',
-    //   accountStore.currentAccount.value.id
-    // )
-    // console.log(
-    //   'Selected account:',
-    //   account.id,
-    //   'Current Account:',
-    //   accountStore.currentAccount.value?.id
-    // )
     accountStore.setCurrentAccount(account)
-    emit('closeAccountSelector')
+    // emit('closeAccountSelector')
   }
   watchEffect(() => {
     // console.log('Active account changed:', accountStore.currentAccount.value)
   })
 </script>
+
+<!-- // console.log(
+//   'app/components/AccountSelector.client.vue =',
+//   accountStore.currentAccount.value.name,
+//   ', #',
+//   accountStore.currentAccount.value.id
+// )
+// console.log(
+//   'Selected account:',
+//   account.id,
+//   'Current Account:',
+//   accountStore.currentAccount.value?.id
+// ) -->

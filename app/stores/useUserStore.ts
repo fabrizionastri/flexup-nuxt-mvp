@@ -2,7 +2,7 @@
 
 import { useAccountStore } from './useAccountStore'
 import { defineStore } from 'pinia'
-import { ref } from 'vue'
+import { ref, computed } from 'vue'
 import type { User } from '../../lib/entities'
 
 import axios from '../composables/myAxios'
@@ -27,7 +27,7 @@ export const useUserStore = defineStore('user', () => {
     return data as User
   }
   const isValidUser = (user) => user.value && user.value.id !== 'anonymousUser'
-  const isLoggedIn = () => isValidUser(user)
+  const isLoggedIn = computed(() => isValidUser(user))
 
   // Setters
   const loginUser = async (identifier: string, password: string) => {
@@ -48,6 +48,7 @@ export const useUserStore = defineStore('user', () => {
   }
   const logoutUser = () => {
     user.value = anonymousUser
+    accountStore.resetAccounts()
   }
 
   return { user, isValidUser, fetchUser, logoutUser, loginUser, isLoggedIn }
