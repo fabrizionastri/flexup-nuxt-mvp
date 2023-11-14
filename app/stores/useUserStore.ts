@@ -1,3 +1,4 @@
+import { useAccountStore } from './useAccountStore'
 // store/useUserStore.ts
 
 import { defineStore } from 'pinia'
@@ -10,19 +11,27 @@ interface Token {
   token: string
 }
 
+const accountStore = useAccountStore()
+
 export const useUserStore = defineStore('user', () => {
+  // State
   const user = ref<User>(anonymousUser)
   const token = ref('')
-  const isValidUser = (user) => user.value && user.value.id !== 'anonymousUser'
-  const isLoggedIn = () => isValidUser(user)
 
+  // Getters
   const fetchToken = async (identifier: string, password: string): Promise<string> => {
     const data = (await axios.post<Token>('/user/login', { identifier, password })) as Token
     return data.token
   }
+  const fetchUser = async (token: string): Promise<User> => {
+    const data = await axios.get<User>(`/user`, token)
+    return data as User
+  }
+  const isValidUser = (user) => user.value && user.value.id !== 'anonymousUser'
+  const isLoggedIn = () => isValidUser(user)
 
   /*   // Currently not used. Tokens are stored in Pinia store, not in cookies
-
+  // TOCHECK: should we store the token in a cookie?
   const getTokenFromCookie = (): string => {
     const token = Cookies.get('token')
     // console.log('app/composables/getUser.ts - token', token)
@@ -31,26 +40,29 @@ export const useUserStore = defineStore('user', () => {
     }
     return token
   }
-
   const saveTokenToCookie = (token: string): void => {
     Cookies.set('token', token)
   }
-
   */
 
-  const fetchUser = async (token: string): Promise<User> => {
-    const data = await axios.get<User>(`/user`, token)
-    return data as User
+  // Setters
+  const loginUser = async (identifier: string, password: string) => {
+    try {
+      token.value = await fetchToken(identifier, password)
+      user.value = await fetchUser(token.value)
+      await accountStore.fetchAndUpdateAccounts(token.value)
+      return user.value
+    } catch (error) {
+      console.error('► app/store/useUserStore → loginUser', error)
+      logoutUser()
+      accountStore.clearAccounts()
+      throw new Error(error)
+    }
   }
   const logoutUser = () => {
     user.value = anonymousUser
   }
-  const loginUser = async (identifier: string, password: string) => {
-    token.value = await fetchToken(identifier, password)
-    user.value = await fetchUser(token.value)
-    if (!isValidUser(user)) throw new Error('Invalid user')
-    return user.value
-  }
+
   return { user, isValidUser, fetchUser, logoutUser, loginUser, isLoggedIn }
 })
 

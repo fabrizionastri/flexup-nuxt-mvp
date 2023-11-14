@@ -7,8 +7,11 @@ import type { Account, AccountStatus } from '../../lib/entities'
 import axios from '../composables/myAxios'
 
 export const useAccountStore = defineStore('account', () => {
+  // State
   const activeAccounts = ref<Account[]>([anonymousAccount])
   const account = ref<Account>(anonymousAccount)
+
+  // Getters
   const fetchAccounts = async (
     token: string,
     accountStatuses: AccountStatus[] = []
@@ -21,10 +24,13 @@ export const useAccountStore = defineStore('account', () => {
     const data = await axios.get<Account[]>(url, token)
     return data as Account[]
   }
-  const fetchAndUpdateAccounts = async (token: string, accountStatuses: AccountStatus[] = []) => {
-    activeAccounts.value = await fetchAccounts(token, accountStatuses)
+
+  // Setters
+  const fetchAndUpdateAccounts = async (token: string) => {
+    activeAccounts.value = await fetchAccounts(token, ['active'])
     account.value = activeAccounts.value[0]
   }
+
   const clearAccounts = () => {
     account.value = anonymousAccount
     activeAccounts.value = [anonymousAccount]
