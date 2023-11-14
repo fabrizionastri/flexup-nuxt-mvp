@@ -3,8 +3,8 @@
 import { useAccountStore } from './useAccountStore'
 import { defineStore } from 'pinia'
 import { ref, computed } from 'vue'
+// import Cookies from 'js-cookie'
 import type { User } from '../../lib/entities'
-
 import axios from '../composables/myAxios'
 
 interface Token {
@@ -29,10 +29,16 @@ export const useUserStore = defineStore('user', () => {
   const isValidUser = (user) => user.value && user.value.id !== 'anonymousUser'
   const isLoggedIn = computed(() => isValidUser(user))
 
+  // const getLocalToken = () => {
+  //   token.value = Cookies.get('token')
+  //   return token.value
+  // }
+
   // Setters
   const loginUser = async (identifier: string, password: string) => {
     try {
       token.value = await fetchToken(identifier, password)
+      // Cookies.set('token', token)
       console.log('► app/stores/useUserStore.ts - loginUser - token.value:', token.value)
       user.value = await fetchUser(token.value)
       console.log('► app/stores/useUserStore.ts - loginUser - user.value:', user.value)
@@ -67,7 +73,7 @@ export const anonymousUser: User = {
 /*   // Currently not used. Tokens are stored in Pinia store, not in cookies
   // TOCHECK: should we store the token in a cookie?
 
-  // import Cookies from 'js-cookie'
+
 
   const getTokenFromCookie = (): string => {
     const token = Cookies.get('token')

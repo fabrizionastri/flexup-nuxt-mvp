@@ -19,26 +19,7 @@
   import { useAccountStore } from '@/stores/useAccountStore'
   const accountStore = useAccountStore()
 
-  // const emit = defineEmits(['closeAccountSelector'])
-
   const selectAccount = (account) => {
     accountStore.setCurrentAccount(account)
-    // emit('closeAccountSelector')
   }
-  watchEffect(() => {
-    // console.log('Active account changed:', accountStore.currentAccount.value)
-  })
 </script>
-
-<!-- // console.log(
-//   'app/components/AccountSelector.client.vue =',
-//   accountStore.currentAccount.value.name,
-//   ', #',
-//   accountStore.currentAccount.value.id
-// )
-// console.log(
-//   'Selected account:',
-//   account.id,
-//   'Current Account:',
-//   accountStore.currentAccount.value?.id
-// ) -->
