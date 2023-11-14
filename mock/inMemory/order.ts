@@ -11,6 +11,15 @@ export const commercialOrderData: Order = {
   nature: 'commercial',
   amountInclTax: 253.1
 }
+export const commercialOrder: Order = {
+  ...commercialOrderData,
+  items: items.itemsForCommercialOrder,
+  tranches: tranches.tranchesForcommercialOrder,
+  amountExclTax: 221,
+  taxAmount: 32.1,
+  amountInclTax: 253.1,
+  averageTaxRate: 0.145249
+}
 export const orderWithRebateData: Order = {
   id: 'orderWithRebate',
   supplierAccountId: 'cosysAccount',
@@ -70,15 +79,6 @@ export const pizzaDOroAccountOrderDatas: Order[] = [
 ]
 
 // Computed orders
-export const commercialOrder: Order = {
-  ...commercialOrderData,
-  items: items.itemsForCommercialOrder,
-  tranches: tranches.tranchesForcommercialOrder,
-  amountExclTax: 221,
-  taxAmount: 32.1,
-  amountInclTax: 253.1,
-  averageTaxRate: 0.145249
-}
 
 export const commercialOrderWithItemsOnly: Order = {
   ...commercialOrderData,
