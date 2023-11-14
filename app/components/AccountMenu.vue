@@ -5,7 +5,7 @@
       href="/login"
       :class="['text-l  group flex items-center rounded px-4 py-2 text-gray-900 hover:bg-gray-100']"
     >
-      <ArrowLeftOnRectangleIcon
+      <ArrowRightOnRectangleIcon
         class="mr-3 h-8 text-gray-900 group-hover:text-gray-500"
         aria-hidden="true"
       />
