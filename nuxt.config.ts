@@ -16,7 +16,8 @@ export default defineNuxtConfig({
     '@nuxtjs/eslint-module',
     'nuxt-vitest',
     '@nuxt/image',
-    '@pinia/nuxt'
+    '@pinia/nuxt',
+    '@pinia-plugin-persistedstate/nuxt'
   ],
   pinia: {
     storesDirs: ['./stores/**']

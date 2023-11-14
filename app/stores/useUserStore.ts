@@ -11,54 +11,58 @@ interface Token {
   token: string
 }
 
-export const useUserStore = defineStore('user', () => {
-  const accountStore = useAccountStore()
-  // State
-  const user = ref<User>(anonymousUser)
-  const token = ref('')
+export const useUserStore = defineStore(
+  'user',
+  () => {
+    const accountStore = useAccountStore()
+    // State
+    const user = ref<User>(anonymousUser)
+    const token = ref('')
 
-  // Getters
-  const fetchToken = async (identifier: string, password: string): Promise<string> => {
-    const data = (await axios.post<Token>('/user/login', { identifier, password })) as Token
-    return data.token
-  }
-  const fetchUser = async (token: string): Promise<User> => {
-    const data = await axios.get<User>(`/user`, token)
-    return data as User
-  }
-  const isValidUser = (user) => user.value && user.value.id !== 'anonymousUser'
-  const isLoggedIn = computed(() => isValidUser(user))
-
-  // const getLocalToken = () => {
-  //   token.value = Cookies.get('token')
-  //   return token.value
-  // }
-
-  // Setters
-  const loginUser = async (identifier: string, password: string) => {
-    try {
-      token.value = await fetchToken(identifier, password)
-      // Cookies.set('token', token)
-      console.log('► app/stores/useUserStore.ts - loginUser - token.value:', token.value)
-      user.value = await fetchUser(token.value)
-      console.log('► app/stores/useUserStore.ts - loginUser - user.value:', user.value)
-      await accountStore.fetchAndUpdateAccounts(token.value)
-      // no need to return user.value, it is already set
-      // return user.value
-    } catch (error) {
-      console.error('► app/store/useUserStore → loginUser : error', error)
-      logoutUser()
-      accountStore.resetAccounts()
-      throw new Error(error)
+    // Getters
+    const fetchToken = async (identifier: string, password: string): Promise<string> => {
+      const data = (await axios.post<Token>('/user/login', { identifier, password })) as Token
+      return data.token
     }
-  }
-  const logoutUser = () => {
-    user.value = anonymousUser
-    accountStore.resetAccounts()
-  }
+    const fetchUser = async (token: string): Promise<User> => {
+      const data = await axios.get<User>(`/user`, token)
+      return data as User
+    }
+    const isValidUser = (user) => user.value && user.value.id !== 'anonymousUser'
+    const isLoggedIn = computed(() => isValidUser(user))
 
-  return { user, isValidUser, fetchUser, logoutUser, loginUser, isLoggedIn }
-})
+    // const getLocalToken = () => {
+    //   token.value = Cookies.get('token')
+    //   return token.value
+    // }
+
+    // Setters
+    const loginUser = async (identifier: string, password: string) => {
+      try {
+        token.value = await fetchToken(identifier, password)
+        // Cookies.set('token', token)
+        console.log('► app/stores/useUserStore.ts - loginUser - token.value:', token.value)
+        user.value = await fetchUser(token.value)
+        console.log('► app/stores/useUserStore.ts - loginUser - user.value:', user.value)
+        await accountStore.fetchAndUpdateAccounts(token.value)
+        // no need to return user.value, it is already set
+        // return user.value
+      } catch (error) {
+        console.error('► app/store/useUserStore → loginUser : error', error)
+        logoutUser()
+        accountStore.resetAccounts()
+        throw new Error(error)
+      }
+    }
+    const logoutUser = () => {
+      user.value = anonymousUser
+      accountStore.resetAccounts()
+    }
+
+    return { user, isValidUser, fetchUser, logoutUser, loginUser, isLoggedIn }
+  },
+  { persist: true }
+)
 
 export const anonymousUser: User = {
   id: 'anonymousUser',
