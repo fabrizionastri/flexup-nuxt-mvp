@@ -30,15 +30,15 @@ export const useAccountStore = defineStore(
     // Setters
     const fetchAndUpdateAccounts = async (token: string) => {
       activeAccounts.value = await fetchAccounts(token, ['active'])
-      console.log(
-        '► app/stores/useAccountStore.ts → fetchAndUpdateAccounts - activeAccounts.value:',
-        activeAccounts.value
-      )
+      // console.log(
+      //   '► app/stores/useAccountStore.ts → fetchAndUpdateAccounts - activeAccounts.value:',
+      //   activeAccounts.value
+      // )
       currentAccount.value = activeAccounts.value[0]
-      console.log(
-        '► app/stores/useAccountStore.ts → fetchAndUpdateAccounts - account.value:',
-        currentAccount.value
-      )
+      // console.log(
+      //   '► app/stores/useAccountStore.ts → fetchAndUpdateAccounts - account.value:',
+      //   currentAccount.value
+      // )
     }
 
     const resetAccounts = () => {

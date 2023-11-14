@@ -41,9 +41,9 @@ export const useUserStore = defineStore(
       try {
         token.value = await fetchToken(identifier, password)
         // Cookies.set('token', token)
-        console.log('► app/stores/useUserStore.ts - loginUser - token.value:', token.value)
+        // console.log('► app/stores/useUserStore.ts - loginUser - token.value:', token.value)
         user.value = await fetchUser(token.value)
-        console.log('► app/stores/useUserStore.ts - loginUser - user.value:', user.value)
+        // console.log('► app/stores/useUserStore.ts - loginUser - user.value:', user.value)
         await accountStore.fetchAndUpdateAccounts(token.value)
         // no need to return user.value, it is already set
         // return user.value
@@ -59,7 +59,7 @@ export const useUserStore = defineStore(
       accountStore.resetAccounts()
     }
 
-    return { user, isValidUser, fetchUser, logoutUser, loginUser, isLoggedIn }
+    return { user, isValidUser, fetchToken, fetchUser, logoutUser, loginUser, isLoggedIn }
   },
   { persist: true }
 )

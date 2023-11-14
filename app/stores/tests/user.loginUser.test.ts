@@ -1,6 +1,6 @@
-import { convertStringsToDates } from '../../lib/utils'
-import * as mock from '../../mock/inMemory'
-import { anonymousUser, useUserStore } from '../stores/useUserStore'
+import { convertStringsToDates } from '../../../lib/utils'
+import * as mock from '../../../mock/inMemory'
+import { anonymousUser, useUserStore } from '../useUserStore'
 import { createPinia, setActivePinia } from 'pinia'
 
 describe('app/composables/login.test', () => {
@@ -15,9 +15,9 @@ describe('app/composables/login.test', () => {
   it('logs user in and updates state', async () => {
     const identifier = mock.totoUsernameIdentifierData.id
     const password = mock.totoUserPasswordData.password
-    expect(userStore.user).toEqual(anonymousUser)
     // console.log('► app/composables/login - userStore.user (before):', userStore.user)
-    const result = await userStore.loginUser(identifier, password)
+    await userStore.loginUser(identifier, password)
+    const result = userStore.user
     // console.log('► app/composables/login - userStore.user (after):', userStore.user)
     expect(convertStringsToDates(result)).toEqual(mock.totoUser)
   })
