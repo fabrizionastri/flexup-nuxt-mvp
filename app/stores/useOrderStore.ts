@@ -1,11 +1,11 @@
 // store/useOrderStore.ts
 
 import { defineStore } from 'pinia'
-import { ref, computed } from 'vue'
+import { ref /* , computed  */ } from 'vue'
 // import Cookies from 'js-cookie'
 import type { Order } from '../../lib/entities'
 import axios from '../composables/myAxios'
-import { useUserStore } from './useUserStore'
+// import { useUserStore } from './useUserStore'
 
 export const useOrderStore = defineStore(
   'order',
