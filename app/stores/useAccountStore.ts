@@ -67,7 +67,11 @@ export const useAccountStore = defineStore(
       setCurrentAccount
     }
   },
-  { persist: true }
+  {
+    persist: {
+      storage: persistedState.localStorage
+    }
+  }
 )
 
 export const anonymousAccount: Account = {

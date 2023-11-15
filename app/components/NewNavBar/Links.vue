@@ -15,9 +15,9 @@
 
   const links = [
     { name: 'Home', route: '/' },
-    { name: 'Account', route: '/account' },
+    { name: 'Accounts', route: '/account' },
     { name: 'Login', route: '/login' },
-    { name: 'Orders', route: '/orders' },
+    { name: 'Orders', route: '/order' },
     { name: 'Playground', route: '/playground' },
     { name: 'YesNo', route: '/yesno' }
   ]

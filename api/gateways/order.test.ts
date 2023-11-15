@@ -67,10 +67,13 @@ describe('orderGateway', () => {
     })
     it('orderWithNoItems - should compute order with tranches only', async () => {
       const result = await computeOrder(orders.orderWithNoItemsData)
-      // console.log('orderGateway.test.ts - result:', result)
       expect(result).toEqual(orders.orderWithNoItems)
     })
-    it('commercialOrdershould compute order with items and tranches', async () => {
+    it('orderWithNoTranches - should compute order with tranches only', async () => {
+      const result = await computeOrder(orders.orderWithNoTranchesData)
+      expect(result).toEqual(orders.orderWithNoTranches)
+    })
+    it('commercialOrder should compute order with items and tranches', async () => {
       const result = await computeOrder(orders.commercialOrderData)
       expect(result).toEqual(orders.commercialOrder)
     })
@@ -124,14 +127,14 @@ describe('orderGateway', () => {
           ])
         })
       })
-      describe('fabrizioAccount - for existing account with multiple orders', () => {
-        beforeEach(async () => {
-          orderGateway = createOrderGateway('fabrizioAccount')
-        })
-        it('getById(orderWithNoTranches) should return the computed order with tranches but no items', async () => {
-          const result = await orderGateway.getById('orderWithNoTranches')
-          expect(result).toEqual(orders.orderWithNoTranches)
-        })
+    })
+    describe('fabrizioAccount - for existing account with multiple orders', () => {
+      beforeEach(async () => {
+        orderGateway = createOrderGateway('fabrizioAccount')
+      })
+      it('getById(orderWithNoTranches) should return the computed order with tranches but no items', async () => {
+        const result = await orderGateway.getById('orderWithNoTranches')
+        expect(result).toEqual(orders.orderWithNoTranches)
       })
     })
   })

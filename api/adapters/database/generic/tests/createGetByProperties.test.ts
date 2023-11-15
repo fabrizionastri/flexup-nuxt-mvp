@@ -8,25 +8,25 @@ import {
 import type { AccountData } from 'lib/entities'
 
 describe('api/adapters/database/inMemory/methods/createGetByProperties', () => {
-  // it('should return list of entities when provide with 2 valid key/value pairs, and no "and/or"', async () => {
-  //   const getByProperties = createGetByProperties<AccountData>('account')
-  //   const result = await getByProperties('countryId', 'FRA', 'type', 'business')
-  //   expect(new Set(result)).toEqual(new Set([cosysAccountData]))
-  // })
-  // it('should return list of entities when provide with 2 valid key/value pairs, and with "and"', async () => {
-  //   const getByProperties = createGetByProperties<AccountData>('account')
-  //   const result = await getByProperties('countryId', 'CHE', 'type', 'business', 'and')
-  //   // console.log('adapters/getByProperties - result:', result)
-  //   expect(new Set(result)).toEqual(new Set([agroCoopAccountData]))
-  // })
-  // it('should return list of entities when provide with 2 valid key/value pairs, and with "or"', async () => {
-  //   const getByProperties = createGetByProperties<AccountData>('account')
-  //   const result = await getByProperties('countryId', 'CHE', 'type', 'personal', 'or')
-  //   // console.log('adapters/getByProperties - result:', result)
-  //   expect(new Set(result)).toEqual(
-  //     new Set([fabrizioAccountData, totoAccountData, agroCoopAccountData])
-  //   )
-  // })
+  it('should return list of entities when provide with 2 valid key/value pairs, and no "and/or"', async () => {
+    const getByProperties = createGetByProperties<AccountData>('account')
+    const result = await getByProperties('countryId', 'FRA', 'type', 'business')
+    expect(new Set(result)).toEqual(new Set([cosysAccountData]))
+  })
+  it('should return list of entities when provide with 2 valid key/value pairs, and with "and"', async () => {
+    const getByProperties = createGetByProperties<AccountData>('account')
+    const result = await getByProperties('countryId', 'CHE', 'type', 'business', 'and')
+    // console.log('adapters/getByProperties - result:', result)
+    expect(new Set(result)).toEqual(new Set([agroCoopAccountData]))
+  })
+  it('should return list of entities when provide with 2 valid key/value pairs, and with "or"', async () => {
+    const getByProperties = createGetByProperties<AccountData>('account')
+    const result = await getByProperties('countryId', 'CHE', 'type', 'personal', 'or')
+    // console.log('adapters/getByProperties - result:', result)
+    expect(new Set(result)).toEqual(
+      new Set([fabrizioAccountData, totoAccountData, agroCoopAccountData])
+    )
+  })
   it('should return [] with 2 valid key/value pairs with no corresponding values', async () => {
     const getByProperties = createGetByProperties<AccountData>('account')
     const result = await getByProperties('countryId', 'CHE', 'type', 'personal')

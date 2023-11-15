@@ -63,7 +63,7 @@ describe('api/server/routes/account', () => {
       const res = await app.request(`/${accountId}/order`, {
         headers: { Authorization: `Bearer ${jwt}` }
       })
-      console.log('►api/server/routes/account.test.ts  → - res:', res)
+      // console.log('►api/server/routes/account.test.ts  → - res:', res)
 
       const result = await res.json()
       expect(res.status).toBe(200)

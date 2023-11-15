@@ -40,28 +40,3 @@ describe('api/adapters/database/generic/tests/getByAccountId.ts', () => {
     }
   })
 })
-
-//   it('should return list of entities when provide with 2 valid key/value pairs, and with "and"', async () => {
-//
-//     const result = await getByAccountId('CHE', 'business')
-//     // console.log('adapters/getByAccountId - result:', result)
-//     expect(result.sort()).toEqual([agroCoopAccountData].sort())
-//   })
-//   it('should return list of entities when provide with 2 valid key/value pairs, and with "or"', async () => {
-//
-//     const result = await getByAccountId('CHE', 'personal')
-//
-//     expect(new Set(result)).toEqual(
-//       new Set([fabrizioAccountData, totoAccountData, agroCoopAccountData])
-//     )
-//   })
-//   it('should return [] with 2 valid key/value pairs with no corresponding values', async () => {
-//     const getByAccountId = getByAccountId<AccountData>(
-//       'account',
-//       'countryId',
-//       'type'
-//     )
-//     const result = await getByAccountId('CHE', 'personal')
-//
-//     expect(result).toEqual([])
-//   })

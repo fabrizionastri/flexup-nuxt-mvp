@@ -5,6 +5,8 @@
       <div class="flex h-16 justify-between">
         <!-- LEFT SECTION -->
         <div class="flex">
+          <NewNavBarLogo />
+          <NewNavBarLinks />
           <div class="-ml-2 mr-2 flex items-center md:hidden">
             <!-- Mobile menu button -->
             <DisclosureButton
@@ -16,9 +18,6 @@
               <XMarkIcon v-else class="block h-6 w-6" aria-hidden="true" />
             </DisclosureButton>
           </div>
-
-          <NewNavBarLogo />
-          <NewNavBarLinks />
         </div>
         <!-- RIGHT SECTION -->
         <div class="flex items-center">

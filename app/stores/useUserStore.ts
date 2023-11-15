@@ -61,7 +61,11 @@ export const useUserStore = defineStore(
 
     return { user, token, isValidUser, fetchToken, fetchUser, logoutUser, loginUser, isLoggedIn }
   },
-  { persist: true }
+  {
+    persist: {
+      storage: persistedState.localStorage
+    }
+  }
 )
 
 export const anonymousUser: User = {

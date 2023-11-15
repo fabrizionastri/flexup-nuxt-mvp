@@ -1,5 +1,5 @@
 <template>
-  <div class="px-4 sm:px-6 lg:px-8">
+  <div>
     <div class="mt-8 flow-root">
       <div class="-mx-4 -my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
         <div class="inline-block min-w-full py-2 align-middle sm:px-6 lg:px-8">
@@ -23,8 +23,11 @@
                   </td>
 
                   <td>
-                    <NuxtLink to="#" class="flex text-indigo-600 hover:text-indigo-900"
-                      ><PencilIcon class="w- h-5"
+                    <NuxtLink
+                      :to="`/order/${order.id}`"
+                      tooltip="View order"
+                      class="flex text-indigo-600 hover:text-indigo-900"
+                      ><EyeIcon class="w- h-5"
                     /></NuxtLink>
                   </td>
                 </tr>
@@ -46,7 +49,7 @@
   import { useOrderStore } from '@/stores/useOrderStore'
   import { useUserStore } from '@/stores/useUserStore'
   import { useAccountStore } from '@/stores/useAccountStore'
-  import { PencilIcon } from '@heroicons/vue/20/solid'
+  import { EyeIcon } from '@heroicons/vue/20/solid'
 
   const orderStore = useOrderStore()
   const userStore = useUserStore()
@@ -65,7 +68,7 @@
   const fetchOrders = async () => {
     const token = userStore.token
     const accountId = accountStore.currentAccount.id
-    orders.value = await orderStore.fetchAllOrders(accountId, token)
+    orders.value = await orderStore.fetchAndUpdateAllOrders(accountId, token)
   }
 
   onMounted(fetchOrders)
