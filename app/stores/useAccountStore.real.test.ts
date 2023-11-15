@@ -1,10 +1,10 @@
 // app/composables/fetchAccounts.real.test.ts
 
 import { createPinia, setActivePinia } from 'pinia'
-import { sortById } from '../../../lib/utils'
-import { convertStringsToDates } from '../../../lib/utils'
-import * as mock from '../../../mock/inMemory'
-import { useAccountStore } from '../useAccountStore'
+import { sortById } from '../../lib/utils'
+import { convertStringsToDates } from '../../lib/utils'
+import * as mock from '../../mock/inMemory'
+import { useAccountStore } from './useAccountStore'
 
 describe('app/composable/fetchAccounts', () => {
   let accountStore

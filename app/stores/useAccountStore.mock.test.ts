@@ -1,7 +1,7 @@
 import { createPinia, setActivePinia } from 'pinia'
-import type { AccountStatus } from '../../../lib/entities/account'
-import axios from '../../composables/myAxios'
-import { useAccountStore } from '../useAccountStore'
+import type { AccountStatus } from '../../lib/entities/account'
+import axios from '../composables/myAxios'
+import { useAccountStore } from './useAccountStore'
 
 vi.mock('./myAxios')
 

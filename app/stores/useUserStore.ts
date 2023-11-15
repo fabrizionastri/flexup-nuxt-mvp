@@ -59,7 +59,7 @@ export const useUserStore = defineStore(
       accountStore.resetAccounts()
     }
 
-    return { user, isValidUser, fetchToken, fetchUser, logoutUser, loginUser, isLoggedIn }
+    return { user, token, isValidUser, fetchToken, fetchUser, logoutUser, loginUser, isLoggedIn }
   },
   { persist: true }
 )
