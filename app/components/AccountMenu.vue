@@ -1,17 +1,6 @@
 <!-- app/components/AccountMenu.vue -->
 <template>
-  <div v-if="!userStore.isLoggedIn">
-    <NuxtLink
-      href="/login"
-      :class="['text-l  group flex items-center rounded px-4 py-2 text-gray-900 hover:bg-gray-100']"
-    >
-      <ArrowRightOnRectangleIcon
-        class="mr-3 h-8 text-gray-900 group-hover:text-gray-500"
-        aria-hidden="true"
-      />
-      Login
-    </NuxtLink>
-  </div>
+  <NewNavBarLogin />
   <Menu as="div" v-if="userStore.isLoggedIn" class="relative ml-4 inline-block w-56">
     <div>
       <MenuButton class="w-full rounded-md ring-1 ring-inset ring-white hover:bg-gray-100">

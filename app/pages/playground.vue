@@ -1,7 +1,9 @@
 <template>
   <div>
-    <h1>Playground</h1>
-    <p>This is a temp page to try out new things</p>
+    <h1 class="my-5">Playground</h1>
+    <p class="mb-10">This is a temp page to try out new things</p>
+    <NewNavBarLogin />
+    <!-- <NewNavBarAccount /> -->
   </div>
 </template>
 
