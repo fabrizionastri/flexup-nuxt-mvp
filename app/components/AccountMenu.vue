@@ -185,15 +185,13 @@
   import {
     ArchiveBoxIcon,
     ArrowRightCircleIcon,
-    // ChevronDownIcon,
     DocumentDuplicateIcon,
     HeartIcon,
     PencilSquareIcon,
     TrashIcon,
     UserPlusIcon,
     UserIcon,
-    ArrowLeftOnRectangleIcon,
-    ArrowRightOnRectangleIcon
+    ArrowLeftOnRectangleIcon
   } from '@heroicons/vue/20/solid'
   import { useAccountStore } from '../stores/useAccountStore'
   import { useUserStore } from '../stores/useUserStore'

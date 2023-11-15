@@ -15,7 +15,7 @@
       </div>
     </div>
 
-    <OrderTable2 />
+    <OrderTable />
     <!-- <div class="my-20"></div>
     <hr />
     <div class="my-20"></div>

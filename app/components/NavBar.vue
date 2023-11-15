@@ -111,13 +111,4 @@
 <script setup>
   import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/vue'
   import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/vue/24/outline'
-  const links = [
-    { name: 'Home', route: '/' },
-    { name: 'Account', route: '/account' },
-    { name: 'Login', route: '/login' },
-    { name: 'Orders', route: '/orders' },
-    { name: 'Playground', route: '/playground' },
-    { name: 'YesNo', route: '/yesno' }
-  ]
-  const currentPage = ref('Home')
 </script>
