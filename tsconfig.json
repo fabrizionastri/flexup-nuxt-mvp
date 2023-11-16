@@ -12,6 +12,7 @@
     "baseUrl": ".",
     "paths": {
       "app/*": ["./app/*"],
+      "@/*": ["./@/*"],
       "api/*": ["./api/*"],
       "usecases/*": ["./api/usecases/*"],
       "gateways/*": ["./api/gateways/*"],
@@ -29,5 +30,10 @@
     "require": ["tsconfig-paths/register"]
   },
   "include": ["api/**/*", "app/**/*", "mock/**/*", "lib/**/*", "utils/**/*", "./*"],
-  "files": ["mock/index.json", "tsconfig.json"]
+  "files": [
+    "mock/index.json",
+    "tsconfig.json",
+    "./app/components/formatCurrency.ts",
+    "./app/components/format.ts"
+  ]
 }

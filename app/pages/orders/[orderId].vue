@@ -1,7 +1,12 @@
 <template>
-  <h1>Order Details</h1>
-  Order Nr: {{ orderId }} <br />
-  Order: {{ order }}
+  <div>
+    <h1>Order Details</h1>
+    Order Nr: {{ orderId }} <br />
+    Order: {{ order }}
+  </div>
+
+  <!-- From ChatGPT -->
+  <OrderDetailChatGPT />
 </template>
 
 <script setup>

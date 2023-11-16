@@ -22,7 +22,7 @@ export default defineNuxtConfig({
   pinia: {
     storesDirs: ['./stores/**']
   },
-  buildModules: ['@vueuse/nuxt'],
+  buildModules: ['@vueuse/nuxt', '@nuxtjs/auth-next'],
   plugins: [
     //
   ],

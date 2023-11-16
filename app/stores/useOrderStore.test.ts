@@ -36,7 +36,7 @@ describe('app/stores/orderStore', () => {
     })
   })
 
-  describe.only('getOrder', () => {
+  describe('getOrder', () => {
     let orderStore
     beforeEach(async () => {
       setActivePinia(createPinia())

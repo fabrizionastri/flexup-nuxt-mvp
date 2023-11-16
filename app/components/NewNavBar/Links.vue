@@ -15,11 +15,9 @@
 
   const links = [
     { name: 'Home', route: '/' },
-    { name: 'Accounts', route: '/account' },
-    { name: 'Login', route: '/login' },
-    { name: 'Orders', route: '/order' },
-    { name: 'Playground', route: '/playground' },
-    { name: 'YesNo', route: '/yesno' }
+    { name: 'Accounts', route: '/accounts' },
+    { name: 'Orders', route: '/orders' },
+    { name: 'Playground', route: '/playground' }
   ]
 
   const linkClass = (name) => {

@@ -29,7 +29,12 @@ export const useOrderStore = defineStore(
       return orders.value.find((order) => order.id === orderId)
     }
 
-    return { orders, fetchAndUpdateAllOrders, getOrder }
+    const resetOrders = () => {
+      console.log('► app/stores/useOrderStore.ts → reseting Orders')
+      orders.value = []
+    }
+
+    return { orders, fetchAndUpdateAllOrders, getOrder, resetOrders }
   },
   {
     persist: {

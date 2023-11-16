@@ -7,7 +7,7 @@ export const commercialOrderData: Order = {
   id: 'commercialOrder',
   supplierAccountId: 'flexupAccount',
   clientAccountId: 'pizzaDOroAccount',
-  name: 'T blues & rouges',
+  name: 'Advisory services',
   nature: 'commercial',
   amountInclTax: 253.1
 }
@@ -44,7 +44,7 @@ export const orderWithNoItemsData: Order = {
   id: 'orderWithNoItems',
   supplierAccountId: 'pizzaDOroAccount',
   clientAccountId: 'fabrizioAccount',
-  name: 'Chaussettes',
+  name: 'Pizza Veggie Queen',
   nature: 'commercial',
   amountExclTax: 1000,
   amountInclTax: 1200,

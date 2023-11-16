@@ -5,13 +5,15 @@ import { ref } from 'vue'
 import type { Account, AccountStatus } from '../../lib/entities'
 
 import axios from '../composables/myAxios'
+import { useUserStore } from './useUserStore'
 
 export const useAccountStore = defineStore(
   'account',
   () => {
     // State
-    const activeAccounts = ref<Account[]>([anonymousAccount])
-    const currentAccount = ref<Account>(anonymousAccount)
+    const activeAccounts = ref<Account[]>([])
+    const allAccounts = ref<Account[]>([])
+    const currentAccount = ref<Account | null>(null)
 
     // Getters
     const fetchAccounts = async (
@@ -27,29 +29,43 @@ export const useAccountStore = defineStore(
       return data as Account[]
     }
 
+    const getAccount = async (
+      accountId: string,
+      token: string = ''
+    ): Promise<Account | undefined> => {
+      let result: Account | undefined
+      if (allAccounts.value.length > 0)
+        return allAccounts.value.find((account) => account.id === accountId)
+
+      if (activeAccounts.value.length > 0) {
+        result = activeAccounts.value.find((account) => account.id === accountId)
+        if (result) return result
+      }
+      await fetchAndUpdateAllAccounts(token)
+      return allAccounts.value.find((account) => account.id === accountId)
+    }
+
     // Setters
-    const fetchAndUpdateAccounts = async (token: string) => {
+    const fetchAndUpdateActiveAccounts = async (token: string) => {
       activeAccounts.value = await fetchAccounts(token, ['active'])
-      // console.log(
-      //   '► app/stores/useAccountStore.ts → fetchAndUpdateAccounts - activeAccounts.value:',
-      //   activeAccounts.value
-      // )
-      currentAccount.value = activeAccounts.value[0]
-      // console.log(
-      //   '► app/stores/useAccountStore.ts → fetchAndUpdateAccounts - account.value:',
-      //   currentAccount.value
-      // )
+      currentAccount.value = activeAccounts.value.find((account) => account.type === 'personal')
+    }
+
+    const fetchAndUpdateAllAccounts = async (token: string) => {
+      allAccounts.value = await fetchAccounts(token)
     }
 
     const resetAccounts = () => {
-      activeAccounts.value = [anonymousAccount]
+      console.log('► app/stores/useAccountStore.ts → reseting Accounts')
+      activeAccounts.value = []
+      allAccounts.value = []
+      currentAccount.value = null
       console.log(
-        '► app/stores/useAccountStore.ts → fetchAndUpdateAccounts - account.value:',
+        '► app/stores/useAccountStore.ts → fetchAndUpdateActiveAccounts - account.value:',
         currentAccount.value
       )
-      currentAccount.value = anonymousAccount
       console.log(
-        '► app/stores/useAccountStore.ts → fetchAndUpdateAccounts - activeAccounts.value:',
+        '► app/stores/useAccountStore.ts → fetchAndUpdateActiveAccounts - activeAccounts.value:',
         activeAccounts.value
       )
     }
@@ -60,9 +76,12 @@ export const useAccountStore = defineStore(
 
     return {
       activeAccounts,
+      allAccounts,
       currentAccount,
       fetchAccounts,
-      fetchAndUpdateAccounts,
+      fetchAndUpdateActiveAccounts,
+      fetchAndUpdateAllAccounts,
+      getAccount,
       resetAccounts,
       setCurrentAccount
     }
@@ -74,21 +93,21 @@ export const useAccountStore = defineStore(
   }
 )
 
-export const anonymousAccount: Account = {
-  avatar: '/images/profiles/anonymous.jpg',
-  countryId: 'FRA',
-  countryName: 'France',
-  creationDate: new Date('2019-01-01'),
-  currencyId: 'EUR',
-  currencyName: 'Euro',
-  currencySymbol: '€',
-  id: 'anonymousAccount',
-  name: 'Anonymous Account',
-  ownerId: 'anonymousIndividual',
-  ownerName: 'Anonymous Individual',
-  ownerSymbol: '👤',
-  ownerType: 'individual',
-  status: 'active',
-  symbol: '👤',
-  type: 'personal'
-}
+// export const anonymousAccount: Account = {
+//   avatar: '/images/profiles/anonymous.jpg',
+//   countryId: 'FRA',
+//   countryName: 'France',
+//   creationDate: new Date('2019-01-01'),
+//   currencyId: 'EUR',
+//   currencyName: 'Euro',
+//   currencySymbol: '€',
+//   id: 'anonymousAccount',
+//   name: 'Anonymous Account',
+//   ownerId: 'anonymousIndividual',
+//   ownerName: 'Anonymous Individual',
+//   ownerSymbol: '👤',
+//   ownerType: 'individual',
+//   status: 'active',
+//   symbol: '👤',
+//   type: 'personal'
+// }

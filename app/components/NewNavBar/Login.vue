@@ -2,13 +2,10 @@
   <div v-if="!userStore.isLoggedIn">
     <NuxtLink
       href="/login"
-      :class="['text-l  group flex items-center rounded px-4 py-2 text-gray-900 hover:bg-gray-100']"
+      class="text-l group flex w-[150px] items-center rounded bg-indigo-600 px-4 py-2 text-white shadow-sm hover:bg-indigo-500"
     >
-      <ArrowRightOnRectangleIcon
-        class="mr-3 h-8 text-gray-900 group-hover:text-gray-500"
-        aria-hidden="true"
-      />
-      Login
+      <ArrowRightOnRectangleIcon class="mr-3 h-8 text-white" aria-hidden="true" />
+      Sign in
     </NuxtLink>
   </div>
 </template>

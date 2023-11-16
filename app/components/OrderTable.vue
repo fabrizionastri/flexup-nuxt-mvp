@@ -19,12 +19,12 @@
               <tbody class="divide-y divide-gray-200 bg-white">
                 <tr v-for="order in orders" :key="order.id">
                   <td v-for="column in displayedColumns" :key="column.key">
-                    {{ order[column.key] }}
+                    {{ format(order[column.key], column.type) }}
                   </td>
 
                   <td>
                     <NuxtLink
-                      :to="`/order/${order.id}`"
+                      :to="`/orders/${order.id}`"
                       tooltip="View order"
                       class="flex text-indigo-600 hover:text-indigo-900"
                       ><EyeIcon class="w- h-5"
@@ -44,12 +44,13 @@
   </div>
 </template>
 
-<script setup>
+<script setup lang="ts">
   import { onMounted, ref, watch } from 'vue'
   import { useOrderStore } from '@/stores/useOrderStore'
   import { useUserStore } from '@/stores/useUserStore'
   import { useAccountStore } from '@/stores/useAccountStore'
   import { EyeIcon } from '@heroicons/vue/20/solid'
+  import { format } from '../../lib/utils/format'
 
   const orderStore = useOrderStore()
   const userStore = useUserStore()
@@ -57,12 +58,14 @@
   const orders = ref([])
 
   const displayedColumns = [
-    { key: 'id', label: 'Order ID' },
-    { key: 'name', label: 'Name' },
-    { key: 'nature', label: 'Nature' },
-    { key: 'supplierAccountId', label: 'Supplier' },
-    { key: 'clientAccountId', label: 'Client' },
-    { key: 'amountInclTax', label: 'Total' }
+    { key: 'id', label: 'Order ID', editable: false, type: 'string' },
+    { key: 'name', label: 'Name', editable: true, type: 'string' },
+    // { key: 'description', label: 'Description', editable: true, type: 'string' },
+    // { key: 'status', label: 'Status', editable: true, type: 'string' },
+    { key: 'nature', label: 'Nature', editable: true, type: 'string' },
+    { key: 'supplierAccountId', label: 'Supplier', editable: true, type: 'string' },
+    { key: 'clientAccountId', label: 'Client', editable: true, type: 'string' },
+    { key: 'amountInclTax', label: 'Total', editable: true, type: 'currency' }
   ]
 
   const fetchOrders = async () => {

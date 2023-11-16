@@ -7,4 +7,9 @@
   </div>
 </template>
 
-<script setup></script>
+<script setup>
+  const date = new Date('2012-05-24')
+  console.log('►  → - navigator.language:', navigator.language)
+  const formattedDate = new Intl.DateTimeFormat(navigator.language).format(date)
+  console.log('►  → - formattedDate:', formattedDate)
+</script>
