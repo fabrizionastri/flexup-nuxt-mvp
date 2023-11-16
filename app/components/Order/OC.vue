@@ -2,10 +2,9 @@
 <template>
   <div>
     <div v-if="mode === 'view'">
-      <div v-for="(value, key) in data" :key="key">
+      <div v-for="(value, key) in order" :key="key">
         <label :for="key">{{ key }}:</label>
-        <span v-if="isEditable(key)">{{ getEditableValue(key) }}</span>
-        <span v-else>{{ value }}</span>
+        <input :id="key" :class="`border=${isEditable(key)}`" :value="value" />
       </div>
       <button @click="switchToEditMode">Edit</button>
     </div>
@@ -23,14 +22,14 @@
 
 <script setup lang="ts">
   const props = defineProps({
-    data: {
+    order: {
       type: Object,
       required: true
-    },
-    editableFields: {
-      type: Array,
-      default: () => []
     }
+    // editableFields: {
+    //   type: Array,
+    //   default: () => []
+    // }
   })
 
   const mode = ref('view')

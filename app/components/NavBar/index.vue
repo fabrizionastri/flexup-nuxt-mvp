@@ -6,8 +6,8 @@
         <div class="flex h-16 justify-between">
           <!-- LEFT SECTION -->
           <div class="flex">
-            <NewNavBarFlexUpLogo />
-            <NewNavBarLinks />
+            <NavBarFlexUpLogo />
+            <NavBarLinks />
             <div class="-ml-2 mr-2 flex items-center md:hidden">
               <!-- Mobile menu button -->
               <DisclosureButton
@@ -26,7 +26,6 @@
             <!-- <AddNew /> -->
 
             <div class="hidden md:ml-4 md:flex md:flex-shrink-0 md:items-center">
-              <!-- <NotificationBell /> -->
               <AccountMenu />
             </div>
           </div>

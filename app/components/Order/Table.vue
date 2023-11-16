@@ -50,7 +50,7 @@
   import { useUserStore } from '@/stores/useUserStore'
   import { useAccountStore } from '@/stores/useAccountStore'
   import { EyeIcon } from '@heroicons/vue/20/solid'
-  import { format } from '../../lib/utils/format'
+  import { format } from '@/../lib/utils/format'
 
   const orderStore = useOrderStore()
   const userStore = useUserStore()
@@ -69,9 +69,13 @@
   ]
 
   const fetchOrders = async () => {
-    const token = userStore.token
-    const accountId = accountStore.currentAccount.id
-    orders.value = await orderStore.fetchAndUpdateAllOrders(accountId, token)
+    try {
+      const token = userStore.token
+      const accountId = accountStore.currentAccount.id
+      orders.value = await orderStore.fetchAndUpdateAllOrders(accountId, token)
+    } catch (error) {
+      console.error('app/components/Order/Table.vue Error:', error)
+    }
   }
 
   onMounted(fetchOrders)

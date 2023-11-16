@@ -1,11 +1,11 @@
 <!-- app/components/AccountMenu.vue -->
 <template>
   <div>
-    <NewNavBarLogin />
+    <NavBarLogin />
     <Menu as="div" v-if="userStore.isLoggedIn" class="relative ml-4 inline-block w-56">
       <div>
         <MenuButton class="w-full rounded-md ring-1 ring-inset ring-white hover:bg-gray-100">
-          <AccountListCard :account="accountStore.currentAccount" />
+          <AccountTag :account="accountStore.currentAccount" />
           <!-- <ChevronDownIcon class="w-5 h-5 -mr-1 text-gray-400" aria-hidden="true" /> -->
         </MenuButton>
       </div>
@@ -195,15 +195,15 @@
     UserIcon,
     ArrowLeftOnRectangleIcon
   } from '@heroicons/vue/20/solid'
-  import { useAccountStore } from '../stores/useAccountStore'
-  import { useUserStore } from '../stores/useUserStore'
+  import { useAccountStore } from '@/stores/useAccountStore'
+  import { useUserStore } from '@/stores/useUserStore'
 
   const accountStore = useAccountStore()
   const userStore = useUserStore()
 
   const logout = () => {
-    userStore.logoutUser()
     navigateTo('/login')
+    userStore.logoutUser()
   }
   watch(userStore.user, (newValue, oldValue) => {
     console.log('app/components/NavBar.vue - user changed:', newValue, oldValue)

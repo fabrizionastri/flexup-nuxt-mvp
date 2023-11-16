@@ -11,7 +11,7 @@
           'active-account': account.id === accountStore.currentAccount?.id
         }"
       >
-        <AccountListCard :account="account" />
+        <AccountTag :account="account" />
       </li>
     </ul>
   </div>

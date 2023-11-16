@@ -1,7 +1,7 @@
 <template lang="pug">
 div
   h1 Selected Account
-      AccountListCard(:account="selectedAccount")
+      AccountTag(:account="selectedAccount")
       p Account Details: {{ selectedAccount }}
 
 
