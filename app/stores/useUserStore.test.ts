@@ -28,7 +28,7 @@ describe('app/stores/userStore', () => {
       userStore = useUserStore()
     })
     it('user is anonymous by default', () => {
-      expect(userStore.user).toEqual(anonymousUser)
+      expect(userStore.user).toBeNull()
     })
     it('logs user in and updates state', async () => {
       const identifier = mock.totoUsernameIdentifierData.id

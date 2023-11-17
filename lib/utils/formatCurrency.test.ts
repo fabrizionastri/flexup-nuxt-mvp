@@ -43,13 +43,5 @@ describe('formatCurrency', () => {
     expect(result).toEqual('￥1,234,568')
   })
 
-  it('should format JPY correctly in japanese format', () => {
-    const date = new Date('2012-05-24')
-    console.log('►  → - navigator.language:', navigator.language)
-    const formattedDate = new Intl.DateTimeFormat(navigator.language).format(date)
-    console.log('►  → - formattedDate:', formattedDate)
-    expect(1).toEqual(1)
-  })
-
   // Add more tests for other currencies as needed
 })
