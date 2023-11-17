@@ -3,8 +3,6 @@ _docs
 .cache
 .data
 .DS_Store
-.env
-.env.*
 .fleet
 .git
 .idea

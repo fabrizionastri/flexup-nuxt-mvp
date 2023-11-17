@@ -17,7 +17,7 @@ export const useUserStore = defineStore(
     const accountStore = useAccountStore()
     const orderStore = useOrderStore()
     // State
-    const user = ref<User | null>(null)
+    const user = ref<User | object>({})
     const token = ref('')
 
     // Getters
@@ -42,7 +42,7 @@ export const useUserStore = defineStore(
       try {
         token.value = await fetchToken(identifier, password)
         console.log('► app/stores/useUserStore.ts - loginUser - token.value:', token.value)
-        user.value = (await fetchUser(token.value)) as User
+        await fetchUser(token.value).then((data) => (user.value = data))
         console.log('► app/stores/useUserStore.ts - loginUser - user.value:', user.value)
         await accountStore.fetchAndUpdateActiveAccounts(token.value)
         // no need to return user.value, it is already set
