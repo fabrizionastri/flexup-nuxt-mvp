@@ -7,8 +7,5 @@
   "trailingComma": "none",
   "endOfLine": "lf",
   "vueIndentScriptAndStyle": true,
-  "plugins": [
-    "tailwindcss",
-    "prettier-plugin-tailwindcss"
-  ]
+  "plugins": ["tailwindcss", "prettier-plugin-tailwindcss"]
 }

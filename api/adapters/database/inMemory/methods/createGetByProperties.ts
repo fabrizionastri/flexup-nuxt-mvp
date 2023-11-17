@@ -15,7 +15,7 @@ export const createGetByProperties: CreateGetByProperties =
     // Check if the entity exists in the database
     if (entities.length === 0) throw new Error(`No data found in database for "${entityName}"`)
 
-    // Check if the properties exists for this entity
+    // Check if the properties exists for this entity - should not be needed in production
     if (!(property1 in entities[0])) {
       throw new Error(`Property "${property1}" does not exist on "${entityName}"`)
     }

@@ -10,11 +10,17 @@ describe('trancheGateway', () => {
       const result = computeTranche(trancheData, order)
       expect(result).toMatchObject(tranches.commercialOrderPreferred50)
     })
-    it.only('should return a computed tranched with negative sign', () => {
+    it('should return a computed tranched with negative sign', () => {
       const order = orders.orderWithRebate
       const trancheData = tranches.orderWithRebateFlexRebate50Data
       const result = computeTranche(trancheData, order)
       expect(result).toMatchObject(tranches.orderWithRebateFlexRebate50)
+    })
+    it('should return a computed tranched', () => {
+      const order = orders.orderWithNoItems
+      const trancheData = tranches.orderWithNoItemsFirm100Data
+      const result = computeTranche(trancheData, order)
+      expect(result).toMatchObject(tranches.orderWithNoItemsFirm100)
     })
   })
 

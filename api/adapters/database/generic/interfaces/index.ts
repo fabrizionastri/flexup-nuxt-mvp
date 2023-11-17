@@ -1,3 +1,4 @@
+export * from './CreateGetByEitherSelectedProperties'
 export * from './createGetById'
 export * from './createGetByIds'
 export * from './createGetByProperties'
