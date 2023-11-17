@@ -8,7 +8,7 @@ The FlexUp web app, in its final commercial version, will offer a collection of 
 
 ## Architecture & Tech Stack
 
-![Alt text](image.png)
+![FlexUp Architecture](lib/images/architecture.png)
 
 ### Project structure
 
@@ -39,7 +39,6 @@ This project is structured as a "quasi-monorepo", with the following parts:
 
 This project is developed using the following principles:
 
-- **TypeScript**: the whole project is written in TypeScript, including the front end, the back end and the shared libraries
 - **Clean Architecture**: the project is structured using the Clean Architecture principles, where each block can be developed and modified wihout affecting any other block. The "Core" code has the following layers: entities, use cases, gateways and adapters.
 - **Test Driven Development**: the whole project is developed using TDD, using Vitest, a Vue 3 testing library based on Jest.
   - **api**: the backend is tested
@@ -48,19 +47,19 @@ This project is developed using the following principles:
 
 ### Key technologies and libraries
 
-- **Nuxt 3**: the front end web app is built on Nuxt 3, which is built on Vue 3 Composition API and Vite
-- **Pinia**: the front end web app uses Pinia Store for state management
-- **TailwindCSS**: the front end web app uses TailwindCSS for styling
-- **Hono**: the back end API server is built on Hono, a NodeJS framework based on Express
-- **Vitest**: the whole project is tested using Vitest, a Vue 3 testing library based on Jest
 - **TypeScript**: the whole project is written in TypeScript, including the front end, the back end and the shared libraries
-- **NodeJS**: the project is built on NodeJS
-- **pnpm**: the project uses pnpm as a package manager
-- **volta** : the project uses volta as a node version manager
-- **ESLint**: the project uses ESLint for linting
-- **Prettier**: the project uses Prettier for formatting
-- **jsonServer**: the project uses jsonServer as a mock database
-- **jwt**: the project uses Json Web Tokens for authentication
+- **Nuxt 3**: front end framework built on Vue 3 Composition API and Vite
+- **Pinia**: state management for the front end web app
+- **TailwindCSS**: utility-first CSS framework
+- **Hono**: API server
+- **Vitest**: testing framework built on Jest
+- **NodeJS**: runtime environment for the back end API server
+- **pnpm**: package manager
+- **volta** : node and tool version manager
+- **ESLint**: linting
+- **Prettier**: formatting
+- **jsonServer**: database mock server
+- **jwt**: Json Web Tokens for authentication
 
 ### Other potential & future technologies
 
@@ -74,7 +73,7 @@ _Code_
 - **msw**: API mocking library / service worker
 - **bycript**: password hashing library
 - **cuid2**: unique id generator
-- **joy**: schema validation library
+- **joi**: schema validation library
 
 _Infrastructure:_
 
@@ -108,7 +107,8 @@ _Other tools:_
 
 ### Installation
 
-- `pnpm install` : to install the packages
+- download this repo to your local directory
+- `pnpm install` : installs the packages
 - `pnpm rmock` : launches several sucessive actions
   - `pnpm generate-index`: updates the index files according to the selected mock database (inMemory or jsonServer)
   - `pnpm generate-inMemory-index`updates the `inMemory/index.ts`, which serves as a the `inMemory` mock database
