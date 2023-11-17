@@ -9,5 +9,6 @@
 </template>
 
 <script setup>
-  defineProps(['account'])
+  const props = defineProps(['account'])
+  if (props.account === null) navigateTo('/login')
 </script>

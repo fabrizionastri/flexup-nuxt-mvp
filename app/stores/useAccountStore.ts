@@ -5,7 +5,6 @@ import { ref } from 'vue'
 import type { Account, AccountStatus } from '../../lib/entities'
 
 import axios from '../composables/myAxios'
-import { useUserStore } from './useUserStore'
 
 export const useAccountStore = defineStore(
   'account',

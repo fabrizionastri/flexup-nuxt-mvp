@@ -41,10 +41,9 @@ export const useUserStore = defineStore(
     const loginUser = async (identifier: string, password: string) => {
       try {
         token.value = await fetchToken(identifier, password)
-        // Cookies.set('token', token)
-        // console.log('► app/stores/useUserStore.ts - loginUser - token.value:', token.value)
-        user.value = await fetchUser(token.value)
-        // console.log('► app/stores/useUserStore.ts - loginUser - user.value:', user.value)
+        console.log('► app/stores/useUserStore.ts - loginUser - token.value:', token.value)
+        user.value = (await fetchUser(token.value)) as User
+        console.log('► app/stores/useUserStore.ts - loginUser - user.value:', user.value)
         await accountStore.fetchAndUpdateActiveAccounts(token.value)
         // no need to return user.value, it is already set
         // return user.value

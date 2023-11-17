@@ -42,13 +42,3 @@ export const useOrderStore = defineStore(
     }
   }
 )
-
-/*
-
-[...orders.value]
-
-
-onMounted(() => {
-  console.log('toto')
-})
- */

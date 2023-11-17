@@ -1,7 +1,6 @@
 <!-- app/components/AccountMenu.vue -->
 <template>
   <div>
-    <NavBarLogin />
     <Menu as="div" v-if="userStore.isLoggedIn" class="relative ml-4 inline-block w-56">
       <div>
         <MenuButton class="w-full rounded-md ring-1 ring-inset ring-white hover:bg-gray-100">
