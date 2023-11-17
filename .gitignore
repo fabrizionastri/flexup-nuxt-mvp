@@ -1,15 +1,4 @@
 _docs
-!.env.example
-.cache
-.data
-.DS_Store
-.fleet
 .git
-.idea
-.nitro
 .nuxt
-.output
-*.log
-dist
-logs
 node_modules
