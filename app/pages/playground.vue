@@ -1,15 +1,16 @@
 <template>
   <div>
     <h1 class="my-5">Playground</h1>
-    <p class="mb-10">This is a temp page to try out new things</p>
-
-    <!-- <NavBarAccount /> -->
+    <p>This is a temp page to try out new things</p>
+    <hr class="mb-10 mt-5" />
+    <DisplayObject :object="order" />
+    <!-- <DisplayTable :dataArray="order.items" /> -->
   </div>
 </template>
 
 <script setup>
-  const date = new Date('2012-05-24')
-  console.log('►  → - navigator.language:', navigator.language)
-  const formattedDate = new Intl.DateTimeFormat(navigator.language).format(date)
-  console.log('►  → - formattedDate:', formattedDate)
+  import { useOrderStore } from '@/stores/useOrderStore'
+  const orderStore = useOrderStore()
+  const order = orderStore.getOrder('orderWithRebate')
+  // const order = orderStore.getOrder('commercialOrder')
 </script>

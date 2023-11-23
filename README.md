@@ -44,6 +44,7 @@ This project is developed using the following principles:
   - **api**: the backend is tested
   - **app**: for now the pages and components are only tested manually in the browser. Everything else (composables, pinia stores and middlewhare) are also tested using Vitest.
 - **Functional programming**: the whole project is developed using functional programming principles, where each function is pure, and the data is immutable. We do not use classes for the sake of simplicity and performance.
+- **DRY**: the code is developed using the DRY (Don't Repeat Yourself) principle, where each piece of code is written only once, and reused as much as possible. Any code that is repeated more than once is refactored into a function or a component.
 
 ### Key technologies and libraries
 

@@ -2,8 +2,7 @@
   <div>
     <h1>Order Details</h1>
     <ClientOnly>
-      Order Nr: {{ orderId }} <br />
-      Order: {{ order }}
+      <DisplayObject :object="order" class="m-5" />
     </ClientOnly>
   </div>
 

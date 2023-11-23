@@ -109,19 +109,19 @@
       "id": "fabrizioAccount:fabrizioUser",
       "accountId": "fabrizioAccount",
       "userId": "fabrizioUser",
-      "role": "owner"
+      "role": "admin"
     },
     {
       "id": "flexupAccount:fabrizioUser",
       "accountId": "flexupAccount",
       "userId": "fabrizioUser",
-      "role": "owner"
+      "role": "admin"
     },
     {
       "id": "cosysAccount:fabrizioUser",
       "accountId": "cosysAccount",
       "userId": "fabrizioUser",
-      "role": "owner"
+      "role": "admin"
     },
     {
       "id": "flexupAccount:totoUser",
@@ -133,7 +133,7 @@
       "id": "totoAccount:totoUser",
       "accountId": "totoAccount",
       "userId": "totoUser",
-      "role": "owner"
+      "role": "admin"
     },
     {
       "id": "doMazyAccount:FabrizioUser",
