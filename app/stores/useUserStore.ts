@@ -1,6 +1,6 @@
 // store/useUserStore.ts
 
-import { useAccountStore } from './useAccountStore'
+import { useAccountStore, useOrderStore } from './'
 import { defineStore } from 'pinia'
 import { ref, computed } from 'vue'
 // import Cookies from 'js-cookie'
@@ -15,8 +15,9 @@ export const useUserStore = defineStore(
   'user',
   () => {
     const accountStore = useAccountStore()
+    const orderStore = useOrderStore()
     // State
-    const user = ref<User>(anonymousUser)
+    const user = ref<User | object>({})
     const token = ref('')
 
     // Getters
@@ -40,11 +41,10 @@ export const useUserStore = defineStore(
     const loginUser = async (identifier: string, password: string) => {
       try {
         token.value = await fetchToken(identifier, password)
-        // Cookies.set('token', token)
         console.log('► app/stores/useUserStore.ts - loginUser - token.value:', token.value)
-        user.value = await fetchUser(token.value)
+        await fetchUser(token.value).then((data) => (user.value = data))
         console.log('► app/stores/useUserStore.ts - loginUser - user.value:', user.value)
-        await accountStore.fetchAndUpdateAccounts(token.value)
+        await accountStore.fetchAndUpdateActiveAccounts(token.value)
         // no need to return user.value, it is already set
         // return user.value
       } catch (error) {
@@ -55,24 +55,21 @@ export const useUserStore = defineStore(
       }
     }
     const logoutUser = () => {
-      user.value = anonymousUser
+      console.log('►app/stores/useUserStore.ts  → logging out user- :')
+      user.value = null
+      token.value = ''
       accountStore.resetAccounts()
+      orderStore.resetOrders()
     }
 
-    return { user, isValidUser, fetchUser, logoutUser, loginUser, isLoggedIn }
+    return { user, token, isValidUser, fetchToken, fetchUser, logoutUser, loginUser, isLoggedIn }
   },
-  { persist: true }
+  {
+    persist: {
+      storage: persistedState.localStorage
+    }
+  }
 )
-
-export const anonymousUser: User = {
-  id: 'anonymousUser',
-  firstName: 'Anonymous',
-  fullName: 'Anonymous User',
-  lastName: 'User',
-  creationDate: new Date('2019-01-01'),
-  lastLoginDate: new Date('2019-01-01'),
-  status: 'anonymous'
-}
 
 /*   // Currently not used. Tokens are stored in Pinia store, not in cookies
   // TOCHECK: should we store the token in a cookie?

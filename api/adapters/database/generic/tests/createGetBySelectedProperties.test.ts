@@ -57,7 +57,6 @@ describe('api/adapters/database/inMemory/methods/createGetBySelectedProperties',
       'invalidKey',
       'type'
     )
-
     await expect(getByProperties('CHE', 'personal')).rejects.toThrowError()
   })
 })

@@ -6,33 +6,33 @@ export const fabrizioAccountFabrizioUserData: AccountUserData = {
   id: 'fabrizioAccount:fabrizioUser', // temp for Json-Server
   accountId: 'fabrizioAccount',
   userId: 'fabrizioUser',
-  role: 'owner'
+  role: 'admin'
 }
 export const fabrizioAccountFabrizioUser: Account = {
   ...accounts.fabrizioAccount,
-  role: 'owner'
+  role: 'admin'
 }
 
 export const flexupAccountFabrizioUserData: AccountUserData = {
   id: 'flexupAccount:fabrizioUser',
   accountId: 'flexupAccount',
   userId: 'fabrizioUser',
-  role: 'owner'
+  role: 'admin'
 }
 export const flexupAccountFabrizioUser: Account = {
   ...accounts.flexupAccount,
-  role: 'owner'
+  role: 'admin'
 }
 
 export const cosysAccountFabrizioUserData: AccountUserData = {
   id: 'cosysAccount:fabrizioUser',
   accountId: 'cosysAccount',
   userId: 'fabrizioUser',
-  role: 'owner'
+  role: 'admin'
 }
 export const cosysAccountFabrizioUser: Account = {
   ...accounts.cosysAccount,
-  role: 'owner'
+  role: 'admin'
 }
 
 export const doMazyAccountFabrizioUserData: AccountUserData = {
@@ -96,7 +96,7 @@ export const totoAccountTotoUserData: AccountUserData = {
   id: 'totoAccount:totoUser',
   accountId: 'totoAccount',
   userId: 'totoUser',
-  role: 'owner'
+  role: 'admin'
 }
 export const totoAccountTotoUser: Account = {
   ...accounts.totoAccount,

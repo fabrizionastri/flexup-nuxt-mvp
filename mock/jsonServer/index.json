@@ -109,19 +109,19 @@
       "id": "fabrizioAccount:fabrizioUser",
       "accountId": "fabrizioAccount",
       "userId": "fabrizioUser",
-      "role": "owner"
+      "role": "admin"
     },
     {
       "id": "flexupAccount:fabrizioUser",
       "accountId": "flexupAccount",
       "userId": "fabrizioUser",
-      "role": "owner"
+      "role": "admin"
     },
     {
       "id": "cosysAccount:fabrizioUser",
       "accountId": "cosysAccount",
       "userId": "fabrizioUser",
-      "role": "owner"
+      "role": "admin"
     },
     {
       "id": "flexupAccount:totoUser",
@@ -133,7 +133,7 @@
       "id": "totoAccount:totoUser",
       "accountId": "totoAccount",
       "userId": "totoUser",
-      "role": "owner"
+      "role": "admin"
     },
     {
       "id": "doMazyAccount:FabrizioUser",
@@ -331,7 +331,7 @@
       "id": "commercialOrder",
       "supplierAccountId": "flexupAccount",
       "clientAccountId": "pizzaDOroAccount",
-      "name": "T blues & rouges",
+      "name": "Advisory services",
       "nature": "commercial",
       "amountInclTax": 253.1
     },
@@ -339,11 +339,11 @@
       "id": "orderWithNoItems",
       "supplierAccountId": "pizzaDOroAccount",
       "clientAccountId": "fabrizioAccount",
-      "name": "Chaussettes",
+      "name": "Pizza Veggie Queen",
       "nature": "commercial",
       "amountExclTax": 1000,
-      "taxAmount": 200,
       "amountInclTax": 1200,
+      "taxAmount": 200,
       "averageTaxRate": 0.2
     },
     {
@@ -366,17 +366,20 @@
       "id": "fundingOrder",
       "supplierAccountId": "doMazyAccount",
       "clientAccountId": "fabrizioAccount",
+      "amountInclTax": 1200,
       "name": "Funding",
-      "nature": "financial",
-      "amountInclTax": 1000
+      "nature": "financial"
     },
     {
       "id": "donationOrder",
       "supplierAccountId": "pizzaDOroTakeAwayAccount",
       "clientAccountId": "pizzaDOroAccount",
+      "amountInclTax": 100,
+      "amountExclTax": 100,
+      "taxAmount": 0,
+      "averageTaxRate": 0,
       "name": "Donation",
-      "nature": "donation",
-      "amountInclTax": 100
+      "nature": "donation"
     }
   ],
   "organization": [

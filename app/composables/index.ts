@@ -1,4 +1,3 @@
 export * from './fetchOrders'
-export * from './fetchToken'
+export * from './formatDate2'
 export * from './myAxios'
-export * from './useLogin'
