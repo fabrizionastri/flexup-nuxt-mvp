@@ -2,7 +2,7 @@
   <div>
     <h1>Order Details</h1>
     <ClientOnly>
-      <DisplayObject :object="order" class="m-5" />
+      <DisplayValue :value="order" class="m-5" />
     </ClientOnly>
   </div>
 

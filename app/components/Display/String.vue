@@ -6,6 +6,6 @@
 
 <script setup>
   defineProps({
-    value: String
+    value: [String, Date, Number, Boolean, Object, Array]
   })
 </script>

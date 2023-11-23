@@ -19,7 +19,7 @@
               <tbody class="divide-y divide-gray-200 bg-white">
                 <tr v-for="order in orders" :key="order.id">
                   <td v-for="column in displayedColumns" :key="column.key">
-                    {{ format(order[column.key], column.type) }}
+                    {{ formatValue(order[column.key]) }}
                   </td>
 
                   <td>
@@ -50,7 +50,7 @@
   import { useUserStore } from '@/stores/useUserStore'
   import { useAccountStore } from '@/stores/useAccountStore'
   import { EyeIcon } from '@heroicons/vue/20/solid'
-  import { format } from '@/../lib/utils/format'
+  import { formatValue } from '@/../lib/utils/formatValue'
 
   const orderStore = useOrderStore()
   const userStore = useUserStore()
