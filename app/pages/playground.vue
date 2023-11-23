@@ -11,6 +11,6 @@
 <script setup>
   import { useOrderStore } from '@/stores/useOrderStore'
   const orderStore = useOrderStore()
-  const order = orderStore.getOrder('orderWithRebate')
-  // const order = orderStore.getOrder('commercialOrder')
+  // const order = orderStore.getOrder('orderWithRebate')
+  const order = orderStore.getOrder('commercialOrder')
 </script>

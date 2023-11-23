@@ -47,7 +47,7 @@ describe('app/stores/useAccountStore.real', () => {
       setActivePinia(createPinia())
       accountStore = useAccountStore()
     })
-    describe('with valid token)', async () => {
+    describe('with valid token', async () => {
       beforeEach(async () => {
         const token = mock.totoUserToken
         await accountStore.fetchAndUpdateActiveAccounts(token)

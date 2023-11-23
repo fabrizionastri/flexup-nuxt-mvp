@@ -1,4 +1,4 @@
-import { anonymousUser, useUserStore } from './useUserStore'
+import { useUserStore } from './useUserStore'
 import { convertStringsToDates } from '../../lib/utils'
 import { createPinia, setActivePinia } from 'pinia'
 import * as mock from '../../mock/inMemory'
@@ -28,7 +28,7 @@ describe('app/stores/userStore', () => {
       userStore = useUserStore()
     })
     it('user is anonymous by default', () => {
-      expect(userStore.user).toBeNull()
+      expect(userStore.user).toEqual({})
     })
     it('logs user in and updates state', async () => {
       const identifier = mock.totoUsernameIdentifierData.id

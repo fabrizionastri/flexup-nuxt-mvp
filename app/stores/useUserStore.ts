@@ -71,16 +71,6 @@ export const useUserStore = defineStore(
   }
 )
 
-// export const anonymousUser: User = {
-//   id: 'anonymousUser',
-//   firstName: 'Anonymous',
-//   fullName: 'Anonymous User',
-//   lastName: 'User',
-//   creationDate: new Date('2019-01-01'),
-//   lastLoginDate: new Date('2019-01-01'),
-//   status: 'anonymous'
-// }
-
 /*   // Currently not used. Tokens are stored in Pinia store, not in cookies
   // TOCHECK: should we store the token in a cookie?
 
