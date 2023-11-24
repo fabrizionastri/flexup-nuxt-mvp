@@ -13,6 +13,20 @@ export default {
         // if the font is not available, the browser will use the next font in the list
         sans: ['Inter var', 'Open Sans', ...defaultTheme.fontFamily.sans] // this is how we can add a new font to our project
       },
+      gridColumn: {
+        'span-1': 'span 1 / span 1',
+        'span-2': 'span 2 / span 2',
+        'span-3': 'span 3 / span 3',
+        'span-4': 'span 4 / span 4',
+        'span-5': 'span 5 / span 5',
+        'span-6': 'span 6 / span 6',
+        'span-7': 'span 7 / span 7',
+        'span-8': 'span 8 / span 8',
+        'span-9': 'span 9 / span 9',
+        'span-10': 'span 10 / span 10',
+        'span-11': 'span 11 / span 11',
+        'span-12': 'span 12 / span 12'
+      },
       colors: {
         primary: '#328de7'
         // this is how we can add a new color to our project

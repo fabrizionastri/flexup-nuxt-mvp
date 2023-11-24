@@ -6,6 +6,10 @@ imports the utility styles body {
   font-family: 'Open Sans', sans-serif;
 }
 
+body {
+  @apply h-full text-gray-700;
+}
+
 h1 {
   @apply mt-3 text-3xl font-bold;
 }
@@ -17,21 +21,24 @@ h2 {
 h3 {
   @apply mt-3 text-xl font-semibold;
 }
-
 html {
   @apply h-full bg-white;
 }
 
-body {
-  @apply h-full;
-}
-
-main {
-  @apply m-5 h-full;
+input {
+  @apply m-1 w-full rounded border border-gray-200 px-2 py-1 text-sm leading-tight hover:shadow focus:outline-none !important;
 }
 
 label {
-  @apply mr-3 font-bold;
+  @apply m-1 mr-5 py-1 text-sm font-medium text-blue-600;
+}
+
+main {
+  @apply m-5;
+}
+
+select {
+  @apply m-1 h-8 w-full rounded border border-gray-200 px-2 py-1 text-sm leading-tight hover:shadow focus:outline-none;
 }
 
 .active-account {
