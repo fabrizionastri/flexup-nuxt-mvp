@@ -91,7 +91,7 @@ export const orderWithRebateFlexRebate50Data: TrancheData = {
 export const orderWithRebateFlexRebate50: Tranche = {
   ...orderWithRebateFlexRebate50Data,
   sign: -1,
-  principal: 82.8,
+  principal: 1200,
   payorId: 'cosysAccount',
   payeeId: 'doMazyAccount'
 }
@@ -111,7 +111,7 @@ export const orderWithNoItemsFirm100Data: TrancheData = {
 export const orderWithNoItemsFirm100: Tranche = {
   ...orderWithNoItemsFirm100Data,
   sign: 1,
-  principal: 1200,
+  principal: 96,
   payorId: 'fabrizioAccount',
   payeeId: 'pizzaDOroAccount'
 }

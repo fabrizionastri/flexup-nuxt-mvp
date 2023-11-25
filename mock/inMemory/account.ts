@@ -1,7 +1,5 @@
 import type { AccountData, Account } from 'lib/entities'
 
-// --- Raw data
-
 export const fabrizioAccountData: AccountData = {
   id: 'fabrizioAccount',
   name: 'Fabrizio Nastri',
@@ -18,7 +16,7 @@ export const fabrizioAccount: Account = {
   symbol: '👤',
   ownerName: 'Fabrizio Nastri',
   ownerType: 'individual',
-  ownerSymbol: '👤',
+  ownerSymbol: '🧑‍💻',
   currencyName: 'Euro',
   currencySymbol: '€',
   countryName: 'France'
@@ -38,8 +36,8 @@ export const cosysAccountData: AccountData = {
 }
 export const cosysAccount: Account = {
   ...cosysAccountData,
-  symbol: '🏢',
-  ownerName: 'Cosys',
+  symbol: '💼',
+  ownerName: 'Cosys S.C.',
   ownerType: 'organization',
   ownerSymbol: '🏢',
   currencyName: 'Euro',
@@ -63,7 +61,7 @@ export const flexupAccount: Account = {
   symbol: '🚀',
   ownerName: 'Cosys',
   ownerType: 'business',
-  ownerSymbol: '🏢',
+  ownerSymbol: '💼',
   currencyName: 'Euro',
   currencySymbol: '€',
   countryName: 'France'
@@ -85,7 +83,7 @@ export const pizzaDOroAccount: Account = {
   ...pizzaDOroAccountData,
   symbol: '🚀',
   ownerName: 'Toto La Riflette',
-  ownerType: 'individual',
+  ownerType: 'personal',
   ownerSymbol: '👤',
   currencyName: 'Euro',
   currencySymbol: '€',
@@ -132,7 +130,7 @@ export const doMazyAccount: Account = {
   symbol: '👥',
   ownerName: 'DoMazy',
   ownerType: 'grouping',
-  ownerSymbol: '👥',
+  ownerSymbol: '👪',
   currencyName: 'Euro',
   currencySymbol: '€',
   countryName: 'France'
@@ -143,7 +141,7 @@ export const poulaillerMobileAccountData: AccountData = {
   name: 'Poulailler MobiMazy',
   type: 'project',
   status: 'suspended',
-  ownerId: 'doMazy',
+  ownerId: 'doMazyAccount',
   currencyId: 'EUR',
   countryId: 'FRA',
   creationDate: new Date('2020-01-01'),
@@ -152,14 +150,12 @@ export const poulaillerMobileAccountData: AccountData = {
 export const poulaillerMobileAccount: Account = {
   ...poulaillerMobileAccountData,
   symbol: '🚀',
-  ownerName: 'DoMazy',
-  ownerType: 'grouping',
+  ownerName: 'doMazyAccount',
+  ownerType: 'shared',
   ownerSymbol: '👥',
   currencyName: 'Euro',
   currencySymbol: '€',
   countryName: 'France'
-  // finalOwnerName: 'DoMazy',
-  // finalOwnerLabel: 'DoMazy 👥'
 }
 
 export const agroCoopAccountData: AccountData = {
@@ -175,15 +171,13 @@ export const agroCoopAccountData: AccountData = {
 }
 export const agroCoopAccount: Account = {
   ...agroCoopAccountData,
-  symbol: '🏢',
-  ownerName: 'Agro Coopérative du Canton de Vaud',
+  symbol: '💼',
+  ownerName: 'Agro Coopérative du Canton de Vaud SCOP',
   ownerType: 'organization',
   ownerSymbol: '🏢',
   currencyName: 'Swiss Franc',
   currencySymbol: 'CHF',
   countryName: 'Switzerland'
-  // finalOwnerName: 'DoMazy',
-  // finalOwnerLabel: 'DoMazy 👥'
 }
 
 export const totoAccountData: AccountData = {
@@ -203,7 +197,7 @@ export const totoAccount: Account = {
   symbol: '👤',
   ownerName: 'Toto La Riflette',
   ownerType: 'individual',
-  ownerSymbol: '👤',
+  ownerSymbol: '🧑‍💻',
   currencyName: 'Euro',
   currencySymbol: '€',
   countryName: 'France'

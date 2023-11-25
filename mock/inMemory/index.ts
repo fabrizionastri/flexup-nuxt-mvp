@@ -48,7 +48,7 @@ export const inMemory = {
   password: passwordDatas,
   token: tokenDatas,
   tranche: trancheDatas,
-  user: userDatas
+  user: userDatas,
 }
 
 export default inMemory

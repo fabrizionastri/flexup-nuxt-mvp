@@ -30,7 +30,7 @@ input {
 }
 
 label {
-  @apply m-1 mr-5 py-1 text-sm font-medium text-blue-600;
+  @apply m-1 mr-5 py-1 text-sm font-medium;
 }
 
 main {

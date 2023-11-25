@@ -86,7 +86,7 @@
       "name": "Poulailler MobiMazy",
       "type": "project",
       "status": "suspended",
-      "ownerId": "doMazy",
+      "ownerId": "doMazyAccount",
       "currencyId": "EUR",
       "countryId": "FRA",
       "creationDate": "2020-01-01T00:00:00.000Z",
@@ -115,13 +115,15 @@
       "id": "flexupAccount:fabrizioUser",
       "accountId": "flexupAccount",
       "userId": "fabrizioUser",
-      "role": "admin"
+      "role": "admin",
+      "roleSymbol": "👑"
     },
     {
       "id": "cosysAccount:fabrizioUser",
       "accountId": "cosysAccount",
       "userId": "fabrizioUser",
-      "role": "admin"
+      "role": "admin",
+      "roleSymbol": "👑"
     },
     {
       "id": "flexupAccount:totoUser",
@@ -139,13 +141,14 @@
       "id": "doMazyAccount:FabrizioUser",
       "accountId": "doMazyAccount",
       "userId": "fabrizioUser",
-      "role": "guest"
+      "role": "editor"
     },
     {
       "id": "pizzaDOroTakeAwayAccount:FabrizioUser",
       "accountId": "pizzaDOroTakeAwayAccount",
       "userId": "fabrizioUser",
-      "role": "guest"
+      "role": "guest",
+      "roleSymbol": "👀"
     }
   ],
   "country": [
@@ -341,32 +344,32 @@
       "clientAccountId": "fabrizioAccount",
       "name": "Pizza Veggie Queen",
       "nature": "commercial",
-      "amountExclTax": 1000,
-      "amountInclTax": 1200,
-      "taxAmount": 200,
+      "amountExclTax": 80,
+      "amountInclTax": 96,
+      "taxAmount": 16,
       "averageTaxRate": 0.2
     },
     {
       "id": "orderWithRebate",
       "supplierAccountId": "cosysAccount",
       "clientAccountId": "doMazyAccount",
-      "name": "Prestation de service",
+      "name": "Consulting services",
       "nature": "commercial",
-      "amountInclTax": 20000
+      "amountInclTax": 2400
     },
     {
       "id": "orderWithNoTranches",
       "supplierAccountId": "fabrizioAccount",
       "clientAccountId": "cosysAccount",
-      "name": "Chaussures",
+      "name": "Office rental",
       "nature": "commercial",
       "amountInclTax": 1540
     },
     {
       "id": "fundingOrder",
-      "supplierAccountId": "doMazyAccount",
-      "clientAccountId": "fabrizioAccount",
-      "amountInclTax": 1200,
+      "supplierAccountId": "fabrizioAccount",
+      "clientAccountId": "doMazyAccount",
+      "amountInclTax": 10000,
       "name": "Funding",
       "nature": "financial"
     },
@@ -385,7 +388,7 @@
   "organization": [
     {
       "id": "cosysOrganization",
-      "name": "Cosys",
+      "name": "Cosys S.C.",
       "legalName": "Cosys S.C.",
       "legalForm": "Société Civile",
       "currencyId": "EUR",
@@ -404,7 +407,7 @@
     },
     {
       "id": "agroCoopOrganization",
-      "name": "Agro Coopérative du Canton de Vaud",
+      "name": "Agro Coopérative du Canton de Vaud SCOP",
       "legalName": "Coopérative Agricole du Canton de Vaud SCOP",
       "legalForm": "Société Coopérative de Production",
       "currencyId": "CHF",

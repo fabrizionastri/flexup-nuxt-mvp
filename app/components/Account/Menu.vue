@@ -1,10 +1,10 @@
 <!-- app/components/AccountMenu.vue -->
 <template>
   <div>
-    <Menu as="div" v-if="accountStore.currentAccount" class="relative ml-4 inline-block w-56">
+    <Menu as="div" v-if="accountStore.currentAccount" class="relative ml-4 inline-block w-[300px]">
       <div>
-        <MenuButton class="w-full rounded-md ring-1 ring-inset ring-white hover:bg-gray-100">
-          <AccountTag :account="accountStore.currentAccount" />
+        <MenuButton class="w-full rounded-md hover:bg-gray-100">
+          <AccountTagMini :account="accountStore.currentAccount" />
           <!-- <ChevronDownIcon class="w-5 h-5 -mr-1 text-gray-400" aria-hidden="true" /> -->
         </MenuButton>
       </div>
@@ -17,131 +17,17 @@
         leave-from-class="transform scale-100 opacity-100"
         leave-to-class="transform scale-95 opacity-0"
       >
-        <!--  -->
         <MenuItems
-          class="absolute right-0 z-10 mt-2 w-56 origin-top-right divide-y divide-gray-100 rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none"
+          class="absolute right-0 z-10 mt-2 w-[300px] origin-top-right divide-y divide-gray-100 rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none"
         >
-          <div class="bg-gray-100 p-1.5">
-            <div class="text-sm font-bold text-gray-500 underline">Select active account:</div>
+          <div class="bg-white p-1">
+            <label>Your active accounts</label>
             <AccountSelector :accounts="accountStore.activeAccounts" class="my-1 rounded border" />
           </div>
-          <div class="py-1">
-            <MenuItem v-slot="{ active }">
-              <a
-                href="#"
-                :class="[
-                  active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
-                  'group flex items-center px-4 py-2 text-sm'
-                ]"
-              >
-                <PencilSquareIcon
-                  class="mr-3 h-5 w-5 text-gray-400 group-hover:text-gray-500"
-                  aria-hidden="true"
-                />
-                Edit
-              </a>
-            </MenuItem>
-            <MenuItem v-slot="{ active }">
-              <a
-                href="#"
-                :class="[
-                  active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
-                  'group flex items-center px-4 py-2 text-sm'
-                ]"
-              >
-                <DocumentDuplicateIcon
-                  class="mr-3 h-5 w-5 text-gray-400 group-hover:text-gray-500"
-                  aria-hidden="true"
-                />
-                Duplicate
-              </a>
-            </MenuItem>
-          </div>
-          <div class="py-1">
-            <MenuItem v-slot="{ active }">
-              <a
-                href="#"
-                :class="[
-                  active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
-                  'group flex items-center px-4 py-2 text-sm'
-                ]"
-              >
-                <ArchiveBoxIcon
-                  class="mr-3 h-5 w-5 text-gray-400 group-hover:text-gray-500"
-                  aria-hidden="true"
-                />
-                Archive
-              </a>
-            </MenuItem>
-            <MenuItem v-slot="{ active }">
-              <a
-                href="#"
-                :class="[
-                  active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
-                  'group flex items-center px-4 py-2 text-sm'
-                ]"
-              >
-                <ArrowRightCircleIcon
-                  class="mr-3 h-5 w-5 text-gray-400 group-hover:text-gray-500"
-                  aria-hidden="true"
-                />
-                Move
-              </a>
-            </MenuItem>
-          </div>
-          <div class="py-1">
-            <MenuItem v-slot="{ active }">
-              <a
-                href="#"
-                :class="[
-                  active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
-                  'group flex items-center px-4 py-2 text-sm'
-                ]"
-              >
-                <UserPlusIcon
-                  class="mr-3 h-5 w-5 text-gray-400 group-hover:text-gray-500"
-                  aria-hidden="true"
-                />
-                Share
-              </a>
-            </MenuItem>
-            <MenuItem v-slot="{ active }">
-              <a
-                href="#"
-                :class="[
-                  active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
-                  'group flex items-center px-4 py-2 text-sm'
-                ]"
-              >
-                <HeartIcon
-                  class="mr-3 h-5 w-5 text-gray-400 group-hover:text-gray-500"
-                  aria-hidden="true"
-                />
-                Add to favorites
-              </a>
-            </MenuItem>
-          </div>
-          <div class="py-1">
-            <MenuItem v-slot="{ active }">
-              <a
-                href="#"
-                :class="[
-                  active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
-                  'group flex items-center px-4 py-2 text-sm'
-                ]"
-              >
-                <TrashIcon
-                  class="mr-3 h-5 w-5 text-gray-400 group-hover:text-gray-500"
-                  aria-hidden="true"
-                />
-                Delete
-              </a>
-            </MenuItem>
-          </div>
           <div class="p-0">
-            <div class="bg-gray-100 p-1.5">
-              <div class="text-sm font-bold text-gray-500 underline">User:</div>
-              <div class=": my-1 rounded border bg-white">
+            <div class="p-1">
+              <label>User</label>
+              <div>
                 <MenuItem v-slot="{ active }">
                   <a
                     href="#"
@@ -183,17 +69,7 @@
 
 <script setup>
   import { Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/vue'
-  import {
-    ArchiveBoxIcon,
-    ArrowRightCircleIcon,
-    DocumentDuplicateIcon,
-    HeartIcon,
-    PencilSquareIcon,
-    TrashIcon,
-    UserPlusIcon,
-    UserIcon,
-    ArrowLeftOnRectangleIcon
-  } from '@heroicons/vue/20/solid'
+  import { UserIcon, ArrowLeftOnRectangleIcon } from '@heroicons/vue/20/solid'
   import { useAccountStore } from '@/stores/useAccountStore'
   import { useUserStore } from '@/stores/useUserStore'
 

@@ -1,6 +1,14 @@
 import type { Entity } from '.'
 
-export type AccountUserRole = 'admin' | 'editor' | 'guest'
+export const accountUserRoleTypes = {
+  admin: '👑',
+  editor: '✏️',
+  guest: '👀'
+}
+export type AccountUserRole = keyof typeof accountUserRoleTypes
+
+export const getAccountUserRoleSymbol = (accountUserRole: AccountUserRole): string =>
+  accountUserRoleTypes[accountUserRole]
 
 export interface AccountUserData extends Entity {
   id: string // this is: accountId_userId, only used for json-server.

@@ -7,14 +7,14 @@ import type { AccountData } from 'lib/entities'
 
 let accountGateway: any
 
-describe.only('accountGateway', () => {
+describe('accountGateway', () => {
   describe('computeAccount', () => {
     it('individual account - should compute account for valid account Id', async () => {
       const result = await computeAccount(
         mock.fabrizioAccountData,
         mock.accountUserDatasForFabrizioUser
       )
-      const expected = { ...mock.fabrizioAccount, role: 'admin' }
+      const expected = { ...mock.fabrizioAccount, role: 'admin', roleSymbol: '👑' }
       expect(result).toEqual(expected)
     })
     it('individual account / no allAccountUserDatas provide- should set role to undefined', async () => {
@@ -27,7 +27,7 @@ describe.only('accountGateway', () => {
         mock.cosysAccountData,
         mock.accountUserDatasForFabrizioUser
       )
-      const expected = { ...mock.cosysAccount, role: 'admin' }
+      const expected = { ...mock.cosysAccount, role: 'admin', roleSymbol: '👑' }
       expect(result).toEqual(expected)
     })
     it('shared account - should compute account for valid account Id', async () => {
@@ -35,15 +35,15 @@ describe.only('accountGateway', () => {
         mock.doMazyAccountData,
         mock.accountUserDatasForFabrizioUser
       )
-      const expected = { ...mock.doMazyAccount, role: 'guest' }
+      const expected = { ...mock.doMazyAccount, role: 'editor', roleSymbol: '✏️' }
       expect(result).toEqual(expected)
     })
-    it.only('project account - should compute account for valid account Id', async () => {
+    it('project account - should compute account for valid account Id', async () => {
       const result = await computeAccount(
         mock.flexupAccountData,
         mock.accountUserDatasForFabrizioUser
       )
-      const expected = { ...mock.flexupAccount, role: 'admin' }
+      const expected = { ...mock.flexupAccount, role: 'admin', roleSymbol: '👑' }
       expect(result).toEqual(expected)
     })
     it('invalid account - should throw error for an invalid account', async () => {
@@ -126,7 +126,7 @@ describe.only('accountGateway', () => {
     describe('getById', () => {
       it('should return an account for a valid accountId', async () => {
         const result = await accountGateway.getById('fabrizioAccount')
-        expect(result).toEqual({ ...mock.fabrizioAccount, role: 'admin' })
+        expect(result).toEqual({ ...mock.fabrizioAccount, role: 'admin', roleSymbol: '👑' })
       })
       it('should return undefined for an invalid accountId', async () => {
         const result = await accountGateway.getById('invalid')

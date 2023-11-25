@@ -2,7 +2,7 @@ import type { OrganizationData } from 'entities/organization'
 
 export const cosysOrganizationData: OrganizationData = {
   id: 'cosysOrganization',
-  name: 'Cosys',
+  name: 'Cosys S.C.',
   legalName: 'Cosys S.C.',
   legalForm: 'Société Civile',
   currencyId: 'EUR',
@@ -22,7 +22,7 @@ export const cosysOrganizationData: OrganizationData = {
 
 export const agroCoopOrganizationData: OrganizationData = {
   id: 'agroCoopOrganization',
-  name: 'Agro Coopérative du Canton de Vaud',
+  name: 'Agro Coopérative du Canton de Vaud SCOP',
   legalName: 'Coopérative Agricole du Canton de Vaud SCOP',
   legalForm: 'Société Coopérative de Production',
   currencyId: 'CHF',

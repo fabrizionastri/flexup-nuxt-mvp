@@ -26,17 +26,17 @@ export const orderWithRebateData: Order = {
   id: 'orderWithRebate',
   supplierAccountId: 'cosysAccount',
   clientAccountId: 'doMazyAccount',
-  name: 'Prestation de service',
+  name: 'Consulting services',
   nature: 'commercial',
-  amountInclTax: 20000 // Note that this value is overriden by the items total calculation
+  amountInclTax: 2400 // Note that this value is overriden by the items total calculation
 }
 export const orderWithRebate: Order = {
   ...orderWithRebateData,
   items: [items.orderWithRebateItem],
   tranches: tranches.tranchesForOrderWithRebate,
-  amountExclTax: 138,
-  taxAmount: 27.6,
-  amountInclTax: 165.6,
+  amountExclTax: 2000,
+  taxAmount: 400,
+  amountInclTax: 2400,
   averageTaxRate: 0.2
 }
 
@@ -46,9 +46,9 @@ export const orderWithNoItemsData: Order = {
   clientAccountId: 'fabrizioAccount',
   name: 'Pizza Veggie Queen',
   nature: 'commercial',
-  amountExclTax: 1000,
-  amountInclTax: 1200,
-  taxAmount: 200,
+  amountExclTax: 80,
+  amountInclTax: 96,
+  taxAmount: 16,
   averageTaxRate: 0.2 // Note: if there are no items, the both amounts must be provided in order to be able to calculate the tax amount and average tax rate
 }
 export const orderWithNoItems: Order = {
@@ -61,7 +61,7 @@ export const orderWithNoTranchesData: Order = {
   id: 'orderWithNoTranches',
   supplierAccountId: 'fabrizioAccount',
   clientAccountId: 'cosysAccount',
-  name: 'Chaussures',
+  name: 'Office rental',
   nature: 'commercial',
   amountInclTax: 1540
 }
@@ -76,16 +76,16 @@ export const orderWithNoTranches: Order = {
 
 export const fundingOrderData: Order = {
   id: 'fundingOrder',
-  supplierAccountId: 'doMazyAccount',
-  clientAccountId: 'fabrizioAccount',
-  amountInclTax: 1200,
+  supplierAccountId: 'fabrizioAccount',
+  clientAccountId: 'doMazyAccount',
+  amountInclTax: 10000,
   name: 'Funding',
   nature: 'financial'
 }
 export const fundingOrder: Order = {
   ...fundingOrderData,
   items: [],
-  amountExclTax: 1200,
+  amountExclTax: 10000,
   taxAmount: 0,
   averageTaxRate: 0.0,
   tranches: tranches.tranchesForFundingOrder

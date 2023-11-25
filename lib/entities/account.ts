@@ -1,23 +1,62 @@
 import type { CurrencyId, CountryId, Entity, AccountUserRole } from '.'
 
-export const accountOwnerMapping = {
-  personal: 'individual',
-  business: 'organization',
-  project: 'project' || 'individual' || 'organization' || 'grouping',
-  shared: 'grouping'
+// TODO: use this list to limit the possible options in the UI for creating a new account
+export const accountTypes = {
+  personal: {
+    symbol: '👤',
+    ownerType: 'individual'
+  },
+  business: {
+    symbol: '💼',
+    ownerType: 'organization'
+  },
+  project: {
+    symbol: '🚀',
+    ownerType: 'personal' || 'business' || 'project' || 'shared'
+  },
+  shared: {
+    symbol: '👥',
+    ownerType: 'grouping'
+  }
 } as const // "as const" ensures that TypeScript sees these as literal types rather than general string types.
 
-export type AccountType = keyof typeof accountOwnerMapping
+export type AccountType = keyof typeof accountTypes
 
-// OwnerType includes both the account type and the owner type
-export type OwnerType = (typeof accountOwnerMapping)[AccountType] | AccountType
+// TODO: use this list to limit the possible options in the UI for creating a new account
+export const ownerTypes = {
+  individual: {
+    symbol: '🧑‍💻',
+    ownedAccountType: 'personal'
+  },
+  organization: {
+    symbol: '🏢',
+    ownedAccountType: 'business'
+  },
+  grouping: {
+    symbol: '👪',
+    ownedAccountType: 'shared'
+  },
+  personal: {
+    symbol: '👤',
+    ownedAccountType: 'project'
+  },
+  business: {
+    symbol: '💼',
+    ownedAccountType: 'project'
+  },
+  project: {
+    symbol: '🚀',
+    ownedAccountType: 'project'
+  },
+  shared: {
+    symbol: '👥',
+    ownedAccountType: 'project'
+  }
+} as const
 
-export const accountTypeIcons = {
-  personal: '👤',
-  business: '🏢',
-  project: '🚀',
-  shared: '👥'
-}
+export type OwnerType = keyof typeof ownerTypes
+
+export const getOwnerTypeSymbol = (ownerType: OwnerType): string => ownerTypes[ownerType].symbol
 
 export type AccountStatus = 'active' | 'pending' | 'suspended' | 'closed'
 

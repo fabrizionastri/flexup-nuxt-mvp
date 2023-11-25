@@ -10,51 +10,59 @@ export const fabrizioAccountFabrizioUserData: AccountUserData = {
 }
 export const fabrizioAccountFabrizioUser: Account = {
   ...accounts.fabrizioAccount,
-  role: 'admin'
+  role: 'admin',
+  roleSymbol: '👑'
 }
 
 export const flexupAccountFabrizioUserData: AccountUserData = {
   id: 'flexupAccount:fabrizioUser',
   accountId: 'flexupAccount',
   userId: 'fabrizioUser',
-  role: 'admin'
+  role: 'admin',
+  roleSymbol: '👑'
 }
 export const flexupAccountFabrizioUser: Account = {
   ...accounts.flexupAccount,
-  role: 'admin'
+  role: 'admin',
+  roleSymbol: '👑'
 }
 
 export const cosysAccountFabrizioUserData: AccountUserData = {
   id: 'cosysAccount:fabrizioUser',
   accountId: 'cosysAccount',
   userId: 'fabrizioUser',
-  role: 'admin'
+  role: 'admin',
+  roleSymbol: '👑'
 }
 export const cosysAccountFabrizioUser: Account = {
   ...accounts.cosysAccount,
-  role: 'admin'
+  role: 'admin',
+  roleSymbol: '👑'
 }
 
 export const doMazyAccountFabrizioUserData: AccountUserData = {
   id: 'doMazyAccount:FabrizioUser',
   accountId: 'doMazyAccount',
   userId: 'fabrizioUser',
-  role: 'guest'
+  role: 'editor'
 }
 export const doMazyAccountFabrizioUser: Account = {
   ...accounts.doMazyAccount,
-  role: 'guest'
+  role: 'editor',
+  roleSymbol: '✏️'
 }
 
 export const pizzaDOroTakeAwayAccountFabrizioUserData: AccountUserData = {
   id: 'pizzaDOroTakeAwayAccount:FabrizioUser',
   accountId: 'pizzaDOroTakeAwayAccount',
   userId: 'fabrizioUser',
-  role: 'guest'
+  role: 'guest',
+  roleSymbol: '👀'
 }
 export const pizzaDOroTakeAwayAccountFabrizioUser: Account = {
   ...accounts.pizzaDOroTakeAwayAccount,
-  role: 'guest'
+  role: 'guest',
+  roleSymbol: '👀'
 }
 
 export const accountUserDatasForFabrizioUser: AccountUserData[] = [
@@ -96,7 +104,8 @@ export const totoAccountTotoUserData: AccountUserData = {
   id: 'totoAccount:totoUser',
   accountId: 'totoAccount',
   userId: 'totoUser',
-  role: 'admin'
+  role: 'admin',
+  roleSymbol: '👑'
 }
 export const totoAccountTotoUser: Account = {
   ...accounts.totoAccount,
@@ -107,7 +116,8 @@ export const flexupAccountTotoUserData: AccountUserData = {
   id: 'flexupAccount:totoUser',
   accountId: 'flexupAccount',
   userId: 'totoUser',
-  role: 'editor'
+  role: 'editor',
+  roleSymbol: '✏️'
 }
 export const flexupAccountTotoUser: Account = {
   ...accounts.flexupAccount,

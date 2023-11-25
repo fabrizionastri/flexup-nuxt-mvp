@@ -1,4 +1,12 @@
-import type { CurrencyData, CountryData, AccountStatus } from 'lib/entities'
+import {
+  type CurrencyData,
+  type CountryData,
+  type AccountStatus,
+  type OwnerType,
+  accountTypes,
+  ownerTypes,
+  accountUserRoleTypes
+} from 'lib/entities'
 import { individualGateway } from './'
 import {
   accountAdapter,
@@ -14,57 +22,59 @@ export const computeAccount = async (
   accountData: AccountData,
   accountUserDatas: AccountUserData[] = []
 ): Promise<Account> => {
-  let symbol, ownerName, ownerType, ownerSymbol: string
+  let ownerName: string
+  let ownerAccount: Account | undefined
+
+  // Validate and set account type details
+  const accountTypeDetails = accountTypes[accountData.type]
+  if (!accountTypeDetails) throw new Error('Invalid account type')
 
   if (accountData.type === 'personal') {
     const individual = await individualGateway.getById(accountData.ownerId)
     if (!individual) throw new Error('Account owner is an invalid individual')
-    symbol = '👤'
     ownerName = individual.fullName
-    ownerType = 'individual'
-    ownerSymbol = '👤'
   } else if (accountData.type === 'business') {
     const organization = await organizationAdapter.getById(accountData.ownerId)
     if (!organization) throw new Error('Account owner is an invalid  organization')
-    symbol = '🏢'
     ownerName = organization.name
-    ownerType = 'organization'
-    ownerSymbol = '🏢'
   } else if (accountData.type === 'shared') {
     const grouping = await groupingAdapter.getById(accountData.ownerId)
     if (!grouping) throw new Error('Account owner is an invalid  grouping')
-    symbol = '👥'
     ownerName = grouping.name
-    ownerType = 'grouping'
-    ownerSymbol = '👥'
   } else if (accountData.type === 'project') {
-    symbol = '🚀'
     const ownerAccountData = await accountAdapter.getById(accountData.ownerId)
-    const ownerAccount = ownerAccountData ? await computeAccount(ownerAccountData) : undefined
-    if (!ownerAccount) throw new Error('Account owner Id is invalid')
+    if (!ownerAccountData) throw new Error('Account owner Id is invalid')
+    ownerAccount = await computeAccount(ownerAccountData)
     ownerName = ownerAccount.name
-    ownerType = ownerAccount.type
-    ownerSymbol = ownerAccount.symbol
-  } else {
-    throw new Error('Invalid account type')
   }
 
+  // Get the owner type details
+  const ownerType = (ownerAccount?.type || accountTypeDetails.ownerType) as OwnerType
+  const ownerTypeDetails = ownerTypes[ownerType]
+  if (!ownerTypeDetails) throw new Error('Invalid owner type')
+
+  // Get currency and country details
   const currency: CurrencyData | undefined = await currencyAdapter.getById(accountData.currencyId)
   if (!currency) throw new Error('Invalid currency')
   const country: CountryData | undefined = await countryAdapter.getById(accountData.countryId)
   if (!country) throw new Error('Invalid country')
 
+  // Get role and role symbol
+  const role = accountUserDatas.find(
+    (accountUserData) => accountUserData.accountId === accountData.id
+  )?.role
+
   const account: Account = {
     ...accountData,
-    symbol,
+    symbol: accountTypeDetails.symbol,
     ownerName,
     ownerType,
-    ownerSymbol,
+    ownerSymbol: ownerTypes[ownerType].symbol,
     currencyName: currency.name,
     currencySymbol: currency.symbol,
     countryName: country.name,
-    role: accountUserDatas.find((accountUserData) => accountUserData.accountId === accountData.id)
-      ?.role
+    role,
+    roleSymbol: accountUserRoleTypes[role]
   }
   return account
 }
