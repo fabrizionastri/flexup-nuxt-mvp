@@ -1,9 +1,9 @@
 import { createPinia, setActivePinia } from 'pinia'
 import type { AccountStatus } from '../../lib/entities/account'
-import axios from '../composables/myAxios'
+import axios from '../utils/myAxios'
 import { useAccountStore } from './useAccountStore'
 
-vi.mock('./myAxios')
+vi.mock('../utils/myAxios')
 
 describe('fetchAccounts', () => {
   let accountStore

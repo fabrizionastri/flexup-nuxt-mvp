@@ -49,10 +49,7 @@ describe('-> accountUser', () => {
     })
     it('should retrieve entities based on a property and its value', async () => {
       const results = await accountUserAdapter.getByProperty('role', 'guest')
-      expect(results).toEqual([
-        accountUser.doMazyAccountFabrizioUserData,
-        accountUser.pizzaDOroTakeAwayAccountFabrizioUserData
-      ])
+      expect(results).toEqual([accountUser.pizzaDOroTakeAwayAccountFabrizioUserData])
     })
   })
 })

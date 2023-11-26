@@ -18,12 +18,5 @@ describe('user adapter', () => {
       const results = await userAdapter.getByProperty('status', 'pending')
       expect(results).toEqual([users.pendingUserData])
     })
-    it.todo('should return list of account by login date', async () => {
-      const results = await userAdapter.getByProperty('lastLoginDate', new Date('2023-10-23'))
-      console.log('user.test.ts - new Date("2023-10-23")):', new Date('2023-10-23'))
-      console.log('user.test.ts - users.userDatas:', users.userDatas)
-      console.log('user.test.ts - results:', results)
-      expect(results).toContain(users.fabrizioUserData)
-    })
   })
 })

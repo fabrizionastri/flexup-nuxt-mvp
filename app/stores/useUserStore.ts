@@ -5,7 +5,7 @@ import { defineStore } from 'pinia'
 import { ref, computed } from 'vue'
 // import Cookies from 'js-cookie'
 import type { User } from '../../lib/entities'
-import axios from '../composables/myAxios'
+import axios from '../utils/myAxios'
 
 interface Token {
   token: string
@@ -41,10 +41,13 @@ export const useUserStore = defineStore(
     const loginUser = async (identifier: string, password: string) => {
       try {
         token.value = await fetchToken(identifier, password)
-        console.log('► app/stores/useUserStore.ts - loginUser - token.value:', token.value)
         await fetchUser(token.value).then((data) => (user.value = data))
         console.log('► app/stores/useUserStore.ts - loginUser - user.value:', user.value)
         await accountStore.fetchAndUpdateActiveAccounts(token.value)
+        console.log(
+          '► app/stores/useUserStore.ts - loginUser - accountStore:',
+          accountStore.currentAccount
+        )
         // no need to return user.value, it is already set
         // return user.value
       } catch (error) {

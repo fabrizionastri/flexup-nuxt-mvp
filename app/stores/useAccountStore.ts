@@ -4,7 +4,7 @@ import { defineStore } from 'pinia'
 import { ref } from 'vue'
 import type { Account, AccountStatus } from '../../lib/entities'
 
-import axios from '../composables/myAxios'
+import axios from '../utils/myAxios'
 
 export const useAccountStore = defineStore(
   'account',

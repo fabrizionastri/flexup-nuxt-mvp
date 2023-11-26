@@ -4,7 +4,7 @@ import { defineStore } from 'pinia'
 import { ref /* , computed  */ } from 'vue'
 // import Cookies from 'js-cookie'
 import type { Order } from '../../lib/entities'
-import axios from '../composables/myAxios'
+import axios from '../utils/myAxios'
 // import { useUserStore } from './useUserStore'
 
 export const useOrderStore = defineStore(

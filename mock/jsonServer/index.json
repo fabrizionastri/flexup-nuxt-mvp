@@ -129,13 +129,15 @@
       "id": "flexupAccount:totoUser",
       "accountId": "flexupAccount",
       "userId": "totoUser",
-      "role": "editor"
+      "role": "editor",
+      "roleSymbol": "✏️"
     },
     {
       "id": "totoAccount:totoUser",
       "accountId": "totoAccount",
       "userId": "totoUser",
-      "role": "admin"
+      "role": "admin",
+      "roleSymbol": "👑"
     },
     {
       "id": "doMazyAccount:FabrizioUser",
