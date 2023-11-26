@@ -18,9 +18,8 @@ app.get('/', jwtMiddleware, async (c) => {
 })
 
 app.get('/:accountId/order', jwtMiddleware, async (c) => {
-  console.log('api/server/routes - GET account/[accountId]/order : accountId =')
   const accountId = c.req.param('accountId')
-  console.log('api/server/routes - GET account/[accountId]/order : accountId =', accountId)
+  console.log(`api/server/routes - GET account/${accountId}/order`)
   // TODO: add status filter later
   // const queryStatuses = c.req.query('status')
   // const statuses = queryStatuses ? (queryStatuses.split(',') as OrderStatus[]) : []

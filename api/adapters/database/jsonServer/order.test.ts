@@ -33,7 +33,7 @@ describe('createOrderAdapter (real Axios)', () => {
     })
     describe('getAll', () => {
       it('should return all orderData for accountId', async () => {
-        console.log('accountId', `/order?supplierAccountId=${accountId}`)
+        // console.log('accountId', `/order?supplierAccountId=${accountId}`)
         const orderAdapter = createOrderAdapter(accountId)
         const orderDatas = await orderAdapter.getAll()
         expect(new Set(orderDatas)).toEqual(new Set([orderWithRebateData, orderWithNoTranchesData]))

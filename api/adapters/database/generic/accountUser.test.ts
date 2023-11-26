@@ -37,10 +37,10 @@ describe('-> accountUser', () => {
   describe('getByProperty', () => {
     it('should retrieve account-user by its user Id', async () => {
       const result = await accountUserAdapter.getByProperty('userId', 'totoUser')
-      console.log(
-        'adapters/generic/accountUser.test - : type of getByProperty',
-        typeof accountUserAdapter.getByProperty
-      )
+      // console.log(
+      //   'adapters/generic/accountUser.test - : type of getByProperty',
+      //   typeof accountUserAdapter.getByProperty
+      // )
       expect(result).toEqual(accountUser.accountUserDatasForTotoUser)
     })
     it('should retrieve account-user by its account Id', async () => {
