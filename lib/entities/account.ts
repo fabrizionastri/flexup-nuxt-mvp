@@ -26,30 +26,37 @@ export type AccountType = keyof typeof accountTypes
 export const ownerTypes = {
   individual: {
     symbol: '🧑‍💻',
+    isAccount: false,
     ownedAccountType: 'personal'
   },
   organization: {
     symbol: '🏢',
+    isAccount: false,
     ownedAccountType: 'business'
   },
   grouping: {
     symbol: '👪',
+    isAccount: false,
     ownedAccountType: 'shared'
   },
   personal: {
     symbol: '👤',
+    isAccount: true,
     ownedAccountType: 'project'
   },
   business: {
     symbol: '💼',
+    isAccount: true,
     ownedAccountType: 'project'
   },
   project: {
     symbol: '🚀',
+    isAccount: true,
     ownedAccountType: 'project'
   },
   shared: {
     symbol: '👥',
+    isAccount: true,
     ownedAccountType: 'project'
   }
 } as const

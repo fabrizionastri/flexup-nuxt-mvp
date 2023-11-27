@@ -115,22 +115,19 @@
       "id": "flexupAccount:fabrizioUser",
       "accountId": "flexupAccount",
       "userId": "fabrizioUser",
-      "role": "admin",
-      "roleSymbol": "👑"
+      "role": "admin"
     },
     {
       "id": "cosysAccount:fabrizioUser",
       "accountId": "cosysAccount",
       "userId": "fabrizioUser",
-      "role": "admin",
-      "roleSymbol": "👑"
+      "role": "admin"
     },
     {
       "id": "flexupAccount:totoUser",
       "accountId": "flexupAccount",
       "userId": "totoUser",
-      "role": "editor",
-      "roleSymbol": "✏️"
+      "role": "editor"
     },
     {
       "id": "totoAccount:totoUser",
@@ -149,8 +146,7 @@
       "id": "pizzaDOroTakeAwayAccount:FabrizioUser",
       "accountId": "pizzaDOroTakeAwayAccount",
       "userId": "fabrizioUser",
-      "role": "guest",
-      "roleSymbol": "👀"
+      "role": "guest"
     }
   ],
   "country": [
