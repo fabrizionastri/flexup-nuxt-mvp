@@ -38,7 +38,7 @@ describe('accountGateway', () => {
       const expected = { ...mock.doMazyAccount, role: 'editor', roleSymbol: '✏️' }
       expect(result).toEqual(expected)
     })
-    it('project account - should compute account for valid account Id', async () => {
+    it('subaccount account - should compute account for valid account Id', async () => {
       const result = await computeAccount(
         mock.flexupAccountData,
         mock.accountUserDatasForFabrizioUser

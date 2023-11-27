@@ -45,23 +45,23 @@ describe('createGenericAdapter - mock Axios', () => {
 
   describe('getByProperties', () => {
     beforeEach(async () => {
-      mockEntity1 = { status: 'active', type: 'project', name: 'Test Entity 1' }
-      mockEntity2 = { status: 'active', type: 'project', name: 'Test Entity 2' }
+      mockEntity1 = { status: 'active', type: 'subaccount', name: 'Test Entity 1' }
+      mockEntity2 = { status: 'active', type: 'subaccount', name: 'Test Entity 2' }
       axiosGetMock.mockResolvedValueOnce([mockEntity1])
       axiosGetMock.mockResolvedValueOnce([mockEntity2])
     })
     it('and - should have been called with the right url', async () => {
-      result = await accountAdapter.getByProperties('status', 'active', 'type', 'project', 'and')
-      expect(axiosGetMock).toHaveBeenCalledWith('/account?status=active&type=project')
+      result = await accountAdapter.getByProperties('status', 'active', 'type', 'subaccount', 'and')
+      expect(axiosGetMock).toHaveBeenCalledWith('/account?status=active&type=subaccount')
     })
     it('or - should have been called with the right url', async () => {
-      result = await accountAdapter.getByProperties('status', 'active', 'type', 'project', 'or')
+      result = await accountAdapter.getByProperties('status', 'active', 'type', 'subaccount', 'or')
       expect(axiosGetMock).toHaveBeenCalledWith('/account?status=active')
-      expect(axiosGetMock).toHaveBeenCalledWith('/account?type=project')
+      expect(axiosGetMock).toHaveBeenCalledWith('/account?type=subaccount')
       expect(axiosGetMock).toHaveBeenCalledTimes(2)
     })
     it('should retrieve entities based on property1/value1 and property2/value2', async () => {
-      result = await accountAdapter.getByProperties('status', 'active', 'type', 'project', 'or')
+      result = await accountAdapter.getByProperties('status', 'active', 'type', 'subaccount', 'or')
       // console.log('account.mock.test.ts - myresult:', result)
       expect(result).toEqual([mockEntity1, mockEntity2])
     })

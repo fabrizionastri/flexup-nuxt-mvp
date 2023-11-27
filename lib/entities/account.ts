@@ -10,9 +10,9 @@ export const accountTypes = {
     symbol: '💼',
     ownerType: 'organization'
   },
-  project: {
+  subaccount: {
     symbol: '🚀',
-    ownerType: 'personal' || 'business' || 'project' || 'shared'
+    ownerType: 'personal' || 'business' || 'subaccount' || 'shared'
   },
   shared: {
     symbol: '👥',
@@ -26,38 +26,44 @@ export type AccountType = keyof typeof accountTypes
 export const ownerTypes = {
   individual: {
     symbol: '🧑‍💻',
-    isAccount: false,
-    ownedAccountType: 'personal'
+    category: 'stakeholder',
+    subCategory: 'legal person',
+    childAccountType: 'personal'
   },
   organization: {
     symbol: '🏢',
-    isAccount: false,
-    ownedAccountType: 'business'
+    category: 'stakeholder',
+    subCategory: 'legal person',
+    childAccountType: 'business'
   },
   grouping: {
     symbol: '👪',
-    isAccount: false,
-    ownedAccountType: 'shared'
+    category: 'stakeholder',
+    subCategory: 'grouping',
+    childAccountType: 'shared'
   },
   personal: {
     symbol: '👤',
-    isAccount: true,
-    ownedAccountType: 'project'
+    category: 'account',
+    subCategory: 'main',
+    childAccountType: 'subaccount'
   },
   business: {
     symbol: '💼',
-    isAccount: true,
-    ownedAccountType: 'project'
-  },
-  project: {
-    symbol: '🚀',
-    isAccount: true,
-    ownedAccountType: 'project'
+    category: 'account',
+    subCategory: 'main',
+    childAccountType: 'subaccount'
   },
   shared: {
     symbol: '👥',
-    isAccount: true,
-    ownedAccountType: 'project'
+    category: 'account',
+    subCategory: 'main',
+    childAccountType: 'subaccount'
+  },
+  subaccount: {
+    symbol: '🚀',
+    category: 'account',
+    subCategory: 'subaccount'
   }
 } as const
 

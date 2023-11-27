@@ -41,7 +41,7 @@ export const computeAccount = async (
     const grouping = await groupingAdapter.getById(accountData.ownerId)
     if (!grouping) throw new Error('Account owner is an invalid  grouping')
     ownerName = grouping.name
-  } else if (accountData.type === 'project') {
+  } else if (accountData.type === 'subaccount') {
     const ownerAccountData = await accountAdapter.getById(accountData.ownerId)
     if (!ownerAccountData) throw new Error('Account owner Id is invalid')
     ownerAccount = await computeAccount(ownerAccountData)

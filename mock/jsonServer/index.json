@@ -37,7 +37,7 @@
     {
       "id": "flexupAccount",
       "name": "FlexUp",
-      "type": "project",
+      "type": "subaccount",
       "status": "active",
       "ownerId": "cosysAccount",
       "currencyId": "EUR",
@@ -48,7 +48,7 @@
     {
       "id": "pizzaDOroAccount",
       "name": "Pizza d'Oro",
-      "type": "project",
+      "type": "subaccount",
       "status": "active",
       "ownerId": "totoAccount",
       "currencyId": "EUR",
@@ -60,7 +60,7 @@
     {
       "id": "pizzaDOroTakeAwayAccount",
       "name": "Pizza d'Oro TakeAway",
-      "type": "project",
+      "type": "subaccount",
       "status": "pending",
       "ownerId": "pizzaDOroAccount",
       "currencyId": "EUR",
@@ -84,7 +84,7 @@
     {
       "id": "poulaillerMobile",
       "name": "Poulailler MobiMazy",
-      "type": "project",
+      "type": "subaccount",
       "status": "suspended",
       "ownerId": "doMazyAccount",
       "currencyId": "EUR",

@@ -48,7 +48,7 @@ export const cosysAccount: Account = {
 export const flexupAccountData: AccountData = {
   id: 'flexupAccount',
   name: 'FlexUp',
-  type: 'project',
+  type: 'subaccount',
   status: 'active',
   ownerId: 'cosysAccount',
   currencyId: 'EUR',
@@ -70,7 +70,7 @@ export const flexupAccount: Account = {
 export const pizzaDOroAccountData: AccountData = {
   id: 'pizzaDOroAccount',
   name: "Pizza d'Oro",
-  type: 'project',
+  type: 'subaccount',
   status: 'active',
   ownerId: 'totoAccount',
   currencyId: 'EUR',
@@ -93,7 +93,7 @@ export const pizzaDOroAccount: Account = {
 export const pizzaDOroTakeAwayAccountData: AccountData = {
   id: 'pizzaDOroTakeAwayAccount',
   name: "Pizza d'Oro TakeAway",
-  type: 'project',
+  type: 'subaccount',
   status: 'pending',
   ownerId: 'pizzaDOroAccount',
   currencyId: 'EUR',
@@ -106,7 +106,7 @@ export const pizzaDOroTakeAwayAccount: Account = {
   ...pizzaDOroTakeAwayAccountData,
   symbol: '🚀',
   ownerName: "Pizza d'Oro",
-  ownerType: 'project',
+  ownerType: 'subaccount',
   ownerSymbol: '🚀',
   currencyName: 'Euro',
   currencySymbol: '€',
@@ -139,7 +139,7 @@ export const doMazyAccount: Account = {
 export const poulaillerMobileAccountData: AccountData = {
   id: 'poulaillerMobile',
   name: 'Poulailler MobiMazy',
-  type: 'project',
+  type: 'subaccount',
   status: 'suspended',
   ownerId: 'doMazyAccount',
   currencyId: 'EUR',
