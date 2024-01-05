@@ -1,6 +1,8 @@
 // lib/devUtils/generateInMemoryIndex.ts
 
-// This script generatse the inMemory index file, by reading all .ts files in the mock/inMemory directory, and creating an export statement for objects named ${moduleName}Datas
+/*
+This script generatse the inMemory index file, by reading all .ts files in the mock/inMemory directory, and creating an export statement for objects named ${moduleName}Datas
+*/
 
 import fs from 'fs'
 import path from 'path'

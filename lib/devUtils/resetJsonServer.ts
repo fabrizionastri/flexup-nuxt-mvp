@@ -1,3 +1,9 @@
+// lib/devUtils/resetJsonServer.ts
+
+/*
+This script resets the json-server index.json file based on the inMemory data
+*/
+
 import fs from 'fs'
 import inMemory from '../../mock/inMemory'
 

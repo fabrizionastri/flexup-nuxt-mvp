@@ -1,4 +1,3 @@
-import { currency } from 'mock/inMemory'
 import type { Entity } from '.'
 
 export type CurrencyId = 'EUR' | 'USD' | 'GBP' | 'JPY' | 'CHF'

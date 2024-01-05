@@ -10,7 +10,7 @@ import { currencyDatas } from '../../mock/inMemory'
 const currencyIds = currencyDatas.map((data) => data.id)
 
 // Create the CurrencyId type
-const currencyIdType = `export type CurrencyId = '${currencyIds.join("' | '")}';\n`
+const currencyIdType = `export type CurrencyId = '${currencyIds.join("' | '")}'`
 
 // Get the directory name of the current module
 const dirname = path.dirname(fileURLToPath(import.meta.url))
@@ -34,4 +34,4 @@ lines[index] = currencyIdType
 fs.writeFileSync(targetFilePath, lines.join('\n'))
 
 // Log the success message
-console.log(`CurrencyId type updated in ${targetFilePath}`)
+console.log(`CurrencyId type sucessfully updated in 'lib/entities/currency.ts'\n\n`)

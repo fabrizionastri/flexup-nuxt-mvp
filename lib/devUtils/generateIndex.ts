@@ -2,7 +2,14 @@
 
 /* eslint-disable prettier/prettier */
 
-// This script generates an index.ts file in the current directory
+/*
+This script generates an index.ts file for a given source folder, and writes it to the destination folder.
+It will skip the index.ts file, non-TS files, and all .spec.ts or .test.ts files. It will also skip any files that start with an underscore (_).
+If the purge flag is set to true, it will overwrite the existing index.ts file. Else, it will append the new exports to the existing index.ts file.
+The extra parameter is optional, and can be used to add an extra export to the index.ts file.
+The script includes a list of folders to generate index.ts files for. You can add or remove folders from this list as needed.
+*/
+
 import fs from 'fs'
 import path from 'path'
 import { config } from 'dotenv'
