@@ -1,44 +1,44 @@
-import type { CurrencyData } from 'entities/currency'
+import type { Currency } from 'entities/currency'
 
-export const euroCurrencyData: CurrencyData = {
+export const euroCurrency: Currency = {
   id: 'EUR',
   name: 'Euro',
   symbol: '€',
   precision: 2
 }
 
-export const dollarCurrencyData: CurrencyData = {
+export const dollarCurrency: Currency = {
   id: 'USD',
-  name: 'Dollar',
+  name: 'US Dollar',
   symbol: '$',
   precision: 2
 }
 
-export const poundCurrencyData: CurrencyData = {
+export const poundCurrency: Currency = {
   id: 'GBP',
-  name: 'Pound',
+  name: 'Pound sterling',
   symbol: '£',
   precision: 2
 }
 
-export const yenCurrencyData: CurrencyData = {
+export const yenCurrency: Currency = {
   id: 'JPY',
   name: 'Yen',
   symbol: '¥',
   precision: 0
 }
 
-export const swissFrancCurrencyData: CurrencyData = {
+export const swissFrancCurrency: Currency = {
   id: 'CHF',
   name: 'Swiss Franc',
   symbol: 'CHF',
   precision: 2
 }
 
-export const currencyDatas: CurrencyData[] = [
-  euroCurrencyData,
-  dollarCurrencyData,
-  poundCurrencyData,
-  yenCurrencyData,
-  swissFrancCurrencyData
+export const currencyDatas: Currency[] = [
+  euroCurrency,
+  dollarCurrency,
+  poundCurrency,
+  yenCurrency,
+  swissFrancCurrency
 ]

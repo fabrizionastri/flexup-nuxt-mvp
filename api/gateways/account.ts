@@ -1,5 +1,5 @@
 import {
-  type CurrencyData,
+  type Currency,
   type CountryData,
   type AccountStatus,
   type OwnerType,
@@ -54,7 +54,7 @@ export const computeAccount = async (
   if (!ownerTypeDetails) throw new Error('Invalid owner type')
 
   // Get currency and country details
-  const currency: CurrencyData | undefined = await currencyAdapter.getById(accountData.currencyId)
+  const currency: Currency | undefined = await currencyAdapter.getById(accountData.currencyId)
   if (!currency) throw new Error('Invalid currency')
   const country: CountryData | undefined = await countryAdapter.getById(accountData.countryId)
   if (!country) throw new Error('Invalid country')

@@ -1,3 +1,5 @@
+// lib/entities/account.ts
+
 import type { CurrencyId, CountryId, Entity, AccountUserRole } from '.'
 
 // TODO: use this list to limit the possible options in the UI for creating a new account
@@ -23,6 +25,7 @@ export const accountTypes = {
 export type AccountType = keyof typeof accountTypes
 
 // TODO: use this list to limit the possible options in the UI for creating a new account
+// add this symbol for sleeping (inactive) accounts : 😴
 export const ownerTypes = {
   individual: {
     symbol: '🧑‍💻',

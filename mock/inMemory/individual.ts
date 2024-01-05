@@ -5,7 +5,7 @@ export const fabrizioIndividualData: IndividualData = {
   userId: 'fabrizioUser',
   firstName: 'Fabrizio',
   lastName: 'Nastri',
-  dateOfBirth: new Date('1975-01-01')
+  birthDate: new Date('1975-01-01')
   // sex: 'Male',
 }
 
@@ -14,7 +14,7 @@ export const totoIndividualData: IndividualData = {
   userId: 'totoUser',
   firstName: 'Toto',
   lastName: 'La Riflette',
-  dateOfBirth: new Date('1985-01-01')
+  birthDate: new Date('1985-01-01')
   // sex: 'Male',
 }
 

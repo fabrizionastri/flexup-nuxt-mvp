@@ -1,4 +1,8 @@
+// lib/devUtils/generateIndex.ts
+
 /* eslint-disable prettier/prettier */
+
+// This script generates an index.ts file in the current directory
 import fs from 'fs'
 import path from 'path'
 import { config } from 'dotenv'

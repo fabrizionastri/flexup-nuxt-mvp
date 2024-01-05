@@ -1,7 +1,7 @@
 import type { Entity } from '.'
 
 export const accountUserRoleTypes = {
-  admin: '👑',
+  admin: '🔑',
   editor: '✏️',
   guest: '👀'
 }

@@ -1,9 +1,9 @@
-import { currencyDatas } from 'mock/inMemory'
+import { currency } from 'mock/inMemory'
 import type { Entity } from '.'
 
-export type CurrencyId = (typeof currencyDatas)[number]['id']
+export type CurrencyId = 'EUR' | 'USD' | 'GBP' | 'JPY' | 'CHF'
 
-export interface CurrencyData extends Entity {
+export interface Currency extends Entity {
   id: string
   name: string
   symbol: string

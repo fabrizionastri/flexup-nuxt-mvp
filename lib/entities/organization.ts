@@ -45,7 +45,7 @@ export interface OrganizationData extends Entity {
   languageId: string /* Language Code ISO3 */
   capital: number /* Amount */
   legalFormAbbreviation: string
-  registrationAuthority: string
+  registrationAuthority?: string
   registrationCity: string
   registrationNumber: string
   registrationDate: Date
