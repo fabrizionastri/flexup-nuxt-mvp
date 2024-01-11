@@ -1,6 +1,6 @@
 // vitest.config.ts
 
-import { defineVitestConfig } from 'nuxt-vitest/config'
+import { defineVitestConfig } from '@nuxt/test-utils/config'
 import path from 'path'
 import { fileURLToPath } from 'node:url'
 

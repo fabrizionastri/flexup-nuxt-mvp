@@ -14,7 +14,7 @@ export default defineNuxtConfig({
   modules: [
     '@nuxtjs/tailwindcss',
     '@nuxtjs/eslint-module',
-    'nuxt-vitest',
+    '@nuxt/test-utils/module',
     '@nuxt/image',
     '@pinia/nuxt',
     '@pinia-plugin-persistedstate/nuxt'
@@ -43,5 +43,6 @@ export default defineNuxtConfig({
     define: {
       'process.env.DEBUG': false
     }
-  }
+  },
+  testUtils: {}
 })

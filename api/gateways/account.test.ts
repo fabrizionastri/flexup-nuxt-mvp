@@ -14,7 +14,7 @@ describe('accountGateway', () => {
         mock.fabrizioAccountData,
         mock.accountUserDatasForFabrizioUser
       )
-      const expected = { ...mock.fabrizioAccount, role: 'admin', roleSymbol: '👑' }
+      const expected = { ...mock.fabrizioAccount, role: 'admin', roleSymbol: '🔑' }
       expect(result).toEqual(expected)
     })
     it('individual account / no allAccountUserDatas provide- should set role to undefined', async () => {
@@ -27,7 +27,7 @@ describe('accountGateway', () => {
         mock.cosysAccountData,
         mock.accountUserDatasForFabrizioUser
       )
-      const expected = { ...mock.cosysAccount, role: 'admin', roleSymbol: '👑' }
+      const expected = { ...mock.cosysAccount, role: 'admin', roleSymbol: '🔑' }
       expect(result).toEqual(expected)
     })
     it('shared account - should compute account for valid account Id', async () => {
@@ -43,7 +43,7 @@ describe('accountGateway', () => {
         mock.flexupAccountData,
         mock.accountUserDatasForFabrizioUser
       )
-      const expected = { ...mock.flexupAccount, role: 'admin', roleSymbol: '👑' }
+      const expected = { ...mock.flexupAccount, role: 'admin', roleSymbol: '🔑' }
       expect(result).toEqual(expected)
     })
     it('invalid account - should throw error for an invalid account', async () => {
@@ -126,7 +126,7 @@ describe('accountGateway', () => {
     describe('getById', () => {
       it('should return an account for a valid accountId', async () => {
         const result = await accountGateway.getById('fabrizioAccount')
-        expect(result).toEqual({ ...mock.fabrizioAccount, role: 'admin', roleSymbol: '👑' })
+        expect(result).toEqual({ ...mock.fabrizioAccount, role: 'admin', roleSymbol: '🔑' })
       })
       it('should return undefined for an invalid accountId', async () => {
         const result = await accountGateway.getById('invalid')

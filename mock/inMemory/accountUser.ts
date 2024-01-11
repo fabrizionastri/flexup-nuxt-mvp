@@ -11,7 +11,7 @@ export const fabrizioAccountFabrizioUserData: AccountUserData = {
 export const fabrizioAccountFabrizioUser: Account = {
   ...accounts.fabrizioAccount,
   role: 'admin',
-  roleSymbol: '👑'
+  roleSymbol: '🔑'
 }
 
 export const flexupAccountFabrizioUserData: AccountUserData = {
@@ -23,7 +23,7 @@ export const flexupAccountFabrizioUserData: AccountUserData = {
 export const flexupAccountFabrizioUser: Account = {
   ...accounts.flexupAccount,
   role: 'admin',
-  roleSymbol: '👑'
+  roleSymbol: '🔑'
 }
 
 export const cosysAccountFabrizioUserData: AccountUserData = {
@@ -35,7 +35,7 @@ export const cosysAccountFabrizioUserData: AccountUserData = {
 export const cosysAccountFabrizioUser: Account = {
   ...accounts.cosysAccount,
   role: 'admin',
-  roleSymbol: '👑'
+  roleSymbol: '🔑'
 }
 
 export const doMazyAccountFabrizioUserData: AccountUserData = {
@@ -102,12 +102,12 @@ export const totoAccountTotoUserData: AccountUserData = {
   accountId: 'totoAccount',
   userId: 'totoUser',
   role: 'admin',
-  roleSymbol: '👑'
+  roleSymbol: '🔑'
 }
 export const totoAccountTotoUser: Account = {
   ...accounts.totoAccount,
   role: 'admin',
-  roleSymbol: '👑'
+  roleSymbol: '🔑'
 }
 
 export const flexupAccountTotoUserData: AccountUserData = {
