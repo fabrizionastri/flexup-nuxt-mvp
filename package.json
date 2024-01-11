@@ -17,13 +17,13 @@
     "test": "vitest --reporter verbose",
     "server": "nodemon",
     "db": "json-server --port 3057 --watch ./db/db.json",
-    "mock": "json-server --port 3057 --watch ./mock/jsonServer/index.json",
+    "jsonServer": "json-server --port 3057 --watch ./mock/jsonServer/index.json",
     "generateIndex": "ts-node lib/devUtils/generateIndex.ts",
     "generateInMemoryIndex": "ts-node lib/devUtils/generateInMemoryIndex.ts",
     "generateCurrencyIdType": "ts-node --transpile-only lib/devUtils/generateCurrencyIdType.ts",
     "resetjsonserver": "ts-node lib/devUtils/resetJsonServer.ts",
-    "rmock": "pnpm generateIndex && pnpm generateInMemoryIndex && generateCurrencyIdType && pnpm resetjsonserver && pnpm mock ",
-    "start": "concurrently \"npm run mock\" \"npm run nodemon\"  \"npm run dev\" \"npm run test\" ",
+    "gen": "pnpm generateIndex && pnpm generateInMemoryIndex && generateCurrencyIdType && pnpm resetjsonserver",
+    "start": "concurrently \"npm run jsonServer\" \"npm run nodemon\"  \"npm run dev\" \"npm run test\" ",
     "hono": "nodemon"
   },
   "dependencies": {

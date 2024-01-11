@@ -87,6 +87,8 @@ export interface AccountData extends Entity {
   creationDate: Date
   avatar?: string
   description?: string
+  isVirtual?: boolean
+  createdByAccountId?: string
 }
 
 export interface Account extends AccountData {
