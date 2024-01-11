@@ -4,10 +4,10 @@ import { defineVitestConfig } from '@nuxt/test-utils/config'
 import path from 'path'
 import { fileURLToPath } from 'node:url'
 
-const config = {
+export default defineVitestConfig({
   // plugins: path.resolve(__dirname,  vue()  ],
   test: {
-    // environment: 'nuxt',
+    environment: 'nuxt',
     globals: true,
     includeSource: [
       'api/**/*.{js,ts}'
@@ -36,6 +36,4 @@ const config = {
       utils: path.resolve(__dirname, './lib/utils')
     }
   }
-}
-
-export default defineVitestConfig(config)
+})

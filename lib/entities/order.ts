@@ -23,14 +23,14 @@ export interface Order extends Entity {
   supplierAccountId: string
   nature: OrderNature | undefined
   name?: string
-  amountInclTax?: number | undefined | null 
+  amountInclTax?: number | undefined | null
   amountExclTax?: number | undefined | null
   taxAmount?: number | undefined | null
   averageTaxRate?: number | undefined | null
   items?: Item[]
   tranches?: Tranche[]
-  currency: CurrencyId
-  country: CountryId
+  currency?: CurrencyId
+  country?: CountryId
   // principal: number | undefined | null // null if NULL in DB. undefined if not provided so far in the app
   // ...
   // contractId: string

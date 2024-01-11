@@ -23,7 +23,7 @@
     "generateCurrencyIdType": "ts-node --transpile-only lib/devUtils/generateCurrencyIdType.ts",
     "resetjsonserver": "ts-node lib/devUtils/resetJsonServer.ts",
     "gen": "pnpm generateIndex && pnpm generateInMemoryIndex && generateCurrencyIdType && pnpm resetjsonserver",
-    "start": "concurrently \"npm run jsonServer\" \"npm run nodemon\"  \"npm run dev\" \"npm run test\" ",
+    "all": "concurrently \"npm run jsonServer\" \"npm run nodemon\"  \"npm run dev\" \"npm run test\" ",
     "hono": "nodemon"
   },
   "dependencies": {
@@ -33,7 +33,6 @@
     "@pinia/nuxt": "^0.5.1",
     "@tailwindcss/forms": "^0.5.6",
     "axios": "^1.5.1",
-    "eslint-plugin-vitest": "^0.3.20",
     "hono": "^3.9.2",
     "js-cookie": "^3.0.5",
     "jsonwebtoken": "^9.0.2"
@@ -64,12 +63,14 @@
     "eslint": "^8.50.0",
     "eslint-config-prettier": "^9.0.0",
     "eslint-plugin-prettier": "^5.0.0",
+    "eslint-plugin-vitest": "^0.3.20",
     "eslint-plugin-vitest-globals": "^1.4.0",
     "eslint-plugin-vue": "^9.17.0",
     "eslint-plugin-vue-pug": "^0.6.0",
     "happy-dom": "11.0.0",
     "nodemon": "^3.0.1",
     "nuxt": "^3.7.4",
+    "playwright-core": "^1.40.1",
     "prettier": "^3.0.3",
     "prettier-plugin-tailwindcss": "^0.5.5",
     "pug": "^3.0.2",

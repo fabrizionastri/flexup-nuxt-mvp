@@ -7,8 +7,9 @@ describe('convertDatesToStrings', () => {
     expect(result).toEqual(expected)
   })
   it('should convert new dates to ISO strings', () => {
-    const result = convertDatesToStrings(new Date())
-    const expected = new Date().toISOString()
+    const date = new Date()
+    const result = convertDatesToStrings(date)
+    const expected = date.toISOString()
     expect(result).toEqual(expected)
   })
   it('should not modify numbers', () => {

@@ -3,6 +3,7 @@ import * as orders from 'mock/inMemory/order'
 import * as items from 'mock/inMemory/item'
 import type { OrderGateway } from '.'
 import { computeOrder, computeItemTotals, createOrderGateway } from '.'
+import { sortById } from 'lib/utils/sortById'
 
 describe('orderGateway', () => {
   let orderGateway: OrderGateway
@@ -118,14 +119,12 @@ describe('orderGateway', () => {
       it('getById(orderWithNoItems) should return the computed order with tranches but no items', async () => {
         const result = await orderGateway.getById('orderWithNoItems')
         expect(result).toEqual(orders.orderWithNoItems)
-        it('getAll should return all fully computed order for this account', async () => {
-          const result = await orderGateway.getAll()
-          expect(result).toEqual([
-            orders.commercialOrder,
-            orders.donationOrder,
-            orders.orderWithNoItems
-          ])
-        })
+      })
+      it('getAll should return all fully computed order for this account', async () => {
+        const result = await orderGateway.getAll()
+        expect(sortById(result)).toEqual(
+          sortById([orders.commercialOrder, orders.donationOrder, orders.orderWithNoItems])
+        )
       })
     })
     describe('fabrizioAccount - for existing account with multiple orders', () => {

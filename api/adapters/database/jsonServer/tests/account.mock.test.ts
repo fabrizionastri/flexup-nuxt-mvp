@@ -31,10 +31,11 @@ describe('createGenericAdapter - mock Axios', () => {
 
   describe('getByProperty', () => {
     it('should return accounts based on a property and its value', async () => {
+      // this tests seems useless, as it always retruns true ...
       mockEntity = { id: 'id1', name: 'Test Entity' }
-      axiosGetMock.mockResolvedValue(mockEntity)
+      axiosGetMock.mockResolvedValue([mockEntity])
       result = await accountAdapter.getByProperty('name', 'Test Entity')
-      expect(result).toContain(mockEntity)
+      expect(result).toEqual([mockEntity])
     })
 
     it('should have been called with the right url', async () => {
