@@ -132,7 +132,20 @@ The selection is made in the `.env`: `STORAGE_TYPE=inMemory` or `STORAGE_TYPE=js
 
 Follow the steps below to launch the app:
 
-1. `pnpm mock` : launches the jsonServer (only required for the `jsonServer` mock database implementation and for testing), or `pnpm rmock` to also reset the index files
-2. `pnpm hono` : launches the Hono API server
-3. `pnpm test` : launches the tests in Vitest
-4. `pnpm dev` : launches the Nuxt 3 app
+1. `pnpm generate`: reset the index files, some type literal definitions and to update the jsonServer to match the data in the inMemory test data
+2. `pnpm jsonServer`: launche the jsonServer (only required for the `jsonServer` mock database implementation and for testing)
+3. `pnpm hono` : launches the Hono API server
+4. `pnpm test` : launches the tests in Vitest
+5. `pnpm dev` : launches the Nuxt 3 app
+
+After launch the Nuxt app, go to the [Home Page](http://localhost:3000/login) or directly to the [login](http://localhost:3000/login) page.
+
+User following credentials to login:
+
+- Identifier: fabrizioUsername
+- Password: plop
+
+or
+
+- Identifier: totoUsername
+- Password: plop

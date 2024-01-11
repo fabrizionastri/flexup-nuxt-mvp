@@ -77,8 +77,8 @@
   const userStore = useUserStore()
 
   const logout = () => {
-    navigateTo('/login')
     userStore.logoutUser()
+    navigateTo('/login')
   }
   watch(userStore.user, (newValue, oldValue) => {
     console.log('app/components/NavBar.vue - user changed:', newValue, oldValue)
