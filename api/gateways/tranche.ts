@@ -1,4 +1,4 @@
-import type { Order, Tranche, TrancheData } from 'entities/'
+import type { Order, Tranche, TrancheData } from 'lib/entities'
 import { trancheAdapter } from 'adapters/database'
 export interface TrancheGateway {
   getByOrder: (order: Order) => Promise<Tranche[]>

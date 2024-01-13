@@ -67,7 +67,7 @@ export const adjustmentLengths = {
 
 export type Adjustment = keyof typeof adjustmentLengths
 
-export type MainPaymentTerms = {
+export interface PrincipalPaymentTerms {
   priority: Priority
   start?: MainStart | undefined
   adjustment?: Adjustment | undefined
@@ -75,7 +75,7 @@ export type MainPaymentTerms = {
   offset?: number | undefined
 }
 
-export type ResiduePaymentTerms = {
+export interface ResiduePaymentTerms {
   residuePriority: ResiduePriority
   residuePeriod?: ResiduePeriod
 }
@@ -91,7 +91,7 @@ export const interestPeriodRiskFactors = {
 
 export type InterestPeriod = keyof typeof interestPeriodRiskFactors
 
-export type InterestPaymentTerms = {
+export interface InterestPaymentTerms {
   interestRate: number
   interestPriority: relativePriority
   interestStart: InterestStart
@@ -104,10 +104,10 @@ export const noProjectRequestBuybackRiskFactor = 0.75
 
 export const interestRateRiskHurdle = 0.15
 
-export type PaymentTerms = {
-  main: MainPaymentTerms
-  residue?: ResiduePaymentTerms
-  interest?: InterestPaymentTerms
+export interface PaymentTerms
+  extends PrincipalPaymentTerms,
+    Partial<ResiduePaymentTerms>,
+    Partial<InterestPaymentTerms> {
   canProjectRequestBuyback?: boolean
 }
 
