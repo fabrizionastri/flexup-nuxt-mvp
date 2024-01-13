@@ -21,7 +21,7 @@
     "generateIndex": "ts-node lib/devUtils/generateIndex.ts",
     "generateInMemoryIndex": "ts-node lib/devUtils/generateInMemoryIndex.ts",
     "generateCurrencyIdType": "ts-node --transpile-only lib/devUtils/generateCurrencyIdType.ts",
-    "resetjsonserver": "ts-node lib/devUtils/resetJsonServer.ts",
+    "resetJsonServer": "ts-node lib/devUtils/resetJsonServer.ts",
     "gen": "pnpm generateIndex && pnpm generateInMemoryIndex && generateCurrencyIdType && pnpm resetjsonserver",
     "all": "concurrently \"npm run jsonServer\" \"npm run nodemon\"  \"npm run dev\" \"npm run test\" ",
     "hono": "nodemon"

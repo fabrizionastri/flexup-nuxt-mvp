@@ -57,10 +57,10 @@ export const relativePriorityRiskFactorTestCases: Array<{
     paymentTerms: {
       main: { priority: 'flex' },
       interest: {
-        rate: 0.05,
-        priority: 'sameAsMain',
-        start: 'deferral',
-        period: 'sameAsMain'
+        interestRate: 0.05,
+        interestPriority: 'sameAsMain',
+        interestStart: 'deferral',
+        interestPeriod: 'sameAsMain'
       }
     },
     expected: 1
@@ -70,10 +70,10 @@ export const relativePriorityRiskFactorTestCases: Array<{
     paymentTerms: {
       main: { priority: 'flex' },
       interest: {
-        rate: 0.05,
-        priority: 'firm',
-        start: 'deferral',
-        period: 'sameAsMain'
+        interestRate: 0.05,
+        interestPriority: 'firm',
+        interestStart: 'deferral',
+        interestPeriod: 'sameAsMain'
       }
     },
     expected: 0.5
@@ -83,10 +83,10 @@ export const relativePriorityRiskFactorTestCases: Array<{
     paymentTerms: {
       main: { priority: 'superflex' },
       interest: {
-        rate: 0.05,
-        priority: 'flex',
-        start: 'deferral',
-        period: 'sameAsMain'
+        interestRate: 0.05,
+        interestPriority: 'flex',
+        interestStart: 'deferral',
+        interestPeriod: 'sameAsMain'
       }
     },
     expected: 0.95
@@ -96,10 +96,10 @@ export const relativePriorityRiskFactorTestCases: Array<{
     paymentTerms: {
       main: { priority: 'preferred' },
       interest: {
-        rate: 0.05,
-        priority: 'credit',
-        start: 'deferral',
-        period: 'sameAsMain'
+        interestRate: 0.05,
+        interestPriority: 'credit',
+        interestStart: 'deferral',
+        interestPeriod: 'sameAsMain'
       }
     },
     expected: 1.15
@@ -109,10 +109,10 @@ export const relativePriorityRiskFactorTestCases: Array<{
     paymentTerms: {
       main: { priority: 'credit' },
       interest: {
-        rate: 0.05,
-        priority: 'preferred',
-        start: 'deferral',
-        period: 'sameAsMain'
+        interestRate: 0.05,
+        interestPriority: 'preferred',
+        interestStart: 'deferral',
+        interestPeriod: 'sameAsMain'
       }
     },
     expected: 0.85
@@ -170,14 +170,14 @@ export const basicRiskFactorTestCases: Array<{
         adjustment: 'BOP'
       },
       interest: {
-        rate: 0.05,
-        priority: 'sameAsMain',
-        start: 'deliveryFinish',
-        period: 'quarter'
+        interestRate: 0.05,
+        interestPriority: 'sameAsMain',
+        interestStart: 'deliveryFinish',
+        interestPeriod: 'quarter'
       },
       residue: {
-        priority: 'flex',
-        period: 'year'
+        residuePriority: 'flex',
+        residuePeriod: 'year'
       },
       canProjectRequestBuyback: false
     },
@@ -190,10 +190,10 @@ export const basicRiskFactorTestCases: Array<{
         priority: 'credit'
       },
       interest: {
-        rate: 0.07,
-        priority: 'flex',
-        start: 'confirmation',
-        period: 'quarter'
+        interestRate: 0.07,
+        interestPriority: 'flex',
+        interestStart: 'confirmation',
+        interestPeriod: 'quarter'
       }
     },
     expected: 0.2807
@@ -269,7 +269,7 @@ export const riskFactorTestCases: Array<{
     summary: 'flex -> credit, 4x 100% -> 40%',
     paymentTerms: {
       main: { priority: 'flex' },
-      residue: { priority: 'credit' }
+      residue: { residuePriority: 'credit' }
     },
     payableRatios: [0.6, 0.5, 0.4, 0.3],
     expected: 0.6
@@ -285,10 +285,10 @@ export const riskFactorTestCases: Array<{
     paymentTerms: {
       main: { priority: 'preferred' },
       interest: {
-        rate: 0.05,
-        priority: 'flex',
-        start: 'confirmation',
-        period: 'quarter'
+        interestRate: 0.05,
+        interestPriority: 'flex',
+        interestStart: 'confirmation',
+        interestPeriod: 'quarter'
       }
     },
     payableRatios: [0.4, 0.3, 0.2, 0.1, 0, 0, 0],

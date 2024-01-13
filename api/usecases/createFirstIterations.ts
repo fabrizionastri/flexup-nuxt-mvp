@@ -108,25 +108,25 @@ export const createFirstInterestIteration = (
   mainPriority?: Priority, // ici volontairement je ne vérifie pas si cet argument est valide, car il est censé être fourni par la fonction appelante
   principalDueDate?: Date | undefined
 ): Partial<Interest> => {
-  const { rate, priority, start, period } = interestPaymentTerms
+  const { interestRate, interestPriority, interestStart, interestPeriod } = interestPaymentTerms
 
   const interest: Partial<Interest> = {
-    priority: 'sameAsMain' === priority ? mainPriority : priority,
-    rate,
+    priority: 'sameAsMain' === interestPriority ? mainPriority : interestPriority,
+    interestRate,
     nature: 'interest',
     status: 'pending',
     level: 'secondary'
   }
 
-  const startDate = getDateForKey(orderDates, start)
+  const startDate = getDateForKey(orderDates, interestStart)
 
   if (startDate) {
     interest.startDate = startDate
-    if ('sameAsMain' === period) {
+    if ('sameAsMain' === interestPeriod) {
       if (isValidDate(principalDueDate)) interest.dueDate = principalDueDate
       // if principal Due Date is not valid, we will assign the Interest due date later
     } else {
-      interest.dueDate = calculateDueDate(startDate, 'none', period, 1)
+      interest.dueDate = calculateDueDate(startDate, 'none', interestPeriod, 1)
       const duration = calculateDuration(interest.dueDate, principalDueDate) ?? 0
       // if principal due date is before the calculated interest due date, we assign the principal due date to the interest due date
       if (duration < 0) interest.dueDate = principalDueDate
@@ -135,7 +135,7 @@ export const createFirstInterestIteration = (
 
   if (principal !== 0) {
     interest.principal = principal
-    if (interest.startDate && (priority === 'credit' || interest.dueDate)) {
+    if (interest.startDate && (interestPriority === 'credit' || interest.dueDate)) {
       interest.status = 'active'
       interest.activeDate = today()
     }

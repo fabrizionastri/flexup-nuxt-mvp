@@ -470,10 +470,10 @@
           "priority": "credit"
         },
         "interest": {
-          "rate": 0.05,
-          "priority": "credit",
-          "start": "deferral",
-          "period": "sameAsMain"
+          "interestRate": 0.05,
+          "interestPriority": "credit",
+          "interestStart": "deferral",
+          "interestPeriod": "sameAsMain"
         }
       }
     },

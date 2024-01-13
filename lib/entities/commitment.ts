@@ -56,7 +56,7 @@ export interface Token extends Equity {
 }
 
 export interface Interest extends Commitment {
-  rate: number
+  interestRate: number
   startDate?: Date
   //TODO: ask Fred how I can manipulate calculated fields ...???
   newInterest?: number // interest rate applied from startDate to dueDate

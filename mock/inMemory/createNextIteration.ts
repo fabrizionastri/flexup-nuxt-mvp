@@ -21,8 +21,8 @@ export const createNextMainIterationTestCases: Array<{
       dueDate: new Date('2020-05-25')
     },
     residuePaymentTerms: {
-      priority: 'flex',
-      period: 'month'
+      residuePriority: 'flex',
+      residuePeriod: 'month'
     },
     expected: {
       trancheId: 'tranche1',
@@ -49,7 +49,7 @@ export const createNextMainIterationTestCases: Array<{
       dueDate: new Date('2020-05-25')
     },
     residuePaymentTerms: {
-      priority: 'credit'
+      residuePriority: 'credit'
     },
     expected: {
       trancheId: 'tranche1',
@@ -74,7 +74,7 @@ export const createNextInterestIterationTestCases: Array<{
   {
     summary: '5% flex interest on credit main at interest resolution',
     paymentTermsInterest: {
-      period: 'year'
+      interestPeriod: 'year'
     },
     previousMainIteration: {
       id: 'commitment1',
@@ -93,7 +93,7 @@ export const createNextInterestIterationTestCases: Array<{
       level: 'secondary',
       newInterest: 5,
       principal: 100,
-      rate: 0.05,
+      interestRate: 0.05,
       dueDate: new Date('2020-05-05')
     },
     expected: {
@@ -104,7 +104,7 @@ export const createNextInterestIterationTestCases: Array<{
       level: 'secondary',
       carriedInterest: 5,
       principal: 100,
-      rate: 0.05,
+      interestRate: 0.05,
       startDate: new Date('2020-05-05'),
       dueDate: new Date('2021-05-05')
     }
@@ -112,7 +112,7 @@ export const createNextInterestIterationTestCases: Array<{
   {
     summary: '6% flex interest on base flex, at jointcyc',
     paymentTermsInterest: {
-      period: 'year'
+      interestPeriod: 'year'
     },
     previousMainIteration: {
       id: 'commitment1',
@@ -131,7 +131,7 @@ export const createNextInterestIterationTestCases: Array<{
       level: 'secondary',
       newInterest: 5,
       principal: 100,
-      rate: 0.05,
+      interestRate: 0.05,
       dueDate: new Date('2020-05-05')
     },
     expected: {
@@ -142,7 +142,7 @@ export const createNextInterestIterationTestCases: Array<{
       level: 'secondary',
       carriedInterest: 5,
       principal: 100,
-      rate: 0.05,
+      interestRate: 0.05,
       startDate: new Date('2020-05-05'),
       dueDate: new Date('2021-05-05')
     }

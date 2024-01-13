@@ -76,8 +76,8 @@ export type MainPaymentTerms = {
 }
 
 export type ResiduePaymentTerms = {
-  priority: ResiduePriority
-  period?: ResiduePeriod
+  residuePriority: ResiduePriority
+  residuePeriod?: ResiduePeriod
 }
 
 export type relativePriority = Priority | 'sameAsMain' | undefined
@@ -92,10 +92,10 @@ export const interestPeriodRiskFactors = {
 export type InterestPeriod = keyof typeof interestPeriodRiskFactors
 
 export type InterestPaymentTerms = {
-  rate: number
-  priority: relativePriority
-  start: InterestStart
-  period?: InterestPeriod
+  interestRate: number
+  interestPriority: relativePriority
+  interestStart: InterestStart
+  interestPeriod?: InterestPeriod
 }
 
 export const rateRiskHurdle = 0.15

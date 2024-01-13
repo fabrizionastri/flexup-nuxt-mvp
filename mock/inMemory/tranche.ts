@@ -33,20 +33,20 @@ export const commercialOrderFlex30: Tranche = {
 
 export const commercialOrderCredit30interestData: TrancheData = {
   id: 'commercialOrderCredit30interestData',
-  name: '20% credit 5%',
+  name: '30% credit 5%',
   orderId: 'commercialOrder',
   portion: 0.2,
   paymentTerms: {
     main: { priority: 'credit' },
     interest: {
-      rate: 0.05,
-      priority: 'credit',
-      start: 'deferral',
-      period: 'sameAsMain'
+      interestRate: 0.05,
+      interestPriority: 'credit',
+      interestStart: 'deferral',
+      interestPeriod: 'sameAsMain'
     }
   }
 }
-export const commercialOrderCredit30interest5: Tranche = {
+export const commercialOrderCredit30interest: Tranche = {
   ...commercialOrderCredit30interestData,
   sign: 1,
   principal: 50.62,
@@ -62,7 +62,7 @@ export const trancheDatasForcommercialOrder: TrancheData[] = [
 export const tranchesForcommercialOrder: Tranche[] = [
   commercialOrderPreferred50,
   commercialOrderFlex30,
-  commercialOrderCredit30interest5
+  commercialOrderCredit30interest
 ]
 
 // orderWithRebate
@@ -180,7 +180,7 @@ export const trancheDatas: TrancheData[] = [
 export const tranches: Tranche[] = [
   commercialOrderPreferred50,
   commercialOrderFlex30,
-  commercialOrderCredit30interest5,
+  commercialOrderCredit30interest,
   orderWithRebateUpfront150,
   orderWithRebateFlexRebate50,
   orderWithNoItemsFirm100,

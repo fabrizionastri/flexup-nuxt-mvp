@@ -347,16 +347,16 @@ export const createFirstInterestIterationTestCases: Array<{
   {
     summary: '5%, credit, deliveryFinish, year',
     paymentTermsInterest: {
-      rate: 0.05,
-      priority: 'credit',
-      start: 'deliveryFinish',
-      period: 'year'
+      interestRate: 0.05,
+      interestPriority: 'credit',
+      interestStart: 'deliveryFinish',
+      interestPeriod: 'year'
     },
     principal: 100,
     expected: {
       principal: 100,
       priority: 'credit',
-      rate: 0.05,
+      interestRate: 0.05,
       nature: 'interest',
       level: 'secondary',
       status: 'pending'
@@ -365,17 +365,17 @@ export const createFirstInterestIterationTestCases: Array<{
   {
     summary: '8%, credit, deliveryFinish, year',
     paymentTermsInterest: {
-      rate: 0.08,
-      priority: 'credit',
-      start: 'confirmation',
-      period: 'year'
+      interestRate: 0.08,
+      interestPriority: 'credit',
+      interestStart: 'confirmation',
+      interestPeriod: 'year'
     },
     principal: 100,
     orderDates: { confirmation: new Date('2020-05-05') },
     expected: {
       principal: 100,
       priority: 'credit',
-      rate: 0.08,
+      interestRate: 0.08,
       startDate: new Date('2020-05-05'),
       dueDate: new Date('2021-05-05'),
       nature: 'interest',
@@ -387,10 +387,10 @@ export const createFirstInterestIterationTestCases: Array<{
   {
     summary: '4%, flex, confirmation, quarter',
     paymentTermsInterest: {
-      rate: 0.04,
-      priority: 'flex',
-      start: 'confirmation',
-      period: 'quarter'
+      interestRate: 0.04,
+      interestPriority: 'flex',
+      interestStart: 'confirmation',
+      interestPeriod: 'quarter'
     },
     principal: 120,
     orderDates: { confirmation: new Date('2020-05-05') },
@@ -399,7 +399,7 @@ export const createFirstInterestIterationTestCases: Array<{
       priority: 'flex',
       startDate: new Date('2020-05-05'),
       dueDate: new Date('2020-08-05'),
-      rate: 0.04,
+      interestRate: 0.04,
       nature: 'interest',
       level: 'secondary',
       status: 'active',
@@ -409,10 +409,10 @@ export const createFirstInterestIterationTestCases: Array<{
   {
     summary: '7%, preferred, confirmation, sameAsMain',
     paymentTermsInterest: {
-      rate: 0.07,
-      priority: 'preferred',
-      start: 'confirmation',
-      period: 'sameAsMain'
+      interestRate: 0.07,
+      interestPriority: 'preferred',
+      interestStart: 'confirmation',
+      interestPeriod: 'sameAsMain'
     },
     principal: 80,
     orderDates: { confirmation: new Date('2020-05-05') },
@@ -422,7 +422,7 @@ export const createFirstInterestIterationTestCases: Array<{
       priority: 'preferred',
       startDate: new Date('2020-05-05'),
       dueDate: new Date('2020-08-16'),
-      rate: 0.07,
+      interestRate: 0.07,
       nature: 'interest',
       level: 'secondary',
       status: 'active',
@@ -432,10 +432,10 @@ export const createFirstInterestIterationTestCases: Array<{
   {
     summary: '7%, prefesameAsMainrred, confirmation, sameAsMain',
     paymentTermsInterest: {
-      rate: 0.07,
-      priority: 'sameAsMain',
-      start: 'confirmation',
-      period: 'sameAsMain'
+      interestRate: 0.07,
+      interestPriority: 'sameAsMain',
+      interestStart: 'confirmation',
+      interestPeriod: 'sameAsMain'
     },
     principal: 80,
     orderDates: { confirmation: new Date('2020-05-05') },
@@ -446,7 +446,7 @@ export const createFirstInterestIterationTestCases: Array<{
       priority: 'firm',
       startDate: new Date('2020-05-05'),
       dueDate: new Date('2020-08-17'),
-      rate: 0.07,
+      interestRate: 0.07,
       nature: 'interest',
       level: 'secondary',
       status: 'active',
@@ -790,10 +790,10 @@ export const createFirstIterationsTestCases: Array<{
         offset: 3
       },
       interest: {
-        rate: 0.05,
-        priority: 'flex',
-        start: 'confirmation',
-        period: 'sameAsMain'
+        interestRate: 0.05,
+        interestPriority: 'flex',
+        interestStart: 'confirmation',
+        interestPeriod: 'sameAsMain'
       }
     },
     principal: 40,
@@ -822,7 +822,7 @@ export const createFirstIterationsTestCases: Array<{
       },
       {
         principal: 40,
-        rate: 0.05,
+        interestRate: 0.05,
         priority: 'flex',
         startDate: new Date('2020-06-05'),
         dueDate: new Date('2020-09-01'),

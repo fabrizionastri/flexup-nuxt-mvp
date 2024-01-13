@@ -7,7 +7,7 @@ export const createNextMainIteration = (
   previousIteration: Partial<Commitment>,
   residuePaymentTerms: ResiduePaymentTerms
 ): Partial<Commitment> => {
-  const { priority: newPriority, period } = residuePaymentTerms
+  const { residuePriority: newPriority, residuePeriod: period } = residuePaymentTerms
   const {
     residueAmount,
     trancheId,
@@ -60,14 +60,14 @@ export const createNextInterestIteration = (
   previousMainIteration: Partial<Commitment>,
   previousInterestIteration: Partial<Interest>
 ): Partial<Interest> => {
-  const { period } = paymentTermsInterest
+  const { interestPeriod: period } = paymentTermsInterest
 
   const { dueDate: mainDueDate, principal } = previousMainIteration
 
   const {
     trancheId,
     id,
-    rate,
+    interestRate,
     dueDate: previousDueDate,
     resolveDate,
     priority,
@@ -83,7 +83,7 @@ export const createNextInterestIteration = (
     level: 'secondary',
     carriedInterest: (newInterest ?? 0) + (carriedInterest ?? 0),
     principal,
-    rate: rate,
+    interestRate,
     status: 'active',
     activeDate: resolveDate,
     startDate: previousDueDate
@@ -105,7 +105,7 @@ export const createNextInterestIteration = (
     level: 'secondary',
     carriedInterest: 5,
     principal: 100,
-    rate: 0.05,
+    interestRate: 0.05,
     startDate: new Date('2020-05-05'),
     dueDate: new Date('2021-05-05')
   }
