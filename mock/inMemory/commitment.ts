@@ -4,7 +4,7 @@ export const commitment1: Commitment = {
   id: '1',
   trancheId: '1',
   level: 'primary',
-  nature: 'main',
+  type: 'principal',
   status: 'active',
   principal: 100,
   priority: 'flex',

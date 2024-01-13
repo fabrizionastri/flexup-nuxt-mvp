@@ -2,7 +2,7 @@ import {
   calculateDueDateTestCases,
   createFirstIterationsTestCases,
   createFirstTokenIterationTestCases,
-  createFirstMainIterationTestCases,
+  createFirstPrincipalIterationTestCases,
   createFirstInterestIterationTestCases,
   offsetDateTestCases
 } from 'mock/inMemory/createFirstIteration'
@@ -12,7 +12,7 @@ import {
   offsetDate,
   createFirstIterations,
   createFirstTokenIteration,
-  createFirstMainIteration,
+  createFirstPrincipalIteration,
   createFirstInterestIteration
 } from './createFirstIterations'
 
@@ -32,11 +32,13 @@ describe('Create first iterations upon order confirmation', () => {
     )
   })
 
-  describe('createFirstMainIteration', () => {
-    it.each(createFirstMainIterationTestCases)(
+  describe('createFirstPrincipalIteration', () => {
+    it.each(createFirstPrincipalIterationTestCases)(
       '$summary',
-      ({ mainPaymentTerms, principal, orderDates, expected }) => {
-        expect(createFirstMainIteration(mainPaymentTerms, principal, orderDates)).toEqual(expected)
+      ({ principalPaymentTerms, principal, orderDates, expected }) => {
+        expect(createFirstPrincipalIteration(principalPaymentTerms, principal, orderDates)).toEqual(
+          expected
+        )
       }
     )
   })
@@ -48,7 +50,7 @@ describe('Create first iterations upon order confirmation', () => {
         paymentTermsInterest,
         principal,
         orderDates,
-        mainPriority,
+        principalPriority,
         principalDueDate,
         expected
       }) => {
@@ -57,7 +59,7 @@ describe('Create first iterations upon order confirmation', () => {
             paymentTermsInterest,
             principal,
             orderDates,
-            mainPriority,
+            principalPriority,
             principalDueDate
           )
         ).toEqual(expected)

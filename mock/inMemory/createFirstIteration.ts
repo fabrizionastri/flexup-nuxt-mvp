@@ -208,31 +208,31 @@ export const calculateDueDateTestCases: Array<{
   }
 ]
 
-export const createFirstMainIterationTestCases: Array<{
+export const createFirstPrincipalIterationTestCases: Array<{
   summary: string
-  mainPaymentTerms: MainPaymentTerms
+  principalPaymentTerms: PrincipalPaymentTerms
   principal?: number
   orderDates?: { [key: string]: Date | string | undefined }
   expected: Partial<Commitment>
 }> = [
   {
     summary: 'flex (no principal, no dates)',
-    mainPaymentTerms: { priority: 'flex' },
+    principalPaymentTerms: { priority: 'flex' },
     expected: {
       priority: 'flex',
-      nature: 'main',
+      type: 'principal',
       level: 'primary',
       status: 'pending'
     }
   },
   {
     summary: '10 credit (no dates)',
-    mainPaymentTerms: { priority: 'credit' },
+    principalPaymentTerms: { priority: 'credit' },
     principal: 10,
     expected: {
       principal: 10,
       priority: 'credit',
-      nature: 'main',
+      type: 'principal',
       level: 'primary',
       status: 'active',
       activeDate: today()
@@ -240,7 +240,7 @@ export const createFirstMainIterationTestCases: Array<{
   },
   {
     summary: '20 flex conf+1M',
-    mainPaymentTerms: {
+    principalPaymentTerms: {
       priority: 'flex',
       start: 'confirmation',
       period: 'month',
@@ -252,7 +252,7 @@ export const createFirstMainIterationTestCases: Array<{
       principal: 20,
       priority: 'flex',
       dueDate: new Date('2020-06-30T23:59:59.999Z'),
-      nature: 'main',
+      type: 'principal',
       level: 'primary',
       status: 'active',
       activeDate: today()
@@ -260,7 +260,7 @@ export const createFirstMainIterationTestCases: Array<{
   },
   {
     summary: '30 flex conf+45D',
-    mainPaymentTerms: {
+    principalPaymentTerms: {
       priority: 'flex',
       start: 'confirmation',
       period: 'day',
@@ -272,7 +272,7 @@ export const createFirstMainIterationTestCases: Array<{
       principal: 30,
       priority: 'flex',
       dueDate: new Date('2020-06-19T23:59:59.999Z'),
-      nature: 'main',
+      type: 'principal',
       level: 'primary',
       status: 'active',
       activeDate: today()
@@ -280,7 +280,7 @@ export const createFirstMainIterationTestCases: Array<{
   },
   {
     summary: '40 pref conf@BOP+3M',
-    mainPaymentTerms: {
+    principalPaymentTerms: {
       priority: 'preferred',
       start: 'confirmation',
       adjustment: 'BOP',
@@ -293,7 +293,7 @@ export const createFirstMainIterationTestCases: Array<{
       principal: 40,
       priority: 'preferred',
       dueDate: new Date('2020-09-01'),
-      nature: 'main',
+      type: 'principal',
       level: 'primary',
       status: 'active',
       activeDate: today()
@@ -301,7 +301,7 @@ export const createFirstMainIterationTestCases: Array<{
   },
   {
     summary: '50 firm deliveryMiddle+1Q',
-    mainPaymentTerms: {
+    principalPaymentTerms: {
       priority: 'firm',
       start: 'deliveryMiddle',
       period: 'quarter',
@@ -311,14 +311,14 @@ export const createFirstMainIterationTestCases: Array<{
     expected: {
       principal: 50,
       priority: 'firm',
-      nature: 'main',
+      type: 'principal',
       level: 'primary',
       status: 'pending'
     }
   },
   {
     summary: '60 superflex deliveryStart+2Y',
-    mainPaymentTerms: {
+    principalPaymentTerms: {
       priority: 'superflex',
       start: 'deliveryStart',
       period: 'year',
@@ -328,7 +328,7 @@ export const createFirstMainIterationTestCases: Array<{
     expected: {
       principal: 60,
       priority: 'superflex',
-      nature: 'main',
+      type: 'principal',
       level: 'primary',
       status: 'pending'
     }
@@ -340,7 +340,7 @@ export const createFirstInterestIterationTestCases: Array<{
   paymentTermsInterest: InterestPaymentTerms
   principal?: number
   orderDates?: { [key: string]: Date | string | undefined }
-  mainPriority?: Priority
+  principalPriority?: Priority
   principalDueDate?: Date
   expected: Partial<Interest>
 }> = [
@@ -357,7 +357,7 @@ export const createFirstInterestIterationTestCases: Array<{
       principal: 100,
       priority: 'credit',
       interestRate: 0.05,
-      nature: 'interest',
+      type: 'interest',
       level: 'secondary',
       status: 'pending'
     }
@@ -376,9 +376,9 @@ export const createFirstInterestIterationTestCases: Array<{
       principal: 100,
       priority: 'credit',
       interestRate: 0.08,
-      startDate: new Date('2020-05-05'),
+      interestStartDate: new Date('2020-05-05'),
       dueDate: new Date('2021-05-05'),
-      nature: 'interest',
+      type: 'interest',
       level: 'secondary',
       status: 'active',
       activeDate: today()
@@ -397,22 +397,22 @@ export const createFirstInterestIterationTestCases: Array<{
     expected: {
       principal: 120,
       priority: 'flex',
-      startDate: new Date('2020-05-05'),
+      interestStartDate: new Date('2020-05-05'),
       dueDate: new Date('2020-08-05'),
       interestRate: 0.04,
-      nature: 'interest',
+      type: 'interest',
       level: 'secondary',
       status: 'active',
       activeDate: today()
     }
   },
   {
-    summary: '7%, preferred, confirmation, sameAsMain',
+    summary: '7%, preferred, confirmation, sameAsPrincipal',
     paymentTermsInterest: {
       interestRate: 0.07,
       interestPriority: 'preferred',
       interestStart: 'confirmation',
-      interestPeriod: 'sameAsMain'
+      interestPeriod: 'sameAsPrincipal'
     },
     principal: 80,
     orderDates: { confirmation: new Date('2020-05-05') },
@@ -420,34 +420,34 @@ export const createFirstInterestIterationTestCases: Array<{
     expected: {
       principal: 80,
       priority: 'preferred',
-      startDate: new Date('2020-05-05'),
+      interestStartDate: new Date('2020-05-05'),
       dueDate: new Date('2020-08-16'),
       interestRate: 0.07,
-      nature: 'interest',
+      type: 'interest',
       level: 'secondary',
       status: 'active',
       activeDate: today()
     }
   },
   {
-    summary: '7%, prefesameAsMainrred, confirmation, sameAsMain',
+    summary: '7%, prefesameAsPrincipalrred, confirmation, sameAsPrincipal',
     paymentTermsInterest: {
       interestRate: 0.07,
-      interestPriority: 'sameAsMain',
+      interestPriority: 'sameAsPrincipal',
       interestStart: 'confirmation',
-      interestPeriod: 'sameAsMain'
+      interestPeriod: 'sameAsPrincipal'
     },
     principal: 80,
     orderDates: { confirmation: new Date('2020-05-05') },
-    mainPriority: 'firm',
+    principalPriority: 'firm',
     principalDueDate: new Date('2020-08-17'),
     expected: {
       principal: 80,
       priority: 'firm',
-      startDate: new Date('2020-05-05'),
+      interestStartDate: new Date('2020-05-05'),
       dueDate: new Date('2020-08-17'),
       interestRate: 0.07,
-      nature: 'interest',
+      type: 'interest',
       level: 'secondary',
       status: 'active',
       activeDate: today()
@@ -470,7 +470,7 @@ export const createFirstTokenIterationTestCases: Array<{
     level: 'primary',
     expected: {
       priority: 'token',
-      nature: 'token',
+      type: 'token',
       principal: 10,
       referenceIndex: 5,
       numberOfTokenUnits: 2,
@@ -485,7 +485,7 @@ export const createFirstTokenIterationTestCases: Array<{
     level: 'secondary',
     expected: {
       priority: 'token',
-      nature: 'token',
+      type: 'token',
       referenceIndex: 7,
       level: 'secondary',
       status: 'pending'
@@ -498,7 +498,7 @@ export const createFirstTokenIterationTestCases: Array<{
     canProjectRequestBuyback: true,
     expected: {
       priority: 'token',
-      nature: 'token',
+      type: 'token',
       referenceIndex: 6,
       level: 'primary',
       status: 'pending',
@@ -512,7 +512,7 @@ export const createFirstTokenIterationTestCases: Array<{
     level: 'primary',
     expected: {
       priority: 'token',
-      nature: 'token',
+      type: 'token',
       referenceIndex: 6,
       principal: 12,
       numberOfTokenUnits: 2,
@@ -528,7 +528,7 @@ export const createFirstTokenIterationTestCases: Array<{
     canProjectRequestBuyback: true,
     expected: {
       priority: 'token',
-      nature: 'token',
+      type: 'token',
       referenceIndex: 8,
       level: 'primary',
       status: 'pending',
@@ -556,13 +556,13 @@ export const createFirstIterationsTestCases: Array<{
         priority: 'flex',
         status: 'pending',
         level: 'primary',
-        nature: 'main'
+        type: 'principal'
       },
       {
         priority: 'token',
         status: 'pending',
         level: 'secondary',
-        nature: 'token',
+        type: 'token',
         referenceIndex: 5
       }
     ]
@@ -579,14 +579,14 @@ export const createFirstIterationsTestCases: Array<{
         priority: 'credit',
         status: 'active',
         level: 'primary',
-        nature: 'main',
+        type: 'principal',
         activeDate: today()
       },
       {
         priority: 'token',
         status: 'active',
         level: 'secondary',
-        nature: 'token',
+        type: 'token',
         principal: 8,
         referenceIndex: 2,
         numberOfTokenUnits: 4,
@@ -613,14 +613,14 @@ export const createFirstIterationsTestCases: Array<{
         dueDate: new Date('2020-06-30T23:59:59.999Z'),
         status: 'active',
         level: 'primary',
-        nature: 'main',
+        type: 'principal',
         activeDate: today()
       },
       {
         priority: 'token',
         status: 'active',
         level: 'secondary',
-        nature: 'token',
+        type: 'token',
         principal: 10,
         referenceIndex: 2,
         numberOfTokenUnits: 5,
@@ -647,14 +647,14 @@ export const createFirstIterationsTestCases: Array<{
         dueDate: new Date('2020-06-19T23:59:59.999Z'),
         status: 'active',
         level: 'primary',
-        nature: 'main',
+        type: 'principal',
         activeDate: today()
       },
       {
         priority: 'token',
         status: 'active',
         level: 'secondary',
-        nature: 'token',
+        type: 'token',
         principal: 12,
         referenceIndex: 2,
         numberOfTokenUnits: 6,
@@ -682,7 +682,7 @@ export const createFirstIterationsTestCases: Array<{
         dueDate: new Date('2020-09-01'),
         status: 'active',
         level: 'primary',
-        nature: 'main',
+        type: 'principal',
 
         activeDate: today()
       },
@@ -690,7 +690,7 @@ export const createFirstIterationsTestCases: Array<{
         priority: 'token',
         status: 'active',
         level: 'secondary',
-        nature: 'token',
+        type: 'token',
         principal: 8,
         referenceIndex: 4,
         numberOfTokenUnits: 2,
@@ -715,7 +715,7 @@ export const createFirstIterationsTestCases: Array<{
         priority: 'firm',
         status: 'pending',
         level: 'primary',
-        nature: 'main'
+        type: 'principal'
       }
     ]
   },
@@ -736,13 +736,13 @@ export const createFirstIterationsTestCases: Array<{
         priority: 'superflex',
         status: 'pending',
         level: 'primary',
-        nature: 'main'
+        type: 'principal'
       },
       {
         priority: 'token',
         status: 'active',
         level: 'secondary',
-        nature: 'token',
+        type: 'token',
         principal: 30,
         referenceIndex: 5,
         numberOfTokenUnits: 6,
@@ -764,7 +764,7 @@ export const createFirstIterationsTestCases: Array<{
         numberOfTokenUnits: 7,
         status: 'active',
         level: 'primary',
-        nature: 'token',
+        type: 'token',
         activeDate: today()
       }
     ]
@@ -781,7 +781,7 @@ export const createFirstIterationsTestCases: Array<{
       interestRate: 0.05,
       interestPriority: 'flex',
       interestStart: 'confirmation',
-      interestPeriod: 'sameAsMain'
+      interestPeriod: 'sameAsPrincipal'
     },
     principal: 40,
     referenceIndex: 4,
@@ -794,14 +794,14 @@ export const createFirstIterationsTestCases: Array<{
         dueDate: new Date('2020-09-01'),
         status: 'active',
         level: 'primary',
-        nature: 'main',
+        type: 'principal',
         activeDate: today()
       },
       {
         priority: 'token',
         status: 'active',
         level: 'secondary',
-        nature: 'token',
+        type: 'token',
         principal: 8,
         referenceIndex: 4,
         numberOfTokenUnits: 2,
@@ -811,11 +811,11 @@ export const createFirstIterationsTestCases: Array<{
         principal: 40,
         interestRate: 0.05,
         priority: 'flex',
-        startDate: new Date('2020-06-05'),
+        interestStartDate: new Date('2020-06-05'),
         dueDate: new Date('2020-09-01'),
         status: 'active',
         level: 'secondary',
-        nature: 'interest',
+        type: 'interest',
         activeDate: today()
       }
     ]

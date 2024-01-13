@@ -3,7 +3,7 @@ import type { Entity } from '.'
 
 export type CommitmentLevel = 'primary' | 'secondary'
 
-export type CommitmentNature = 'main' | 'interest' | 'token' | 'distribution'
+export type CommitmentType = 'principal' | 'interest' | 'token' | 'distribution'
 
 export type CommitmentStatus =
   | 'pending' // (!due date || !principal)
@@ -20,23 +20,23 @@ export interface Commitment extends Entity {
   payorId?: string // TODO: check avec Frend
   payeeId?: string // payorId et payeeId sont obtenus via la tranche, donc pas besoin de les mettre ici
   trancheId?: string
+  priority: Priority
   level: CommitmentLevel
-  nature: CommitmentNature
+  type: CommitmentType
   status: CommitmentStatus
-  principal?: number
-  priority?: Priority
+  principal?: number // different calculation for each type & level. May not be know at order confirmation, but should be know at latest at order delivery
   dueDate?: Date
   createDate?: Date
   activeDate?: Date // date when princial and due date are both set
   resolveDate?: Date // resolution date when it was processed
-  previousIterationId?: string
-  nextIterationId?: string
-  //TODO: ask Fred how I can manipulate calculated fields ...???
-  dueAmount?: number // different calculation for each nature
-  outstandingAmount?: number // different calculation for each nature
+  previousIterationId?: string // not applicable for first Iteration
+  nextIterationId?: string // added during a resolution if there is a residue, and a new iteration is created
+  //TODO: how can I manipulate calculated fields ...???
+  outstandingAmount?: number // different calculation for each type & level, not applicable for distributions
+  dueAmount?: number // for buybacks: due = oustanding * requested %, for monthly: due = outstanding
   payableAmount?: number // assigned during the resolution process
+  residueAmount?: number // dueAmount - payableAmount
   paidAmount?: number // sum of amount paid for a related all lettering
-  residueAmount?: number // dueAmount - payableAmount1
 }
 
 export interface Equity extends Commitment {
@@ -57,8 +57,8 @@ export interface Token extends Equity {
 
 export interface Interest extends Commitment {
   interestRate: number
-  startDate?: Date
-  //TODO: ask Fred how I can manipulate calculated fields ...???
+  interestStartDate?: Date
+  //TODO: how can I manipulate calculated fields ...???
   newInterest?: number // interest rate applied from startDate to dueDate
   carriedInterest?: number // residue of interest from previous iteration
   interestAmount?: number // carried interest + new interest

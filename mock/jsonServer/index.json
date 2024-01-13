@@ -444,9 +444,7 @@
       "orderId": "commercialOrder",
       "portion": 0.5,
       "paymentTerms": {
-        "main": {
-          "priority": "preferred"
-        }
+        "priority": "preferred"
       }
     },
     {
@@ -455,26 +453,20 @@
       "orderId": "commercialOrder",
       "portion": 0.3,
       "paymentTerms": {
-        "main": {
-          "priority": "flex"
-        }
+        "priority": "flex"
       }
     },
     {
       "id": "commercialOrderCredit30interestData",
-      "name": "20% credit 5%",
+      "name": "30% credit 5%",
       "orderId": "commercialOrder",
       "portion": 0.2,
       "paymentTerms": {
-        "main": {
-          "priority": "credit"
-        },
-        "interest": {
-          "interestRate": 0.05,
-          "interestPriority": "credit",
-          "interestStart": "deferral",
-          "interestPeriod": "sameAsMain"
-        }
+        "priority": "credit",
+        "interestRate": 0.05,
+        "interestPriority": "credit",
+        "interestStart": "deferral",
+        "interestPeriod": "sameAsPrincipal"
       }
     },
     {
@@ -483,9 +475,7 @@
       "portion": 1.5,
       "name": "150% upfront price",
       "paymentTerms": {
-        "main": {
-          "priority": "firm"
-        }
+        "priority": "firm"
       }
     },
     {
@@ -494,10 +484,8 @@
       "orderId": "orderWithRebate",
       "portion": -0.5,
       "paymentTerms": {
-        "main": {
-          "priority": "flex",
-          "period": "year"
-        }
+        "priority": "flex",
+        "period": "year"
       }
     },
     {
@@ -506,9 +494,7 @@
       "orderId": "orderWithNoItems",
       "portion": 1,
       "paymentTerms": {
-        "main": {
-          "priority": "firm"
-        }
+        "priority": "firm"
       }
     },
     {
@@ -517,9 +503,7 @@
       "orderId": "fundingOrder",
       "portion": 1,
       "paymentTerms": {
-        "main": {
-          "priority": "firm"
-        }
+        "priority": "firm"
       }
     },
     {
@@ -528,9 +512,7 @@
       "orderId": "fundingOrder",
       "portion": -1,
       "paymentTerms": {
-        "main": {
-          "priority": "credit"
-        }
+        "priority": "credit"
       }
     },
     {
@@ -539,9 +521,7 @@
       "orderId": "donationOrder",
       "portion": 1,
       "paymentTerms": {
-        "main": {
-          "priority": "firm"
-        }
+        "priority": "firm"
       }
     }
   ],

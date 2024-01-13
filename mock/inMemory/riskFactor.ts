@@ -1,48 +1,48 @@
-import type { MainPaymentTerms, PaymentTerms, Priority } from 'entities/paymentTerms'
+import type { PrincipalPaymentTerms, PaymentTerms, Priority } from 'entities/paymentTerms'
 
 export const delayRiskFactorTestCases: Array<{
   summary: string
-  mainPaymentTerms: Partial<MainPaymentTerms>
+  principalPaymentTerms: Partial<PrincipalPaymentTerms>
   expected: number | null
 }> = [
   {
     summary: 'No period = null',
-    mainPaymentTerms: {},
+    principalPaymentTerms: {},
     expected: 0.5512
   },
   {
     summary: '1 year',
-    mainPaymentTerms: { period: 'year' },
+    principalPaymentTerms: { period: 'year' },
     expected: 0.6872
   },
   {
     summary: '1 month none',
-    mainPaymentTerms: { period: 'month', adjustment: 'none' },
+    principalPaymentTerms: { period: 'month', adjustment: 'none' },
     expected: 0.5379
   },
   {
     summary: '180 days',
-    mainPaymentTerms: { period: 'day', offset: 180 },
+    principalPaymentTerms: { period: 'day', offset: 180 },
     expected: 0.6172
   },
   {
     summary: '10 years',
-    mainPaymentTerms: { period: 'year', offset: 10 },
+    principalPaymentTerms: { period: 'year', offset: 10 },
     expected: 0.8231
   },
   {
     summary: 'same day',
-    mainPaymentTerms: { period: 'day', offset: 0 },
+    principalPaymentTerms: { period: 'day', offset: 0 },
     expected: 0.5013
   },
   {
     summary: '7 days before',
-    mainPaymentTerms: { period: 'day', offset: -7 },
+    principalPaymentTerms: { period: 'day', offset: -7 },
     expected: 0.5
   },
   {
     summary: '100 years',
-    mainPaymentTerms: { period: 'year', offset: 100 },
+    principalPaymentTerms: { period: 'year', offset: 100 },
     expected: 0.9859
   }
 ]
@@ -53,57 +53,57 @@ export const relativePriorityRiskFactorTestCases: Array<{
   expected: number | null
 }> = [
   {
-    summary: 'Main flex / Interest sameAsMain -> 1',
+    summary: 'Principal flex / Interest sameAsPrincipal -> 1',
     paymentTerms: {
       priority: 'flex',
       interestRate: 0.05,
-      interestPriority: 'sameAsMain',
+      interestPriority: 'sameAsPrincipal',
       interestStart: 'deferral',
-      interestPeriod: 'sameAsMain'
+      interestPeriod: 'sameAsPrincipal'
     },
     expected: 1
   },
   {
-    summary: 'Main flex / Interest Credit -> 1',
+    summary: 'Principal flex / Interest Credit -> 1',
     paymentTerms: {
       priority: 'flex',
       interestRate: 0.05,
       interestPriority: 'firm',
       interestStart: 'deferral',
-      interestPeriod: 'sameAsMain'
+      interestPeriod: 'sameAsPrincipal'
     },
     expected: 0.5
   },
   {
-    summary: 'Main superflex / Interest flex -> +1 = 95%',
+    summary: 'Principal superflex / Interest flex -> +1 = 95%',
     paymentTerms: {
       priority: 'superflex',
       interestRate: 0.05,
       interestPriority: 'flex',
       interestStart: 'deferral',
-      interestPeriod: 'sameAsMain'
+      interestPeriod: 'sameAsPrincipal'
     },
     expected: 0.95
   },
   {
-    summary: 'Main preferred / Interest credit -> -3 = 115%',
+    summary: 'Principal preferred / Interest credit -> -3 = 115%',
     paymentTerms: {
       priority: 'preferred',
       interestRate: 0.05,
       interestPriority: 'credit',
       interestStart: 'deferral',
-      interestPeriod: 'sameAsMain'
+      interestPeriod: 'sameAsPrincipal'
     },
     expected: 1.15
   },
   {
-    summary: 'Main credit / Interest preferred  -> +3 = 85%',
+    summary: 'Principal credit / Interest preferred  -> +3 = 85%',
     paymentTerms: {
       priority: 'credit',
       interestRate: 0.05,
       interestPriority: 'preferred',
       interestStart: 'deferral',
-      interestPeriod: 'sameAsMain'
+      interestPeriod: 'sameAsPrincipal'
     },
     expected: 0.85
   }
@@ -154,7 +154,7 @@ export const basicRiskFactorTestCases: Array<{
       offset: 1,
       adjustment: 'BOP',
       interestRate: 0.05,
-      interestPriority: 'sameAsMain',
+      interestPriority: 'sameAsPrincipal',
       interestStart: 'deliveryFinish',
       interestPeriod: 'quarter',
       residuePriority: 'flex',
@@ -206,31 +206,31 @@ export const recencyWeightedAverageTestCases: Array<{
 
 export const adjustedRiskFactorTestCases: Array<{
   summary: string
-  mainPriority: Priority
+  principalPriority: Priority
   payableRatios: number[]
   expected: number
 }> = [
   {
     summary: 'flex * 100% -> 40%',
-    mainPriority: 'flex',
+    principalPriority: 'flex',
     payableRatios: [1, 1, 1, 1],
     expected: 0.4
   },
   {
     summary: 'flex * 78% -> 48%',
-    mainPriority: 'flex',
+    principalPriority: 'flex',
     payableRatios: [0.8, 0.6, 0.9, 1.0],
     expected: 0.488
   },
   {
     summary: 'preferred * 40%, 30% ... -> 67%',
-    mainPriority: 'preferred',
+    principalPriority: 'preferred',
     payableRatios: [0.4, 0.3, 0.2, 0.1, 0, 0, 0],
     expected: 0.6714
   },
   {
     summary: 'preferred * 0% -> 80% (like credit)',
-    mainPriority: 'preferred',
+    principalPriority: 'preferred',
     payableRatios: [0, 0, 0, 0, 0, 0, 0],
     expected: 0.8
   }

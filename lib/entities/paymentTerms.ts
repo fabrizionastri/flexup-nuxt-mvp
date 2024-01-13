@@ -6,7 +6,7 @@ export const monthlyPriorities = ['firm', 'preferred', 'flex', 'superflex']
 
 export const annualPriorities = ['credit', 'token']
 
-export const mainPriorityRiskFactors = {
+export const principalPriorityRiskFactors = {
   firm: 0,
   preferred: 0.2,
   flex: 0.4,
@@ -23,7 +23,7 @@ export const mainStartRiskFactors = {
   confirmation: 0.7
 } as const
 
-export type MainStart = keyof typeof mainStartRiskFactors
+export type PrincipalStart = keyof typeof mainStartRiskFactors
 
 export const residuePriorityRiskFactors = {
   credit: 1,
@@ -69,10 +69,10 @@ export type Adjustment = keyof typeof adjustmentLengths
 
 export interface PrincipalPaymentTerms {
   priority: Priority
-  start?: MainStart | undefined
-  adjustment?: Adjustment | undefined
-  period?: Period | undefined
-  offset?: number | undefined
+  start?: PrincipalStart
+  adjustment?: Adjustment
+  period?: Period
+  offset?: number
 }
 
 export interface ResiduePaymentTerms {
@@ -80,12 +80,12 @@ export interface ResiduePaymentTerms {
   residuePeriod?: ResiduePeriod
 }
 
-export type relativePriority = Priority | 'sameAsMain' | undefined
+export type InterestPriority = Priority | 'sameAsPrincipal' | undefined // TO CHECK : should we keep undefined ?
 
 export type InterestStart = keyof typeof interestStartRiskFactors
 
 export const interestPeriodRiskFactors = {
-  sameAsMain: 1,
+  sameAsPrincipal: 1,
   ...residuePeriodRiskFactors
 } as const
 
@@ -93,7 +93,7 @@ export type InterestPeriod = keyof typeof interestPeriodRiskFactors
 
 export interface InterestPaymentTerms {
   interestRate: number
-  interestPriority: relativePriority
+  interestPriority: InterestPriority
   interestStart: InterestStart
   interestPeriod?: InterestPeriod
 }

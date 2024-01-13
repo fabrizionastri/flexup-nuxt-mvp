@@ -18,8 +18,8 @@ import {
 
 describe('Risk Factor', () => {
   describe('delayRiskFactor', () => {
-    it.each(delayRiskFactorTestCases)('$summary', ({ mainPaymentTerms, expected }) => {
-      const { adjustment, period, offset } = mainPaymentTerms
+    it.each(delayRiskFactorTestCases)('$summary', ({ principalPaymentTerms, expected }) => {
+      const { adjustment, period, offset } = principalPaymentTerms
       expect(delayRiskFactor(adjustment, period, offset)).toEqual(expected)
     })
   })
@@ -39,8 +39,8 @@ describe('Risk Factor', () => {
   describe('adjustedRiskFactor', () => {
     it.each(adjustedRiskFactorTestCases)(
       '$summary',
-      ({ mainPriority, payableRatios, expected }) => {
-        expect(adjustedRiskFactor(mainPriority, payableRatios)).toEqual(expected)
+      ({ principalPriority, payableRatios, expected }) => {
+        expect(adjustedRiskFactor(principalPriority, payableRatios)).toEqual(expected)
       }
     )
   })

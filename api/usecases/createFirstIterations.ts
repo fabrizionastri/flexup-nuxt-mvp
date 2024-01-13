@@ -1,10 +1,4 @@
-import type {
-  Period,
-  PaymentTerms,
-  MainPaymentTerms,
-  InterestPaymentTerms,
-  Priority
-} from 'entities/paymentTerms'
+import type { Period, PaymentTerms, Priority } from 'entities/paymentTerms'
 import type { Commitment, Token, Interest, CommitmentLevel } from 'entities/commitment'
 import { calculateDuration, getDateForKey, isValidDate, today } from 'lib/utils'
 
@@ -66,30 +60,30 @@ export const calculateDueDate = (
   return dueDate
 }
 
-export const firstMainDueDate = (
+export const firstPrincipalDueDate = (
   confirmationDate: Date | undefined = undefined,
-  mainPaymentTerms: MainPaymentTerms
+  paymentTerms: PaymentTerms
 ): Date | undefined => {
   if (!confirmationDate) return undefined
-  const { adjustment, period, offset } = mainPaymentTerms
+  const { adjustment, period, offset } = paymentTerms
   return calculateDueDate(confirmationDate, adjustment, period, offset)
 }
 
-export const createFirstMainIteration = (
-  mainPaymentTerms: MainPaymentTerms,
+export const createFirstPrincipalIteration = (
+  paymentTerms: PaymentTerms,
   principal = 0,
   orderDates: { [key: string]: Date | string | undefined } = {}
 ): Partial<Commitment> => {
-  const priority = mainPaymentTerms.priority
+  const priority = paymentTerms.priority
   const commitment: Partial<Commitment> = {
     priority,
-    nature: 'main',
+    type: 'principal',
     status: 'pending',
     level: 'primary'
   }
 
-  const startDate = getDateForKey(orderDates, mainPaymentTerms.start)
-  if (startDate) commitment.dueDate = firstMainDueDate(startDate, mainPaymentTerms)
+  const startDate = getDateForKey(orderDates, paymentTerms.start)
+  if (startDate) commitment.dueDate = firstPrincipalDueDate(startDate, paymentTerms)
 
   if (principal !== 0) {
     commitment.principal = principal
@@ -102,18 +96,20 @@ export const createFirstMainIteration = (
 }
 
 export const createFirstInterestIteration = (
-  interestPaymentTerms: InterestPaymentTerms,
+  paymentTerms: PaymentTerms,
   principal = 0,
   orderDates: { [key: string]: Date | string | undefined } = {},
-  mainPriority?: Priority, // ici volontairement je ne vérifie pas si cet argument est valide, car il est censé être fourni par la fonction appelante
+  principalPriority?: Priority, // ici volontairement je ne vérifie pas si cet argument est valide, car il est censé être fourni par la fonction appelante
   principalDueDate?: Date | undefined
 ): Partial<Interest> => {
-  const { interestRate, interestPriority, interestStart, interestPeriod } = interestPaymentTerms
+  const { interestRate, interestPriority, interestStart, interestPeriod } = paymentTerms
+  if (!interestRate)
+    throw new Error('Cannot create a first interest iteration without an interest rate')
 
   const interest: Partial<Interest> = {
-    priority: 'sameAsMain' === interestPriority ? mainPriority : interestPriority,
+    priority: 'sameAsPrincipal' === interestPriority ? principalPriority : interestPriority,
     interestRate,
-    nature: 'interest',
+    type: 'interest',
     status: 'pending',
     level: 'secondary'
   }
@@ -121,8 +117,8 @@ export const createFirstInterestIteration = (
   const startDate = getDateForKey(orderDates, interestStart)
 
   if (startDate) {
-    interest.startDate = startDate
-    if ('sameAsMain' === interestPeriod) {
+    interest.interestStartDate = startDate
+    if ('sameAsPrincipal' === interestPeriod) {
       if (isValidDate(principalDueDate)) interest.dueDate = principalDueDate
       // if principal Due Date is not valid, we will assign the Interest due date later
     } else {
@@ -135,7 +131,7 @@ export const createFirstInterestIteration = (
 
   if (principal !== 0) {
     interest.principal = principal
-    if (interest.startDate && (interestPriority === 'credit' || interest.dueDate)) {
+    if (interest.interestStartDate && (interestPriority === 'credit' || interest.dueDate)) {
       interest.status = 'active'
       interest.activeDate = today()
     }
@@ -154,7 +150,7 @@ export const createFirstTokenIteration = (
 
   const token: Partial<Token> = {
     priority: 'token',
-    nature: 'token',
+    type: 'token',
     status: 'pending',
     level,
     referenceIndex: referenceIndex
@@ -181,7 +177,7 @@ export const createFirstIterations = (
   riskFactor = 0
 ): Partial<Commitment>[] => {
   const commitments: Partial<Commitment>[] = []
-  const priority = paymentTerms?.main?.priority
+  const priority = paymentTerms?.priority
 
   // if (!priority || !Priorities.includes(priority))
   //   throw new Error("Cannot create a primary commitment without a valid principal priority")
@@ -199,8 +195,8 @@ export const createFirstIterations = (
     )
     commitments.push(primaryToken)
   } else {
-    const main = createFirstMainIteration(paymentTerms.main, principal, orderDates)
-    commitments.push(main)
+    const priority = createFirstPrincipalIteration(paymentTerms, principal, orderDates)
+    commitments.push(priority)
 
     if (riskFactor < 1 && riskFactor > 0) {
       const secondaryToken = createFirstTokenIteration(
@@ -212,13 +208,13 @@ export const createFirstIterations = (
       commitments.push(secondaryToken)
     }
 
-    if (paymentTerms?.interest) {
+    if (paymentTerms?.interestRate) {
       const interest = createFirstInterestIteration(
-        paymentTerms.interest,
+        paymentTerms,
         principal,
         orderDates,
-        main.priority,
-        main.dueDate
+        priority.priority,
+        priority.dueDate
       )
       commitments.push(interest)
     }

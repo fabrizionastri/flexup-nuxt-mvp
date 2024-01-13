@@ -3,7 +3,7 @@ import type { InterestPaymentTerms, ResiduePaymentTerms } from 'entities/payment
 import { offsetDate } from 'usecases/createFirstIterations'
 
 // TODO : refactorer ces 3 fonctions en une seule
-export const createNextMainIteration = (
+export const createNextPrincipalIteration = (
   previousIteration: Partial<Commitment>,
   residuePaymentTerms: ResiduePaymentTerms
 ): Partial<Commitment> => {
@@ -18,7 +18,7 @@ export const createNextMainIteration = (
 
   const nextIteration: Partial<Commitment> = {
     priority: newPriority,
-    nature: 'main',
+    type: 'principal',
     level: 'primary',
     status: 'active',
     principal: residueAmount,
@@ -41,7 +41,7 @@ export const createNextTokenIteration = (previousIteration: Partial<Token>): Par
     trancheId: trancheId,
     previousIterationId: id,
     priority: 'token',
-    nature: 'token',
+    type: 'token',
     level,
     numberOfTokenUnits: residueNumberOfTokenUnits,
     referenceIndex,
@@ -57,12 +57,12 @@ export const createNextTokenIteration = (previousIteration: Partial<Token>): Par
 
 export const createNextInterestIteration = (
   paymentTermsInterest: Partial<InterestPaymentTerms>,
-  previousMainIteration: Partial<Commitment>,
+  previousPrincipalIteration: Partial<Commitment>,
   previousInterestIteration: Partial<Interest>
 ): Partial<Interest> => {
   const { interestPeriod: period } = paymentTermsInterest
 
-  const { dueDate: mainDueDate, principal } = previousMainIteration
+  const { dueDate: principalDueDate, principal } = previousPrincipalIteration
 
   const {
     trancheId,
@@ -79,18 +79,18 @@ export const createNextInterestIteration = (
     trancheId: trancheId,
     previousIterationId: id,
     priority,
-    nature: 'interest',
+    type: 'interest',
     level: 'secondary',
     carriedInterest: (newInterest ?? 0) + (carriedInterest ?? 0),
     principal,
     interestRate,
     status: 'active',
     activeDate: resolveDate,
-    startDate: previousDueDate
+    interestStartDate: previousDueDate
   }
 
   if (period && previousDueDate && priority != 'credit') {
-    if (period === 'sameAsMain') nextIteration.dueDate = mainDueDate
+    if (period === 'sameAsPrincipal') nextIteration.dueDate = principalDueDate
     else {
       const newDueDate = offsetDate(previousDueDate, period, 1)
       if (newDueDate) nextIteration.dueDate = newDueDate
@@ -101,12 +101,12 @@ export const createNextInterestIteration = (
     previousIterationId: 'commitment2',
     trancheId: 'tranche1',
     priority: 'flex',
-    nature: 'interest',
+    type: 'interest',
     level: 'secondary',
     carriedInterest: 5,
     principal: 100,
     interestRate: 0.05,
-    startDate: new Date('2020-05-05'),
+    interestStartDate: new Date('2020-05-05'),
     dueDate: new Date('2021-05-05')
   }
 }

@@ -3,7 +3,7 @@ import {
   interestPeriodRiskFactors,
   interestRateRiskHurdle,
   interestStartRiskFactors,
-  mainPriorityRiskFactors,
+  principalPriorityRiskFactors,
   mainStartRiskFactors,
   noProjectRequestBuybackRiskFactor,
   periodLengths,
@@ -30,50 +30,50 @@ export const delayRiskFactor = (
 }
 
 export const relativePriorityRiskFactor = (paymentTerms: PaymentTerms): number | null => {
-  const interestPriority = paymentTerms.interest?.interestPriority || null
-  const interestRate = paymentTerms.interest?.interestRate || null
+  const interestPriority = paymentTerms.interestPriority || null
+  const interestRate = paymentTerms.interestRate || null
   if (!interestPriority || !interestRate) return null
   if (interestPriority === 'firm') return 0.5
-  if (interestPriority === 'sameAsMain') return 1
+  if (interestPriority === 'sameAsPrincipal') return 1
 
   // find the index of interestPriority in Priorities
   const interestPriorityLevel = priorities.indexOf(interestPriority)
-  const mainPriorityLevel = priorities.indexOf(paymentTerms.main.priority)
-  const delta = mainPriorityLevel - interestPriorityLevel
+  const principalPriorityLevel = priorities.indexOf(paymentTerms.priority)
+  const delta = principalPriorityLevel - interestPriorityLevel
   return 1 - delta * interestRate
 }
 
 export const basicRiskFactor = (paymentTerms: PaymentTerms): number => {
   let riskFactor = 1
 
-  // Main
-  if (!paymentTerms.main.priority) return 0
-  riskFactor *= mainPriorityRiskFactors[paymentTerms.main.priority]
+  // Principal
+  if (!paymentTerms.priority) return 0
+  riskFactor *= principalPriorityRiskFactors[paymentTerms.priority]
 
-  riskFactor *= mainStartRiskFactors[paymentTerms.main.start || 'notApplicable']
-  if (paymentTerms.main.period) {
+  riskFactor *= mainStartRiskFactors[paymentTerms.start || 'notApplicable']
+  if (paymentTerms.period) {
     const delayRF = delayRiskFactor(
-      paymentTerms.main.adjustment,
-      paymentTerms.main.period,
-      paymentTerms.main.offset
+      paymentTerms.adjustment,
+      paymentTerms.period,
+      paymentTerms.offset
     )
     if (delayRF) riskFactor *= delayRF
   }
 
   // Interest
-  if (paymentTerms.interest) {
-    riskFactor *= 1 - paymentTerms.interest.interestRate / interestRateRiskHurdle
-    riskFactor *= interestPeriodRiskFactors[paymentTerms.interest.interestPeriod || 'sameAsMain']
-    riskFactor *= interestStartRiskFactors[paymentTerms.interest.interestStart || 'deferral']
+  if (paymentTerms.interestRate) {
+    riskFactor *= 1 - paymentTerms.interestRate / interestRateRiskHurdle
+    riskFactor *= interestPeriodRiskFactors[paymentTerms.interestPeriod || 'sameAsPrincipal']
+    riskFactor *= interestStartRiskFactors[paymentTerms.interestStart || 'deferral']
     const relativePriorityRF = relativePriorityRiskFactor(paymentTerms) // Si on a un null, il faudrait sans doute le gérer
     if (relativePriorityRF) riskFactor *= relativePriorityRF
   }
 
   // Residue
-  if (paymentTerms.residue) {
-    riskFactor *= residuePriorityRiskFactors[paymentTerms.residue.residuePriority]
-    if (paymentTerms.residue.residuePeriod)
-      riskFactor *= residuePeriodRiskFactors[paymentTerms.residue.residuePeriod]
+  if (paymentTerms.residuePriority) {
+    riskFactor *= residuePriorityRiskFactors[paymentTerms.residuePriority]
+    if (paymentTerms.residuePeriod)
+      riskFactor *= residuePeriodRiskFactors[paymentTerms.residuePeriod]
   }
 
   // Token buyback
@@ -94,22 +94,29 @@ export const recencyWeightedAverage = (payableRatios: number[]): number => {
   return Math.round(p * 10000) / 10000
 }
 
-export const adjustedRiskFactor = (mainPriority: Priority, payableRatios: number[]): number => {
-  const c = mainPriorityRiskFactors['credit']
+export const adjustedRiskFactor = (
+  principalPriority: Priority,
+  payableRatios: number[]
+): number => {
+  const c = principalPriorityRiskFactors['credit']
   const p = recencyWeightedAverage(payableRatios)
-  const r = mainPriorityRiskFactors[mainPriority]
+  const r = principalPriorityRiskFactors[principalPriority]
   const a = r + (c - r) * (1 - p)
   return Math.round(a * 10000) / 10000
 }
 
 export const riskFactor = (paymentTerms: PaymentTerms, payableRatios: number[]): number => {
-  const mainPriority = paymentTerms.main.priority
-  const residuePriority = paymentTerms.residue?.residuePriority ?? 'credit'
-  const interestRate = paymentTerms.interest?.interestRate ?? 0
+  const principalPriority = paymentTerms.priority
+  const residuePriority = paymentTerms?.residuePriority ?? 'credit'
+  const interestRate = paymentTerms?.interestRate ?? 0
 
   // Check if the payment terms meet the criteria for risk factor adjustment
-  if (monthlyPriorities.includes(mainPriority) && residuePriority === 'credit' && !interestRate)
-    return adjustedRiskFactor(mainPriority, payableRatios)
+  if (
+    monthlyPriorities.includes(principalPriority) &&
+    residuePriority === 'credit' &&
+    !interestRate
+  )
+    return adjustedRiskFactor(principalPriority, payableRatios)
 
   // If the criteria are not met, return the basic risk factor
   return basicRiskFactor(paymentTerms)
