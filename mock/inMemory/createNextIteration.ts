@@ -1,11 +1,11 @@
 import type { Commitment, Interest, Token } from 'entities/commitment'
 
-import type { ResiduePaymentTerms, InterestPaymentTerms } from 'entities/paymentTerms'
+import type { PaymentTerms } from 'entities/paymentTerms'
 
 export const createNextPrincipalIterationTestCases: Array<{
   summary: string
   previousIteration: Partial<Commitment>
-  residuePaymentTerms: ResiduePaymentTerms
+  paymentTerms: Partial<PaymentTerms>
   expected: Partial<Commitment>
 }> = [
   {
@@ -20,7 +20,8 @@ export const createNextPrincipalIterationTestCases: Array<{
       resolveDate: new Date('2020-05-05'),
       dueDate: new Date('2020-05-25')
     },
-    residuePaymentTerms: {
+    paymentTerms: {
+      priority: 'flex',
       residuePriority: 'flex',
       residuePeriod: 'month'
     },
@@ -48,7 +49,7 @@ export const createNextPrincipalIterationTestCases: Array<{
       resolveDate: new Date('2020-05-05'),
       dueDate: new Date('2020-05-25')
     },
-    residuePaymentTerms: {
+    paymentTerms: {
       residuePriority: 'credit'
     },
     expected: {
@@ -66,14 +67,14 @@ export const createNextPrincipalIterationTestCases: Array<{
 
 export const createNextInterestIterationTestCases: Array<{
   summary: string
-  paymentTermsInterest: Partial<InterestPaymentTerms>
+  paymentTerms: Partial<PaymentTerms>
   previousPrincipalIteration: Partial<Commitment>
   previousInterestIteration: Partial<Interest>
   expected: Partial<Interest>
 }> = [
   {
     summary: '5% flex interest on credit main at interest resolution',
-    paymentTermsInterest: {
+    paymentTerms: {
       interestPeriod: 'year'
     },
     previousPrincipalIteration: {
@@ -111,7 +112,7 @@ export const createNextInterestIterationTestCases: Array<{
   },
   {
     summary: '6% flex interest on base flex, at jointcyc',
-    paymentTermsInterest: {
+    paymentTerms: {
       interestPeriod: 'year'
     },
     previousPrincipalIteration: {

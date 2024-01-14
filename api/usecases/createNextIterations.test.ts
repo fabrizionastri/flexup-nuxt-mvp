@@ -13,10 +13,8 @@ describe('Create Next Iterations', () => {
   describe('createNextPrincipalIteration', () => {
     it.each(createNextPrincipalIterationTestCases)(
       '$summary',
-      ({ previousIteration, residuePaymentTerms, expected }) => {
-        expect(createNextPrincipalIteration(previousIteration, residuePaymentTerms)).toEqual(
-          expected
-        )
+      ({ previousIteration, paymentTerms, expected }) => {
+        expect(createNextPrincipalIteration(previousIteration, paymentTerms)).toEqual(expected)
       }
     )
   })
@@ -31,7 +29,7 @@ describe('Create Next Iterations', () => {
     it.each(createNextInterestIterationTestCases)(
       '$summary',
       ({
-        paymentTermsInterest,
+        paymentTerms: paymentTermsInterest,
         previousPrincipalIteration,
         previousInterestIteration,
         expected

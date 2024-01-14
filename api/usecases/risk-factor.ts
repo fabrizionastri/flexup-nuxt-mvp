@@ -4,7 +4,7 @@ import {
   interestRateRiskHurdle,
   interestStartRiskFactors,
   principalPriorityRiskFactors,
-  mainStartRiskFactors,
+  principalStartRiskFactors,
   noProjectRequestBuybackRiskFactor,
   periodLengths,
   priorities,
@@ -50,7 +50,7 @@ export const basicRiskFactor = (paymentTerms: PaymentTerms): number => {
   if (!paymentTerms.priority) return 0
   riskFactor *= principalPriorityRiskFactors[paymentTerms.priority]
 
-  riskFactor *= mainStartRiskFactors[paymentTerms.start || 'notApplicable']
+  riskFactor *= principalStartRiskFactors[paymentTerms.start || 'notApplicable']
   if (paymentTerms.period) {
     const delayRF = delayRiskFactor(
       paymentTerms.adjustment,

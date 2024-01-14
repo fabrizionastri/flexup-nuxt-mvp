@@ -15,7 +15,7 @@ export const principalPriorityRiskFactors = {
   token: 1
 } as const
 
-export const mainStartRiskFactors = {
+export const principalStartRiskFactors = {
   notApplicable: 1,
   deliveryFinish: 1,
   deliveryMiddle: 0.9,
@@ -23,7 +23,7 @@ export const mainStartRiskFactors = {
   confirmation: 0.7
 } as const
 
-export type PrincipalStart = keyof typeof mainStartRiskFactors
+export type PrincipalStart = keyof typeof principalStartRiskFactors
 
 export const residuePriorityRiskFactors = {
   credit: 1,
