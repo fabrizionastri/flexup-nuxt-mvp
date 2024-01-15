@@ -132,7 +132,7 @@ The selection is made in the `.env`: `STORAGE_TYPE=inMemory` or `STORAGE_TYPE=js
 
 Follow the steps below to launch the app:
 
-1. `pnpm generate`: reset the index files, some type literal definitions and to update the jsonServer to match the data in the inMemory test data
+1. `pnpm gen`: reset the index files, some type literal definitions and to update the jsonServer to match the data in the inMemory test data
 2. `pnpm jsonServer`: launche the jsonServer (only required for the `jsonServer` mock database implementation and for testing)
 3. `pnpm hono` : launches the Hono API server
 4. `pnpm test` : launches the tests in Vitest

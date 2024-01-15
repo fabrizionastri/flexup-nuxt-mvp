@@ -1,12 +1,12 @@
-import type { Commitment, Interest, Token } from 'entities/commitment'
+import type { CommitmentData, Interest, TokenData } from 'entities/commitment'
 
 import type { PaymentTerms } from 'entities/paymentTerms'
 
 export const createNextPrincipalIterationTestCases: Array<{
   summary: string
-  previousIteration: Partial<Commitment>
+  previousIteration: Partial<CommitmentData>
   paymentTerms: Partial<PaymentTerms>
-  expected: Partial<Commitment>
+  expected: Partial<CommitmentData>
 }> = [
   {
     summary: 'residue 20 flex next month',
@@ -68,7 +68,7 @@ export const createNextPrincipalIterationTestCases: Array<{
 export const createNextInterestIterationTestCases: Array<{
   summary: string
   paymentTerms: Partial<PaymentTerms>
-  previousPrincipalIteration: Partial<Commitment>
+  previousPrincipalIteration: Partial<CommitmentData>
   previousInterestIteration: Partial<Interest>
   expected: Partial<Interest>
 }> = [
@@ -152,8 +152,8 @@ export const createNextInterestIterationTestCases: Array<{
 
 export const createNextTokenIterationTestCases: Array<{
   summary: string
-  previousIteration: Partial<Token>
-  expected: Partial<Token>
+  previousIteration: Partial<TokenData>
+  expected: Partial<TokenData>
 }> = [
   {
     summary: 'residue 20 token units',
@@ -184,6 +184,6 @@ export const createNextTokenIterationTestCases: Array<{
 
 export const createNextIterationsTestCases: Array<{
   summary: string
-  previousIteration?: Partial<Commitment>
-  expected: Array<Partial<Commitment> | Partial<Token> | Partial<Interest>>
+  previousIteration?: Partial<CommitmentData>
+  expected: Array<Partial<CommitmentData> | Partial<TokenData> | Partial<Interest>>
 }> = []

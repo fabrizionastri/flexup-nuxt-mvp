@@ -1,12 +1,12 @@
-import type { Commitment, Interest, Token } from 'entities/commitment'
+import type { CommitmentData, Interest, TokenData } from 'entities/commitment'
 import type { PaymentTerms } from 'entities/paymentTerms'
 import { offsetDate } from 'usecases/createFirstIterations'
 
 // TODO : refactorer ces 3 fonctions en une seule
 export const createNextPrincipalIteration = (
-  previousIteration: Partial<Commitment>,
+  previousIteration: Partial<CommitmentData>,
   paymentTerms: Partial<PaymentTerms>
-): Partial<Commitment> => {
+): Partial<CommitmentData> => {
   const { residuePriority, residuePeriod } = paymentTerms
 
   const {
@@ -17,7 +17,7 @@ export const createNextPrincipalIteration = (
     resolveDate
   } = previousIteration
 
-  const nextIteration: Partial<Commitment> = {
+  const nextIteration: Partial<CommitmentData> = {
     priority: residuePriority ? residuePriority : 'credit',
     type: 'principal',
     level: 'primary',
@@ -34,11 +34,13 @@ export const createNextPrincipalIteration = (
   return nextIteration
 }
 
-export const createNextTokenIteration = (previousIteration: Partial<Token>): Partial<Token> => {
+export const createNextTokenIteration = (
+  previousIteration: Partial<TokenData>
+): Partial<TokenData> => {
   const { residueNumberOfTokenUnits, referenceIndex, trancheId, id, resolveDate, level } =
     previousIteration
 
-  const nextIteration: Partial<Token> = {
+  const nextIteration: Partial<TokenData> = {
     trancheId: trancheId,
     previousIterationId: id,
     priority: 'token',
@@ -58,7 +60,7 @@ export const createNextTokenIteration = (previousIteration: Partial<Token>): Par
 
 export const createNextInterestIteration = (
   paymentTerms: Partial<PaymentTerms>,
-  previousPrincipalIteration: Partial<Commitment>,
+  previousPrincipalIteration: Partial<CommitmentData>,
   previousInterestIteration: Partial<Interest>
 ): Partial<Interest> => {
   const { interestPeriod: period } = paymentTerms

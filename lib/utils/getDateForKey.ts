@@ -1,3 +1,4 @@
+// this function is used to get a date from an object based on a key, and return a Date object or null
 export const getDateForKey = (
   obj: any = {},
   key: string | symbol | number = '',

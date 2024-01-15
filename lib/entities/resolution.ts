@@ -1,4 +1,4 @@
-import type { Commitment } from 'entities/commitment'
+import type { CommitmentData } from 'entities/commitment'
 import type { ReserveName } from 'entities/reserve'
 import type { AllocationReport } from 'entities/allocation'
 import type { Priority } from './paymentTerms'
@@ -64,8 +64,8 @@ export interface Resolution extends Entity {
   tokenBuybackPrice?: number
   allocationReport?: AllocationReport
   commitments?: {
-    selectedCommitments?: Commitment[]
-    resolvedCommitments?: Commitment[]
-    newIterations?: Commitment[]
+    selectedCommitments?: CommitmentData[]
+    resolvedCommitments?: CommitmentData[]
+    newIterations?: CommitmentData[]
   }
 }

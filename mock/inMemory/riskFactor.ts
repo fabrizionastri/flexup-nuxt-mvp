@@ -1,8 +1,8 @@
-import type { PrincipalPaymentTerms, PaymentTerms, Priority } from 'entities/paymentTerms'
+import type { PaymentTerms, PaymentTerms, Priority } from 'entities/paymentTerms'
 
 export const delayRiskFactorTestCases: Array<{
   summary: string
-  principalPaymentTerms: Partial<PrincipalPaymentTerms>
+  principalPaymentTerms: Partial<PaymentTerms>
   expected: number | null
 }> = [
   {

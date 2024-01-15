@@ -1,4 +1,4 @@
-import type { Entity, CountryId, CurrencyId, Tranche, OrderNature } from '.'
+import type { Entity, CountryId, CurrencyId, Tranches, OrderNature } from '.'
 
 export interface ThirdParty extends Entity {
   id: string // this field is not really required, only if DB imposes it

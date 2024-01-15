@@ -64,36 +64,39 @@ describe('Utils functions', () => {
   describe('getMiddleDate', () => {
     it.each([
       {
-        start: new Date('2020-01-01'),
-        finish: new Date('2020-01-19'),
+        startDate: new Date('2020-01-01'),
+        finishDate: new Date('2020-01-19'),
         expected: new Date('2020-01-10')
       },
       {
-        start: new Date('2020-01-01'),
-        finish: new Date('2020-01-20'),
+        startDate: new Date('2020-01-01'),
+        finishDate: new Date('2020-01-20'),
         expected: new Date('2020-01-10T12:00:00.000Z')
       },
       {
-        start: new Date('2020-01-01'),
-        finish: new Date('2020-05-20'),
+        startDate: new Date('2020-01-01'),
+        finishDate: new Date('2020-05-20'),
         expected: new Date('2020-03-11T00:00:00.000Z')
       },
       {
-        finish: new Date('2020-05-20'),
+        finishDate: new Date('2020-05-20'),
         expected: new Date('2020-05-20')
       },
       {
-        start: new Date('2020-05-20'),
+        startDate: new Date('2020-05-20'),
         expected: new Date('2020-05-20')
       }
       // {
-      //   start: '2020-05-20',
-      //   finish: new Date('2020-05-20'),
+      //   startDate: '2020-05-20',
+      //   finishDate: new Date('2020-05-20'),
       //   expected: null
       // }
-    ])('should return $expected for $start and $finish ', ({ start, finish, expected }) => {
-      expect(getMiddleDate(start, finish)).toEqual(expected)
-    })
+    ])(
+      'should return $expected for $start and $finish ',
+      ({ startDate, finishDate: finishDate, expected: expectedDate }) => {
+        expect(getMiddleDate(startDate, finishDate)).toEqual(expectedDate)
+      }
+    )
   })
 
   describe('isValidDate', () => {

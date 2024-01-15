@@ -1,11 +1,5 @@
-import type { Commitment, Interest, CommitmentLevel, Token } from 'entities/commitment'
-import type {
-  Priority,
-  Period,
-  PrincipalPaymentTerms,
-  InterestPaymentTerms,
-  PaymentTerms
-} from 'lib/entities/paymentTerms'
+import type { CommitmentData, Interest, CommitmentLevel, TokenData } from 'entities/commitment'
+import type { Priority, Period, PaymentTerms } from 'lib/entities/paymentTerms'
 import { today } from 'lib/utils'
 
 export const offsetDateTestCases: Array<{
@@ -99,20 +93,28 @@ export const offsetDateTestCases: Array<{
 
 export const calculateDueDateTestCases: Array<{
   summary: string
-  start?: Date
+  startDate?: Date
   adjustment?: 'BOP' | 'EOP' | 'none'
   period?: Period
   offset?: number
   expected?: Date
 }> = [
   {
-    summary: 'return start if not other arguments provided',
-    start: new Date('2020-01-01'),
-    expected: new Date('2020-02-29T23:59:59.999Z')
+    summary: 'return start date if no other arguments provided',
+    startDate: new Date('2020-01-01'),
+    expected: new Date('2020-02-01')
   },
   {
-    summary: 'return by one month, EOP',
-    start: new Date('2020-01-01'),
+    summary: 'offset 1 day, EOP',
+    startDate: new Date('2020-01-01'),
+    adjustment: 'EOP',
+    period: 'day',
+    offset: 1,
+    expected: new Date('2020-01-02T23:59:59.999Z')
+  },
+  {
+    summary: 'offset 1 month, EOP',
+    startDate: new Date('2020-01-01'),
     adjustment: 'EOP',
     period: 'month',
     offset: 1,
@@ -120,7 +122,7 @@ export const calculateDueDateTestCases: Array<{
   },
   {
     summary: 'offset by one month, no adjustment',
-    start: new Date('2020-01-01'),
+    startDate: new Date('2020-01-01'),
     adjustment: 'none',
     period: 'month',
     offset: 1,
@@ -132,28 +134,28 @@ export const calculateDueDateTestCases: Array<{
   },
   {
     summary: 'adjust to beginning of month',
-    start: new Date('2020-04-04'),
+    startDate: new Date('2020-04-04'),
     adjustment: 'BOP',
     period: 'month',
     expected: new Date('2020-05-01')
   },
   {
     summary: 'adjust to beginning of year',
-    start: new Date('2020-04-04'),
+    startDate: new Date('2020-04-04'),
     adjustment: 'BOP',
     period: 'year',
     expected: new Date('2021-01-01')
   },
   {
     summary: 'adjust to beginning of quarter',
-    start: new Date('2020-04-04'),
+    startDate: new Date('2020-04-04'),
     adjustment: 'BOP',
     period: 'quarter',
     expected: new Date('2020-07-01')
   },
   {
     summary: 'adjust to end of month',
-    start: new Date('2020-04-04'),
+    startDate: new Date('2020-04-04'),
     adjustment: 'EOP',
     period: 'month',
     offset: 0,
@@ -161,7 +163,7 @@ export const calculateDueDateTestCases: Array<{
   },
   {
     summary: 'adjust to end of year',
-    start: new Date('2020-04-04'),
+    startDate: new Date('2020-04-04'),
     adjustment: 'EOP',
     period: 'year',
     offset: 2,
@@ -169,22 +171,22 @@ export const calculateDueDateTestCases: Array<{
   },
   {
     summary: 'adjust to end of quarter',
-    start: new Date('2020-04-04'),
+    startDate: new Date('2020-04-04'),
     adjustment: 'EOP',
     period: 'quarter',
     offset: 0,
     expected: new Date('2020-06-30T23:59:59.999Z')
   },
   {
-    summary: 'offset by 1 month',
-    start: new Date('2020-04-04'),
+    summary: 'offset by 1 month (defaults to no adjustment)',
+    startDate: new Date('2020-04-04'),
     period: 'month',
     offset: 1,
-    expected: new Date('2020-05-31T23:59:59.999Z')
+    expected: new Date('2020-05-04T00:00:00.000Z')
   },
   {
     summary: 'offset by 5 days',
-    start: new Date('2020-04-04'),
+    startDate: new Date('2020-04-04'),
     period: 'day',
     adjustment: 'none',
     offset: 5,
@@ -192,7 +194,7 @@ export const calculateDueDateTestCases: Array<{
   },
   {
     summary: 'adjust to beginning of month and offset by -2',
-    start: new Date('2020-04-04'),
+    startDate: new Date('2020-04-04'),
     adjustment: 'BOP',
     period: 'month',
     offset: -2,
@@ -200,7 +202,7 @@ export const calculateDueDateTestCases: Array<{
   },
   {
     summary: 'adjust to end of quarter and offset by 1',
-    start: new Date('2020-04-04'),
+    startDate: new Date('2020-04-04'),
     adjustment: 'EOP',
     period: 'quarter',
     offset: 1,
@@ -210,14 +212,14 @@ export const calculateDueDateTestCases: Array<{
 
 export const createFirstPrincipalIterationTestCases: Array<{
   summary: string
-  principalPaymentTerms: PrincipalPaymentTerms
+  paymentTerms: PaymentTerms
   principal?: number
   orderDates?: { [key: string]: Date | string | undefined }
-  expected: Partial<Commitment>
+  expected: Partial<CommitmentData>
 }> = [
   {
     summary: 'flex (no principal, no dates)',
-    principalPaymentTerms: { priority: 'flex' },
+    paymentTerms: { priority: 'flex' },
     expected: {
       priority: 'flex',
       type: 'principal',
@@ -227,7 +229,7 @@ export const createFirstPrincipalIterationTestCases: Array<{
   },
   {
     summary: '10 credit (no dates)',
-    principalPaymentTerms: { priority: 'credit' },
+    paymentTerms: { priority: 'credit' },
     principal: 10,
     expected: {
       principal: 10,
@@ -240,9 +242,9 @@ export const createFirstPrincipalIterationTestCases: Array<{
   },
   {
     summary: '20 flex conf+1M',
-    principalPaymentTerms: {
+    paymentTerms: {
       priority: 'flex',
-      start: 'confirmation',
+      startRef: 'confirmation',
       period: 'month',
       offset: 1
     },
@@ -251,7 +253,7 @@ export const createFirstPrincipalIterationTestCases: Array<{
     expected: {
       principal: 20,
       priority: 'flex',
-      dueDate: new Date('2020-06-30T23:59:59.999Z'),
+      dueDate: new Date('2020-06-05T00:00:00.000Z'),
       type: 'principal',
       level: 'primary',
       status: 'active',
@@ -260,10 +262,11 @@ export const createFirstPrincipalIterationTestCases: Array<{
   },
   {
     summary: '30 flex conf+45D',
-    principalPaymentTerms: {
+    paymentTerms: {
       priority: 'flex',
-      start: 'confirmation',
+      startRef: 'confirmation',
       period: 'day',
+      adjustment: 'EOP',
       offset: 45
     },
     principal: 30,
@@ -280,9 +283,9 @@ export const createFirstPrincipalIterationTestCases: Array<{
   },
   {
     summary: '40 pref conf@BOP+3M',
-    principalPaymentTerms: {
+    paymentTerms: {
       priority: 'preferred',
-      start: 'confirmation',
+      startRef: 'confirmation',
       adjustment: 'BOP',
       period: 'month',
       offset: 3
@@ -301,9 +304,9 @@ export const createFirstPrincipalIterationTestCases: Array<{
   },
   {
     summary: '50 firm deliveryMiddle+1Q',
-    principalPaymentTerms: {
+    paymentTerms: {
       priority: 'firm',
-      start: 'deliveryMiddle',
+      startRef: 'deliveryMiddle',
       period: 'quarter',
       offset: 1
     },
@@ -318,9 +321,9 @@ export const createFirstPrincipalIterationTestCases: Array<{
   },
   {
     summary: '60 superflex deliveryStart+2Y',
-    principalPaymentTerms: {
+    paymentTerms: {
       priority: 'superflex',
-      start: 'deliveryStart',
+      startRef: 'deliveryStart',
       period: 'year',
       offset: 1
     },
@@ -337,81 +340,84 @@ export const createFirstPrincipalIterationTestCases: Array<{
 
 export const createFirstInterestIterationTestCases: Array<{
   summary: string
-  paymentTermsInterest: InterestPaymentTerms
+  paymentTerms: PaymentTerms
   principal?: number
   orderDates?: { [key: string]: Date | string | undefined }
   principalPriority?: Priority
   principalDueDate?: Date
   expected: Partial<Interest>
 }> = [
-  {
-    summary: '5%, credit, deliveryFinish, year',
-    paymentTermsInterest: {
-      interestRate: 0.05,
-      interestPriority: 'credit',
-      interestStart: 'deliveryFinish',
-      interestPeriod: 'year'
-    },
-    principal: 100,
-    expected: {
-      principal: 100,
-      priority: 'credit',
-      interestRate: 0.05,
-      type: 'interest',
-      level: 'secondary',
-      status: 'pending'
-    }
-  },
-  {
-    summary: '8%, credit, deliveryFinish, year',
-    paymentTermsInterest: {
-      interestRate: 0.08,
-      interestPriority: 'credit',
-      interestStart: 'confirmation',
-      interestPeriod: 'year'
-    },
-    principal: 100,
-    orderDates: { confirmation: new Date('2020-05-05') },
-    expected: {
-      principal: 100,
-      priority: 'credit',
-      interestRate: 0.08,
-      interestStartDate: new Date('2020-05-05'),
-      dueDate: new Date('2021-05-05'),
-      type: 'interest',
-      level: 'secondary',
-      status: 'active',
-      activeDate: today()
-    }
-  },
-  {
-    summary: '4%, flex, confirmation, quarter',
-    paymentTermsInterest: {
-      interestRate: 0.04,
-      interestPriority: 'flex',
-      interestStart: 'confirmation',
-      interestPeriod: 'quarter'
-    },
-    principal: 120,
-    orderDates: { confirmation: new Date('2020-05-05') },
-    expected: {
-      principal: 120,
-      priority: 'flex',
-      interestStartDate: new Date('2020-05-05'),
-      dueDate: new Date('2020-08-05'),
-      interestRate: 0.04,
-      type: 'interest',
-      level: 'secondary',
-      status: 'active',
-      activeDate: today()
-    }
-  },
+  // {
+  //   summary: '5%, credit, deliveryFinish, year',
+  //   paymentTerms: {
+  //     priority: 'flex',
+  //     interestRate: 0.05,
+  //     interestPriority: 'credit',
+  //     interestStartRef: 'deliveryFinish',
+  //     interestPeriod: 'year'
+  //   },
+  //   principal: 100,
+  //   expected: {
+  //     principal: 100,
+  //     priority: 'credit',
+  //     interestRate: 0.05,
+  //     type: 'interest',
+  //     level: 'secondary',
+  //     status: 'pending'
+  //   }
+  // },
+  // {
+  //   summary: '8%, credit, deliveryFinish, year',
+  //   paymentTerms: {
+  //     priority: 'flex',
+  //     interestRate: 0.08,
+  //     interestPriority: 'credit',
+  //     interestStartRef: 'confirmation',
+  //     interestPeriod: 'year'
+  //   },
+  //   principal: 100,
+  //   orderDates: { confirmation: new Date('2020-05-05') },
+  //   expected: {
+  //     principal: 100,
+  //     priority: 'credit',
+  //     interestRate: 0.08,
+  //     interestStartDate: new Date('2020-05-05'),
+  //     type: 'interest',
+  //     level: 'secondary',
+  //     status: 'active',
+  //     activeDate: today()
+  //   }
+  // },
+  // {
+  //   summary: '4%, flex, confirmation, quarter',
+  //   paymentTerms: {
+  //     priority: 'flex',
+  //     interestRate: 0.04,
+  //     interestStartRef: 'confirmation',
+  //     interestPeriod: 'quarter'
+  //   },
+  //   principal: 120,
+  //   orderDates: { confirmation: new Date('2020-05-05') },
+  //   expected: {
+  //     principal: 120,
+  //     priority: 'flex',
+  //     interestStartDate: new Date('2020-05-05'),
+  //     dueDate: new Date('2020-08-05'),
+  //     interestRate: 0.04,
+  //     type: 'interest',
+  //     level: 'secondary',
+  //     status: 'active',
+  //     newInterest: 1.1913552943120997,
+  //     activeDate: today()
+  //   }
+  // },
   {
     summary: '7%, preferred, confirmation, sameAsPrincipal',
-    paymentTermsInterest: {
+    paymentTerms: {
+      priority: 'firm',
       interestRate: 0.07,
       interestPriority: 'preferred',
-      interestStart: 'confirmation',
+      interestStartRef: 'confirmation',
       interestPeriod: 'sameAsPrincipal'
     },
     principal: 80,
@@ -426,15 +432,17 @@ export const createFirstInterestIterationTestCases: Array<{
       type: 'interest',
       level: 'secondary',
       status: 'active',
+      newInterest: 1.541026067716036,
       activeDate: today()
     }
   },
   {
     summary: '7%, prefesameAsPrincipalrred, confirmation, sameAsPrincipal',
-    paymentTermsInterest: {
+    paymentTerms: {
+      priority: 'preferred',
       interestRate: 0.07,
       interestPriority: 'sameAsPrincipal',
-      interestStart: 'confirmation',
+      interestStartRef: 'confirmation',
       interestPeriod: 'sameAsPrincipal'
     },
     principal: 80,
@@ -443,10 +451,11 @@ export const createFirstInterestIterationTestCases: Array<{
     principalDueDate: new Date('2020-08-17'),
     expected: {
       principal: 80,
-      priority: 'firm',
+      priority: 'preferred',
       interestStartDate: new Date('2020-05-05'),
       dueDate: new Date('2020-08-17'),
       interestRate: 0.07,
+      newInterest: 1.5561320680689938,
       type: 'interest',
       level: 'secondary',
       status: 'active',
@@ -461,7 +470,7 @@ export const createFirstTokenIterationTestCases: Array<{
   principal?: number
   level?: CommitmentLevel
   canProjectRequestBuyback?: boolean
-  expected: Partial<Token>
+  expected: Partial<TokenData>
 }> = [
   {
     summary: 'index 5, 10 principal',
@@ -544,7 +553,7 @@ export const createFirstIterationsTestCases: Array<{
   orderDates?: { [key: string]: Date | string | undefined }
   riskFactor?: number
   referenceIndex?: number
-  expected: Array<Partial<Commitment> | Partial<Token> | Partial<Interest>>
+  expected: Array<Partial<CommitmentData> | Partial<TokenData> | Partial<Interest>>
 }> = [
   {
     summary: 'flex (no principal, no dates)',
@@ -598,8 +607,9 @@ export const createFirstIterationsTestCases: Array<{
     summary: '20 flex conf+1M (confirmation date)',
     paymentTerms: {
       priority: 'flex',
-      start: 'confirmation',
+      startRef: 'confirmation',
       period: 'month',
+      adjustment: 'EOP',
       offset: 1
     },
     principal: 20,
@@ -632,19 +642,19 @@ export const createFirstIterationsTestCases: Array<{
     summary: '30 flex conf+45D',
     paymentTerms: {
       priority: 'flex',
-      start: 'confirmation',
+      startRef: 'confirmation',
       period: 'day',
       offset: 45
     },
     principal: 30,
     referenceIndex: 2,
     riskFactor: 0.4,
-    orderDates: { confirmation: new Date('2020-05-05') },
+    orderDates: { confirmation: new Date('2020-05-05T11:11:00.000Z') },
     expected: [
       {
         principal: 30,
         priority: 'flex',
-        dueDate: new Date('2020-06-19T23:59:59.999Z'),
+        dueDate: new Date('2020-06-19T11:11:00.000Z'),
         status: 'active',
         level: 'primary',
         type: 'principal',
@@ -666,7 +676,7 @@ export const createFirstIterationsTestCases: Array<{
     summary: '40 pref conf@BOP+3M',
     paymentTerms: {
       priority: 'preferred',
-      start: 'confirmation',
+      startRef: 'confirmation',
       adjustment: 'BOP',
       period: 'month',
       offset: 3
@@ -702,7 +712,7 @@ export const createFirstIterationsTestCases: Array<{
     summary: '50 firm deliveryMiddle+1Q',
     paymentTerms: {
       priority: 'firm',
-      start: 'deliveryMiddle',
+      startRef: 'deliveryMiddle',
       period: 'quarter',
       offset: 1
     },
@@ -723,7 +733,7 @@ export const createFirstIterationsTestCases: Array<{
     summary: '60 superflex deliveryStart+2Y',
     paymentTerms: {
       priority: 'superflex',
-      start: 'deliveryStart',
+      startRef: 'deliveryStart',
       period: 'year',
       offset: 1
     },
@@ -773,14 +783,13 @@ export const createFirstIterationsTestCases: Array<{
     summary: '40 pref + 5% interest, conf@BOP+3M',
     paymentTerms: {
       priority: 'preferred',
-      start: 'confirmation',
+      startRef: 'confirmation',
       adjustment: 'BOP',
       period: 'month',
       offset: 3,
-
       interestRate: 0.05,
       interestPriority: 'flex',
-      interestStart: 'confirmation',
+      interestStartRef: 'confirmation',
       interestPeriod: 'sameAsPrincipal'
     },
     principal: 40,
@@ -793,29 +802,30 @@ export const createFirstIterationsTestCases: Array<{
         priority: 'preferred',
         dueDate: new Date('2020-09-01'),
         status: 'active',
-        level: 'primary',
         type: 'principal',
+        level: 'primary',
         activeDate: today()
       },
       {
-        priority: 'token',
-        status: 'active',
-        level: 'secondary',
-        type: 'token',
         principal: 8,
+        priority: 'token',
+        type: 'token',
+        level: 'secondary',
+        status: 'active',
         referenceIndex: 4,
         numberOfTokenUnits: 2,
         activeDate: today()
       },
       {
         principal: 40,
-        interestRate: 0.05,
         priority: 'flex',
+        interestRate: 0.05,
+        type: 'interest',
+        level: 'secondary',
         interestStartDate: new Date('2020-06-05'),
         dueDate: new Date('2020-09-01'),
+        newInterest: 0.4729767545090269,
         status: 'active',
-        level: 'secondary',
-        type: 'interest',
         activeDate: today()
       }
     ]

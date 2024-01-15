@@ -15,7 +15,7 @@ export const principalPriorityRiskFactors = {
   token: 1
 } as const
 
-export const principalStartRiskFactors = {
+export const principalStartReferenceRiskFactors = {
   notApplicable: 1,
   deliveryFinish: 1,
   deliveryMiddle: 0.9,
@@ -23,7 +23,7 @@ export const principalStartRiskFactors = {
   confirmation: 0.7
 } as const
 
-export type PrincipalStart = keyof typeof principalStartRiskFactors
+export type PrincipalStartReference = keyof typeof principalStartReferenceRiskFactors
 
 export const residuePriorityRiskFactors = {
   credit: 1,
@@ -31,8 +31,6 @@ export const residuePriorityRiskFactors = {
   flex: 0.8,
   preferred: 0.7
 } as const
-
-export type ResiduePriority = keyof typeof residuePriorityRiskFactors
 
 export const residuePeriodRiskFactors = {
   year: 1,
@@ -43,7 +41,7 @@ export const residuePeriodRiskFactors = {
 export type ResiduePeriod = keyof typeof residuePeriodRiskFactors
 
 export const interestStartRiskFactors = {
-  deferral: 1,
+  deferral: 1, // interests only start if principal is not paid in full at first due date
   deliveryFinish: 1,
   deliveryMiddle: 0.95,
   deliveryStart: 0.9,
@@ -67,20 +65,15 @@ export const adjustmentLengths = {
 
 export type Adjustment = keyof typeof adjustmentLengths
 
-export interface PrincipalPaymentTerms {
-  priority: Priority
-  start?: PrincipalStart
-  adjustment?: Adjustment
-  period?: Period
-  offset?: number
-}
+export type SecondaryPriority =
+  | 'firm'
+  | 'preferred'
+  | 'flex'
+  | 'superflex'
+  | 'credit'
+  | 'sameAsPrincipal'
 
-export interface ResiduePaymentTerms {
-  residuePriority: ResiduePriority
-  residuePeriod?: ResiduePeriod
-}
-
-export type InterestPriority = Priority | 'sameAsPrincipal' | undefined // TO CHECK : should we keep undefined ?
+export type CashPriority = 'firm' | 'preferred' | 'flex' | 'superflex' | 'credit'
 
 export type InterestStart = keyof typeof interestStartRiskFactors
 
@@ -91,11 +84,21 @@ export const interestPeriodRiskFactors = {
 
 export type InterestPeriod = keyof typeof interestPeriodRiskFactors
 
-export interface InterestPaymentTerms {
-  interestRate: number
-  interestPriority: InterestPriority
-  interestStart: InterestStart
-  interestPeriod?: InterestPeriod
+export interface PaymentTerms {
+  id?: string // defaults to uuid
+  name?: string // required
+  priority: Priority // required, no default value provided
+  startRef?: PrincipalStartReference // defaults to
+  adjustment?: Adjustment // defaults to none
+  period?: Period // defaults to month
+  offset?: number // defaults to 0
+  residuePriority?: SecondaryPriority // defaults to credit
+  residuePeriod?: ResiduePeriod // defaults to year, but not applicable if residuePriority is credit
+  interestRate?: number // if not provided, no interest commitment will be created
+  interestPriority?: SecondaryPriority // defaults to credit, but not applicable if interestRate is falsy
+  interestStartRef?: InterestStart // defaults to deliveryFinish, but not applicable if interestRate is falsy
+  interestPeriod?: InterestPeriod // defaults to 'sameAsPrincipal', but not applicable if interestRate is falsy or if interestPriority is credit
+  canProjectRequestBuyback?: boolean
 }
 
 export const rateRiskHurdle = 0.15
@@ -104,15 +107,8 @@ export const noProjectRequestBuybackRiskFactor = 0.75
 
 export const interestRateRiskHurdle = 0.15
 
-export interface PaymentTerms
-  extends PrincipalPaymentTerms,
-    Partial<ResiduePaymentTerms>,
-    Partial<InterestPaymentTerms> {
-  canProjectRequestBuyback?: boolean
-}
-
 export interface PaymentTermsTemplate {
   id: string
   name: string
-  PaymentTerms: PaymentTerms
+  paymentTerms: PaymentTerms
 }

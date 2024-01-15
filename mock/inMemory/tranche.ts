@@ -41,7 +41,7 @@ export const commercialOrderCredit30interestData: TrancheData = {
     priority: 'credit',
     interestRate: 0.05,
     interestPriority: 'credit',
-    interestStart: 'deferral',
+    interestStartRef: 'deferral',
     interestPeriod: 'sameAsPrincipal'
   }
 }

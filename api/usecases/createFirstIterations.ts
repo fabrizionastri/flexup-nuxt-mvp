@@ -1,5 +1,12 @@
-import type { Period, PaymentTerms, Priority } from 'entities/paymentTerms'
-import type { Commitment, Token, Interest, CommitmentLevel } from 'entities/commitment'
+import type {
+  Period,
+  PaymentTerms,
+  InterestPeriod,
+  InterestPriority,
+  Adjustment
+} from 'entities/paymentTerms'
+import { periodLengths, priorities } from 'entities/paymentTerms'
+import type { CommitmentData, TokenData, Interest, CommitmentLevel } from 'entities/commitment'
 import { calculateDuration, getDateForKey, isValidDate, today } from 'lib/utils'
 
 export const offsetDate = (
@@ -20,42 +27,57 @@ export const offsetDate = (
   return newDate
 }
 
-export const calculateDueDate = (
-  start: Date | undefined,
-  adjustment: 'BOP' | 'EOP' | 'none' = 'EOP',
-  period: 'day' | 'month' | 'quarter' | 'year' = 'month',
-  offset = 1
-): Date | undefined => {
-  if (!start || !isValidDate(start)) return undefined
-  let dueDate = start
-
-  if (offset) dueDate = offsetDate(dueDate, period, offset) ?? dueDate
+export const adjustDate = (
+  date: Date,
+  adjustment: Adjustment = 'none',
+  period: 'day' | 'month' | 'quarter' | 'year' = 'month'
+): Date => {
+  const adjustedDate = new Date(date)
 
   if ('EOP' === adjustment) {
-    dueDate.setUTCHours(23, 59, 59, 999)
+    adjustedDate.setUTCHours(23, 59, 59, 999)
     if ('month' === period) {
-      dueDate.setUTCMonth(dueDate.getUTCMonth() + 1)
-      dueDate.setUTCDate(0)
+      adjustedDate.setUTCMonth(adjustedDate.getUTCMonth() + 1)
+      adjustedDate.setUTCDate(0)
     } else if ('quarter' === period) {
-      dueDate.setUTCMonth(Math.floor(dueDate.getUTCMonth() / 3) * 3 + 3)
-      dueDate.setUTCDate(0)
+      adjustedDate.setUTCMonth(Math.floor(adjustedDate.getUTCMonth() / 3) * 3 + 3)
+      adjustedDate.setUTCDate(0)
     } else if ('year' === period) {
-      dueDate.setUTCFullYear(dueDate.getUTCFullYear() + 1)
-      dueDate.setUTCMonth(0)
-      dueDate.setUTCDate(0)
+      adjustedDate.setUTCFullYear(adjustedDate.getUTCFullYear() + 1)
+      adjustedDate.setUTCMonth(0)
+      adjustedDate.setUTCDate(0)
     }
   } else if ('BOP' === adjustment) {
-    dueDate.setUTCHours(0, 0, 0, 0)
+    adjustedDate.setUTCHours(0, 0, 0, 0)
     if ('month' === period) {
-      dueDate.setUTCDate(1)
+      adjustedDate.setUTCDate(1)
     } else if ('quarter' === period) {
-      dueDate.setUTCMonth(Math.floor(dueDate.getUTCMonth() / 3) * 3)
-      dueDate.setUTCDate(1)
+      adjustedDate.setUTCMonth(Math.floor(adjustedDate.getUTCMonth() / 3) * 3)
+      adjustedDate.setUTCDate(1)
     } else if ('year' === period) {
-      dueDate.setUTCMonth(0)
-      dueDate.setUTCDate(1)
+      adjustedDate.setUTCMonth(0)
+      adjustedDate.setUTCDate(1)
     }
   }
+
+  return adjustedDate
+}
+
+export const calculateDueDate = (
+  startDate?: Date,
+  adjustment: Adjustment = 'none',
+  period: Period = 'month',
+  offset = 1
+): Date | undefined => {
+  if (!isValidDate(startDate)) return undefined
+
+  let dueDate = startDate
+
+  if (offset) {
+    dueDate = offsetDate(dueDate, period, offset) ?? dueDate
+  }
+
+  dueDate = adjustDate(dueDate, adjustment, period)
 
   return dueDate
 }
@@ -73,16 +95,16 @@ export const createFirstPrincipalIteration = (
   paymentTerms: PaymentTerms,
   principal = 0,
   orderDates: { [key: string]: Date | string | undefined } = {}
-): Partial<Commitment> => {
+): CommitmentData => {
   const priority = paymentTerms.priority
-  const commitment: Partial<Commitment> = {
+  const commitment: Partial<CommitmentData> = {
     priority,
     type: 'principal',
     status: 'pending',
     level: 'primary'
   }
 
-  const startDate = getDateForKey(orderDates, paymentTerms.start)
+  const startDate = getDateForKey(orderDates, paymentTerms.startRef)
   if (startDate) commitment.dueDate = firstPrincipalDueDate(startDate, paymentTerms)
 
   if (principal !== 0) {
@@ -95,60 +117,100 @@ export const createFirstPrincipalIteration = (
   return commitment
 }
 
+export const calculateInterestDueDate = (
+  interestStartDate: Date | undefined,
+  interestPeriod: InterestPeriod = 'sameAsPrincipal',
+  interestPriority: InterestPriority = 'sameAsPrincipal',
+  principalDueDate?: Date
+): Date | undefined => {
+  if (interestPriority === 'credit' || !interestStartDate) {
+    return undefined // No due date if interestPriority is credit or start date is undefined
+  }
+
+  if (interestPeriod === 'sameAsPrincipal') {
+    return isValidDate(principalDueDate) ? principalDueDate : undefined
+  } else {
+    let interestDueDate = calculateDueDate(interestStartDate, 'none', interestPeriod, 1)
+    const isInterestDueAfterPrincipal = calculateDuration(interestDueDate, principalDueDate) < 0
+    if (isInterestDueAfterPrincipal) interestDueDate = principalDueDate
+    return interestDueDate
+  }
+}
+
 export const createFirstInterestIteration = (
   paymentTerms: PaymentTerms,
   principal = 0,
   orderDates: { [key: string]: Date | string | undefined } = {},
-  principalPriority?: Priority, // ici volontairement je ne vérifie pas si cet argument est valide, car il est censé être fourni par la fonction appelante
-  principalDueDate?: Date | undefined
-): Partial<Interest> => {
-  const { interestRate, interestPriority, interestStart, interestPeriod } = paymentTerms
-  if (!interestRate)
-    throw new Error('Cannot create a first interest iteration without an interest rate')
-
-  const interest: Partial<Interest> = {
-    priority: 'sameAsPrincipal' === interestPriority ? principalPriority : interestPriority,
+  principalDueDate?: Date
+): Interest => {
+  const {
+    priority,
     interestRate,
+    interestStartRef = 'deliveryFinish',
+    interestPeriod = 'sameAsPrincipal'
+  } = paymentTerms
+
+  // this check is redundant with the one in createFirstIterations, but it helps to filter out the allowed values for interestStartRef in the following if statements
+  if (!interestRate)
+    throw new Error('Cannot create a first interest iteration without an interest rate ')
+  if (interestStartRef == 'deferral')
+    throw new Error('Cannot create a first interest iteration if interestStartRef is deferral')
+
+  let { interestPriority = priority } = paymentTerms
+  if (interestPriority === 'sameAsPrincipal') interestPriority = priority
+  if (interestPriority == 'token')
+    throw new Error('Cannot create an interest commitment with token priority')
+
+  const interestStartDate = getDateForKey(orderDates, interestStartRef)
+  console.log('api/usecases/createFirstIterations.ts → interestStartDate: ', interestStartDate)
+  console.log('api/usecases/createFirstIterations.ts → interestPeriod: ', interestPeriod)
+  console.log('api/usecases/createFirstIterations.ts → interestPriority: ', interestPriority)
+  console.log('api/usecases/createFirstIterations.ts → principalDueDate: ', principalDueDate)
+
+  const interestDueDate = calculateInterestDueDate(
+    interestStartDate,
+    interestPeriod,
+    interestPriority,
+    principalDueDate
+  )
+  console.log('api/usecases/createFirstIterations.ts → interestDueDate: ', interestDueDate)
+
+  const interest: Interest = {
+    interestRate,
+    priority: interestPriority,
     type: 'interest',
-    status: 'pending',
-    level: 'secondary'
+    level: 'secondary',
+    status: 'pending' // changed to active below, if conditions met
   }
 
-  const startDate = getDateForKey(orderDates, interestStart)
-
-  if (startDate) {
-    interest.interestStartDate = startDate
-    if ('sameAsPrincipal' === interestPeriod) {
-      if (isValidDate(principalDueDate)) interest.dueDate = principalDueDate
-      // if principal Due Date is not valid, we will assign the Interest due date later
-    } else {
-      interest.dueDate = calculateDueDate(startDate, 'none', interestPeriod, 1)
-      const duration = calculateDuration(interest.dueDate, principalDueDate) ?? 0
-      // if principal due date is before the calculated interest due date, we assign the principal due date to the interest due date
-      if (duration < 0) interest.dueDate = principalDueDate
-    }
+  // Conditionally adding properties if they are defined
+  if (interestStartDate) interest.interestStartDate = interestStartDate
+  if (interestDueDate) interest.dueDate = interestDueDate
+  if (principal !== 0) interest.principal = principal
+  if (interestStartDate && (interestPriority === 'credit' || interestDueDate)) {
+    interest.status = 'active'
+    interest.activeDate = today()
   }
 
-  if (principal !== 0) {
-    interest.principal = principal
-    if (interest.interestStartDate && (interestPriority === 'credit' || interest.dueDate)) {
-      interest.status = 'active'
-      interest.activeDate = today()
-    }
+  // if both start and due dates are defined, we can calculate the new interest amount at the due date
+  if (interestStartDate && interestDueDate && principal) {
+    const duration = calculateDuration(interestStartDate, interestDueDate)
+    const interestFactor = (1 + interestRate) ** (duration / periodLengths['year']) - 1
+    interest.newInterest = principal * interestFactor
   }
+
   return interest
 }
 
 export const createFirstTokenIteration = (
-  referenceIndex = 0,
-  principal = 0,
+  referenceIndex: number = 0,
+  principal: number = 0,
   level: CommitmentLevel,
-  canProjectRequestBuyback = false
-): Partial<Token> => {
-  if (!(Number(referenceIndex) > 0))
-    throw Error('Cannot create a token without a positive referenceIndex')
+  canProjectRequestBuyback: boolean = false
+): TokenData => {
+  if (!referenceIndex) throw Error('Cannot create a token without a positive referenceIndex')
 
-  const token: Partial<Token> = {
+  const token: TokenData = {
     priority: 'token',
     type: 'token',
     status: 'pending',
@@ -160,8 +222,8 @@ export const createFirstTokenIteration = (
 
   if (canProjectRequestBuyback) token.canProjectRequestBuyback = true
 
-  if (Number(principal) > 0 && referenceIndex) {
-    token.principal = Number(principal)
+  if (principal) {
+    token.principal = principal
     token.numberOfTokenUnits = token.principal / referenceIndex
     token.status = 'active'
     token.activeDate = today()
@@ -175,12 +237,12 @@ export const createFirstIterations = (
   orderDates: { [key: string]: Date | string | undefined } = {},
   referenceIndex = 0,
   riskFactor = 0
-): Partial<Commitment>[] => {
-  const commitments: Partial<Commitment>[] = []
+): CommitmentData[] => {
+  const commitments: CommitmentData[] = []
   const priority = paymentTerms?.priority
 
-  // if (!priority || !Priorities.includes(priority))
-  //   throw new Error("Cannot create a primary commitment without a valid principal priority")
+  if (!priority || !priorities.includes(priority))
+    throw new Error('Cannot create a primary commitment without a valid principal priority')
 
   if (priority === 'token') {
     // if (!isValidNumber(referenceIndex)) {
@@ -195,10 +257,10 @@ export const createFirstIterations = (
     )
     commitments.push(primaryToken)
   } else {
-    const priority = createFirstPrincipalIteration(paymentTerms, principal, orderDates)
-    commitments.push(priority)
+    const principalIteration = createFirstPrincipalIteration(paymentTerms, principal, orderDates)
+    commitments.push(principalIteration)
 
-    if (riskFactor < 1 && riskFactor > 0) {
+    if (riskFactor > 0 && riskFactor < 1) {
       const secondaryToken = createFirstTokenIteration(
         referenceIndex,
         principal * riskFactor,
@@ -208,13 +270,12 @@ export const createFirstIterations = (
       commitments.push(secondaryToken)
     }
 
-    if (paymentTerms?.interestRate) {
+    if (paymentTerms.interestRate && paymentTerms.interestStartRef !== 'deferral') {
       const interest = createFirstInterestIteration(
         paymentTerms,
         principal,
         orderDates,
-        priority.priority,
-        priority.dueDate
+        principalIteration.dueDate
       )
       commitments.push(interest)
     }

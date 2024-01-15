@@ -1,6 +1,6 @@
-import type { Commitment } from 'entities/commitment'
+import type { CommitmentData } from 'entities/commitment'
 
-export const commitment1: Commitment = {
+export const commitment1: CommitmentData = {
   id: '1',
   trancheId: '1',
   level: 'primary',

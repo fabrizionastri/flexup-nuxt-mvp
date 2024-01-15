@@ -42,12 +42,9 @@ export const useUserStore = defineStore(
       try {
         token.value = await fetchToken(identifier, password)
         await fetchUser(token.value).then((data) => (user.value = data))
-        console.log('► app/stores/useUserStore.ts - loginUser - user.value:', user.value)
+        // console.log('► app/stores/useUserStore.ts - loginUser - user.value:', user.value)
         await accountStore.fetchAndUpdateActiveAccounts(token.value)
-        console.log(
-          '► app/stores/useUserStore.ts - loginUser - accountStore:',
-          accountStore.currentAccount
-        )
+        // console.log('► app/stores/useUserStore.ts - loginUser - accountStore:',accountStore.currentAccount)
         // no need to return user.value, it is already set
         // return user.value
       } catch (error) {

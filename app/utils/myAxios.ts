@@ -7,7 +7,7 @@ import type { AxiosResponse, AxiosError, Method } from 'axios'
 // dotenv.config()
 const apiBaseUrl = process.env.API_Base_URL || 'http://127.0.0.1:8787'
 
-console.log('apiBaseUrl:', apiBaseUrl)
+// console.log('apiBaseUrl:', apiBaseUrl)
 
 const myAxios = axios.create({
   baseURL: apiBaseUrl,
