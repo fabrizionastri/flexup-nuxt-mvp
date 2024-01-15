@@ -8,7 +8,7 @@ import {
   determinePayorId,
   generateName
 } from './tranche'
-import type { TrancheData, Tranches, Order } from 'lib/entities'
+import type { TrancheData, Order } from 'lib/entities'
 
 describe('tranche', () => {
   describe('tranche methods / functions', () => {

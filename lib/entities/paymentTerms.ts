@@ -1,6 +1,8 @@
 export const priorities = ['firm', 'preferred', 'flex', 'superflex', 'credit', 'token'] as const
 
 export type Priority = (typeof priorities)[number]
+export type SecondaryPriority = Priority | 'sameAsPrimary'
+export type ExtendedPriority = SecondaryPriority | 'distribution'
 
 export const monthlyPriorities = ['firm', 'preferred', 'flex', 'superflex']
 
@@ -23,7 +25,7 @@ export const principalStartReferenceRiskFactors = {
   confirmation: 0.7
 } as const
 
-export type PrincipalStartReference = keyof typeof principalStartReferenceRiskFactors
+export type MainStartReference = keyof typeof principalStartReferenceRiskFactors
 
 export const residuePriorityRiskFactors = {
   credit: 1,
@@ -65,20 +67,12 @@ export const adjustmentLengths = {
 
 export type Adjustment = keyof typeof adjustmentLengths
 
-export type SecondaryPriority =
-  | 'firm'
-  | 'preferred'
-  | 'flex'
-  | 'superflex'
-  | 'credit'
-  | 'sameAsPrincipal'
-
 export type CashPriority = 'firm' | 'preferred' | 'flex' | 'superflex' | 'credit'
 
 export type InterestStart = keyof typeof interestStartRiskFactors
 
 export const interestPeriodRiskFactors = {
-  sameAsPrincipal: 1,
+  sameAsPrimary: 1,
   ...residuePeriodRiskFactors
 } as const
 
@@ -88,7 +82,7 @@ export interface PaymentTerms {
   id?: string // defaults to uuid
   name?: string // required
   priority: Priority // required, no default value provided
-  startRef?: PrincipalStartReference // defaults to
+  startRef?: MainStartReference // defaults to
   adjustment?: Adjustment // defaults to none
   period?: Period // defaults to month
   offset?: number // defaults to 0
@@ -97,7 +91,7 @@ export interface PaymentTerms {
   interestRate?: number // if not provided, no interest commitment will be created
   interestPriority?: SecondaryPriority // defaults to credit, but not applicable if interestRate is falsy
   interestStartRef?: InterestStart // defaults to deliveryFinish, but not applicable if interestRate is falsy
-  interestPeriod?: InterestPeriod // defaults to 'sameAsPrincipal', but not applicable if interestRate is falsy or if interestPriority is credit
+  interestPeriod?: InterestPeriod // defaults to 'sameAsPrimary', but not applicable if interestRate is falsy or if interestPriority is credit
   canProjectRequestBuyback?: boolean
 }
 

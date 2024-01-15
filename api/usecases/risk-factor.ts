@@ -34,7 +34,7 @@ export const relativePriorityRiskFactor = (paymentTerms: PaymentTerms): number |
   const interestRate = paymentTerms.interestRate || null
   if (!interestPriority || !interestRate) return null
   if (interestPriority === 'firm') return 0.5
-  if (interestPriority === 'sameAsPrincipal') return 1
+  if (interestPriority === 'sameAsPrimary') return 1
 
   // find the index of interestPriority in Priorities
   const interestPriorityLevel = priorities.indexOf(interestPriority)
@@ -46,7 +46,7 @@ export const relativePriorityRiskFactor = (paymentTerms: PaymentTerms): number |
 export const basicRiskFactor = (paymentTerms: PaymentTerms): number => {
   let riskFactor = 1
 
-  // Principal
+  // Main
   if (!paymentTerms.priority) return 0
   riskFactor *= principalPriorityRiskFactors[paymentTerms.priority]
 
@@ -63,7 +63,7 @@ export const basicRiskFactor = (paymentTerms: PaymentTerms): number => {
   // Interest
   if (paymentTerms.interestRate) {
     riskFactor *= 1 - paymentTerms.interestRate / interestRateRiskHurdle
-    riskFactor *= interestPeriodRiskFactors[paymentTerms.interestPeriod || 'sameAsPrincipal']
+    riskFactor *= interestPeriodRiskFactors[paymentTerms.interestPeriod || 'sameAsPrimary']
     riskFactor *= interestStartRiskFactors[paymentTerms.interestStart || 'deferral']
     const relativePriorityRF = relativePriorityRiskFactor(paymentTerms) // Si on a un null, il faudrait sans doute le gérer
     if (relativePriorityRF) riskFactor *= relativePriorityRF

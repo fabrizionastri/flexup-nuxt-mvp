@@ -466,7 +466,7 @@
         "interestRate": 0.05,
         "interestPriority": "credit",
         "interestStartRef": "deferral",
-        "interestPeriod": "sameAsPrincipal"
+        "interestPeriod": "sameAsPrimary"
       }
     },
     {

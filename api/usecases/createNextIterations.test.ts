@@ -1,20 +1,20 @@
 import {
   createNextInterestIterationTestCases,
-  createNextPrincipalIterationTestCases,
+  createNextMainIterationTestCases,
   createNextTokenIterationTestCases
 } from 'mock/inMemory/createNextIteration'
 import {
   createNextInterestIteration,
-  createNextPrincipalIteration,
+  createNextMainIteration,
   createNextTokenIteration
 } from 'usecases/createNextIterations'
 
 describe('Create Next Iterations', () => {
-  describe('createNextPrincipalIteration', () => {
-    it.each(createNextPrincipalIterationTestCases)(
+  describe('createNextMainIteration', () => {
+    it.each(createNextMainIterationTestCases)(
       '$summary',
       ({ previousIteration, paymentTerms, expected }) => {
-        expect(createNextPrincipalIteration(previousIteration, paymentTerms)).toEqual(expected)
+        expect(createNextMainIteration(previousIteration, paymentTerms)).toEqual(expected)
       }
     )
   })
@@ -30,14 +30,14 @@ describe('Create Next Iterations', () => {
       '$summary',
       ({
         paymentTerms: paymentTermsInterest,
-        previousPrincipalIteration,
+        previousMainIteration,
         previousInterestIteration,
         expected
       }) => {
         expect(
           createNextInterestIteration(
             paymentTermsInterest,
-            previousPrincipalIteration,
+            previousMainIteration,
             previousInterestIteration
           )
         ).toEqual(expected)

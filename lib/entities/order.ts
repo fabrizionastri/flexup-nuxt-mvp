@@ -1,4 +1,4 @@
-import type { Entity, CountryId, CurrencyId, Tranches, Item } from '.'
+import type { Entity, CountryId, CurrencyId, Tranche, Item } from '.'
 
 /* Questions:
 - should we store the compute functions in the gateway, entity, use case or utils ?
@@ -28,7 +28,7 @@ export interface Order extends Entity {
   taxAmount?: number
   averageTaxRate?: number
   items?: Item[]
-  tranches?: Tranches[]
+  tranches?: Tranche[]
   currency?: CurrencyId
   country?: CountryId
   // principal: number | undefined | null // null if NULL in DB. undefined if not provided so far in the app

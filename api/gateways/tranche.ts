@@ -1,12 +1,12 @@
-import type { Order, Tranches, TrancheData } from 'lib/entities'
+import type { Order, Tranche, TrancheData } from 'lib/entities'
 import { trancheAdapter } from 'adapters/database'
 export interface TrancheGateway {
-  getByOrder: (order: Order) => Promise<Tranches[]>
+  getByOrder: (order: Order) => Promise<Tranche[]>
 }
 
 import { round6 } from 'utils/round'
 
-export const computeTranche = (trancheData: TrancheData, orderData: Order): Tranches => ({
+export const computeTranche = (trancheData: TrancheData, orderData: Order): Tranche => ({
   ...trancheData,
   sign: trancheData.portion > 0 ? 1 : -1,
   payorId: trancheData.portion > 0 ? orderData.clientAccountId : orderData.supplierAccountId,
@@ -17,7 +17,7 @@ export const computeTranche = (trancheData: TrancheData, orderData: Order): Tran
 })
 
 export const createTrancheGateway = (): TrancheGateway => {
-  const getByOrder = async (order: Order): Promise<Tranches[]> =>
+  const getByOrder = async (order: Order): Promise<Tranche[]> =>
     (await trancheAdapter.getByOrderId(order.id)).map((tranche: TrancheData) =>
       computeTranche(tranche, order)
     )

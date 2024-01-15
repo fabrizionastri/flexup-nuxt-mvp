@@ -53,57 +53,57 @@ export const relativePriorityRiskFactorTestCases: Array<{
   expected: number | null
 }> = [
   {
-    summary: 'Principal flex / Interest sameAsPrincipal -> 1',
+    summary: 'Main flex / Interest sameAsPrimary -> 1',
     paymentTerms: {
       priority: 'flex',
       interestRate: 0.05,
-      interestPriority: 'sameAsPrincipal',
+      interestPriority: 'sameAsPrimary',
       interestStart: 'deferral',
-      interestPeriod: 'sameAsPrincipal'
+      interestPeriod: 'sameAsPrimary'
     },
     expected: 1
   },
   {
-    summary: 'Principal flex / Interest Credit -> 1',
+    summary: 'Main flex / Interest Credit -> 1',
     paymentTerms: {
       priority: 'flex',
       interestRate: 0.05,
       interestPriority: 'firm',
       interestStart: 'deferral',
-      interestPeriod: 'sameAsPrincipal'
+      interestPeriod: 'sameAsPrimary'
     },
     expected: 0.5
   },
   {
-    summary: 'Principal superflex / Interest flex -> +1 = 95%',
+    summary: 'Main superflex / Interest flex -> +1 = 95%',
     paymentTerms: {
       priority: 'superflex',
       interestRate: 0.05,
       interestPriority: 'flex',
       interestStart: 'deferral',
-      interestPeriod: 'sameAsPrincipal'
+      interestPeriod: 'sameAsPrimary'
     },
     expected: 0.95
   },
   {
-    summary: 'Principal preferred / Interest credit -> -3 = 115%',
+    summary: 'Main preferred / Interest credit -> -3 = 115%',
     paymentTerms: {
       priority: 'preferred',
       interestRate: 0.05,
       interestPriority: 'credit',
       interestStart: 'deferral',
-      interestPeriod: 'sameAsPrincipal'
+      interestPeriod: 'sameAsPrimary'
     },
     expected: 1.15
   },
   {
-    summary: 'Principal credit / Interest preferred  -> +3 = 85%',
+    summary: 'Main credit / Interest preferred  -> +3 = 85%',
     paymentTerms: {
       priority: 'credit',
       interestRate: 0.05,
       interestPriority: 'preferred',
       interestStart: 'deferral',
-      interestPeriod: 'sameAsPrincipal'
+      interestPeriod: 'sameAsPrimary'
     },
     expected: 0.85
   }
@@ -154,7 +154,7 @@ export const basicRiskFactorTestCases: Array<{
       offset: 1,
       adjustment: 'BOP',
       interestRate: 0.05,
-      interestPriority: 'sameAsPrincipal',
+      interestPriority: 'sameAsPrimary',
       interestStart: 'deliveryFinish',
       interestPeriod: 'quarter',
       residuePriority: 'flex',

@@ -1,10 +1,8 @@
-import type { CashPriority, Priority } from 'entities/paymentTerms'
+import type { CashPriority, Priority, ExtendedPriority } from 'entities/paymentTerms'
 // import type { Entity } from '.' // Fabrizio: I have removed to in order to make "id" optional, but this means we can no longer use the generic adapter methods
 
 export type CommitmentLevel = 'primary' | 'secondary'
-
-export type CommitmentType = 'principal' | 'interest' | 'token' | 'distribution'
-export type ExtendedPriority = Priority | 'distribution'
+export type CommitmentType = 'main' | 'interest' | 'token' | 'distribution'
 
 export type CommitmentStatus =
   | 'pending' // (!due date || !principal)
@@ -32,33 +30,38 @@ export interface CommitmentData {
   resolveDate?: Date // resolution date when it was processed
   previousIterationId?: string // not applicable for first Iteration
   nextIterationId?: string // added during a resolution if there is a residue, and a new iteration is created
+  payableAmount?: number // added during a resolution if there is an amount to pay
+  residueAmount?: number // dueAmount - payableAmount
+  outstandingAmount?: number
+  dueAmount?: number
+  paidAmount?: number
 }
 
-export interface PrimaryData {
+// TO CHECK: should I use method or static properties for calculated fields?
+
+export interface CommitmentCalc extends CommitmentData {
+  //TODO: how can I manipulate calculated fields ...???
+  outstandingAmountCalc(): number // different calculation for each type & level, see below
+  dueAmountCalc(): number // for buybacks: due = oustanding * requested %, for monthly: due = outstanding
+  // residueAmount(): number // dueAmount - payableAmount
+  paidAmountCalc(): number // sum of amount paid for a related all lettering
+}
+export interface MainCommitmentData extends CommitmentData {
   priority: Priority
 }
 
-export interface Commitment extends CommitmentData {
-  //TODO: how can I manipulate calculated fields ...???
-  outstandingAmount(): number // different calculation for each type & level, see below
-  dueAmount(): number // for buybacks: due = oustanding * requested %, for monthly: due = outstanding
-  payableAmount(): number // assigned during the resolution process
-  residueAmount(): number // dueAmount - payableAmount
-  paidAmount(): number // sum of amount paid for a related all lettering
-}
-
-export interface EquityData extends CommitmentData {
+export interface EquityCommitmentData extends CommitmentData {
   priority: Priority
   buybackRequestedByProject?: number
   buybackRequestedByAssociate?: number
 }
-export interface Equity extends Commitment, EquityData {
+export interface EquityCommitmentCalc extends CommitmentCalc, EquityCommitmentData {
   priority: Priority
-  buybackRequested(): number
+  buybackRequestedCalc(): number
 }
 
 // en fait c'est bon, il faut d'abord passer par Equity, puis Token
-export interface TokenData extends CommitmentData {
+export interface TokenCommitmentData extends CommitmentData {
   priority: 'token'
   referenceIndex: number
   numberOfTokenUnits?: number
@@ -66,27 +69,25 @@ export interface TokenData extends CommitmentData {
   canProjectRequestBuyback?: boolean
   buybackPrice?: number
 }
-export interface Token extends Commitment, TokenData {
+export interface TokenCommitment extends CommitmentCalc, TokenCommitmentData {
   priority: 'token'
-  level: 'secondary'
   currentIndex(): number
 }
 
-export interface InterestData extends CommitmentData {
+export interface InterestCommitmentData extends CommitmentData {
   priority: CashPriority
   interestRate: number
   interestStartDate?: Date
   carriedInterest?: number // residue of interest from previous iteration
   newInterest?: number // interest rate applied from startDate to dueDate
-}
-
-export interface Interest extends Commitment, InterestData {
-  priority: CashPriority
   interestAmount?: number // carried interest + new interest
   interestBasis?: number // principal + interest
 }
 
-export interface Distribution extends CommitmentData {
+export interface InterestCommitmentCalc extends CommitmentCalc, InterestCommitmentData {
+  priority: CashPriority
+}
+
+export interface DistributionCommitmentData extends CommitmentData {
   priority: 'distribution'
-  distributionAmount: number
 }

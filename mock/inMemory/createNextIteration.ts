@@ -1,12 +1,16 @@
-import type { CommitmentData, Interest, TokenData } from 'entities/commitment'
+import type {
+  CommitmentData,
+  InterestCommitmentData,
+  TokenCommitmentData
+} from 'entities/commitment'
 
 import type { PaymentTerms } from 'entities/paymentTerms'
 
-export const createNextPrincipalIterationTestCases: Array<{
+export const createNextMainIterationTestCases: Array<{
   summary: string
-  previousIteration: Partial<CommitmentData>
-  paymentTerms: Partial<PaymentTerms>
-  expected: Partial<CommitmentData>
+  previousIteration: CommitmentData
+  paymentTerms: PaymentTerms
+  expected: CommitmentData
 }> = [
   {
     summary: 'residue 20 flex next month',
@@ -15,10 +19,11 @@ export const createNextPrincipalIterationTestCases: Array<{
       trancheId: 'tranche1',
       residueAmount: 20,
       priority: 'flex',
-      type: 'principal',
+      type: 'main',
       level: 'primary',
       resolveDate: new Date('2020-05-05'),
-      dueDate: new Date('2020-05-25')
+      dueDate: new Date('2020-05-25'),
+      status: 'payable'
     },
     paymentTerms: {
       priority: 'flex',
@@ -29,7 +34,7 @@ export const createNextPrincipalIterationTestCases: Array<{
       trancheId: 'tranche1',
       previousIterationId: 'commitment1',
       priority: 'flex',
-      type: 'principal',
+      type: 'main',
       level: 'primary',
       status: 'active',
       principal: 20,
@@ -44,19 +49,21 @@ export const createNextPrincipalIterationTestCases: Array<{
       trancheId: 'tranche1',
       residueAmount: 20,
       priority: 'flex',
-      type: 'principal',
+      type: 'main',
       level: 'primary',
       resolveDate: new Date('2020-05-05'),
-      dueDate: new Date('2020-05-25')
+      dueDate: new Date('2020-05-25'),
+      status: 'payable'
     },
     paymentTerms: {
+      priority: 'flex',
       residuePriority: 'credit'
     },
     expected: {
       trancheId: 'tranche1',
       previousIterationId: 'commitment1',
       priority: 'credit',
-      type: 'principal',
+      type: 'main',
       level: 'primary',
       status: 'active',
       principal: 20,
@@ -67,21 +74,23 @@ export const createNextPrincipalIterationTestCases: Array<{
 
 export const createNextInterestIterationTestCases: Array<{
   summary: string
-  paymentTerms: Partial<PaymentTerms>
-  previousPrincipalIteration: Partial<CommitmentData>
-  previousInterestIteration: Partial<Interest>
-  expected: Partial<Interest>
+  paymentTerms: PaymentTerms
+  previousMainIteration: CommitmentData
+  previousInterestIteration: InterestCommitmentData
+  expected: InterestCommitmentData
 }> = [
   {
     summary: '5% flex interest on credit main at interest resolution',
     paymentTerms: {
+      priority: 'flex',
+      interestRate: 0.05,
       interestPeriod: 'year'
     },
-    previousPrincipalIteration: {
+    previousMainIteration: {
       id: 'commitment1',
       trancheId: 'tranche1',
       priority: 'credit',
-      type: 'principal',
+      type: 'main',
       level: 'primary',
       status: 'active',
       principal: 100
@@ -95,7 +104,8 @@ export const createNextInterestIterationTestCases: Array<{
       newInterest: 5,
       principal: 100,
       interestRate: 0.05,
-      dueDate: new Date('2020-05-05')
+      dueDate: new Date('2020-05-05'),
+      status: 'payable'
     },
     expected: {
       trancheId: 'tranche1',
@@ -107,19 +117,21 @@ export const createNextInterestIterationTestCases: Array<{
       principal: 100,
       interestRate: 0.05,
       interestStartDate: new Date('2020-05-05'),
-      dueDate: new Date('2021-05-05')
+      dueDate: new Date('2021-05-05'),
+      status: 'active'
     }
   },
   {
     summary: '6% flex interest on base flex, at jointcyc',
     paymentTerms: {
+      priority: 'flex',
       interestPeriod: 'year'
     },
-    previousPrincipalIteration: {
+    previousMainIteration: {
       id: 'commitment1',
       trancheId: 'tranche1',
       priority: 'credit',
-      type: 'principal',
+      type: 'main',
       level: 'primary',
       status: 'active',
       principal: 100
@@ -133,7 +145,8 @@ export const createNextInterestIterationTestCases: Array<{
       newInterest: 5,
       principal: 100,
       interestRate: 0.05,
-      dueDate: new Date('2020-05-05')
+      dueDate: new Date('2020-05-05'),
+      status: 'payable'
     },
     expected: {
       trancheId: 'tranche1',
@@ -145,15 +158,16 @@ export const createNextInterestIterationTestCases: Array<{
       principal: 100,
       interestRate: 0.05,
       interestStartDate: new Date('2020-05-05'),
-      dueDate: new Date('2021-05-05')
+      dueDate: new Date('2021-05-05'),
+      status: 'active'
     }
   }
 ]
 
 export const createNextTokenIterationTestCases: Array<{
   summary: string
-  previousIteration: Partial<TokenData>
-  expected: Partial<TokenData>
+  previousIteration: TokenCommitmentData
+  expected: TokenCommitmentData
 }> = [
   {
     summary: 'residue 20 token units',
@@ -165,7 +179,8 @@ export const createNextTokenIterationTestCases: Array<{
       priority: 'token',
       type: 'token',
       level: 'secondary',
-      resolveDate: new Date('2020-05-05')
+      resolveDate: new Date('2020-05-05'),
+      status: 'payable'
     },
     expected: {
       trancheId: 'tranche1',
@@ -184,6 +199,6 @@ export const createNextTokenIterationTestCases: Array<{
 
 export const createNextIterationsTestCases: Array<{
   summary: string
-  previousIteration?: Partial<CommitmentData>
-  expected: Array<Partial<CommitmentData> | Partial<TokenData> | Partial<Interest>>
+  previousIteration?: CommitmentData
+  expected: Array<CommitmentData | TokenCommitmentData | InterestCommitmentData>
 }> = []

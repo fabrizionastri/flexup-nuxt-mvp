@@ -3,7 +3,7 @@ import {
   calculateDueDateTestCases,
   createFirstIterationsTestCases,
   createFirstTokenIterationTestCases,
-  createFirstPrincipalIterationTestCases,
+  createFirstMainIterationTestCases,
   createFirstInterestIterationTestCases
 } from 'mock/inMemory/createFirstIteration'
 
@@ -12,7 +12,7 @@ import {
   offsetDate,
   createFirstIterations,
   createFirstTokenIteration,
-  createFirstPrincipalIteration,
+  createFirstMainIteration,
   createFirstInterestIteration,
   calculateInterestDueDate
 } from './createFirstIterations'
@@ -45,12 +45,12 @@ describe('Create first iterations upon order confirmation', () => {
     it('returns principal due date when interest period is same as principal', () => {
       const principalDueDate = new Date('2024-02-01')
       expect(
-        calculateInterestDueDate(interestStartDate, 'sameAsPrincipal', 'flex', principalDueDate)
+        calculateInterestDueDate(interestStartDate, 'sameAsPrimary', 'flex', principalDueDate)
       ).toBe(principalDueDate)
     })
     it('returns undefined when interest period is same as principal and principal due date is invalid', () => {
       expect(
-        calculateInterestDueDate(interestStartDate, 'sameAsPrincipal', 'flex', new Date('invalid'))
+        calculateInterestDueDate(interestStartDate, 'sameAsPrimary', 'flex', new Date('invalid'))
       ).toBeUndefined()
     })
     it('returns calculated interest due date for flex priority and valid period', () => {
@@ -69,10 +69,10 @@ describe('Create first iterations upon order confirmation', () => {
         calculateInterestDueDate(interestStartDate, undefined, undefined, principalDueDate)
       ).toBe(principalDueDate)
     })
-    it('returns principal due date if interestPeriod is sameAsPrincipal', () => {
+    it('returns principal due date if interestPeriod is sameAsPrimary', () => {
       const interestStartDate2 = new Date('2020-05-05')
       const interestPriority2 = 'preferred'
-      const interestPeriod2 = 'sameAsPrincipal'
+      const interestPeriod2 = 'sameAsPrimary'
       const principalDueDate2 = new Date('2020-08-16')
 
       expect(
@@ -86,11 +86,11 @@ describe('Create first iterations upon order confirmation', () => {
     })
   })
 
-  describe('createFirstPrincipalIteration', () => {
-    it.each(createFirstPrincipalIterationTestCases)(
+  describe('createFirstMainIteration', () => {
+    it.each(createFirstMainIterationTestCases)(
       '$summary',
       ({ paymentTerms, principal, orderDates, expected }) => {
-        expect(createFirstPrincipalIteration(paymentTerms, principal, orderDates)).toEqual(expected)
+        expect(createFirstMainIteration(paymentTerms, principal, orderDates)).toEqual(expected)
       }
     )
   })

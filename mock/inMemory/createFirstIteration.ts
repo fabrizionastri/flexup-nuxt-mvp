@@ -1,4 +1,9 @@
-import type { CommitmentData, Interest, CommitmentLevel, TokenData } from 'entities/commitment'
+import type {
+  CommitmentData,
+  InterestCommitmentData,
+  CommitmentLevel,
+  TokenCommitmentData
+} from 'entities/commitment'
 import type { Priority, Period, PaymentTerms } from 'lib/entities/paymentTerms'
 import { today } from 'lib/utils'
 
@@ -210,19 +215,19 @@ export const calculateDueDateTestCases: Array<{
   }
 ]
 
-export const createFirstPrincipalIterationTestCases: Array<{
+export const createFirstMainIterationTestCases: Array<{
   summary: string
   paymentTerms: PaymentTerms
   principal?: number
   orderDates?: { [key: string]: Date | string | undefined }
-  expected: Partial<CommitmentData>
+  expected: CommitmentData
 }> = [
   {
     summary: 'flex (no principal, no dates)',
     paymentTerms: { priority: 'flex' },
     expected: {
       priority: 'flex',
-      type: 'principal',
+      type: 'main',
       level: 'primary',
       status: 'pending'
     }
@@ -234,7 +239,7 @@ export const createFirstPrincipalIterationTestCases: Array<{
     expected: {
       principal: 10,
       priority: 'credit',
-      type: 'principal',
+      type: 'main',
       level: 'primary',
       status: 'active',
       activeDate: today()
@@ -254,7 +259,7 @@ export const createFirstPrincipalIterationTestCases: Array<{
       principal: 20,
       priority: 'flex',
       dueDate: new Date('2020-06-05T00:00:00.000Z'),
-      type: 'principal',
+      type: 'main',
       level: 'primary',
       status: 'active',
       activeDate: today()
@@ -275,7 +280,7 @@ export const createFirstPrincipalIterationTestCases: Array<{
       principal: 30,
       priority: 'flex',
       dueDate: new Date('2020-06-19T23:59:59.999Z'),
-      type: 'principal',
+      type: 'main',
       level: 'primary',
       status: 'active',
       activeDate: today()
@@ -296,7 +301,7 @@ export const createFirstPrincipalIterationTestCases: Array<{
       principal: 40,
       priority: 'preferred',
       dueDate: new Date('2020-09-01'),
-      type: 'principal',
+      type: 'main',
       level: 'primary',
       status: 'active',
       activeDate: today()
@@ -314,7 +319,7 @@ export const createFirstPrincipalIterationTestCases: Array<{
     expected: {
       principal: 50,
       priority: 'firm',
-      type: 'principal',
+      type: 'main',
       level: 'primary',
       status: 'pending'
     }
@@ -331,7 +336,7 @@ export const createFirstPrincipalIterationTestCases: Array<{
     expected: {
       principal: 60,
       priority: 'superflex',
-      type: 'principal',
+      type: 'main',
       level: 'primary',
       status: 'pending'
     }
@@ -345,7 +350,7 @@ export const createFirstInterestIterationTestCases: Array<{
   orderDates?: { [key: string]: Date | string | undefined }
   principalPriority?: Priority
   principalDueDate?: Date
-  expected: Partial<Interest>
+  expected: InterestCommitmentData
 }> = [
   // {
   //   summary: '5%, credit, deliveryFinish, year',
@@ -412,13 +417,13 @@ export const createFirstInterestIterationTestCases: Array<{
   //   }
   // },
   {
-    summary: '7%, preferred, confirmation, sameAsPrincipal',
+    summary: '7%, preferred, confirmation, sameAsPrimary',
     paymentTerms: {
       priority: 'firm',
       interestRate: 0.07,
       interestPriority: 'preferred',
       interestStartRef: 'confirmation',
-      interestPeriod: 'sameAsPrincipal'
+      interestPeriod: 'sameAsPrimary'
     },
     principal: 80,
     orderDates: { confirmation: new Date('2020-05-05') },
@@ -437,13 +442,13 @@ export const createFirstInterestIterationTestCases: Array<{
     }
   },
   {
-    summary: '7%, prefesameAsPrincipalrred, confirmation, sameAsPrincipal',
+    summary: '7%, prefesameAsPrimaryrred, confirmation, sameAsPrimary',
     paymentTerms: {
       priority: 'preferred',
       interestRate: 0.07,
-      interestPriority: 'sameAsPrincipal',
+      interestPriority: 'sameAsPrimary',
       interestStartRef: 'confirmation',
-      interestPeriod: 'sameAsPrincipal'
+      interestPeriod: 'sameAsPrimary'
     },
     principal: 80,
     orderDates: { confirmation: new Date('2020-05-05') },
@@ -470,7 +475,7 @@ export const createFirstTokenIterationTestCases: Array<{
   principal?: number
   level?: CommitmentLevel
   canProjectRequestBuyback?: boolean
-  expected: Partial<TokenData>
+  expected: TokenCommitmentData
 }> = [
   {
     summary: 'index 5, 10 principal',
@@ -553,7 +558,7 @@ export const createFirstIterationsTestCases: Array<{
   orderDates?: { [key: string]: Date | string | undefined }
   riskFactor?: number
   referenceIndex?: number
-  expected: Array<Partial<CommitmentData> | Partial<TokenData> | Partial<Interest>>
+  expected: Array<CommitmentData | TokenCommitmentData | InterestCommitmentData>
 }> = [
   {
     summary: 'flex (no principal, no dates)',
@@ -565,7 +570,7 @@ export const createFirstIterationsTestCases: Array<{
         priority: 'flex',
         status: 'pending',
         level: 'primary',
-        type: 'principal'
+        type: 'main'
       },
       {
         priority: 'token',
@@ -588,7 +593,7 @@ export const createFirstIterationsTestCases: Array<{
         priority: 'credit',
         status: 'active',
         level: 'primary',
-        type: 'principal',
+        type: 'main',
         activeDate: today()
       },
       {
@@ -623,7 +628,7 @@ export const createFirstIterationsTestCases: Array<{
         dueDate: new Date('2020-06-30T23:59:59.999Z'),
         status: 'active',
         level: 'primary',
-        type: 'principal',
+        type: 'main',
         activeDate: today()
       },
       {
@@ -657,7 +662,7 @@ export const createFirstIterationsTestCases: Array<{
         dueDate: new Date('2020-06-19T11:11:00.000Z'),
         status: 'active',
         level: 'primary',
-        type: 'principal',
+        type: 'main',
         activeDate: today()
       },
       {
@@ -692,7 +697,7 @@ export const createFirstIterationsTestCases: Array<{
         dueDate: new Date('2020-09-01'),
         status: 'active',
         level: 'primary',
-        type: 'principal',
+        type: 'main',
 
         activeDate: today()
       },
@@ -725,7 +730,7 @@ export const createFirstIterationsTestCases: Array<{
         priority: 'firm',
         status: 'pending',
         level: 'primary',
-        type: 'principal'
+        type: 'main'
       }
     ]
   },
@@ -746,7 +751,7 @@ export const createFirstIterationsTestCases: Array<{
         priority: 'superflex',
         status: 'pending',
         level: 'primary',
-        type: 'principal'
+        type: 'main'
       },
       {
         priority: 'token',
@@ -790,7 +795,7 @@ export const createFirstIterationsTestCases: Array<{
       interestRate: 0.05,
       interestPriority: 'flex',
       interestStartRef: 'confirmation',
-      interestPeriod: 'sameAsPrincipal'
+      interestPeriod: 'sameAsPrimary'
     },
     principal: 40,
     referenceIndex: 4,
@@ -802,7 +807,7 @@ export const createFirstIterationsTestCases: Array<{
         priority: 'preferred',
         dueDate: new Date('2020-09-01'),
         status: 'active',
-        type: 'principal',
+        type: 'main',
         level: 'primary',
         activeDate: today()
       },
