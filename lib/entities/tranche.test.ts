@@ -81,7 +81,7 @@ describe('tranche', () => {
       id: 'tranche1',
       orderId: 'order123',
       portion: 0.5,
-      paymentTerms: { priority: 'flex', name: 'Flex (simple)' }
+      paymentTerms: { primaryPriority: 'flex', name: 'Flex (simple)' }
       // ... other TrancheData properties
     }
     describe('positive portion', () => {

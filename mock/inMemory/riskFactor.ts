@@ -1,4 +1,4 @@
-import type { PaymentTerms, PaymentTerms, Priority } from 'entities/paymentTerms'
+import type { PaymentTerms, PrimaryPriority } from 'entities/paymentTerms'
 
 export const delayRiskFactorTestCases: Array<{
   summary: string
@@ -6,44 +6,49 @@ export const delayRiskFactorTestCases: Array<{
   expected: number | null
 }> = [
   {
-    summary: 'No period = null',
+    summary: 'no info provided → defaults to 1 month, no adjustment',
     principalPaymentTerms: {},
+    expected: 0.5379
+  },
+  {
+    summary: 'only EOP provided',
+    principalPaymentTerms: { mainAdjustment: 'EOP' },
     expected: 0.5512
   },
   {
-    summary: '1 year',
-    principalPaymentTerms: { period: 'year' },
-    expected: 0.6872
+    summary: 'only year provided',
+    principalPaymentTerms: { mainPeriod: 'year' },
+    expected: 0.6605
   },
   {
-    summary: '1 month none',
-    principalPaymentTerms: { period: 'month', adjustment: 'none' },
+    summary: 'only month & none provided',
+    principalPaymentTerms: { mainPeriod: 'month', mainAdjustment: 'none' },
     expected: 0.5379
   },
   {
     summary: '180 days',
-    principalPaymentTerms: { period: 'day', offset: 180 },
-    expected: 0.6172
+    principalPaymentTerms: { mainPeriod: 'day', mainOffset: 180 },
+    expected: 0.617
   },
   {
     summary: '10 years',
-    principalPaymentTerms: { period: 'year', offset: 10 },
+    principalPaymentTerms: { mainPeriod: 'year', mainOffset: 10, mainAdjustment: 'EOP' },
     expected: 0.8231
   },
   {
     summary: 'same day',
-    principalPaymentTerms: { period: 'day', offset: 0 },
-    expected: 0.5013
+    principalPaymentTerms: { mainPeriod: 'day', mainOffset: 0 },
+    expected: 0.5005
   },
   {
     summary: '7 days before',
-    principalPaymentTerms: { period: 'day', offset: -7 },
+    principalPaymentTerms: { mainPeriod: 'day', mainOffset: -7 },
     expected: 0.5
   },
   {
     summary: '100 years',
-    principalPaymentTerms: { period: 'year', offset: 100 },
-    expected: 0.9859
+    principalPaymentTerms: { mainPeriod: 'year', mainOffset: 100 },
+    expected: 0.9855
   }
 ]
 
@@ -55,7 +60,7 @@ export const relativePriorityRiskFactorTestCases: Array<{
   {
     summary: 'Main flex / Interest sameAsPrimary -> 1',
     paymentTerms: {
-      priority: 'flex',
+      primaryPriority: 'flex',
       interestRate: 0.05,
       interestPriority: 'sameAsPrimary',
       interestStart: 'deferral',
@@ -66,7 +71,7 @@ export const relativePriorityRiskFactorTestCases: Array<{
   {
     summary: 'Main flex / Interest Credit -> 1',
     paymentTerms: {
-      priority: 'flex',
+      primaryPriority: 'flex',
       interestRate: 0.05,
       interestPriority: 'firm',
       interestStart: 'deferral',
@@ -77,7 +82,7 @@ export const relativePriorityRiskFactorTestCases: Array<{
   {
     summary: 'Main superflex / Interest flex -> +1 = 95%',
     paymentTerms: {
-      priority: 'superflex',
+      primaryPriority: 'superflex',
       interestRate: 0.05,
       interestPriority: 'flex',
       interestStart: 'deferral',
@@ -88,7 +93,7 @@ export const relativePriorityRiskFactorTestCases: Array<{
   {
     summary: 'Main preferred / Interest credit -> -3 = 115%',
     paymentTerms: {
-      priority: 'preferred',
+      primaryPriority: 'preferred',
       interestRate: 0.05,
       interestPriority: 'credit',
       interestStart: 'deferral',
@@ -99,7 +104,7 @@ export const relativePriorityRiskFactorTestCases: Array<{
   {
     summary: 'Main credit / Interest preferred  -> +3 = 85%',
     paymentTerms: {
-      priority: 'credit',
+      primaryPriority: 'credit',
       interestRate: 0.05,
       interestPriority: 'preferred',
       interestStart: 'deferral',
@@ -116,43 +121,78 @@ export const basicRiskFactorTestCases: Array<{
 }> = [
   {
     summary: 'Token = 100%',
-    paymentTerms: { priority: 'token' },
+    paymentTerms: { primaryPriority: 'token' },
     expected: 1
   },
   {
     summary: 'Firm = 0%',
-    paymentTerms: { priority: 'firm' },
+    paymentTerms: { primaryPriority: 'firm' },
     expected: 0
   },
   {
     summary: 'Flex (defaults) = 40%',
-    paymentTerms: { priority: 'flex' },
-    expected: 0.4
+    paymentTerms: {
+      primaryPriority: 'flex',
+      mainStart: 'confirmation',
+      mainPeriod: 'month',
+      mainOffset: 1
+    },
+    expected: 0.1506
   },
   {
-    summary: 'Preferred delivery finish = 20%',
+    summary: 'Preferred delivery finish ∞',
     paymentTerms: {
-      priority: 'preferred',
-      start: 'deliveryFinish'
+      primaryPriority: 'preferred',
+      mainStart: 'deliveryFinish',
+      mainPeriod: 'year',
+      mainOffset: 10000 // this is just to elimitate the delay risk factor
     },
     expected: 0.2
   },
   {
-    summary: 'Preferred confirmation = 14%',
+    summary: 'Preferred delivery finish (defaults)',
     paymentTerms: {
-      priority: 'preferred',
-      start: 'confirmation'
+      primaryPriority: 'preferred'
+    },
+    expected: 0.1076
+  },
+  {
+    summary: 'Preferred confirmation',
+    paymentTerms: {
+      primaryPriority: 'preferred',
+      mainStart: 'deliveryFinish'
+      // defauts to 1 month, no adjustment
+    },
+    expected: 0.1076
+  },
+  {
+    summary: 'Preferred confirmation 1 month',
+    paymentTerms: {
+      primaryPriority: 'preferred',
+      mainStart: 'confirmation',
+      mainPeriod: 'month',
+      mainOffset: 1
+    },
+    expected: 0.0753
+  },
+  {
+    summary: 'Preferred confirmation ∞',
+    paymentTerms: {
+      primaryPriority: 'preferred',
+      mainStart: 'confirmation',
+      mainPeriod: 'month',
+      mainOffset: 100000000 // this is just to elimitate the delay risk factor
     },
     expected: 0.14
   },
   {
     summary: 'Superflex->flex = 9%',
     paymentTerms: {
-      priority: 'superflex',
-      start: 'confirmation',
-      period: 'year',
-      offset: 1,
-      adjustment: 'BOP',
+      primaryPriority: 'superflex',
+      mainStart: 'confirmation',
+      mainPeriod: 'year',
+      mainOffset: 1,
+      mainAdjustment: 'BOP',
       interestRate: 0.05,
       interestPriority: 'sameAsPrimary',
       interestStart: 'deliveryFinish',
@@ -167,7 +207,7 @@ export const basicRiskFactorTestCases: Array<{
   {
     summary: 'Credit, 7% interest = 28.07%',
     paymentTerms: {
-      priority: 'credit',
+      primaryPriority: 'credit',
       interestRate: 0.07,
       interestPriority: 'flex',
       interestStart: 'confirmation',
@@ -206,7 +246,7 @@ export const recencyWeightedAverageTestCases: Array<{
 
 export const adjustedRiskFactorTestCases: Array<{
   summary: string
-  principalPriority: Priority
+  principalPriority: PrimaryPriority
   payableRatios: number[]
   expected: number
 }> = [
@@ -245,7 +285,7 @@ export const riskFactorTestCases: Array<{
   {
     summary: 'flex -> credit, 4x 100% -> 40%',
     paymentTerms: {
-      priority: 'flex',
+      primaryPriority: 'flex',
       residuePriority: 'credit'
     },
     payableRatios: [0.6, 0.5, 0.4, 0.3],
@@ -253,14 +293,17 @@ export const riskFactorTestCases: Array<{
   },
   {
     summary: 'preferred * 40%, 30% ... -> 67%',
-    paymentTerms: { priority: 'preferred' },
+    paymentTerms: { primaryPriority: 'preferred' },
     payableRatios: [0.4, 0.3, 0.2, 0.1, 0, 0, 0],
     expected: 0.6714
   },
   {
     summary: 'preferred @ 5% interest * 40%, 30% ... -> 67%',
     paymentTerms: {
-      priority: 'preferred',
+      primaryPriority: 'preferred',
+      mainStart: 'deliveryFinish',
+      mainPeriod: 'year',
+      mainOffset: 100000, // this is just to elimitate the delay risk factor
       interestRate: 0.05,
       interestPriority: 'flex',
       interestStart: 'confirmation',

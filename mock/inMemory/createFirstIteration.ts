@@ -4,7 +4,7 @@ import type {
   CommitmentLevel,
   TokenCommitmentData
 } from 'entities/commitment'
-import type { Priority, Period, PaymentTerms } from 'lib/entities/paymentTerms'
+import type { PrimaryPriority, Period, PaymentTerms } from 'lib/entities/paymentTerms'
 import { today } from 'lib/utils'
 
 export const offsetDateTestCases: Array<{
@@ -224,7 +224,7 @@ export const createFirstMainIterationTestCases: Array<{
 }> = [
   {
     summary: 'flex (no principal, no dates)',
-    paymentTerms: { priority: 'flex' },
+    paymentTerms: { primaryPriority: 'flex' },
     expected: {
       priority: 'flex',
       type: 'main',
@@ -234,7 +234,7 @@ export const createFirstMainIterationTestCases: Array<{
   },
   {
     summary: '10 credit (no dates)',
-    paymentTerms: { priority: 'credit' },
+    paymentTerms: { primaryPriority: 'credit' },
     principal: 10,
     expected: {
       principal: 10,
@@ -248,10 +248,10 @@ export const createFirstMainIterationTestCases: Array<{
   {
     summary: '20 flex conf+1M',
     paymentTerms: {
-      priority: 'flex',
-      startRef: 'confirmation',
-      period: 'month',
-      offset: 1
+      primaryPriority: 'flex',
+      mainStart: 'confirmation',
+      mainPeriod: 'month',
+      mainOffset: 1
     },
     principal: 20,
     orderDates: { confirmation: '2020-05-05' },
@@ -268,11 +268,11 @@ export const createFirstMainIterationTestCases: Array<{
   {
     summary: '30 flex conf+45D',
     paymentTerms: {
-      priority: 'flex',
-      startRef: 'confirmation',
-      period: 'day',
-      adjustment: 'EOP',
-      offset: 45
+      primaryPriority: 'flex',
+      mainStart: 'confirmation',
+      mainPeriod: 'day',
+      mainAdjustment: 'EOP',
+      mainOffset: 45
     },
     principal: 30,
     orderDates: { confirmation: new Date('2020-05-05') },
@@ -289,11 +289,11 @@ export const createFirstMainIterationTestCases: Array<{
   {
     summary: '40 pref conf@BOP+3M',
     paymentTerms: {
-      priority: 'preferred',
-      startRef: 'confirmation',
-      adjustment: 'BOP',
-      period: 'month',
-      offset: 3
+      primaryPriority: 'preferred',
+      mainStart: 'confirmation',
+      mainAdjustment: 'BOP',
+      mainPeriod: 'month',
+      mainOffset: 3
     },
     principal: 40,
     orderDates: { confirmation: new Date('2020-06-05') },
@@ -310,10 +310,10 @@ export const createFirstMainIterationTestCases: Array<{
   {
     summary: '50 firm deliveryMiddle+1Q',
     paymentTerms: {
-      priority: 'firm',
-      startRef: 'deliveryMiddle',
-      period: 'quarter',
-      offset: 1
+      primaryPriority: 'firm',
+      mainStart: 'deliveryMiddle',
+      mainPeriod: 'quarter',
+      mainOffset: 1
     },
     principal: 50,
     expected: {
@@ -327,10 +327,10 @@ export const createFirstMainIterationTestCases: Array<{
   {
     summary: '60 superflex deliveryStart+2Y',
     paymentTerms: {
-      priority: 'superflex',
-      startRef: 'deliveryStart',
-      period: 'year',
-      offset: 1
+      primaryPriority: 'superflex',
+      mainStart: 'deliveryStart',
+      mainPeriod: 'year',
+      mainOffset: 1
     },
     principal: 60,
     expected: {
@@ -348,7 +348,7 @@ export const createFirstInterestIterationTestCases: Array<{
   paymentTerms: PaymentTerms
   principal?: number
   orderDates?: { [key: string]: Date | string | undefined }
-  principalPriority?: Priority
+  principalPriority?: PrimaryPriority
   principalDueDate?: Date
   expected: InterestCommitmentData
 }> = [
@@ -419,10 +419,10 @@ export const createFirstInterestIterationTestCases: Array<{
   {
     summary: '7%, preferred, confirmation, sameAsPrimary',
     paymentTerms: {
-      priority: 'firm',
+      primaryPriority: 'firm',
       interestRate: 0.07,
       interestPriority: 'preferred',
-      interestStartRef: 'confirmation',
+      interestStart: 'confirmation',
       interestPeriod: 'sameAsPrimary'
     },
     principal: 80,
@@ -444,10 +444,10 @@ export const createFirstInterestIterationTestCases: Array<{
   {
     summary: '7%, prefesameAsPrimaryrred, confirmation, sameAsPrimary',
     paymentTerms: {
-      priority: 'preferred',
+      primaryPriority: 'preferred',
       interestRate: 0.07,
       interestPriority: 'sameAsPrimary',
-      interestStartRef: 'confirmation',
+      interestStart: 'confirmation',
       interestPeriod: 'sameAsPrimary'
     },
     principal: 80,
@@ -487,7 +487,7 @@ export const createFirstTokenIterationTestCases: Array<{
       type: 'token',
       principal: 10,
       referenceIndex: 5,
-      numberOfTokenUnits: 2,
+      numberOfTokens: 2,
       level: 'primary',
       status: 'active',
       activeDate: today()
@@ -529,7 +529,7 @@ export const createFirstTokenIterationTestCases: Array<{
       type: 'token',
       referenceIndex: 6,
       principal: 12,
-      numberOfTokenUnits: 2,
+      numberOfTokens: 2,
       level: 'primary',
       status: 'active',
       activeDate: today()
@@ -562,7 +562,7 @@ export const createFirstIterationsTestCases: Array<{
 }> = [
   {
     summary: 'flex (no principal, no dates)',
-    paymentTerms: { priority: 'flex' },
+    paymentTerms: { primaryPriority: 'flex' },
     riskFactor: 0.5,
     referenceIndex: 5,
     expected: [
@@ -583,7 +583,7 @@ export const createFirstIterationsTestCases: Array<{
   },
   {
     summary: '10 credit (no dates)',
-    paymentTerms: { priority: 'credit' },
+    paymentTerms: { primaryPriority: 'credit' },
     principal: 10,
     referenceIndex: 2,
     riskFactor: 0.8,
@@ -603,7 +603,7 @@ export const createFirstIterationsTestCases: Array<{
         type: 'token',
         principal: 8,
         referenceIndex: 2,
-        numberOfTokenUnits: 4,
+        numberOfTokens: 4,
         activeDate: today()
       }
     ]
@@ -611,11 +611,11 @@ export const createFirstIterationsTestCases: Array<{
   {
     summary: '20 flex conf+1M (confirmation date)',
     paymentTerms: {
-      priority: 'flex',
-      startRef: 'confirmation',
-      period: 'month',
-      adjustment: 'EOP',
-      offset: 1
+      primaryPriority: 'flex',
+      mainStart: 'confirmation',
+      mainPeriod: 'month',
+      mainAdjustment: 'EOP',
+      mainOffset: 1
     },
     principal: 20,
     referenceIndex: 2,
@@ -638,7 +638,7 @@ export const createFirstIterationsTestCases: Array<{
         type: 'token',
         principal: 10,
         referenceIndex: 2,
-        numberOfTokenUnits: 5,
+        numberOfTokens: 5,
         activeDate: today()
       }
     ]
@@ -646,10 +646,10 @@ export const createFirstIterationsTestCases: Array<{
   {
     summary: '30 flex conf+45D',
     paymentTerms: {
-      priority: 'flex',
-      startRef: 'confirmation',
-      period: 'day',
-      offset: 45
+      primaryPriority: 'flex',
+      mainStart: 'confirmation',
+      mainPeriod: 'day',
+      mainOffset: 45
     },
     principal: 30,
     referenceIndex: 2,
@@ -672,7 +672,7 @@ export const createFirstIterationsTestCases: Array<{
         type: 'token',
         principal: 12,
         referenceIndex: 2,
-        numberOfTokenUnits: 6,
+        numberOfTokens: 6,
         activeDate: today()
       }
     ]
@@ -680,11 +680,11 @@ export const createFirstIterationsTestCases: Array<{
   {
     summary: '40 pref conf@BOP+3M',
     paymentTerms: {
-      priority: 'preferred',
-      startRef: 'confirmation',
-      adjustment: 'BOP',
-      period: 'month',
-      offset: 3
+      primaryPriority: 'preferred',
+      mainStart: 'confirmation',
+      mainAdjustment: 'BOP',
+      mainPeriod: 'month',
+      mainOffset: 3
     },
     principal: 40,
     referenceIndex: 4,
@@ -708,7 +708,7 @@ export const createFirstIterationsTestCases: Array<{
         type: 'token',
         principal: 8,
         referenceIndex: 4,
-        numberOfTokenUnits: 2,
+        numberOfTokens: 2,
         activeDate: today()
       }
     ]
@@ -716,10 +716,10 @@ export const createFirstIterationsTestCases: Array<{
   {
     summary: '50 firm deliveryMiddle+1Q',
     paymentTerms: {
-      priority: 'firm',
-      startRef: 'deliveryMiddle',
-      period: 'quarter',
-      offset: 1
+      primaryPriority: 'firm',
+      mainStart: 'deliveryMiddle',
+      mainPeriod: 'quarter',
+      mainOffset: 1
     },
     principal: 50,
     referenceIndex: 4,
@@ -737,10 +737,10 @@ export const createFirstIterationsTestCases: Array<{
   {
     summary: '60 superflex deliveryStart+2Y',
     paymentTerms: {
-      priority: 'superflex',
-      startRef: 'deliveryStart',
-      period: 'year',
-      offset: 1
+      primaryPriority: 'superflex',
+      mainStart: 'deliveryStart',
+      mainPeriod: 'year',
+      mainOffset: 1
     },
     principal: 60,
     referenceIndex: 5,
@@ -760,14 +760,14 @@ export const createFirstIterationsTestCases: Array<{
         type: 'token',
         principal: 30,
         referenceIndex: 5,
-        numberOfTokenUnits: 6,
+        numberOfTokens: 6,
         activeDate: today()
       }
     ]
   },
   {
     summary: '70 token',
-    paymentTerms: { priority: 'token' },
+    paymentTerms: { primaryPriority: 'token' },
     principal: 70,
     orderDates: { confirmation: new Date('2020-05-05') },
     referenceIndex: 10,
@@ -776,7 +776,7 @@ export const createFirstIterationsTestCases: Array<{
         priority: 'token',
         principal: 70,
         referenceIndex: 10,
-        numberOfTokenUnits: 7,
+        numberOfTokens: 7,
         status: 'active',
         level: 'primary',
         type: 'token',
@@ -787,14 +787,14 @@ export const createFirstIterationsTestCases: Array<{
   {
     summary: '40 pref + 5% interest, conf@BOP+3M',
     paymentTerms: {
-      priority: 'preferred',
-      startRef: 'confirmation',
-      adjustment: 'BOP',
-      period: 'month',
-      offset: 3,
+      primaryPriority: 'preferred',
+      mainStart: 'confirmation',
+      mainAdjustment: 'BOP',
+      mainPeriod: 'month',
+      mainOffset: 3,
       interestRate: 0.05,
       interestPriority: 'flex',
-      interestStartRef: 'confirmation',
+      interestStart: 'confirmation',
       interestPeriod: 'sameAsPrimary'
     },
     principal: 40,
@@ -818,7 +818,7 @@ export const createFirstIterationsTestCases: Array<{
         level: 'secondary',
         status: 'active',
         referenceIndex: 4,
-        numberOfTokenUnits: 2,
+        numberOfTokens: 2,
         activeDate: today()
       },
       {

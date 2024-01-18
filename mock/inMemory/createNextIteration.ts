@@ -26,7 +26,7 @@ export const createNextMainIterationTestCases: Array<{
       status: 'payable'
     },
     paymentTerms: {
-      priority: 'flex',
+      primaryPriority: 'flex',
       residuePriority: 'flex',
       residuePeriod: 'month'
     },
@@ -56,7 +56,7 @@ export const createNextMainIterationTestCases: Array<{
       status: 'payable'
     },
     paymentTerms: {
-      priority: 'flex',
+      primaryPriority: 'flex',
       residuePriority: 'credit'
     },
     expected: {
@@ -82,7 +82,7 @@ export const createNextInterestIterationTestCases: Array<{
   {
     summary: '5% flex interest on credit main at interest resolution',
     paymentTerms: {
-      priority: 'flex',
+      primaryPriority: 'flex',
       interestRate: 0.05,
       interestPeriod: 'year'
     },
@@ -124,7 +124,7 @@ export const createNextInterestIterationTestCases: Array<{
   {
     summary: '6% flex interest on base flex, at jointcyc',
     paymentTerms: {
-      priority: 'flex',
+      primaryPriority: 'flex',
       interestPeriod: 'year'
     },
     previousMainIteration: {
@@ -186,7 +186,7 @@ export const createNextTokenIterationTestCases: Array<{
       trancheId: 'tranche1',
       previousIterationId: 'commitment1',
       referenceIndex: 2,
-      numberOfTokenUnits: 3,
+      numberOfTokens: 3,
       principal: 6,
       status: 'active',
       priority: 'token',

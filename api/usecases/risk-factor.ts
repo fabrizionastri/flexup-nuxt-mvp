@@ -3,30 +3,30 @@ import {
   interestPeriodRiskFactors,
   interestRateRiskHurdle,
   interestStartRiskFactors,
-  principalPriorityRiskFactors,
-  principalStartReferenceRiskFactors,
+  primaryPriorityRiskFactors,
+  mainStartRiskFactors,
   noProjectRequestBuybackRiskFactor,
   periodLengths,
-  priorities,
+  primaryPriorities,
   residuePeriodRiskFactors,
   monthlyPriorities,
   residuePriorityRiskFactors
 } from 'entities/paymentTerms'
-import type { Adjustment, PaymentTerms, Period, Priority } from 'entities/paymentTerms'
+import type { MainAdjustment, PaymentTerms, Period, PrimaryPriority } from 'entities/paymentTerms'
+import { round4 } from 'lib/utils'
 
 const computeDelayRiskFactor = (days: number) => (Math.log10(days + 45) + 1.35) / 6
 
 export const delayRiskFactor = (
-  adjustmentLabel: Adjustment = 'EOP',
+  adjustmentLabel: MainAdjustment = 'none',
   periodLabel: Period = 'month',
   offset = 1
-): number | null => {
-  if (!periodLabel) return null
-  const period = periodLengths[periodLabel]
+): number => {
+  const periodLengthInDays = periodLengths[periodLabel]
   const adjustment = adjustmentLabel ? adjustmentLengths[adjustmentLabel] : 0
-  const duration = period * (offset + adjustment)
-  const delayRiskFactor = computeDelayRiskFactor(duration)
-  return Math.min(Math.max(Math.round(delayRiskFactor * 10000) / 10000, 0.5), 1)
+  const durationInDays = periodLengthInDays * (offset + adjustment)
+  const delayRiskFactor = computeDelayRiskFactor(durationInDays)
+  return Math.min(Math.max(round4(delayRiskFactor), 0.5), 1)
 }
 
 export const relativePriorityRiskFactor = (paymentTerms: PaymentTerms): number | null => {
@@ -37,76 +37,81 @@ export const relativePriorityRiskFactor = (paymentTerms: PaymentTerms): number |
   if (interestPriority === 'sameAsPrimary') return 1
 
   // find the index of interestPriority in Priorities
-  const interestPriorityLevel = priorities.indexOf(interestPriority)
-  const principalPriorityLevel = priorities.indexOf(paymentTerms.priority)
+  const interestPriorityLevel = primaryPriorities.indexOf(interestPriority)
+  const principalPriorityLevel = primaryPriorities.indexOf(paymentTerms.primaryPriority)
   const delta = principalPriorityLevel - interestPriorityLevel
   return 1 - delta * interestRate
 }
 
+// This needs to be coded in the payment terms form
 export const basicRiskFactor = (paymentTerms: PaymentTerms): number => {
-  let riskFactor = 1
+  if (!paymentTerms.primaryPriority) return 0
 
-  // Main
-  if (!paymentTerms.priority) return 0
-  riskFactor *= principalPriorityRiskFactors[paymentTerms.priority]
+  let riskFactor = primaryPriorityRiskFactors[paymentTerms.primaryPriority]
 
-  riskFactor *= principalStartReferenceRiskFactors[paymentTerms.start || 'notApplicable']
-  if (paymentTerms.period) {
-    const delayRF = delayRiskFactor(
-      paymentTerms.adjustment,
-      paymentTerms.period,
-      paymentTerms.offset
+  // Main start and delay does not apply for equity priorities (credit & token)
+  if (!['credit', 'token'].includes(paymentTerms.primaryPriority)) {
+    riskFactor *= mainStartRiskFactors[paymentTerms.mainStart || 'deliveryFinish']
+    riskFactor *= delayRiskFactor(
+      paymentTerms.mainAdjustment,
+      paymentTerms.mainPeriod,
+      paymentTerms.mainOffset
     )
-    if (delayRF) riskFactor *= delayRF
   }
 
-  // Interest
+  if (!riskFactor) return 0 // early return if risk factor is 0 or undefined or NaN
+
   if (paymentTerms.interestRate) {
-    riskFactor *= 1 - paymentTerms.interestRate / interestRateRiskHurdle
+    // Interest - does not apply it interest rate is not > 0
+    riskFactor *= Math.max(Math.min(1 - paymentTerms.interestRate / interestRateRiskHurdle, 1), 0)
     riskFactor *= interestPeriodRiskFactors[paymentTerms.interestPeriod || 'sameAsPrimary']
     riskFactor *= interestStartRiskFactors[paymentTerms.interestStart || 'deferral']
     const relativePriorityRF = relativePriorityRiskFactor(paymentTerms) // Si on a un null, il faudrait sans doute le gérer
     if (relativePriorityRF) riskFactor *= relativePriorityRF
   }
+  if (!riskFactor) return 0 // early return if risk factor is 0 or undefined or NaN
 
-  // Residue
+  // Residue - does not apply for equity priorities (credit & token)
   if (paymentTerms.residuePriority) {
     riskFactor *= residuePriorityRiskFactors[paymentTerms.residuePriority]
     if (paymentTerms.residuePeriod)
+      // Does not apply if residue priority is 'credit'
       riskFactor *= residuePeriodRiskFactors[paymentTerms.residuePeriod]
   }
+  if (!riskFactor) return 0 // early return if risk factor is 0 or undefined or NaN
 
-  // Token buyback
+  // Equity buyback
   if (paymentTerms.canProjectRequestBuyback === false)
     riskFactor *= noProjectRequestBuybackRiskFactor
 
-  return Math.round(riskFactor * 10000) / 10000
+  return round4(riskFactor)
 }
 
-export const recencyWeightedAverage = (payableRatios: number[]): number => {
-  const n = payableRatios.length
-  const p =
+export const computeAveragePayableRatio = (payableRatios: number[]): number => {
+  const numberOfPeriods = payableRatios.length
+  const averagePayableRatio =
     payableRatios.reduce((sum, ratio, index) => {
-      return sum + ratio * (n - index)
+      return sum + ratio * (numberOfPeriods - index)
     }, 0) /
-    ((n + 1) / 2) /
-    n
-  return Math.round(p * 10000) / 10000
+    ((numberOfPeriods + 1) / 2) /
+    numberOfPeriods
+  return round4(averagePayableRatio)
 }
 
 export const adjustedRiskFactor = (
-  principalPriority: Priority,
+  principalPriority: PrimaryPriority,
   payableRatios: number[]
 ): number => {
-  const c = principalPriorityRiskFactors['credit']
-  const p = recencyWeightedAverage(payableRatios)
-  const r = principalPriorityRiskFactors[principalPriority]
-  const a = r + (c - r) * (1 - p)
-  return Math.round(a * 10000) / 10000
+  const creditRiskFactor = primaryPriorityRiskFactors['credit'] // eg. Credit Risk Factor = 80%
+  const selectedRiskFactor = primaryPriorityRiskFactors[principalPriority] // eg. Flex Risk Factor = 40%
+  const averagePayableRatio = computeAveragePayableRatio(payableRatios) // How much Flex did I actually pay recently ?
+  const adjustmentFactor =
+    selectedRiskFactor + (creditRiskFactor - selectedRiskFactor) * (1 - averagePayableRatio)
+  return round4(adjustmentFactor)
 }
 
 export const riskFactor = (paymentTerms: PaymentTerms, payableRatios: number[]): number => {
-  const principalPriority = paymentTerms.priority
+  const principalPriority = paymentTerms.primaryPriority
   const residuePriority = paymentTerms?.residuePriority ?? 'credit'
   const interestRate = paymentTerms?.interestRate ?? 0
 

@@ -12,14 +12,18 @@ import {
   relativePriorityRiskFactor,
   basicRiskFactor,
   adjustedRiskFactor,
-  recencyWeightedAverage,
+  computeAveragePayableRatio,
   riskFactor
 } from './risk-factor'
 
 describe('Risk Factor', () => {
   describe('delayRiskFactor', () => {
     it.each(delayRiskFactorTestCases)('$summary', ({ principalPaymentTerms, expected }) => {
-      const { adjustment, period, offset } = principalPaymentTerms
+      const {
+        mainAdjustment: adjustment,
+        mainPeriod: period,
+        mainOffset: offset
+      } = principalPaymentTerms
       expect(delayRiskFactor(adjustment, period, offset)).toEqual(expected)
     })
   })
@@ -47,7 +51,7 @@ describe('Risk Factor', () => {
 
   describe('recencyWeightedAverage', () => {
     it.each(recencyWeightedAverageTestCases)('$summary', ({ payableRatios, expected }) => {
-      expect(recencyWeightedAverage(payableRatios)).toEqual(expected)
+      expect(computeAveragePayableRatio(payableRatios)).toEqual(expected)
     })
   })
 

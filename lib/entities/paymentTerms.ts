@@ -1,14 +1,21 @@
-export const priorities = ['firm', 'preferred', 'flex', 'superflex', 'credit', 'token'] as const
+export const primaryPriorities = [
+  'firm',
+  'preferred',
+  'flex',
+  'superflex',
+  'credit',
+  'token'
+] as const
 
-export type Priority = (typeof priorities)[number]
-export type SecondaryPriority = Priority | 'sameAsPrimary'
+export type PrimaryPriority = (typeof primaryPriorities)[number]
+export type SecondaryPriority = PrimaryPriority | 'sameAsPrimary'
 export type ExtendedPriority = SecondaryPriority | 'distribution'
 
 export const monthlyPriorities = ['firm', 'preferred', 'flex', 'superflex']
 
 export const annualPriorities = ['credit', 'token']
 
-export const principalPriorityRiskFactors = {
+export const primaryPriorityRiskFactors = {
   firm: 0,
   preferred: 0.2,
   flex: 0.4,
@@ -17,7 +24,7 @@ export const principalPriorityRiskFactors = {
   token: 1
 } as const
 
-export const principalStartReferenceRiskFactors = {
+export const mainStartRiskFactors = {
   notApplicable: 1,
   deliveryFinish: 1,
   deliveryMiddle: 0.9,
@@ -25,7 +32,7 @@ export const principalStartReferenceRiskFactors = {
   confirmation: 0.7
 } as const
 
-export type MainStartReference = keyof typeof principalStartReferenceRiskFactors
+export type MainStart = keyof typeof mainStartRiskFactors
 
 export const residuePriorityRiskFactors = {
   credit: 1,
@@ -60,12 +67,12 @@ export const periodLengths = {
 export type Period = keyof typeof periodLengths
 
 export const adjustmentLengths = {
-  BOP: -0.5,
-  EOP: 0.5,
-  none: 0
+  BOP: -0.5, // beginning of period
+  EOP: 0.5, // end of period
+  none: 0 // no adjustment
 } as const
 
-export type Adjustment = keyof typeof adjustmentLengths
+export type MainAdjustment = keyof typeof adjustmentLengths
 
 export type CashPriority = 'firm' | 'preferred' | 'flex' | 'superflex' | 'credit'
 
@@ -81,17 +88,21 @@ export type InterestPeriod = keyof typeof interestPeriodRiskFactors
 export interface PaymentTerms {
   id?: string // defaults to uuid
   name?: string // required
-  priority: Priority // required, no default value provided
-  startRef?: MainStartReference // defaults to
-  adjustment?: Adjustment // defaults to none
-  period?: Period // defaults to month
-  offset?: number // defaults to 0
+  primaryPriority: PrimaryPriority // required, no default value provided
+  // for main commitments only
+  mainStart?: MainStart // defaults to 'deliveryFinish'
+  mainAdjustment?: MainAdjustment // defaults to none
+  mainPeriod?: Period // defaults to month
+  mainOffset?: number // defaults to 1
+  // for residue commitments only
   residuePriority?: SecondaryPriority // defaults to credit
-  residuePeriod?: ResiduePeriod // defaults to year, but not applicable if residuePriority is credit
+  residuePeriod?: ResiduePeriod // defaults to year if residuePriority is not credit
+  // for interest commitments only
   interestRate?: number // if not provided, no interest commitment will be created
   interestPriority?: SecondaryPriority // defaults to credit, but not applicable if interestRate is falsy
-  interestStartRef?: InterestStart // defaults to deliveryFinish, but not applicable if interestRate is falsy
+  interestStart?: InterestStart // defaults to deliveryFinish, but not applicable if interestRate is falsy
   interestPeriod?: InterestPeriod // defaults to 'sameAsPrimary', but not applicable if interestRate is falsy or if interestPriority is credit
+  // for equity commitments only
   canProjectRequestBuyback?: boolean
 }
 

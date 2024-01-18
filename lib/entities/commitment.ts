@@ -1,4 +1,4 @@
-import type { CashPriority, Priority, ExtendedPriority } from 'entities/paymentTerms'
+import type { CashPriority, PrimaryPriority, ExtendedPriority } from 'entities/paymentTerms'
 // import type { Entity } from '.' // Fabrizio: I have removed to in order to make "id" optional, but this means we can no longer use the generic adapter methods
 
 export type CommitmentLevel = 'primary' | 'secondary'
@@ -47,16 +47,16 @@ export interface CommitmentCalc extends CommitmentData {
   paidAmountCalc(): number // sum of amount paid for a related all lettering
 }
 export interface MainCommitmentData extends CommitmentData {
-  priority: Priority
+  priority: PrimaryPriority
 }
 
 export interface EquityCommitmentData extends CommitmentData {
-  priority: Priority
+  priority: PrimaryPriority
   buybackRequestedByProject?: number
   buybackRequestedByAssociate?: number
 }
 export interface EquityCommitmentCalc extends CommitmentCalc, EquityCommitmentData {
-  priority: Priority
+  priority: PrimaryPriority
   buybackRequestedCalc(): number
 }
 
@@ -64,7 +64,7 @@ export interface EquityCommitmentCalc extends CommitmentCalc, EquityCommitmentDa
 export interface TokenCommitmentData extends CommitmentData {
   priority: 'token'
   referenceIndex: number
-  numberOfTokenUnits?: number
+  numberOfTokens?: number
   residueNumberOfTokenUnits?: number
   canProjectRequestBuyback?: boolean
   buybackPrice?: number
@@ -82,6 +82,7 @@ export interface InterestCommitmentData extends CommitmentData {
   newInterest?: number // interest rate applied from startDate to dueDate
   interestAmount?: number // carried interest + new interest
   interestBasis?: number // principal + interest
+  relatedMainCommitmentId?: string
 }
 
 export interface InterestCommitmentCalc extends CommitmentCalc, InterestCommitmentData {

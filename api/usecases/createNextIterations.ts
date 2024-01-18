@@ -11,8 +11,6 @@ export const createNextMainIteration = (
   previousIteration: CommitmentData,
   paymentTerms: PaymentTerms
 ): CommitmentData => {
-  const { residuePriority, residuePeriod } = paymentTerms
-
   const {
     residueAmount,
     trancheId,
@@ -22,18 +20,19 @@ export const createNextMainIteration = (
   } = previousIteration
 
   const nextIteration: CommitmentData = {
-    priority: residuePriority ? residuePriority : 'credit',
+    priority: paymentTerms.residuePriority ?? 'credit',
     type: 'main',
     level: 'primary',
     status: 'active',
     principal: residueAmount,
-    trancheId: trancheId,
+    trancheId,
     previousIterationId,
     activeDate: resolveDate
   }
 
-  const newDueDate = offsetDate(previousDueDate, residuePeriod, 1)
-  if (newDueDate && residuePriority != 'credit') nextIteration.dueDate = newDueDate
+  if (nextIteration.priority !== 'credit') {
+    nextIteration.dueDate = offsetDate(previousDueDate, paymentTerms.residuePeriod ?? 'year', 1)
+  }
 
   return nextIteration
 }
@@ -50,7 +49,7 @@ export const createNextTokenIteration = (
     priority: 'token',
     type: 'token',
     level,
-    numberOfTokenUnits: residueNumberOfTokenUnits,
+    numberOfTokens: residueNumberOfTokenUnits,
     referenceIndex,
     status: 'active',
     activeDate: resolveDate

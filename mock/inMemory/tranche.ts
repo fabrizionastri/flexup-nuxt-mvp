@@ -6,7 +6,7 @@ export const commercialOrderPreferred50Data: TrancheData = {
   name: '50% preferred',
   orderId: 'commercialOrder',
   portion: 0.5,
-  paymentTerms: { priority: 'preferred' }
+  paymentTerms: { primaryPriority: 'preferred' }
 }
 
 export const commercialOrderPreferred50: Tranche = {
@@ -22,7 +22,7 @@ export const commercialOrderFlex30Data: TrancheData = {
   name: '30% flex',
   orderId: 'commercialOrder',
   portion: 0.3,
-  paymentTerms: { priority: 'flex' }
+  paymentTerms: { primaryPriority: 'flex' }
 }
 export const commercialOrderFlex30: Tranche = {
   ...commercialOrderFlex30Data,
@@ -38,10 +38,10 @@ export const commercialOrderCredit30interestData: TrancheData = {
   orderId: 'commercialOrder',
   portion: 0.2,
   paymentTerms: {
-    priority: 'credit',
+    primaryPriority: 'credit',
     interestRate: 0.05,
     interestPriority: 'credit',
-    interestStartRef: 'deferral',
+    interestStart: 'deferral',
     interestPeriod: 'sameAsPrimary'
   }
 }
@@ -70,7 +70,7 @@ export const orderWithRebateUpfront150Data: TrancheData = {
   orderId: 'orderWithRebate',
   portion: 1.5,
   name: '150% upfront price',
-  paymentTerms: { priority: 'firm' }
+  paymentTerms: { primaryPriority: 'firm' }
 }
 export const orderWithRebateUpfront150: Tranche = {
   ...orderWithRebateUpfront150Data,
@@ -85,7 +85,7 @@ export const orderWithRebateFlexRebate50Data: TrancheData = {
   name: '50% flex rebate (in a year)',
   orderId: 'orderWithRebate',
   portion: -0.5,
-  paymentTerms: { priority: 'flex', period: 'year' }
+  paymentTerms: { primaryPriority: 'flex', mainPeriod: 'year' }
 }
 export const orderWithRebateFlexRebate50: Tranche = {
   ...orderWithRebateFlexRebate50Data,
@@ -105,7 +105,7 @@ export const orderWithNoItemsFirm100Data: TrancheData = {
   name: '100% firm',
   orderId: 'orderWithNoItems',
   portion: 1,
-  paymentTerms: { priority: 'firm' }
+  paymentTerms: { primaryPriority: 'firm' }
 }
 export const orderWithNoItemsFirm100: Tranche = {
   ...orderWithNoItemsFirm100Data,
@@ -121,7 +121,7 @@ export const fundingOrderUpfront100Data: TrancheData = {
   name: 'Funding',
   orderId: 'fundingOrder',
   portion: 1,
-  paymentTerms: { priority: 'firm' }
+  paymentTerms: { primaryPriority: 'firm' }
 }
 export const fundingOrderUpfront100: Tranche = {
   ...fundingOrderUpfront100Data,
@@ -136,7 +136,7 @@ export const fundingOrderCredit100Data: TrancheData = {
   name: 'Credit',
   orderId: 'fundingOrder',
   portion: -1,
-  paymentTerms: { priority: 'credit' }
+  paymentTerms: { primaryPriority: 'credit' }
 }
 export const fundingOrderCredit100: Tranche = {
   ...fundingOrderCredit100Data,
@@ -154,7 +154,7 @@ export const donationOrder100Data: TrancheData = {
   name: 'Donation',
   orderId: 'donationOrder',
   portion: 1,
-  paymentTerms: { priority: 'firm' }
+  paymentTerms: { primaryPriority: 'firm' }
 }
 
 export const donationOrder100: Tranche = {

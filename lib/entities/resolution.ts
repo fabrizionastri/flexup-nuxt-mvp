@@ -1,7 +1,7 @@
 import type { CommitmentData } from 'entities/commitment'
 import type { ReserveName } from 'entities/reserve'
 import type { AllocationReport } from 'entities/allocation'
-import type { Priority } from './paymentTerms'
+import type { PrimaryPriority } from './paymentTerms'
 import type { Entity } from '.'
 
 export const ResolutionMechanisms = {
@@ -44,7 +44,7 @@ export type AmountsRequested = {
 export type ResolutionStep = {
   resolutionName: ResolutionName
   nature: ResolutionNature
-  priority?: Priority
+  priority?: PrimaryPriority
   sources: ReserveName[]
   destination: ReserveName
 }
