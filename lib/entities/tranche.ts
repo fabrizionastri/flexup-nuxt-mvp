@@ -1,3 +1,4 @@
+import { NavBar } from './../../.nuxt/components.d'
 // lib/entities/tranche.ts
 
 // TOCHECK: what is the best way to structure tranches ?
@@ -17,6 +18,7 @@ export interface Tranche extends TrancheData {
   principal: number | undefined
   payorId: string
   payeeId: string
+  name?: string
 }
 
 export interface TrancheWithMethods extends TrancheData {
@@ -36,7 +38,7 @@ export function calculatePrincipal(portion: number, amountExclTax: number): numb
   return amountExclTax ? portion * amountExclTax : undefined
 }
 
-export function determinePayorId(
+export function calculatePayorId(
   portion: number,
   clientAccountId: string,
   supplierAccountId: string
@@ -47,7 +49,7 @@ export function determinePayorId(
   return portion > 0 ? clientAccountId : supplierAccountId
 }
 
-export function determinePayeeId(
+export function calculatePayeeId(
   portion: number,
   clientAccountId: string,
   supplierAccountId: string
@@ -58,7 +60,7 @@ export function determinePayeeId(
   return portion > 0 ? supplierAccountId : clientAccountId
 }
 
-export function generateName(portion: number, paymentTermsName: string): string {
+export function calculateName(portion: number, paymentTermsName: string): string {
   return `${portion * 100}% ${paymentTermsName}`
 }
 
@@ -67,11 +69,11 @@ export const createTranche = (trancheData: TrancheData, order: Order): TrancheWi
   return {
     ...trancheData,
     sign: () => calculateSign(trancheData.portion),
-    principal: () => calculatePrincipal(trancheData.portion, order.amountExclTax),
+    principal: () => calculatePrincipal(trancheData.portion, order.grossAmount),
     payorId: () =>
-      determinePayorId(trancheData.portion, order.clientAccountId, order.supplierAccountId),
+      calculatePayorId(trancheData.portion, order.clientAccountId, order.supplierAccountId),
     payeeId: () =>
-      determinePayeeId(trancheData.portion, order.clientAccountId, order.supplierAccountId),
-    name: () => generateName(trancheData.portion, trancheData.paymentTerms.name)
+      calculatePayeeId(trancheData.portion, order.clientAccountId, order.supplierAccountId),
+    name: () => calculateName(trancheData.portion, trancheData.paymentTerms.name)
   }
 }

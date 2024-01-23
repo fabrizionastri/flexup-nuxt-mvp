@@ -4,9 +4,9 @@ import {
   calculatePrincipal,
   calculateSign,
   createTranche,
-  determinePayeeId,
-  determinePayorId,
-  generateName
+  calculatePayeeId,
+  calculatePayorId,
+  calculateName
 } from './tranche'
 import type { TrancheData, Order } from 'lib/entities'
 
@@ -38,33 +38,33 @@ describe('tranche', () => {
     describe('determinePayorId', () => {
       it('should return clientAccountId when portion is greater than 0', () => {
         const portion = 0.5
-        expect(determinePayorId(portion, clientAccountId, supplierAccountId)).toBe(clientAccountId)
+        expect(calculatePayorId(portion, clientAccountId, supplierAccountId)).toBe(clientAccountId)
       })
 
       it('should throw error when portion is 0', () => {
         const portion = 0
-        expect(() => determinePayorId(portion, clientAccountId, supplierAccountId)).toThrow()
+        expect(() => calculatePayorId(portion, clientAccountId, supplierAccountId)).toThrow()
       })
     })
 
     describe('determinePayeeId', () => {
       it('should return supplierAccountId when portion is greater than 0', () => {
         const portion = 0.5
-        expect(determinePayeeId(portion, clientAccountId, supplierAccountId)).toBe(
+        expect(calculatePayeeId(portion, clientAccountId, supplierAccountId)).toBe(
           supplierAccountId
         )
       })
 
       it('should throw error when portion is undefined', () => {
         const portion = 0
-        expect(() => determinePayeeId(portion, clientAccountId, supplierAccountId)).toThrowError()
+        expect(() => calculatePayeeId(portion, clientAccountId, supplierAccountId)).toThrowError()
       })
     })
 
     describe('generateName', () => {
       it('should return a string with the portion as a percentage and the payment terms name', () => {
         const portion = 0.5
-        expect(generateName(portion, paymentTermsName)).toBe('50% Firm (simple)')
+        expect(calculateName(portion, paymentTermsName)).toBe('50% Firm (simple)')
       })
     })
   })
@@ -74,7 +74,7 @@ describe('tranche', () => {
       clientAccountId: 'client123',
       supplierAccountId: 'supplier123',
       nature: 'commercial',
-      amountExclTax: 1000
+      grossAmount: 1000
       // ... other Order properties
     }
     const mockTrancheData: TrancheData = {
@@ -131,7 +131,7 @@ describe('tranche', () => {
     describe('undefined order amountExclTax', () => {
       const mockOrder2: Order = {
         ...mockOrder,
-        amountExclTax: undefined
+        grossAmount: undefined
       }
       const tranche = createTranche(mockTrancheData, mockOrder2)
 
