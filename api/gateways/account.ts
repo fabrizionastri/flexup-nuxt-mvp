@@ -1,6 +1,6 @@
 import {
   type Currency,
-  type CountryData,
+  type Country,
   type AccountStatus,
   type OwnerType,
   accountTypes,
@@ -56,7 +56,7 @@ export const computeAccount = async (
   // Get currency and country details
   const currency: Currency | undefined = await currencyAdapter.getById(accountData.currencyId)
   if (!currency) throw new Error('Invalid currency')
-  const country: CountryData | undefined = await countryAdapter.getById(accountData.countryId)
+  const country: Country | undefined = await countryAdapter.getById(accountData.countryId)
   if (!country) throw new Error('Invalid country')
 
   // Get role and role symbol

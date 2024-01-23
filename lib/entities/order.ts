@@ -1,3 +1,4 @@
+import { Order } from 'lib/entities'
 import type { Entity, CountryId, CurrencyId, Tranche, ItemComputed } from '.'
 
 /* Questions:
@@ -12,7 +13,13 @@ export const OrderNaturePortionsTotal = {
 } as const
 
 export type OrderNature = keyof typeof OrderNaturePortionsTotal
-
+export type OrderConfirmationStatus =
+  | 'draft'
+  | 'pending'
+  | 'confirmed'
+  | 'cancelled'
+  | 'rejected'
+  | 'retracted'
 export type OrderDateType = 'confirmation' | 'deliveryStart' | 'deliveryFinish'
 export type OrderDate = { orderDateType: OrderDateType; date: Date }
 
@@ -23,20 +30,22 @@ export interface Order extends Entity {
   clientAccountId: string
   supplierAccountId: string
   nature: OrderNature | undefined
-  currency?: CurrencyId
-  country?: CountryId
-  // calculated values → transfor to getter methods
-  name?: string
-  amountInclTax?: number
+  currency: CurrencyId
+  country: CountryId
   amountExclTax?: number
-  taxAmount?: number
-  averageTaxRate?: number
+  amountInclTax?: number // this is the order "principal" amount, used to compute the tranches
+  name?: string
+  contractId?: string // if the order is part of a contract
+  charterId?: string // if the order is subject to a charter
+  // calculated values → transfor to getter methods
+  taxAmount?: number // calculated from amountExclTax and amountInclTax
+  averageTaxRate?: number // calculated from taxAmount and amountExclTax
   items?: ItemComputed[]
   tranches?: Tranche[]
+  dates: OrderDate[]
   // ...
-  // contractId: string
-  // dates: OrderDate[]
-  // status: OrderStatus
+  confirmationStatus?: OrderConfirmationStatus
+  createdByMemberId?: string
 }
 
 // export interface OrderNew extends OrderNew {

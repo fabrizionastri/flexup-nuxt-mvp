@@ -1,4 +1,4 @@
-import type { CountryData, Entity } from '.'
+import type { Country, Entity } from '.'
 
 export type Gender = 'male' | 'female' | 'other' | 'undisclosed'
 export interface IndividualData extends Entity {
@@ -9,10 +9,10 @@ export interface IndividualData extends Entity {
   lastName: string
   birthDate: Date
   birthCity?: string
-  birthCountry?: CountryData
+  birthCountry?: Country
   residenceAddress?: string
-  residenceCountry?: CountryData
-  nationalityCountries?: CountryData[]
+  residenceCountry?: Country
+  nationalityCountries?: Country[]
   // sex: Gender
 }
 
