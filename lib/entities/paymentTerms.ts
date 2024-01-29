@@ -16,7 +16,7 @@ export const monthlyPriorities = ['firm', 'preferred', 'flex', 'superflex']
 export const annualPriorities = ['credit', 'token']
 
 export const primaryPriorityRiskFactors = {
-  firm: 0,
+  firm: 0, // order is not subject to the FlexUp charter, several other options become unavailable (see Charter for details)
   preferred: 0.2,
   flex: 0.4,
   superflex: 0.6,
@@ -25,7 +25,7 @@ export const primaryPriorityRiskFactors = {
 } as const
 
 export const mainStartRiskFactors = {
-  notApplicable: 1,
+  notApplicable: 1, // this is automatic value for "Equity" priorities
   deliveryFinish: 1,
   deliveryMiddle: 0.9,
   deliveryStart: 0.8,
@@ -35,6 +35,7 @@ export const mainStartRiskFactors = {
 export type MainStart = keyof typeof mainStartRiskFactors
 
 export const residuePriorityRiskFactors = {
+  // we have excluded sameAsPrimary from this list to encourage "credit", all other options incur a penalty
   credit: 1,
   superflex: 0.9,
   flex: 0.8,
@@ -42,19 +43,20 @@ export const residuePriorityRiskFactors = {
 } as const
 
 export const residuePeriodRiskFactors = {
+  // we encourage year, other options incur a heavy penalty as they go against the spirit of the FlexUp
   year: 1,
-  quarter: 0.9,
-  month: 0.8
+  quarter: 0.8,
+  month: 0.6
 } as const
 
 export type ResiduePeriod = keyof typeof residuePeriodRiskFactors
 
 export const interestStartRiskFactors = {
-  deferral: 1, // interests only start if principal is not paid in full at first due date
-  deliveryFinish: 1,
+  deferral: 1, // interests only start if principal is not paid in full at first due date. Default for "Commercial" orders
+  deliveryFinish: 1, // default for "Funding" orders
   deliveryMiddle: 0.95,
   deliveryStart: 0.9,
-  confirmation: 0.85
+  confirmation: 0.85 // this is sometimes seen in "Funding" orders (ie: loan reservation fee)
 } as const
 
 export const periodLengths = {
@@ -80,7 +82,9 @@ export type InterestStart = keyof typeof interestStartRiskFactors
 
 export const interestPeriodRiskFactors = {
   sameAsPrimary: 1,
-  ...residuePeriodRiskFactors
+  year: 1,
+  quarter: 0.9,
+  month: 0.8
 } as const
 
 export type InterestPeriod = keyof typeof interestPeriodRiskFactors

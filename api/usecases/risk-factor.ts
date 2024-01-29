@@ -30,6 +30,7 @@ export const delayRiskFactor = (
 }
 
 export const relativePriorityRiskFactor = (paymentTerms: PaymentTerms): number | null => {
+  // if there is a difference between primary and interest priorities, we need to adjust the risk factor by the difference in priority levels, multiplied by the interest rate
   const interestPriority = paymentTerms.interestPriority || null
   const interestRate = paymentTerms.interestRate || null
   if (!interestPriority || !interestRate) return null

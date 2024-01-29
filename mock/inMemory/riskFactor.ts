@@ -193,16 +193,15 @@ export const basicRiskFactorTestCases: Array<{
       mainPeriod: 'year',
       mainOffset: 1,
       mainAdjustment: 'BOP',
-      interestRate: 0.05,
+      interestRate: 0.09,
       interestPriority: 'sameAsPrimary',
       interestStart: 'deliveryFinish',
       interestPeriod: 'quarter',
       residuePriority: 'flex',
       residuePeriod: 'year',
-
       canProjectRequestBuyback: false
     },
-    expected: 0.0934
+    expected: 0.0561
   },
   {
     summary: 'Credit, 7% interest = 28.07%',
