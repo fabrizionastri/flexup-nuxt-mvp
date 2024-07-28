@@ -444,7 +444,7 @@
       "orderId": "commercialOrder",
       "portion": 0.5,
       "paymentTerms": {
-        "priority": "preferred"
+        "primaryPriority": "preferred"
       }
     },
     {
@@ -453,7 +453,7 @@
       "orderId": "commercialOrder",
       "portion": 0.3,
       "paymentTerms": {
-        "priority": "flex"
+        "primaryPriority": "flex"
       }
     },
     {
@@ -462,10 +462,10 @@
       "orderId": "commercialOrder",
       "portion": 0.2,
       "paymentTerms": {
-        "priority": "credit",
+        "primaryPriority": "credit",
         "interestRate": 0.05,
         "interestPriority": "credit",
-        "interestStartRef": "deferral",
+        "interestStart": "deferral",
         "interestPeriod": "sameAsPrimary"
       }
     },
@@ -475,7 +475,7 @@
       "portion": 1.5,
       "name": "150% upfront price",
       "paymentTerms": {
-        "priority": "firm"
+        "primaryPriority": "firm"
       }
     },
     {
@@ -484,8 +484,8 @@
       "orderId": "orderWithRebate",
       "portion": -0.5,
       "paymentTerms": {
-        "priority": "flex",
-        "period": "year"
+        "primaryPriority": "flex",
+        "mainPeriod": "year"
       }
     },
     {
@@ -494,7 +494,7 @@
       "orderId": "orderWithNoItems",
       "portion": 1,
       "paymentTerms": {
-        "priority": "firm"
+        "primaryPriority": "firm"
       }
     },
     {
@@ -503,7 +503,7 @@
       "orderId": "fundingOrder",
       "portion": 1,
       "paymentTerms": {
-        "priority": "firm"
+        "primaryPriority": "firm"
       }
     },
     {
@@ -512,7 +512,7 @@
       "orderId": "fundingOrder",
       "portion": -1,
       "paymentTerms": {
-        "priority": "credit"
+        "primaryPriority": "credit"
       }
     },
     {
@@ -521,7 +521,7 @@
       "orderId": "donationOrder",
       "portion": 1,
       "paymentTerms": {
-        "priority": "firm"
+        "primaryPriority": "firm"
       }
     }
   ],

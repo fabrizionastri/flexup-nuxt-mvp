@@ -1,5 +1,5 @@
 import { Order } from 'lib/entities'
-import type { Entity, CountryId, CurrencyId, Tranche, ItemComputed } from '.'
+import type { Entity, CountryId, CurrencyId, Tranche, Item } from '.'
 
 /* Questions:
 - should we store the compute functions in the gateway, entity, use case or utils ?
@@ -30,8 +30,8 @@ export interface Order extends Entity {
   clientAccountId: string
   supplierAccountId: string
   nature: OrderNature | undefined
-  currency: CurrencyId
-  country: CountryId
+  currency?: CurrencyId
+  country?: CountryId
   amountExclTax?: number
   amountInclTax?: number // this is the order "principal" amount, used to compute the tranches
   name?: string
@@ -40,9 +40,9 @@ export interface Order extends Entity {
   // calculated values → transfor to getter methods
   taxAmount?: number // calculated from amountExclTax and amountInclTax
   averageTaxRate?: number // calculated from taxAmount and amountExclTax
-  items?: ItemComputed[]
+  items?: Item[]
   tranches?: Tranche[]
-  dates: OrderDate[]
+  dates?: OrderDate[]
   // ...
   confirmationStatus?: OrderConfirmationStatus
   createdByMemberId?: string

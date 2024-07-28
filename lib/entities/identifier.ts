@@ -11,3 +11,9 @@ export interface IdentifierData extends Entity {
   // creationDate: Date
   // verificationDate?: Date
 }
+
+//  identifier --> passwer / (pin)
+// fabrizio@gmail.com
+// fabrizio@codenia.com
+// +33612345678
+// fabrizioNastri123

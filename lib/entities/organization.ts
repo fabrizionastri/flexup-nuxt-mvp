@@ -42,7 +42,7 @@ export interface OrganizationData extends Entity {
   legalForm: string
   currencyId: CurrencyId
   countryId: CountryId /* Country Code ISO3 */
-  languageId: string /* Language Code ISO3 */
+  // languageId: string /* Language Code ISO3 */
   capital: number /* Amount */
   legalFormAbbreviation: string
   registrationAuthority?: string
@@ -65,28 +65,29 @@ export interface OrganizationData extends Entity {
   terminationDate?: Date
 }
 
-export interface LegalPersonAddress {
-  id: string
-  legalPersonId: string
-  addressId: string
-  label: string
-  startDate: Date
-  endDate?: Date
-  status: 'active' | 'suspended' | 'incapacitated'
-  terminationReason?: 'resigned' | 'dismissed' | 'deceased' | 'bankrupt' | 'liquidated' | 'other'
-}
-
-export interface OrganizationLegalRepresentative {
-  id: string
-  organizationId: string
-  representativeId: string
-}
-
-export interface legalRepresentatives {
-  title: string
-  legalPerson: LegalPerson
-  startDate: Date
-  endDate?: Date
-  statuts: 'active' | 'suspended' | 'incapacitated'
-  terminationReason?: 'resigned' | 'dismissed' | 'deceased' | 'bankrupt' | 'liquidated' | 'other'
-}
+/* NOT REQUIRED FOR MVP */
+// export interface LegalPersonAddress {
+//   id: string
+//   legalPersonId: string
+//   addressId: string
+//   label: string
+//   startDate: Date
+//   endDate?: Date
+//   status: 'active' | 'suspended' | 'incapacitated'
+//   terminationReason?: 'resigned' | 'dismissed' | 'deceased' | 'bankrupt' | 'liquidated' | 'other'
+// }
+//
+// export interface OrganizationLegalRepresentative {
+//   id: string
+//   organizationId: string
+//   representativeId: string
+// }
+//
+// export interface legalRepresentatives {
+//   title: string
+//   legalPerson: LegalPerson
+//   startDate: Date
+//   endDate?: Date
+//   statuts: 'active' | 'suspended' | 'incapacitated'
+//   terminationReason?: 'resigned' | 'dismissed' | 'deceased' | 'bankrupt' | 'liquidated' | 'other'
+// }

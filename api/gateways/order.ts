@@ -1,4 +1,4 @@
-import type { ItemComputed } from 'entities/item'
+import type { Item } from 'entities/item'
 
 // import { createOrderAdapter } from 'adapters/database'
 import { itemGateway } from '.'
@@ -15,7 +15,7 @@ export interface OrderGateway {
 }
 
 export const computeItemTotals = (
-  items: ItemComputed[]
+  items: Item[]
 ):
   | {
       amountExclTax: number
@@ -25,8 +25,8 @@ export const computeItemTotals = (
     }
   | undefined => {
   if (items.length === 0) return undefined
-  const amountExclTax = sumPropertyStrict<ItemComputed>('amountExclTax', items, true)
-  const amountInclTax = sumPropertyStrict<ItemComputed>('amountInclTax', items, true)
+  const amountExclTax = sumPropertyStrict<Item>('amountExclTax', items, true)
+  const amountInclTax = sumPropertyStrict<Item>('amountInclTax', items, true)
   if (!amountExclTax || !amountInclTax) {
     // TODO : this should throw an error or log something
     // console.log(

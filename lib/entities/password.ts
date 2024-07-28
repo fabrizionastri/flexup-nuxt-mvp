@@ -4,3 +4,4 @@ export interface UserPasswordData extends Entity {
   id: string // userId
   password: string
 }
+

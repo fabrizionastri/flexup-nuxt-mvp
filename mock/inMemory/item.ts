@@ -1,4 +1,4 @@
-import type { ItemComputed, ItemData } from 'entities/item'
+import type { Item, ItemData } from 'entities/item'
 
 // Items with raw data only
 export const commercialOrderItem1Data: ItemData = {
@@ -10,7 +10,7 @@ export const commercialOrderItem1Data: ItemData = {
   unitPriceExclTax: 10,
   taxRate: 0.2
 }
-export const commercialOrderItem1: ItemComputed = {
+export const commercialOrderItem1: Item = {
   ...commercialOrderItem1Data,
   unitPriceInclTax: 12,
   amountExclTax: 100,
@@ -27,14 +27,14 @@ export const commercialOrderItem2Data: ItemData = {
   unitPriceExclTax: 11,
   taxRate: 0.1
 }
-export const commercialOrderItem2: ItemComputed = {
+export const commercialOrderItem2: Item = {
   ...commercialOrderItem2Data,
   unitPriceInclTax: 12.1,
   amountExclTax: 121,
   taxAmount: 12.1,
   amountInclTax: 133.1
 }
-export const itemsForCommercialOrder: ItemComputed[] = [commercialOrderItem1, commercialOrderItem2]
+export const itemsForCommercialOrder: Item[] = [commercialOrderItem1, commercialOrderItem2]
 
 export const orderWithRebateItemData: ItemData = {
   id: 'orderWithRebateItem',
@@ -45,7 +45,7 @@ export const orderWithRebateItemData: ItemData = {
   unitPriceExclTax: 200,
   taxRate: 0
 }
-export const orderWithRebateItem: ItemComputed = {
+export const orderWithRebateItem: Item = {
   ...orderWithRebateItemData,
   unitPriceInclTax: 6,
   amountExclTax: 60,
@@ -61,7 +61,7 @@ export const orderWithNoTranchesItemData: ItemData = {
   unitPriceExclTax: 100,
   taxRate: 0.1
 }
-export const orderWithNoTranchesItem: ItemComputed = {
+export const orderWithNoTranchesItem: Item = {
   ...orderWithNoTranchesItemData,
   unitPriceInclTax: 110,
   amountExclTax: 1400,
@@ -75,7 +75,7 @@ export const itemDatas: ItemData[] = [
   orderWithRebateItemData,
   orderWithNoTranchesItemData
 ]
-export const items: ItemComputed[] = [
+export const items: Item[] = [
   commercialOrderItem1,
   commercialOrderItem2,
   orderWithRebateItem,
