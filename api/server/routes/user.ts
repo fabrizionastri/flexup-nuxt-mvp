@@ -1,4 +1,3 @@
-import { getAccounts } from 'usecases/getAccounts'
 import { userGateway } from 'gateways/user'
 import { Hono } from 'hono'
 import jwt from 'jsonwebtoken'

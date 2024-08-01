@@ -1,3 +1,4 @@
+// api/usecases/getAccounts.ts
 import type { Account, AccountStatus } from 'lib/entities'
 import { createAccountGateway } from '../gateways'
 

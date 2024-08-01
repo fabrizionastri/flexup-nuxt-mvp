@@ -1,3 +1,4 @@
+//  api/gateways/user.ts
 import { individualAdapter } from 'adapters/database/generic/individual'
 import { userAdapter } from 'adapters/database/generic/user'
 import type { UserData, User } from 'entities/user'

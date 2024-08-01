@@ -1,3 +1,4 @@
+// api/adapters/database/generic/user.ts
 import type { UserData } from 'lib/entities'
 import { createGetById, createGetByProperty } from './methods'
 
