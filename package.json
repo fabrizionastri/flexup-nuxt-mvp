@@ -82,6 +82,6 @@
     "vitest-environment-nuxt": "^1.0.0"
   },
   "volta": {
-    "node": "20.15.1"
+    "node": "20.16.0"
   }
 }
