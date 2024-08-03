@@ -1,4 +1,4 @@
-import { NavBar } from './../../.nuxt/components.d'
+
 // lib/entities/tranche.ts
 
 // TOCHECK: what is the best way to structure tranches ?
@@ -10,7 +10,7 @@ export interface TrancheData extends Entity {
   id: string // 0, 1, 2, 3 ...
   orderId: string // uuid
   portion: number // -1 <= portion <= 1
-  paymentTerms: PaymentTerms // should be move out to the payment termstable
+  paymentTerms: PaymentTerms // should be moved out to the payment terms table
 }
 
 export interface Tranche extends TrancheData {

@@ -11,9 +11,8 @@ import user from './routes/user'
 
 // Load environment variables from .env file, where API keys and passwords are configured
 config() // load variables from .env into process.env
-const API_PORT: number = parseInt(process.env.API_PORT, 10) || 8787
+const API_PORT = process.env.API_PORT || 8787
 console.log('API_PORT', API_PORT)
-
 const jsonServerUrl = process.env.JSON_SERVER_URL || 'http://localhost:3057/'
 console.log('jsonServerUrl', jsonServerUrl)
 

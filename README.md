@@ -110,7 +110,7 @@ _Other tools:_
 
 - download this repo to your local directory
 - `pnpm install` : installs the packages
-- `pnpm rmock` : launches several sucessive actions
+- `pnpm gen` : launches several sucessive actions
   - `pnpm generate-index`: updates the index files according to the selected mock database (inMemory or jsonServer)
   - `pnpm generate-inMemory-index`updates the `inMemory/index.ts`, which serves as a the `inMemory` mock database
   - `pnpm reset-json-server`: updates the `db.json` file, which serves as a the `jsonServer` mock database using, and is generated from the `inMemory` data
@@ -126,7 +126,7 @@ You can chose between two mock databases:
 
 The selection is made in the `.env`: `STORAGE_TYPE=inMemory` or `STORAGE_TYPE=jsonServer`. The `.env` file is located in the root directory of the project.
 
-> _Important_: make sure to run `pnpm rmock` or `pnpm generate-index` after changing the `.env` file to redirect the adapter index files to the correct mock database.
+> _Important_: make sure to run `pnpm gen` or `pnpm generate-index` after changing the `.env` file to redirect the adapter index files to the correct mock database.
 
 ## Usage
 
@@ -138,7 +138,7 @@ Follow the steps below to launch the app:
 4. `pnpm test` : launches the tests in Vitest
 5. `pnpm dev` : launches the Nuxt 3 app
 
-After launch the Nuxt app, go to the [Home Page](http://localhost:3000/login) or directly to the [login](http://localhost:3000/login) page.
+After launch the Nuxt app, go to the [Home Page](http://localhost:3000) or directly to the [login](http://localhost:3000/login) page.
 
 User following credentials to login:
 

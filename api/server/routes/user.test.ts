@@ -20,7 +20,7 @@ describe('api/server/routes/user', () => {
       // expect(await res.json()).toEqual(convertDatesToStrings(totoUser))
     })
     // TODO: fix this test, should be 401 and 'Invalid identifier'
-    it('should an error message and 401 status for invalid identifier', async () => {
+    it('should return an error message and 401 status for invalid identifier', async () => {
       const body = {
         method: 'POST',
         body: JSON.stringify({
@@ -43,7 +43,7 @@ describe('api/server/routes/user', () => {
       }
       // console.log('2. ► api/server/routes/ : json (this is printed out):', data)
     })
-    it('should an error message and 401 status for invalid password', async () => {
+    it('should return an error message and 401 status for invalid password', async () => {
       const body = {
         method: 'POST',
         body: JSON.stringify({

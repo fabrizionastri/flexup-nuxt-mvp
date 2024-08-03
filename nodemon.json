@@ -1,13 +1,6 @@
 {
-  "watch": [
-    "api/server/*"
-  ],
+  "watch": ["api/server/*"],
   "ext": "ts, json",
-  "ignore": [
-    "api/server/**/*.test.ts"
-  ],
-  "exec": "tsx api/server/index.ts",
-  "execMap": {
-    "js": "node@20.15.1"
-  }
+  "ignore": ["api/server/**/*.test.ts"],
+  "exec": "tsx api/server/index.ts"
 }

@@ -2,7 +2,7 @@ import { balanceInstanceAll } from 'mock/inMemory/balance'
 
 describe.todo('Balance core gateway', () => {
   it('should throw an error if adapter is null', () => {
-    // @ts-ignore
+    // @ts-expect-error: Testing behavior when adapter is not defined
     expect(balanceGateway()).toThrowError('BalanceAdapter is not defined')
   })
 
