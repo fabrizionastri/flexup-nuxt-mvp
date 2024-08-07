@@ -1,5 +1,5 @@
 import { accountDatas } from './account'
-import { accountUserDatas } from './accountUser'
+import { accountMemberDatas } from './accountMember'
 import { countryDatas } from './country'
 import { currencyDatas } from './currency'
 import { groupingDatas } from './grouping'
@@ -16,7 +16,7 @@ import { trancheDatas } from './tranche'
 import { userDatas } from './user'
 
 export * from './account'
-export * from './accountUser'
+export * from './accountMember'
 export * from './country'
 export * from './currency'
 export * from './grouping'
@@ -34,7 +34,7 @@ export * from './user'
 
 export const inMemory = {
   account: accountDatas,
-  accountUser: accountUserDatas,
+  accountMember: accountMemberDatas,
   country: countryDatas,
   currency: currencyDatas,
   grouping: groupingDatas,

@@ -1,7 +1,7 @@
 import { sortById } from './../../lib/utils/sortById'
 import { agroCoopAccount } from './../../mock/inMemory/account'
 import * as mock from 'mock/inMemory'
-import { accountsForFabrizioUser } from 'mock/inMemory/accountUser'
+import { accountsForFabrizioUser } from 'mock/inMemory/accountMember'
 import { computeAccount, createAccountGateway, getAccountDatas } from './account'
 import type { AccountData } from 'lib/entities'
 
@@ -12,7 +12,7 @@ describe('accountGateway', () => {
     it('individual account - should compute account for valid account Id', async () => {
       const result = await computeAccount(
         mock.fabrizioAccountData,
-        mock.accountUserDatasForFabrizioUser
+        mock.accountMemberDatasForFabrizioUser
       )
       const expected = { ...mock.fabrizioAccount, role: 'admin', roleSymbol: '🔑' }
       expect(result).toEqual(expected)
@@ -25,7 +25,7 @@ describe('accountGateway', () => {
     it('business account - should compute account for valid account Id', async () => {
       const result = await computeAccount(
         mock.cosysAccountData,
-        mock.accountUserDatasForFabrizioUser
+        mock.accountMemberDatasForFabrizioUser
       )
       const expected = { ...mock.cosysAccount, role: 'admin', roleSymbol: '🔑' }
       expect(result).toEqual(expected)
@@ -33,7 +33,7 @@ describe('accountGateway', () => {
     it('shared account - should compute account for valid account Id', async () => {
       const result = await computeAccount(
         mock.doMazyAccountData,
-        mock.accountUserDatasForFabrizioUser
+        mock.accountMemberDatasForFabrizioUser
       )
       const expected = { ...mock.doMazyAccount, role: 'editor', roleSymbol: '✏️' }
       expect(result).toEqual(expected)
@@ -41,7 +41,7 @@ describe('accountGateway', () => {
     it('subaccount account - should compute account for valid account Id', async () => {
       const result = await computeAccount(
         mock.flexupAccountData,
-        mock.accountUserDatasForFabrizioUser
+        mock.accountMemberDatasForFabrizioUser
       )
       const expected = { ...mock.flexupAccount, role: 'admin', roleSymbol: '🔑' }
       expect(result).toEqual(expected)
@@ -49,13 +49,13 @@ describe('accountGateway', () => {
     it('invalid account - should throw error for an invalid account', async () => {
       const invalidAccountData = { ...mock.flexupAccountData, ownerId: 'inexistantAccount' }
       await expect(
-        computeAccount(invalidAccountData, mock.accountUserDatasForFabrizioUser)
+        computeAccount(invalidAccountData, mock.accountMemberDatasForFabrizioUser)
       ).rejects.toThrowError()
     })
     it('should return computed account but with no role if user is not a member of this account', async () => {
       const result = await computeAccount(
         mock.agroCoopAccountData,
-        mock.accountUserDatasForFabrizioUser
+        mock.accountMemberDatasForFabrizioUser
       )
       const expected = mock.agroCoopAccount
       expect(result).toEqual(expected)
@@ -66,7 +66,7 @@ describe('accountGateway', () => {
       expect(result).toEqual(expected)
       //   console.log('api/gateways/account - computeAccount.test - result:', result)
       //   await expect(
-      //     computeAccount(mock.agroCoopAccountData, accountUserDatasForFabrizioUser)
+      //     computeAccount(mock.agroCoopAccountData, accountMemberDatasForFabrizioUser)
       //   ).rejects.toThrowError()
     })
     it('invalid owner - should throw error if ownerId is invalid', async () => {

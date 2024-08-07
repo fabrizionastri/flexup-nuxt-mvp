@@ -1,6 +1,6 @@
-import { pizzaDOroTakeAwayAccountFabrizioUser } from './../../mock/inMemory/accountUser'
+import { pizzaDOroTakeAwayAccountFabrizioUser } from './../../mock/inMemory/accountMember'
 import { sortById } from 'lib/utils'
-import { accountsForFabrizioUser } from 'mock/inMemory/accountUser'
+import { accountsForFabrizioUser } from 'mock/inMemory/accountMember'
 import { getAccounts } from './getAccounts'
 
 describe('api/usecases/getAccounts', () => {

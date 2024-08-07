@@ -10,9 +10,9 @@ export interface IsUserMemberOfAccount {
   (userId: string, accountId: string): Promise<boolean>
 }
 
-export const accountUserAdapter = {
-  getById: createGetById<AccountUserData>('accountUser'),
-  getByUserId: createGetBySelectedProperty<AccountUserData>('accountUser', 'userId'),
-  getByProperty: createGetByProperty<AccountUserData>('accountUser'),
+export const accountMemberAdapter = {
+  getById: createGetById<AccountUserData>('accountMember'),
+  getByUserId: createGetBySelectedProperty<AccountUserData>('accountMember', 'userId'),
+  getByProperty: createGetByProperty<AccountUserData>('accountMember'),
   isUserMemberOfAccount
 }

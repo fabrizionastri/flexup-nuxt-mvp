@@ -5,12 +5,12 @@ import {
   type OwnerType,
   accountTypes,
   ownerTypes,
-  accountUserRoleTypes
+  accountMemberRoleTypes
 } from 'lib/entities'
 import { individualGateway } from './'
 import {
   accountAdapter,
-  accountUserAdapter,
+  accountMemberAdapter,
   countryAdapter,
   currencyAdapter,
   groupingAdapter,
@@ -20,7 +20,7 @@ import type { Account, AccountData, AccountUserData } from 'lib/entities' // CHE
 
 export const computeAccount = async (
   accountData: AccountData,
-  accountUserDatas: AccountUserData[] = []
+  accountMemberDatas: AccountUserData[] = []
 ): Promise<Account> => {
   let ownerName: string
   let ownerAccount: Account | undefined
@@ -60,8 +60,8 @@ export const computeAccount = async (
   if (!country) throw new Error('Invalid country')
 
   // Get role and role symbol
-  const role = accountUserDatas.find(
-    (accountUserData) => accountUserData.accountId === accountData.id
+  const role = accountMemberDatas.find(
+    (accountMemberData) => accountMemberData.accountId === accountData.id
   )?.role
 
   const account: Account = {
@@ -74,13 +74,13 @@ export const computeAccount = async (
     currencySymbol: currency.symbol,
     countryName: country.name,
     role,
-    roleSymbol: accountUserRoleTypes[role]
+    roleSymbol: accountMemberRoleTypes[role]
   }
   return account
 }
 
 export const getAccountUserDatas = async (userId: string): Promise<AccountUserData[]> => {
-  const allAccountUserDatas: AccountUserData[] = await accountUserAdapter.getByUserId(userId)
+  const allAccountUserDatas: AccountUserData[] = await accountMemberAdapter.getByUserId(userId)
   if (allAccountUserDatas.length === 0) throw new Error(`No account for user ${userId}`)
   return allAccountUserDatas
 }
@@ -98,12 +98,12 @@ export const getAccountDatas = async (
 }
 
 export const createAccountGateway = async (userId: string) => {
-  // First get the list of accounts for this user (accountUser datas, and accountIds)
+  // First get the list of accounts for this user (accountMember datas, and accountIds)
   const allAccountUserDatas: AccountUserData[] = await getAccountUserDatas(userId)
   // console.log('api/gateways/account - getAccounts allAccountUserDatas', allAccountUserDatas)
 
   const allAccountIds: string[] = allAccountUserDatas.map(
-    (accountUserData) => accountUserData.accountId
+    (accountMemberData) => accountMemberData.accountId
   )
 
   // Finally, define the gateway functions that return computed accounts (by Id, or filtered by status)

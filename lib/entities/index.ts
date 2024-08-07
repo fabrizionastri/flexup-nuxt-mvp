@@ -1,5 +1,5 @@
 export * from './account'
-export * from './accountUser'
+export * from './accountMember'
 export * from './allocation'
 export * from './balance'
 export * from './charter'

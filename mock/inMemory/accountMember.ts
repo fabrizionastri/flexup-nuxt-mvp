@@ -62,7 +62,7 @@ export const pizzaDOroTakeAwayAccountFabrizioUser: Account = {
   roleSymbol: '👀'
 }
 
-export const accountUserDatasForFabrizioUser: AccountUserData[] = [
+export const accountMemberDatasForFabrizioUser: AccountUserData[] = [
   fabrizioAccountFabrizioUserData,
   flexupAccountFabrizioUserData,
   cosysAccountFabrizioUserData,
@@ -122,7 +122,7 @@ export const flexupAccountTotoUser: Account = {
   roleSymbol: '✏️'
 }
 
-export const accountUserDatasForTotoUser: AccountUserData[] = [
+export const accountMemberDatasForTotoUser: AccountUserData[] = [
   flexupAccountTotoUserData,
   totoAccountTotoUserData
 ]
@@ -132,18 +132,18 @@ export const accountDatasForTotoUser: AccountData[] = [
 ]
 export const accountsForTotoUser: Account[] = [flexupAccountTotoUser, totoAccountTotoUser]
 
-export const accountUsersForTotoUser: Account[] = [flexupAccountTotoUser, totoAccountTotoUser]
+export const accountMembersForTotoUser: Account[] = [flexupAccountTotoUser, totoAccountTotoUser]
 
-export const accountUserDatasForFlexupAccount: AccountUserData[] = [
+export const accountMemberDatasForFlexupAccount: AccountUserData[] = [
   flexupAccountFabrizioUserData,
   flexupAccountTotoUserData
 ]
-export const accountUsersForFlexupAccount: Account[] = [
+export const accountMembersForFlexupAccount: Account[] = [
   flexupAccountFabrizioUser,
   flexupAccountTotoUser
 ]
 
-export const accountUserDatas: AccountUserData[] = [
+export const accountMemberDatas: AccountUserData[] = [
   fabrizioAccountFabrizioUserData,
   flexupAccountFabrizioUserData,
   cosysAccountFabrizioUserData,
@@ -152,7 +152,7 @@ export const accountUserDatas: AccountUserData[] = [
   doMazyAccountFabrizioUserData,
   pizzaDOroTakeAwayAccountFabrizioUserData
 ]
-export const accountUsers: Account[] = [
+export const accountMembers: Account[] = [
   fabrizioAccountFabrizioUser,
   flexupAccountFabrizioUser,
   cosysAccountFabrizioUser,

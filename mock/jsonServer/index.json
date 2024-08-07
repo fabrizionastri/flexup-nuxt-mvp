@@ -104,7 +104,7 @@
       "avatar": "/images/profiles/agro_coop.png"
     }
   ],
-  "accountUser": [
+  "accountMember": [
     {
       "id": "fabrizioAccount:fabrizioUser",
       "accountId": "fabrizioAccount",
