@@ -13,7 +13,7 @@ app.get('/', jwtMiddleware, async (c) => {
   const queryStatuses = c.req.query('status')
   const statuses = queryStatuses ? (queryStatuses.split(',') as AccountStatus[]) : []
   const accounts = await getAccounts(userId, statuses)
-  // console.log('api/server/routes/account.ts - accounts:', accounts)
+  console.log('api/server/routes/account.ts - accounts:', accounts)
   return c.json(accounts)
 })
 
@@ -24,7 +24,7 @@ app.get('/:accountId/order', jwtMiddleware, async (c) => {
   // const queryStatuses = c.req.query('status')
   // const statuses = queryStatuses ? (queryStatuses.split(',') as OrderStatus[]) : []
   const orders = await getOrders(accountId)
-  // console.log('api/server/routes - GET account/[accountId]/order', orders)
+  console.log('api/server/routes - GET account/[accountId]/order', orders)
   return c.json(orders)
 })
 

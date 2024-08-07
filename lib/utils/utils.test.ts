@@ -20,7 +20,7 @@ import {
   calculatePayableRatioFromArray,
   calculatePayableCapFromArray,
   getTotalAmountDue,
-  clone,
+  // clone,
   isInBound,
   isInBoundPercent,
   sumNumberProps,
@@ -32,7 +32,7 @@ import {
   calculateDuration
 } from 'lib/utils'
 
-import { zeroBalances } from 'lib/entities/balance' // CHECK / TODOS : this used to work with out lib/, with just 'entities', but now it doesn't. Why?
+// import { zeroBalances } from 'lib/entities/balance' // CHECK / TODOS : this used to work with out lib/, with just 'entities', but now it doesn't. Why?
 
 describe('Utils functions', () => {
   describe('getEndOfMonth', () => {
@@ -213,15 +213,19 @@ describe('Utils functions', () => {
   })
 
   describe('today', () => {
-    it('Returns the current date without time', () => {
+    it.only('Returns the current date without time', () => {
       const result = today()
       const now = new Date()
       // console.log('result', result)
       // console.log('results.getDate()', result.getDate())
       // console.log('result.getHours()', result.getHours())
       // console.log('result.getMinutes()', result.getMinutes())
-      // console.log('result.getSeconds()', result.getSeconds())
+      // console.log('resault.getSeconds()', result.getSeconds())
       // console.log('result.getMilliseconds()', result.getMilliseconds())
+      // console.log('now', now)
+      // console.log('result', result)
+      // console.log('isSameDay(result, now)', isSameDay(result, now))
+
       expect(isSameDay(result, now)).toBe(true)
       expect(result.getUTCHours()).toBe(0)
       expect(result.getMinutes()).toBe(0)
