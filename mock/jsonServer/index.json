@@ -213,7 +213,7 @@
       "countryId": "FRA"
     }
   ],
-  "groupingAccount": [
+  "groupingOwner": [
     {
       "id": "doMazyGroupingAgroCoopAccount",
       "groupingId": "doMazyGrouping",

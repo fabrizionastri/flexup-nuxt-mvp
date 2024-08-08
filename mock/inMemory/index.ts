@@ -3,7 +3,7 @@ import { accountMemberDatas } from './accountMember'
 import { countryDatas } from './country'
 import { currencyDatas } from './currency'
 import { groupingDatas } from './grouping'
-import { groupingAccountDatas } from './groupingAccount'
+import { groupingOwnerDatas } from './groupingOwner'
 import { identifierDatas } from './identifier'
 import { individualDatas } from './individual'
 import { itemDatas } from './item'
@@ -20,7 +20,7 @@ export * from './accountMember'
 export * from './country'
 export * from './currency'
 export * from './grouping'
-export * from './groupingAccount'
+export * from './groupingOwner'
 export * from './identifier'
 export * from './individual'
 export * from './item'
@@ -38,7 +38,7 @@ export const inMemory = {
   country: countryDatas,
   currency: currencyDatas,
   grouping: groupingDatas,
-  groupingAccount: groupingAccountDatas,
+  groupingOwner: groupingOwnerDatas,
   identifier: identifierDatas,
   individual: individualDatas,
   item: itemDatas,

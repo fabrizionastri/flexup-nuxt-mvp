@@ -1,4 +1,4 @@
-import type { GroupingAccountData, GroupingAccount } from 'entities/groupingAccount'
+import type { GroupingAccountData, GroupingAccount } from 'entities/groupingOwner'
 
 export const doMazyGroupingAgroCoopAccountData: GroupingAccountData = {
   id: 'doMazyGroupingAgroCoopAccount',
@@ -34,7 +34,7 @@ export const doMazyGroupingAccountDatas: GroupingAccountData[] = [
   doMazyGroupingFlexUpAccountData
 ]
 
-export const groupingAccountDatas: GroupingAccountData[] = [
+export const groupingOwnerDatas: GroupingAccountData[] = [
   ...doMazyGroupingAccountDatas,
   plopGroupingTotoAccountData
 ]
@@ -63,7 +63,7 @@ export const doMazyGroupingFlexUpAccount: GroupingAccount = {
   memberLabel: 'Flex Up 🚀'
 }
 
-export const groupingAccounts: GroupingAccount[] = [
+export const groupingOwners: GroupingAccount[] = [
   doMazyGroupingAgroCoopAccount,
   doMazyGroupingTotoAccount,
   doMazyGroupingFlexUpAccount
