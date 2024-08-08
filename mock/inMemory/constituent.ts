@@ -1,45 +1,51 @@
-import type { GroupingAccountData, GroupingAccount } from 'entities/groupingOwner'
+import type { ConstituentData, Constituent } from 'entities/constituent'
 
-export const doMazyGroupingAgroCoopAccountData: GroupingAccountData = {
+export const doMazyGroupingAgroCoopAccountData: ConstituentData = {
   id: 'doMazyGroupingAgroCoopAccount',
   groupingId: 'doMazyGrouping',
   accountId: 'agroCoopAccount',
-  role: 'admin'
+  joinedDate: new Date('2021-01-01'),
+  status: 'active'
 }
 
-export const doMazyGroupingTotoAccountData: GroupingAccountData = {
+export const doMazyGroupingTotoAccountData: ConstituentData = {
   id: 'doMazyGroupingTotoAccount',
   groupingId: 'doMazyGrouping',
   accountId: 'totoAccount',
-  role: 'member'
+  joinedDate: new Date('2024-01-01'),
+  status: 'pending'
 }
 
-export const doMazyGroupingFlexUpAccountData: GroupingAccountData = {
+export const doMazyGroupingFlexUpAccountData: ConstituentData = {
   id: 'doMazyGroupingFlexUpAccount',
   groupingId: 'doMazyGrouping',
   accountId: 'flexUpAccount',
-  role: 'member'
+  joinedDate: new Date('2021-05-01'),
+  leftDate: new Date('2024-06-01'),
+  status: 'expelled'
 }
 
-export const plopGroupingTotoAccountData: GroupingAccountData = {
+export const plopGroupingTotoAccountData: ConstituentData = {
   id: 'plopGroupingFlexUpAccount',
   groupingId: 'plopGrouping',
   accountId: 'totoAccount',
-  role: 'admin'
+  joinedDate: new Date('2021-05-01'),
+  leftDate: new Date('2024-06-01'),
+  status: 'quit'
 }
 
-export const doMazyGroupingAccountDatas: GroupingAccountData[] = [
+export const doMazyConstituentDatas: ConstituentData[] = [
   doMazyGroupingAgroCoopAccountData,
   doMazyGroupingTotoAccountData,
   doMazyGroupingFlexUpAccountData
 ]
 
-export const groupingOwnerDatas: GroupingAccountData[] = [
-  ...doMazyGroupingAccountDatas,
+export const constituentDatas: ConstituentData[] = [
+  ...doMazyConstituentDatas,
   plopGroupingTotoAccountData
 ]
 
-export const doMazyGroupingAgroCoopAccount: GroupingAccount = {
+export const doMazyGroupingAgroCoopAccount: Constituent = {
   ...doMazyGroupingAgroCoopAccountData,
   groupingName: 'DoMazy',
   groupingLabel: 'DoMazy 👥',
@@ -47,7 +53,7 @@ export const doMazyGroupingAgroCoopAccount: GroupingAccount = {
   memberLabel: 'Agro Coop 🏢'
 }
 
-export const doMazyGroupingTotoAccount: GroupingAccount = {
+export const doMazyGroupingTotoAccount: Constituent = {
   ...doMazyGroupingTotoAccountData,
   groupingName: 'DoMazy',
   groupingLabel: 'DoMazy 👥',
@@ -55,7 +61,7 @@ export const doMazyGroupingTotoAccount: GroupingAccount = {
   memberLabel: 'Toto 👤'
 }
 
-export const doMazyGroupingFlexUpAccount: GroupingAccount = {
+export const doMazyGroupingFlexUpAccount: Constituent = {
   ...doMazyGroupingFlexUpAccountData,
   groupingName: 'DoMazy',
   groupingLabel: 'DoMazy 👥',
@@ -63,7 +69,7 @@ export const doMazyGroupingFlexUpAccount: GroupingAccount = {
   memberLabel: 'Flex Up 🚀'
 }
 
-export const groupingOwners: GroupingAccount[] = [
+export const constituents: Constituent[] = [
   doMazyGroupingAgroCoopAccount,
   doMazyGroupingTotoAccount,
   doMazyGroupingFlexUpAccount

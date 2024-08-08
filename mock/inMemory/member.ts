@@ -1,8 +1,8 @@
-import type { AccountUserData, Account, AccountData } from 'lib/entities'
+import type { MemberData, Account, AccountData } from 'lib/entities'
 
 import * as accounts from './account'
 
-export const fabrizioAccountFabrizioUserData: AccountUserData = {
+export const fabrizioAccountFabrizioUserData: MemberData = {
   id: 'fabrizioAccount:fabrizioUser', // temp for Json-Server
   accountId: 'fabrizioAccount',
   userId: 'fabrizioUser',
@@ -10,11 +10,11 @@ export const fabrizioAccountFabrizioUserData: AccountUserData = {
 }
 export const fabrizioAccountFabrizioUser: Account = {
   ...accounts.fabrizioAccount,
-  role: 'admin',
+  currentUserRole: 'admin',
   roleSymbol: '🔑'
 }
 
-export const flexupAccountFabrizioUserData: AccountUserData = {
+export const flexupAccountFabrizioUserData: MemberData = {
   id: 'flexupAccount:fabrizioUser',
   accountId: 'flexupAccount',
   userId: 'fabrizioUser',
@@ -22,11 +22,11 @@ export const flexupAccountFabrizioUserData: AccountUserData = {
 }
 export const flexupAccountFabrizioUser: Account = {
   ...accounts.flexupAccount,
-  role: 'admin',
+  currentUserRole: 'admin',
   roleSymbol: '🔑'
 }
 
-export const cosysAccountFabrizioUserData: AccountUserData = {
+export const cosysAccountFabrizioUserData: MemberData = {
   id: 'cosysAccount:fabrizioUser',
   accountId: 'cosysAccount',
   userId: 'fabrizioUser',
@@ -34,11 +34,11 @@ export const cosysAccountFabrizioUserData: AccountUserData = {
 }
 export const cosysAccountFabrizioUser: Account = {
   ...accounts.cosysAccount,
-  role: 'admin',
+  currentUserRole: 'admin',
   roleSymbol: '🔑'
 }
 
-export const doMazyAccountFabrizioUserData: AccountUserData = {
+export const doMazyAccountFabrizioUserData: MemberData = {
   id: 'doMazyAccount:FabrizioUser',
   accountId: 'doMazyAccount',
   userId: 'fabrizioUser',
@@ -46,11 +46,11 @@ export const doMazyAccountFabrizioUserData: AccountUserData = {
 }
 export const doMazyAccountFabrizioUser: Account = {
   ...accounts.doMazyAccount,
-  role: 'editor',
+  currentUserRole: 'editor',
   roleSymbol: '✏️'
 }
 
-export const pizzaDOroTakeAwayAccountFabrizioUserData: AccountUserData = {
+export const pizzaDOroTakeAwayAccountFabrizioUserData: MemberData = {
   id: 'pizzaDOroTakeAwayAccount:FabrizioUser',
   accountId: 'pizzaDOroTakeAwayAccount',
   userId: 'fabrizioUser',
@@ -58,11 +58,11 @@ export const pizzaDOroTakeAwayAccountFabrizioUserData: AccountUserData = {
 }
 export const pizzaDOroTakeAwayAccountFabrizioUser: Account = {
   ...accounts.pizzaDOroTakeAwayAccount,
-  role: 'guest',
+  currentUserRole: 'guest',
   roleSymbol: '👀'
 }
 
-export const accountMemberDatasForFabrizioUser: AccountUserData[] = [
+export const memberDatasForFabrizioUser: MemberData[] = [
   fabrizioAccountFabrizioUserData,
   flexupAccountFabrizioUserData,
   cosysAccountFabrizioUserData,
@@ -84,7 +84,7 @@ export const accountsForFabrizioUser: Account[] = [
   pizzaDOroTakeAwayAccountFabrizioUser
 ]
 
-export const activeAccountDatasForFabrizioUser: AccountUserData[] = [
+export const activeAccountDatasForFabrizioUser: MemberData[] = [
   fabrizioAccountFabrizioUserData,
   flexupAccountFabrizioUserData,
   cosysAccountFabrizioUserData,
@@ -97,7 +97,7 @@ export const activeAccountsForFabrizioUser: Account[] = [
   doMazyAccountFabrizioUser
 ]
 
-export const totoAccountTotoUserData: AccountUserData = {
+export const totoAccountTotoUserData: MemberData = {
   id: 'totoAccount:totoUser',
   accountId: 'totoAccount',
   userId: 'totoUser',
@@ -106,11 +106,11 @@ export const totoAccountTotoUserData: AccountUserData = {
 }
 export const totoAccountTotoUser: Account = {
   ...accounts.totoAccount,
-  role: 'admin',
+  currentUserRole: 'admin',
   roleSymbol: '🔑'
 }
 
-export const flexupAccountTotoUserData: AccountUserData = {
+export const flexupAccountTotoUserData: MemberData = {
   id: 'flexupAccount:totoUser',
   accountId: 'flexupAccount',
   userId: 'totoUser',
@@ -118,11 +118,11 @@ export const flexupAccountTotoUserData: AccountUserData = {
 }
 export const flexupAccountTotoUser: Account = {
   ...accounts.flexupAccount,
-  role: 'editor',
+  currentUserRole: 'editor',
   roleSymbol: '✏️'
 }
 
-export const accountMemberDatasForTotoUser: AccountUserData[] = [
+export const memberDatasForTotoUser: MemberData[] = [
   flexupAccountTotoUserData,
   totoAccountTotoUserData
 ]
@@ -132,18 +132,15 @@ export const accountDatasForTotoUser: AccountData[] = [
 ]
 export const accountsForTotoUser: Account[] = [flexupAccountTotoUser, totoAccountTotoUser]
 
-export const accountMembersForTotoUser: Account[] = [flexupAccountTotoUser, totoAccountTotoUser]
+export const membersForTotoUser: Account[] = [flexupAccountTotoUser, totoAccountTotoUser]
 
-export const accountMemberDatasForFlexupAccount: AccountUserData[] = [
+export const memberDatasForFlexupAccount: MemberData[] = [
   flexupAccountFabrizioUserData,
   flexupAccountTotoUserData
 ]
-export const accountMembersForFlexupAccount: Account[] = [
-  flexupAccountFabrizioUser,
-  flexupAccountTotoUser
-]
+export const membersForFlexupAccount: Account[] = [flexupAccountFabrizioUser, flexupAccountTotoUser]
 
-export const accountMemberDatas: AccountUserData[] = [
+export const memberDatas: MemberData[] = [
   fabrizioAccountFabrizioUserData,
   flexupAccountFabrizioUserData,
   cosysAccountFabrizioUserData,
@@ -152,7 +149,7 @@ export const accountMemberDatas: AccountUserData[] = [
   doMazyAccountFabrizioUserData,
   pizzaDOroTakeAwayAccountFabrizioUserData
 ]
-export const accountMembers: Account[] = [
+export const members: Account[] = [
   fabrizioAccountFabrizioUser,
   flexupAccountFabrizioUser,
   cosysAccountFabrizioUser,

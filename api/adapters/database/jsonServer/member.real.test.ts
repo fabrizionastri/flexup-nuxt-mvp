@@ -1,6 +1,6 @@
-import { isUserMemberOfAccount } from './accountMember'
+import { isUserMemberOfAccount } from './member'
 
-describe('accountMember in json-server adapter . real - isUserMemberOfAccount', () => {
+describe('member in json-server adapter . real - isUserMemberOfAccount', () => {
   it('should return true for valid userId/accountId pair', async () => {
     const result = await isUserMemberOfAccount('totoUser', 'totoAccount')
     expect(result).toEqual(true)

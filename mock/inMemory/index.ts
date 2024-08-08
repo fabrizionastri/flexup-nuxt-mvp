@@ -1,13 +1,13 @@
 import { accountDatas } from './account'
-import { accountMemberDatas } from './accountMember'
+import { constituentDatas } from './constituent'
 import { countryDatas } from './country'
 import { currencyDatas } from './currency'
 import { groupingDatas } from './grouping'
-import { groupingOwnerDatas } from './groupingOwner'
 import { identifierDatas } from './identifier'
 import { individualDatas } from './individual'
 import { itemDatas } from './item'
 import { legalPersonDatas } from './legalPerson'
+import { memberDatas } from './member'
 import { orderDatas } from './order'
 import { organizationDatas } from './organization'
 import { passwordDatas } from './password'
@@ -16,15 +16,15 @@ import { trancheDatas } from './tranche'
 import { userDatas } from './user'
 
 export * from './account'
-export * from './accountMember'
+export * from './constituent'
 export * from './country'
 export * from './currency'
 export * from './grouping'
-export * from './groupingOwner'
 export * from './identifier'
 export * from './individual'
 export * from './item'
 export * from './legalPerson'
+export * from './member'
 export * from './order'
 export * from './organization'
 export * from './password'
@@ -34,15 +34,15 @@ export * from './user'
 
 export const inMemory = {
   account: accountDatas,
-  accountMember: accountMemberDatas,
+  constituent: constituentDatas,
   country: countryDatas,
   currency: currencyDatas,
   grouping: groupingDatas,
-  groupingOwner: groupingOwnerDatas,
   identifier: identifierDatas,
   individual: individualDatas,
   item: itemDatas,
   legalPerson: legalPersonDatas,
+  member: memberDatas,
   order: orderDatas,
   organization: organizationDatas,
   password: passwordDatas,

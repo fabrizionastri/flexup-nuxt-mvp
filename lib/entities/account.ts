@@ -1,6 +1,6 @@
 // lib/entities/account.ts
 
-import type { CurrencyId, CountryId, Entity, AccountUserRole } from '.'
+import type { CurrencyId, CountryId, Entity, MemberRole } from '.'
 
 // TODO: use this list to limit the possible options in the UI for creating a new account
 export const accountTypes = {
@@ -86,7 +86,7 @@ export interface AccountData extends Entity {
   countryId: CountryId
   creationDate: Date
   avatar?: string
-  description?: string
+  scope?: string
   isVirtual?: boolean
   createdByAccountId?: string
 }
@@ -99,5 +99,5 @@ export interface Account extends AccountData {
   currencyName: string
   currencySymbol: string
   countryName: string
-  role?: AccountUserRole
+  currentUserRole?: MemberRole // this is only visible in the UI, to show the role of the current user for this account
 }
