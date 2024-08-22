@@ -1,0 +1,8 @@
+ID,display,icon,label,db_value,sections0,insysadmin,sort_factor,in_dashboard,editpermission,permissiongroup,deleted
+"bTKez","transactions","grommet-icons:transaction","Transactions","manage","contract16|order18|commitment17|payment14|lettering15","true","1","true","edittransactions","transaction",""
+"bTKfD","account","ic:baseline-api","Account","account","account_profile5|member4","","4","true","editaccount","account",""
+"bTKfE","user","mdi:user-circle","User","user","user_profile3|account2","","5","true","","",""
+"bTKgL","configuration","material-symbols:settings","Configuration","configuration","product13|wallet10|Rxrdpa|payment_term11|payment_structure12|third_party9","","2","true","editaccount","account",""
+"bTKjx","cash management","eos-icons:trusted-organization","Cash management","flexup","charter8|monthly_resolution7|annual_resolution6","true","3","true","editaccount","account",""
+"bTPcf","system","pajamas:status-health","System","system","bTPTD|bTPWy|bTPcg","true","6","","","",""
+"bTUnV","sections","","","sections","","","7","","","","true"
