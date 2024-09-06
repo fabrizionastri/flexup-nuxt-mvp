@@ -12,6 +12,7 @@ export interface UserData extends Entity {
   status: UserStatus
   creationDate: Date
   lastLoginDate?: Date
+  email: string
   // preferredLanguage: Language
   // preferredCurrency: Currency
 }

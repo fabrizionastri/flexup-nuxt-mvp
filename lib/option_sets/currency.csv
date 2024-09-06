@@ -1,162 +1,164 @@
-ID,display,ison,symbol,db_value,long_name,short_name,sort_factor,symbol_unique,symbol_alternative
-"bTWlc","AFN","971","؋","afn","Afghani","afghani","1","؋",""
-"bTWld","DZD","12","DA","dzd","Algerian Dinar","dinar","2","DA",""
-"bTWlh","ARS","32","$","ars","Argentine peso","peso","3","$Ar",""
-"bTWli","AMD","51","֏","amd","Armenian Dram","dram","4","֏",""
-"bTWlj","AWG","533","ƒ","awg","Aruban florin","florin","5","Afl",""
-"bTWln","AUD","36","$","aud","Australian dollar","dollar","6","$Au",""
-"bTWlo","AZN","944","₼","azn","Azerbaijan Manat","manat","7","₼",""
-"bTWlp","BSD","44","$","bsd","Bahamian dollar","dollar","8","$BS",""
-"bTWlt","BHD","48","BD","bhd","Bahraini Dinar","dinar","9","BD",""
-"bTWlu","THB","764","฿","thb","Baht","baht","10","฿",""
-"bTWlv","PAB","590","B/.","pab","Balboa","balboa","11","B/.",""
-"bTWlz","BBD","52","$","bbd","Barbados Dollar","dollar","12","$Bds",""
-"bTWmA","BYN","933","Rbl","byn","Belarusian ruble","ruble","13","Rbl","Br"
-"bTWmB","BZD","84","BZ$","bzd","Belize Dollar","dollar","14","BZ$",""
-"bTWmF","BMD","60","$","bmd","Bermudian dollar","dollar","15","$BM",""
-"bTWmG","VES","928","Bs.S","ves","Bolívar Soberano","soberano","16","Bs.S",""
-"bTWmH","BOB","68","$b","bob","Boliviano","boliviano","17","$b","Bs"
-"bTWmL","BRL","986","R$","brl","Brazilian real","real","18","R$",""
-"bTWmM","BND","96","$","bnd","Brunei dollar","dollar","19","$BN",""
-"bTWmN","BGN","975","lev","bgn","Bulgarian lev","lev","20","ле","лв"
-"bTWmR","BIF","108","Fr","bif","Burundi Franc","franc","21","FrBI",""
-"bTWmS","CVE","132","$","cve","Cabo Verde Escudo","escudo","22","$CV",""
-"bTWmT","CAD","124","$","cad","Canadian dollar","dollar","23","$CA",""
-"bTWmX","KYD","136","$","kyd","Cayman Islands Dollar","dollar","24","$KY",""
-"bTWmY","XOF","952","Fr","xof","CFA Franc BCEAO","franc","25","Fr(XOF)",""
-"bTWmZ","XAF","950","Fr","xaf","CFA Franc BEAC","franc","26","Fr(XAF)",""
-"bTWmd","XPF","953","Fr","xpf","CFP Franc","franc","27","FrXP",""
-"bTWme","CLP","152","$","clp","Chilean peso","peso","28","$CI",""
-"bTWmf","COP","170","$","cop","Colombian peso","peso","29","$CO",""
-"bTWmj","KMF","174","Fr","kmf","Comorian Franc","franc","30","FrKM",""
-"bTWmk","CDF","976","Fr","cdf","Congolese franc","franc","31","FrCD",""
-"bTWml","BAM","977","KM","bam","Convertible Mark","mark","32","KM",""
-"bTWmp","NIO","558","C$","nio","Cordoba Oro","oro","33","C$",""
-"bTWmq","CRC","188","₡","crc","Costa Rican Colon","colon","34","₡",""
-"bTWmr","HRK","191","kn","hrk","Croatia Kuna","kuna","35","kn",""
-"bTWmv","CUP","192","₱","cup","Cuban peso","peso","36","₱CU",""
-"bTWmw","CZK","203","Kč","czk","Czech koruna","koruna","37","Kč",""
-"bTWmx","GMD","270","D","gmd","Dalasi","dalasi","38","D",""
-"bTWnB","DKK","208","kr","dkk","Danish krone","krone","39","kr",""
-"bTWnC","MKD","807","ден","mkd","Denar","denar","40","ден",""
-"bTWnD","DJF","262","Fr","djf","Djibouti Franc","franc","41","FrDJ",""
-"bTWnH","STN","930","Db","stn","Dobra","dobra","42","Db",""
-"bTWnI","DOP","214","RD$","dop","Dominican peso","peso","43","RD$",""
-"bTWnJ","VND","704","₫","vnd","Dong","dong","44","₫",""
-"bTWnN","XCD","951","$","xcd","East Caribbean Dollar","dollar","45","$XC",""
-"bTWnO","EGP","818","£","egp","Egyptian pound","pound","46","£EG",""
-"bTWnP","SVC","222","$","svc","El Salvador Colon","colon","47","$SV",""
-"bTWnT","ETB","230","Br","etb","Ethiopian Birr","birr","48","Br",""
-"bTWnU","EUR","978","€","eur","Euro","euro","49","€",""
-"bTWnV","FKP","238","£","fkp","Falkland Islands pound","pound","50","£FK",""
-"bTWnZ","FJD","242","$","fjd","Fiji Dollar","dollar","51","$FJ",""
-"bTWna","SLL","925","Le","sll","First Leone","leone","52","Le(SLL)",""
-"bTWnb","HUF","348","Ft","huf","Forint","forint","53","Ft",""
-"bTWnf","GHS","936","¢","ghs","Ghana Cedi","cedi","54","¢",""
-"bTWng","GIP","292","£","gip","Gibraltar Pound","pound","55","£GI",""
-"bTWnh","HTG","332","G","htg","Gourde","gourde","56","G",""
-"bTWnl","PYG","600","Gs","pyg","Guarani","guarani","57","Gs",""
-"bTWnm","GGP","","£","ggp","Guernsey Pound","pound","58","£G",""
-"bTWnn","GNF","324","Fr","gnf","Guinean Franc","franc","59","FrGN",""
-"bTWnr","GYD","328","$","gyd","Guyana Dollar","dollar","60","$G",""
-"bTWns","HKD","344","$","hkd","Hong Kong Dollar","dollar","61","$HK",""
-"bTWnt","UAH","980","₴","uah","Hryvnia","hryvnia","62","₴",""
-"bTWnx","ISK","352","kr","isk","Iceland Krona","krona","63","krIS",""
-"bTWny","INR","356","₹","inr","Indian rupee","rupee","64","₹",""
-"bTWnz","IRR","364","﷼","irr","Iranian rial","rial","65","﷼IR",""
-"bTWoD","IQD","368","ID","iqd","Iraqi Dinar","dinar","66","ID",""
-"bTWoE","IMP","","£","imp","Isle of Man Pound","pound","67","£IM",""
-"bTWoF","JMD","388","J$","jmd","Jamaican dollar","dollar","68","J$",""
-"bTWoJ","JEP","","£","jep","Jersey Pound","pound","69","£JE",""
-"bTWoK","JOD","400","JD","jod","Jordanian Dinar","dinar","70","JD",""
-"bTWoL","KES","404","Sh","kes","Kenyan Shilling","shilling","71","KSh",""
-"bTWoP","PGK","598","K","pgk","Kina","kina","72","K",""
-"bTWoQ","KWD","414","KD","kwd","Kuwaiti Dinar","dinar","73","KD",""
-"bTWoR","AOA","973","Kz","aoa","Kwanza","kwanza","74","Kz",""
-"bTWoV","MMK","104","K or Ks (pl.)","mmk","Kyat","kyat","75","K or Ks (pl.)",""
-"bTWoW","LAK","418","₭","lak","Lao kip","kip","76","₭",""
-"bTWoX","GEL","981","₾","gel","Lari","lari","77","₾",""
-"bTWob","LBP","422","£","lbp","Lebanese pound","pound","78","£LB","LL"
-"bTWoc","ALL","8","Lek","all","Lek","lek","79","Lek",""
-"bTWod","HNL","340","L","hnl","Lempira","lempira","80","L",""
-"bTWoh","LRD","430","$","lrd","Liberian dollar","dollar","81","$L",""
-"bTWoi","LYD","434","LD","lyd","Libyan Dinar","dinar","82","LD",""
-"bTWoj","SZL","748","L or E (pl.)","szl","Lilangeni","lilangeni","83","L or E (pl.)",""
-"bTWon","LSL","426","L or M (pl.)","lsl","Loti","loti","84","L or M (pl.)",""
-"bTWoo","MGA","969","Ar","mga","Malagasy Ariary","ariary","85","Ar",""
-"bTWop","MWK","454","K","mwk","Malawi Kwacha","kwacha","86","MK",""
-"bTWot","MYR","458","RM","myr","Malaysian ringgit","ringgit","87","RM",""
-"bTWou","MUR","480","₨","mur","Mauritius Rupee","rupee","88","MRs",""
-"bTWov","MXN","484","$","mxn","Mexican peso","peso","89","$MX",""
-"bTWoz","MDL","498","Leu or Lei (pl.)","mdl","Moldovan Leu","leu","90","Leu or Lei (pl.)",""
-"bTWpA","MAD","504","DH","mad","Moroccan Dirham","dirham","91","Dh(MA)",".د.م"
-"bTWpB","MZN","943","MT","mzn","Mozambique Metical","metical","92","MT",""
-"bTWpF","BOV","984","Mvdol","bov","Mvdol","Mvdol","93","Mvdol",""
-"bTWpG","NGN","566","₦","ngn","Naira","naira","94","₦",""
-"bTWpH","ERN","232","Nkf","ern","Nakfa","nakfa","95","Nkf",""
-"bTWpL","NAD","516","$","nad","Namibia Dollar","dollar","96","$N",""
-"bTWpM","NPR","524","रू","npr","Nepalese rupee","rupee","97","NRs","₨"
-"bTWpN","ANG","532","ƒ","ang","Netherlands Antillean guilder","guilder","98","NAƒ",""
-"bTWpR","ILS","376","₪","ils","New Israeli Sheqel","sheqel","99","₪",""
-"bTWpS","TWD","901","NT$","twd","New Taiwan dollar","dollar","100","NT$",""
-"bTWpT","NZD","554","$","nzd","New Zealand Dollar","dollar","101","$NZ",""
-"bTWpX","BTN","64","Nu","btn","Ngultrum","ngultrum","102","Nu",""
-"bTWpY","KPW","408","₩","kpw","North Korean won","won","103","₩NK",""
-"bTWpZ","NOK","578","kr","nok","Norwegian krone","krone","104","krNO",""
-"bTWpd","MRU","929","UM","mru","Ouguiya","ouguiya","105","UM",""
-"bTWpe","TOP","776","T$","top","Pa""anga","pa""anga","106","T$",""
-"bTWpf","PKR","586","₨","pkr","Pakistan Rupee","rupee","107","PRs",""
-"bTWpj","MOP","446","MOP$","mop","Pataca","pataca","108","MOP$",""
-"bTWpk","UYU","858","$U","uyu","Peso Uruguayo","uruguayo","109","$U",""
-"bTWpl","PHP","608","₱","php","Philippine peso","peso","110","₱PH",""
-"bTWpp","GBP","826","£","gbp","Pound Sterling","sterling","111","£GB",""
-"bTWpq","BWP","72","P","bwp","Pula","pula","112","P",""
-"bTWpr","QAR","634","﷼","qar","Qatari Rial","rial","113","﷼QA",""
-"bTWpv","GTQ","320","Q","gtq","Quetzal","quetzal","114","Q",""
-"bTWpw","ZAR","710","R","zar","Rand","rand","115","R",""
-"bTWpx","OMR","512","﷼","omr","Rial Omani","omani","116","﷼OM",""
-"bTWqB","KHR","116","៛","khr","Riel","riel","117","៛",""
-"bTWqC","RON","946","lei","ron","Romanian leu","leu","118","lei",""
-"bTWqD","MVR","462","Rf","mvr","Rufiyaa","rufiyaa","119","Rf",""
-"bTWqH","IDR","360","Rp","idr","Rupiah","rupiah","120","Rp",""
-"bTWqI","RUB","643","₽","rub","Russian ruble","ruble","121","₽",""
-"bTWqJ","RWF","646","Fr","rwf","Rwanda Franc","franc","122","FrRW",""
-"bTWqN","SHP","654","£","shp","Saint Helena Pound","pound","123","£SH",""
-"bTWqO","SAR","682","﷼","sar","Saudi riyal","riyal","124","﷼SA",""
-"bTWqP","SLE","925","Le","sle","Second Leone","leone","125","Le(SLE)",""
-"bTWqT","RSD","941","Дин.","rsd","Serbian dinar","dinar","126","Дин.",""
-"bTWqU","SCR","690","₨","scr","Seychelles Rupee","rupee","127","SRs",""
-"bTWqV","SGD","702","$","sgd","Singapore Dollar","dollar","128","$S",""
-"bTWqZ","PEN","604","S/.","pen","Sol","sol","129","S/.",""
-"bTWqa","SBD","90","$","sbd","Solomon Islands Dollar","dollar","130","$SI",""
-"bTWqb","KGS","417","som","kgs","Som","som","131","лвKGS","лв"
-"bTWqf","SOS","706","S","sos","Somali shilling","shilling","132","Sh.So.",""
-"bTWqg","TJS","972","SM","tjs","Somoni","somoni","133","SM",""
-"bTWqh","SSP","728","£","ssp","South Sudanese Pound","pound","134","£SSP",""
-"bTWql","LKR","144","රු","lkr","Sri Lanka Rupee","rupee","135","SLRs","₨"
-"bTWqm","SDG","938","LS","sdg","Sudanese Pound","pound","136","LS",""
-"bTWqn","SRD","968","$","srd","Surinam Dollar","dollar","137","$SR",""
-"bTWqr","SEK","752","kr","sek","Swedish krona","krona","138","krSE",""
-"bTWqs","CHF","756","CHF","chf","Swiss franc","franc","139","CHF",""
-"bTWqt","SYP","760","£","syp","Syrian pound","pound","140","£SY","LS"
-"bTWqx","BDT","50","৳","bdt","Taka","taka","141","৳",""
-"bTWqy","WST","882","$","wst","Tala","tala","142","WS$",""
-"bTWqz","TZS","834","Sh","tzs","Tanzanian Shilling","shilling","143","TSh",""
-"bTWrD","KZT","398","лв","kzt","Tenge","tenge","144","лвKZT",""
-"bTWrE","TTD","780","TT$","ttd","Trinidad and Tobago Dollar","dollar","145","TT$",""
-"bTWrF","MNT","496","₮","mnt","Tugrik","tugrik","146","₮",""
-"bTWrJ","TND","788","DT","tnd","Tunisian Dinar","dinar","147","DT",""
-"bTWrK","TRY","949","₺","try","Turkish lira","lira","148","₺",""
-"bTWrL","TMT","934","m","tmt","Turkmenistan New Manat","manat","149","m",""
-"bTWrP","TVD","","$","tvd","Tuvalu Dollar","dollar","150","$TV",""
-"bTWrQ","AED","784","Dh","aed","UAE Dirham","dirham","151","Dh(UAE)","د.إ"
-"bTWrR","UGX","800","Sh","ugx","Uganda Shilling","shilling","152","USh",""
-"bTWrV","USD","840","$","usd","US Dollar","dollar","153","$US",""
-"bTWrW","UZS","860","soum","uzs","Uzbekistan Sum","sum","154","лвUZS","лв"
-"bTWrX","VUV","548","VT","vuv","Vatu","vatu","155","VT",""
-"bTWrb","VEF","","Bs","vef","Venezuela Bolívar","bolívar","156","Bs",""
-"bTWrc","KRW","410","₩","krw","Won","won","157","₩SK",""
-"bTWrd","YER","886","﷼","yer","Yemeni rial","rial","158","﷼YE",""
-"bTWrh","JPY","392","¥","jpy","Yen","yen","159","¥JP",""
-"bTWri","ZMW","967","K","zmw","Zambian Kwacha","kwacha","160","ZK",""
-"bTWrj","ZWL","932","Z$","zwl","Zimbabwe Dollar","dollar","161","Z$",""
+﻿id;ison;symbol;long_name;short_name;symbol_unique;symbol_alternative;;;;;;
+AFN;971;؋;Afghani;afghani;؋;;;;;;;
+DZD;12;DA;Algerian Dinar;dinar;DA;;;;;;;
+ARS;32;$;Argentine peso;peso;$Ar;;;;;;;
+AMD;51;֏;Armenian Dram;dram;֏;;;;;;;
+AWG;533;ƒ;Aruban florin;florin;Afl;;;;;;;
+AUD;36;$;Australian dollar;dollar;$Au;;;;;;;
+AZN;944;₼;Azerbaijan Manat;manat;₼;;;;;;;
+BSD;44;$;Bahamian dollar;dollar;$BS;;;;;;;
+BHD;48;BD;Bahraini Dinar;dinar;BD;;;;;;;
+THB;764;฿;Baht;baht;฿;;;;;;;
+PAB;590;B/.;Balboa;balboa;B/.;;;;;;;
+BBD;52;$;Barbados Dollar;dollar;$Bds;;;;;;;
+BYN;933;Rbl;Belarusian ruble;ruble;Rbl;Br;;;;;;
+BZD;84;BZ$;Belize Dollar;dollar;BZ$;;;;;;;
+BMD;60;$;Bermudian dollar;dollar;$BM;;;;;;;
+VES;928;Bs.S;Bolívar Soberano;soberano;Bs.S;;;;;;;
+BOB;68;$b;Boliviano;boliviano;$b;Bs;;;;;;
+BRL;986;R$;Brazilian real;real;R$;;;;;;;
+BND;96;$;Brunei dollar;dollar;$BN;;;;;;;
+BGN;975;lev;Bulgarian lev;lev;ле;лв;;;;;;
+BIF;108;Fr;Burundi Franc;franc;FrBI;;;;;;;
+CVE;132;$;Cabo Verde Escudo;escudo;$CV;;;;;;;
+CAD;124;$;Canadian dollar;dollar;$CA;;;;;;;
+KYD;136;$;Cayman Islands Dollar;dollar;$KY;;;;;;;
+XOF;952;Fr;CFA Franc BCEAO;franc;Fr(XOF);;;;;;;
+XAF;950;Fr;CFA Franc BEAC;franc;Fr(XAF);;;;;;;
+XPF;953;Fr;CFP Franc;franc;FrXP;;;;;;;
+CLP;152;$;Chilean peso;peso;$CI;;;;;;;
+COP;170;$;Colombian peso;peso;$CO;;;;;;;
+KMF;174;Fr;Comorian Franc;franc;FrKM;;;;;;;
+CDF;976;Fr;Congolese franc;franc;FrCD;;;;;;;
+BAM;977;KM;Convertible Mark;mark;KM;;;;;;;
+NIO;558;C$;Cordoba Oro;oro;C$;;;;;;;
+CRC;188;₡;Costa Rican Colon;colon;₡;;;;;;;
+HRK;191;kn;Croatia Kuna;kuna;kn;;;;;;;
+CUP;192;₱;Cuban peso;peso;₱CU;;;;;;;
+CZK;203;Kč;Czech koruna;koruna;Kč;;;;;;;
+GMD;270;D;Dalasi;dalasi;D;;;;;;;
+DKK;208;kr;Danish krone;krone;kr;;;;;;;
+MKD;807;ден;Denar;denar;ден;;;;;;;
+DJF;262;Fr;Djibouti Franc;franc;FrDJ;;;;;;;
+STN;930;Db;Dobra;dobra;Db;;;;;;;
+DOP;214;RD$;Dominican peso;peso;RD$;;;;;;;
+VND;704;₫;Dong;dong;₫;;;;;;;
+XCD;951;$;East Caribbean Dollar;dollar;$XC;;;;;;;
+EGP;818;£;Egyptian pound;pound;£EG;;;;;;;
+SVC;222;$;El Salvador Colon;colon;$SV;;;;;;;
+ETB;230;Br;Ethiopian Birr;birr;Br;;;;;;;
+EUR;978;€;Euro;euro;€;;;;;;;
+FKP;238;£;Falkland Islands pound;pound;£FK;;;;;;;
+FJD;242;$;Fiji Dollar;dollar;$FJ;;;;;;;
+SLL;925;Le;First Leone;leone;Le(SLL);;;;;;;
+HUF;348;Ft;Forint;forint;Ft;;;;;;;
+GHS;936;¢;Ghana Cedi;cedi;¢;;;;;;;
+GIP;292;£;Gibraltar Pound;pound;£GI;;;;;;;
+HTG;332;G;Gourde;gourde;G;;;;;;;
+PYG;600;Gs;Guarani;guarani;Gs;;;;;;;
+GGP;;£;Guernsey Pound;pound;£G;;;;;;;
+GNF;324;Fr;Guinean Franc;franc;FrGN;;;;;;;
+GYD;328;$;Guyana Dollar;dollar;$G;;;;;;;
+HKD;344;$;Hong Kong Dollar;dollar;$HK;;;;;;;
+UAH;980;₴;Hryvnia;hryvnia;₴;;;;;;;
+ISK;352;kr;Iceland Krona;krona;krIS;;;;;;;
+INR;356;₹;Indian rupee;rupee;₹;;;;;;;
+IRR;364;﷼;Iranian rial;rial;﷼IR;;;;;;;
+IQD;368;ID;Iraqi Dinar;dinar;ID;;;;;;;
+IMP;;£;Isle of Man Pound;pound;£IM;;;;;;;
+JMD;388;J$;Jamaican dollar;dollar;J$;;;;;;;
+JEP;;£;Jersey Pound;pound;£JE;;;;;;;
+JOD;400;JD;Jordanian Dinar;dinar;JD;;;;;;;
+KES;404;Sh;Kenyan Shilling;shilling;KSh;;;;;;;
+PGK;598;K;Kina;kina;K;;;;;;;
+KWD;414;KD;Kuwaiti Dinar;dinar;KD;;;;;;;
+AOA;973;Kz;Kwanza;kwanza;Kz;;;;;;;
+MMK;104;K or Ks (pl.);Kyat;kyat;K or Ks (pl.);;;;;;;
+LAK;418;₭;Lao kip;kip;₭;;;;;;;
+GEL;981;₾;Lari;lari;₾;;;;;;;
+LBP;422;£;Lebanese pound;pound;£LB;LL;;;;;;
+ALL;8;Lek;Lek;lek;Lek;;;;;;;
+HNL;340;L;Lempira;lempira;L;;;;;;;
+LRD;430;$;Liberian dollar;dollar;$L;;;;;;;
+LYD;434;LD;Libyan Dinar;dinar;LD;;;;;;;
+SZL;748;L or E (pl.);Lilangeni;lilangeni;L or E (pl.);;;;;;;
+LSL;426;L or M (pl.);Loti;loti;L or M (pl.);;;;;;;
+MGA;969;Ar;Malagasy Ariary;ariary;Ar;;;;;;;
+MWK;454;K;Malawi Kwacha;kwacha;MK;;;;;;;
+MYR;458;RM;Malaysian ringgit;ringgit;RM;;;;;;;
+MUR;480;₨;Mauritius Rupee;rupee;MRs;;;;;;;
+MXN;484;$;Mexican peso;peso;$MX;;;;;;;
+MDL;498;Leu or Lei (pl.);Moldovan Leu;leu;Leu or Lei (pl.);;;;;;;
+MAD;504;DH;Moroccan Dirham;dirham;Dh(MA);.د.م;;;;;;
+MZN;943;MT;Mozambique Metical;metical;MT;;;;;;;
+BOV;984;Mvdol;Mvdol;Mvdol;Mvdol;;;;;;;
+NGN;566;₦;Naira;naira;₦;;;;;;;
+ERN;232;Nkf;Nakfa;nakfa;Nkf;;;;;;;
+NAD;516;$;Namibia Dollar;dollar;$N;;;;;;;
+NPR;524;रू;Nepalese rupee;rupee;NRs;₨;;;;;;
+ANG;532;ƒ;Netherlands Antillean guilder;guilder;NAƒ;;;;;;;
+ILS;376;₪;New Israeli Sheqel;sheqel;₪;;;;;;;
+TWD;901;NT$;New Taiwan dollar;dollar;NT$;;;;;;;
+NZD;554;$;New Zealand Dollar;dollar;$NZ;;;;;;;
+BTN;64;Nu;Ngultrum;ngultrum;Nu;;;;;;;
+KPW;408;₩;North Korean won;won;₩NK;;;;;;;
+NOK;578;kr;Norwegian krone;krone;krNO;;;;;;;
+MRU;929;UM;Ouguiya;ouguiya;UM;;;;;;;
+TOP;776;T$;"Pa""anga";"pa""anga";T$;;;;;;;
+PKR;586;₨;Pakistan Rupee;rupee;PRs;;;;;;;
+MOP;446;MOP$;Pataca;pataca;MOP$;;;;;;;
+UYU;858;$U;Peso Uruguayo;uruguayo;$U;;;;;;;
+PHP;608;₱;Philippine peso;peso;₱PH;;;;;;;
+GBP;826;£;Pound Sterling;sterling;£GB;;;;;;;
+BWP;72;P;Pula;pula;P;;;;;;;
+QAR;634;﷼;Qatari Rial;rial;﷼QA;;;;;;;
+GTQ;320;Q;Quetzal;quetzal;Q;;;;;;;
+ZAR;710;R;Rand;rand;R;;;;;;;
+OMR;512;﷼;Rial Omani;omani;﷼OM;;;;;;;
+KHR;116;៛;Riel;riel;៛;;;;;;;
+RON;946;lei;Romanian leu;leu;lei;;;;;id;PLN;CNY
+MVR;462;Rf;Rufiyaa;rufiyaa;Rf;;;;;ison;985;156
+IDR;360;Rp;Rupiah;rupiah;Rp;;;;;symbol;zł;¥
+RUB;643;₽;Russian ruble;ruble;₽;;;;;long_name;Polish Złoty;Chinese Yuan
+RWF;646;Fr;Rwanda Franc;franc;FrRW;;;;;short_name;Złoty;Yuan
+SHP;654;£;Saint Helena Pound;pound;£SH;;;;;symbol_unique;zł;¥
+SAR;682;﷼;Saudi riyal;riyal;﷼SA;;;;;symbol_alternative;PLN;CN¥
+SLE;925;Le;Second Leone;leone;Le(SLE);;;;;;;
+RSD;941;Дин.;Serbian dinar;dinar;Дин.;;;;;;;
+SCR;690;₨;Seychelles Rupee;rupee;SRs;;;;;;;
+SGD;702;$;Singapore Dollar;dollar;$S;;;;;;;
+PEN;604;S/.;Sol;sol;S/.;;;;;;;
+SBD;90;$;Solomon Islands Dollar;dollar;$SI;;;;;;;
+KGS;417;som;Som;som;лвKGS;лв;;;;;;
+SOS;706;S;Somali shilling;shilling;Sh.So.;;;;;;;
+TJS;972;SM;Somoni;somoni;SM;;;;;;;
+SSP;728;£;South Sudanese Pound;pound;£SSP;;;;;;;
+LKR;144;රු;Sri Lanka Rupee;rupee;SLRs;₨;;;;;;
+SDG;938;LS;Sudanese Pound;pound;LS;;;;;;;
+SRD;968;$;Surinam Dollar;dollar;$SR;;;;;;;
+SEK;752;kr;Swedish krona;krona;krSE;;;;;;;
+CHF;756;CHF;Swiss franc;franc;CHF;;;;;;;
+SYP;760;£;Syrian pound;pound;£SY;LS;;;;;;
+BDT;50;৳;Taka;taka;৳;;;;;;;
+WST;882;$;Tala;tala;WS$;;;;;;;
+TZS;834;Sh;Tanzanian Shilling;shilling;TSh;;;;;;;
+KZT;398;лв;Tenge;tenge;лвKZT;;;;;;;
+TTD;780;TT$;Trinidad and Tobago Dollar;dollar;TT$;;;;;;;
+MNT;496;₮;Tugrik;tugrik;₮;;;;;;;
+TND;788;DT;Tunisian Dinar;dinar;DT;;;;;;;
+TRY;949;₺;Turkish lira;lira;₺;;;;;;;
+TMT;934;m;Turkmenistan New Manat;manat;m;;;;;;;
+TVD;;$;Tuvalu Dollar;dollar;$TV;;;;;;;
+AED;784;Dh;UAE Dirham;dirham;Dh(UAE);د.إ;;;;;;
+UGX;800;Sh;Uganda Shilling;shilling;USh;;;;;;;
+USD;840;$;US Dollar;dollar;$US;;;;;;;
+UZS;860;soum;Uzbekistan Sum;sum;лвUZS;лв;;;;;;
+VUV;548;VT;Vatu;vatu;VT;;;;;;;
+VEF;;Bs;Venezuela Bolívar;bolívar;Bs;;;;;;;
+KRW;410;₩;Won;won;₩SK;;;;;;;
+YER;886;﷼;Yemeni rial;rial;﷼YE;;;;;;;
+JPY;392;¥;Yen;yen;¥JP;;;;;;;
+ZMW;967;K;Zambian Kwacha;kwacha;ZK;;;;;;;
+ZWL;932;Z$;Zimbabwe Dollar;dollar;Z$;;;;;;;
+PLN;985;zł;Polish Złoty;Złoty;zł;PLN;;;;;;
+CNY;156;¥;Chinese Yuan;Yuan;¥;CN¥;;;;;;
