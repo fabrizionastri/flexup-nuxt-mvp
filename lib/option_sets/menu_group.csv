@@ -1,0 +1,7 @@
+﻿id,name,icon,section_ids,sort_factor,in_dashboard,in_sysadmin,edit_permission,permission_group
+transactions,Transactions,grommet-icons:transaction,contract|order|commitment|payment|lettering,1,TRUE,TRUE,edittransactions,transaction
+account,Account,ic:baseline-api,account|members|related_account,4,TRUE,,editaccount,account
+user,User,mdi:user-circle,user|my_account,5,TRUE,,,
+configuration,Configuration,material-symbols:settings,product|wallet|payment_term|payment_structure|third_party,2,TRUE,,editaccount,account
+cash,Cash management,eos-icons:trusted-organization,charter|monthly_resolution|annual_resolution,3,TRUE,TRUE,editaccount,account
+system,System,pajamas:status-health,bTPTD|bTPWy|bTPcg,6,,TRUE,,
