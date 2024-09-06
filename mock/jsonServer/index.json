@@ -31,7 +31,7 @@
       "currencyId": "EUR",
       "countryId": "FRA",
       "creationDate": "2020-01-01T00:00:00.000Z",
-      "description": "Société d'investissement et de conseil en stratégie",
+      "scope": "Société d'investissement et de conseil en stratégie",
       "avatar": "/images/profiles/cosys.png"
     },
     {
@@ -54,7 +54,7 @@
       "currencyId": "EUR",
       "countryId": "FRA",
       "creationDate": "2020-01-01T00:00:00.000Z",
-      "description": "Pizzeria traditionnelle napolitaine, au coeur du Marais.",
+      "scope": "Pizzeria traditionnelle napolitaine, au coeur du Marais.",
       "avatar": "/images/profiles/pizza_d_oro.png"
     },
     {
@@ -66,7 +66,7 @@
       "currencyId": "EUR",
       "countryId": "FRA",
       "creationDate": "2020-01-01T00:00:00.000Z",
-      "description": "Pizzas à emporter et livraison à domicile.",
+      "scope": "Pizzas à emporter et livraison à domicile.",
       "avatar": "/images/profiles/pizza_d_oro_takeaway.png"
     },
     {
@@ -78,7 +78,7 @@
       "currencyId": "EUR",
       "countryId": "FRA",
       "creationDate": "2020-01-01T00:00:00.000Z",
-      "description": "Groupement de producteurs agroécologiques du Domaine de Mazy",
+      "scope": "Groupement de producteurs agroécologiques du Domaine de Mazy",
       "avatar": "/images/profiles/domazy.png"
     },
     {
@@ -104,49 +104,36 @@
       "avatar": "/images/profiles/agro_coop.png"
     }
   ],
-  "accountUser": [
+  "constituent": [
     {
-      "id": "fabrizioAccount:fabrizioUser",
-      "accountId": "fabrizioAccount",
-      "userId": "fabrizioUser",
-      "role": "admin"
+      "id": "doMazyGroupingAgroCoopAccount",
+      "groupingId": "doMazyGrouping",
+      "accountId": "agroCoopAccount",
+      "joinedDate": "2021-01-01T00:00:00.000Z",
+      "status": "active"
     },
     {
-      "id": "flexupAccount:fabrizioUser",
-      "accountId": "flexupAccount",
-      "userId": "fabrizioUser",
-      "role": "admin"
-    },
-    {
-      "id": "cosysAccount:fabrizioUser",
-      "accountId": "cosysAccount",
-      "userId": "fabrizioUser",
-      "role": "admin"
-    },
-    {
-      "id": "flexupAccount:totoUser",
-      "accountId": "flexupAccount",
-      "userId": "totoUser",
-      "role": "editor"
-    },
-    {
-      "id": "totoAccount:totoUser",
+      "id": "doMazyGroupingTotoAccount",
+      "groupingId": "doMazyGrouping",
       "accountId": "totoAccount",
-      "userId": "totoUser",
-      "role": "admin",
-      "roleSymbol": "🔑"
+      "joinedDate": "2024-01-01T00:00:00.000Z",
+      "status": "pending"
     },
     {
-      "id": "doMazyAccount:FabrizioUser",
-      "accountId": "doMazyAccount",
-      "userId": "fabrizioUser",
-      "role": "editor"
+      "id": "doMazyGroupingFlexUpAccount",
+      "groupingId": "doMazyGrouping",
+      "accountId": "flexUpAccount",
+      "joinedDate": "2021-05-01T00:00:00.000Z",
+      "leftDate": "2024-06-01T00:00:00.000Z",
+      "status": "expelled"
     },
     {
-      "id": "pizzaDOroTakeAwayAccount:FabrizioUser",
-      "accountId": "pizzaDOroTakeAwayAccount",
-      "userId": "fabrizioUser",
-      "role": "guest"
+      "id": "plopGroupingFlexUpAccount",
+      "groupingId": "plopGrouping",
+      "accountId": "totoAccount",
+      "joinedDate": "2021-05-01T00:00:00.000Z",
+      "leftDate": "2024-06-01T00:00:00.000Z",
+      "status": "quit"
     }
   ],
   "country": [
@@ -210,33 +197,10 @@
       "representativeAccountId": "agroCoopAccount",
       "groupingContractId": "doMazyGroupingContract",
       "creationDate": "2020-01-01T00:00:00.000Z",
-      "countryId": "FRA"
-    }
-  ],
-  "groupingAccount": [
-    {
-      "id": "doMazyGroupingAgroCoopAccount",
-      "groupingId": "doMazyGrouping",
-      "accountId": "agroCoopAccount",
-      "role": "admin"
-    },
-    {
-      "id": "doMazyGroupingTotoAccount",
-      "groupingId": "doMazyGrouping",
-      "accountId": "totoAccount",
-      "role": "member"
-    },
-    {
-      "id": "doMazyGroupingFlexUpAccount",
-      "groupingId": "doMazyGrouping",
-      "accountId": "flexUpAccount",
-      "role": "member"
-    },
-    {
-      "id": "plopGroupingFlexUpAccount",
-      "groupingId": "plopGrouping",
-      "accountId": "totoAccount",
-      "role": "admin"
+      "createdByMemberId": "flexupAccount:fabrizioUser",
+      "countryId": "FRA",
+      "status": "active",
+      "scope": "An sustainable agricultural community on the DoMazy farm"
     }
   ],
   "identifier": [
@@ -325,6 +289,51 @@
       "id": "organization:cosysOrganization",
       "type": "organization",
       "personId": "cosysOrganization"
+    }
+  ],
+  "member": [
+    {
+      "id": "fabrizioAccount:fabrizioUser",
+      "accountId": "fabrizioAccount",
+      "userId": "fabrizioUser",
+      "role": "admin"
+    },
+    {
+      "id": "flexupAccount:fabrizioUser",
+      "accountId": "flexupAccount",
+      "userId": "fabrizioUser",
+      "role": "admin"
+    },
+    {
+      "id": "cosysAccount:fabrizioUser",
+      "accountId": "cosysAccount",
+      "userId": "fabrizioUser",
+      "role": "admin"
+    },
+    {
+      "id": "flexupAccount:totoUser",
+      "accountId": "flexupAccount",
+      "userId": "totoUser",
+      "role": "editor"
+    },
+    {
+      "id": "totoAccount:totoUser",
+      "accountId": "totoAccount",
+      "userId": "totoUser",
+      "role": "admin",
+      "roleSymbol": "🔑"
+    },
+    {
+      "id": "doMazyAccount:FabrizioUser",
+      "accountId": "doMazyAccount",
+      "userId": "fabrizioUser",
+      "role": "editor"
+    },
+    {
+      "id": "pizzaDOroTakeAwayAccount:FabrizioUser",
+      "accountId": "pizzaDOroTakeAwayAccount",
+      "userId": "fabrizioUser",
+      "role": "guest"
     }
   ],
   "order": [

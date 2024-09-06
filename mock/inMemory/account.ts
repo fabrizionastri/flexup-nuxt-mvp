@@ -31,7 +31,7 @@ export const cosysAccountData: AccountData = {
   currencyId: 'EUR',
   countryId: 'FRA',
   creationDate: new Date('2020-01-01'),
-  description: "Société d'investissement et de conseil en stratégie",
+  scope: "Société d'investissement et de conseil en stratégie",
   avatar: '/images/profiles/cosys.png'
 }
 export const cosysAccount: Account = {
@@ -76,7 +76,7 @@ export const pizzaDOroAccountData: AccountData = {
   currencyId: 'EUR',
   countryId: 'FRA',
   creationDate: new Date('2020-01-01'),
-  description: 'Pizzeria traditionnelle napolitaine, au coeur du Marais.',
+  scope: 'Pizzeria traditionnelle napolitaine, au coeur du Marais.',
   avatar: '/images/profiles/pizza_d_oro.png'
 }
 export const pizzaDOroAccount: Account = {
@@ -99,7 +99,7 @@ export const pizzaDOroTakeAwayAccountData: AccountData = {
   currencyId: 'EUR',
   countryId: 'FRA',
   creationDate: new Date('2020-01-01'),
-  description: 'Pizzas à emporter et livraison à domicile.',
+  scope: 'Pizzas à emporter et livraison à domicile.',
   avatar: '/images/profiles/pizza_d_oro_takeaway.png'
 }
 export const pizzaDOroTakeAwayAccount: Account = {
@@ -122,7 +122,7 @@ export const doMazyAccountData: AccountData = {
   currencyId: 'EUR',
   countryId: 'FRA',
   creationDate: new Date('2020-01-01'),
-  description: 'Groupement de producteurs agroécologiques du Domaine de Mazy',
+  scope: 'Groupement de producteurs agroécologiques du Domaine de Mazy',
   avatar: '/images/profiles/domazy.png'
 }
 export const doMazyAccount: Account = {

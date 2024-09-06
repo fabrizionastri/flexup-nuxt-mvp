@@ -6,7 +6,10 @@ export const doMazyGroupingData: GroupingData = {
   representativeAccountId: 'agroCoopAccount',
   groupingContractId: 'doMazyGroupingContract',
   creationDate: new Date('2020-01-01'),
-  countryId: 'FRA'
+  createdByMemberId: 'flexupAccount:fabrizioUser',
+  countryId: 'FRA',
+  status: 'active',
+  scope: 'An sustainable agricultural community on the DoMazy farm'
 }
 
 export const doMazyGrouping: Grouping = {

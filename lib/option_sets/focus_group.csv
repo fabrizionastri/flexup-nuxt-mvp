@@ -1,0 +1,6 @@
+id,name,focus_ids,sort_factor
+starred,Starred,starred,2
+standard,Normal+Starred,normal|starred,1
+archived,Archived,archived,3
+all,All,normal|starred|archived,4
+normal,Normal,normal,5

@@ -1,0 +1,3 @@
+﻿id,name,label,description,emoji,sort_factor
+online,Online,Online 🌐,"This account is actively managed by one more more users. It can do transactions with other online accounts via the platform. If its visibility is public, other users can search and find it.",🌐,1
+offline,Offline,Offline📍,"This account is not actively managed, it only exists and is visible locally in your account. It is only used for your to record offline transactions with this account.",📍,2

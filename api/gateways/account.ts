@@ -5,24 +5,24 @@ import {
   type OwnerType,
   accountTypes,
   ownerTypes,
-  accountUserRoleTypes
+  memberRoleTypes
 } from 'lib/entities'
 import { individualGateway } from './'
 import {
   accountAdapter,
-  accountUserAdapter,
+  memberAdapter,
   countryAdapter,
   currencyAdapter,
   groupingAdapter,
   organizationAdapter
 } from 'adapters/database'
-import type { Account, AccountData, AccountUserData } from 'lib/entities' // CHECK / TODOS : this used to work with out lib/, with just 'entities', but now it doesn't. Why?
+import type { Account, AccountData, MemberData } from 'lib/entities' // CHECK / TODOS : this used to work with out lib/, with just 'entities', but now it doesn't. Why?
 
 export const computeAccount = async (
   accountData: AccountData,
-  accountUserDatas: AccountUserData[] = []
+  memberDatas: MemberData[] = []
 ): Promise<Account> => {
-  let ownerName: string
+  let ownerName: string = ''
   let ownerAccount: Account | undefined
 
   // Validate and set account type details
@@ -60,9 +60,7 @@ export const computeAccount = async (
   if (!country) throw new Error('Invalid country')
 
   // Get role and role symbol
-  const role = accountUserDatas.find(
-    (accountUserData) => accountUserData.accountId === accountData.id
-  )?.role
+  const role = memberDatas.find((memberData) => memberData.accountId === accountData.id)?.role
 
   const account: Account = {
     ...accountData,
@@ -73,16 +71,16 @@ export const computeAccount = async (
     currencyName: currency.name,
     currencySymbol: currency.symbol,
     countryName: country.name,
-    role,
-    roleSymbol: accountUserRoleTypes[role]
+    currentUserRole: role,
+    roleSymbol: memberRoleTypes[role!]
   }
   return account
 }
 
-export const getAccountUserDatas = async (userId: string): Promise<AccountUserData[]> => {
-  const allAccountUserDatas: AccountUserData[] = await accountUserAdapter.getByUserId(userId)
-  if (allAccountUserDatas.length === 0) throw new Error(`No account for user ${userId}`)
-  return allAccountUserDatas
+export const getMemberDatas = async (userId: string): Promise<MemberData[]> => {
+  const allMemberDatas: MemberData[] = await memberAdapter.getByUserId(userId)
+  if (allMemberDatas.length === 0) throw new Error(`No account for user ${userId}`)
+  return allMemberDatas
 }
 
 export const getAccountDatas = async (
@@ -98,20 +96,18 @@ export const getAccountDatas = async (
 }
 
 export const createAccountGateway = async (userId: string) => {
-  // First get the list of accounts for this user (accountUser datas, and accountIds)
-  const allAccountUserDatas: AccountUserData[] = await getAccountUserDatas(userId)
-  // console.log('api/gateways/account - getAccounts allAccountUserDatas', allAccountUserDatas)
+  // First get the list of accounts for this user (member datas, and accountIds)
+  const allMemberDatas: MemberData[] = await getMemberDatas(userId)
+  // console.log('api/gateways/account - getAccounts allMemberDatas', allMemberDatas)
 
-  const allAccountIds: string[] = allAccountUserDatas.map(
-    (accountUserData) => accountUserData.accountId
-  )
+  const allAccountIds: string[] = allMemberDatas.map((memberData) => memberData.accountId)
 
   // Finally, define the gateway functions that return computed accounts (by Id, or filtered by status)
   // Note that we need to add the "user specific" data to the account when we compute it
   const getById = async (accountId: string): Promise<Account | undefined> => {
     if (!allAccountIds.includes(accountId)) undefined
     const accountData = await accountAdapter.getById(accountId)
-    return accountData ? await computeAccount(accountData, allAccountUserDatas) : undefined
+    return accountData ? await computeAccount(accountData, allMemberDatas) : undefined
   }
   const getAccounts = async (statuses: AccountStatus[] = []): Promise<Account[]> => {
     // console.log('api/gateways/account - getAccounts statuses', statuses)
@@ -119,7 +115,7 @@ export const createAccountGateway = async (userId: string) => {
     const accountDatas = await getAccountDatas(allAccountIds, statuses)
     // console.log('api/gateways/account - getAccounts accountDatas', accountDatas)
     return Promise.all(
-      accountDatas.map((accountData) => computeAccount(accountData, allAccountUserDatas))
+      accountDatas.map((accountData) => computeAccount(accountData, allMemberDatas))
     )
   }
 
