@@ -1,0 +1,7 @@
+﻿id,name,priorities,periodicity,sort_factor
+base,Base,firm|preferred,monthly,1
+flexible,Flexible,flex|superflex,monthly,2
+equity,Equity,credit|token,monthly,3
+distribution,Distribution,distribution,annual,4
+n_a,N/A,na_equity|na_no_interest,,6
+same_as_principal,Same as primary,same_as_principal,,5

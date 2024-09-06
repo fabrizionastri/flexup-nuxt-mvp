@@ -1,0 +1,5 @@
+id,display,emoji,sort_factor
+"normal","Normal","⚪","1"
+"starred","Starred","⭐️","2"
+"archived","Archived","📦","3"
+"all","All","","4"
