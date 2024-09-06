@@ -1,262 +1,261 @@
-﻿id;iso3;ison;emoji;currency_id;currency_ids;language_id;language_ids;name_long;name_short;calling_codes
-DM;DMA;212;🇩🇲;XCD;XCD;ENG;ENG;Dominica;Dominica;+1767
-LC;LCA;662;🇱🇨;XCD;XCD;ENG;ENG;Saint Lucia;Saint Lucia;+1758
-XK;;;;EUR;EUR;;;Kosovo;Kosovo;+383
-KI;KIR;296;🇰🇮;AUD;AUD;ENG;ENG;Kiribati;Kiribati;+686
-VI;VIR;850;🇻🇮;USD;USD;ENG;ENG;Virgin Islands (US);Virgin Islands (US);+1340
-MV;MDV;462;🇲🇻;MVR;MVR;DIV;DIV;Maldives;Maldives;+960
-AQ;ATA;10;🇦🇶;;;;;Antarctica;Antarctica;+672
-CO;COL;170;🇨🇴;COP;COP|COU;SPA;SPA;Colombia;Colombia;+57
-LA;LAO;418;🇱🇦;LAK;LAK;LAO;LAO;Lao People's Democratic Republic;Laos;+856
-KN;KNA;659;🇰🇳;XCD;XCD;ENG;ENG;Saint Kitts and Nevis;Saint Kitts and Nevis;+1869
-LT;LTU;440;🇱🇹;EUR;EUR;LIT;LIT;Lithuania;Lithuania;+370
-GY;GUY;328;🇬🇾;GYD;GYD;ENG;ENG;Guyana;Guyana;+592
-CF;CAF;140;🇨🇫;XAF;XAF;FRE;FRE|SAG;Central African Republic;Central African Republic;+236
-NE;NER;562;🇳🇪;XOF;XOF;FRE;FRE;Niger;Niger;+227
-CK;COK;184;🇨🇰;NZD;NZD;ENG;ENG|MAO;Cook Islands;Cook Islands;+682
-AD;AND;20;🇦🇩;EUR;EUR;CAT;CAT;Andorra;Andorra;+376
-MC;MCO;492;🇲🇨;EUR;EUR;FRE;FRE;Monaco;Monaco;+377
-SZ;SWZ;748;🇸🇿;SZL;SZL;ENG;ENG|SSW;Kingdom of Eswatini;Eswatini;+268
-AT;AUT;40;🇦🇹;EUR;EUR;GER;GER;Austria;Austria;+43
-HT;HTI;332;🇭🇹;HTG;HTG|USD;FRE;FRE|HAT;Haiti;Haiti;+509
-MU;MUS;480;🇲🇺;MUR;MUR;ENG;ENG|FRE;Mauritius;Mauritius;+230
-SA;SAU;682;🇸🇦;SAR;SAR;ARA;ARA;Saudi Arabia;Saudi Arabia;+966
-BV;BVT;74;🇧🇻;NOK;NOK;;;Bouvet Island;Bouvet Island;
-SX;SXM;534;🇸🇽;ANG;ANG;DUT;DUT;Sint Maarten (Dutch);Sint Maarten;+1721
-US;USA;840;🇺🇸;USD;USD;ENG;ENG;United States of America;United States;+1
-IL;ISR;376;🇮🇱;ILS;ILS;HEB;HEB|ARA|ENG;Israel;Israel;+972
-NU;NIU;570;🇳🇺;NZD;NZD;ENG;ENG;Niue;Niue;+683
-GG;GGY;831;🇬🇬;GBP;GBP;FRE;FRE;Guernsey;Guernsey;+44
-VN;VNM;704;🇻🇳;VND;VND;VIE;VIE;Viet Nam;Viet Nam;+84
-AW;ABW;533;🇦🇼;AWG;AWG;DUT;DUT;Aruba;Aruba;+297
-BL;BLM;652;🇧🇱;EUR;EUR;FRE;FRE;Saint Barthélemy;Saint Barthélemy;+590
-IS;ISL;352;🇮🇸;ISK;ISK;ICE;ICE;Iceland;Iceland;+354
-IN;IND;356;🇮🇳;INR;INR;ENG;ENG|HIN;India;India;+91
-GU;GUM;316;🇬🇺;USD;USD;ENG;ENG;Guam;Guam;+1671
-GL;GRL;304;🇬🇱;DKK;DKK;KAL;KAL;Greenland;Greenland;+299
-MY;MYS;458;🇲🇾;MYR;MYR;MSA;MSA|ENG;Malaysia;Malaysia;+60
-CH;CHE;756;🇨🇭;CHF;CHF|CHE|CHW;GER;GER|FRE|ITA|ROH;Switzerland;Switzerland;+41
-NC;NCL;540;🇳🇨;XPF;XPF;FRE;FRE;New Caledonia;New Caledonia;+687
-RW;RWA;646;🇷🇼;RWF;RWF;ENG;ENG|FRE|KIN;Rwanda;Rwanda;+250
-ZA;ZAF;710;🇿🇦;ZAR;ZAR;AFR;AFR|ENG|NBL|SOM|TSO|VEN|XHO|ZUL;South Africa;South Africa;+27
-GM;GMB;270;🇬🇲;GMD;GMD;ENG;ENG;Gambia;Gambia;+220
-IM;IMN;833;🇮🇲;GBP;GBP;ENG;ENG|GLV;Isle of Man;Isle of Man;+44
-PK;PAK;586;🇵🇰;PKR;PKR;URD;URD|ENG;Pakistan;Pakistan;+92
-IE;IRL;372;🇮🇪;EUR;EUR;ENG;ENG|GLE;Ireland;Ireland;+353
-MS;MSR;500;🇲🇸;XCD;XCD;;;Montserrat;Montserrat;+1664
-TD;TCD;148;🇹🇩;XAF;XAF;ARA;ARA|FRE;Chad;Chad;+235
-MF;MAF;663;🇲🇫;EUR;EUR;FRE;FRE;Saint Martin (French);Saint Martin;+590
-UY;URY;858;🇺🇾;UYU;UYU|UYI;SPA;SPA;Uruguay;Uruguay;+598
-MH;MHL;584;🇲🇭;USD;USD;ENG;ENG|MAH;Marshall Islands;Marshall Islands;+692
-TZ;TZA;834;🇹🇿;TZS;TZS;SWA;SWA|ENG;Tanzania United Republic of;Tanzania;+255
-PM;SPM;666;🇵🇲;EUR;EUR;ENG;ENG;Saint Pierre and Miquelon;Saint Pierre and Miquelon;+508
-GW;GNB;624;🇬🇼;XOF;XOF;POR;POR;Guinea-Bissau;Guinea-Bissau;+245
-LU;LUX;442;🇱🇺;EUR;EUR;FRE;FRE|GER|LTZ;Luxembourg;Luxembourg;+352
-PE;PER;604;🇵🇪;PEN;PEN;SPA;SPA|AYM|QUE;Peru;Peru;+51
-LS;LSO;426;🇱🇸;LSL;LSL|ZAR;ENG;ENG|SOT;Lesotho;Lesotho;+266
-CV;CPV;132;🇨🇻;CVE;CVE;POR;POR;Cabo Verde;Cabo Verde;+238
-GE;GEO;268;🇬🇪;GEL;GEL;GEO;GEO;Georgia;Georgia;+995
-MP;MNP;580;🇲🇵;USD;USD;ENG;ENG;Northern Mariana Islands;Northern Mariana Islands;+1670
-BD;BGD;50;🇧🇩;BDT;BDT;BEN;BEN;Bangladesh;Bangladesh;+880
-DJ;DJI;262;🇩🇯;DJF;DJF;ARA;ARA|FRE;Djibouti;Djibouti;+253
-BY;BLR;112;🇧🇾;BYN;BYN;BEL;BEL|RUS;Belarus;Belarus;+375
-ER;ERI;232;🇪🇷;ERN;ERN;ENG;ENG|ARA|TIR;Eritrea;Eritrea;+291
-SB;SLB;90;🇸🇧;SBD;SBD;ENG;ENG;Solomon Islands;Solomon Islands;+677
-BG;BGR;100;🇧🇬;BGN;BGN;BUL;BUL;Bulgaria;Bulgaria;+359
-BF;BFA;854;🇧🇫;XOF;XOF;FRE;FRE;Burkina Faso;Burkina Faso;+226
-PH;PHL;608;🇵🇭;PHP;PHP;ENG;ENG;Philippines;Philippines;+63
-TF;ATF;260;🇹🇫;EUR;EUR;FRE;FRE;French Southern Territories;French Southern Territories;
-DK;DNK;208;🇩🇰;DKK;DKK;DAN;DAN;Denmark;Denmark;+45
-JP;JPN;392;🇯🇵;JPY;JPY;JPN;JPN;Japan;Japan;+81
-DG;;;;USD;USD;;;Diego Garcia;Diego Garcia;
-NF;NFK;574;🇳🇫;AUD;AUD;ENG;ENG;Norfolk Island;Norfolk Island;+672
-AM;ARM;51;🇦🇲;AMD;AMD;ARM;ARM|RUS;Armenia;Armenia;+374
-PA;PAN;591;🇵🇦;PAB;PAB|USD;SPA;SPA;Panama;Panama;+507
-EG;EGY;818;🇪🇬;EGP;EGP;ARA;ARA;Egypt;Egypt;+20
-AC;;;;USD;USD;ENG;ENG;Ascension Island;Ascension Island;+247
-SY;SYR;760;🇸🇾;SYP;SYP;ARA;ARA;Syrian Arab Republic;Syrian Arab Republic;+963
-SI;SVN;705;🇸🇮;EUR;EUR;SLV;SLV;Slovenia;Slovenia;+386
-MO;MAC;446;🇲🇴;MOP;MOP;CHI;CHI|POR;Macau;Macau;+853
-UM;UMI;581;🇺🇲;USD;USD;ENG;ENG;United States Minor Outlying Islands;US Minor Outlying Islands;+1
-AL;ALB;8;🇦🇱;ALL;ALL;ALB;ALB;Albania;Albania;+355
-TM;TKM;795;🇹🇲;TMT;TMT;TUK;TUK|RUS;Turkmenistan;Turkmenistan;+993
-ZM;ZMB;894;🇿🇲;ZMW;ZMW;ENG;ENG;Zambia;Zambia;+260
-TN;TUN;788;🇹🇳;TND;TND;ARA;ARA;Tunisia;Tunisia;+216
-LI;LIE;438;🇱🇮;CHF;CHF;GER;GER;Liechtenstein;Liechtenstein;+423
-CR;CRI;188;🇨🇷;CRC;CRC;SPA;SPA;Costa Rica;Costa Rica;+506
-TV;TUV;798;🇹🇻;AUD;AUD;ENG;ENG;Tuvalu;Tuvalu;+688
-ME;MNE;499;🇲🇪;EUR;EUR;CNR;CNR;Montenegro;Montenegro;+382
-SM;SMR;674;🇸🇲;EUR;EUR;ITA;ITA;San Marino;San Marino;+378
-MW;MWI;454;🇲🇼;MWK;MWK;ENG;ENG|NYA;Malawi;Malawi;+265
-BM;BMU;60;🇧🇲;BMD;BMD;ENG;ENG;Bermuda;Bermuda;+1441
-MG;MDG;450;🇲🇬;MGA;MGA;FRE;FRE|MLG;Madagascar;Madagascar;+261
-IO;IOT;86;🇮🇴;USD;USD;ENG;ENG;British Indian Ocean Territory;British Indian Ocean Territory;+246
-GB;GBR;826;🇬🇧;GBP;GBP;ENG;ENG|COR|GLE|GLA|WEL;United Kingdom of Great Britain and Northern Ireland;United Kingdom;+44
-SE;SWE;752;🇸🇪;SEK;SEK;SWE;SWE;Sweden;Sweden;+46
-TO;TON;776;🇹🇴;TOP;TOP;ENG;ENG;Tonga;Tonga;+676
-AR;ARG;32;🇦🇷;ARS;ARS;SPA;SPA;Argentina;Argentina;+54
-CZ;CZE;203;🇨🇿;CZK;CZK;CZE;CZE;Czechia;Czechia;+420
-GR;GRC;300;🇬🇷;EUR;EUR;GRE;GRE;Greece;Greece;+30
-BS;BHS;44;🇧🇸;BSD;BSD;ENG;ENG;Bahamas;Bahamas;+1242
-CP;;;;EUR;EUR;;;Clipperton Island;Clipperton Island;
-ES;ESP;724;🇪🇸;EUR;EUR;SPA;SPA;Spain;Spain;+34
-BJ;BEN;204;🇧🇯;XOF;XOF;FRE;FRE;Benin;Benin;+229
-LK;LKA;144;🇱🇰;LKR;LKR;SIN;SIN|TAM;Sri Lanka;Sri Lanka;+94
-AF;AFG;4;🇦🇫;AFN;AFN;PUS;PUS;Afghanistan;Afghanistan;+93
-NG;NGA;566;🇳🇬;NGN;NGN;ENG;ENG;Nigeria;Nigeria;+234
-AG;ATG;28;🇦🇬;XCD;XCD;ENG;ENG;Antigua and Barbuda;Antigua and Barbuda;+1268
-UK;;;;GBP;GBP;ENG;ENG|COR|GLE|GLA|WEL;United Kingdom;United Kingdom;
-HM;HMD;334;🇭🇲;AUD;AUD;;;Heard Island and McDonald Islands;Heard Island and McDonald Islands;
-NO;NOR;578;🇳🇴;NOK;NOK;NOR;NOR;Norway;Norway;+47
-MA;MAR;504;🇲🇦;MAD;MAD;ARA;ARA;Morocco;Morocco;+212
-PT;PRT;620;🇵🇹;EUR;EUR;POR;POR;Portugal;Portugal;+351
-PG;PNG;598;🇵🇬;PGK;PGK;ENG;ENG;Papua New Guinea;Papua New Guinea;+675
-KE;KEN;404;🇰🇪;KES;KES;ENG;ENG|SWA;Kenya;Kenya;+254
-GF;GUF;254;🇬🇫;EUR;EUR;FRE;FRE;French Guiana;French Guiana;+594
-EE;EST;233;🇪🇪;EUR;EUR;EST;EST;Estonia;Estonia;+372
-CW;CUW;531;🇨🇼;ANG;ANG;DUT;DUT;Curaçao;Curacao;+599
-AU;AUS;36;🇦🇺;AUD;AUD;ENG;ENG;Australia;Australia;+61
-IT;ITA;380;🇮🇹;EUR;EUR;ITA;ITA;Italy;Italy;+39
-ZW;ZWE;716;🇿🇼;ZWL;ZWL|USD|ZAR|BWP|GBP|EUR;ENG;ENG|SNA|NDE;Zimbabwe;Zimbabwe;+263
-BH;BHR;48;🇧🇭;BHD;BHD;ARA;ARA;Bahrain;Bahrain;+973
-NP;NPL;524;🇳🇵;NPR;NPR;NEP;NEP;Nepal;Nepal;+977
-TA;;;;GBP;GBP;;;Tristan de Cunha;Tristan de Cunha;+290
-SG;SGP;702;🇸🇬;SGD;SGD;ENG;ENG|CHI|MAY|TAM;Singapore;Singapore;+65
-HR;HRV;191;🇭🇷;EUR;EUR;HRV;HRV;Croatia;Croatia;+385
-BN;BRN;96;🇧🇳;BND;BND;MAY;MAY|ENG;Brunei Darussalam;Brunei;+673
-KY;CYM;136;🇰🇾;KYD;KYD;ENG;ENG;Cayman Islands;Cayman Islands;+1345
-GA;GAB;266;🇬🇦;XAF;XAF;FRE;FRE;Gabon;Gabon;+241
-IQ;IRQ;368;🇮🇶;IQD;IQD;ARA;ARA|KUR;Iraq;Iraq;+964
-PY;PRY;600;🇵🇾;PYG;PYG;SPA;SPA;Paraguay;Paraguay;+595
-TG;TGO;768;🇹🇬;XOF;XOF;FRE;FRE;Togo;Togo;+228
-NI;NIC;558;🇳🇮;NIO;NIO;SPA;SPA;Nicaragua;Nicaragua;+505
-SS;SSD;728;🇸🇸;SSP;SSP;ENG;ENG;South Sudan;South Sudan;+211
-CA;CAN;124;🇨🇦;CAD;CAD;ENG;ENG|FRE;Canada;Canada;+1
-SL;SLE;694;🇸🇱;SLL;SLL;ENG;ENG;Sierra Leone;Sierra Leone;+232
-RE;REU;638;🇷🇪;EUR;EUR;FRE;FRE;Réunion;Reunion;+262
-GH;GHA;288;🇬🇭;GHS;GHS;ENG;ENG;Ghana;Ghana;+233
-LV;LVA;428;🇱🇻;EUR;EUR;LAV;LAV;Latvia;Latvia;+371
-AE;ARE;784;🇦🇪;AED;AED;ARA;ARA;United Arab Emirates;United Arab Emirates;+971
-TJ;TJK;762;🇹🇯;TJS;TJS;TGK;TGK|RUS;Tajikistan;Tajikistan;+992
-DE;DEU;276;🇩🇪;EUR;EUR;GER;GER;Germany;Germany;+49
-CX;CXR;162;🇨🇽;AUD;AUD;ENG;ENG;Christmas Island;Christmas Island;+61
-KG;KGZ;417;🇰🇬;KGS;KGS;RUS;RUS;Kyrgyzstan;Kyrgyzstan;+996
-KW;KWT;414;🇰🇼;KWD;KWD;ARA;ARA;Kuwait;Kuwait;+965
-NZ;NZL;554;🇳🇿;NZD;NZD;ENG;ENG;New Zealand;New Zealand;+64
-LR;LBR;430;🇱🇷;LRD;LRD;ENG;ENG;Liberia;Liberia;+231
-VU;VUT;548;🇻🇺;VUV;VUV;BIS;BIS|ENG|FRE;Vanuatu;Vanuatu;+678
-SC;SYC;690;🇸🇨;SCR;SCR;ENG;ENG|FRE;Seychelles;Seychelles;+248
-VG;VGB;92;🇻🇬;USD;USD;ENG;ENG;Virgin Islands (British);Virgin Islands (British);+1284
-FK;FLK;238;🇫🇰;FKP;FKP;ENG;ENG;Falkland Islands - Malvinas;Falkland Islands;+500
-YE;YEM;887;🇾🇪;YER;YER;ARA;ARA;Yemen;Yemen;+967
-ET;ETH;231;🇪🇹;ETB;ETB;AMH;AMH;Ethiopia;Ethiopia;+251
-PS;PSE;275;🇵🇸;ILS;ILS|JOD|EGP;ARA;ARA;Palestinian Territory/State;Palestine;+970
-FO;FRO;234;🇫🇴;DKK;DKK;FAO;FAO|DAN;Faroe Islands;Faroe Islands;+298
-test1;test1;999;test1;ZWL;AFN|ZWL;ZUL;ZUL|ZHA;test1;test1;test1|test2|+1974|+1
-SK;SVK;703;🇸🇰;EUR;EUR;SLO;SLO;Slovakia;Slovakia;+421
-GI;GIB;292;🇬🇮;GIP;GIP;ENG;ENG;Gibraltar;Gibraltar;+350
-CI;CIV;384;🇨🇮;XOF;XOF;FRE;FRE;Côte d'Ivoire;Côte d'Ivoire;+225
-CM;CMR;120;🇨🇲;XAF;XAF;ENG;ENG|FRE;Cameroon;Cameroon;+237
-FR;FRA;250;🇫🇷;EUR;EUR;FRE;FRE;France;France;+33
-MM;MMR;104;🇲🇲;MMK;MMK;BUR;BUR;Myanmar;Myanmar;+95
-PL;POL;616;🇵🇱;PLN;PLN;POL;POL;Poland;Poland;+48
-IR;IRN;364;🇮🇷;IRR;IRR;PER;PER;Iran, Islamic Republic of;Iran;+98
-GP;GLP;312;🇬🇵;EUR;EUR;FRE;FRE;Guadeloupe;Guadeloupe;+590
-SH;SHN;654;🇸🇭;SHP;SHP;ENG;ENG;Saint Helena, Ascension And Tristan Da Cunha;Saint Helena;+290
-BW;BWA;72;🇧🇼;BWP;BWP;ENG;ENG|TSN;Botswana;Botswana;+267
-AS;ASM;16;🇦🇸;USD;USD;ENG;ENG|SMO;American Samoa;American Samoa;+1684
-MX;MEX;484;🇲🇽;MXN;MXN|MXV;SPA;SPA;Mexico;Mexico;+52
-SN;SEN;686;🇸🇳;XOF;XOF;FRE;FRE;Senegal;Senegal;+221
-BB;BRB;52;🇧🇧;BBD;BBD;ENG;ENG;Barbados;Barbados;+1246
-UG;UGA;800;🇺🇬;UGX;UGX;ENG;ENG|SWA;Uganda;Uganda;+256
-FJ;FJI;242;🇫🇯;FJD;FJD;ENG;ENG|FIJ;Fiji;Fiji;+679
-MZ;MOZ;508;🇲🇿;MZN;MZN;POR;POR;Mozambique;Mozambique;+258
-QA;QAT;634;🇶🇦;QAR;QAR;ARA;ARA;Qatar;Qatar;+974
-TH;THA;764;🇹🇭;THB;THB;THA;THA;Thailand;Thailand;+66
-KP;PRK;408;🇰🇵;KPW;KPW;KOR;KOR;Korea Democratic People's Republic of;North Korea;+850
-UZ;UZB;860;🇺🇿;UZS;UZS;UZB;UZB|RUS;Uzbekistan;Uzbekistan;+998
-JM;JAM;388;🇯🇲;JMD;JMD;ENG;ENG;Jamaica;Jamaica;+1876
-PF;PYF;258;🇵🇫;XPF;XPF;FRE;FRE;French Polynesia;French Polynesia;+689
-MT;MLT;470;🇲🇹;EUR;EUR;MLT;MLT|ENG;Malta;Malta;+356
-CG;COG;178;🇨🇬;XAF;XAF;FRE;FRE|LIN;Republic Of Congo (Brazzaville);Congo (Brazzaville);+242
-EA;;;;EUR;EUR;;;Ceuta, Mulilla;Ceuta, Mulilla;
-CD;COD;180;🇨🇩;CDF;CDF;FRE;FRE|LIN|KON|SWA;Democratic Republic of Congo (Kinshasa);Congo (DRC);+243
-GN;GIN;324;🇬🇳;GNF;GNF;FRE;FRE;Guinea;Guinea;+224
-VA;VAT;336;🇻🇦;EUR;EUR;ITA;ITA;Vatican City State - Holy See;Vatican;+379|+39
-TL;TLS;626;🇹🇱;USD;USD;POR;POR;Timor-Leste, Democratic Republic of;East Timor;+670
-CN;CHN;156;🇨🇳;CNY;CNY;CHI;CHI;China;China;+86
-UA;UKR;804;🇺🇦;UAH;UAH;UKR;UKR|RUS;Ukraine;Ukraine;+380
-PN;PCN;612;🇵🇳;NZD;NZD;ENG;ENG;Pitcair;Pitcairn;+872
-EC;ECU;218;🇪🇨;USD;USD;SPA;SPA|QUE;Ecuador;Ecuador;+593
-HN;HND;340;🇭🇳;HNL;HNL;SPA;SPA;Honduras;Honduras;+504
-BI;BDI;108;🇧🇮;BIF;BIF;FRE;FRE;Burundi;Burundi;+257
-GT;GTM;320;🇬🇹;GTQ;GTQ;SPA;SPA;Guatemala;Guatemala;+502
-TT;TTO;780;🇹🇹;TTD;TTD;ENG;ENG;Trinidad and Tobago;Trinidad and Tobago;+1868
-SV;SLV;222;🇸🇻;SVC;SVC|USD;SPA;SPA;El Salvador;El Salvador;+503
-BR;BRA;76;🇧🇷;BRL;BRL;POR;POR;Brazil;Brazil;+55
-MR;MRT;478;🇲🇷;MRU;MRU;ARA;ARA|FRE;Mauritania;Mauritania;+222
-MN;MNG;496;🇲🇳;MNT;MNT;MON;MON;Mongolia;Mongolia;+976
-DO;DOM;214;🇩🇴;DOP;DOP;SPA;SPA;Dominican Republic;Dominican Republic;+1809|+1829|+1849
-TK;TKL;772;🇹🇰;NZD;NZD;ENG;ENG;Tokelau;Tokelau;+690
-AZ;AZE;31;🇦🇿;AZN;AZN;AZE;AZE;Azerbaijan;Azerbaijan;+994
-BO;BOL;68;🇧🇴;BOB;BOB|BOV;SPA;SPA|AYM|QUE;Bolivia, Plurinational State of;Bolivia;+591
-DZ;DZA;12;🇩🇿;DZD;DZD;ARA;ARA;Algeria;Algeria;+213
-AI;AIA;660;🇦🇮;XCD;XCD;ENG;ENG;Anguilla;Anguilla;+1264
-NA;NAM;516;🇳🇦;NAD;NAD|ZAR;ENG;ENG;Namibia;Namibia;+264
-RS;SRB;688;🇷🇸;RSD;RSD;SRP;SRP;Serbia;Serbia;+381
-SD;SDN;729;🇸🇩;SDG;SDG;ARA;ARA|ENG;Sudan;Sudan;+249
-OM;OMN;512;🇴🇲;OMR;OMR;ARA;ARA;Oman;Oman;+968
-PW;PLW;585;🇵🇼;USD;USD;ENG;ENG;Palau;Palau;+680
-WF;WLF;876;🇼🇫;XPF;XPF;FRE;FRE;Wallis and Futuna;Wallis and Futuna;+681
-KZ;KAZ;398;🇰🇿;KZT;KZT;KAZ;KAZ|RUS;Kazakhstan;Kazakhstan;+7|+76|+77
-TC;TCA;796;🇹🇨;USD;USD;ENG;ENG;Turks and Caicos Islands;Turks and Caicos Islands;+1649
-RO;ROU;642;🇷🇴;RON;RON;RUM;RUM;Romania;Romania;+40
-JO;JOR;400;🇯🇴;JOD;JOD;ARA;ARA;Jordan;Jordan;+962
-GS;SGS;239;🇬🇸;GBP;GBP;ENG;ENG;South Georgia and the South Sandwich Islands;South Georgia and the South Sandwich Islands;
-RU;RUS;643;🇷🇺;RUB;RUB;RUS;RUS;Russian Federation;Russian Federation;+7|+73|+74|+78
-VC;VCT;670;🇻🇨;XCD;XCD;ENG;ENG;Saint Vincent and the Grenadines;Saint Vincent and the Grenadines;+1784
-NL;NLD;528;🇳🇱;EUR;EUR;DUT;DUT;Netherlands;Netherlands;+31
-YT;MYT;175;🇾🇹;EUR;EUR;FRE;FRE;Mayotte;Mayotte;+262
-PR;PRI;630;🇵🇷;USD;USD;SPA;SPA|ENG;Puerto Rico;Puerto Rico;+1787|+1939
-KM;COM;174;🇰🇲;KMF;KMF;ARA;ARA|FRE;Comoros;Comoros;+269
-GD;GRD;308;🇬🇩;XCD;XCD;ENG;ENG;Grenada;Grenada;+473
-JE;JEY;832;🇯🇪;GBP;GBP;ENG;ENG|FRE;Jersey;Jersey;+44
-MK;MKD;807;🇲🇰;MKD;MKD;MAC;MAC;North Macedoni;North Macedonia;+389
-ML;MLI;466;🇲🇱;XOF;XOF;FRE;FRE;Mali;Mali;+223
-FX;;;;EUR;EUR;FRE;FRE;France, Metropolitan;France, Metropolitan;+241
-SO;SOM;706;🇸🇴;SOS;SOS;SOM;SOM;Somalia;Somalia;+252
-BE;BEL;56;🇧🇪;EUR;EUR;DUT;DUT|FRE|GER;Belgium;Belgium;+32
-SJ;SJM;744;🇸🇯;NOK;NOK;;;Svalbard and Jan Mayen;Svalbard;+47
-KH;KHM;116;🇰🇭;KHR;KHR;KHM;KHM;Cambodia;Cambodia;+855
-CU;CUB;192;🇨🇺;CUP;CUP|CUC;SPA;SPA;Cuba;Cuba;+53
-KR;KOR;410;🇰🇷;KRW;KRW;KOR;KOR;Korea Republic of;South Korea;+82
-IC;;;;EUR;EUR;;;Canary Islands;Canary Islands;
-TR;TUR;792;🇹🇷;TRY;TRY;TUR;TUR;Turkey;Turkey;+90
-MQ;MTQ;474;🇲🇶;EUR;EUR;;;Martinique;Martinique;+596
-HK;HKG;344;🇭🇰;HKD;HKD;CHI;CHI|ENG;Hong Kong;Hong Kong;+852
-ID;IDN;360;🇮🇩;IDR;IDR;IND;IND;Indonesia;Indonesia;+62
-FM;FSM;583;🇫🇲;USD;USD;ENG;ENG;Micronesia, Federated States of;Micronesia;+691
-ST;STP;678;🇸🇹;STN;STN;POR;POR;São Tomé and Príncipe;São Tomé and Príncipe;+239
-AO;AGO;24;🇦🇴;AOA;AOA;POR;POR;Angola;Angola;+244
-CY;CYP;196;🇨🇾;EUR;EUR;GRE;GRE|TUR;Cyprus;Cyprus;+357
-NR;NRU;520;🇳🇷;AUD;AUD;ENG;ENG|NAU;Nauru;Nauru;+674
-BA;BIH;70;🇧🇦;BAM;BAM;BOS;BOS|CRE|SRP;Bosnia and Herzegovina;Bosnia and Herzegovina;+387
-CL;CHL;152;🇨🇱;CLP;CLP|CLF;SPA;SPA;Chile;Chile;+56
-LB;LBN;422;🇱🇧;LBP;LBP;ARA;ARA|ARM;Lebanon;Lebanon;+961
-LY;LBY;434;🇱🇾;LYD;LYD;ARA;ARA;Libya;Libya;+218
-VE;VEN;862;🇻🇪;VES;VED|VES|USD;SPA;SPA;Venezuela, Bolivarian Republic of;Venezuela;+58
-SU;;;;RUB;RUB;RUS;RUS;USSR;USSR;
-BQ;BES;535;🇧🇶;USD;USD;DUT;DUT;Bonaire, Saint Eustatius And Saba;Bonaire;+599
-EU;;;🇪🇺;EUR;EUR;;;European Union;European Union;+388
-MD;MDA;498;🇲🇩;MDL;MDL;RUM;RUM;Moldova Republic of;Moldova;+373
-CC;CCK;166;🇨🇨;AUD;AUD;ENG;ENG;Cocos, Keeling Islands;Cocos Islands;+61
-BZ;BLZ;84;🇧🇿;BZD;BZD;ENG;ENG;Belize;Belize;+501
-GQ;GNQ;226;🇬🇶;XAF;XAF;SPA;SPA|FRE|POR;Equatorial Guinea;Equatorial Guinea;+240
-SR;SUR;740;🇸🇷;SRD;SRD;DUT;DUT;Suriname;Suriname;+597
-EH;ESH;732;🇪🇭;MAD;MAD;;;Western Sahara;Western Sahara;+212
-WS;WSM;882;🇼🇸;WST;WST;ENG;ENG|SMO;Samoa;Samoa;+685
-TW;TWN;158;🇹🇼;TWD;TWD;CHI;CHI;Taiwan - Province of China;Taiwan;+886
-HU;HUN;348;🇭🇺;HUF;HUF;HUN;HUN;Hungary;Hungary;+36
-AX;ALA;248;🇦🇽;EUR;EUR;SWE;SWE;Åland Islands;Åland Islands;+358
-BT;BTN;64;🇧🇹;BTN;BTN|INR;DZO;DZO;Bhutan;Bhutan;+975
-FI;FIN;246;🇫🇮;EUR;EUR;FIN;FIN|SWE;Finland;Finland;+358
+﻿id,iso3,ison,emoji,currency_id,currency_ids,language_id,language_ids,name_long,name_short,calling_codes
+DM,DMA,212,🇩🇲,XCD,XCD,ENG,ENG,Dominica,Dominica,+1767
+LC,LCA,662,🇱🇨,XCD,XCD,ENG,ENG,Saint Lucia,Saint Lucia,+1758
+XK,,,,EUR,EUR,,,Kosovo,Kosovo,+383
+KI,KIR,296,🇰🇮,AUD,AUD,ENG,ENG,Kiribati,Kiribati,+686
+VI,VIR,850,🇻🇮,USD,USD,ENG,ENG,Virgin Islands (US),Virgin Islands (US),+1340
+MV,MDV,462,🇲🇻,MVR,MVR,DIV,DIV,Maldives,Maldives,+960
+AQ,ATA,10,🇦🇶,,,,,Antarctica,Antarctica,+672
+CO,COL,170,🇨🇴,COP,COP|COU,SPA,SPA,Colombia,Colombia,+57
+LA,LAO,418,🇱🇦,LAK,LAK,LAO,LAO,Lao People's Democratic Republic,Laos,+856
+KN,KNA,659,🇰🇳,XCD,XCD,ENG,ENG,Saint Kitts and Nevis,Saint Kitts and Nevis,+1869
+LT,LTU,440,🇱🇹,EUR,EUR,LIT,LIT,Lithuania,Lithuania,+370
+GY,GUY,328,🇬🇾,GYD,GYD,ENG,ENG,Guyana,Guyana,+592
+CF,CAF,140,🇨🇫,XAF,XAF,FRE,FRE|SAG,Central African Republic,Central African Republic,+236
+NE,NER,562,🇳🇪,XOF,XOF,FRE,FRE,Niger,Niger,+227
+CK,COK,184,🇨🇰,NZD,NZD,ENG,ENG|MAO,Cook Islands,Cook Islands,+682
+AD,AND,20,🇦🇩,EUR,EUR,CAT,CAT,Andorra,Andorra,+376
+MC,MCO,492,🇲🇨,EUR,EUR,FRE,FRE,Monaco,Monaco,+377
+SZ,SWZ,748,🇸🇿,SZL,SZL,ENG,ENG|SSW,Kingdom of Eswatini,Eswatini,+268
+AT,AUT,40,🇦🇹,EUR,EUR,GER,GER,Austria,Austria,+43
+HT,HTI,332,🇭🇹,HTG,HTG|USD,FRE,FRE|HAT,Haiti,Haiti,+509
+MU,MUS,480,🇲🇺,MUR,MUR,ENG,ENG|FRE,Mauritius,Mauritius,+230
+SA,SAU,682,🇸🇦,SAR,SAR,ARA,ARA,Saudi Arabia,Saudi Arabia,+966
+BV,BVT,74,🇧🇻,NOK,NOK,,,Bouvet Island,Bouvet Island,
+SX,SXM,534,🇸🇽,ANG,ANG,DUT,DUT,Sint Maarten (Dutch),Sint Maarten,+1721
+US,USA,840,🇺🇸,USD,USD,ENG,ENG,United States of America,United States,+1
+IL,ISR,376,🇮🇱,ILS,ILS,HEB,HEB|ARA|ENG,Israel,Israel,+972
+NU,NIU,570,🇳🇺,NZD,NZD,ENG,ENG,Niue,Niue,+683
+GG,GGY,831,🇬🇬,GBP,GBP,FRE,FRE,Guernsey,Guernsey,+44
+VN,VNM,704,🇻🇳,VND,VND,VIE,VIE,Viet Nam,Viet Nam,+84
+AW,ABW,533,🇦🇼,AWG,AWG,DUT,DUT,Aruba,Aruba,+297
+BL,BLM,652,🇧🇱,EUR,EUR,FRE,FRE,Saint Barthélemy,Saint Barthélemy,+590
+IS,ISL,352,🇮🇸,ISK,ISK,ICE,ICE,Iceland,Iceland,+354
+IN,IND,356,🇮🇳,INR,INR,ENG,ENG|HIN,India,India,+91
+GU,GUM,316,🇬🇺,USD,USD,ENG,ENG,Guam,Guam,+1671
+GL,GRL,304,🇬🇱,DKK,DKK,KAL,KAL,Greenland,Greenland,+299
+MY,MYS,458,🇲🇾,MYR,MYR,MSA,MSA|ENG,Malaysia,Malaysia,+60
+CH,CHE,756,🇨🇭,CHF,CHF|CHE|CHW,GER,GER|FRE|ITA|ROH,Switzerland,Switzerland,+41
+NC,NCL,540,🇳🇨,XPF,XPF,FRE,FRE,New Caledonia,New Caledonia,+687
+RW,RWA,646,🇷🇼,RWF,RWF,ENG,ENG|FRE|KIN,Rwanda,Rwanda,+250
+ZA,ZAF,710,🇿🇦,ZAR,ZAR,AFR,AFR|ENG|NBL|SOM|TSO|VEN|XHO|ZUL,South Africa,South Africa,+27
+GM,GMB,270,🇬🇲,GMD,GMD,ENG,ENG,Gambia,Gambia,+220
+IM,IMN,833,🇮🇲,GBP,GBP,ENG,ENG|GLV,Isle of Man,Isle of Man,+44
+PK,PAK,586,🇵🇰,PKR,PKR,URD,URD|ENG,Pakistan,Pakistan,+92
+IE,IRL,372,🇮🇪,EUR,EUR,ENG,ENG|GLE,Ireland,Ireland,+353
+MS,MSR,500,🇲🇸,XCD,XCD,,,Montserrat,Montserrat,+1664
+TD,TCD,148,🇹🇩,XAF,XAF,ARA,ARA|FRE,Chad,Chad,+235
+MF,MAF,663,🇲🇫,EUR,EUR,FRE,FRE,Saint Martin (French),Saint Martin,+590
+UY,URY,858,🇺🇾,UYU,UYU|UYI,SPA,SPA,Uruguay,Uruguay,+598
+MH,MHL,584,🇲🇭,USD,USD,ENG,ENG|MAH,Marshall Islands,Marshall Islands,+692
+TZ,TZA,834,🇹🇿,TZS,TZS,SWA,SWA|ENG,Tanzania United Republic of,Tanzania,+255
+PM,SPM,666,🇵🇲,EUR,EUR,ENG,ENG,Saint Pierre and Miquelon,Saint Pierre and Miquelon,+508
+GW,GNB,624,🇬🇼,XOF,XOF,POR,POR,Guinea-Bissau,Guinea-Bissau,+245
+LU,LUX,442,🇱🇺,EUR,EUR,FRE,FRE|GER|LTZ,Luxembourg,Luxembourg,+352
+PE,PER,604,🇵🇪,PEN,PEN,SPA,SPA|AYM|QUE,Peru,Peru,+51
+LS,LSO,426,🇱🇸,LSL,LSL|ZAR,ENG,ENG|SOT,Lesotho,Lesotho,+266
+CV,CPV,132,🇨🇻,CVE,CVE,POR,POR,Cabo Verde,Cabo Verde,+238
+GE,GEO,268,🇬🇪,GEL,GEL,GEO,GEO,Georgia,Georgia,+995
+MP,MNP,580,🇲🇵,USD,USD,ENG,ENG,Northern Mariana Islands,Northern Mariana Islands,+1670
+BD,BGD,50,🇧🇩,BDT,BDT,BEN,BEN,Bangladesh,Bangladesh,+880
+DJ,DJI,262,🇩🇯,DJF,DJF,ARA,ARA|FRE,Djibouti,Djibouti,+253
+BY,BLR,112,🇧🇾,BYN,BYN,BEL,BEL|RUS,Belarus,Belarus,+375
+ER,ERI,232,🇪🇷,ERN,ERN,ENG,ENG|ARA|TIR,Eritrea,Eritrea,+291
+SB,SLB,90,🇸🇧,SBD,SBD,ENG,ENG,Solomon Islands,Solomon Islands,+677
+BG,BGR,100,🇧🇬,BGN,BGN,BUL,BUL,Bulgaria,Bulgaria,+359
+BF,BFA,854,🇧🇫,XOF,XOF,FRE,FRE,Burkina Faso,Burkina Faso,+226
+PH,PHL,608,🇵🇭,PHP,PHP,ENG,ENG,Philippines,Philippines,+63
+TF,ATF,260,🇹🇫,EUR,EUR,FRE,FRE,French Southern Territories,French Southern Territories,
+DK,DNK,208,🇩🇰,DKK,DKK,DAN,DAN,Denmark,Denmark,+45
+JP,JPN,392,🇯🇵,JPY,JPY,JPN,JPN,Japan,Japan,+81
+DG,,,,USD,USD,,,Diego Garcia,Diego Garcia,
+NF,NFK,574,🇳🇫,AUD,AUD,ENG,ENG,Norfolk Island,Norfolk Island,+672
+AM,ARM,51,🇦🇲,AMD,AMD,ARM,ARM|RUS,Armenia,Armenia,+374
+PA,PAN,591,🇵🇦,PAB,PAB|USD,SPA,SPA,Panama,Panama,+507
+EG,EGY,818,🇪🇬,EGP,EGP,ARA,ARA,Egypt,Egypt,+20
+AC,,,,USD,USD,ENG,ENG,Ascension Island,Ascension Island,+247
+SY,SYR,760,🇸🇾,SYP,SYP,ARA,ARA,Syrian Arab Republic,Syrian Arab Republic,+963
+SI,SVN,705,🇸🇮,EUR,EUR,SLV,SLV,Slovenia,Slovenia,+386
+MO,MAC,446,🇲🇴,MOP,MOP,CHI,CHI|POR,Macau,Macau,+853
+UM,UMI,581,🇺🇲,USD,USD,ENG,ENG,United States Minor Outlying Islands,US Minor Outlying Islands,+1
+AL,ALB,8,🇦🇱,ALL,ALL,ALB,ALB,Albania,Albania,+355
+TM,TKM,795,🇹🇲,TMT,TMT,TUK,TUK|RUS,Turkmenistan,Turkmenistan,+993
+ZM,ZMB,894,🇿🇲,ZMW,ZMW,ENG,ENG,Zambia,Zambia,+260
+TN,TUN,788,🇹🇳,TND,TND,ARA,ARA,Tunisia,Tunisia,+216
+LI,LIE,438,🇱🇮,CHF,CHF,GER,GER,Liechtenstein,Liechtenstein,+423
+CR,CRI,188,🇨🇷,CRC,CRC,SPA,SPA,Costa Rica,Costa Rica,+506
+TV,TUV,798,🇹🇻,AUD,AUD,ENG,ENG,Tuvalu,Tuvalu,+688
+ME,MNE,499,🇲🇪,EUR,EUR,CNR,CNR,Montenegro,Montenegro,+382
+SM,SMR,674,🇸🇲,EUR,EUR,ITA,ITA,San Marino,San Marino,+378
+MW,MWI,454,🇲🇼,MWK,MWK,ENG,ENG|NYA,Malawi,Malawi,+265
+BM,BMU,60,🇧🇲,BMD,BMD,ENG,ENG,Bermuda,Bermuda,+1441
+MG,MDG,450,🇲🇬,MGA,MGA,FRE,FRE|MLG,Madagascar,Madagascar,+261
+IO,IOT,86,🇮🇴,USD,USD,ENG,ENG,British Indian Ocean Territory,British Indian Ocean Territory,+246
+GB,GBR,826,🇬🇧,GBP,GBP,ENG,ENG|COR|GLE|GLA|WEL,United Kingdom of Great Britain and Northern Ireland,United Kingdom,+44
+SE,SWE,752,🇸🇪,SEK,SEK,SWE,SWE,Sweden,Sweden,+46
+TO,TON,776,🇹🇴,TOP,TOP,ENG,ENG,Tonga,Tonga,+676
+AR,ARG,32,🇦🇷,ARS,ARS,SPA,SPA,Argentina,Argentina,+54
+CZ,CZE,203,🇨🇿,CZK,CZK,CZE,CZE,Czechia,Czechia,+420
+GR,GRC,300,🇬🇷,EUR,EUR,GRE,GRE,Greece,Greece,+30
+BS,BHS,44,🇧🇸,BSD,BSD,ENG,ENG,Bahamas,Bahamas,+1242
+CP,,,,EUR,EUR,,,Clipperton Island,Clipperton Island,
+ES,ESP,724,🇪🇸,EUR,EUR,SPA,SPA,Spain,Spain,+34
+BJ,BEN,204,🇧🇯,XOF,XOF,FRE,FRE,Benin,Benin,+229
+LK,LKA,144,🇱🇰,LKR,LKR,SIN,SIN|TAM,Sri Lanka,Sri Lanka,+94
+AF,AFG,4,🇦🇫,AFN,AFN,PUS,PUS,Afghanistan,Afghanistan,+93
+NG,NGA,566,🇳🇬,NGN,NGN,ENG,ENG,Nigeria,Nigeria,+234
+AG,ATG,28,🇦🇬,XCD,XCD,ENG,ENG,Antigua and Barbuda,Antigua and Barbuda,+1268
+UK,,,,GBP,GBP,ENG,ENG|COR|GLE|GLA|WEL,United Kingdom,United Kingdom,
+HM,HMD,334,🇭🇲,AUD,AUD,,,Heard Island and McDonald Islands,Heard Island and McDonald Islands,
+NO,NOR,578,🇳🇴,NOK,NOK,NOR,NOR,Norway,Norway,+47
+MA,MAR,504,🇲🇦,MAD,MAD,ARA,ARA,Morocco,Morocco,+212
+PT,PRT,620,🇵🇹,EUR,EUR,POR,POR,Portugal,Portugal,+351
+PG,PNG,598,🇵🇬,PGK,PGK,ENG,ENG,Papua New Guinea,Papua New Guinea,+675
+KE,KEN,404,🇰🇪,KES,KES,ENG,ENG|SWA,Kenya,Kenya,+254
+GF,GUF,254,🇬🇫,EUR,EUR,FRE,FRE,French Guiana,French Guiana,+594
+EE,EST,233,🇪🇪,EUR,EUR,EST,EST,Estonia,Estonia,+372
+CW,CUW,531,🇨🇼,ANG,ANG,DUT,DUT,Curaçao,Curacao,+599
+AU,AUS,36,🇦🇺,AUD,AUD,ENG,ENG,Australia,Australia,+61
+IT,ITA,380,🇮🇹,EUR,EUR,ITA,ITA,Italy,Italy,+39
+ZW,ZWE,716,🇿🇼,ZWL,ZWL|USD|ZAR|BWP|GBP|EUR,ENG,ENG|SNA|NDE,Zimbabwe,Zimbabwe,+263
+BH,BHR,48,🇧🇭,BHD,BHD,ARA,ARA,Bahrain,Bahrain,+973
+NP,NPL,524,🇳🇵,NPR,NPR,NEP,NEP,Nepal,Nepal,+977
+TA,,,,GBP,GBP,,,Tristan de Cunha,Tristan de Cunha,+290
+SG,SGP,702,🇸🇬,SGD,SGD,ENG,ENG|CHI|MAY|TAM,Singapore,Singapore,+65
+HR,HRV,191,🇭🇷,EUR,EUR,HRV,HRV,Croatia,Croatia,+385
+BN,BRN,96,🇧🇳,BND,BND,MAY,MAY|ENG,Brunei Darussalam,Brunei,+673
+KY,CYM,136,🇰🇾,KYD,KYD,ENG,ENG,Cayman Islands,Cayman Islands,+1345
+GA,GAB,266,🇬🇦,XAF,XAF,FRE,FRE,Gabon,Gabon,+241
+IQ,IRQ,368,🇮🇶,IQD,IQD,ARA,ARA|KUR,Iraq,Iraq,+964
+PY,PRY,600,🇵🇾,PYG,PYG,SPA,SPA,Paraguay,Paraguay,+595
+TG,TGO,768,🇹🇬,XOF,XOF,FRE,FRE,Togo,Togo,+228
+NI,NIC,558,🇳🇮,NIO,NIO,SPA,SPA,Nicaragua,Nicaragua,+505
+SS,SSD,728,🇸🇸,SSP,SSP,ENG,ENG,South Sudan,South Sudan,+211
+CA,CAN,124,🇨🇦,CAD,CAD,ENG,ENG|FRE,Canada,Canada,+1
+SL,SLE,694,🇸🇱,SLL,SLL,ENG,ENG,Sierra Leone,Sierra Leone,+232
+RE,REU,638,🇷🇪,EUR,EUR,FRE,FRE,Réunion,Reunion,+262
+GH,GHA,288,🇬🇭,GHS,GHS,ENG,ENG,Ghana,Ghana,+233
+LV,LVA,428,🇱🇻,EUR,EUR,LAV,LAV,Latvia,Latvia,+371
+AE,ARE,784,🇦🇪,AED,AED,ARA,ARA,United Arab Emirates,United Arab Emirates,+971
+TJ,TJK,762,🇹🇯,TJS,TJS,TGK,TGK|RUS,Tajikistan,Tajikistan,+992
+DE,DEU,276,🇩🇪,EUR,EUR,GER,GER,Germany,Germany,+49
+CX,CXR,162,🇨🇽,AUD,AUD,ENG,ENG,Christmas Island,Christmas Island,+61
+KG,KGZ,417,🇰🇬,KGS,KGS,RUS,RUS,Kyrgyzstan,Kyrgyzstan,+996
+KW,KWT,414,🇰🇼,KWD,KWD,ARA,ARA,Kuwait,Kuwait,+965
+NZ,NZL,554,🇳🇿,NZD,NZD,ENG,ENG,New Zealand,New Zealand,+64
+LR,LBR,430,🇱🇷,LRD,LRD,ENG,ENG,Liberia,Liberia,+231
+VU,VUT,548,🇻🇺,VUV,VUV,BIS,BIS|ENG|FRE,Vanuatu,Vanuatu,+678
+SC,SYC,690,🇸🇨,SCR,SCR,ENG,ENG|FRE,Seychelles,Seychelles,+248
+VG,VGB,92,🇻🇬,USD,USD,ENG,ENG,Virgin Islands (British),Virgin Islands (British),+1284
+FK,FLK,238,🇫🇰,FKP,FKP,ENG,ENG,Falkland Islands - Malvinas,Falkland Islands,+500
+YE,YEM,887,🇾🇪,YER,YER,ARA,ARA,Yemen,Yemen,+967
+ET,ETH,231,🇪🇹,ETB,ETB,AMH,AMH,Ethiopia,Ethiopia,+251
+PS,PSE,275,🇵🇸,ILS,ILS|JOD|EGP,ARA,ARA,Palestinian Territory/State,Palestine,+970
+FO,FRO,234,🇫🇴,DKK,DKK,FAO,FAO|DAN,Faroe Islands,Faroe Islands,+298
+SK,SVK,703,🇸🇰,EUR,EUR,SLO,SLO,Slovakia,Slovakia,+421
+GI,GIB,292,🇬🇮,GIP,GIP,ENG,ENG,Gibraltar,Gibraltar,+350
+CI,CIV,384,🇨🇮,XOF,XOF,FRE,FRE,Côte d'Ivoire,Côte d'Ivoire,+225
+CM,CMR,120,🇨🇲,XAF,XAF,ENG,ENG|FRE,Cameroon,Cameroon,+237
+FR,FRA,250,🇫🇷,EUR,EUR,FRE,FRE,France,France,+33
+MM,MMR,104,🇲🇲,MMK,MMK,BUR,BUR,Myanmar,Myanmar,+95
+PL,POL,616,🇵🇱,PLN,PLN,POL,POL,Poland,Poland,+48
+IR,IRN,364,🇮🇷,IRR,IRR,PER,PER,Iran Islamic Republic of,Iran,+98
+GP,GLP,312,🇬🇵,EUR,EUR,FRE,FRE,Guadeloupe,Guadeloupe,+590
+SH,SHN,654,🇸🇭,SHP,SHP,ENG,ENG,Saint Helena Ascension And Tristan Da Cunha,Saint Helena,+290
+BW,BWA,72,🇧🇼,BWP,BWP,ENG,ENG|TSN,Botswana,Botswana,+267
+AS,ASM,16,🇦🇸,USD,USD,ENG,ENG|SMO,American Samoa,American Samoa,+1684
+MX,MEX,484,🇲🇽,MXN,MXN|MXV,SPA,SPA,Mexico,Mexico,+52
+SN,SEN,686,🇸🇳,XOF,XOF,FRE,FRE,Senegal,Senegal,+221
+BB,BRB,52,🇧🇧,BBD,BBD,ENG,ENG,Barbados,Barbados,+1246
+UG,UGA,800,🇺🇬,UGX,UGX,ENG,ENG|SWA,Uganda,Uganda,+256
+FJ,FJI,242,🇫🇯,FJD,FJD,ENG,ENG|FIJ,Fiji,Fiji,+679
+MZ,MOZ,508,🇲🇿,MZN,MZN,POR,POR,Mozambique,Mozambique,+258
+QA,QAT,634,🇶🇦,QAR,QAR,ARA,ARA,Qatar,Qatar,+974
+TH,THA,764,🇹🇭,THB,THB,THA,THA,Thailand,Thailand,+66
+KP,PRK,408,🇰🇵,KPW,KPW,KOR,KOR,Korea Democratic People's Republic of,North Korea,+850
+UZ,UZB,860,🇺🇿,UZS,UZS,UZB,UZB|RUS,Uzbekistan,Uzbekistan,+998
+JM,JAM,388,🇯🇲,JMD,JMD,ENG,ENG,Jamaica,Jamaica,+1876
+PF,PYF,258,🇵🇫,XPF,XPF,FRE,FRE,French Polynesia,French Polynesia,+689
+MT,MLT,470,🇲🇹,EUR,EUR,MLT,MLT|ENG,Malta,Malta,+356
+CG,COG,178,🇨🇬,XAF,XAF,FRE,FRE|LIN,Republic Of Congo (Brazzaville),Congo (Brazzaville),+242
+EA,,,,EUR,EUR,,,Ceuta Mulilla,Ceuta Mulilla,
+CD,COD,180,🇨🇩,CDF,CDF,FRE,FRE|LIN|KON|SWA,Democratic Republic of Congo (Kinshasa),Congo (DRC),+243
+GN,GIN,324,🇬🇳,GNF,GNF,FRE,FRE,Guinea,Guinea,+224
+VA,VAT,336,🇻🇦,EUR,EUR,ITA,ITA,Vatican City State - Holy See,Vatican,+379|+39
+TL,TLS,626,🇹🇱,USD,USD,POR,POR,Timor-Leste Democratic Republic of,East Timor,+670
+CN,CHN,156,🇨🇳,CNY,CNY,CHI,CHI,China,China,+86
+UA,UKR,804,🇺🇦,UAH,UAH,UKR,UKR|RUS,Ukraine,Ukraine,+380
+PN,PCN,612,🇵🇳,NZD,NZD,ENG,ENG,Pitcair,Pitcairn,+872
+EC,ECU,218,🇪🇨,USD,USD,SPA,SPA|QUE,Ecuador,Ecuador,+593
+HN,HND,340,🇭🇳,HNL,HNL,SPA,SPA,Honduras,Honduras,+504
+BI,BDI,108,🇧🇮,BIF,BIF,FRE,FRE,Burundi,Burundi,+257
+GT,GTM,320,🇬🇹,GTQ,GTQ,SPA,SPA,Guatemala,Guatemala,+502
+TT,TTO,780,🇹🇹,TTD,TTD,ENG,ENG,Trinidad and Tobago,Trinidad and Tobago,+1868
+SV,SLV,222,🇸🇻,SVC,SVC|USD,SPA,SPA,El Salvador,El Salvador,+503
+BR,BRA,76,🇧🇷,BRL,BRL,POR,POR,Brazil,Brazil,+55
+MR,MRT,478,🇲🇷,MRU,MRU,ARA,ARA|FRE,Mauritania,Mauritania,+222
+MN,MNG,496,🇲🇳,MNT,MNT,MON,MON,Mongolia,Mongolia,+976
+DO,DOM,214,🇩🇴,DOP,DOP,SPA,SPA,Dominican Republic,Dominican Republic,+1809|+1829|+1849
+TK,TKL,772,🇹🇰,NZD,NZD,ENG,ENG,Tokelau,Tokelau,+690
+AZ,AZE,31,🇦🇿,AZN,AZN,AZE,AZE,Azerbaijan,Azerbaijan,+994
+BO,BOL,68,🇧🇴,BOB,BOB|BOV,SPA,SPA|AYM|QUE,Bolivia Plurinational State of,Bolivia,+591
+DZ,DZA,12,🇩🇿,DZD,DZD,ARA,ARA,Algeria,Algeria,+213
+AI,AIA,660,🇦🇮,XCD,XCD,ENG,ENG,Anguilla,Anguilla,+1264
+NA,NAM,516,🇳🇦,NAD,NAD|ZAR,ENG,ENG,Namibia,Namibia,+264
+RS,SRB,688,🇷🇸,RSD,RSD,SRP,SRP,Serbia,Serbia,+381
+SD,SDN,729,🇸🇩,SDG,SDG,ARA,ARA|ENG,Sudan,Sudan,+249
+OM,OMN,512,🇴🇲,OMR,OMR,ARA,ARA,Oman,Oman,+968
+PW,PLW,585,🇵🇼,USD,USD,ENG,ENG,Palau,Palau,+680
+WF,WLF,876,🇼🇫,XPF,XPF,FRE,FRE,Wallis and Futuna,Wallis and Futuna,+681
+KZ,KAZ,398,🇰🇿,KZT,KZT,KAZ,KAZ|RUS,Kazakhstan,Kazakhstan,+7|+76|+77
+TC,TCA,796,🇹🇨,USD,USD,ENG,ENG,Turks and Caicos Islands,Turks and Caicos Islands,+1649
+RO,ROU,642,🇷🇴,RON,RON,RUM,RUM,Romania,Romania,+40
+JO,JOR,400,🇯🇴,JOD,JOD,ARA,ARA,Jordan,Jordan,+962
+GS,SGS,239,🇬🇸,GBP,GBP,ENG,ENG,South Georgia and the South Sandwich Islands,South Georgia and the South Sandwich Islands,
+RU,RUS,643,🇷🇺,RUB,RUB,RUS,RUS,Russian Federation,Russian Federation,+7|+73|+74|+78
+VC,VCT,670,🇻🇨,XCD,XCD,ENG,ENG,Saint Vincent and the Grenadines,Saint Vincent and the Grenadines,+1784
+NL,NLD,528,🇳🇱,EUR,EUR,DUT,DUT,Netherlands,Netherlands,+31
+YT,MYT,175,🇾🇹,EUR,EUR,FRE,FRE,Mayotte,Mayotte,+262
+PR,PRI,630,🇵🇷,USD,USD,SPA,SPA|ENG,Puerto Rico,Puerto Rico,+1787|+1939
+KM,COM,174,🇰🇲,KMF,KMF,ARA,ARA|FRE,Comoros,Comoros,+269
+GD,GRD,308,🇬🇩,XCD,XCD,ENG,ENG,Grenada,Grenada,+473
+JE,JEY,832,🇯🇪,GBP,GBP,ENG,ENG|FRE,Jersey,Jersey,+44
+MK,MKD,807,🇲🇰,MKD,MKD,MAC,MAC,North Macedoni,North Macedonia,+389
+ML,MLI,466,🇲🇱,XOF,XOF,FRE,FRE,Mali,Mali,+223
+FX,,,,EUR,EUR,FRE,FRE,France Metropolitan,France Metropolitan,+241
+SO,SOM,706,🇸🇴,SOS,SOS,SOM,SOM,Somalia,Somalia,+252
+BE,BEL,56,🇧🇪,EUR,EUR,DUT,DUT|FRE|GER,Belgium,Belgium,+32
+SJ,SJM,744,🇸🇯,NOK,NOK,,,Svalbard and Jan Mayen,Svalbard,+47
+KH,KHM,116,🇰🇭,KHR,KHR,KHM,KHM,Cambodia,Cambodia,+855
+CU,CUB,192,🇨🇺,CUP,CUP|CUC,SPA,SPA,Cuba,Cuba,+53
+KR,KOR,410,🇰🇷,KRW,KRW,KOR,KOR,Korea Republic of,South Korea,+82
+IC,,,,EUR,EUR,,,Canary Islands,Canary Islands,
+TR,TUR,792,🇹🇷,TRY,TRY,TUR,TUR,Turkey,Turkey,+90
+MQ,MTQ,474,🇲🇶,EUR,EUR,,,Martinique,Martinique,+596
+HK,HKG,344,🇭🇰,HKD,HKD,CHI,CHI|ENG,Hong Kong,Hong Kong,+852
+ID,IDN,360,🇮🇩,IDR,IDR,IND,IND,Indonesia,Indonesia,+62
+FM,FSM,583,🇫🇲,USD,USD,ENG,ENG,Micronesia Federated States of,Micronesia,+691
+ST,STP,678,🇸🇹,STN,STN,POR,POR,São Tomé and Príncipe,São Tomé and Príncipe,+239
+AO,AGO,24,🇦🇴,AOA,AOA,POR,POR,Angola,Angola,+244
+CY,CYP,196,🇨🇾,EUR,EUR,GRE,GRE|TUR,Cyprus,Cyprus,+357
+NR,NRU,520,🇳🇷,AUD,AUD,ENG,ENG|NAU,Nauru,Nauru,+674
+BA,BIH,70,🇧🇦,BAM,BAM,BOS,BOS|CRE|SRP,Bosnia and Herzegovina,Bosnia and Herzegovina,+387
+CL,CHL,152,🇨🇱,CLP,CLP|CLF,SPA,SPA,Chile,Chile,+56
+LB,LBN,422,🇱🇧,LBP,LBP,ARA,ARA|ARM,Lebanon,Lebanon,+961
+LY,LBY,434,🇱🇾,LYD,LYD,ARA,ARA,Libya,Libya,+218
+VE,VEN,862,🇻🇪,VES,VED|VES|USD,SPA,SPA,Venezuela Bolivarian Republic of,Venezuela,+58
+SU,,,,RUB,RUB,RUS,RUS,USSR,USSR,
+BQ,BES,535,🇧🇶,USD,USD,DUT,DUT,Bonaire Saint Eustatius And Saba,Bonaire,+599
+EU,,,🇪🇺,EUR,EUR,,,European Union,European Union,+388
+MD,MDA,498,🇲🇩,MDL,MDL,RUM,RUM,Moldova Republic of,Moldova,+373
+CC,CCK,166,🇨🇨,AUD,AUD,ENG,ENG,Cocos Keeling Islands,Cocos Islands,+61
+BZ,BLZ,84,🇧🇿,BZD,BZD,ENG,ENG,Belize,Belize,+501
+GQ,GNQ,226,🇬🇶,XAF,XAF,SPA,SPA|FRE|POR,Equatorial Guinea,Equatorial Guinea,+240
+SR,SUR,740,🇸🇷,SRD,SRD,DUT,DUT,Suriname,Suriname,+597
+EH,ESH,732,🇪🇭,MAD,MAD,,,Western Sahara,Western Sahara,+212
+WS,WSM,882,🇼🇸,WST,WST,ENG,ENG|SMO,Samoa,Samoa,+685
+TW,TWN,158,🇹🇼,TWD,TWD,CHI,CHI,Taiwan - Province of China,Taiwan,+886
+HU,HUN,348,🇭🇺,HUF,HUF,HUN,HUN,Hungary,Hungary,+36
+AX,ALA,248,🇦🇽,EUR,EUR,SWE,SWE,Åland Islands,Åland Islands,+358
+BT,BTN,64,🇧🇹,BTN,BTN|INR,DZO,DZO,Bhutan,Bhutan,+975
+FI,FIN,246,🇫🇮,EUR,EUR,FIN,FIN|SWE,Finland,Finland,+358

@@ -1,9 +1,57 @@
-﻿id;name
-unit;Unit
-area;Area
-data;Data
-duration;Duration
-length;Length
-results;Results
-volume;Volume
-weight;Weight
+﻿id,name,dimension_text,units_to_base,unit_fr,base_unit
+unit,Unit,Unit,1,Unité,unit
+µg,Microgram,Weight,0.000000001,µg,kg
+ct,Carat,Weight,0.0002,carat,kg
+cwt (UK),Hundredweight (UK),Weight,50.80234544,quintal (UK),kg
+cwt (US),Hundredweight (US),Weight,45.359237,quintal (US),kg
+dag,Decagram,Weight,0.01,dag,kg
+g,Gram,Weight,0.001,g,kg
+hg,Hectogram,Weight,0.1,hg,kg
+kg,Kilogram,Weight,1,kg,kg
+lb,Pound,Weight,0.45359237,livre,kg
+long ton,Long Ton,Weight,1016.046909,tonne longue,kg
+mg,Milligram,Weight,0.000001,mg,kg
+oz,Ounce,Weight,0.028349523,once,kg
+q,Quintal (Metric Hundredweight),Weight,100,quintal métrique,kg
+short ton,Short Ton,Weight,907.18474,tonne courte,kg
+stone,Stone,Weight,6.35029318,stone,kg
+t,Metric Ton,Weight,1000,t,kg
+hr,Hour,Duration,1,hr,hr
+day,Day,Duration,24,jour,hr
+min,Minute,Duration,0.016666667,min,hr
+month,Month,Duration,730.5,mois,hr
+quarter,Quarter,Duration,2191.5,trimestre,hr
+s,Second,Duration,0.000277778,s,hr
+week,Week,Duration,168,semaine,hr
+year,Year,Duration,8766,année,hr
+cm,Centimeter,Length,0.1,cm,m
+ft,Foot,Length,0.3048,pied,m
+inch,Inch,Length,0.0254,pouce,m
+km,Kilometer,Length,1000,km,m
+m,Meter,Length,1,m,m
+mile,Mile,Length,1609.34,mile,m
+mm,Millimeter,Length,0.001,mm,m
+nautical mile,Nautical Mile,Length,1852,mille marin,m
+yard,Yard,Length,0.9144,yard,m
+barrel,Barrel,Volume,158.9872894,barril,l
+cl,Centiliter,Volume,0.01,cl,l
+dl,Deciliter,Volume,0.100000001,dl,l
+fl oz (UK),Fluid Ounce (UK),Volume,0.028413063,fl oz (UK),l
+fl oz (US),Fluid Ounce (US),Volume,0.02957353,fl oz (US),l
+ft³,Cubic Foot,Volume,28.31684685,ft³,l
+gal (UK),Gallon (UK),Volume,4.546090126,gal (UK),l
+gal (US),Gallon (US),Volume,3.785411835,gal (US),l
+inch³,Cubic Inch,Volume,0.016387064,pouce³,l
+l,Liter,Volume,1,l,l
+m³,Cubic Meter,Volume,1000,m³,l
+ml,Milliliter,Volume,1,ml,l
+pint (UK),Pint (UK),Volume,0.568261266,pinte (UK),l
+pint (US dry),Pint (US Dry),Volume,0.473176479,pinte (US sèche),l
+pint (US liquid),Pint (US Liquid),Volume,0.550610483,pint (US liquide),l
+yard³,Cubic Yard,Volume,764.5548706,yard³,l
+bit,Bit,Data,0.125,b (bit),byte
+byte,Byte,Data,1,B (octet),byte
+GB,Gigabyte,Data,1000000000,GB,byte
+kB,Kilobyte,Data,1000,kB,byte
+MB,Megabyte,Data,1000000,MB,byte
+TB,Terabyte,Data,1000000000000,TB,byte

@@ -1,9 +1,8 @@
-﻿id;name
-unit;Unit
-area;Area
-data;Data
-duration;Duration
-length;Length
-results;Results
-volume;Volume
-weight;Weight
+﻿id,name
+unit,Unit
+duration,Duration
+weight,Weight
+volume,Volume
+length,Length
+area,Area
+data,Data
