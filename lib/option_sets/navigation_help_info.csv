@@ -1,0 +1,162 @@
+"icon","info_en","navigation","plural","name","seeAlso","singular"
+"mdi:file-sign","In the [u]FlexUp model[/u], a ""[b]contract[/b]"" is a legally binding agreement between two parties, the [b]supplier[/b] and the [b]client[/b], defining the terms and conditions for:[ol][li]the [b]products[/b] that the the supplier will [b]deliver[/b] to the client,[/li]
+[li]the [b]remuneration[/b] that client will [b]pay[/b] the to the supplier in return for the delivery of products, and[/li]
+[li]the [b]payment structure[/b], which determines how the remuneration will be paid, and thus the level of risk that the recipient taking on his remuneration.[/li][/ol]
+
+In the above description, the following terms are meant in the widest sense:[ul][li][b]product[/b]: any commercial [b]contribution[/b] that you can provide in exchange for a [b]remuneration[/b]. This can be products, services, work, funding, real estate, other intangible assets, public services, etc.  Anything that has economic value.[/li]
+[li][b]remuneration[/b]: any type of payment made by a client to a supplier in exchange for the delivery of products, such as for example: purchase price, fees, salary, price, interests, dividends, royalties, etc. Any form of cash payment.[/li]
+[li][b]supplier[/b]: the party who is providing the product and is receiving the remuneration, such as for example: contractor, freelancer, consultant, employee, bank, investor, landlord, author, government, public entity, etc.[/li]
+[li][b]client[/b]: the party who is receiving a product and is paying the remuneration, such as for example: customer, employer, funding recipient, tenant, tax payer, etc.[/li]
+[li][b]payment structure[/b]: the split of the remuneration into one or more [b]tranches[/b], each with a specific [b]payment terms[/b].[/li][/ul]
+
+In the [u]FlexUp app[/u], a contract also offers a convenient way manage one or more [b]orders[/b], where each order correspond to the delivery of a specific set of products (i.e. [b]order items[/b]). A contract may include one or more [b]orders[/b], which can be [b]confirmed[/b] upon contract [b]signature[/b], or later on. 
+
+The contract information provided below is used in all related orders as follows:[ul][li]to automatically [b]populate[/b] the key order information [i](supplier, client, currency, etc.)[/i],[/li]
+[li]to provide [b]default values[/b] for payment structure and products,[/li]
+[li]to provide a list of [b]available options[/b] for products and payment structure (in addition to the default values).[/li][/ul]
+
+Contracts also allow to:
+- have an overview of the aggregate value of all related orders,
+- to create recurring contracts,
+- etc.","contract","Contracts","contract","","Contract"
+"fa6-regular:handshake","The process, executed at least once per year, starting with an allotment allocation, followed by 5 annual allocations (strategic, capital buyback, distribution, share buyback and endowment reserves) and 3 subsequent annual resolutions (capital buyback, distribution, share buyback resolutions).
+
+","annual-resolution","Commitments","annual-resolution","","Commitment"
+"material-symbols:order-approve-outline-rounded","A [b]lettering [/b]is used to [b]commitments[/b] to [b]payments[/b].
+
+A single commitment can be paid in multiple payments.
+[ml][ul][li indent=0 align=left]For example, to pay 1000 €, you could make a bank transfer of 600 € and pay the remaining 400 € in cash.[/li][/ul][/ml]
+Similarly, a single payment can cover multiple commitments.
+[ml][ul][li indent=0 align=left]For example, you could pay your last 2 electricity bills (25 € and 30 € respectively) in one shot with a 55 € visa card payment.[/li][/ul][/ml]
+In order to keep track of what has been paid when, we use a [b]lettering[/b] system:
+[ml][ul][li indent=0 align=left]each [b]commitment[/b] can be split between one or more lettering amounts,[/li][li indent=0 align=left]each [b]payment[/b] can be split between one or more lettering amounts,[/li][li indent=0 align=left]each lettering amount is related to a single commitment and a single payment.[/li][/ul][/ml]
+A commitment has been paid in full when the sum of all its related letterings is equal to the the commitment's payable amount.","lettering","Orders","lettering","","Order"
+"fluent:money-24-regular","In the [url=https://FlexUp model]FlexUp model[/url], the ""Charter"" is the contractual framework describing the workings of the FlexUp Model. When adopted by an account (which thereby becomes a “FlexUp Project” or simply a “Project”), the Charter defines the terms of development and management of the Project by its Holder, and the terms of collaboration between the Holder and the Associates of the Project, in order to associate them with the development, risks and results of the Project.","charter","Payments","charter","","Payment"
+"ion:pin","An [b]offline account[/b] is an account that is not actively managed in the FlexUp app and has no [b]members[/b].
+[ml][ul][li indent=0 align=left]You can create a offline account for a [b]third-party[/b] that:[/li][ul data=1][li indent=1 align=left]does not have a FlexUp account, or[/li][li indent=1 align=left]that you do not wish to interact with via the FlexUp app.[/li][/ul][li indent=0 align=left]You can create a offline account to register transactions with this third-party, but this third-party account, and all the transactions that you register with it in the system, will only be visible to you in your current account interface.[/li][li indent=0 align=left]You can freely change content and the [b]status[/b] of all transactions with a local third-party account (for example, you can mark an order as ""Confirmed"").[/li][li indent=0 align=left]Offline accounts are convenient to register transactions with third-parties that don't use the system, or for third-parties whose transactions you don't need to manage individually.[/li][ul data=1][li indent=1 align=left]For example, you can create a offline third-party named ""Other suppliers"" to group all miscellaneous orders and payments with various suppliers.[/li][/ul][/ul][/ml][i][size=1][color=rgb(187, 187, 187)]In a future version of the FlexUp app you will be able invite the related third-party to ""claim"" this offline account and convert it into a online account. In this case, all transactions that you have already registered will be automatically visible by them, and their status will be rest to ""sent"" (giving them the option of ""accept"" them individually). If this third-party already has an online account (different form the local account that you created), he will be able to ""merge"" these accounts, and incorporate the transactions that you created with your ""offline"" account into his ""online"" account. [/color][/size][/i]","offline","Offline","offline","online","Offline"
+"fluent-mdl2:product-variant","In the FlexUp model, the term ""[url=https://www.notion.so/flexup/Product-1ccc2cc174f04246b6cb6ec3125a35ed][b]product[/b][/url]"" is meant in the widest possible sense to include any commercial [b]contribution[/b] that you can provide in exchange for a [b]remuneration[/b]. This can be products, services, work, funding, real estate, other intangible assets, ... anything that has economic value.
+
+See more info in [color=blue][url=https://www.notion.so/flexup/Product-1ccc2cc174f04246b6cb6ec3125a35ed]product[/url][/color]","product","Products","product","","Product"
+"mdi:people-switch","A [b]third party[/b] is any account other than the current account. It can represent a client or a supplier. 
+
+A third-party can be:
+- an [b]active[/b] account: this is an account that has at least one active member,
+- a [b]local[/b] account: this is a ""virtual"" account that has been created by, and is only visible by, the the current account. It has not yet been shared/claimed by the ""real"" third-party that it represents in the system.
+
+You can create a local account to keep track of transactions with a third-party that is not registered in the system.
+
+Whenever you add an account (active or local) to your [b]third-party directory[/b], the system associates it with some default values for:
+- role (client or supplier),
+- currency, country,
+- order/contract nature/type,
+- applicable charter (if any).
+
+This streamlines the process of creating new contracts/orders with this third-party in the future.
+
+In the FlexUp model, the term [b]third party[/b] means any account other than this [b]current account [/b](the one you are currently active in).
+
+This table shows the custom third parties directory directory for this current account, which includes all the third party accounts that have been ""bookmarked"" to this current account.
+
+This includes all third parties which you have:
+[ul]
+[li]added to your [b]favourites[/b],[/li]
+[li]made [b]transactions[/b] with (contracts, orders, payments, etc.),[/li]
+[li]created [b]locally[/b] (i.e.: these are not active accouts yet, they are only visible in this this account). You can send them an email invitation to activate their account.[/li]
+[/ul]
+
+Accounts in this custom third parties directory will appear first (and faster) in dropdown lists whenever you create a new transaction. You can [b]archive[/b] a third party that you don't want them to show first in such lists.","third-party","Third-parties","third-party","","Third-party"
+"ph:globe","A [b]online account[/b] is actively managed by one or more [b]members[/b] (registered [b]users[/b]) and is registered in the FlexUp [b]public accounts directory[/b].
+[ml][ul][li indent=0 align=left]You can create an online account for someone or something that will use it to manage its own activity and interact with other accounts via the FlexUp app.[/li][li indent=0 align=left]All [b]transactions[/b] (contracts, orders, payments) with a online account are jointly managed with them via the FlexUp app.[/li][li indent=0 align=left]Any [b]transaction[/b] that you create or modify, from your own account interface, with a third-party online account, will also be seen by them in their own account interface.[/li][li indent=0 align=left]This means that you both see the same transaction in your respective accounts.[/li][ul data=1][li indent=1 align=left]For example, you can create and send an order to a third-party online account, and they will see the order pop up in their account interface and can then accept or reject it.[/li][/ul][li indent=0 align=left]In most cases, you cannot unilaterally change a transaction (modify its content or change it [b]status[/b]) with a third-party online account but you must send/submit them via the FlexUp app for their review and approval.[/li][ul data=1][li indent=1 align=left]For example, you cannot mark an order as ""Confirmed"". But you can send the order to the third-party and wait for it to accept it. Once accepted, the order status is then updated by the system to ""Confirmed"".[/li][/ul][li indent=0 align=left]A global account should have at least 1 [b]member[/b].[/li][li indent=0 align=left]When you create an online account:[/li][ul data=1][li indent=1 align=left]You are automatically a [b]member[/b] of this account with an ""[b]Admin 🔑[/b]"" role, and this account will appear in the list of accounts that you are a member of (""My memberships"").[/li][li indent=1 align=left]You must confirm that you are [u]duly authorised[/u] to create this account on behalf of its owner(s)..[/li][/ul][li indent=0 align=left]Once the account is created, you can then invite other [b]members[/b].[/li][/ul][/ml]","online","Online","online","offline","Online"
+"clarity:tag-solid","A [b]business account[/b] represents and belongs to an [b]organization[/b]. 
+[ml][ul][li indent=0 align=left]An organization is a [u]juridical person[/u]: an entity which has a legal personality and is duly registered, such as a company, an NGO, a registered professional or a public entity. [/li][li indent=0 align=left]A user can create, edit or view a business accounts only if they have been [u]duly authorized[/u] by this organization. [/li][li indent=0 align=left]An organization can only have [u]one[/u] business account (which is the organization's ""[b]main[/b]"" account).[/li][/ul][/ml]","business-account","Payment terms","business-account","","Payment term"
+"fa:tags","A [b]shared account[/b] this represents and belongs to a [b]grouping[/b]. 
+[ml][ul][li indent=0 align=left]A grouping is a contractually defined partnership between a collection of ""[b]constituents[/b]"" that jointly own this account.[/li][li indent=0 align=left]A grouping does [u]not[/u] have a [u]legal personality[/u] (it is [u]neither[/u] a physical person nor a juridical person).[/li][li indent=0 align=left]Each constituent is represented by an account, which can be of any type.[/li][li indent=0 align=left]Shared accounts are co-owned by their constituents' respective owners.[/li][li indent=0 align=left]They can be used for collective projects or activities involving multiple participants, but for which no one is taking a leading role as the project’s sole owner.[/li][li indent=0 align=left]A grouping can only have [u]one[/u] shared account (which is the grouping's ""[b]main[/b]"" account).[/li][li indent=0 align=left]Any type of account can join a grouping, but they must sign all sign the [b]grouping agreement[/b] which defines the roles and responsibilities of each constituent.[/li][/ul][/ml]","shared-account","Payment structures","shared-account","","Payment structure"
+"mdi:calendar-star","","status","Annual resolutions","status","","Annual resolution"
+"mdi:calendar-refresh-outline","A [b]personal account[/b] represents and belongs to an [b]individual[/b] (i.e.: a [u]physical person[/u], whether it is a registered [b]user[/b] or not). 
+[ml][ul][li indent=0 align=left]A user can only have [u]one[/u] personal account (which is the user's ""[b]main[/b]"" account).[/li][/ul][/ml]
+When you sign up and create your [b]user[/b] profile, you are identified as an [b]individual[/b] and your [b]personal account[/b] is automatically created for you.
+[ml][ul][li indent=0 align=left]You are automatically added as a [b]member[/b] of this personal account with an ""Admin 🔑"" role.[/li][li indent=0 align=left]You can then invite other users to become members of this personal account, if you need help managing or supervising it.[/li][/ul][/ml]
+If you wish to create a personal account for someone else:
+[ml][ul][li indent=0 align=left]you must be duly [u]authorised[/u] by this person do so,[/li][li indent=0 align=left]you will automatically added as a member of this personal account with an ""Admin 🔑"" role,[/li][li indent=0 align=left]you must [u]invite[/u] this person to become a member of this account with an ""Admin 🔑"" role (unless specific circumstances prevent this person from accessing the system).[/li][/ul][/ml]","personal-account","Monthly resolutions","personal-account","","Monthly resolution"
+"iconamoon:certificate-badge-fill","If the account's scope is [b]local[/b], the account's identity and type may be [b]unspecified[/b]. In such as case, the owner identify is not required","unspecified-account","Charter","unclaimed-account","","Charter"
+"solar:user-id-bold","[color=rgb(64, 64, 64)]A [/color][b][color=rgb(64, 64, 64)]subaccount[/color][/b][color=rgb(64, 64, 64)] [/color]🚀 [color=rgb(64, 64, 64)]represents a sub-set of economic activities of its [/color][b][color=rgb(64, 64, 64)]parent[/color][/b][color=rgb(64, 64, 64)] account.[/color]
+[ml][ul][li indent=0 align=left][color=rgb(64, 64, 64)]Subaccounts are owned by their [/color][b][color=rgb(64, 64, 64)]parent account[/color][/b][color=rgb(64, 64, 64)]'s owners. [/color][/li][li indent=0 align=left][color=rgb(64, 64, 64)]They can be used for specific projects or segments within the parent account’s activities, such as an organization’s business unit or branch, or for a personal project or hobby. [/color][/li][li indent=0 align=left][color=rgb(64, 64, 64)]A subaccount's parent can be any type of account (including another subaccount).[/color][/li][/ul][/ml]
+[color=rgb(64, 64, 64)]When you create a subaccount, it's parent is automatically the [/color][b][color=rgb(64, 64, 64)]current account[/color][/b][color=rgb(64, 64, 64)] (the one you are currently in). [/color]
+[ml][ul][li indent=0 align=left][color=rgb(64, 64, 64)]You can only create a sub account if you have Admin rights to the current account.[/color][/li][li indent=0 align=left][color=rgb(64, 64, 64)]If you wish to create a subaccount for another account (that you are an Admin for), please switch account via the account selector button (top right in the page's header)[/color][/li][/ul][/ml]
+A subaccount does not have its own legal identity, so any transactions that you make for this subaccount is actually made by parent account's ultime owner (direct or indirect). It is important to clearly identity the subaccount's owner, because - from a legal point of view - any transactions made by this subaccount are actually made by and on behalf of its owner.
+
+The identity of the subaccount's owner is defined by identify the parent account (of which this subaccount is a [b]child[/b]).
+
+The subaccount' parent can be any [b]type[/b] of account:
+- a [b]personal account[/b] 👤: if the owner is an [b]individual[/b]🧑‍💻 (ie. physical person, where a registered [b]user [/b] or not),
+- a [b]business account[/b] 💼: if its owner is an [b]organisation[/b] 🏢 (ie. a legal entity),
+- a [b]shared account [/b]👥: if its owner is a [b]grouping [/b]👪 (ie. a collection of multiple accounts),
+- another [b]subaccount[/b] 🚀: in this case, the owner can be determined indirectly by looking up this other subaccount's owner.
+
+ ","subaccount","Accounts","subaccount","","Account"
+"codicon:organization","For a given account, a [b]member[/b] is a registered [b]user[/b] who has certain [b]permissions[/b] to access this account. 
+
+These permissions are grouped in the following [b]roles:[/b]
+[ml][ul][li indent=0 align=left][b]Admin[/b]🔑: has [b]view [/b]and [b]edit [/b]permissions on everything ([b]transactions[/b] and [b]account[/b]),[/li][li indent=0 align=left][b]Editor[/b]✏️: has [b]edit [/b]permissions on transactions only, and view permission on everything,[/li][li indent=0 align=left][b]Viewer[/b]👀: has [b]view [/b]permissions on everying (transactions and account information).[/li][/ul][/ml]
+In this context:
+[ml][ul][li indent=0 align=left][b]transactions [/b]includes everying in the ""Transactions"" menu group (products, orders, etc.),[/li][li indent=0 align=left][b]account[/b] includes everything in the other menu groups (""Configuration"", ""Cash management"", ""Account""),[/li][li indent=0 align=left][b]edit[/b] includes create, modify and delete permissions,[/li][li indent=0 align=left][b]view[/b] means read only permissions.[/li][/ul][/ml]
+
+An account must always have [u]at least one[/u] Admin member. Only the members with Admin roles can edit an account's members. ","member","Members","member","","Member"
+"mdi:account-cog","A [b]country[/b] is required for all [b]accounts[/b] to determine the applicable jurisdication.
+[ml][ul][li indent=0 align=left]The account's country should, in principal, be equal to that of their [b]owners [/b]([b]users[/b], [b]organizations [/b]and [b]groupings[/b]).[/li][li indent=0 align=left]The account's country is used as the default value for any [b]transactions [/b](contract, orders, payments...) that it creates.[/li][/ul][/ml]","country","User profile","country","","User profile"
+"iconoir:network-reverse-solid","All [b]operations[/b] in the FlexUp model are made by and between “[b]accounts[/b]”.
+
+There are four [b]types[/b] of accounts:
+
+[ml][ul][li indent=0 align=left][b]Personal account[/b]: this represents and belongs to a [b]user[/b] (i.e.: a [u]physical person[/u], an individual). When you sign up and create your [b]user[/b] profile, your personal account is automatically created. A user can only have [u]one[/u] personal account (which is the user's ""[b]main[/b]"" account).[/li][/ul][/ml]
+[ml][ul][li indent=0 align=left][b]Business account[/b]: this represents and belongs to an [b]organization[/b]. An organization is a [u]juridical person[/u]: an entity which has a legal personality and is duly registered, such as a company, an NGO, a registered professional or a public entity. A user can create, edit or view a business accounts only if they have been [u]duly authorized[/u] by this organization. An organization can only have [u]one[/u] business account (which is the organization's ""[b]main[/b]"" account).[/li][/ul][/ml]
+[ml][ul][li indent=0 align=left][b]Shared account[/b]: this represents and belongs to a [b]grouping[/b]. A grouping is a contractually defined partnership between a collection of ""[b]constituents[/b]"" that jointly own this account. A grouping does [u]not[/u] have a [u]legal personality[/u] (it is [u]neither[/u] a physical person nor a juridical person). Each constituent is represented by an account, which can be of any type. Shared accounts are co-owned by their constituents' respective owners. They can be used for collective projects or activities involving multiple participants, but for which no one is taking a leading role as the project’s sole owner. A grouping can only have [u]one[/u] shared account (which is the grouping's ""[b]main[/b]"" account). Any type of account can join a grouping, but they must sign all sign the [b]grouping agreement[/b] which defines the roles and responsibilities of each constituent.[/li][/ul][/ml]
+[ml][ul][li indent=0 align=left][b]Subaccount[/b]: this represents a sub-set of economic activities of its [b]parent[/b] account. Subaccounts are owned by their parent account's owners. They can be used for specific projects or segments within the parent account’s activities, such as an organization’s business unit or branch, or for a personal project or hobby. A subaccount's parent can be any type of account (including another subaccount).[/li][/ul][/ml]
+In addition, there are two account [b]scopes[/b]:
+
+[ml][ul][li indent=0 align=left][b]Global[/b]: a global account is actively managed by one or more users (ie: it has one or more [b]members[/b]), and is listed in the system's [b]global directory[/b].[/li][ul data=1][li indent=1 align=left]If it's [b]visibility [/b]is ""[b]public[/b]"", this account can be seens by all other accounts in the system.[/li][li indent=1 align=left]If it's [b]visibility[/b] is ""[b]private[/b]"", it can only be seen by accounts that have added to their [b]third-parties[/b] directory.[/li][li indent=1 align=left]All [b]transactions[/b] (orders, contracts, payment, etc.) made between your account and a global account (the ""third-party"") are shared and jointly managed. This means that you both see the same transaction in your respective accounts. For example, you can created and send an order to this third-party, and they will see the order pop up in they accounts, and can then accept or reject it.[/li][li indent=1 align=left]In most cases, you cannot [u]unilaterally[/u] change the [b]status[/b] of a transaction in the system (for example, you cannot mark an order as ""Confirmed""). But you can send the order to the third-party and wait for it to accept it. Once accepted, the order status is then updated by the system to ""Confirmed"".[/li][li indent=1 align=left]If you create a global account you will, by default, be a member of this account with an ""Admin 🔑"" role, and this account will appear in the list of accounts that you are a member of (""Memberships"").[/li][/ul][/ul][/ml]
+[ml][ul][li indent=0 align=left][b]Local[/b]: a local account represents a third-party that does not have an actively managed account in the system (ie. it is ""[b]unclaimed[/b]"").[/li][ul data=1][li indent=1 align=left]You can create a local account to register transactions with this third-party, but this third-party, and all the transactions that you register with it in the system, will only be visible to you.[/li][li indent=1 align=left]You can freely change the [b]status[/b] of all transactions with a local third-party (for example, you can mark an order as ""Confirmed"").[/li][li indent=1 align=left]Local accounts are convenient to register transactions with third-parties that don't use the system, or for third-parties whose transactions you don't need to manage individually.[/li][li indent=1 align=left]For example, you can create a local third-party call ""Other suppliers"" to group all miscellaneous orders and payments with various suppliers.[/li][li indent=1 align=left]You can at any time invite the third-party to ""[b]claim[/b]"" a local third-party, giving them the option to convert it into a global account. In this case, all transactions that you have already registered will be automatically visible by them, and their status will be rest to ""sent"" (giving them the option of ""accept"" them individually).[/li][/ul][/ul][/ml]
+The [b]FlexUp[/b] system allows you to keep track [b]transactions[/b] made by and between accounts, on behalf of their respective owners. Some of these are contractually binding [b]agreements[/b] (such as contracts and orders). As a result, it is important to know precisely, for each account:
+[ml][ul][li indent=0 align=left]what [b]type[/b] of account we are dealing with,[/li][li indent=0 align=left]who the legal [b]owner[/b](s) is/are, and[/li][li indent=0 align=left]who are its authorised legal [b]representatives[/b].[/li][/ul][/ml]
+For global accounts, this information is [u]required[/u]. For local accounts, it is [u]optional[/u], and you can set the account [b]type[/b] to ""Unknown"" if you are not sure.
+
+As a [b]registered[/b] user, you can make transactions in your personal capacity through your personal account or any related subaccounts. 
+
+If you have been duly authorised, you can also create a business account, a shared account, or any related subaccount. 
+
+When you create a new account, you are automatically added as a [b]member[/b], with with an [b]admin role[/b] (ie: full rights). You can then invite other members, and give them [b]admin[/b], [b]editor [/b]roles (created/edit operations), or [b]guest [/b]role (view only).","account","Accounts","account","","Account"
+"mdi:compass-rose","","membership","Navigation","membership","","Navigation"
+"pajamas:status-health","wallet is ok","wallet","Statuses","wallet","","Status"
+"mdi:dots-horizontal","A [b]currency [/b]is required for all [b]accounts[/b]:
+[ml][ul][li indent=0 align=left]in determines the currency used for the account's [b]reserves[/b] (ie: to calculate the account's available cash) and [b]allocations[/b] (transfers between reserves),[/li][li indent=0 align=left]it is the currency that all [b]commitments[/b] are converted into during the [b]resolution[/b] processes,[/li][li indent=0 align=left]it is the default currency any new thing created by this account: [b]contract[/b], [b]order[/b], [b]wallet[/b], etc.[/li][/ul][/ml]","currency","","currency","",""
+"mdi:dots-horizontal","test ouille payment-term","payment-term","","payment-term","",""
+"mdi:dots-horizontal","testestset payment-structure","payment-structure","","payment-structure","",""
+"mdi:dots-horizontal","test item","item","","item","",""
+"mdi:dots-horizontal","prout all","all","","all","",""
+"mdi:dots-horizontal","prout","unit-custom","","unit-custom","",""
+"mdi:dots-horizontal","test ouille payment","payment","","payment","",""
+"mdi:dots-horizontal","test unit system","unit-system","","unit-system","",""
+"mdi:dots-horizontal","test inflow","inflow","","inflow","",""
+"mdi:dots-horizontal","","pocket","","pocket","",""
+"mdi:dots-horizontal","[b]Presence [/b]determines how an account is managed, and if it can interact with other accounts via the FlexUp app. The options are:
+[ml][ul][li indent=0 align=left][b]Online🌐[/b]: To actively engage and interact with other accounts across the FlexUp platform. This account is actively managed by on or more members, it is visible by other accounts in the FlexUp platform and you can manage make transactions with them directly via the FlexUp platform.[/li][li indent=0 align=left][b]Offline[/b]📍: For managing transactions solely within this current account. It's intended for internal bookkeeping. This account is not actively managed, it is not visible by other accounts in the FlexUp platform and cannot interact with them.[/li][/ul][/ml][i][size=1][color=rgb(187, 187, 187)][highlight=var(--color_primary_contrast_default)]Select an option to get more information[/highlight][/color][/size][/i]","presence","","presence","",""
+"mdi:dots-horizontal","[b]Visibility [/b]determines if an [b]account[/b] can be seen by others in the FlexUp accounts directory, it only applies to [b]Global[/b][color=rgb(236, 236, 241)]🌐 [/color]accounts.  The options are are:
+[ml][ul][li indent=0 align=left][b]Public [/b][color=var(--tw-prose-bold)]📢[/color]: public accounts can be directly interacted with. All their account information are [b]visible [/b]in the FlexUp global accounts [b]directory[/b], making their [b]identity[/b] clear. You can look up a public account in the global directory, check their details andsend them an [b]order [/b]directly. [b]Business accounts [/b]are generally public.[/li][li indent=0 align=left][b]Private[/b] [color=var(--tw-prose-bold)]🔒: the privacy of [/color]private accounts is more protected. Only their name and type is [b]visible [/b]in the FlexUp global accounts [b]directory[/b]. You can only intitiate transactions with them if they have accepted a contact request. Once accepted, they will be added to your [b]third-party[/b] directory. [b]Personal accounts [/b]are generally private.[/li][/ul][/ml]A private personal account can direcly place and order to a public. Apublic account cannot sent an unsollicited order to a private personal account, they must either first send a contact request, or wait for the private account to send them an order. 
+
+Note that only [b]Global[/b][color=rgb(236, 236, 241)]🌐 [/color]accounts can be [b]public [/b]or [b]private[/b]. [b]Local [/b][color=rgb(236, 236, 241)]📍[/color][highlight=var(--color_primary_contrast_default)]accounts do not have any visibility, they don't exist outside the account that created it (their are used for local book-keeping only).[/highlight]","visibility","","visibility","",""
+"mdi:dots-horizontal","The [b]parent[/b] of a [b]subaccount[/b] is another account, and it is also the subaccount's [b]owner[/b].The subaccount does not have it own legal personality. From a legal point of view, everything done in/by a subaccount is done by (or on behalf of) its parent account.","parent","","parent","",""
+"mdi:dots-horizontal","The available accounts types are: Aakash
+- [b]personal 👤[/b]: represents an [b]individual 🧑‍💻[/b](ie. physical person),
+- [b]business 💼[/b]: represents an [b]organization 🏢 [/b](ie. juridical person, legal entity),
+- [b]shared 👥[/b]: represents a [b]grouping 👪 [/b](ie. a collection of multiple accounts),
+- [b]subaccount 🚀[/b]: a sub-permiter of the [b]parent [/b]account's activities[i],[/i]
+- [b]unspecified [/b]❓: select this if you are not sure.
+
+Restrictions:
+- [b]local[/b] accounts: only business and unspecified are available,
+- [b]global[/b] accounts: unspecified is not available.
+[i][size=1][color=rgb(187, 187, 187)]Select one of the option to see more information.[/color][/size][/i]","account-type","","account-type","",""
+"","","user","Users","user","","User"
+"mdi:dots-horizontal","","monthly-resolution","","monthly-resolution","",""
+"mdi:dots-horizontal","","public","","public","",""
+"mdi:dots-horizontal","","","","grouping","",""
