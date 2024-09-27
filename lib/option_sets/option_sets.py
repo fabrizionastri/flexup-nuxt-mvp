@@ -3,7 +3,7 @@
 # country is connected to currency and language tables/lists
 country = [
     {
-        "\ufeffid": "DM",
+        "id": "DM",
         "iso3": "DMA",
         "ison": "212",
         "emoji": "\ud83c\udde9\ud83c\uddf2",
@@ -16,7 +16,7 @@ country = [
         "calling_codes": "+1767"
     },
     {
-        "\ufeffid": "LC",
+        "id": "LC",
         "iso3": "LCA",
         "ison": "662",
         "emoji": "\ud83c\uddf1\ud83c\udde8",
@@ -29,7 +29,7 @@ country = [
         "calling_codes": "+1758"
     },
     {
-        "\ufeffid": "XK",
+        "id": "XK",
         "iso3": "",
         "ison": "",
         "emoji": "",
@@ -42,7 +42,7 @@ country = [
         "calling_codes": "+383"
     },
     {
-        "\ufeffid": "KI",
+        "id": "KI",
         "iso3": "KIR",
         "ison": "296",
         "emoji": "\ud83c\uddf0\ud83c\uddee",
@@ -55,7 +55,7 @@ country = [
         "calling_codes": "+686"
     },
     {
-        "\ufeffid": "VI",
+        "id": "VI",
         "iso3": "VIR",
         "ison": "850",
         "emoji": "\ud83c\uddfb\ud83c\uddee",
@@ -68,7 +68,7 @@ country = [
         "calling_codes": "+1340"
     },
     {
-        "\ufeffid": "MV",
+        "id": "MV",
         "iso3": "MDV",
         "ison": "462",
         "emoji": "\ud83c\uddf2\ud83c\uddfb",
@@ -81,7 +81,7 @@ country = [
         "calling_codes": "+960"
     },
     {
-        "\ufeffid": "AQ",
+        "id": "AQ",
         "iso3": "ATA",
         "ison": "10",
         "emoji": "\ud83c\udde6\ud83c\uddf6",
@@ -94,7 +94,7 @@ country = [
         "calling_codes": "+672"
     },
     {
-        "\ufeffid": "CO",
+        "id": "CO",
         "iso3": "COL",
         "ison": "170",
         "emoji": "\ud83c\udde8\ud83c\uddf4",
@@ -107,7 +107,7 @@ country = [
         "calling_codes": "+57"
     },
     {
-        "\ufeffid": "LA",
+        "id": "LA",
         "iso3": "LAO",
         "ison": "418",
         "emoji": "\ud83c\uddf1\ud83c\udde6",
@@ -120,7 +120,7 @@ country = [
         "calling_codes": "+856"
     },
     {
-        "\ufeffid": "KN",
+        "id": "KN",
         "iso3": "KNA",
         "ison": "659",
         "emoji": "\ud83c\uddf0\ud83c\uddf3",
@@ -133,7 +133,7 @@ country = [
         "calling_codes": "+1869"
     },
     {
-        "\ufeffid": "LT",
+        "id": "LT",
         "iso3": "LTU",
         "ison": "440",
         "emoji": "\ud83c\uddf1\ud83c\uddf9",
@@ -146,7 +146,7 @@ country = [
         "calling_codes": "+370"
     },
     {
-        "\ufeffid": "GY",
+        "id": "GY",
         "iso3": "GUY",
         "ison": "328",
         "emoji": "\ud83c\uddec\ud83c\uddfe",
@@ -159,7 +159,7 @@ country = [
         "calling_codes": "+592"
     },
     {
-        "\ufeffid": "CF",
+        "id": "CF",
         "iso3": "CAF",
         "ison": "140",
         "emoji": "\ud83c\udde8\ud83c\uddeb",
@@ -172,7 +172,7 @@ country = [
         "calling_codes": "+236"
     },
     {
-        "\ufeffid": "NE",
+        "id": "NE",
         "iso3": "NER",
         "ison": "562",
         "emoji": "\ud83c\uddf3\ud83c\uddea",
@@ -185,7 +185,7 @@ country = [
         "calling_codes": "+227"
     },
     {
-        "\ufeffid": "CK",
+        "id": "CK",
         "iso3": "COK",
         "ison": "184",
         "emoji": "\ud83c\udde8\ud83c\uddf0",
@@ -198,7 +198,7 @@ country = [
         "calling_codes": "+682"
     },
     {
-        "\ufeffid": "AD",
+        "id": "AD",
         "iso3": "AND",
         "ison": "20",
         "emoji": "\ud83c\udde6\ud83c\udde9",
@@ -211,7 +211,7 @@ country = [
         "calling_codes": "+376"
     },
     {
-        "\ufeffid": "MC",
+        "id": "MC",
         "iso3": "MCO",
         "ison": "492",
         "emoji": "\ud83c\uddf2\ud83c\udde8",
@@ -224,7 +224,7 @@ country = [
         "calling_codes": "+377"
     },
     {
-        "\ufeffid": "SZ",
+        "id": "SZ",
         "iso3": "SWZ",
         "ison": "748",
         "emoji": "\ud83c\uddf8\ud83c\uddff",
@@ -237,7 +237,7 @@ country = [
         "calling_codes": "+268"
     },
     {
-        "\ufeffid": "AT",
+        "id": "AT",
         "iso3": "AUT",
         "ison": "40",
         "emoji": "\ud83c\udde6\ud83c\uddf9",
@@ -250,7 +250,7 @@ country = [
         "calling_codes": "+43"
     },
     {
-        "\ufeffid": "HT",
+        "id": "HT",
         "iso3": "HTI",
         "ison": "332",
         "emoji": "\ud83c\udded\ud83c\uddf9",
@@ -263,7 +263,7 @@ country = [
         "calling_codes": "+509"
     },
     {
-        "\ufeffid": "MU",
+        "id": "MU",
         "iso3": "MUS",
         "ison": "480",
         "emoji": "\ud83c\uddf2\ud83c\uddfa",
@@ -276,7 +276,7 @@ country = [
         "calling_codes": "+230"
     },
     {
-        "\ufeffid": "SA",
+        "id": "SA",
         "iso3": "SAU",
         "ison": "682",
         "emoji": "\ud83c\uddf8\ud83c\udde6",
@@ -289,7 +289,7 @@ country = [
         "calling_codes": "+966"
     },
     {
-        "\ufeffid": "BV",
+        "id": "BV",
         "iso3": "BVT",
         "ison": "74",
         "emoji": "\ud83c\udde7\ud83c\uddfb",
@@ -302,7 +302,7 @@ country = [
         "calling_codes": ""
     },
     {
-        "\ufeffid": "SX",
+        "id": "SX",
         "iso3": "SXM",
         "ison": "534",
         "emoji": "\ud83c\uddf8\ud83c\uddfd",
@@ -315,7 +315,7 @@ country = [
         "calling_codes": "+1721"
     },
     {
-        "\ufeffid": "US",
+        "id": "US",
         "iso3": "USA",
         "ison": "840",
         "emoji": "\ud83c\uddfa\ud83c\uddf8",
@@ -328,7 +328,7 @@ country = [
         "calling_codes": "+1"
     },
     {
-        "\ufeffid": "IL",
+        "id": "IL",
         "iso3": "ISR",
         "ison": "376",
         "emoji": "\ud83c\uddee\ud83c\uddf1",
@@ -341,7 +341,7 @@ country = [
         "calling_codes": "+972"
     },
     {
-        "\ufeffid": "NU",
+        "id": "NU",
         "iso3": "NIU",
         "ison": "570",
         "emoji": "\ud83c\uddf3\ud83c\uddfa",
@@ -354,7 +354,7 @@ country = [
         "calling_codes": "+683"
     },
     {
-        "\ufeffid": "GG",
+        "id": "GG",
         "iso3": "GGY",
         "ison": "831",
         "emoji": "\ud83c\uddec\ud83c\uddec",
@@ -367,7 +367,7 @@ country = [
         "calling_codes": "+44"
     },
     {
-        "\ufeffid": "VN",
+        "id": "VN",
         "iso3": "VNM",
         "ison": "704",
         "emoji": "\ud83c\uddfb\ud83c\uddf3",
@@ -380,7 +380,7 @@ country = [
         "calling_codes": "+84"
     },
     {
-        "\ufeffid": "AW",
+        "id": "AW",
         "iso3": "ABW",
         "ison": "533",
         "emoji": "\ud83c\udde6\ud83c\uddfc",
@@ -393,7 +393,7 @@ country = [
         "calling_codes": "+297"
     },
     {
-        "\ufeffid": "BL",
+        "id": "BL",
         "iso3": "BLM",
         "ison": "652",
         "emoji": "\ud83c\udde7\ud83c\uddf1",
@@ -406,7 +406,7 @@ country = [
         "calling_codes": "+590"
     },
     {
-        "\ufeffid": "IS",
+        "id": "IS",
         "iso3": "ISL",
         "ison": "352",
         "emoji": "\ud83c\uddee\ud83c\uddf8",
@@ -419,7 +419,7 @@ country = [
         "calling_codes": "+354"
     },
     {
-        "\ufeffid": "IN",
+        "id": "IN",
         "iso3": "IND",
         "ison": "356",
         "emoji": "\ud83c\uddee\ud83c\uddf3",
@@ -432,7 +432,7 @@ country = [
         "calling_codes": "+91"
     },
     {
-        "\ufeffid": "GU",
+        "id": "GU",
         "iso3": "GUM",
         "ison": "316",
         "emoji": "\ud83c\uddec\ud83c\uddfa",
@@ -445,7 +445,7 @@ country = [
         "calling_codes": "+1671"
     },
     {
-        "\ufeffid": "GL",
+        "id": "GL",
         "iso3": "GRL",
         "ison": "304",
         "emoji": "\ud83c\uddec\ud83c\uddf1",
@@ -458,7 +458,7 @@ country = [
         "calling_codes": "+299"
     },
     {
-        "\ufeffid": "MY",
+        "id": "MY",
         "iso3": "MYS",
         "ison": "458",
         "emoji": "\ud83c\uddf2\ud83c\uddfe",
@@ -471,7 +471,7 @@ country = [
         "calling_codes": "+60"
     },
     {
-        "\ufeffid": "CH",
+        "id": "CH",
         "iso3": "CHE",
         "ison": "756",
         "emoji": "\ud83c\udde8\ud83c\udded",
@@ -484,7 +484,7 @@ country = [
         "calling_codes": "+41"
     },
     {
-        "\ufeffid": "NC",
+        "id": "NC",
         "iso3": "NCL",
         "ison": "540",
         "emoji": "\ud83c\uddf3\ud83c\udde8",
@@ -497,7 +497,7 @@ country = [
         "calling_codes": "+687"
     },
     {
-        "\ufeffid": "RW",
+        "id": "RW",
         "iso3": "RWA",
         "ison": "646",
         "emoji": "\ud83c\uddf7\ud83c\uddfc",
@@ -510,7 +510,7 @@ country = [
         "calling_codes": "+250"
     },
     {
-        "\ufeffid": "ZA",
+        "id": "ZA",
         "iso3": "ZAF",
         "ison": "710",
         "emoji": "\ud83c\uddff\ud83c\udde6",
@@ -523,7 +523,7 @@ country = [
         "calling_codes": "+27"
     },
     {
-        "\ufeffid": "GM",
+        "id": "GM",
         "iso3": "GMB",
         "ison": "270",
         "emoji": "\ud83c\uddec\ud83c\uddf2",
@@ -536,7 +536,7 @@ country = [
         "calling_codes": "+220"
     },
     {
-        "\ufeffid": "IM",
+        "id": "IM",
         "iso3": "IMN",
         "ison": "833",
         "emoji": "\ud83c\uddee\ud83c\uddf2",
@@ -549,7 +549,7 @@ country = [
         "calling_codes": "+44"
     },
     {
-        "\ufeffid": "PK",
+        "id": "PK",
         "iso3": "PAK",
         "ison": "586",
         "emoji": "\ud83c\uddf5\ud83c\uddf0",
@@ -562,7 +562,7 @@ country = [
         "calling_codes": "+92"
     },
     {
-        "\ufeffid": "IE",
+        "id": "IE",
         "iso3": "IRL",
         "ison": "372",
         "emoji": "\ud83c\uddee\ud83c\uddea",
@@ -575,7 +575,7 @@ country = [
         "calling_codes": "+353"
     },
     {
-        "\ufeffid": "MS",
+        "id": "MS",
         "iso3": "MSR",
         "ison": "500",
         "emoji": "\ud83c\uddf2\ud83c\uddf8",
@@ -588,7 +588,7 @@ country = [
         "calling_codes": "+1664"
     },
     {
-        "\ufeffid": "TD",
+        "id": "TD",
         "iso3": "TCD",
         "ison": "148",
         "emoji": "\ud83c\uddf9\ud83c\udde9",
@@ -601,7 +601,7 @@ country = [
         "calling_codes": "+235"
     },
     {
-        "\ufeffid": "MF",
+        "id": "MF",
         "iso3": "MAF",
         "ison": "663",
         "emoji": "\ud83c\uddf2\ud83c\uddeb",
@@ -614,7 +614,7 @@ country = [
         "calling_codes": "+590"
     },
     {
-        "\ufeffid": "UY",
+        "id": "UY",
         "iso3": "URY",
         "ison": "858",
         "emoji": "\ud83c\uddfa\ud83c\uddfe",
@@ -627,7 +627,7 @@ country = [
         "calling_codes": "+598"
     },
     {
-        "\ufeffid": "MH",
+        "id": "MH",
         "iso3": "MHL",
         "ison": "584",
         "emoji": "\ud83c\uddf2\ud83c\udded",
@@ -640,7 +640,7 @@ country = [
         "calling_codes": "+692"
     },
     {
-        "\ufeffid": "TZ",
+        "id": "TZ",
         "iso3": "TZA",
         "ison": "834",
         "emoji": "\ud83c\uddf9\ud83c\uddff",
@@ -653,7 +653,7 @@ country = [
         "calling_codes": "+255"
     },
     {
-        "\ufeffid": "PM",
+        "id": "PM",
         "iso3": "SPM",
         "ison": "666",
         "emoji": "\ud83c\uddf5\ud83c\uddf2",
@@ -666,7 +666,7 @@ country = [
         "calling_codes": "+508"
     },
     {
-        "\ufeffid": "GW",
+        "id": "GW",
         "iso3": "GNB",
         "ison": "624",
         "emoji": "\ud83c\uddec\ud83c\uddfc",
@@ -679,7 +679,7 @@ country = [
         "calling_codes": "+245"
     },
     {
-        "\ufeffid": "LU",
+        "id": "LU",
         "iso3": "LUX",
         "ison": "442",
         "emoji": "\ud83c\uddf1\ud83c\uddfa",
@@ -692,7 +692,7 @@ country = [
         "calling_codes": "+352"
     },
     {
-        "\ufeffid": "PE",
+        "id": "PE",
         "iso3": "PER",
         "ison": "604",
         "emoji": "\ud83c\uddf5\ud83c\uddea",
@@ -705,7 +705,7 @@ country = [
         "calling_codes": "+51"
     },
     {
-        "\ufeffid": "LS",
+        "id": "LS",
         "iso3": "LSO",
         "ison": "426",
         "emoji": "\ud83c\uddf1\ud83c\uddf8",
@@ -718,7 +718,7 @@ country = [
         "calling_codes": "+266"
     },
     {
-        "\ufeffid": "CV",
+        "id": "CV",
         "iso3": "CPV",
         "ison": "132",
         "emoji": "\ud83c\udde8\ud83c\uddfb",
@@ -731,7 +731,7 @@ country = [
         "calling_codes": "+238"
     },
     {
-        "\ufeffid": "GE",
+        "id": "GE",
         "iso3": "GEO",
         "ison": "268",
         "emoji": "\ud83c\uddec\ud83c\uddea",
@@ -744,7 +744,7 @@ country = [
         "calling_codes": "+995"
     },
     {
-        "\ufeffid": "MP",
+        "id": "MP",
         "iso3": "MNP",
         "ison": "580",
         "emoji": "\ud83c\uddf2\ud83c\uddf5",
@@ -757,7 +757,7 @@ country = [
         "calling_codes": "+1670"
     },
     {
-        "\ufeffid": "BD",
+        "id": "BD",
         "iso3": "BGD",
         "ison": "50",
         "emoji": "\ud83c\udde7\ud83c\udde9",
@@ -770,7 +770,7 @@ country = [
         "calling_codes": "+880"
     },
     {
-        "\ufeffid": "DJ",
+        "id": "DJ",
         "iso3": "DJI",
         "ison": "262",
         "emoji": "\ud83c\udde9\ud83c\uddef",
@@ -783,7 +783,7 @@ country = [
         "calling_codes": "+253"
     },
     {
-        "\ufeffid": "BY",
+        "id": "BY",
         "iso3": "BLR",
         "ison": "112",
         "emoji": "\ud83c\udde7\ud83c\uddfe",
@@ -796,7 +796,7 @@ country = [
         "calling_codes": "+375"
     },
     {
-        "\ufeffid": "ER",
+        "id": "ER",
         "iso3": "ERI",
         "ison": "232",
         "emoji": "\ud83c\uddea\ud83c\uddf7",
@@ -809,7 +809,7 @@ country = [
         "calling_codes": "+291"
     },
     {
-        "\ufeffid": "SB",
+        "id": "SB",
         "iso3": "SLB",
         "ison": "90",
         "emoji": "\ud83c\uddf8\ud83c\udde7",
@@ -822,7 +822,7 @@ country = [
         "calling_codes": "+677"
     },
     {
-        "\ufeffid": "BG",
+        "id": "BG",
         "iso3": "BGR",
         "ison": "100",
         "emoji": "\ud83c\udde7\ud83c\uddec",
@@ -835,7 +835,7 @@ country = [
         "calling_codes": "+359"
     },
     {
-        "\ufeffid": "BF",
+        "id": "BF",
         "iso3": "BFA",
         "ison": "854",
         "emoji": "\ud83c\udde7\ud83c\uddeb",
@@ -848,7 +848,7 @@ country = [
         "calling_codes": "+226"
     },
     {
-        "\ufeffid": "PH",
+        "id": "PH",
         "iso3": "PHL",
         "ison": "608",
         "emoji": "\ud83c\uddf5\ud83c\udded",
@@ -861,7 +861,7 @@ country = [
         "calling_codes": "+63"
     },
     {
-        "\ufeffid": "TF",
+        "id": "TF",
         "iso3": "ATF",
         "ison": "260",
         "emoji": "\ud83c\uddf9\ud83c\uddeb",
@@ -874,7 +874,7 @@ country = [
         "calling_codes": ""
     },
     {
-        "\ufeffid": "DK",
+        "id": "DK",
         "iso3": "DNK",
         "ison": "208",
         "emoji": "\ud83c\udde9\ud83c\uddf0",
@@ -887,7 +887,7 @@ country = [
         "calling_codes": "+45"
     },
     {
-        "\ufeffid": "JP",
+        "id": "JP",
         "iso3": "JPN",
         "ison": "392",
         "emoji": "\ud83c\uddef\ud83c\uddf5",
@@ -900,7 +900,7 @@ country = [
         "calling_codes": "+81"
     },
     {
-        "\ufeffid": "DG",
+        "id": "DG",
         "iso3": "",
         "ison": "",
         "emoji": "",
@@ -913,7 +913,7 @@ country = [
         "calling_codes": ""
     },
     {
-        "\ufeffid": "NF",
+        "id": "NF",
         "iso3": "NFK",
         "ison": "574",
         "emoji": "\ud83c\uddf3\ud83c\uddeb",
@@ -926,7 +926,7 @@ country = [
         "calling_codes": "+672"
     },
     {
-        "\ufeffid": "AM",
+        "id": "AM",
         "iso3": "ARM",
         "ison": "51",
         "emoji": "\ud83c\udde6\ud83c\uddf2",
@@ -939,7 +939,7 @@ country = [
         "calling_codes": "+374"
     },
     {
-        "\ufeffid": "PA",
+        "id": "PA",
         "iso3": "PAN",
         "ison": "591",
         "emoji": "\ud83c\uddf5\ud83c\udde6",
@@ -952,7 +952,7 @@ country = [
         "calling_codes": "+507"
     },
     {
-        "\ufeffid": "EG",
+        "id": "EG",
         "iso3": "EGY",
         "ison": "818",
         "emoji": "\ud83c\uddea\ud83c\uddec",
@@ -965,7 +965,7 @@ country = [
         "calling_codes": "+20"
     },
     {
-        "\ufeffid": "AC",
+        "id": "AC",
         "iso3": "",
         "ison": "",
         "emoji": "",
@@ -978,7 +978,7 @@ country = [
         "calling_codes": "+247"
     },
     {
-        "\ufeffid": "SY",
+        "id": "SY",
         "iso3": "SYR",
         "ison": "760",
         "emoji": "\ud83c\uddf8\ud83c\uddfe",
@@ -991,7 +991,7 @@ country = [
         "calling_codes": "+963"
     },
     {
-        "\ufeffid": "SI",
+        "id": "SI",
         "iso3": "SVN",
         "ison": "705",
         "emoji": "\ud83c\uddf8\ud83c\uddee",
@@ -1004,7 +1004,7 @@ country = [
         "calling_codes": "+386"
     },
     {
-        "\ufeffid": "MO",
+        "id": "MO",
         "iso3": "MAC",
         "ison": "446",
         "emoji": "\ud83c\uddf2\ud83c\uddf4",
@@ -1017,7 +1017,7 @@ country = [
         "calling_codes": "+853"
     },
     {
-        "\ufeffid": "UM",
+        "id": "UM",
         "iso3": "UMI",
         "ison": "581",
         "emoji": "\ud83c\uddfa\ud83c\uddf2",
@@ -1030,7 +1030,7 @@ country = [
         "calling_codes": "+1"
     },
     {
-        "\ufeffid": "AL",
+        "id": "AL",
         "iso3": "ALB",
         "ison": "8",
         "emoji": "\ud83c\udde6\ud83c\uddf1",
@@ -1043,7 +1043,7 @@ country = [
         "calling_codes": "+355"
     },
     {
-        "\ufeffid": "TM",
+        "id": "TM",
         "iso3": "TKM",
         "ison": "795",
         "emoji": "\ud83c\uddf9\ud83c\uddf2",
@@ -1056,7 +1056,7 @@ country = [
         "calling_codes": "+993"
     },
     {
-        "\ufeffid": "ZM",
+        "id": "ZM",
         "iso3": "ZMB",
         "ison": "894",
         "emoji": "\ud83c\uddff\ud83c\uddf2",
@@ -1069,7 +1069,7 @@ country = [
         "calling_codes": "+260"
     },
     {
-        "\ufeffid": "TN",
+        "id": "TN",
         "iso3": "TUN",
         "ison": "788",
         "emoji": "\ud83c\uddf9\ud83c\uddf3",
@@ -1082,7 +1082,7 @@ country = [
         "calling_codes": "+216"
     },
     {
-        "\ufeffid": "LI",
+        "id": "LI",
         "iso3": "LIE",
         "ison": "438",
         "emoji": "\ud83c\uddf1\ud83c\uddee",
@@ -1095,7 +1095,7 @@ country = [
         "calling_codes": "+423"
     },
     {
-        "\ufeffid": "CR",
+        "id": "CR",
         "iso3": "CRI",
         "ison": "188",
         "emoji": "\ud83c\udde8\ud83c\uddf7",
@@ -1108,7 +1108,7 @@ country = [
         "calling_codes": "+506"
     },
     {
-        "\ufeffid": "TV",
+        "id": "TV",
         "iso3": "TUV",
         "ison": "798",
         "emoji": "\ud83c\uddf9\ud83c\uddfb",
@@ -1121,7 +1121,7 @@ country = [
         "calling_codes": "+688"
     },
     {
-        "\ufeffid": "ME",
+        "id": "ME",
         "iso3": "MNE",
         "ison": "499",
         "emoji": "\ud83c\uddf2\ud83c\uddea",
@@ -1134,7 +1134,7 @@ country = [
         "calling_codes": "+382"
     },
     {
-        "\ufeffid": "SM",
+        "id": "SM",
         "iso3": "SMR",
         "ison": "674",
         "emoji": "\ud83c\uddf8\ud83c\uddf2",
@@ -1147,7 +1147,7 @@ country = [
         "calling_codes": "+378"
     },
     {
-        "\ufeffid": "MW",
+        "id": "MW",
         "iso3": "MWI",
         "ison": "454",
         "emoji": "\ud83c\uddf2\ud83c\uddfc",
@@ -1160,7 +1160,7 @@ country = [
         "calling_codes": "+265"
     },
     {
-        "\ufeffid": "BM",
+        "id": "BM",
         "iso3": "BMU",
         "ison": "60",
         "emoji": "\ud83c\udde7\ud83c\uddf2",
@@ -1173,7 +1173,7 @@ country = [
         "calling_codes": "+1441"
     },
     {
-        "\ufeffid": "MG",
+        "id": "MG",
         "iso3": "MDG",
         "ison": "450",
         "emoji": "\ud83c\uddf2\ud83c\uddec",
@@ -1186,7 +1186,7 @@ country = [
         "calling_codes": "+261"
     },
     {
-        "\ufeffid": "IO",
+        "id": "IO",
         "iso3": "IOT",
         "ison": "86",
         "emoji": "\ud83c\uddee\ud83c\uddf4",
@@ -1199,7 +1199,7 @@ country = [
         "calling_codes": "+246"
     },
     {
-        "\ufeffid": "GB",
+        "id": "GB",
         "iso3": "GBR",
         "ison": "826",
         "emoji": "\ud83c\uddec\ud83c\udde7",
@@ -1212,7 +1212,7 @@ country = [
         "calling_codes": "+44"
     },
     {
-        "\ufeffid": "SE",
+        "id": "SE",
         "iso3": "SWE",
         "ison": "752",
         "emoji": "\ud83c\uddf8\ud83c\uddea",
@@ -1225,7 +1225,7 @@ country = [
         "calling_codes": "+46"
     },
     {
-        "\ufeffid": "TO",
+        "id": "TO",
         "iso3": "TON",
         "ison": "776",
         "emoji": "\ud83c\uddf9\ud83c\uddf4",
@@ -1238,7 +1238,7 @@ country = [
         "calling_codes": "+676"
     },
     {
-        "\ufeffid": "AR",
+        "id": "AR",
         "iso3": "ARG",
         "ison": "32",
         "emoji": "\ud83c\udde6\ud83c\uddf7",
@@ -1251,7 +1251,7 @@ country = [
         "calling_codes": "+54"
     },
     {
-        "\ufeffid": "CZ",
+        "id": "CZ",
         "iso3": "CZE",
         "ison": "203",
         "emoji": "\ud83c\udde8\ud83c\uddff",
@@ -1264,7 +1264,7 @@ country = [
         "calling_codes": "+420"
     },
     {
-        "\ufeffid": "GR",
+        "id": "GR",
         "iso3": "GRC",
         "ison": "300",
         "emoji": "\ud83c\uddec\ud83c\uddf7",
@@ -1277,7 +1277,7 @@ country = [
         "calling_codes": "+30"
     },
     {
-        "\ufeffid": "BS",
+        "id": "BS",
         "iso3": "BHS",
         "ison": "44",
         "emoji": "\ud83c\udde7\ud83c\uddf8",
@@ -1290,7 +1290,7 @@ country = [
         "calling_codes": "+1242"
     },
     {
-        "\ufeffid": "CP",
+        "id": "CP",
         "iso3": "",
         "ison": "",
         "emoji": "",
@@ -1303,7 +1303,7 @@ country = [
         "calling_codes": ""
     },
     {
-        "\ufeffid": "ES",
+        "id": "ES",
         "iso3": "ESP",
         "ison": "724",
         "emoji": "\ud83c\uddea\ud83c\uddf8",
@@ -1316,7 +1316,7 @@ country = [
         "calling_codes": "+34"
     },
     {
-        "\ufeffid": "BJ",
+        "id": "BJ",
         "iso3": "BEN",
         "ison": "204",
         "emoji": "\ud83c\udde7\ud83c\uddef",
@@ -1329,7 +1329,7 @@ country = [
         "calling_codes": "+229"
     },
     {
-        "\ufeffid": "LK",
+        "id": "LK",
         "iso3": "LKA",
         "ison": "144",
         "emoji": "\ud83c\uddf1\ud83c\uddf0",
@@ -1342,7 +1342,7 @@ country = [
         "calling_codes": "+94"
     },
     {
-        "\ufeffid": "AF",
+        "id": "AF",
         "iso3": "AFG",
         "ison": "4",
         "emoji": "\ud83c\udde6\ud83c\uddeb",
@@ -1355,7 +1355,7 @@ country = [
         "calling_codes": "+93"
     },
     {
-        "\ufeffid": "NG",
+        "id": "NG",
         "iso3": "NGA",
         "ison": "566",
         "emoji": "\ud83c\uddf3\ud83c\uddec",
@@ -1368,7 +1368,7 @@ country = [
         "calling_codes": "+234"
     },
     {
-        "\ufeffid": "AG",
+        "id": "AG",
         "iso3": "ATG",
         "ison": "28",
         "emoji": "\ud83c\udde6\ud83c\uddec",
@@ -1381,7 +1381,7 @@ country = [
         "calling_codes": "+1268"
     },
     {
-        "\ufeffid": "UK",
+        "id": "UK",
         "iso3": "",
         "ison": "",
         "emoji": "",
@@ -1394,7 +1394,7 @@ country = [
         "calling_codes": ""
     },
     {
-        "\ufeffid": "HM",
+        "id": "HM",
         "iso3": "HMD",
         "ison": "334",
         "emoji": "\ud83c\udded\ud83c\uddf2",
@@ -1407,7 +1407,7 @@ country = [
         "calling_codes": ""
     },
     {
-        "\ufeffid": "NO",
+        "id": "NO",
         "iso3": "NOR",
         "ison": "578",
         "emoji": "\ud83c\uddf3\ud83c\uddf4",
@@ -1420,7 +1420,7 @@ country = [
         "calling_codes": "+47"
     },
     {
-        "\ufeffid": "MA",
+        "id": "MA",
         "iso3": "MAR",
         "ison": "504",
         "emoji": "\ud83c\uddf2\ud83c\udde6",
@@ -1433,7 +1433,7 @@ country = [
         "calling_codes": "+212"
     },
     {
-        "\ufeffid": "PT",
+        "id": "PT",
         "iso3": "PRT",
         "ison": "620",
         "emoji": "\ud83c\uddf5\ud83c\uddf9",
@@ -1446,7 +1446,7 @@ country = [
         "calling_codes": "+351"
     },
     {
-        "\ufeffid": "PG",
+        "id": "PG",
         "iso3": "PNG",
         "ison": "598",
         "emoji": "\ud83c\uddf5\ud83c\uddec",
@@ -1459,7 +1459,7 @@ country = [
         "calling_codes": "+675"
     },
     {
-        "\ufeffid": "KE",
+        "id": "KE",
         "iso3": "KEN",
         "ison": "404",
         "emoji": "\ud83c\uddf0\ud83c\uddea",
@@ -1472,7 +1472,7 @@ country = [
         "calling_codes": "+254"
     },
     {
-        "\ufeffid": "GF",
+        "id": "GF",
         "iso3": "GUF",
         "ison": "254",
         "emoji": "\ud83c\uddec\ud83c\uddeb",
@@ -1485,7 +1485,7 @@ country = [
         "calling_codes": "+594"
     },
     {
-        "\ufeffid": "EE",
+        "id": "EE",
         "iso3": "EST",
         "ison": "233",
         "emoji": "\ud83c\uddea\ud83c\uddea",
@@ -1498,7 +1498,7 @@ country = [
         "calling_codes": "+372"
     },
     {
-        "\ufeffid": "CW",
+        "id": "CW",
         "iso3": "CUW",
         "ison": "531",
         "emoji": "\ud83c\udde8\ud83c\uddfc",
@@ -1511,7 +1511,7 @@ country = [
         "calling_codes": "+599"
     },
     {
-        "\ufeffid": "AU",
+        "id": "AU",
         "iso3": "AUS",
         "ison": "36",
         "emoji": "\ud83c\udde6\ud83c\uddfa",
@@ -1524,7 +1524,7 @@ country = [
         "calling_codes": "+61"
     },
     {
-        "\ufeffid": "IT",
+        "id": "IT",
         "iso3": "ITA",
         "ison": "380",
         "emoji": "\ud83c\uddee\ud83c\uddf9",
@@ -1537,7 +1537,7 @@ country = [
         "calling_codes": "+39"
     },
     {
-        "\ufeffid": "ZW",
+        "id": "ZW",
         "iso3": "ZWE",
         "ison": "716",
         "emoji": "\ud83c\uddff\ud83c\uddfc",
@@ -1550,7 +1550,7 @@ country = [
         "calling_codes": "+263"
     },
     {
-        "\ufeffid": "BH",
+        "id": "BH",
         "iso3": "BHR",
         "ison": "48",
         "emoji": "\ud83c\udde7\ud83c\udded",
@@ -1563,7 +1563,7 @@ country = [
         "calling_codes": "+973"
     },
     {
-        "\ufeffid": "NP",
+        "id": "NP",
         "iso3": "NPL",
         "ison": "524",
         "emoji": "\ud83c\uddf3\ud83c\uddf5",
@@ -1576,7 +1576,7 @@ country = [
         "calling_codes": "+977"
     },
     {
-        "\ufeffid": "TA",
+        "id": "TA",
         "iso3": "",
         "ison": "",
         "emoji": "",
@@ -1589,7 +1589,7 @@ country = [
         "calling_codes": "+290"
     },
     {
-        "\ufeffid": "SG",
+        "id": "SG",
         "iso3": "SGP",
         "ison": "702",
         "emoji": "\ud83c\uddf8\ud83c\uddec",
@@ -1602,7 +1602,7 @@ country = [
         "calling_codes": "+65"
     },
     {
-        "\ufeffid": "HR",
+        "id": "HR",
         "iso3": "HRV",
         "ison": "191",
         "emoji": "\ud83c\udded\ud83c\uddf7",
@@ -1615,7 +1615,7 @@ country = [
         "calling_codes": "+385"
     },
     {
-        "\ufeffid": "BN",
+        "id": "BN",
         "iso3": "BRN",
         "ison": "96",
         "emoji": "\ud83c\udde7\ud83c\uddf3",
@@ -1628,7 +1628,7 @@ country = [
         "calling_codes": "+673"
     },
     {
-        "\ufeffid": "KY",
+        "id": "KY",
         "iso3": "CYM",
         "ison": "136",
         "emoji": "\ud83c\uddf0\ud83c\uddfe",
@@ -1641,7 +1641,7 @@ country = [
         "calling_codes": "+1345"
     },
     {
-        "\ufeffid": "GA",
+        "id": "GA",
         "iso3": "GAB",
         "ison": "266",
         "emoji": "\ud83c\uddec\ud83c\udde6",
@@ -1654,7 +1654,7 @@ country = [
         "calling_codes": "+241"
     },
     {
-        "\ufeffid": "IQ",
+        "id": "IQ",
         "iso3": "IRQ",
         "ison": "368",
         "emoji": "\ud83c\uddee\ud83c\uddf6",
@@ -1667,7 +1667,7 @@ country = [
         "calling_codes": "+964"
     },
     {
-        "\ufeffid": "PY",
+        "id": "PY",
         "iso3": "PRY",
         "ison": "600",
         "emoji": "\ud83c\uddf5\ud83c\uddfe",
@@ -1680,7 +1680,7 @@ country = [
         "calling_codes": "+595"
     },
     {
-        "\ufeffid": "TG",
+        "id": "TG",
         "iso3": "TGO",
         "ison": "768",
         "emoji": "\ud83c\uddf9\ud83c\uddec",
@@ -1693,7 +1693,7 @@ country = [
         "calling_codes": "+228"
     },
     {
-        "\ufeffid": "NI",
+        "id": "NI",
         "iso3": "NIC",
         "ison": "558",
         "emoji": "\ud83c\uddf3\ud83c\uddee",
@@ -1706,7 +1706,7 @@ country = [
         "calling_codes": "+505"
     },
     {
-        "\ufeffid": "SS",
+        "id": "SS",
         "iso3": "SSD",
         "ison": "728",
         "emoji": "\ud83c\uddf8\ud83c\uddf8",
@@ -1719,7 +1719,7 @@ country = [
         "calling_codes": "+211"
     },
     {
-        "\ufeffid": "CA",
+        "id": "CA",
         "iso3": "CAN",
         "ison": "124",
         "emoji": "\ud83c\udde8\ud83c\udde6",
@@ -1732,7 +1732,7 @@ country = [
         "calling_codes": "+1"
     },
     {
-        "\ufeffid": "SL",
+        "id": "SL",
         "iso3": "SLE",
         "ison": "694",
         "emoji": "\ud83c\uddf8\ud83c\uddf1",
@@ -1745,7 +1745,7 @@ country = [
         "calling_codes": "+232"
     },
     {
-        "\ufeffid": "RE",
+        "id": "RE",
         "iso3": "REU",
         "ison": "638",
         "emoji": "\ud83c\uddf7\ud83c\uddea",
@@ -1758,7 +1758,7 @@ country = [
         "calling_codes": "+262"
     },
     {
-        "\ufeffid": "GH",
+        "id": "GH",
         "iso3": "GHA",
         "ison": "288",
         "emoji": "\ud83c\uddec\ud83c\udded",
@@ -1771,7 +1771,7 @@ country = [
         "calling_codes": "+233"
     },
     {
-        "\ufeffid": "LV",
+        "id": "LV",
         "iso3": "LVA",
         "ison": "428",
         "emoji": "\ud83c\uddf1\ud83c\uddfb",
@@ -1784,7 +1784,7 @@ country = [
         "calling_codes": "+371"
     },
     {
-        "\ufeffid": "AE",
+        "id": "AE",
         "iso3": "ARE",
         "ison": "784",
         "emoji": "\ud83c\udde6\ud83c\uddea",
@@ -1797,7 +1797,7 @@ country = [
         "calling_codes": "+971"
     },
     {
-        "\ufeffid": "TJ",
+        "id": "TJ",
         "iso3": "TJK",
         "ison": "762",
         "emoji": "\ud83c\uddf9\ud83c\uddef",
@@ -1810,7 +1810,7 @@ country = [
         "calling_codes": "+992"
     },
     {
-        "\ufeffid": "DE",
+        "id": "DE",
         "iso3": "DEU",
         "ison": "276",
         "emoji": "\ud83c\udde9\ud83c\uddea",
@@ -1823,7 +1823,7 @@ country = [
         "calling_codes": "+49"
     },
     {
-        "\ufeffid": "CX",
+        "id": "CX",
         "iso3": "CXR",
         "ison": "162",
         "emoji": "\ud83c\udde8\ud83c\uddfd",
@@ -1836,7 +1836,7 @@ country = [
         "calling_codes": "+61"
     },
     {
-        "\ufeffid": "KG",
+        "id": "KG",
         "iso3": "KGZ",
         "ison": "417",
         "emoji": "\ud83c\uddf0\ud83c\uddec",
@@ -1849,7 +1849,7 @@ country = [
         "calling_codes": "+996"
     },
     {
-        "\ufeffid": "KW",
+        "id": "KW",
         "iso3": "KWT",
         "ison": "414",
         "emoji": "\ud83c\uddf0\ud83c\uddfc",
@@ -1862,7 +1862,7 @@ country = [
         "calling_codes": "+965"
     },
     {
-        "\ufeffid": "NZ",
+        "id": "NZ",
         "iso3": "NZL",
         "ison": "554",
         "emoji": "\ud83c\uddf3\ud83c\uddff",
@@ -1875,7 +1875,7 @@ country = [
         "calling_codes": "+64"
     },
     {
-        "\ufeffid": "LR",
+        "id": "LR",
         "iso3": "LBR",
         "ison": "430",
         "emoji": "\ud83c\uddf1\ud83c\uddf7",
@@ -1888,7 +1888,7 @@ country = [
         "calling_codes": "+231"
     },
     {
-        "\ufeffid": "VU",
+        "id": "VU",
         "iso3": "VUT",
         "ison": "548",
         "emoji": "\ud83c\uddfb\ud83c\uddfa",
@@ -1901,7 +1901,7 @@ country = [
         "calling_codes": "+678"
     },
     {
-        "\ufeffid": "SC",
+        "id": "SC",
         "iso3": "SYC",
         "ison": "690",
         "emoji": "\ud83c\uddf8\ud83c\udde8",
@@ -1914,7 +1914,7 @@ country = [
         "calling_codes": "+248"
     },
     {
-        "\ufeffid": "VG",
+        "id": "VG",
         "iso3": "VGB",
         "ison": "92",
         "emoji": "\ud83c\uddfb\ud83c\uddec",
@@ -1927,7 +1927,7 @@ country = [
         "calling_codes": "+1284"
     },
     {
-        "\ufeffid": "FK",
+        "id": "FK",
         "iso3": "FLK",
         "ison": "238",
         "emoji": "\ud83c\uddeb\ud83c\uddf0",
@@ -1940,7 +1940,7 @@ country = [
         "calling_codes": "+500"
     },
     {
-        "\ufeffid": "YE",
+        "id": "YE",
         "iso3": "YEM",
         "ison": "887",
         "emoji": "\ud83c\uddfe\ud83c\uddea",
@@ -1953,7 +1953,7 @@ country = [
         "calling_codes": "+967"
     },
     {
-        "\ufeffid": "ET",
+        "id": "ET",
         "iso3": "ETH",
         "ison": "231",
         "emoji": "\ud83c\uddea\ud83c\uddf9",
@@ -1966,7 +1966,7 @@ country = [
         "calling_codes": "+251"
     },
     {
-        "\ufeffid": "PS",
+        "id": "PS",
         "iso3": "PSE",
         "ison": "275",
         "emoji": "\ud83c\uddf5\ud83c\uddf8",
@@ -1979,7 +1979,7 @@ country = [
         "calling_codes": "+970"
     },
     {
-        "\ufeffid": "FO",
+        "id": "FO",
         "iso3": "FRO",
         "ison": "234",
         "emoji": "\ud83c\uddeb\ud83c\uddf4",
@@ -1992,7 +1992,7 @@ country = [
         "calling_codes": "+298"
     },
     {
-        "\ufeffid": "SK",
+        "id": "SK",
         "iso3": "SVK",
         "ison": "703",
         "emoji": "\ud83c\uddf8\ud83c\uddf0",
@@ -2005,7 +2005,7 @@ country = [
         "calling_codes": "+421"
     },
     {
-        "\ufeffid": "GI",
+        "id": "GI",
         "iso3": "GIB",
         "ison": "292",
         "emoji": "\ud83c\uddec\ud83c\uddee",
@@ -2018,7 +2018,7 @@ country = [
         "calling_codes": "+350"
     },
     {
-        "\ufeffid": "CI",
+        "id": "CI",
         "iso3": "CIV",
         "ison": "384",
         "emoji": "\ud83c\udde8\ud83c\uddee",
@@ -2031,7 +2031,7 @@ country = [
         "calling_codes": "+225"
     },
     {
-        "\ufeffid": "CM",
+        "id": "CM",
         "iso3": "CMR",
         "ison": "120",
         "emoji": "\ud83c\udde8\ud83c\uddf2",
@@ -2044,7 +2044,7 @@ country = [
         "calling_codes": "+237"
     },
     {
-        "\ufeffid": "FR",
+        "id": "FR",
         "iso3": "FRA",
         "ison": "250",
         "emoji": "\ud83c\uddeb\ud83c\uddf7",
@@ -2057,7 +2057,7 @@ country = [
         "calling_codes": "+33"
     },
     {
-        "\ufeffid": "MM",
+        "id": "MM",
         "iso3": "MMR",
         "ison": "104",
         "emoji": "\ud83c\uddf2\ud83c\uddf2",
@@ -2070,7 +2070,7 @@ country = [
         "calling_codes": "+95"
     },
     {
-        "\ufeffid": "PL",
+        "id": "PL",
         "iso3": "POL",
         "ison": "616",
         "emoji": "\ud83c\uddf5\ud83c\uddf1",
@@ -2083,7 +2083,7 @@ country = [
         "calling_codes": "+48"
     },
     {
-        "\ufeffid": "IR",
+        "id": "IR",
         "iso3": "IRN",
         "ison": "364",
         "emoji": "\ud83c\uddee\ud83c\uddf7",
@@ -2096,7 +2096,7 @@ country = [
         "calling_codes": "+98"
     },
     {
-        "\ufeffid": "GP",
+        "id": "GP",
         "iso3": "GLP",
         "ison": "312",
         "emoji": "\ud83c\uddec\ud83c\uddf5",
@@ -2109,7 +2109,7 @@ country = [
         "calling_codes": "+590"
     },
     {
-        "\ufeffid": "SH",
+        "id": "SH",
         "iso3": "SHN",
         "ison": "654",
         "emoji": "\ud83c\uddf8\ud83c\udded",
@@ -2122,7 +2122,7 @@ country = [
         "calling_codes": "+290"
     },
     {
-        "\ufeffid": "BW",
+        "id": "BW",
         "iso3": "BWA",
         "ison": "72",
         "emoji": "\ud83c\udde7\ud83c\uddfc",
@@ -2135,7 +2135,7 @@ country = [
         "calling_codes": "+267"
     },
     {
-        "\ufeffid": "AS",
+        "id": "AS",
         "iso3": "ASM",
         "ison": "16",
         "emoji": "\ud83c\udde6\ud83c\uddf8",
@@ -2148,7 +2148,7 @@ country = [
         "calling_codes": "+1684"
     },
     {
-        "\ufeffid": "MX",
+        "id": "MX",
         "iso3": "MEX",
         "ison": "484",
         "emoji": "\ud83c\uddf2\ud83c\uddfd",
@@ -2161,7 +2161,7 @@ country = [
         "calling_codes": "+52"
     },
     {
-        "\ufeffid": "SN",
+        "id": "SN",
         "iso3": "SEN",
         "ison": "686",
         "emoji": "\ud83c\uddf8\ud83c\uddf3",
@@ -2174,7 +2174,7 @@ country = [
         "calling_codes": "+221"
     },
     {
-        "\ufeffid": "BB",
+        "id": "BB",
         "iso3": "BRB",
         "ison": "52",
         "emoji": "\ud83c\udde7\ud83c\udde7",
@@ -2187,7 +2187,7 @@ country = [
         "calling_codes": "+1246"
     },
     {
-        "\ufeffid": "UG",
+        "id": "UG",
         "iso3": "UGA",
         "ison": "800",
         "emoji": "\ud83c\uddfa\ud83c\uddec",
@@ -2200,7 +2200,7 @@ country = [
         "calling_codes": "+256"
     },
     {
-        "\ufeffid": "FJ",
+        "id": "FJ",
         "iso3": "FJI",
         "ison": "242",
         "emoji": "\ud83c\uddeb\ud83c\uddef",
@@ -2213,7 +2213,7 @@ country = [
         "calling_codes": "+679"
     },
     {
-        "\ufeffid": "MZ",
+        "id": "MZ",
         "iso3": "MOZ",
         "ison": "508",
         "emoji": "\ud83c\uddf2\ud83c\uddff",
@@ -2226,7 +2226,7 @@ country = [
         "calling_codes": "+258"
     },
     {
-        "\ufeffid": "QA",
+        "id": "QA",
         "iso3": "QAT",
         "ison": "634",
         "emoji": "\ud83c\uddf6\ud83c\udde6",
@@ -2239,7 +2239,7 @@ country = [
         "calling_codes": "+974"
     },
     {
-        "\ufeffid": "TH",
+        "id": "TH",
         "iso3": "THA",
         "ison": "764",
         "emoji": "\ud83c\uddf9\ud83c\udded",
@@ -2252,7 +2252,7 @@ country = [
         "calling_codes": "+66"
     },
     {
-        "\ufeffid": "KP",
+        "id": "KP",
         "iso3": "PRK",
         "ison": "408",
         "emoji": "\ud83c\uddf0\ud83c\uddf5",
@@ -2265,7 +2265,7 @@ country = [
         "calling_codes": "+850"
     },
     {
-        "\ufeffid": "UZ",
+        "id": "UZ",
         "iso3": "UZB",
         "ison": "860",
         "emoji": "\ud83c\uddfa\ud83c\uddff",
@@ -2278,7 +2278,7 @@ country = [
         "calling_codes": "+998"
     },
     {
-        "\ufeffid": "JM",
+        "id": "JM",
         "iso3": "JAM",
         "ison": "388",
         "emoji": "\ud83c\uddef\ud83c\uddf2",
@@ -2291,7 +2291,7 @@ country = [
         "calling_codes": "+1876"
     },
     {
-        "\ufeffid": "PF",
+        "id": "PF",
         "iso3": "PYF",
         "ison": "258",
         "emoji": "\ud83c\uddf5\ud83c\uddeb",
@@ -2304,7 +2304,7 @@ country = [
         "calling_codes": "+689"
     },
     {
-        "\ufeffid": "MT",
+        "id": "MT",
         "iso3": "MLT",
         "ison": "470",
         "emoji": "\ud83c\uddf2\ud83c\uddf9",
@@ -2317,7 +2317,7 @@ country = [
         "calling_codes": "+356"
     },
     {
-        "\ufeffid": "CG",
+        "id": "CG",
         "iso3": "COG",
         "ison": "178",
         "emoji": "\ud83c\udde8\ud83c\uddec",
@@ -2330,7 +2330,7 @@ country = [
         "calling_codes": "+242"
     },
     {
-        "\ufeffid": "EA",
+        "id": "EA",
         "iso3": "",
         "ison": "",
         "emoji": "",
@@ -2343,7 +2343,7 @@ country = [
         "calling_codes": ""
     },
     {
-        "\ufeffid": "CD",
+        "id": "CD",
         "iso3": "COD",
         "ison": "180",
         "emoji": "\ud83c\udde8\ud83c\udde9",
@@ -2356,7 +2356,7 @@ country = [
         "calling_codes": "+243"
     },
     {
-        "\ufeffid": "GN",
+        "id": "GN",
         "iso3": "GIN",
         "ison": "324",
         "emoji": "\ud83c\uddec\ud83c\uddf3",
@@ -2369,7 +2369,7 @@ country = [
         "calling_codes": "+224"
     },
     {
-        "\ufeffid": "VA",
+        "id": "VA",
         "iso3": "VAT",
         "ison": "336",
         "emoji": "\ud83c\uddfb\ud83c\udde6",
@@ -2382,7 +2382,7 @@ country = [
         "calling_codes": "+379|+39"
     },
     {
-        "\ufeffid": "TL",
+        "id": "TL",
         "iso3": "TLS",
         "ison": "626",
         "emoji": "\ud83c\uddf9\ud83c\uddf1",
@@ -2395,7 +2395,7 @@ country = [
         "calling_codes": "+670"
     },
     {
-        "\ufeffid": "CN",
+        "id": "CN",
         "iso3": "CHN",
         "ison": "156",
         "emoji": "\ud83c\udde8\ud83c\uddf3",
@@ -2408,7 +2408,7 @@ country = [
         "calling_codes": "+86"
     },
     {
-        "\ufeffid": "UA",
+        "id": "UA",
         "iso3": "UKR",
         "ison": "804",
         "emoji": "\ud83c\uddfa\ud83c\udde6",
@@ -2421,7 +2421,7 @@ country = [
         "calling_codes": "+380"
     },
     {
-        "\ufeffid": "PN",
+        "id": "PN",
         "iso3": "PCN",
         "ison": "612",
         "emoji": "\ud83c\uddf5\ud83c\uddf3",
@@ -2434,7 +2434,7 @@ country = [
         "calling_codes": "+872"
     },
     {
-        "\ufeffid": "EC",
+        "id": "EC",
         "iso3": "ECU",
         "ison": "218",
         "emoji": "\ud83c\uddea\ud83c\udde8",
@@ -2447,7 +2447,7 @@ country = [
         "calling_codes": "+593"
     },
     {
-        "\ufeffid": "HN",
+        "id": "HN",
         "iso3": "HND",
         "ison": "340",
         "emoji": "\ud83c\udded\ud83c\uddf3",
@@ -2460,7 +2460,7 @@ country = [
         "calling_codes": "+504"
     },
     {
-        "\ufeffid": "BI",
+        "id": "BI",
         "iso3": "BDI",
         "ison": "108",
         "emoji": "\ud83c\udde7\ud83c\uddee",
@@ -2473,7 +2473,7 @@ country = [
         "calling_codes": "+257"
     },
     {
-        "\ufeffid": "GT",
+        "id": "GT",
         "iso3": "GTM",
         "ison": "320",
         "emoji": "\ud83c\uddec\ud83c\uddf9",
@@ -2486,7 +2486,7 @@ country = [
         "calling_codes": "+502"
     },
     {
-        "\ufeffid": "TT",
+        "id": "TT",
         "iso3": "TTO",
         "ison": "780",
         "emoji": "\ud83c\uddf9\ud83c\uddf9",
@@ -2499,7 +2499,7 @@ country = [
         "calling_codes": "+1868"
     },
     {
-        "\ufeffid": "SV",
+        "id": "SV",
         "iso3": "SLV",
         "ison": "222",
         "emoji": "\ud83c\uddf8\ud83c\uddfb",
@@ -2512,7 +2512,7 @@ country = [
         "calling_codes": "+503"
     },
     {
-        "\ufeffid": "BR",
+        "id": "BR",
         "iso3": "BRA",
         "ison": "76",
         "emoji": "\ud83c\udde7\ud83c\uddf7",
@@ -2525,7 +2525,7 @@ country = [
         "calling_codes": "+55"
     },
     {
-        "\ufeffid": "MR",
+        "id": "MR",
         "iso3": "MRT",
         "ison": "478",
         "emoji": "\ud83c\uddf2\ud83c\uddf7",
@@ -2538,7 +2538,7 @@ country = [
         "calling_codes": "+222"
     },
     {
-        "\ufeffid": "MN",
+        "id": "MN",
         "iso3": "MNG",
         "ison": "496",
         "emoji": "\ud83c\uddf2\ud83c\uddf3",
@@ -2551,7 +2551,7 @@ country = [
         "calling_codes": "+976"
     },
     {
-        "\ufeffid": "DO",
+        "id": "DO",
         "iso3": "DOM",
         "ison": "214",
         "emoji": "\ud83c\udde9\ud83c\uddf4",
@@ -2564,7 +2564,7 @@ country = [
         "calling_codes": "+1809|+1829|+1849"
     },
     {
-        "\ufeffid": "TK",
+        "id": "TK",
         "iso3": "TKL",
         "ison": "772",
         "emoji": "\ud83c\uddf9\ud83c\uddf0",
@@ -2577,7 +2577,7 @@ country = [
         "calling_codes": "+690"
     },
     {
-        "\ufeffid": "AZ",
+        "id": "AZ",
         "iso3": "AZE",
         "ison": "31",
         "emoji": "\ud83c\udde6\ud83c\uddff",
@@ -2590,7 +2590,7 @@ country = [
         "calling_codes": "+994"
     },
     {
-        "\ufeffid": "BO",
+        "id": "BO",
         "iso3": "BOL",
         "ison": "68",
         "emoji": "\ud83c\udde7\ud83c\uddf4",
@@ -2603,7 +2603,7 @@ country = [
         "calling_codes": "+591"
     },
     {
-        "\ufeffid": "DZ",
+        "id": "DZ",
         "iso3": "DZA",
         "ison": "12",
         "emoji": "\ud83c\udde9\ud83c\uddff",
@@ -2616,7 +2616,7 @@ country = [
         "calling_codes": "+213"
     },
     {
-        "\ufeffid": "AI",
+        "id": "AI",
         "iso3": "AIA",
         "ison": "660",
         "emoji": "\ud83c\udde6\ud83c\uddee",
@@ -2629,7 +2629,7 @@ country = [
         "calling_codes": "+1264"
     },
     {
-        "\ufeffid": "NA",
+        "id": "NA",
         "iso3": "NAM",
         "ison": "516",
         "emoji": "\ud83c\uddf3\ud83c\udde6",
@@ -2642,7 +2642,7 @@ country = [
         "calling_codes": "+264"
     },
     {
-        "\ufeffid": "RS",
+        "id": "RS",
         "iso3": "SRB",
         "ison": "688",
         "emoji": "\ud83c\uddf7\ud83c\uddf8",
@@ -2655,7 +2655,7 @@ country = [
         "calling_codes": "+381"
     },
     {
-        "\ufeffid": "SD",
+        "id": "SD",
         "iso3": "SDN",
         "ison": "729",
         "emoji": "\ud83c\uddf8\ud83c\udde9",
@@ -2668,7 +2668,7 @@ country = [
         "calling_codes": "+249"
     },
     {
-        "\ufeffid": "OM",
+        "id": "OM",
         "iso3": "OMN",
         "ison": "512",
         "emoji": "\ud83c\uddf4\ud83c\uddf2",
@@ -2681,7 +2681,7 @@ country = [
         "calling_codes": "+968"
     },
     {
-        "\ufeffid": "PW",
+        "id": "PW",
         "iso3": "PLW",
         "ison": "585",
         "emoji": "\ud83c\uddf5\ud83c\uddfc",
@@ -2694,7 +2694,7 @@ country = [
         "calling_codes": "+680"
     },
     {
-        "\ufeffid": "WF",
+        "id": "WF",
         "iso3": "WLF",
         "ison": "876",
         "emoji": "\ud83c\uddfc\ud83c\uddeb",
@@ -2707,7 +2707,7 @@ country = [
         "calling_codes": "+681"
     },
     {
-        "\ufeffid": "KZ",
+        "id": "KZ",
         "iso3": "KAZ",
         "ison": "398",
         "emoji": "\ud83c\uddf0\ud83c\uddff",
@@ -2720,7 +2720,7 @@ country = [
         "calling_codes": "+7|+76|+77"
     },
     {
-        "\ufeffid": "TC",
+        "id": "TC",
         "iso3": "TCA",
         "ison": "796",
         "emoji": "\ud83c\uddf9\ud83c\udde8",
@@ -2733,7 +2733,7 @@ country = [
         "calling_codes": "+1649"
     },
     {
-        "\ufeffid": "RO",
+        "id": "RO",
         "iso3": "ROU",
         "ison": "642",
         "emoji": "\ud83c\uddf7\ud83c\uddf4",
@@ -2746,7 +2746,7 @@ country = [
         "calling_codes": "+40"
     },
     {
-        "\ufeffid": "JO",
+        "id": "JO",
         "iso3": "JOR",
         "ison": "400",
         "emoji": "\ud83c\uddef\ud83c\uddf4",
@@ -2759,7 +2759,7 @@ country = [
         "calling_codes": "+962"
     },
     {
-        "\ufeffid": "GS",
+        "id": "GS",
         "iso3": "SGS",
         "ison": "239",
         "emoji": "\ud83c\uddec\ud83c\uddf8",
@@ -2772,7 +2772,7 @@ country = [
         "calling_codes": ""
     },
     {
-        "\ufeffid": "RU",
+        "id": "RU",
         "iso3": "RUS",
         "ison": "643",
         "emoji": "\ud83c\uddf7\ud83c\uddfa",
@@ -2785,7 +2785,7 @@ country = [
         "calling_codes": "+7|+73|+74|+78"
     },
     {
-        "\ufeffid": "VC",
+        "id": "VC",
         "iso3": "VCT",
         "ison": "670",
         "emoji": "\ud83c\uddfb\ud83c\udde8",
@@ -2798,7 +2798,7 @@ country = [
         "calling_codes": "+1784"
     },
     {
-        "\ufeffid": "NL",
+        "id": "NL",
         "iso3": "NLD",
         "ison": "528",
         "emoji": "\ud83c\uddf3\ud83c\uddf1",
@@ -2811,7 +2811,7 @@ country = [
         "calling_codes": "+31"
     },
     {
-        "\ufeffid": "YT",
+        "id": "YT",
         "iso3": "MYT",
         "ison": "175",
         "emoji": "\ud83c\uddfe\ud83c\uddf9",
@@ -2824,7 +2824,7 @@ country = [
         "calling_codes": "+262"
     },
     {
-        "\ufeffid": "PR",
+        "id": "PR",
         "iso3": "PRI",
         "ison": "630",
         "emoji": "\ud83c\uddf5\ud83c\uddf7",
@@ -2837,7 +2837,7 @@ country = [
         "calling_codes": "+1787|+1939"
     },
     {
-        "\ufeffid": "KM",
+        "id": "KM",
         "iso3": "COM",
         "ison": "174",
         "emoji": "\ud83c\uddf0\ud83c\uddf2",
@@ -2850,7 +2850,7 @@ country = [
         "calling_codes": "+269"
     },
     {
-        "\ufeffid": "GD",
+        "id": "GD",
         "iso3": "GRD",
         "ison": "308",
         "emoji": "\ud83c\uddec\ud83c\udde9",
@@ -2863,7 +2863,7 @@ country = [
         "calling_codes": "+473"
     },
     {
-        "\ufeffid": "JE",
+        "id": "JE",
         "iso3": "JEY",
         "ison": "832",
         "emoji": "\ud83c\uddef\ud83c\uddea",
@@ -2876,7 +2876,7 @@ country = [
         "calling_codes": "+44"
     },
     {
-        "\ufeffid": "MK",
+        "id": "MK",
         "iso3": "MKD",
         "ison": "807",
         "emoji": "\ud83c\uddf2\ud83c\uddf0",
@@ -2889,7 +2889,7 @@ country = [
         "calling_codes": "+389"
     },
     {
-        "\ufeffid": "ML",
+        "id": "ML",
         "iso3": "MLI",
         "ison": "466",
         "emoji": "\ud83c\uddf2\ud83c\uddf1",
@@ -2902,7 +2902,7 @@ country = [
         "calling_codes": "+223"
     },
     {
-        "\ufeffid": "FX",
+        "id": "FX",
         "iso3": "",
         "ison": "",
         "emoji": "",
@@ -2915,7 +2915,7 @@ country = [
         "calling_codes": "+241"
     },
     {
-        "\ufeffid": "SO",
+        "id": "SO",
         "iso3": "SOM",
         "ison": "706",
         "emoji": "\ud83c\uddf8\ud83c\uddf4",
@@ -2928,7 +2928,7 @@ country = [
         "calling_codes": "+252"
     },
     {
-        "\ufeffid": "BE",
+        "id": "BE",
         "iso3": "BEL",
         "ison": "56",
         "emoji": "\ud83c\udde7\ud83c\uddea",
@@ -2941,7 +2941,7 @@ country = [
         "calling_codes": "+32"
     },
     {
-        "\ufeffid": "SJ",
+        "id": "SJ",
         "iso3": "SJM",
         "ison": "744",
         "emoji": "\ud83c\uddf8\ud83c\uddef",
@@ -2954,7 +2954,7 @@ country = [
         "calling_codes": "+47"
     },
     {
-        "\ufeffid": "KH",
+        "id": "KH",
         "iso3": "KHM",
         "ison": "116",
         "emoji": "\ud83c\uddf0\ud83c\udded",
@@ -2967,7 +2967,7 @@ country = [
         "calling_codes": "+855"
     },
     {
-        "\ufeffid": "CU",
+        "id": "CU",
         "iso3": "CUB",
         "ison": "192",
         "emoji": "\ud83c\udde8\ud83c\uddfa",
@@ -2980,7 +2980,7 @@ country = [
         "calling_codes": "+53"
     },
     {
-        "\ufeffid": "KR",
+        "id": "KR",
         "iso3": "KOR",
         "ison": "410",
         "emoji": "\ud83c\uddf0\ud83c\uddf7",
@@ -2993,7 +2993,7 @@ country = [
         "calling_codes": "+82"
     },
     {
-        "\ufeffid": "IC",
+        "id": "IC",
         "iso3": "",
         "ison": "",
         "emoji": "",
@@ -3006,7 +3006,7 @@ country = [
         "calling_codes": ""
     },
     {
-        "\ufeffid": "TR",
+        "id": "TR",
         "iso3": "TUR",
         "ison": "792",
         "emoji": "\ud83c\uddf9\ud83c\uddf7",
@@ -3019,7 +3019,7 @@ country = [
         "calling_codes": "+90"
     },
     {
-        "\ufeffid": "MQ",
+        "id": "MQ",
         "iso3": "MTQ",
         "ison": "474",
         "emoji": "\ud83c\uddf2\ud83c\uddf6",
@@ -3032,7 +3032,7 @@ country = [
         "calling_codes": "+596"
     },
     {
-        "\ufeffid": "HK",
+        "id": "HK",
         "iso3": "HKG",
         "ison": "344",
         "emoji": "\ud83c\udded\ud83c\uddf0",
@@ -3045,7 +3045,7 @@ country = [
         "calling_codes": "+852"
     },
     {
-        "\ufeffid": "ID",
+        "id": "ID",
         "iso3": "IDN",
         "ison": "360",
         "emoji": "\ud83c\uddee\ud83c\udde9",
@@ -3058,7 +3058,7 @@ country = [
         "calling_codes": "+62"
     },
     {
-        "\ufeffid": "FM",
+        "id": "FM",
         "iso3": "FSM",
         "ison": "583",
         "emoji": "\ud83c\uddeb\ud83c\uddf2",
@@ -3071,7 +3071,7 @@ country = [
         "calling_codes": "+691"
     },
     {
-        "\ufeffid": "ST",
+        "id": "ST",
         "iso3": "STP",
         "ison": "678",
         "emoji": "\ud83c\uddf8\ud83c\uddf9",
@@ -3084,7 +3084,7 @@ country = [
         "calling_codes": "+239"
     },
     {
-        "\ufeffid": "AO",
+        "id": "AO",
         "iso3": "AGO",
         "ison": "24",
         "emoji": "\ud83c\udde6\ud83c\uddf4",
@@ -3097,7 +3097,7 @@ country = [
         "calling_codes": "+244"
     },
     {
-        "\ufeffid": "CY",
+        "id": "CY",
         "iso3": "CYP",
         "ison": "196",
         "emoji": "\ud83c\udde8\ud83c\uddfe",
@@ -3110,7 +3110,7 @@ country = [
         "calling_codes": "+357"
     },
     {
-        "\ufeffid": "NR",
+        "id": "NR",
         "iso3": "NRU",
         "ison": "520",
         "emoji": "\ud83c\uddf3\ud83c\uddf7",
@@ -3123,7 +3123,7 @@ country = [
         "calling_codes": "+674"
     },
     {
-        "\ufeffid": "BA",
+        "id": "BA",
         "iso3": "BIH",
         "ison": "70",
         "emoji": "\ud83c\udde7\ud83c\udde6",
@@ -3136,7 +3136,7 @@ country = [
         "calling_codes": "+387"
     },
     {
-        "\ufeffid": "CL",
+        "id": "CL",
         "iso3": "CHL",
         "ison": "152",
         "emoji": "\ud83c\udde8\ud83c\uddf1",
@@ -3149,7 +3149,7 @@ country = [
         "calling_codes": "+56"
     },
     {
-        "\ufeffid": "LB",
+        "id": "LB",
         "iso3": "LBN",
         "ison": "422",
         "emoji": "\ud83c\uddf1\ud83c\udde7",
@@ -3162,7 +3162,7 @@ country = [
         "calling_codes": "+961"
     },
     {
-        "\ufeffid": "LY",
+        "id": "LY",
         "iso3": "LBY",
         "ison": "434",
         "emoji": "\ud83c\uddf1\ud83c\uddfe",
@@ -3175,7 +3175,7 @@ country = [
         "calling_codes": "+218"
     },
     {
-        "\ufeffid": "VE",
+        "id": "VE",
         "iso3": "VEN",
         "ison": "862",
         "emoji": "\ud83c\uddfb\ud83c\uddea",
@@ -3188,7 +3188,7 @@ country = [
         "calling_codes": "+58"
     },
     {
-        "\ufeffid": "SU",
+        "id": "SU",
         "iso3": "",
         "ison": "",
         "emoji": "",
@@ -3201,7 +3201,7 @@ country = [
         "calling_codes": ""
     },
     {
-        "\ufeffid": "BQ",
+        "id": "BQ",
         "iso3": "BES",
         "ison": "535",
         "emoji": "\ud83c\udde7\ud83c\uddf6",
@@ -3214,7 +3214,7 @@ country = [
         "calling_codes": "+599"
     },
     {
-        "\ufeffid": "EU",
+        "id": "EU",
         "iso3": "",
         "ison": "",
         "emoji": "\ud83c\uddea\ud83c\uddfa",
@@ -3227,7 +3227,7 @@ country = [
         "calling_codes": "+388"
     },
     {
-        "\ufeffid": "MD",
+        "id": "MD",
         "iso3": "MDA",
         "ison": "498",
         "emoji": "\ud83c\uddf2\ud83c\udde9",
@@ -3240,7 +3240,7 @@ country = [
         "calling_codes": "+373"
     },
     {
-        "\ufeffid": "CC",
+        "id": "CC",
         "iso3": "CCK",
         "ison": "166",
         "emoji": "\ud83c\udde8\ud83c\udde8",
@@ -3253,7 +3253,7 @@ country = [
         "calling_codes": "+61"
     },
     {
-        "\ufeffid": "BZ",
+        "id": "BZ",
         "iso3": "BLZ",
         "ison": "84",
         "emoji": "\ud83c\udde7\ud83c\uddff",
@@ -3266,7 +3266,7 @@ country = [
         "calling_codes": "+501"
     },
     {
-        "\ufeffid": "GQ",
+        "id": "GQ",
         "iso3": "GNQ",
         "ison": "226",
         "emoji": "\ud83c\uddec\ud83c\uddf6",
@@ -3279,7 +3279,7 @@ country = [
         "calling_codes": "+240"
     },
     {
-        "\ufeffid": "SR",
+        "id": "SR",
         "iso3": "SUR",
         "ison": "740",
         "emoji": "\ud83c\uddf8\ud83c\uddf7",
@@ -3292,7 +3292,7 @@ country = [
         "calling_codes": "+597"
     },
     {
-        "\ufeffid": "EH",
+        "id": "EH",
         "iso3": "ESH",
         "ison": "732",
         "emoji": "\ud83c\uddea\ud83c\udded",
@@ -3305,7 +3305,7 @@ country = [
         "calling_codes": "+212"
     },
     {
-        "\ufeffid": "WS",
+        "id": "WS",
         "iso3": "WSM",
         "ison": "882",
         "emoji": "\ud83c\uddfc\ud83c\uddf8",
@@ -3318,7 +3318,7 @@ country = [
         "calling_codes": "+685"
     },
     {
-        "\ufeffid": "TW",
+        "id": "TW",
         "iso3": "TWN",
         "ison": "158",
         "emoji": "\ud83c\uddf9\ud83c\uddfc",
@@ -3331,7 +3331,7 @@ country = [
         "calling_codes": "+886"
     },
     {
-        "\ufeffid": "HU",
+        "id": "HU",
         "iso3": "HUN",
         "ison": "348",
         "emoji": "\ud83c\udded\ud83c\uddfa",
@@ -3344,7 +3344,7 @@ country = [
         "calling_codes": "+36"
     },
     {
-        "\ufeffid": "AX",
+        "id": "AX",
         "iso3": "ALA",
         "ison": "248",
         "emoji": "\ud83c\udde6\ud83c\uddfd",
@@ -3357,7 +3357,7 @@ country = [
         "calling_codes": "+358"
     },
     {
-        "\ufeffid": "BT",
+        "id": "BT",
         "iso3": "BTN",
         "ison": "64",
         "emoji": "\ud83c\udde7\ud83c\uddf9",
@@ -3370,7 +3370,7 @@ country = [
         "calling_codes": "+975"
     },
     {
-        "\ufeffid": "FI",
+        "id": "FI",
         "iso3": "FIN",
         "ison": "246",
         "emoji": "\ud83c\uddeb\ud83c\uddee",
@@ -3387,7 +3387,7 @@ country = [
 # I have checked that each currency in the country table is a valid currency. But there are some extra currencies in the currency table that are not used in any country record (such as bitcoins, etc.).
 currency = [
     {
-        "\ufeffid": "AFN",
+        "id": "AFN",
         "ison": "971",
         "symbol": "\u060b",
         "long_name": "Afghani",
@@ -3396,7 +3396,7 @@ currency = [
         "symbol_alternative": ""
     },
     {
-        "\ufeffid": "DZD",
+        "id": "DZD",
         "ison": "12",
         "symbol": "DA",
         "long_name": "Algerian Dinar",
@@ -3405,7 +3405,7 @@ currency = [
         "symbol_alternative": ""
     },
     {
-        "\ufeffid": "ARS",
+        "id": "ARS",
         "ison": "32",
         "symbol": "$",
         "long_name": "Argentine peso",
@@ -3414,7 +3414,7 @@ currency = [
         "symbol_alternative": ""
     },
     {
-        "\ufeffid": "AMD",
+        "id": "AMD",
         "ison": "51",
         "symbol": "\u058f",
         "long_name": "Armenian Dram",
@@ -3423,7 +3423,7 @@ currency = [
         "symbol_alternative": ""
     },
     {
-        "\ufeffid": "AWG",
+        "id": "AWG",
         "ison": "533",
         "symbol": "\u0192",
         "long_name": "Aruban florin",
@@ -3432,7 +3432,7 @@ currency = [
         "symbol_alternative": ""
     },
     {
-        "\ufeffid": "AUD",
+        "id": "AUD",
         "ison": "36",
         "symbol": "$",
         "long_name": "Australian dollar",
@@ -3441,7 +3441,7 @@ currency = [
         "symbol_alternative": ""
     },
     {
-        "\ufeffid": "AZN",
+        "id": "AZN",
         "ison": "944",
         "symbol": "\u20bc",
         "long_name": "Azerbaijan Manat",
@@ -3450,7 +3450,7 @@ currency = [
         "symbol_alternative": ""
     },
     {
-        "\ufeffid": "BSD",
+        "id": "BSD",
         "ison": "44",
         "symbol": "$",
         "long_name": "Bahamian dollar",
@@ -3459,7 +3459,7 @@ currency = [
         "symbol_alternative": ""
     },
     {
-        "\ufeffid": "BHD",
+        "id": "BHD",
         "ison": "48",
         "symbol": "BD",
         "long_name": "Bahraini Dinar",
@@ -3468,7 +3468,7 @@ currency = [
         "symbol_alternative": ""
     },
     {
-        "\ufeffid": "THB",
+        "id": "THB",
         "ison": "764",
         "symbol": "\u0e3f",
         "long_name": "Baht",
@@ -3477,7 +3477,7 @@ currency = [
         "symbol_alternative": ""
     },
     {
-        "\ufeffid": "PAB",
+        "id": "PAB",
         "ison": "590",
         "symbol": "B/.",
         "long_name": "Balboa",
@@ -3486,7 +3486,7 @@ currency = [
         "symbol_alternative": ""
     },
     {
-        "\ufeffid": "BBD",
+        "id": "BBD",
         "ison": "52",
         "symbol": "$",
         "long_name": "Barbados Dollar",
@@ -3495,7 +3495,7 @@ currency = [
         "symbol_alternative": ""
     },
     {
-        "\ufeffid": "BYN",
+        "id": "BYN",
         "ison": "933",
         "symbol": "Rbl",
         "long_name": "Belarusian ruble",
@@ -3504,7 +3504,7 @@ currency = [
         "symbol_alternative": "Br"
     },
     {
-        "\ufeffid": "BZD",
+        "id": "BZD",
         "ison": "84",
         "symbol": "BZ$",
         "long_name": "Belize Dollar",
@@ -3513,7 +3513,7 @@ currency = [
         "symbol_alternative": ""
     },
     {
-        "\ufeffid": "BMD",
+        "id": "BMD",
         "ison": "60",
         "symbol": "$",
         "long_name": "Bermudian dollar",
@@ -3522,7 +3522,7 @@ currency = [
         "symbol_alternative": ""
     },
     {
-        "\ufeffid": "VES",
+        "id": "VES",
         "ison": "928",
         "symbol": "Bs.S",
         "long_name": "Bol\u00edvar Soberano",
@@ -3531,7 +3531,7 @@ currency = [
         "symbol_alternative": ""
     },
     {
-        "\ufeffid": "BOB",
+        "id": "BOB",
         "ison": "68",
         "symbol": "$b",
         "long_name": "Boliviano",
@@ -3540,7 +3540,7 @@ currency = [
         "symbol_alternative": "Bs"
     },
     {
-        "\ufeffid": "BRL",
+        "id": "BRL",
         "ison": "986",
         "symbol": "R$",
         "long_name": "Brazilian real",
@@ -3549,7 +3549,7 @@ currency = [
         "symbol_alternative": ""
     },
     {
-        "\ufeffid": "BND",
+        "id": "BND",
         "ison": "96",
         "symbol": "$",
         "long_name": "Brunei dollar",
@@ -3558,7 +3558,7 @@ currency = [
         "symbol_alternative": ""
     },
     {
-        "\ufeffid": "BGN",
+        "id": "BGN",
         "ison": "975",
         "symbol": "lev",
         "long_name": "Bulgarian lev",
@@ -3567,7 +3567,7 @@ currency = [
         "symbol_alternative": "\u043b\u0432"
     },
     {
-        "\ufeffid": "BIF",
+        "id": "BIF",
         "ison": "108",
         "symbol": "Fr",
         "long_name": "Burundi Franc",
@@ -3576,7 +3576,7 @@ currency = [
         "symbol_alternative": ""
     },
     {
-        "\ufeffid": "CVE",
+        "id": "CVE",
         "ison": "132",
         "symbol": "$",
         "long_name": "Cabo Verde Escudo",
@@ -3585,7 +3585,7 @@ currency = [
         "symbol_alternative": ""
     },
     {
-        "\ufeffid": "CAD",
+        "id": "CAD",
         "ison": "124",
         "symbol": "$",
         "long_name": "Canadian dollar",
@@ -3594,7 +3594,7 @@ currency = [
         "symbol_alternative": ""
     },
     {
-        "\ufeffid": "KYD",
+        "id": "KYD",
         "ison": "136",
         "symbol": "$",
         "long_name": "Cayman Islands Dollar",
@@ -3603,7 +3603,7 @@ currency = [
         "symbol_alternative": ""
     },
     {
-        "\ufeffid": "XOF",
+        "id": "XOF",
         "ison": "952",
         "symbol": "Fr",
         "long_name": "CFA Franc BCEAO",
@@ -3612,7 +3612,7 @@ currency = [
         "symbol_alternative": ""
     },
     {
-        "\ufeffid": "XAF",
+        "id": "XAF",
         "ison": "950",
         "symbol": "Fr",
         "long_name": "CFA Franc BEAC",
@@ -3621,7 +3621,7 @@ currency = [
         "symbol_alternative": ""
     },
     {
-        "\ufeffid": "XPF",
+        "id": "XPF",
         "ison": "953",
         "symbol": "Fr",
         "long_name": "CFP Franc",
@@ -3630,7 +3630,7 @@ currency = [
         "symbol_alternative": ""
     },
     {
-        "\ufeffid": "CLP",
+        "id": "CLP",
         "ison": "152",
         "symbol": "$",
         "long_name": "Chilean peso",
@@ -3639,7 +3639,7 @@ currency = [
         "symbol_alternative": ""
     },
     {
-        "\ufeffid": "COP",
+        "id": "COP",
         "ison": "170",
         "symbol": "$",
         "long_name": "Colombian peso",
@@ -3648,7 +3648,7 @@ currency = [
         "symbol_alternative": ""
     },
     {
-        "\ufeffid": "KMF",
+        "id": "KMF",
         "ison": "174",
         "symbol": "Fr",
         "long_name": "Comorian Franc",
@@ -3657,7 +3657,7 @@ currency = [
         "symbol_alternative": ""
     },
     {
-        "\ufeffid": "CDF",
+        "id": "CDF",
         "ison": "976",
         "symbol": "Fr",
         "long_name": "Congolese franc",
@@ -3666,7 +3666,7 @@ currency = [
         "symbol_alternative": ""
     },
     {
-        "\ufeffid": "BAM",
+        "id": "BAM",
         "ison": "977",
         "symbol": "KM",
         "long_name": "Convertible Mark",
@@ -3675,7 +3675,7 @@ currency = [
         "symbol_alternative": ""
     },
     {
-        "\ufeffid": "NIO",
+        "id": "NIO",
         "ison": "558",
         "symbol": "C$",
         "long_name": "Cordoba Oro",
@@ -3684,7 +3684,7 @@ currency = [
         "symbol_alternative": ""
     },
     {
-        "\ufeffid": "CRC",
+        "id": "CRC",
         "ison": "188",
         "symbol": "\u20a1",
         "long_name": "Costa Rican Colon",
@@ -3693,7 +3693,7 @@ currency = [
         "symbol_alternative": ""
     },
     {
-        "\ufeffid": "HRK",
+        "id": "HRK",
         "ison": "191",
         "symbol": "kn",
         "long_name": "Croatia Kuna",
@@ -3702,7 +3702,7 @@ currency = [
         "symbol_alternative": ""
     },
     {
-        "\ufeffid": "CUP",
+        "id": "CUP",
         "ison": "192",
         "symbol": "\u20b1",
         "long_name": "Cuban peso",
@@ -3711,7 +3711,7 @@ currency = [
         "symbol_alternative": ""
     },
     {
-        "\ufeffid": "CZK",
+        "id": "CZK",
         "ison": "203",
         "symbol": "K\u010d",
         "long_name": "Czech koruna",
@@ -3720,7 +3720,7 @@ currency = [
         "symbol_alternative": ""
     },
     {
-        "\ufeffid": "GMD",
+        "id": "GMD",
         "ison": "270",
         "symbol": "D",
         "long_name": "Dalasi",
@@ -3729,7 +3729,7 @@ currency = [
         "symbol_alternative": ""
     },
     {
-        "\ufeffid": "DKK",
+        "id": "DKK",
         "ison": "208",
         "symbol": "kr",
         "long_name": "Danish krone",
@@ -3738,7 +3738,7 @@ currency = [
         "symbol_alternative": ""
     },
     {
-        "\ufeffid": "MKD",
+        "id": "MKD",
         "ison": "807",
         "symbol": "\u0434\u0435\u043d",
         "long_name": "Denar",
@@ -3747,7 +3747,7 @@ currency = [
         "symbol_alternative": ""
     },
     {
-        "\ufeffid": "DJF",
+        "id": "DJF",
         "ison": "262",
         "symbol": "Fr",
         "long_name": "Djibouti Franc",
@@ -3756,7 +3756,7 @@ currency = [
         "symbol_alternative": ""
     },
     {
-        "\ufeffid": "STN",
+        "id": "STN",
         "ison": "930",
         "symbol": "Db",
         "long_name": "Dobra",
@@ -3765,7 +3765,7 @@ currency = [
         "symbol_alternative": ""
     },
     {
-        "\ufeffid": "DOP",
+        "id": "DOP",
         "ison": "214",
         "symbol": "RD$",
         "long_name": "Dominican peso",
@@ -3774,7 +3774,7 @@ currency = [
         "symbol_alternative": ""
     },
     {
-        "\ufeffid": "VND",
+        "id": "VND",
         "ison": "704",
         "symbol": "\u20ab",
         "long_name": "Dong",
@@ -3783,7 +3783,7 @@ currency = [
         "symbol_alternative": ""
     },
     {
-        "\ufeffid": "XCD",
+        "id": "XCD",
         "ison": "951",
         "symbol": "$",
         "long_name": "East Caribbean Dollar",
@@ -3792,7 +3792,7 @@ currency = [
         "symbol_alternative": ""
     },
     {
-        "\ufeffid": "EGP",
+        "id": "EGP",
         "ison": "818",
         "symbol": "\u00a3",
         "long_name": "Egyptian pound",
@@ -3801,7 +3801,7 @@ currency = [
         "symbol_alternative": ""
     },
     {
-        "\ufeffid": "SVC",
+        "id": "SVC",
         "ison": "222",
         "symbol": "$",
         "long_name": "El Salvador Colon",
@@ -3810,7 +3810,7 @@ currency = [
         "symbol_alternative": ""
     },
     {
-        "\ufeffid": "ETB",
+        "id": "ETB",
         "ison": "230",
         "symbol": "Br",
         "long_name": "Ethiopian Birr",
@@ -3819,7 +3819,7 @@ currency = [
         "symbol_alternative": ""
     },
     {
-        "\ufeffid": "EUR",
+        "id": "EUR",
         "ison": "978",
         "symbol": "\u20ac",
         "long_name": "Euro",
@@ -3828,7 +3828,7 @@ currency = [
         "symbol_alternative": ""
     },
     {
-        "\ufeffid": "FKP",
+        "id": "FKP",
         "ison": "238",
         "symbol": "\u00a3",
         "long_name": "Falkland Islands pound",
@@ -3837,7 +3837,7 @@ currency = [
         "symbol_alternative": ""
     },
     {
-        "\ufeffid": "FJD",
+        "id": "FJD",
         "ison": "242",
         "symbol": "$",
         "long_name": "Fiji Dollar",
@@ -3846,7 +3846,7 @@ currency = [
         "symbol_alternative": ""
     },
     {
-        "\ufeffid": "SLL",
+        "id": "SLL",
         "ison": "925",
         "symbol": "Le",
         "long_name": "First Leone",
@@ -3855,7 +3855,7 @@ currency = [
         "symbol_alternative": ""
     },
     {
-        "\ufeffid": "HUF",
+        "id": "HUF",
         "ison": "348",
         "symbol": "Ft",
         "long_name": "Forint",
@@ -3864,7 +3864,7 @@ currency = [
         "symbol_alternative": ""
     },
     {
-        "\ufeffid": "GHS",
+        "id": "GHS",
         "ison": "936",
         "symbol": "\u00a2",
         "long_name": "Ghana Cedi",
@@ -3873,7 +3873,7 @@ currency = [
         "symbol_alternative": ""
     },
     {
-        "\ufeffid": "GIP",
+        "id": "GIP",
         "ison": "292",
         "symbol": "\u00a3",
         "long_name": "Gibraltar Pound",
@@ -3882,7 +3882,7 @@ currency = [
         "symbol_alternative": ""
     },
     {
-        "\ufeffid": "HTG",
+        "id": "HTG",
         "ison": "332",
         "symbol": "G",
         "long_name": "Gourde",
@@ -3891,7 +3891,7 @@ currency = [
         "symbol_alternative": ""
     },
     {
-        "\ufeffid": "PYG",
+        "id": "PYG",
         "ison": "600",
         "symbol": "Gs",
         "long_name": "Guarani",
@@ -3900,7 +3900,7 @@ currency = [
         "symbol_alternative": ""
     },
     {
-        "\ufeffid": "GGP",
+        "id": "GGP",
         "ison": "",
         "symbol": "\u00a3",
         "long_name": "Guernsey Pound",
@@ -3909,7 +3909,7 @@ currency = [
         "symbol_alternative": ""
     },
     {
-        "\ufeffid": "GNF",
+        "id": "GNF",
         "ison": "324",
         "symbol": "Fr",
         "long_name": "Guinean Franc",
@@ -3918,7 +3918,7 @@ currency = [
         "symbol_alternative": ""
     },
     {
-        "\ufeffid": "GYD",
+        "id": "GYD",
         "ison": "328",
         "symbol": "$",
         "long_name": "Guyana Dollar",
@@ -3927,7 +3927,7 @@ currency = [
         "symbol_alternative": ""
     },
     {
-        "\ufeffid": "HKD",
+        "id": "HKD",
         "ison": "344",
         "symbol": "$",
         "long_name": "Hong Kong Dollar",
@@ -3936,7 +3936,7 @@ currency = [
         "symbol_alternative": ""
     },
     {
-        "\ufeffid": "UAH",
+        "id": "UAH",
         "ison": "980",
         "symbol": "\u20b4",
         "long_name": "Hryvnia",
@@ -3945,7 +3945,7 @@ currency = [
         "symbol_alternative": ""
     },
     {
-        "\ufeffid": "ISK",
+        "id": "ISK",
         "ison": "352",
         "symbol": "kr",
         "long_name": "Iceland Krona",
@@ -3954,7 +3954,7 @@ currency = [
         "symbol_alternative": ""
     },
     {
-        "\ufeffid": "INR",
+        "id": "INR",
         "ison": "356",
         "symbol": "\u20b9",
         "long_name": "Indian rupee",
@@ -3963,7 +3963,7 @@ currency = [
         "symbol_alternative": ""
     },
     {
-        "\ufeffid": "IRR",
+        "id": "IRR",
         "ison": "364",
         "symbol": "\ufdfc",
         "long_name": "Iranian rial",
@@ -3972,7 +3972,7 @@ currency = [
         "symbol_alternative": ""
     },
     {
-        "\ufeffid": "IQD",
+        "id": "IQD",
         "ison": "368",
         "symbol": "ID",
         "long_name": "Iraqi Dinar",
@@ -3981,7 +3981,7 @@ currency = [
         "symbol_alternative": ""
     },
     {
-        "\ufeffid": "IMP",
+        "id": "IMP",
         "ison": "",
         "symbol": "\u00a3",
         "long_name": "Isle of Man Pound",
@@ -3990,7 +3990,7 @@ currency = [
         "symbol_alternative": ""
     },
     {
-        "\ufeffid": "JMD",
+        "id": "JMD",
         "ison": "388",
         "symbol": "J$",
         "long_name": "Jamaican dollar",
@@ -3999,7 +3999,7 @@ currency = [
         "symbol_alternative": ""
     },
     {
-        "\ufeffid": "JEP",
+        "id": "JEP",
         "ison": "",
         "symbol": "\u00a3",
         "long_name": "Jersey Pound",
@@ -4008,7 +4008,7 @@ currency = [
         "symbol_alternative": ""
     },
     {
-        "\ufeffid": "JOD",
+        "id": "JOD",
         "ison": "400",
         "symbol": "JD",
         "long_name": "Jordanian Dinar",
@@ -4017,7 +4017,7 @@ currency = [
         "symbol_alternative": ""
     },
     {
-        "\ufeffid": "KES",
+        "id": "KES",
         "ison": "404",
         "symbol": "Sh",
         "long_name": "Kenyan Shilling",
@@ -4026,7 +4026,7 @@ currency = [
         "symbol_alternative": ""
     },
     {
-        "\ufeffid": "PGK",
+        "id": "PGK",
         "ison": "598",
         "symbol": "K",
         "long_name": "Kina",
@@ -4035,7 +4035,7 @@ currency = [
         "symbol_alternative": ""
     },
     {
-        "\ufeffid": "KWD",
+        "id": "KWD",
         "ison": "414",
         "symbol": "KD",
         "long_name": "Kuwaiti Dinar",
@@ -4044,7 +4044,7 @@ currency = [
         "symbol_alternative": ""
     },
     {
-        "\ufeffid": "AOA",
+        "id": "AOA",
         "ison": "973",
         "symbol": "Kz",
         "long_name": "Kwanza",
@@ -4053,7 +4053,7 @@ currency = [
         "symbol_alternative": ""
     },
     {
-        "\ufeffid": "MMK",
+        "id": "MMK",
         "ison": "104",
         "symbol": "K or Ks (pl.)",
         "long_name": "Kyat",
@@ -4062,7 +4062,7 @@ currency = [
         "symbol_alternative": ""
     },
     {
-        "\ufeffid": "LAK",
+        "id": "LAK",
         "ison": "418",
         "symbol": "\u20ad",
         "long_name": "Lao kip",
@@ -4071,7 +4071,7 @@ currency = [
         "symbol_alternative": ""
     },
     {
-        "\ufeffid": "GEL",
+        "id": "GEL",
         "ison": "981",
         "symbol": "\u20be",
         "long_name": "Lari",
@@ -4080,7 +4080,7 @@ currency = [
         "symbol_alternative": ""
     },
     {
-        "\ufeffid": "LBP",
+        "id": "LBP",
         "ison": "422",
         "symbol": "\u00a3",
         "long_name": "Lebanese pound",
@@ -4089,7 +4089,7 @@ currency = [
         "symbol_alternative": "LL"
     },
     {
-        "\ufeffid": "ALL",
+        "id": "ALL",
         "ison": "8",
         "symbol": "Lek",
         "long_name": "Lek",
@@ -4098,7 +4098,7 @@ currency = [
         "symbol_alternative": ""
     },
     {
-        "\ufeffid": "HNL",
+        "id": "HNL",
         "ison": "340",
         "symbol": "L",
         "long_name": "Lempira",
@@ -4107,7 +4107,7 @@ currency = [
         "symbol_alternative": ""
     },
     {
-        "\ufeffid": "LRD",
+        "id": "LRD",
         "ison": "430",
         "symbol": "$",
         "long_name": "Liberian dollar",
@@ -4116,7 +4116,7 @@ currency = [
         "symbol_alternative": ""
     },
     {
-        "\ufeffid": "LYD",
+        "id": "LYD",
         "ison": "434",
         "symbol": "LD",
         "long_name": "Libyan Dinar",
@@ -4125,7 +4125,7 @@ currency = [
         "symbol_alternative": ""
     },
     {
-        "\ufeffid": "SZL",
+        "id": "SZL",
         "ison": "748",
         "symbol": "L or E (pl.)",
         "long_name": "Lilangeni",
@@ -4134,7 +4134,7 @@ currency = [
         "symbol_alternative": ""
     },
     {
-        "\ufeffid": "LSL",
+        "id": "LSL",
         "ison": "426",
         "symbol": "L or M (pl.)",
         "long_name": "Loti",
@@ -4143,7 +4143,7 @@ currency = [
         "symbol_alternative": ""
     },
     {
-        "\ufeffid": "MGA",
+        "id": "MGA",
         "ison": "969",
         "symbol": "Ar",
         "long_name": "Malagasy Ariary",
@@ -4152,7 +4152,7 @@ currency = [
         "symbol_alternative": ""
     },
     {
-        "\ufeffid": "MWK",
+        "id": "MWK",
         "ison": "454",
         "symbol": "K",
         "long_name": "Malawi Kwacha",
@@ -4161,7 +4161,7 @@ currency = [
         "symbol_alternative": ""
     },
     {
-        "\ufeffid": "MYR",
+        "id": "MYR",
         "ison": "458",
         "symbol": "RM",
         "long_name": "Malaysian ringgit",
@@ -4170,7 +4170,7 @@ currency = [
         "symbol_alternative": ""
     },
     {
-        "\ufeffid": "MUR",
+        "id": "MUR",
         "ison": "480",
         "symbol": "\u20a8",
         "long_name": "Mauritius Rupee",
@@ -4179,7 +4179,7 @@ currency = [
         "symbol_alternative": ""
     },
     {
-        "\ufeffid": "MXN",
+        "id": "MXN",
         "ison": "484",
         "symbol": "$",
         "long_name": "Mexican peso",
@@ -4188,7 +4188,7 @@ currency = [
         "symbol_alternative": ""
     },
     {
-        "\ufeffid": "MDL",
+        "id": "MDL",
         "ison": "498",
         "symbol": "Leu or Lei (pl.)",
         "long_name": "Moldovan Leu",
@@ -4197,7 +4197,7 @@ currency = [
         "symbol_alternative": ""
     },
     {
-        "\ufeffid": "MAD",
+        "id": "MAD",
         "ison": "504",
         "symbol": "DH",
         "long_name": "Moroccan Dirham",
@@ -4206,7 +4206,7 @@ currency = [
         "symbol_alternative": ".\u062f.\u0645"
     },
     {
-        "\ufeffid": "MZN",
+        "id": "MZN",
         "ison": "943",
         "symbol": "MT",
         "long_name": "Mozambique Metical",
@@ -4215,7 +4215,7 @@ currency = [
         "symbol_alternative": ""
     },
     {
-        "\ufeffid": "BOV",
+        "id": "BOV",
         "ison": "984",
         "symbol": "Mvdol",
         "long_name": "Mvdol",
@@ -4224,7 +4224,7 @@ currency = [
         "symbol_alternative": ""
     },
     {
-        "\ufeffid": "NGN",
+        "id": "NGN",
         "ison": "566",
         "symbol": "\u20a6",
         "long_name": "Naira",
@@ -4233,7 +4233,7 @@ currency = [
         "symbol_alternative": ""
     },
     {
-        "\ufeffid": "ERN",
+        "id": "ERN",
         "ison": "232",
         "symbol": "Nkf",
         "long_name": "Nakfa",
@@ -4242,7 +4242,7 @@ currency = [
         "symbol_alternative": ""
     },
     {
-        "\ufeffid": "NAD",
+        "id": "NAD",
         "ison": "516",
         "symbol": "$",
         "long_name": "Namibia Dollar",
@@ -4251,7 +4251,7 @@ currency = [
         "symbol_alternative": ""
     },
     {
-        "\ufeffid": "NPR",
+        "id": "NPR",
         "ison": "524",
         "symbol": "\u0930\u0942",
         "long_name": "Nepalese rupee",
@@ -4260,7 +4260,7 @@ currency = [
         "symbol_alternative": "\u20a8"
     },
     {
-        "\ufeffid": "ANG",
+        "id": "ANG",
         "ison": "532",
         "symbol": "\u0192",
         "long_name": "Netherlands Antillean guilder",
@@ -4269,7 +4269,7 @@ currency = [
         "symbol_alternative": ""
     },
     {
-        "\ufeffid": "ILS",
+        "id": "ILS",
         "ison": "376",
         "symbol": "\u20aa",
         "long_name": "New Israeli Sheqel",
@@ -4278,7 +4278,7 @@ currency = [
         "symbol_alternative": ""
     },
     {
-        "\ufeffid": "TWD",
+        "id": "TWD",
         "ison": "901",
         "symbol": "NT$",
         "long_name": "New Taiwan dollar",
@@ -4287,7 +4287,7 @@ currency = [
         "symbol_alternative": ""
     },
     {
-        "\ufeffid": "NZD",
+        "id": "NZD",
         "ison": "554",
         "symbol": "$",
         "long_name": "New Zealand Dollar",
@@ -4296,7 +4296,7 @@ currency = [
         "symbol_alternative": ""
     },
     {
-        "\ufeffid": "BTN",
+        "id": "BTN",
         "ison": "64",
         "symbol": "Nu",
         "long_name": "Ngultrum",
@@ -4305,7 +4305,7 @@ currency = [
         "symbol_alternative": ""
     },
     {
-        "\ufeffid": "KPW",
+        "id": "KPW",
         "ison": "408",
         "symbol": "\u20a9",
         "long_name": "North Korean won",
@@ -4314,7 +4314,7 @@ currency = [
         "symbol_alternative": ""
     },
     {
-        "\ufeffid": "NOK",
+        "id": "NOK",
         "ison": "578",
         "symbol": "kr",
         "long_name": "Norwegian krone",
@@ -4323,7 +4323,7 @@ currency = [
         "symbol_alternative": ""
     },
     {
-        "\ufeffid": "MRU",
+        "id": "MRU",
         "ison": "929",
         "symbol": "UM",
         "long_name": "Ouguiya",
@@ -4332,7 +4332,7 @@ currency = [
         "symbol_alternative": ""
     },
     {
-        "\ufeffid": "TOP",
+        "id": "TOP",
         "ison": "776",
         "symbol": "T$",
         "long_name": "Pa\"anga",
@@ -4341,7 +4341,7 @@ currency = [
         "symbol_alternative": ""
     },
     {
-        "\ufeffid": "PKR",
+        "id": "PKR",
         "ison": "586",
         "symbol": "\u20a8",
         "long_name": "Pakistan Rupee",
@@ -4350,7 +4350,7 @@ currency = [
         "symbol_alternative": ""
     },
     {
-        "\ufeffid": "MOP",
+        "id": "MOP",
         "ison": "446",
         "symbol": "MOP$",
         "long_name": "Pataca",
@@ -4359,7 +4359,7 @@ currency = [
         "symbol_alternative": ""
     },
     {
-        "\ufeffid": "UYU",
+        "id": "UYU",
         "ison": "858",
         "symbol": "$U",
         "long_name": "Peso Uruguayo",
@@ -4368,7 +4368,7 @@ currency = [
         "symbol_alternative": ""
     },
     {
-        "\ufeffid": "PHP",
+        "id": "PHP",
         "ison": "608",
         "symbol": "\u20b1",
         "long_name": "Philippine peso",
@@ -4377,7 +4377,7 @@ currency = [
         "symbol_alternative": ""
     },
     {
-        "\ufeffid": "GBP",
+        "id": "GBP",
         "ison": "826",
         "symbol": "\u00a3",
         "long_name": "Pound Sterling",
@@ -4386,7 +4386,7 @@ currency = [
         "symbol_alternative": ""
     },
     {
-        "\ufeffid": "BWP",
+        "id": "BWP",
         "ison": "72",
         "symbol": "P",
         "long_name": "Pula",
@@ -4395,7 +4395,7 @@ currency = [
         "symbol_alternative": ""
     },
     {
-        "\ufeffid": "QAR",
+        "id": "QAR",
         "ison": "634",
         "symbol": "\ufdfc",
         "long_name": "Qatari Rial",
@@ -4404,7 +4404,7 @@ currency = [
         "symbol_alternative": ""
     },
     {
-        "\ufeffid": "GTQ",
+        "id": "GTQ",
         "ison": "320",
         "symbol": "Q",
         "long_name": "Quetzal",
@@ -4413,7 +4413,7 @@ currency = [
         "symbol_alternative": ""
     },
     {
-        "\ufeffid": "ZAR",
+        "id": "ZAR",
         "ison": "710",
         "symbol": "R",
         "long_name": "Rand",
@@ -4422,7 +4422,7 @@ currency = [
         "symbol_alternative": ""
     },
     {
-        "\ufeffid": "OMR",
+        "id": "OMR",
         "ison": "512",
         "symbol": "\ufdfc",
         "long_name": "Rial Omani",
@@ -4431,7 +4431,7 @@ currency = [
         "symbol_alternative": ""
     },
     {
-        "\ufeffid": "KHR",
+        "id": "KHR",
         "ison": "116",
         "symbol": "\u17db",
         "long_name": "Riel",
@@ -4440,7 +4440,7 @@ currency = [
         "symbol_alternative": ""
     },
     {
-        "\ufeffid": "RON",
+        "id": "RON",
         "ison": "946",
         "symbol": "lei",
         "long_name": "Romanian leu",
@@ -4449,7 +4449,7 @@ currency = [
         "symbol_alternative": ""
     },
     {
-        "\ufeffid": "MVR",
+        "id": "MVR",
         "ison": "462",
         "symbol": "Rf",
         "long_name": "Rufiyaa",
@@ -4458,7 +4458,7 @@ currency = [
         "symbol_alternative": ""
     },
     {
-        "\ufeffid": "IDR",
+        "id": "IDR",
         "ison": "360",
         "symbol": "Rp",
         "long_name": "Rupiah",
@@ -4467,7 +4467,7 @@ currency = [
         "symbol_alternative": ""
     },
     {
-        "\ufeffid": "RUB",
+        "id": "RUB",
         "ison": "643",
         "symbol": "\u20bd",
         "long_name": "Russian ruble",
@@ -4476,7 +4476,7 @@ currency = [
         "symbol_alternative": ""
     },
     {
-        "\ufeffid": "RWF",
+        "id": "RWF",
         "ison": "646",
         "symbol": "Fr",
         "long_name": "Rwanda Franc",
@@ -4485,7 +4485,7 @@ currency = [
         "symbol_alternative": ""
     },
     {
-        "\ufeffid": "SHP",
+        "id": "SHP",
         "ison": "654",
         "symbol": "\u00a3",
         "long_name": "Saint Helena Pound",
@@ -4494,7 +4494,7 @@ currency = [
         "symbol_alternative": ""
     },
     {
-        "\ufeffid": "SAR",
+        "id": "SAR",
         "ison": "682",
         "symbol": "\ufdfc",
         "long_name": "Saudi riyal",
@@ -4503,7 +4503,7 @@ currency = [
         "symbol_alternative": ""
     },
     {
-        "\ufeffid": "SLE",
+        "id": "SLE",
         "ison": "925",
         "symbol": "Le",
         "long_name": "Second Leone",
@@ -4512,7 +4512,7 @@ currency = [
         "symbol_alternative": ""
     },
     {
-        "\ufeffid": "RSD",
+        "id": "RSD",
         "ison": "941",
         "symbol": "\u0414\u0438\u043d.",
         "long_name": "Serbian dinar",
@@ -4521,7 +4521,7 @@ currency = [
         "symbol_alternative": ""
     },
     {
-        "\ufeffid": "SCR",
+        "id": "SCR",
         "ison": "690",
         "symbol": "\u20a8",
         "long_name": "Seychelles Rupee",
@@ -4530,7 +4530,7 @@ currency = [
         "symbol_alternative": ""
     },
     {
-        "\ufeffid": "SGD",
+        "id": "SGD",
         "ison": "702",
         "symbol": "$",
         "long_name": "Singapore Dollar",
@@ -4539,7 +4539,7 @@ currency = [
         "symbol_alternative": ""
     },
     {
-        "\ufeffid": "PEN",
+        "id": "PEN",
         "ison": "604",
         "symbol": "S/.",
         "long_name": "Sol",
@@ -4548,7 +4548,7 @@ currency = [
         "symbol_alternative": ""
     },
     {
-        "\ufeffid": "SBD",
+        "id": "SBD",
         "ison": "90",
         "symbol": "$",
         "long_name": "Solomon Islands Dollar",
@@ -4557,7 +4557,7 @@ currency = [
         "symbol_alternative": ""
     },
     {
-        "\ufeffid": "KGS",
+        "id": "KGS",
         "ison": "417",
         "symbol": "som",
         "long_name": "Som",
@@ -4566,7 +4566,7 @@ currency = [
         "symbol_alternative": "\u043b\u0432"
     },
     {
-        "\ufeffid": "SOS",
+        "id": "SOS",
         "ison": "706",
         "symbol": "S",
         "long_name": "Somali shilling",
@@ -4575,7 +4575,7 @@ currency = [
         "symbol_alternative": ""
     },
     {
-        "\ufeffid": "TJS",
+        "id": "TJS",
         "ison": "972",
         "symbol": "SM",
         "long_name": "Somoni",
@@ -4584,7 +4584,7 @@ currency = [
         "symbol_alternative": ""
     },
     {
-        "\ufeffid": "SSP",
+        "id": "SSP",
         "ison": "728",
         "symbol": "\u00a3",
         "long_name": "South Sudanese Pound",
@@ -4593,7 +4593,7 @@ currency = [
         "symbol_alternative": ""
     },
     {
-        "\ufeffid": "LKR",
+        "id": "LKR",
         "ison": "144",
         "symbol": "\u0dbb\u0dd4",
         "long_name": "Sri Lanka Rupee",
@@ -4602,7 +4602,7 @@ currency = [
         "symbol_alternative": "\u20a8"
     },
     {
-        "\ufeffid": "SDG",
+        "id": "SDG",
         "ison": "938",
         "symbol": "LS",
         "long_name": "Sudanese Pound",
@@ -4611,7 +4611,7 @@ currency = [
         "symbol_alternative": ""
     },
     {
-        "\ufeffid": "SRD",
+        "id": "SRD",
         "ison": "968",
         "symbol": "$",
         "long_name": "Surinam Dollar",
@@ -4620,7 +4620,7 @@ currency = [
         "symbol_alternative": ""
     },
     {
-        "\ufeffid": "SEK",
+        "id": "SEK",
         "ison": "752",
         "symbol": "kr",
         "long_name": "Swedish krona",
@@ -4629,7 +4629,7 @@ currency = [
         "symbol_alternative": ""
     },
     {
-        "\ufeffid": "CHF",
+        "id": "CHF",
         "ison": "756",
         "symbol": "CHF",
         "long_name": "Swiss franc",
@@ -4638,7 +4638,7 @@ currency = [
         "symbol_alternative": ""
     },
     {
-        "\ufeffid": "SYP",
+        "id": "SYP",
         "ison": "760",
         "symbol": "\u00a3",
         "long_name": "Syrian pound",
@@ -4647,7 +4647,7 @@ currency = [
         "symbol_alternative": "LS"
     },
     {
-        "\ufeffid": "BDT",
+        "id": "BDT",
         "ison": "50",
         "symbol": "\u09f3",
         "long_name": "Taka",
@@ -4656,7 +4656,7 @@ currency = [
         "symbol_alternative": ""
     },
     {
-        "\ufeffid": "WST",
+        "id": "WST",
         "ison": "882",
         "symbol": "$",
         "long_name": "Tala",
@@ -4665,7 +4665,7 @@ currency = [
         "symbol_alternative": ""
     },
     {
-        "\ufeffid": "TZS",
+        "id": "TZS",
         "ison": "834",
         "symbol": "Sh",
         "long_name": "Tanzanian Shilling",
@@ -4674,7 +4674,7 @@ currency = [
         "symbol_alternative": ""
     },
     {
-        "\ufeffid": "KZT",
+        "id": "KZT",
         "ison": "398",
         "symbol": "\u043b\u0432",
         "long_name": "Tenge",
@@ -4683,7 +4683,7 @@ currency = [
         "symbol_alternative": ""
     },
     {
-        "\ufeffid": "TTD",
+        "id": "TTD",
         "ison": "780",
         "symbol": "TT$",
         "long_name": "Trinidad and Tobago Dollar",
@@ -4692,7 +4692,7 @@ currency = [
         "symbol_alternative": ""
     },
     {
-        "\ufeffid": "MNT",
+        "id": "MNT",
         "ison": "496",
         "symbol": "\u20ae",
         "long_name": "Tugrik",
@@ -4701,7 +4701,7 @@ currency = [
         "symbol_alternative": ""
     },
     {
-        "\ufeffid": "TND",
+        "id": "TND",
         "ison": "788",
         "symbol": "DT",
         "long_name": "Tunisian Dinar",
@@ -4710,7 +4710,7 @@ currency = [
         "symbol_alternative": ""
     },
     {
-        "\ufeffid": "TRY",
+        "id": "TRY",
         "ison": "949",
         "symbol": "\u20ba",
         "long_name": "Turkish lira",
@@ -4719,7 +4719,7 @@ currency = [
         "symbol_alternative": ""
     },
     {
-        "\ufeffid": "TMT",
+        "id": "TMT",
         "ison": "934",
         "symbol": "m",
         "long_name": "Turkmenistan New Manat",
@@ -4728,7 +4728,7 @@ currency = [
         "symbol_alternative": ""
     },
     {
-        "\ufeffid": "TVD",
+        "id": "TVD",
         "ison": "",
         "symbol": "$",
         "long_name": "Tuvalu Dollar",
@@ -4737,7 +4737,7 @@ currency = [
         "symbol_alternative": ""
     },
     {
-        "\ufeffid": "AED",
+        "id": "AED",
         "ison": "784",
         "symbol": "Dh",
         "long_name": "UAE Dirham",
@@ -4746,7 +4746,7 @@ currency = [
         "symbol_alternative": "\u062f.\u0625"
     },
     {
-        "\ufeffid": "UGX",
+        "id": "UGX",
         "ison": "800",
         "symbol": "Sh",
         "long_name": "Uganda Shilling",
@@ -4755,7 +4755,7 @@ currency = [
         "symbol_alternative": ""
     },
     {
-        "\ufeffid": "USD",
+        "id": "USD",
         "ison": "840",
         "symbol": "$",
         "long_name": "US Dollar",
@@ -4764,7 +4764,7 @@ currency = [
         "symbol_alternative": ""
     },
     {
-        "\ufeffid": "UZS",
+        "id": "UZS",
         "ison": "860",
         "symbol": "soum",
         "long_name": "Uzbekistan Sum",
@@ -4773,7 +4773,7 @@ currency = [
         "symbol_alternative": "\u043b\u0432"
     },
     {
-        "\ufeffid": "VUV",
+        "id": "VUV",
         "ison": "548",
         "symbol": "VT",
         "long_name": "Vatu",
@@ -4782,7 +4782,7 @@ currency = [
         "symbol_alternative": ""
     },
     {
-        "\ufeffid": "VEF",
+        "id": "VEF",
         "ison": "",
         "symbol": "Bs",
         "long_name": "Venezuela Bol\u00edvar",
@@ -4791,7 +4791,7 @@ currency = [
         "symbol_alternative": ""
     },
     {
-        "\ufeffid": "KRW",
+        "id": "KRW",
         "ison": "410",
         "symbol": "\u20a9",
         "long_name": "Won",
@@ -4800,7 +4800,7 @@ currency = [
         "symbol_alternative": ""
     },
     {
-        "\ufeffid": "YER",
+        "id": "YER",
         "ison": "886",
         "symbol": "\ufdfc",
         "long_name": "Yemeni rial",
@@ -4809,7 +4809,7 @@ currency = [
         "symbol_alternative": ""
     },
     {
-        "\ufeffid": "JPY",
+        "id": "JPY",
         "ison": "392",
         "symbol": "\u00a5",
         "long_name": "Yen",
@@ -4818,7 +4818,7 @@ currency = [
         "symbol_alternative": ""
     },
     {
-        "\ufeffid": "ZMW",
+        "id": "ZMW",
         "ison": "967",
         "symbol": "K",
         "long_name": "Zambian Kwacha",
@@ -4827,7 +4827,7 @@ currency = [
         "symbol_alternative": ""
     },
     {
-        "\ufeffid": "ZWL",
+        "id": "ZWL",
         "ison": "932",
         "symbol": "Z$",
         "long_name": "Zimbabwe Dollar",
@@ -4836,7 +4836,7 @@ currency = [
         "symbol_alternative": ""
     },
     {
-        "\ufeffid": "PLN",
+        "id": "PLN",
         "ison": "985",
         "symbol": "z\u0142",
         "long_name": "Polish Z\u0142oty",
@@ -4845,7 +4845,7 @@ currency = [
         "symbol_alternative": "PLN"
     },
     {
-        "\ufeffid": "CNY",
+        "id": "CNY",
         "ison": "156",
         "symbol": "\u00a5",
         "long_name": "Chinese Yuan",
@@ -4857,31 +4857,31 @@ currency = [
 
 dimension = [
     {
-        "\ufeffid": "unit",
+        "id": "unit",
         "name": "Unit"
     },
     {
-        "\ufeffid": "duration",
+        "id": "duration",
         "name": "Duration"
     },
     {
-        "\ufeffid": "weight",
+        "id": "weight",
         "name": "Weight"
     },
     {
-        "\ufeffid": "volume",
+        "id": "volume",
         "name": "Volume"
     },
     {
-        "\ufeffid": "length",
+        "id": "length",
         "name": "Length"
     },
     {
-        "\ufeffid": "area",
+        "id": "area",
         "name": "Area"
     },
     {
-        "\ufeffid": "data",
+        "id": "data",
         "name": "Data"
     }
 ]
@@ -4951,567 +4951,567 @@ focus_group = [
 # I have checked that each language in the country table is a valid language. But there are some extra languages in the language table that are not used in any country (such as "Esperanto"). We are not using langues list for now, but we might in the future.
 language = [
     {
-        "\ufeffid": "ABK",
+        "id": "ABK",
         "alpha_2": "AB",
         "name": "Abkhazian"
     },
     {
-        "\ufeffid": "AAR",
+        "id": "AAR",
         "alpha_2": "AA",
         "name": "Afar"
     },
     {
-        "\ufeffid": "AFR",
+        "id": "AFR",
         "alpha_2": "AF",
         "name": "Afrikaans"
     },
     {
-        "\ufeffid": "AKA",
+        "id": "AKA",
         "alpha_2": "AK",
         "name": "Akan"
     },
     {
-        "\ufeffid": "ALB",
+        "id": "ALB",
         "alpha_2": "SQ",
         "name": "Albanian"
     },
     {
-        "\ufeffid": "AMH",
+        "id": "AMH",
         "alpha_2": "AM",
         "name": "Amharic"
     },
     {
-        "\ufeffid": "ARA",
+        "id": "ARA",
         "alpha_2": "AR",
         "name": "Arabic"
     },
     {
-        "\ufeffid": "ARG",
+        "id": "ARG",
         "alpha_2": "AN",
         "name": "Aragonese"
     },
     {
-        "\ufeffid": "ARM",
+        "id": "ARM",
         "alpha_2": "HY",
         "name": "Armenian"
     },
     {
-        "\ufeffid": "ASM",
+        "id": "ASM",
         "alpha_2": "AS",
         "name": "Assamese"
     },
     {
-        "\ufeffid": "AVA",
+        "id": "AVA",
         "alpha_2": "AV",
         "name": "Avaric"
     },
     {
-        "\ufeffid": "AVE",
+        "id": "AVE",
         "alpha_2": "AE",
         "name": "Avestan"
     },
     {
-        "\ufeffid": "AYM",
+        "id": "AYM",
         "alpha_2": "AY",
         "name": "Aymara"
     },
     {
-        "\ufeffid": "AZE",
+        "id": "AZE",
         "alpha_2": "AZ",
         "name": "Azerbaijani"
     },
     {
-        "\ufeffid": "BAM",
+        "id": "BAM",
         "alpha_2": "BM",
         "name": "Bambara"
     },
     {
-        "\ufeffid": "BAK",
+        "id": "BAK",
         "alpha_2": "BA",
         "name": "Bashkir"
     },
     {
-        "\ufeffid": "BAQ",
+        "id": "BAQ",
         "alpha_2": "EU",
         "name": "Basque"
     },
     {
-        "\ufeffid": "BEL",
+        "id": "BEL",
         "alpha_2": "BE",
         "name": "Belarusian"
     },
     {
-        "\ufeffid": "BEN",
+        "id": "BEN",
         "alpha_2": "BN",
         "name": "Bengali"
     },
     {
-        "\ufeffid": "BIH",
+        "id": "BIH",
         "alpha_2": "BH",
         "name": "Bihari"
     },
     {
-        "\ufeffid": "BIS",
+        "id": "BIS",
         "alpha_2": "BI",
         "name": "Bislama"
     },
     {
-        "\ufeffid": "NOB",
+        "id": "NOB",
         "alpha_2": "NB",
         "name": "Bokm\u00e5l"
     },
     {
-        "\ufeffid": "BOS",
+        "id": "BOS",
         "alpha_2": "BS",
         "name": "Bosnian"
     },
     {
-        "\ufeffid": "BRE",
+        "id": "BRE",
         "alpha_2": "BR",
         "name": "Breton"
     },
     {
-        "\ufeffid": "BUL",
+        "id": "BUL",
         "alpha_2": "BG",
         "name": "Bulgarian"
     },
     {
-        "\ufeffid": "BUR",
+        "id": "BUR",
         "alpha_2": "MY",
         "name": "Burmese"
     },
     {
-        "\ufeffid": "CAT",
+        "id": "CAT",
         "alpha_2": "CA",
         "name": "Catalan"
     },
     {
-        "\ufeffid": "CHA",
+        "id": "CHA",
         "alpha_2": "CH",
         "name": "Chamorro"
     },
     {
-        "\ufeffid": "CHE",
+        "id": "CHE",
         "alpha_2": "CE",
         "name": "Chechen"
     },
     {
-        "\ufeffid": "NYA",
+        "id": "NYA",
         "alpha_2": "NY",
         "name": "Chichewa"
     },
     {
-        "\ufeffid": "CHI",
+        "id": "CHI",
         "alpha_2": "ZH",
         "name": "Chinese"
     },
     {
-        "\ufeffid": "CHV",
+        "id": "CHV",
         "alpha_2": "CV",
         "name": "Chuvash"
     },
     {
-        "\ufeffid": "COR",
+        "id": "COR",
         "alpha_2": "KW",
         "name": "Cornish"
     },
     {
-        "\ufeffid": "COS",
+        "id": "COS",
         "alpha_2": "CO",
         "name": "Corsican"
     },
     {
-        "\ufeffid": "CRE",
+        "id": "CRE",
         "alpha_2": "CR",
         "name": "Cree"
     },
     {
-        "\ufeffid": "HRV",
+        "id": "HRV",
         "alpha_2": "HR",
         "name": "Croatian"
     },
     {
-        "\ufeffid": "CZE",
+        "id": "CZE",
         "alpha_2": "CS",
         "name": "Czech"
     },
     {
-        "\ufeffid": "DAN",
+        "id": "DAN",
         "alpha_2": "DA",
         "name": "Danish"
     },
     {
-        "\ufeffid": "DIV",
+        "id": "DIV",
         "alpha_2": "DV",
         "name": "Divehi"
     },
     {
-        "\ufeffid": "DUT",
+        "id": "DUT",
         "alpha_2": "NL",
         "name": "Dutch"
     },
     {
-        "\ufeffid": "DZO",
+        "id": "DZO",
         "alpha_2": "DZ",
         "name": "Dzongkha"
     },
     {
-        "\ufeffid": "ENG",
+        "id": "ENG",
         "alpha_2": "EN",
         "name": "English"
     },
     {
-        "\ufeffid": "EPO",
+        "id": "EPO",
         "alpha_2": "EO",
         "name": "Esperanto"
     },
     {
-        "\ufeffid": "EST",
+        "id": "EST",
         "alpha_2": "ET",
         "name": "Estonian"
     },
     {
-        "\ufeffid": "EWE",
+        "id": "EWE",
         "alpha_2": "EE",
         "name": "Ewe"
     },
     {
-        "\ufeffid": "FAO",
+        "id": "FAO",
         "alpha_2": "FO",
         "name": "Faroese"
     },
     {
-        "\ufeffid": "FIJ",
+        "id": "FIJ",
         "alpha_2": "FJ",
         "name": "Fijian"
     },
     {
-        "\ufeffid": "FIN",
+        "id": "FIN",
         "alpha_2": "FI",
         "name": "Finnish"
     },
     {
-        "\ufeffid": "FRE",
+        "id": "FRE",
         "alpha_2": "FR",
         "name": "French"
     },
     {
-        "\ufeffid": "FUL",
+        "id": "FUL",
         "alpha_2": "FF",
         "name": "Fulah"
     },
     {
-        "\ufeffid": "GLA",
+        "id": "GLA",
         "alpha_2": "GD",
         "name": "Gaelic"
     },
     {
-        "\ufeffid": "GLG",
+        "id": "GLG",
         "alpha_2": "GL",
         "name": "Galician"
     },
     {
-        "\ufeffid": "LUG",
+        "id": "LUG",
         "alpha_2": "LG",
         "name": "Ganda"
     },
     {
-        "\ufeffid": "GEO",
+        "id": "GEO",
         "alpha_2": "KA",
         "name": "Georgian"
     },
     {
-        "\ufeffid": "GER",
+        "id": "GER",
         "alpha_2": "DE",
         "name": "German"
     },
     {
-        "\ufeffid": "GRE",
+        "id": "GRE",
         "alpha_2": "EL",
         "name": "Greek"
     },
     {
-        "\ufeffid": "GRN",
+        "id": "GRN",
         "alpha_2": "GN",
         "name": "Guarani"
     },
     {
-        "\ufeffid": "GUJ",
+        "id": "GUJ",
         "alpha_2": "GU",
         "name": "Gujarati"
     },
     {
-        "\ufeffid": "HAT",
+        "id": "HAT",
         "alpha_2": "HT",
         "name": "Haitian"
     },
     {
-        "\ufeffid": "HAU",
+        "id": "HAU",
         "alpha_2": "HA",
         "name": "Hausa"
     },
     {
-        "\ufeffid": "HEB",
+        "id": "HEB",
         "alpha_2": "HE",
         "name": "Hebrew"
     },
     {
-        "\ufeffid": "HER",
+        "id": "HER",
         "alpha_2": "HZ",
         "name": "Herero"
     },
     {
-        "\ufeffid": "HIN",
+        "id": "HIN",
         "alpha_2": "HI",
         "name": "Hindi"
     },
     {
-        "\ufeffid": "HMO",
+        "id": "HMO",
         "alpha_2": "HO",
         "name": "Hiri Motu"
     },
     {
-        "\ufeffid": "HUN",
+        "id": "HUN",
         "alpha_2": "HU",
         "name": "Hungarian"
     },
     {
-        "\ufeffid": "ICE",
+        "id": "ICE",
         "alpha_2": "IS",
         "name": "Icelandic"
     },
     {
-        "\ufeffid": "IDO",
+        "id": "IDO",
         "alpha_2": "IO",
         "name": "Ido"
     },
     {
-        "\ufeffid": "IBO",
+        "id": "IBO",
         "alpha_2": "IG",
         "name": "Igbo"
     },
     {
-        "\ufeffid": "IND",
+        "id": "IND",
         "alpha_2": "ID",
         "name": "Indonesian"
     },
     {
-        "\ufeffid": "INA",
+        "id": "INA",
         "alpha_2": "IA",
         "name": "Interlingua"
     },
     {
-        "\ufeffid": "ILE",
+        "id": "ILE",
         "alpha_2": "IE",
         "name": "Interlingue (Occidental)"
     },
     {
-        "\ufeffid": "IKU",
+        "id": "IKU",
         "alpha_2": "IU",
         "name": "Inuktitut"
     },
     {
-        "\ufeffid": "IPK",
+        "id": "IPK",
         "alpha_2": "IK",
         "name": "Inupiaq"
     },
     {
-        "\ufeffid": "GLE",
+        "id": "GLE",
         "alpha_2": "GA",
         "name": "Irish"
     },
     {
-        "\ufeffid": "ITA",
+        "id": "ITA",
         "alpha_2": "IT",
         "name": "Italian"
     },
     {
-        "\ufeffid": "JPN",
+        "id": "JPN",
         "alpha_2": "JA",
         "name": "Japanese"
     },
     {
-        "\ufeffid": "JAV",
+        "id": "JAV",
         "alpha_2": "JV",
         "name": "Javanese"
     },
     {
-        "\ufeffid": "KAL",
+        "id": "KAL",
         "alpha_2": "KL",
         "name": "Kalaallisut"
     },
     {
-        "\ufeffid": "KAN",
+        "id": "KAN",
         "alpha_2": "KN",
         "name": "Kannada"
     },
     {
-        "\ufeffid": "KAU",
+        "id": "KAU",
         "alpha_2": "KR",
         "name": "Kanuri"
     },
     {
-        "\ufeffid": "KAS",
+        "id": "KAS",
         "alpha_2": "KS",
         "name": "Kashmiri"
     },
     {
-        "\ufeffid": "KAZ",
+        "id": "KAZ",
         "alpha_2": "KK",
         "name": "Kazakh"
     },
     {
-        "\ufeffid": "KHM",
+        "id": "KHM",
         "alpha_2": "KM",
         "name": "Khmer"
     },
     {
-        "\ufeffid": "KIK",
+        "id": "KIK",
         "alpha_2": "KI",
         "name": "Kikuyu"
     },
     {
-        "\ufeffid": "KIN",
+        "id": "KIN",
         "alpha_2": "RW",
         "name": "Kinyarwanda"
     },
     {
-        "\ufeffid": "KIR",
+        "id": "KIR",
         "alpha_2": "KY",
         "name": "Kirghiz"
     },
     {
-        "\ufeffid": "KOM",
+        "id": "KOM",
         "alpha_2": "KV",
         "name": "Komi"
     },
     {
-        "\ufeffid": "KON",
+        "id": "KON",
         "alpha_2": "KG",
         "name": "Kongo"
     },
     {
-        "\ufeffid": "KOR",
+        "id": "KOR",
         "alpha_2": "KO",
         "name": "Korean"
     },
     {
-        "\ufeffid": "KUA",
+        "id": "KUA",
         "alpha_2": "KJ",
         "name": "Kuanyama"
     },
     {
-        "\ufeffid": "KUR",
+        "id": "KUR",
         "alpha_2": "KU",
         "name": "Kurdish"
     },
     {
-        "\ufeffid": "LAO",
+        "id": "LAO",
         "alpha_2": "LO",
         "name": "Lao"
     },
     {
-        "\ufeffid": "LAT",
+        "id": "LAT",
         "alpha_2": "LA",
         "name": "Latin"
     },
     {
-        "\ufeffid": "LAV",
+        "id": "LAV",
         "alpha_2": "LV",
         "name": "Latvian"
     },
     {
-        "\ufeffid": "LIM",
+        "id": "LIM",
         "alpha_2": "LI",
         "name": "Limburgan"
     },
     {
-        "\ufeffid": "LIN",
+        "id": "LIN",
         "alpha_2": "LN",
         "name": "Lingala"
     },
     {
-        "\ufeffid": "LIT",
+        "id": "LIT",
         "alpha_2": "LT",
         "name": "Lithuanian"
     },
     {
-        "\ufeffid": "LUB",
+        "id": "LUB",
         "alpha_2": "LU",
         "name": "Luba-Katanga"
     },
     {
-        "\ufeffid": "LTZ",
+        "id": "LTZ",
         "alpha_2": "LB",
         "name": "Luxembourgish"
     },
     {
-        "\ufeffid": "MAC",
+        "id": "MAC",
         "alpha_2": "MK",
         "name": "Macedonian"
     },
     {
-        "\ufeffid": "MLG",
+        "id": "MLG",
         "alpha_2": "MG",
         "name": "Malagasy"
     },
     {
-        "\ufeffid": "MAY",
+        "id": "MAY",
         "alpha_2": "MS",
         "name": "Malay"
     },
     {
-        "\ufeffid": "MSA",
+        "id": "MSA",
         "alpha_2": "MS ",
         "name": "Malay"
     },
     {
-        "\ufeffid": "MAL",
+        "id": "MAL",
         "alpha_2": "ML",
         "name": "Malayalam"
     },
     {
-        "\ufeffid": "MLT",
+        "id": "MLT",
         "alpha_2": "MT",
         "name": "Maltese"
     },
     {
-        "\ufeffid": "GLV",
+        "id": "GLV",
         "alpha_2": "GV",
         "name": "Manx"
     },
     {
-        "\ufeffid": "MAO",
+        "id": "MAO",
         "alpha_2": "MI",
         "name": "Maori"
     },
     {
-        "\ufeffid": "MAR",
+        "id": "MAR",
         "alpha_2": "MR",
         "name": "Marathi"
     },
     {
-        "\ufeffid": "MAH",
+        "id": "MAH",
         "alpha_2": "MH",
         "name": "Marshallese"
     },
     {
-        "\ufeffid": "MON",
+        "id": "MON",
         "alpha_2": "MN",
         "name": "Mongolian"
     },
     {
-        "\ufeffid": "NAU",
+        "id": "NAU",
         "alpha_2": "NA",
         "name": "Nauru"
     },
     {
-        "\ufeffid": "NAV",
+        "id": "NAV",
         "alpha_2": "NV",
         "name": "Navajo"
     },
     {
-        "\ufeffid": "NDE",
+        "id": "NDE",
         "alpha_2": "ND",
         "name": "Ndebele",
         "null": [
@@ -5519,7 +5519,7 @@ language = [
         ]
     },
     {
-        "\ufeffid": "NBL",
+        "id": "NBL",
         "alpha_2": "NR",
         "name": "Ndebele",
         "null": [
@@ -5527,362 +5527,362 @@ language = [
         ]
     },
     {
-        "\ufeffid": "NDO",
+        "id": "NDO",
         "alpha_2": "NG",
         "name": "Ndonga"
     },
     {
-        "\ufeffid": "NEP",
+        "id": "NEP",
         "alpha_2": "NE",
         "name": "Nepali"
     },
     {
-        "\ufeffid": "SME",
+        "id": "SME",
         "alpha_2": "SE",
         "name": "Northern Sami"
     },
     {
-        "\ufeffid": "NOR",
+        "id": "NOR",
         "alpha_2": "NO",
         "name": "Norwegian"
     },
     {
-        "\ufeffid": "NNO",
+        "id": "NNO",
         "alpha_2": "NN",
         "name": "Nynorsk"
     },
     {
-        "\ufeffid": "OCI",
+        "id": "OCI",
         "alpha_2": "OC",
         "name": "Occitan"
     },
     {
-        "\ufeffid": "OJI",
+        "id": "OJI",
         "alpha_2": "OJ",
         "name": "Ojibwa"
     },
     {
-        "\ufeffid": "CHU",
+        "id": "CHU",
         "alpha_2": "CU",
         "name": "Old Slavonic"
     },
     {
-        "\ufeffid": "ORI",
+        "id": "ORI",
         "alpha_2": "OR",
         "name": "Oriya"
     },
     {
-        "\ufeffid": "ORM",
+        "id": "ORM",
         "alpha_2": "OM",
         "name": "Oromo"
     },
     {
-        "\ufeffid": "OSS",
+        "id": "OSS",
         "alpha_2": "OS",
         "name": "Ossetian"
     },
     {
-        "\ufeffid": "PLI",
+        "id": "PLI",
         "alpha_2": "PI",
         "name": "Pali"
     },
     {
-        "\ufeffid": "PAN",
+        "id": "PAN",
         "alpha_2": "PA",
         "name": "Panjabi"
     },
     {
-        "\ufeffid": "PER",
+        "id": "PER",
         "alpha_2": "FA",
         "name": "Persian"
     },
     {
-        "\ufeffid": "POL",
+        "id": "POL",
         "alpha_2": "PL",
         "name": "Polish"
     },
     {
-        "\ufeffid": "POR",
+        "id": "POR",
         "alpha_2": "PT",
         "name": "Portuguese"
     },
     {
-        "\ufeffid": "PUS",
+        "id": "PUS",
         "alpha_2": "PS",
         "name": "Pushto"
     },
     {
-        "\ufeffid": "QUE",
+        "id": "QUE",
         "alpha_2": "QU",
         "name": "Quechua"
     },
     {
-        "\ufeffid": "RUM",
+        "id": "RUM",
         "alpha_2": "RO",
         "name": "Romanian"
     },
     {
-        "\ufeffid": "ROH",
+        "id": "ROH",
         "alpha_2": "RM",
         "name": "Romansh"
     },
     {
-        "\ufeffid": "RUN",
+        "id": "RUN",
         "alpha_2": "RN",
         "name": "Rundi"
     },
     {
-        "\ufeffid": "RUS",
+        "id": "RUS",
         "alpha_2": "RU",
         "name": "Russian"
     },
     {
-        "\ufeffid": "SMO",
+        "id": "SMO",
         "alpha_2": "SM",
         "name": "Samoan"
     },
     {
-        "\ufeffid": "SAG",
+        "id": "SAG",
         "alpha_2": "SG",
         "name": "Sango"
     },
     {
-        "\ufeffid": "SAN",
+        "id": "SAN",
         "alpha_2": "SA",
         "name": "Sanskrit"
     },
     {
-        "\ufeffid": "SRD",
+        "id": "SRD",
         "alpha_2": "SC",
         "name": "Sardinian"
     },
     {
-        "\ufeffid": "SRP",
+        "id": "SRP",
         "alpha_2": "SR",
         "name": "Serbian"
     },
     {
-        "\ufeffid": "SNA",
+        "id": "SNA",
         "alpha_2": "SN",
         "name": "Shona"
     },
     {
-        "\ufeffid": "III",
+        "id": "III",
         "alpha_2": "II",
         "name": "Sichuan Yi"
     },
     {
-        "\ufeffid": "SND",
+        "id": "SND",
         "alpha_2": "SD",
         "name": "Sindhi"
     },
     {
-        "\ufeffid": "SIN",
+        "id": "SIN",
         "alpha_2": "SI",
         "name": "Sinhala"
     },
     {
-        "\ufeffid": "SLO",
+        "id": "SLO",
         "alpha_2": "SK",
         "name": "Slovak"
     },
     {
-        "\ufeffid": "SLV",
+        "id": "SLV",
         "alpha_2": "SL",
         "name": "Slovenian"
     },
     {
-        "\ufeffid": "SOM",
+        "id": "SOM",
         "alpha_2": "SO",
         "name": "Somali"
     },
     {
-        "\ufeffid": "SOT",
+        "id": "SOT",
         "alpha_2": "ST",
         "name": "Sotho"
     },
     {
-        "\ufeffid": "SPA",
+        "id": "SPA",
         "alpha_2": "ES",
         "name": "Spanish"
     },
     {
-        "\ufeffid": "SUN",
+        "id": "SUN",
         "alpha_2": "SU",
         "name": "Sundanese"
     },
     {
-        "\ufeffid": "SWA",
+        "id": "SWA",
         "alpha_2": "SW",
         "name": "Swahili"
     },
     {
-        "\ufeffid": "SSW",
+        "id": "SSW",
         "alpha_2": "SS",
         "name": "Swati"
     },
     {
-        "\ufeffid": "SWE",
+        "id": "SWE",
         "alpha_2": "SV",
         "name": "Swedish"
     },
     {
-        "\ufeffid": "TGL",
+        "id": "TGL",
         "alpha_2": "TL",
         "name": "Tagalog"
     },
     {
-        "\ufeffid": "TAH",
+        "id": "TAH",
         "alpha_2": "TY",
         "name": "Tahitian"
     },
     {
-        "\ufeffid": "TGK",
+        "id": "TGK",
         "alpha_2": "TG",
         "name": "Tajik"
     },
     {
-        "\ufeffid": "TAM",
+        "id": "TAM",
         "alpha_2": "TA",
         "name": "Tamil"
     },
     {
-        "\ufeffid": "TAT",
+        "id": "TAT",
         "alpha_2": "TT",
         "name": "Tatar"
     },
     {
-        "\ufeffid": "TEL",
+        "id": "TEL",
         "alpha_2": "TE",
         "name": "Telugu"
     },
     {
-        "\ufeffid": "THA",
+        "id": "THA",
         "alpha_2": "TH",
         "name": "Thai"
     },
     {
-        "\ufeffid": "TIB",
+        "id": "TIB",
         "alpha_2": "BO",
         "name": "Tibetan"
     },
     {
-        "\ufeffid": "TIR",
+        "id": "TIR",
         "alpha_2": "TI",
         "name": "Tigrinya"
     },
     {
-        "\ufeffid": "TON",
+        "id": "TON",
         "alpha_2": "TO",
         "name": "Tonga"
     },
     {
-        "\ufeffid": "TSO",
+        "id": "TSO",
         "alpha_2": "TS",
         "name": "Tsonga"
     },
     {
-        "\ufeffid": "TSN",
+        "id": "TSN",
         "alpha_2": "TN",
         "name": "Tswana"
     },
     {
-        "\ufeffid": "TUR",
+        "id": "TUR",
         "alpha_2": "TR",
         "name": "Turkish"
     },
     {
-        "\ufeffid": "TUK",
+        "id": "TUK",
         "alpha_2": "TK",
         "name": "Turkmen"
     },
     {
-        "\ufeffid": "TWI",
+        "id": "TWI",
         "alpha_2": "TW",
         "name": "Twi"
     },
     {
-        "\ufeffid": "UIG",
+        "id": "UIG",
         "alpha_2": "UG",
         "name": "Uighur"
     },
     {
-        "\ufeffid": "UKR",
+        "id": "UKR",
         "alpha_2": "UK",
         "name": "Ukrainian"
     },
     {
-        "\ufeffid": "URD",
+        "id": "URD",
         "alpha_2": "UR",
         "name": "Urdu"
     },
     {
-        "\ufeffid": "UZB",
+        "id": "UZB",
         "alpha_2": "UZ",
         "name": "Uzbek"
     },
     {
-        "\ufeffid": "VEN",
+        "id": "VEN",
         "alpha_2": "VE",
         "name": "Venda"
     },
     {
-        "\ufeffid": "VIE",
+        "id": "VIE",
         "alpha_2": "VI",
         "name": "Vietnamese"
     },
     {
-        "\ufeffid": "VOL",
+        "id": "VOL",
         "alpha_2": "VO",
         "name": "Volap\u00fck"
     },
     {
-        "\ufeffid": "WLN",
+        "id": "WLN",
         "alpha_2": "WA",
         "name": "Walloon"
     },
     {
-        "\ufeffid": "WEL",
+        "id": "WEL",
         "alpha_2": "CY",
         "name": "Welsh"
     },
     {
-        "\ufeffid": "FRY",
+        "id": "FRY",
         "alpha_2": "FY",
         "name": "Western Frisian"
     },
     {
-        "\ufeffid": "WOL",
+        "id": "WOL",
         "alpha_2": "WO",
         "name": "Wolof"
     },
     {
-        "\ufeffid": "XHO",
+        "id": "XHO",
         "alpha_2": "XH",
         "name": "Xhosa"
     },
     {
-        "\ufeffid": "YID",
+        "id": "YID",
         "alpha_2": "YI",
         "name": "Yiddish"
     },
     {
-        "\ufeffid": "YOR",
+        "id": "YOR",
         "alpha_2": "YO",
         "name": "Yoruba"
     },
     {
-        "\ufeffid": "ZHA",
+        "id": "ZHA",
         "alpha_2": "ZA",
         "name": "Zhuang"
     },
     {
-        "\ufeffid": "ZUL",
+        "id": "ZUL",
         "alpha_2": "ZU",
         "name": "Zulu"
     },
     {
-        "\ufeffid": "CNR",
+        "id": "CNR",
         "alpha_2": "",
         "name": "Montenegrin"
     }
@@ -5891,7 +5891,7 @@ language = [
 # menu groups are a way to group section (ie. navigation items) in the left-menu
 menu_group = [
     {
-        "\ufeffid": "transactions",
+        "id": "transactions",
         "name": "Transactions",
         "icon": "grommet-icons:transaction",
         "section_ids": "contract|order|commitment|payment|lettering",
@@ -5902,7 +5902,7 @@ menu_group = [
         "permission_group": "transaction"
     },
     {
-        "\ufeffid": "account",
+        "id": "account",
         "name": "Account",
         "icon": "ic:baseline-api",
         "section_ids": "account|members|related_account",
@@ -5913,7 +5913,7 @@ menu_group = [
         "permission_group": "account"
     },
     {
-        "\ufeffid": "user",
+        "id": "user",
         "name": "User",
         "icon": "mdi:user-circle",
         "section_ids": "user|my_account",
@@ -5924,7 +5924,7 @@ menu_group = [
         "permission_group": ""
     },
     {
-        "\ufeffid": "configuration",
+        "id": "configuration",
         "name": "Configuration",
         "icon": "material-symbols:settings",
         "section_ids": "product|wallet|payment_term|payment_structure|third_party",
@@ -5935,7 +5935,7 @@ menu_group = [
         "permission_group": "account"
     },
     {
-        "\ufeffid": "cash",
+        "id": "cash",
         "name": "Cash management",
         "icon": "eos-icons:trusted-organization",
         "section_ids": "charter|monthly_resolution|annual_resolution",
@@ -5946,7 +5946,7 @@ menu_group = [
         "permission_group": "account"
     },
     {
-        "\ufeffid": "system",
+        "id": "system",
         "name": "System",
         "icon": "pajamas:status-health",
         "section_ids": "bTPTD|bTPWy|bTPcg",
@@ -5963,7 +5963,7 @@ menu_group = [
 
 navigation = [
     {
-        "\ufeffid": "account",
+        "id": "account",
         "icon": "solar:user-id-bold",
         "singular": "Account",
         "plural": "Account information",
@@ -5978,7 +5978,7 @@ navigation = [
         "emoji": ""
     },
     {
-        "\ufeffid": "allocation",
+        "id": "allocation",
         "icon": "lets-icons:transfer-right",
         "singular": "Allocation",
         "plural": "Allocations",
@@ -5993,7 +5993,7 @@ navigation = [
         "emoji": ""
     },
     {
-        "\ufeffid": "annual_resolution",
+        "id": "annual_resolution",
         "icon": "mdi:calendar-star",
         "singular": "Annual resolution",
         "plural": "Annual resolutions",
@@ -6008,7 +6008,7 @@ navigation = [
         "emoji": ""
     },
     {
-        "\ufeffid": "associate",
+        "id": "associate",
         "icon": "material-symbols:partner-exchange",
         "singular": "Associate",
         "plural": "Associates",
@@ -6023,7 +6023,7 @@ navigation = [
         "emoji": ""
     },
     {
-        "\ufeffid": "balance",
+        "id": "balance",
         "icon": "ic:round-horizontal-split",
         "singular": "Balance",
         "plural": "Balances",
@@ -6038,7 +6038,7 @@ navigation = [
         "emoji": ""
     },
     {
-        "\ufeffid": "charter",
+        "id": "charter",
         "icon": "iconamoon:certificate-badge-fill",
         "singular": "Charter",
         "plural": "Charter",
@@ -6053,7 +6053,7 @@ navigation = [
         "emoji": ""
     },
     {
-        "\ufeffid": "commitment",
+        "id": "commitment",
         "icon": "fa6-regular:handshake",
         "singular": "Commitment",
         "plural": "Commitments",
@@ -6068,7 +6068,7 @@ navigation = [
         "emoji": ""
     },
     {
-        "\ufeffid": "contract",
+        "id": "contract",
         "icon": "mdi:file-sign",
         "singular": "Contract",
         "plural": "Contracts",
@@ -6083,7 +6083,7 @@ navigation = [
         "emoji": ""
     },
     {
-        "\ufeffid": "conversion",
+        "id": "conversion",
         "icon": "material-symbols:conversion-path",
         "singular": "Conversion",
         "plural": "Conversions",
@@ -6098,7 +6098,7 @@ navigation = [
         "emoji": ""
     },
     {
-        "\ufeffid": "country",
+        "id": "country",
         "icon": "ic:baseline-language",
         "singular": "Country",
         "plural": "Countries",
@@ -6113,7 +6113,7 @@ navigation = [
         "emoji": ""
     },
     {
-        "\ufeffid": "currency",
+        "id": "currency",
         "icon": "tabler:currency",
         "singular": "Currency",
         "plural": "Currencies",
@@ -6128,7 +6128,7 @@ navigation = [
         "emoji": ""
     },
     {
-        "\ufeffid": "custodian",
+        "id": "custodian",
         "icon": "fa:bank",
         "singular": "Custodian",
         "plural": "Custodians",
@@ -6143,7 +6143,7 @@ navigation = [
         "emoji": ""
     },
     {
-        "\ufeffid": "emoji",
+        "id": "emoji",
         "icon": "logos:hugging-face-icon",
         "singular": "Emoji",
         "plural": "Emojis",
@@ -6158,7 +6158,7 @@ navigation = [
         "emoji": ""
     },
     {
-        "\ufeffid": "equity",
+        "id": "equity",
         "icon": "mdi:account-cash",
         "singular": "Equity",
         "plural": "Equity",
@@ -6173,7 +6173,7 @@ navigation = [
         "emoji": ""
     },
     {
-        "\ufeffid": "grouping",
+        "id": "grouping",
         "icon": "lets-icons:group-light",
         "singular": "Grouping",
         "plural": "Groupings",
@@ -6188,7 +6188,7 @@ navigation = [
         "emoji": ""
     },
     {
-        "\ufeffid": "icon",
+        "id": "icon",
         "icon": "ph:smiley",
         "singular": "Icon",
         "plural": "Icons",
@@ -6203,7 +6203,7 @@ navigation = [
         "emoji": ""
     },
     {
-        "\ufeffid": "info",
+        "id": "info",
         "icon": "mdi:information-variant-circle-outline",
         "singular": "Info",
         "plural": "Info",
@@ -6218,7 +6218,7 @@ navigation = [
         "emoji": ""
     },
     {
-        "\ufeffid": "item",
+        "id": "item",
         "icon": "",
         "singular": "Item",
         "plural": "Items",
@@ -6233,7 +6233,7 @@ navigation = [
         "emoji": ""
     },
     {
-        "\ufeffid": "language",
+        "id": "language",
         "icon": "clarity:language-solid",
         "singular": "Language",
         "plural": "Languages",
@@ -6248,7 +6248,7 @@ navigation = [
         "emoji": ""
     },
     {
-        "\ufeffid": "lettering",
+        "id": "lettering",
         "icon": "fluent:receipt-money-24-regular",
         "singular": "Lettering",
         "plural": "Lettering",
@@ -6263,7 +6263,7 @@ navigation = [
         "emoji": ""
     },
     {
-        "\ufeffid": "member",
+        "id": "member",
         "icon": "codicon:organization",
         "singular": "Member",
         "plural": "Members",
@@ -6278,7 +6278,7 @@ navigation = [
         "emoji": ""
     },
     {
-        "\ufeffid": "monthly_resolution",
+        "id": "monthly_resolution",
         "icon": "mdi:calendar-refresh-outline",
         "singular": "Monthly resolution",
         "plural": "Monthly resolutions",
@@ -6293,7 +6293,7 @@ navigation = [
         "emoji": ""
     },
     {
-        "\ufeffid": "membership",
+        "id": "membership",
         "icon": "iconoir:network-reverse-solid",
         "singular": "Membership",
         "plural": "Memberships",
@@ -6308,7 +6308,7 @@ navigation = [
         "emoji": ""
     },
     {
-        "\ufeffid": "navigation",
+        "id": "navigation",
         "icon": "mdi:compass-rose",
         "singular": "Navigation",
         "plural": "Navigation",
@@ -6323,7 +6323,7 @@ navigation = [
         "emoji": ""
     },
     {
-        "\ufeffid": "order",
+        "id": "order",
         "icon": "material-symbols:order-approve-outline-rounded",
         "singular": "Order",
         "plural": "Orders",
@@ -6338,7 +6338,7 @@ navigation = [
         "emoji": ""
     },
     {
-        "\ufeffid": "organization",
+        "id": "organization",
         "icon": "f7:building-2",
         "singular": "Organization",
         "plural": "Organizations",
@@ -6353,7 +6353,7 @@ navigation = [
         "emoji": ""
     },
     {
-        "\ufeffid": "overview",
+        "id": "overview",
         "icon": "",
         "singular": "Overview",
         "plural": "Overview",
@@ -6368,7 +6368,7 @@ navigation = [
         "emoji": ""
     },
     {
-        "\ufeffid": "payment_structure",
+        "id": "payment_structure",
         "icon": "fa:tags",
         "singular": "Payment structure",
         "plural": "Payment structures",
@@ -6383,7 +6383,7 @@ navigation = [
         "emoji": ""
     },
     {
-        "\ufeffid": "payment_term",
+        "id": "payment_term",
         "icon": "clarity:tag-solid",
         "singular": "Payment term",
         "plural": "Payment terms",
@@ -6398,7 +6398,7 @@ navigation = [
         "emoji": ""
     },
     {
-        "\ufeffid": "payment",
+        "id": "payment",
         "icon": "fluent:money-24-regular",
         "singular": "Payment",
         "plural": "Payments",
@@ -6413,7 +6413,7 @@ navigation = [
         "emoji": ""
     },
     {
-        "\ufeffid": "pocket",
+        "id": "pocket",
         "icon": "mdi:wallet-bifold-outline",
         "singular": "Pocket",
         "plural": "Pockets",
@@ -6428,7 +6428,7 @@ navigation = [
         "emoji": ""
     },
     {
-        "\ufeffid": "product",
+        "id": "product",
         "icon": "fluent-mdl2:product-variant",
         "singular": "Product",
         "plural": "Products",
@@ -6443,7 +6443,7 @@ navigation = [
         "emoji": ""
     },
     {
-        "\ufeffid": "reserve",
+        "id": "reserve",
         "icon": "mdi:cash-lock",
         "singular": "Reserve",
         "plural": "Reserves",
@@ -6458,7 +6458,7 @@ navigation = [
         "emoji": ""
     },
     {
-        "\ufeffid": "status",
+        "id": "status",
         "icon": "pajamas:status-health",
         "singular": "Status",
         "plural": "Statuses",
@@ -6473,7 +6473,7 @@ navigation = [
         "emoji": ""
     },
     {
-        "\ufeffid": "subaccount",
+        "id": "subaccount",
         "icon": "icon-park-outline:network-tree",
         "singular": "Subaccount",
         "plural": "Subaccounts",
@@ -6488,7 +6488,7 @@ navigation = [
         "emoji": ""
     },
     {
-        "\ufeffid": "pocket",
+        "id": "pocket",
         "icon": "solar:user-id-bold",
         "singular": "test",
         "plural": "tests",
@@ -6503,7 +6503,7 @@ navigation = [
         "emoji": ""
     },
     {
-        "\ufeffid": "third_party",
+        "id": "third_party",
         "icon": "mdi:people-switch",
         "singular": "Third-party",
         "plural": "Third-parties",
@@ -6518,7 +6518,7 @@ navigation = [
         "emoji": ""
     },
     {
-        "\ufeffid": "tranche",
+        "id": "tranche",
         "icon": "ic:outline-vertical-split",
         "singular": "Tranche",
         "plural": "Tranches",
@@ -6533,7 +6533,7 @@ navigation = [
         "emoji": ""
     },
     {
-        "\ufeffid": "unspecified_account",
+        "id": "unspecified_account",
         "icon": "bi:question-lg",
         "singular": "Unspecified account",
         "plural": "",
@@ -6548,7 +6548,7 @@ navigation = [
         "emoji": "\u2753"
     },
     {
-        "\ufeffid": "user",
+        "id": "user",
         "icon": "mdi:account-cog",
         "singular": "User",
         "plural": "Users",
@@ -6563,7 +6563,7 @@ navigation = [
         "emoji": ""
     },
     {
-        "\ufeffid": "wallet",
+        "id": "wallet",
         "icon": "fluent:wallet-credit-card-24-filled",
         "singular": "Wallet",
         "plural": "Wallets",
@@ -6578,7 +6578,7 @@ navigation = [
         "emoji": ""
     },
     {
-        "\ufeffid": "Display",
+        "id": "Display",
         "icon": "",
         "singular": "Display",
         "plural": "",
@@ -6593,7 +6593,7 @@ navigation = [
         "emoji": ""
     },
     {
-        "\ufeffid": "sign_in",
+        "id": "sign_in",
         "icon": "",
         "singular": "Login",
         "plural": "",
@@ -6608,7 +6608,7 @@ navigation = [
         "emoji": ""
     },
     {
-        "\ufeffid": "sign_up",
+        "id": "sign_up",
         "icon": "",
         "singular": "Register",
         "plural": "",
@@ -6623,7 +6623,7 @@ navigation = [
         "emoji": ""
     },
     {
-        "\ufeffid": "success",
+        "id": "success",
         "icon": "",
         "singular": "Success",
         "plural": "",
@@ -6638,7 +6638,7 @@ navigation = [
         "emoji": ""
     },
     {
-        "\ufeffid": "onboarding",
+        "id": "onboarding",
         "icon": "",
         "singular": "Onboarding",
         "plural": "",
@@ -6653,7 +6653,7 @@ navigation = [
         "emoji": ""
     },
     {
-        "\ufeffid": "buy",
+        "id": "buy",
         "icon": "",
         "singular": "Buy",
         "plural": "",
@@ -6668,7 +6668,7 @@ navigation = [
         "emoji": ""
     },
     {
-        "\ufeffid": "sell",
+        "id": "sell",
         "icon": "",
         "singular": "Sell",
         "plural": "",
@@ -6683,7 +6683,7 @@ navigation = [
         "emoji": ""
     },
     {
-        "\ufeffid": "inflow",
+        "id": "inflow",
         "icon": "",
         "singular": "Inflow",
         "plural": "Inflows",
@@ -6698,7 +6698,7 @@ navigation = [
         "emoji": ""
     },
     {
-        "\ufeffid": "outflow",
+        "id": "outflow",
         "icon": "",
         "singular": "Outflow",
         "plural": "Outflows",
@@ -6713,7 +6713,7 @@ navigation = [
         "emoji": ""
     },
     {
-        "\ufeffid": "all",
+        "id": "all",
         "icon": "",
         "singular": "All",
         "plural": "",
@@ -6728,7 +6728,7 @@ navigation = [
         "emoji": ""
     },
     {
-        "\ufeffid": "warning",
+        "id": "warning",
         "icon": "fa:exclamation-triangle",
         "singular": "Warning",
         "plural": "",
@@ -6743,7 +6743,7 @@ navigation = [
         "emoji": ""
     },
     {
-        "\ufeffid": "attention",
+        "id": "attention",
         "icon": "iconamoon:attention-circle",
         "singular": "Attention",
         "plural": "",
@@ -6758,7 +6758,7 @@ navigation = [
         "emoji": ""
     },
     {
-        "\ufeffid": "terms_of_service",
+        "id": "terms_of_service",
         "icon": "",
         "singular": "Terms of service",
         "plural": "",
@@ -6773,7 +6773,7 @@ navigation = [
         "emoji": ""
     },
     {
-        "\ufeffid": "privacy_policy",
+        "id": "privacy_policy",
         "icon": "",
         "singular": "Privacy policy",
         "plural": "",
@@ -6788,7 +6788,7 @@ navigation = [
         "emoji": ""
     },
     {
-        "\ufeffid": "presence",
+        "id": "presence",
         "icon": "f7:scope",
         "singular": "Presence",
         "plural": "",
@@ -6803,7 +6803,7 @@ navigation = [
         "emoji": ""
     },
     {
-        "\ufeffid": "parent",
+        "id": "parent",
         "icon": "",
         "singular": "Parent",
         "plural": "Parents",
@@ -6818,7 +6818,7 @@ navigation = [
         "emoji": ""
     },
     {
-        "\ufeffid": "account_type",
+        "id": "account_type",
         "icon": "",
         "singular": "Account type",
         "plural": "",
@@ -6833,7 +6833,7 @@ navigation = [
         "emoji": ""
     },
     {
-        "\ufeffid": "admin",
+        "id": "admin",
         "icon": "",
         "singular": "Admin",
         "plural": "",
@@ -6848,7 +6848,7 @@ navigation = [
         "emoji": ""
     },
     {
-        "\ufeffid": "editor",
+        "id": "editor",
         "icon": "",
         "singular": "Editor",
         "plural": "",
@@ -6863,7 +6863,7 @@ navigation = [
         "emoji": ""
     },
     {
-        "\ufeffid": "viewer",
+        "id": "viewer",
         "icon": "",
         "singular": "Viewer",
         "plural": "",
@@ -6878,7 +6878,7 @@ navigation = [
         "emoji": ""
     },
     {
-        "\ufeffid": "system",
+        "id": "system",
         "icon": "",
         "singular": "System",
         "plural": "",
@@ -6893,7 +6893,7 @@ navigation = [
         "emoji": ""
     },
     {
-        "\ufeffid": "custom",
+        "id": "custom",
         "icon": "",
         "singular": "Custom",
         "plural": "",
@@ -6908,7 +6908,7 @@ navigation = [
         "emoji": ""
     },
     {
-        "\ufeffid": "online",
+        "id": "online",
         "icon": "ant-design:global-outlined",
         "singular": "Online",
         "plural": "",
@@ -6923,7 +6923,7 @@ navigation = [
         "emoji": "\ud83c\udf10"
     },
     {
-        "\ufeffid": "offline",
+        "id": "offline",
         "icon": "f7:map-pin-ellipse",
         "singular": "Offline",
         "plural": "",
@@ -6938,7 +6938,7 @@ navigation = [
         "emoji": "\ud83d\udccd"
     },
     {
-        "\ufeffid": "personal_account",
+        "id": "personal_account",
         "icon": "material-symbols:person",
         "singular": "Personal Account",
         "plural": "",
@@ -6953,7 +6953,7 @@ navigation = [
         "emoji": ""
     },
     {
-        "\ufeffid": "business_account",
+        "id": "business_account",
         "icon": "mdi:briefcase",
         "singular": "Business Account",
         "plural": "",
@@ -6968,7 +6968,7 @@ navigation = [
         "emoji": ""
     },
     {
-        "\ufeffid": "shared_account",
+        "id": "shared_account",
         "icon": "material-symbols:group",
         "singular": "Shared Account",
         "plural": "",
@@ -6983,7 +6983,7 @@ navigation = [
         "emoji": ""
     },
     {
-        "\ufeffid": "country",
+        "id": "country",
         "icon": "",
         "singular": "Country",
         "plural": "",
@@ -6998,7 +6998,7 @@ navigation = [
         "emoji": ""
     },
     {
-        "\ufeffid": "currency",
+        "id": "currency",
         "icon": "",
         "singular": "Currency",
         "plural": "",
@@ -7013,7 +7013,7 @@ navigation = [
         "emoji": ""
     },
     {
-        "\ufeffid": "unit_system",
+        "id": "unit_system",
         "icon": "",
         "singular": "System unit",
         "plural": "System units",
@@ -7028,7 +7028,7 @@ navigation = [
         "emoji": ""
     },
     {
-        "\ufeffid": "unit_custom",
+        "id": "unit_custom",
         "icon": "",
         "singular": "Custom unit",
         "plural": "Custom units",
@@ -7043,7 +7043,7 @@ navigation = [
         "emoji": ""
     },
     {
-        "\ufeffid": "reserve",
+        "id": "reserve",
         "icon": "",
         "singular": "Reserve",
         "plural": "Reserves",
@@ -7058,7 +7058,7 @@ navigation = [
         "emoji": ""
     },
     {
-        "\ufeffid": "resolution",
+        "id": "resolution",
         "icon": "",
         "singular": "Resolution",
         "plural": "Resolutions",
@@ -7073,7 +7073,7 @@ navigation = [
         "emoji": ""
     },
     {
-        "\ufeffid": "allocation",
+        "id": "allocation",
         "icon": "",
         "singular": "Allocation",
         "plural": "Allocations",
@@ -7088,7 +7088,7 @@ navigation = [
         "emoji": ""
     },
     {
-        "\ufeffid": "visibility",
+        "id": "visibility",
         "icon": "mdi:visibility-outline",
         "singular": "Visibility",
         "plural": "",
@@ -7103,7 +7103,7 @@ navigation = [
         "emoji": ""
     },
     {
-        "\ufeffid": "public",
+        "id": "public",
         "icon": "",
         "singular": "Public",
         "plural": "",
@@ -7118,7 +7118,7 @@ navigation = [
         "emoji": ""
     },
     {
-        "\ufeffid": "private",
+        "id": "private",
         "icon": "",
         "singular": "Private",
         "plural": "",
@@ -7473,19 +7473,16 @@ navigation_help_info = [
 
 order_nature = [
     {
-        "ID": "bTOKR",
         "display": "Commercial",
         "db_value": "commercial",
         "sort_factor": "1"
     },
     {
-        "ID": "bTOKS",
         "display": "Funding",
         "db_value": "funding",
         "sort_factor": "2"
     },
     {
-        "ID": "bTOKT",
         "display": "Donation",
         "db_value": "donation",
         "sort_factor": "3"
@@ -7494,7 +7491,7 @@ order_nature = [
 
 presence = [
     {
-        "\ufeffid": "online",
+        "id": "online",
         "name": "Online",
         "label": "Online \ud83c\udf10",
         "description": "This account is actively managed by one more more users. It can do transactions with other online accounts via the platform. If its visibility is public, other users can search and find it.",
@@ -7502,7 +7499,7 @@ presence = [
         "sort_factor": "1"
     },
     {
-        "\ufeffid": "offline",
+        "id": "offline",
         "name": "Offline",
         "label": "Offline\ud83d\udccd",
         "description": "This account is not actively managed, it only exists and is visible locally in your account. It is only used for your to record offline transactions with this account.",
@@ -7513,7 +7510,7 @@ presence = [
 
 priority = [
     {
-        "\ufeffid": "firm",
+        "id": "firm",
         "Name": "Firm",
         "cash": "yes",
         "index": "1",
@@ -7533,7 +7530,7 @@ priority = [
         "residue_period_description": ""
     },
     {
-        "\ufeffid": "preferred",
+        "id": "preferred",
         "Name": "Preferred",
         "cash": "yes",
         "index": "2",
@@ -7553,7 +7550,7 @@ priority = [
         "residue_period_description": ""
     },
     {
-        "\ufeffid": "flex",
+        "id": "flex",
         "Name": "Flex",
         "cash": "yes",
         "index": "3",
@@ -7573,7 +7570,7 @@ priority = [
         "residue_period_description": ""
     },
     {
-        "\ufeffid": "superflex",
+        "id": "superflex",
         "Name": "SuperFlex",
         "cash": "yes",
         "index": "4",
@@ -7593,7 +7590,7 @@ priority = [
         "residue_period_description": ""
     },
     {
-        "\ufeffid": "credit",
+        "id": "credit",
         "Name": "Credit",
         "cash": "yes",
         "index": "5",
@@ -7613,7 +7610,7 @@ priority = [
         "residue_period_description": "Residue is converted into Credit so it has no predefined due date"
     },
     {
-        "\ufeffid": "token",
+        "id": "token",
         "Name": "Token",
         "cash": "no",
         "index": "6",
@@ -7633,7 +7630,7 @@ priority = [
         "residue_period_description": ""
     },
     {
-        "\ufeffid": "distribution",
+        "id": "distribution",
         "Name": "Distribution",
         "cash": "no",
         "index": "7",
@@ -7653,7 +7650,7 @@ priority = [
         "residue_period_description": ""
     },
     {
-        "\ufeffid": "same_as_principal",
+        "id": "same_as_principal",
         "Name": "Same as primary",
         "cash": "",
         "index": "8",
@@ -7673,7 +7670,7 @@ priority = [
         "residue_period_description": ""
     },
     {
-        "\ufeffid": "na_equity",
+        "id": "na_equity",
         "Name": "N/A (credit/shares)",
         "cash": "",
         "index": "9",
@@ -7693,7 +7690,7 @@ priority = [
         "residue_period_description": ""
     },
     {
-        "\ufeffid": "na_no_interest",
+        "id": "na_no_interest",
         "Name": "N/A (no interests)",
         "cash": "",
         "index": "10",
@@ -7716,42 +7713,42 @@ priority = [
 
 priority_group = [
     {
-        "\ufeffid": "base",
+        "id": "base",
         "name": "Base",
         "priorities": "firm|preferred",
         "periodicity": "monthly",
         "sort_factor": "1"
     },
     {
-        "\ufeffid": "flexible",
+        "id": "flexible",
         "name": "Flexible",
         "priorities": "flex|superflex",
         "periodicity": "monthly",
         "sort_factor": "2"
     },
     {
-        "\ufeffid": "equity",
+        "id": "equity",
         "name": "Equity",
         "priorities": "credit|token",
         "periodicity": "monthly",
         "sort_factor": "3"
     },
     {
-        "\ufeffid": "distribution",
+        "id": "distribution",
         "name": "Distribution",
         "priorities": "distribution",
         "periodicity": "annual",
         "sort_factor": "4"
     },
     {
-        "\ufeffid": "n_a",
+        "id": "n_a",
         "name": "N/A",
         "priorities": "na_equity|na_no_interest",
         "periodicity": "",
         "sort_factor": "6"
     },
     {
-        "\ufeffid": "same_as_principal",
+        "id": "same_as_principal",
         "name": "Same as primary",
         "priorities": "same_as_principal",
         "periodicity": "",
@@ -7762,7 +7759,6 @@ priority_group = [
 # I like to have a single list of statuses, with related colors and descriptions. Then, for each type of object, we can list the statuses that are relevant to it.
 status = [
     {
-        "ID": "bTRIN",
         "display": "Draft",
         "description": "Saved but not yet sent",
         "color": "rgba(180,180, 217, 0.5)",
@@ -7781,7 +7777,6 @@ status = [
         "deleted": ""
     },
     {
-        "ID": "bTRIO",
         "display": "Pending",
         "description": "Awaiting confirmation",
         "color": "rgba(173,216,230,0.5)",
@@ -7800,7 +7795,6 @@ status = [
         "deleted": ""
     },
     {
-        "ID": "bTRIP",
         "display": "Sent",
         "description": "Proposal has been sent to third party",
         "color": "rgba(173,216,230,0.5)",
@@ -7819,7 +7813,6 @@ status = [
         "deleted": ""
     },
     {
-        "ID": "bTRIT",
         "display": "Received",
         "description": "Proposal has been received from third party",
         "color": "rgba(246,211,36,0.5)",
@@ -7838,7 +7831,6 @@ status = [
         "deleted": ""
     },
     {
-        "ID": "bTRIU",
         "display": "Confirmed",
         "description": "Accepted/signed by both parties",
         "color": "rgba(137, 221, 51, 0.55)",
@@ -7857,7 +7849,6 @@ status = [
         "deleted": ""
     },
     {
-        "ID": "bTRIV",
         "display": "Modified",
         "description": "Modified by either / both parties",
         "color": "rgba(255,215,0,0.5)",
@@ -7876,7 +7867,6 @@ status = [
         "deleted": ""
     },
     {
-        "ID": "bTRIZ",
         "display": "On hold",
         "description": "Suspended by either / both parties",
         "color": "rgba(225, 38, 210, 0.4)",
@@ -7895,7 +7885,6 @@ status = [
         "deleted": ""
     },
     {
-        "ID": "bTRIa",
         "display": "Active",
         "description": "Active",
         "color": "rgba(141,221,173,0.5)",
@@ -7914,7 +7903,6 @@ status = [
         "deleted": ""
     },
     {
-        "ID": "bTRIb",
         "display": "Ready to start",
         "description": "Delivery is read to start",
         "color": "rgba(141,221,173,0.5)",
@@ -7933,7 +7921,6 @@ status = [
         "deleted": ""
     },
     {
-        "ID": "bTRIf",
         "display": "Started",
         "description": "Delivery has started by supplier",
         "color": "rgba(141,221,173,0.5)",
@@ -7952,7 +7939,6 @@ status = [
         "deleted": ""
     },
     {
-        "ID": "bTRIg",
         "display": "Completed",
         "description": "Delivery has been completed by supplier",
         "color": "rgba(173, 221, 192, 0.82)",
@@ -7971,7 +7957,6 @@ status = [
         "deleted": ""
     },
     {
-        "ID": "bTRIh",
         "display": "Accepted",
         "description": "Delivery has been accepted by client",
         "color": "rgba(173, 255, 250, 0.55)",
@@ -7990,7 +7975,6 @@ status = [
         "deleted": ""
     },
     {
-        "ID": "bTRIl",
         "display": "Pending amount",
         "description": "The due amount is not yet known",
         "color": "rgba(230, 213, 151, 0.5)",
@@ -8009,7 +7993,6 @@ status = [
         "deleted": ""
     },
     {
-        "ID": "bTRIm",
         "display": "Pending due date",
         "description": "The due amount is known, but the due date is not yet known",
         "color": "rgba(92,172,238,0.5)",
@@ -8028,7 +8011,6 @@ status = [
         "deleted": ""
     },
     {
-        "ID": "bTRIn",
         "display": "No due date",
         "description": "The due amount is known, but no due date applies (equity)",
         "color": "rgba(92,172,238,0.5)",
@@ -8047,7 +8029,6 @@ status = [
         "deleted": ""
     },
     {
-        "ID": "bTRIr",
         "display": "Scheduled",
         "description": "Due amount and due date are both known",
         "color": "rgba(92,172,238,0.5)",
@@ -8066,7 +8047,6 @@ status = [
         "deleted": ""
     },
     {
-        "ID": "bTRIs",
         "display": "Upcoming",
         "description": "Due date is less than 30 days await",
         "color": "rgba(255,215,0,0.5)",
@@ -8085,7 +8065,6 @@ status = [
         "deleted": ""
     },
     {
-        "ID": "bTRIt",
         "display": "Overdue",
         "description": "Due date has passed, and amount due has not yet been paid",
         "color": "rgba(255,69,0,0.5)",
@@ -8104,7 +8083,6 @@ status = [
         "deleted": ""
     },
     {
-        "ID": "bTRIx",
         "display": "Resolved",
         "description": "Has been resolved, but the payable amount is 0",
         "color": "rgba(173,216,230,0.5)",
@@ -8123,7 +8101,6 @@ status = [
         "deleted": ""
     },
     {
-        "ID": "bTRIy",
         "display": "Payable",
         "description": "Has been resolved and a payable amount has been calculated",
         "color": "rgba(173,216,230,0.5)",
@@ -8142,7 +8119,6 @@ status = [
         "deleted": ""
     },
     {
-        "ID": "bTRIz",
         "display": "Partially paid",
         "description": "Payable amount has been partially paid",
         "color": "rgba(205,220,57,0.5)",
@@ -8161,7 +8137,6 @@ status = [
         "deleted": ""
     },
     {
-        "ID": "bTRJD",
         "display": "Paid",
         "description": "Payable amount has been fully paid",
         "color": "rgba(0,128,0,0.5)",
@@ -8180,7 +8155,6 @@ status = [
         "deleted": ""
     },
     {
-        "ID": "bTRJE",
         "display": "Template",
         "description": "Used as a template to create new records",
         "color": "rgba(48,48,255,48)",
@@ -8199,7 +8173,6 @@ status = [
         "deleted": ""
     },
     {
-        "ID": "bTRJF",
         "display": "Archived",
         "description": "No longer to be shown",
         "color": "rgba(128, 128, 128, 0.66)",
@@ -8218,7 +8191,6 @@ status = [
         "deleted": "true"
     },
     {
-        "ID": "bTRJJ",
         "display": "Cancelled",
         "description": "Cancelled by either / both parties",
         "color": "rgba(191,191,191,0.5)",
@@ -8237,7 +8209,6 @@ status = [
         "deleted": ""
     },
     {
-        "ID": "bTRJK",
         "display": "Suspended",
         "description": "Suspended by the system",
         "color": "rgba(224,73,128,0.5)",
@@ -8256,7 +8227,6 @@ status = [
         "deleted": ""
     },
     {
-        "ID": "bTRJL",
         "display": "Closed",
         "description": "Closed by the user",
         "color": "rgba(191,191,191,0.5)",
@@ -8275,7 +8245,6 @@ status = [
         "deleted": ""
     },
     {
-        "ID": "bTRJP",
         "display": "Retracted",
         "description": "Proposal has been retracted by its creator",
         "color": "rgba(204, 199, 192, 0.36)",
@@ -8294,7 +8263,6 @@ status = [
         "deleted": ""
     },
     {
-        "ID": "bTRJQ",
         "display": "Rejected",
         "description": "Proposal has been rejected by its recipient",
         "color": "rgba(217, 83, 79, 0.44)",
@@ -8313,7 +8281,6 @@ status = [
         "deleted": ""
     },
     {
-        "ID": "bTRJR",
         "display": "Expired",
         "description": "No longer valid/active",
         "color": "rgba(191,191,191,0.5)",
@@ -8332,7 +8299,6 @@ status = [
         "deleted": ""
     },
     {
-        "ID": "bTRJV",
         "display": "",
         "description": "",
         "color": "",
@@ -8351,7 +8317,6 @@ status = [
         "deleted": "true"
     },
     {
-        "ID": "0nMmtI",
         "display": "Test 1",
         "description": "mkiqsdjfmsdqlkjsqdmlf",
         "color": "sdddfgfdsg",
@@ -8370,7 +8335,6 @@ status = [
         "deleted": "true"
     },
     {
-        "ID": "bTTqV0",
         "display": "Local",
         "description": "",
         "color": "",
@@ -8389,7 +8353,6 @@ status = [
         "deleted": ""
     },
     {
-        "ID": "i0XTYM",
         "display": "Reservation",
         "description": "Delivery has been completed by supplier, and the client has raised some reservations.",
         "color": "rgba(230, 157, 151, 0.5)",
@@ -8408,7 +8371,6 @@ status = [
         "deleted": ""
     },
     {
-        "ID": "tPmf2Q",
         "display": "Test 5",
         "description": "fgdhdfgfg",
         "color": "Color has changed",
@@ -8431,7 +8393,7 @@ status = [
 # System units of the same dimension can (in a future version) be used to allow conversion (ie. show the price in €/kg, or €/pound). In the MVP, is only used as convenient way to select a unit, but the user can always select the "custom" option and enter a custom unit. Custom units do not allow conversions.
 unit = [
     {
-        "\ufeffid": "unit",
+        "id": "unit",
         "name": "Unit",
         "dimension_text": "Unit",
         "units_to_base": "1",
@@ -8439,7 +8401,7 @@ unit = [
         "base_unit": "unit"
     },
     {
-        "\ufeffid": "\u00b5g",
+        "id": "\u00b5g",
         "name": "Microgram",
         "dimension_text": "Weight",
         "units_to_base": "0.000000001",
@@ -8447,7 +8409,7 @@ unit = [
         "base_unit": "kg"
     },
     {
-        "\ufeffid": "ct",
+        "id": "ct",
         "name": "Carat",
         "dimension_text": "Weight",
         "units_to_base": "0.0002",
@@ -8455,7 +8417,7 @@ unit = [
         "base_unit": "kg"
     },
     {
-        "\ufeffid": "cwt (UK)",
+        "id": "cwt (UK)",
         "name": "Hundredweight (UK)",
         "dimension_text": "Weight",
         "units_to_base": "50.80234544",
@@ -8463,7 +8425,7 @@ unit = [
         "base_unit": "kg"
     },
     {
-        "\ufeffid": "cwt (US)",
+        "id": "cwt (US)",
         "name": "Hundredweight (US)",
         "dimension_text": "Weight",
         "units_to_base": "45.359237",
@@ -8471,7 +8433,7 @@ unit = [
         "base_unit": "kg"
     },
     {
-        "\ufeffid": "dag",
+        "id": "dag",
         "name": "Decagram",
         "dimension_text": "Weight",
         "units_to_base": "0.01",
@@ -8479,7 +8441,7 @@ unit = [
         "base_unit": "kg"
     },
     {
-        "\ufeffid": "g",
+        "id": "g",
         "name": "Gram",
         "dimension_text": "Weight",
         "units_to_base": "0.001",
@@ -8487,7 +8449,7 @@ unit = [
         "base_unit": "kg"
     },
     {
-        "\ufeffid": "hg",
+        "id": "hg",
         "name": "Hectogram",
         "dimension_text": "Weight",
         "units_to_base": "0.1",
@@ -8495,7 +8457,7 @@ unit = [
         "base_unit": "kg"
     },
     {
-        "\ufeffid": "kg",
+        "id": "kg",
         "name": "Kilogram",
         "dimension_text": "Weight",
         "units_to_base": "1",
@@ -8503,7 +8465,7 @@ unit = [
         "base_unit": "kg"
     },
     {
-        "\ufeffid": "lb",
+        "id": "lb",
         "name": "Pound",
         "dimension_text": "Weight",
         "units_to_base": "0.45359237",
@@ -8511,7 +8473,7 @@ unit = [
         "base_unit": "kg"
     },
     {
-        "\ufeffid": "long ton",
+        "id": "long ton",
         "name": "Long Ton",
         "dimension_text": "Weight",
         "units_to_base": "1016.046909",
@@ -8519,7 +8481,7 @@ unit = [
         "base_unit": "kg"
     },
     {
-        "\ufeffid": "mg",
+        "id": "mg",
         "name": "Milligram",
         "dimension_text": "Weight",
         "units_to_base": "0.000001",
@@ -8527,7 +8489,7 @@ unit = [
         "base_unit": "kg"
     },
     {
-        "\ufeffid": "oz",
+        "id": "oz",
         "name": "Ounce",
         "dimension_text": "Weight",
         "units_to_base": "0.028349523",
@@ -8535,7 +8497,7 @@ unit = [
         "base_unit": "kg"
     },
     {
-        "\ufeffid": "q",
+        "id": "q",
         "name": "Quintal (Metric Hundredweight)",
         "dimension_text": "Weight",
         "units_to_base": "100",
@@ -8543,7 +8505,7 @@ unit = [
         "base_unit": "kg"
     },
     {
-        "\ufeffid": "short ton",
+        "id": "short ton",
         "name": "Short Ton",
         "dimension_text": "Weight",
         "units_to_base": "907.18474",
@@ -8551,7 +8513,7 @@ unit = [
         "base_unit": "kg"
     },
     {
-        "\ufeffid": "stone",
+        "id": "stone",
         "name": "Stone",
         "dimension_text": "Weight",
         "units_to_base": "6.35029318",
@@ -8559,7 +8521,7 @@ unit = [
         "base_unit": "kg"
     },
     {
-        "\ufeffid": "t",
+        "id": "t",
         "name": "Metric Ton",
         "dimension_text": "Weight",
         "units_to_base": "1000",
@@ -8567,7 +8529,7 @@ unit = [
         "base_unit": "kg"
     },
     {
-        "\ufeffid": "hr",
+        "id": "hr",
         "name": "Hour",
         "dimension_text": "Duration",
         "units_to_base": "1",
@@ -8575,7 +8537,7 @@ unit = [
         "base_unit": "hr"
     },
     {
-        "\ufeffid": "day",
+        "id": "day",
         "name": "Day",
         "dimension_text": "Duration",
         "units_to_base": "24",
@@ -8583,7 +8545,7 @@ unit = [
         "base_unit": "hr"
     },
     {
-        "\ufeffid": "min",
+        "id": "min",
         "name": "Minute",
         "dimension_text": "Duration",
         "units_to_base": "0.016666667",
@@ -8591,7 +8553,7 @@ unit = [
         "base_unit": "hr"
     },
     {
-        "\ufeffid": "month",
+        "id": "month",
         "name": "Month",
         "dimension_text": "Duration",
         "units_to_base": "730.5",
@@ -8599,7 +8561,7 @@ unit = [
         "base_unit": "hr"
     },
     {
-        "\ufeffid": "quarter",
+        "id": "quarter",
         "name": "Quarter",
         "dimension_text": "Duration",
         "units_to_base": "2191.5",
@@ -8607,7 +8569,7 @@ unit = [
         "base_unit": "hr"
     },
     {
-        "\ufeffid": "s",
+        "id": "s",
         "name": "Second",
         "dimension_text": "Duration",
         "units_to_base": "0.000277778",
@@ -8615,7 +8577,7 @@ unit = [
         "base_unit": "hr"
     },
     {
-        "\ufeffid": "week",
+        "id": "week",
         "name": "Week",
         "dimension_text": "Duration",
         "units_to_base": "168",
@@ -8623,7 +8585,7 @@ unit = [
         "base_unit": "hr"
     },
     {
-        "\ufeffid": "year",
+        "id": "year",
         "name": "Year",
         "dimension_text": "Duration",
         "units_to_base": "8766",
@@ -8631,7 +8593,7 @@ unit = [
         "base_unit": "hr"
     },
     {
-        "\ufeffid": "cm",
+        "id": "cm",
         "name": "Centimeter",
         "dimension_text": "Length",
         "units_to_base": "0.1",
@@ -8639,7 +8601,7 @@ unit = [
         "base_unit": "m"
     },
     {
-        "\ufeffid": "ft",
+        "id": "ft",
         "name": "Foot",
         "dimension_text": "Length",
         "units_to_base": "0.3048",
@@ -8647,7 +8609,7 @@ unit = [
         "base_unit": "m"
     },
     {
-        "\ufeffid": "inch",
+        "id": "inch",
         "name": "Inch",
         "dimension_text": "Length",
         "units_to_base": "0.0254",
@@ -8655,7 +8617,7 @@ unit = [
         "base_unit": "m"
     },
     {
-        "\ufeffid": "km",
+        "id": "km",
         "name": "Kilometer",
         "dimension_text": "Length",
         "units_to_base": "1000",
@@ -8663,7 +8625,7 @@ unit = [
         "base_unit": "m"
     },
     {
-        "\ufeffid": "m",
+        "id": "m",
         "name": "Meter",
         "dimension_text": "Length",
         "units_to_base": "1",
@@ -8671,7 +8633,7 @@ unit = [
         "base_unit": "m"
     },
     {
-        "\ufeffid": "mile",
+        "id": "mile",
         "name": "Mile",
         "dimension_text": "Length",
         "units_to_base": "1609.34",
@@ -8679,7 +8641,7 @@ unit = [
         "base_unit": "m"
     },
     {
-        "\ufeffid": "mm",
+        "id": "mm",
         "name": "Millimeter",
         "dimension_text": "Length",
         "units_to_base": "0.001",
@@ -8687,7 +8649,7 @@ unit = [
         "base_unit": "m"
     },
     {
-        "\ufeffid": "nautical mile",
+        "id": "nautical mile",
         "name": "Nautical Mile",
         "dimension_text": "Length",
         "units_to_base": "1852",
@@ -8695,7 +8657,7 @@ unit = [
         "base_unit": "m"
     },
     {
-        "\ufeffid": "yard",
+        "id": "yard",
         "name": "Yard",
         "dimension_text": "Length",
         "units_to_base": "0.9144",
@@ -8703,7 +8665,7 @@ unit = [
         "base_unit": "m"
     },
     {
-        "\ufeffid": "barrel",
+        "id": "barrel",
         "name": "Barrel",
         "dimension_text": "Volume",
         "units_to_base": "158.9872894",
@@ -8711,7 +8673,7 @@ unit = [
         "base_unit": "l"
     },
     {
-        "\ufeffid": "cl",
+        "id": "cl",
         "name": "Centiliter",
         "dimension_text": "Volume",
         "units_to_base": "0.01",
@@ -8719,7 +8681,7 @@ unit = [
         "base_unit": "l"
     },
     {
-        "\ufeffid": "dl",
+        "id": "dl",
         "name": "Deciliter",
         "dimension_text": "Volume",
         "units_to_base": "0.100000001",
@@ -8727,7 +8689,7 @@ unit = [
         "base_unit": "l"
     },
     {
-        "\ufeffid": "fl oz (UK)",
+        "id": "fl oz (UK)",
         "name": "Fluid Ounce (UK)",
         "dimension_text": "Volume",
         "units_to_base": "0.028413063",
@@ -8735,7 +8697,7 @@ unit = [
         "base_unit": "l"
     },
     {
-        "\ufeffid": "fl oz (US)",
+        "id": "fl oz (US)",
         "name": "Fluid Ounce (US)",
         "dimension_text": "Volume",
         "units_to_base": "0.02957353",
@@ -8743,7 +8705,7 @@ unit = [
         "base_unit": "l"
     },
     {
-        "\ufeffid": "ft\u00b3",
+        "id": "ft\u00b3",
         "name": "Cubic Foot",
         "dimension_text": "Volume",
         "units_to_base": "28.31684685",
@@ -8751,7 +8713,7 @@ unit = [
         "base_unit": "l"
     },
     {
-        "\ufeffid": "gal (UK)",
+        "id": "gal (UK)",
         "name": "Gallon (UK)",
         "dimension_text": "Volume",
         "units_to_base": "4.546090126",
@@ -8759,7 +8721,7 @@ unit = [
         "base_unit": "l"
     },
     {
-        "\ufeffid": "gal (US)",
+        "id": "gal (US)",
         "name": "Gallon (US)",
         "dimension_text": "Volume",
         "units_to_base": "3.785411835",
@@ -8767,7 +8729,7 @@ unit = [
         "base_unit": "l"
     },
     {
-        "\ufeffid": "inch\u00b3",
+        "id": "inch\u00b3",
         "name": "Cubic Inch",
         "dimension_text": "Volume",
         "units_to_base": "0.016387064",
@@ -8775,7 +8737,7 @@ unit = [
         "base_unit": "l"
     },
     {
-        "\ufeffid": "l",
+        "id": "l",
         "name": "Liter",
         "dimension_text": "Volume",
         "units_to_base": "1",
@@ -8783,7 +8745,7 @@ unit = [
         "base_unit": "l"
     },
     {
-        "\ufeffid": "m\u00b3",
+        "id": "m\u00b3",
         "name": "Cubic Meter",
         "dimension_text": "Volume",
         "units_to_base": "1000",
@@ -8791,7 +8753,7 @@ unit = [
         "base_unit": "l"
     },
     {
-        "\ufeffid": "ml",
+        "id": "ml",
         "name": "Milliliter",
         "dimension_text": "Volume",
         "units_to_base": "1",
@@ -8799,7 +8761,7 @@ unit = [
         "base_unit": "l"
     },
     {
-        "\ufeffid": "pint (UK)",
+        "id": "pint (UK)",
         "name": "Pint (UK)",
         "dimension_text": "Volume",
         "units_to_base": "0.568261266",
@@ -8807,7 +8769,7 @@ unit = [
         "base_unit": "l"
     },
     {
-        "\ufeffid": "pint (US dry)",
+        "id": "pint (US dry)",
         "name": "Pint (US Dry)",
         "dimension_text": "Volume",
         "units_to_base": "0.473176479",
@@ -8815,7 +8777,7 @@ unit = [
         "base_unit": "l"
     },
     {
-        "\ufeffid": "pint (US liquid)",
+        "id": "pint (US liquid)",
         "name": "Pint (US Liquid)",
         "dimension_text": "Volume",
         "units_to_base": "0.550610483",
@@ -8823,7 +8785,7 @@ unit = [
         "base_unit": "l"
     },
     {
-        "\ufeffid": "yard\u00b3",
+        "id": "yard\u00b3",
         "name": "Cubic Yard",
         "dimension_text": "Volume",
         "units_to_base": "764.5548706",
@@ -8831,7 +8793,7 @@ unit = [
         "base_unit": "l"
     },
     {
-        "\ufeffid": "bit",
+        "id": "bit",
         "name": "Bit",
         "dimension_text": "Data",
         "units_to_base": "0.125",
@@ -8839,7 +8801,7 @@ unit = [
         "base_unit": "byte"
     },
     {
-        "\ufeffid": "byte",
+        "id": "byte",
         "name": "Byte",
         "dimension_text": "Data",
         "units_to_base": "1",
@@ -8847,7 +8809,7 @@ unit = [
         "base_unit": "byte"
     },
     {
-        "\ufeffid": "GB",
+        "id": "GB",
         "name": "Gigabyte",
         "dimension_text": "Data",
         "units_to_base": "1000000000",
@@ -8855,7 +8817,7 @@ unit = [
         "base_unit": "byte"
     },
     {
-        "\ufeffid": "kB",
+        "id": "kB",
         "name": "Kilobyte",
         "dimension_text": "Data",
         "units_to_base": "1000",
@@ -8863,7 +8825,7 @@ unit = [
         "base_unit": "byte"
     },
     {
-        "\ufeffid": "MB",
+        "id": "MB",
         "name": "Megabyte",
         "dimension_text": "Data",
         "units_to_base": "1000000",
@@ -8871,7 +8833,7 @@ unit = [
         "base_unit": "byte"
     },
     {
-        "\ufeffid": "TB",
+        "id": "TB",
         "name": "Terabyte",
         "dimension_text": "Data",
         "units_to_base": "1000000000000",
